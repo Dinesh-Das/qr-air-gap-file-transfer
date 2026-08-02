@@ -6,7 +6,7 @@
   text-rendering: optimizeLegibility;
   --ink: #18221e;
   --muted: #66706a;
-  --faint: #8c948f;
+  --faint: #68716c;
   --surface: #ffffff;
   --surface-soft: #f7f8f5;
   --line: #dfe4de;
@@ -62,8 +62,12 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 summary:focus-visible {
-  outline: 3px solid rgba(10, 121, 95, 0.24);
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 .app-shell {
@@ -223,6 +227,53 @@ main {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.7;
+}
+
+.connection-banner {
+  display: flex;
+  max-width: 720px;
+  margin: -16px auto 24px;
+  padding: 13px 16px;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 8px 24px rgba(34, 56, 44, 0.05);
+}
+
+.connection-banner > div {
+  display: grid;
+  gap: 2px;
+}
+
+.connection-banner strong {
+  font-size: 12px;
+}
+
+.connection-banner span:not(.connection-indicator) {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.connection-indicator {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--muted);
+  box-shadow: 0 0 0 5px rgba(102, 112, 106, 0.1);
+}
+
+.connection-indicator.testing,
+.connection-indicator.preparing {
+  background: var(--warning);
+  box-shadow: 0 0 0 5px rgba(185, 106, 17, 0.11);
+}
+
+.connection-indicator.verified {
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(10, 121, 95, 0.11);
 }
 
 .transfer-card {
@@ -400,6 +451,11 @@ main {
   border-color: #efc7c3;
 }
 
+.icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
 .metric-grid {
   display: grid;
   margin-top: 22px;
@@ -420,6 +476,18 @@ main {
 .metric span,
 .metric strong {
   display: block;
+}
+
+.metric-grid.metric-grid-four {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.metric-grid-four .metric:nth-child(odd) {
+  border-left: 0;
+}
+
+.metric-grid-four .metric:nth-child(n + 3) {
+  border-top: 1px solid var(--line);
 }
 
 .metric span {
@@ -558,10 +626,99 @@ main {
   gap: 9px;
 }
 
+.left-copy {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.compact-status {
+  margin-top: 12px;
+}
+
+.receipt-panel {
+  display: grid;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #cae4db;
+  border-radius: 12px;
+  background: #f2faf7;
+  gap: 8px;
+}
+
+.receipt-panel .panel-kicker {
+  margin-bottom: 1px;
+}
+
+.receipt-panel label {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.receipt-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.receipt-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.receipt-entry input {
+  min-width: 0;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  color: var(--ink);
+  background: var(--surface);
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.checkpoint-card {
+  display: grid;
+  margin: 0 0 18px;
+  padding: 16px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid #bfe1d5;
+  border-radius: 14px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
+.checkpoint-card > div:not(.checkpoint-actions) {
+  display: grid;
+  gap: 4px;
+}
+
+.checkpoint-card strong {
+  font-size: 13px;
+}
+
+.checkpoint-card span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.checkpoint-actions {
+  display: flex;
+  gap: 8px;
+}
+
 .microcopy {
   margin: 0;
   color: var(--faint);
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.5;
   text-align: center;
 }
@@ -692,6 +849,41 @@ main {
   height: 100% !important;
 }
 
+.qr-canvas-wrap.qr-hidden canvas {
+  visibility: hidden;
+}
+
+.qr-stopped-overlay {
+  position: absolute;
+  inset: 12px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 12px;
+  color: var(--muted);
+  text-align: center;
+  background: var(--surface-soft);
+}
+
+.qr-stopped-overlay strong,
+.qr-stopped-overlay span {
+  display: block;
+}
+
+.qr-stopped-overlay strong {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.qr-stopped-overlay span {
+  max-width: 220px;
+  margin-top: 5px;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
 .qr-meta {
   display: flex;
   margin-top: 16px;
@@ -721,6 +913,17 @@ main {
   background: var(--accent);
   box-shadow: 0 0 0 4px rgba(10, 121, 95, 0.11);
   content: "";
+}
+
+.live-dot.paused,
+.live-dot.stopped {
+  color: var(--muted);
+}
+
+.live-dot.paused::before,
+.live-dot.stopped::before {
+  background: var(--muted);
+  box-shadow: 0 0 0 4px rgba(102, 112, 106, 0.11);
 }
 
 .progress-track {
@@ -894,6 +1097,7 @@ main {
 }
 
 .progress-ring-wrap {
+  position: relative;
   display: grid;
   margin: 25px auto 20px;
   place-items: center;
@@ -901,6 +1105,7 @@ main {
 
 .progress-ring {
   display: grid;
+  grid-area: 1 / 1;
   width: 144px;
   height: 144px;
   place-items: center;
@@ -920,7 +1125,8 @@ main {
 }
 
 .progress-ring-content {
-  position: absolute;
+  z-index: 1;
+  grid-area: 1 / 1;
   text-align: center;
 }
 
@@ -939,7 +1145,7 @@ main {
 .progress-ring-content span {
   margin-top: 3px;
   color: var(--faint);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -964,15 +1170,50 @@ main {
 }
 
 .stat-row dd {
+  overflow: hidden;
+  max-width: 62%;
   margin: 0;
   color: var(--ink);
   font-family: "DM Mono", monospace;
   font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .completion {
   padding: 10px 0 20px;
   text-align: center;
+}
+
+.receipt-success {
+  padding: 8px 0 20px;
+  text-align: center;
+}
+
+.receipt-success h3 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.receipt-success > p {
+  margin: 8px 0 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.receipt-code {
+  display: block;
+  margin: 0 0 18px;
+  padding: 15px 12px;
+  border: 1px solid #bfe1d5;
+  border-radius: 11px;
+  color: var(--accent-dark);
+  background: var(--surface);
+  font-family: "DM Mono", monospace;
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
 }
 
 .completion-icon {
@@ -1016,7 +1257,7 @@ main {
   border-radius: 9px;
   color: #155c49;
   background: #f2faf7;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
 }
 
@@ -1030,7 +1271,7 @@ main {
   border-radius: 12px;
   color: var(--muted);
   background: rgba(255, 255, 255, 0.6);
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.55;
 }
 
@@ -1049,7 +1290,7 @@ main {
   justify-content: space-between;
   border-top: 1px solid rgba(203, 210, 203, 0.78);
   color: var(--faint);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .footer-protocol {
@@ -1115,6 +1356,14 @@ main {
   .sender-layout .panel:last-child {
     min-height: 500px;
   }
+
+  .checkpoint-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .checkpoint-actions {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 620px) {
@@ -1162,9 +1411,29 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .metric-grid.metric-grid-four {
+    grid-template-columns: 1fr;
+  }
+
   .metric + .metric {
     border-top: 1px solid var(--line);
     border-left: 0;
+  }
+
+  .metric-grid-four .metric {
+    border-left: 0;
+  }
+
+  .receipt-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .checkpoint-card {
+    grid-template-columns: 1fr;
+  }
+
+  .checkpoint-actions {
+    display: grid;
   }
 
   .site-footer {

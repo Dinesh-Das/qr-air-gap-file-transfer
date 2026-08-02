@@ -4,19 +4,25 @@ export const FRAME_HEADER_SIZE = 23
 export const DEFAULT_CHUNK_SIZE = 700
 export const DEFAULT_MANIFEST_INTERVAL = 10
 export const MAX_TOTAL_CHUNKS = 1_000_000
+export const CONNECTION_ID_SIZE = 16
 // Common filesystems cap one path segment at 255 encoded bytes. Keeping the
 // manifest root to the same limit also guarantees the repeated manifest fits
 // comfortably in a QR code.
 export const MAX_ROOT_NAME_BYTES = 255
 
-const MAGIC = new Uint8Array([0x51, 0x52, 0x46, 0x54]) // "QRFT"
-const MANIFEST_FIXED_SIZE = 52
+const MAGIC = new Uint8Array([0x51, 0x52, 0x46, 0x32]) // "QRF2"
+const MANIFEST_FIXED_SIZE = 69
 const SHA256_SIZE = 32
 const BASE45_PATTERN = /^[0-9A-Z $%*+\-./:]*$/
 
 export enum FrameType {
   Manifest = 0x01,
   Data = 0x02,
+}
+
+export enum TransferPurpose {
+  ConnectionTest = 0x01,
+  Files = 0x02,
 }
 
 export class ProtocolError extends Error {
@@ -35,6 +41,8 @@ export interface TransferManifest {
   chunkSize: number
   createdAtMs: number
   rootName: string
+  purpose: TransferPurpose
+  connectionId: Uint8Array
 }
 
 export interface ParsedFrame {
@@ -43,6 +51,8 @@ export interface ParsedFrame {
   chunkIndex: number
   totalChunks: number
   payloadLength: number
+  frameCrc32: number
+  /** @deprecated QRF2 protects the complete frame, not only its payload. */
   payloadCrc32: number
   payload: Uint8Array
   manifest?: TransferManifest
@@ -54,6 +64,8 @@ export interface PrepareTransferOptions {
   transferId?: number
   createdAtMs?: number
   manifestInterval?: number
+  purpose?: TransferPurpose
+  connectionId?: Uint8Array
 }
 
 export interface PreparedTransfer {
@@ -64,6 +76,8 @@ export interface PreparedTransfer {
   /** One complete sender pass. Repeat this sequence until the receiver finishes. */
   loopFrames: string[]
   totalChunks: number
+  purpose: TransferPurpose
+  connectionId: Uint8Array
 }
 
 export type AccumulatorStatus =
@@ -78,11 +92,15 @@ export interface AccumulatorResult {
   status: AccumulatorStatus
   transferId?: number
   rootName?: string
+  purpose?: TransferPurpose
+  connectionId?: Uint8Array
+  expectedArchiveBytes?: number
   receivedChunks: number
   totalChunks: number
   receivedBytes: number
   percent: number
   duplicate?: boolean
+  conflict?: boolean
   error?: string
   /** Present only after the manifest SHA-256 gate succeeds. */
   archiveBytes?: Uint8Array
@@ -91,6 +109,12 @@ export interface AccumulatorResult {
 export interface TransferAccumulatorOptions {
   maxArchiveBytes?: number
   maxTotalChunks?: number
+  expectedPurpose?: TransferPurpose
+  expectedConnectionId?: Uint8Array
+  expectedTransferId?: number
+  expectedArchiveSha256?: Uint8Array
+  /** SHA-256 of the canonical Base45 manifest frame for exact stream binding. */
+  expectedManifestSha256?: Uint8Array
 }
 
 const CRC32_TABLE = (() => {
@@ -126,6 +150,8 @@ export async function sha256(bytes: Uint8Array): Promise<Uint8Array> {
  *   32 bytes archive SHA-256
  *   u16 data chunk size
  *   u64 creation time in Unix milliseconds
+ *   u8 transfer purpose
+ *   16-byte connection ID
  *   u16 UTF-8 root-name length
  *   root-name UTF-8 bytes
  */
@@ -136,18 +162,20 @@ export function encodeManifest(manifest: TransferManifest): Uint8Array {
     throw new ProtocolError('chunkSize must be greater than zero.', 'INVALID_CHUNK_SIZE')
   }
   assertSafeUint64(manifest.createdAtMs, 'createdAtMs')
-  if (manifest.archiveSha256.length !== SHA256_SIZE) {
-    throw new ProtocolError('archiveSha256 must contain exactly 32 bytes.', 'INVALID_SHA256')
-  }
+  const archiveSha256 = copySha256(manifest.archiveSha256, 'archiveSha256')
+  assertTransferPurpose(manifest.purpose)
+  const connectionId = copyConnectionId(manifest.connectionId)
 
   const rootNameBytes = encodeRootName(manifest.rootName)
   const payload = new Uint8Array(MANIFEST_FIXED_SIZE + rootNameBytes.length)
   const view = new DataView(payload.buffer)
   view.setBigUint64(0, BigInt(manifest.archiveLength), true)
-  payload.set(manifest.archiveSha256, 8)
+  payload.set(archiveSha256, 8)
   view.setUint16(40, manifest.chunkSize, true)
   view.setBigUint64(42, BigInt(manifest.createdAtMs), true)
-  view.setUint16(50, rootNameBytes.length, true)
+  view.setUint8(50, manifest.purpose)
+  payload.set(connectionId, 51)
+  view.setUint16(67, rootNameBytes.length, true)
   payload.set(rootNameBytes, MANIFEST_FIXED_SIZE)
   return payload
 }
@@ -164,7 +192,10 @@ export function parseManifest(payload: Uint8Array): TransferManifest {
     throw new ProtocolError('Manifest chunkSize must be greater than zero.', 'INVALID_CHUNK_SIZE')
   }
   const createdAtMs = safeNumberFromUint64(view.getBigUint64(42, true), 'createdAtMs')
-  const rootNameLength = view.getUint16(50, true)
+  const purpose = view.getUint8(50)
+  assertTransferPurpose(purpose)
+  const connectionId = payload.slice(51, 67)
+  const rootNameLength = view.getUint16(67, true)
   if (rootNameLength > MAX_ROOT_NAME_BYTES) {
     throw new ProtocolError('Manifest root name is too large.', 'ROOT_NAME_TOO_LARGE')
   }
@@ -188,6 +219,8 @@ export function parseManifest(payload: Uint8Array): TransferManifest {
     chunkSize,
     createdAtMs,
     rootName,
+    purpose,
+    connectionId,
   }
 }
 
@@ -221,8 +254,12 @@ export function encodeFrame(
   view.setUint32(9, chunkIndex, true)
   view.setUint32(13, totalChunks, true)
   view.setUint16(17, payload.length, true)
-  view.setUint32(19, crc32(payload), true)
+  // The checksum field remains zero while calculating the integrity value, so
+  // QRF2 binds every routing field (including type and chunk index) to the
+  // payload rather than protecting the payload in isolation.
+  view.setUint32(19, 0, true)
   binary.set(payload, FRAME_HEADER_SIZE)
+  view.setUint32(19, crc32(binary), true)
   return encodeBase45(binary)
 }
 
@@ -246,23 +283,34 @@ export function parseEncodedFrame(encoded: string): ParsedFrame {
   }
   for (let i = 0; i < MAGIC.length; i += 1) {
     if (binary[i] !== MAGIC[i]) {
-      throw new ProtocolError('Frame magic does not match QRFT.', 'INVALID_MAGIC')
+      throw new ProtocolError('Frame magic does not match QRF2.', 'INVALID_MAGIC')
     }
   }
 
   const view = new DataView(binary.buffer, binary.byteOffset, binary.byteLength)
   const type = view.getUint8(4)
-  assertFrameType(type)
   const transferId = view.getUint32(5, true)
   const chunkIndex = view.getUint32(9, true)
   const totalChunks = view.getUint32(13, true)
   const payloadLength = view.getUint16(17, true)
-  const payloadCrc32 = view.getUint32(19, true)
-  if (totalChunks > MAX_TOTAL_CHUNKS) {
-    throw new ProtocolError('Frame chunk count exceeds the safety limit.', 'TOO_MANY_CHUNKS')
-  }
+  const frameCrc32 = view.getUint32(19, true)
   if (binary.length !== FRAME_HEADER_SIZE + payloadLength) {
     throw new ProtocolError('Frame payload length does not match its header.', 'INVALID_PAYLOAD_LENGTH')
+  }
+
+  const checksumInput = binary.slice()
+  new DataView(
+    checksumInput.buffer,
+    checksumInput.byteOffset,
+    checksumInput.byteLength,
+  ).setUint32(19, 0, true)
+  if (crc32(checksumInput) !== frameCrc32) {
+    throw new ProtocolError('QRF2 frame header/payload integrity check failed.', 'CRC_MISMATCH')
+  }
+
+  assertFrameType(type)
+  if (totalChunks > MAX_TOTAL_CHUNKS) {
+    throw new ProtocolError('Frame chunk count exceeds the safety limit.', 'TOO_MANY_CHUNKS')
   }
   if (type === FrameType.Manifest && chunkIndex !== 0) {
     throw new ProtocolError('Manifest chunkIndex must be zero.', 'INVALID_MANIFEST_INDEX')
@@ -272,9 +320,6 @@ export function parseEncodedFrame(encoded: string): ParsedFrame {
   }
 
   const payload = binary.slice(FRAME_HEADER_SIZE)
-  if (crc32(payload) !== payloadCrc32) {
-    throw new ProtocolError('Frame payload CRC-32 check failed.', 'CRC_MISMATCH')
-  }
 
   const frame: ParsedFrame = {
     type,
@@ -282,7 +327,8 @@ export function parseEncodedFrame(encoded: string): ParsedFrame {
     chunkIndex,
     totalChunks,
     payloadLength,
-    payloadCrc32,
+    frameCrc32,
+    payloadCrc32: frameCrc32,
     payload,
   }
   if (type === FrameType.Manifest) {
@@ -308,6 +354,12 @@ export async function prepareTransfer(
   assertUint32(transferId, 'transferId')
   const createdAtMs = options.createdAtMs ?? Date.now()
   assertSafeUint64(createdAtMs, 'createdAtMs')
+  const purpose = options.purpose ?? TransferPurpose.Files
+  assertTransferPurpose(purpose)
+  const connectionId =
+    options.connectionId === undefined
+      ? createConnectionId()
+      : copyConnectionId(options.connectionId)
   validateRootName(options.rootName)
 
   // Copy once so the hash and chunks describe the same immutable snapshot.
@@ -323,6 +375,8 @@ export async function prepareTransfer(
     chunkSize,
     createdAtMs,
     rootName: options.rootName,
+    purpose,
+    connectionId: connectionId.slice(),
   }
   const manifestFrame = encodeFrame(
     FrameType.Manifest,
@@ -353,12 +407,26 @@ export async function prepareTransfer(
     }
   }
 
-  return { transferId, manifest, manifestFrame, dataFrames, loopFrames, totalChunks }
+  return {
+    transferId,
+    manifest,
+    manifestFrame,
+    dataFrames,
+    loopFrames,
+    totalChunks,
+    purpose,
+    connectionId: connectionId.slice(),
+  }
 }
 
 export class TransferAccumulator {
   private readonly maxArchiveBytes: number
   private readonly maxTotalChunks: number
+  private readonly expectedPurpose?: TransferPurpose
+  private readonly expectedConnectionId?: Uint8Array
+  private readonly expectedTransferId?: number
+  private readonly expectedArchiveSha256?: Uint8Array
+  private readonly expectedManifestSha256?: Uint8Array
   private transferId?: number
   private totalChunks = 0
   private manifest?: TransferManifest
@@ -372,6 +440,20 @@ export class TransferAccumulator {
   constructor(options: TransferAccumulatorOptions = {}) {
     this.maxArchiveBytes = options.maxArchiveBytes ?? 128 * 1024 * 1024
     this.maxTotalChunks = options.maxTotalChunks ?? MAX_TOTAL_CHUNKS
+    this.expectedPurpose = options.expectedPurpose
+    this.expectedConnectionId =
+      options.expectedConnectionId === undefined
+        ? undefined
+        : copyConnectionId(options.expectedConnectionId)
+    this.expectedTransferId = options.expectedTransferId
+    this.expectedArchiveSha256 =
+      options.expectedArchiveSha256 === undefined
+        ? undefined
+        : copySha256(options.expectedArchiveSha256, 'expectedArchiveSha256')
+    this.expectedManifestSha256 =
+      options.expectedManifestSha256 === undefined
+        ? undefined
+        : copySha256(options.expectedManifestSha256, 'expectedManifestSha256')
     if (!Number.isSafeInteger(this.maxArchiveBytes) || this.maxArchiveBytes < 0) {
       throw new ProtocolError('maxArchiveBytes must be a non-negative safe integer.', 'INVALID_LIMIT')
     }
@@ -381,6 +463,12 @@ export class TransferAccumulator {
       this.maxTotalChunks > MAX_TOTAL_CHUNKS
     ) {
       throw new ProtocolError('maxTotalChunks is invalid.', 'INVALID_LIMIT')
+    }
+    if (this.expectedPurpose !== undefined) {
+      assertTransferPurpose(this.expectedPurpose)
+    }
+    if (this.expectedTransferId !== undefined) {
+      assertUint32(this.expectedTransferId, 'expectedTransferId')
     }
   }
 
@@ -397,6 +485,7 @@ export class TransferAccumulator {
   }
 
   async ingest(encoded: string): Promise<AccumulatorResult> {
+    const ingestGeneration = this.generation
     let frame: ParsedFrame
     try {
       frame = parseEncodedFrame(encoded)
@@ -421,6 +510,41 @@ export class TransferAccumulator {
       if (expectedChunks !== frame.totalChunks) {
         return this.result('ignored', false, 'Manifest length and chunk count are inconsistent.')
       }
+      if (
+        this.expectedPurpose !== undefined &&
+        manifest.purpose !== this.expectedPurpose
+      ) {
+        return this.result('ignored', false, 'Manifest purpose does not match this receiver.')
+      }
+      if (
+        this.expectedConnectionId &&
+        !bytesEqual(manifest.connectionId, this.expectedConnectionId)
+      ) {
+        return this.result('ignored', false, 'Manifest connection ID does not match this receiver.')
+      }
+      if (
+        this.expectedTransferId !== undefined &&
+        frame.transferId !== this.expectedTransferId
+      ) {
+        return this.result('ignored', false, 'Manifest transfer ID does not match this receiver.')
+      }
+      if (
+        this.expectedArchiveSha256 &&
+        !bytesEqual(manifest.archiveSha256, this.expectedArchiveSha256)
+      ) {
+        return this.result('ignored', false, 'Manifest archive hash does not match this receiver.')
+      }
+      if (
+        this.expectedManifestSha256
+      ) {
+        const manifestSha256 = await sha256(new TextEncoder().encode(encoded))
+        if (ingestGeneration !== this.generation) {
+          return this.result('ignored', false, 'Transfer was reset during manifest verification.')
+        }
+        if (!bytesEqual(manifestSha256, this.expectedManifestSha256)) {
+          return this.result('ignored', false, 'Manifest frame does not match the prepared transfer.')
+        }
+      }
     } else if (this.transferId === undefined) {
       // Waiting for a repeated manifest bounds memory and prevents an arbitrary
       // data QR or damaged header from pinning the receiver to a bogus session.
@@ -431,25 +555,16 @@ export class TransferAccumulator {
       this.transferId = frame.transferId
       this.totalChunks = frame.totalChunks
     } else if (frame.transferId !== this.transferId) {
-      if (
-        frame.type === FrameType.Manifest &&
-        this.chunks.size === 0 &&
-        this.manifestPayload &&
-        bytesEqual(this.manifestPayload, frame.payload)
-      ) {
-        // Recover from a transfer-ID bit error in the unchecked v1 header when
-        // the repeated, CRC-protected manifest payload is otherwise identical.
-        this.transferId = frame.transferId
-        this.totalChunks = frame.totalChunks
-      } else {
-        return this.result('ignored', false, 'Frame belongs to a different transfer.')
-      }
+      return this.result('ignored', false, 'Frame belongs to a different transfer.')
     } else if (frame.totalChunks !== this.totalChunks) {
       return this.result('ignored', false, 'Frame conflicts with the transfer chunk count.')
     }
 
     if (this.completedArchive) {
-      return this.result('complete', true, undefined, false, this.completedArchive)
+      // Completion bytes are deliberately delivered once. Camera queues can
+      // contain several frames by the time scanning is paused; cloning the
+      // entire archive for every trailing frame creates avoidable memory spikes.
+      return this.result('complete', true, undefined, true)
     }
 
     let duplicate = false
@@ -468,7 +583,22 @@ export class TransferAccumulator {
       }
       const existing = this.chunks.get(frame.chunkIndex)
       if (existing) {
-        duplicate = true
+        if (bytesEqual(existing, frame.payload)) {
+          duplicate = true
+        } else {
+          // Both payloads have a valid QRF2 checksum, so neither candidate is
+          // privileged. Remove the ambiguous slot and wait for a later repeat.
+          this.chunks.delete(frame.chunkIndex)
+          this.receivedBytes -= existing.length
+          return this.result(
+            'receiving',
+            true,
+            'Conflicting payloads were received for one chunk; that slot will be reacquired.',
+            false,
+            undefined,
+            true,
+          )
+        }
       } else {
         const stored = frame.payload.slice()
         if (
@@ -494,6 +624,9 @@ export class TransferAccumulator {
       return this.result('ignored', false, 'Transfer was reset during verification.')
     }
     if (verifiedArchive) {
+      if (this.completedArchive) {
+        return this.result('complete', true, undefined, true)
+      }
       this.completedArchive = verifiedArchive
       this.verificationPromise = undefined
       return this.result('complete', true, undefined, duplicate, verifiedArchive)
@@ -503,9 +636,9 @@ export class TransferAccumulator {
     }
     this.verificationPromise = undefined
 
-    // A CRC-valid frame can still have a corrupted header because the v1 wire
-    // format checksums only its payload. Clear the pass so later loop repeats
-    // can replace a payload that landed under the wrong index.
+    // The QRF2 checksum rejects accidental frame corruption. A deliberately
+    // forged but internally consistent payload can still fail the archive hash,
+    // so retain the full SHA-256 gate as the final authority.
     this.chunks.clear()
     this.receivedBytes = 0
     return this.result(
@@ -555,6 +688,7 @@ export class TransferAccumulator {
     error?: string,
     duplicate?: boolean,
     archiveBytes?: Uint8Array,
+    conflict?: boolean,
   ): AccumulatorResult {
     const percent =
       this.totalChunks === 0
@@ -567,21 +701,51 @@ export class TransferAccumulator {
       status,
       transferId: this.transferId,
       rootName: this.manifest?.rootName,
+      purpose: this.manifest?.purpose,
+      connectionId: this.manifest?.connectionId.slice(),
+      expectedArchiveBytes: this.manifest?.archiveLength,
       receivedChunks: this.chunks.size,
       totalChunks: this.totalChunks,
       receivedBytes: this.receivedBytes,
       percent,
       duplicate,
+      conflict,
       error,
       archiveBytes: archiveBytes?.slice(),
     }
   }
 }
 
+export function createConnectionId(): Uint8Array {
+  const connectionId = new Uint8Array(CONNECTION_ID_SIZE)
+  globalThis.crypto.getRandomValues(connectionId)
+  return connectionId
+}
+
 function randomUint32(): number {
   const value = new Uint32Array(1)
   globalThis.crypto.getRandomValues(value)
   return value[0]
+}
+
+function copyConnectionId(connectionId: Uint8Array): Uint8Array {
+  if (
+    !(connectionId instanceof Uint8Array) ||
+    connectionId.length !== CONNECTION_ID_SIZE
+  ) {
+    throw new ProtocolError(
+      `connectionId must contain exactly ${CONNECTION_ID_SIZE} bytes.`,
+      'INVALID_CONNECTION_ID',
+    )
+  }
+  return connectionId.slice()
+}
+
+function copySha256(value: Uint8Array, field: string): Uint8Array {
+  if (!(value instanceof Uint8Array) || value.length !== SHA256_SIZE) {
+    throw new ProtocolError(`${field} must contain exactly ${SHA256_SIZE} bytes.`, 'INVALID_SHA256')
+  }
+  return value.slice()
 }
 
 function encodeRootName(rootName: string): Uint8Array {
@@ -614,6 +778,15 @@ function validateRootName(rootName: string): void {
 function assertFrameType(type: number): asserts type is FrameType {
   if (type !== FrameType.Manifest && type !== FrameType.Data) {
     throw new ProtocolError(`Unsupported frame type ${type}.`, 'INVALID_FRAME_TYPE')
+  }
+}
+
+function assertTransferPurpose(purpose: number): asserts purpose is TransferPurpose {
+  if (
+    purpose !== TransferPurpose.ConnectionTest &&
+    purpose !== TransferPurpose.Files
+  ) {
+    throw new ProtocolError(`Unsupported transfer purpose ${purpose}.`, 'INVALID_PURPOSE')
   }
 }
 

@@ -9,11 +9,13 @@ import {
 import {
   FrameType,
   TransferAccumulator,
+  TransferPurpose,
   parseEncodedFrame,
   prepareTransfer,
 } from "../src/lib/protocol";
 
 const encoder = new TextEncoder();
+const connectionId = Uint8Array.from({ length: 16 }, (_, index) => 0xa0 + index);
 
 describe("complete optical transfer pipeline", () => {
   it("recovers a byte-exact tree across missed, repeated, and out-of-order frames", async () => {
@@ -50,10 +52,16 @@ describe("complete optical transfer pipeline", () => {
       chunkSize: 300,
       transferId: 0x12345678,
       createdAtMs: 1_725_000_000_000,
+      purpose: TransferPurpose.Files,
+      connectionId,
     });
     const receiver = new TransferAccumulator({
       maxArchiveBytes: 32 * 1024 * 1024,
       maxTotalChunks: 200_000,
+      expectedPurpose: TransferPurpose.Files,
+      expectedConnectionId: connectionId,
+      expectedTransferId: transfer.transferId,
+      expectedArchiveSha256: transfer.manifest.archiveSha256,
     });
 
     // Start partway through a pass, miss every fifth data QR, and include

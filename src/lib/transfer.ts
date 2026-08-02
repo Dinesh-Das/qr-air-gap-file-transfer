@@ -1,6 +1,7 @@
 import {
   prepareTransfer as prepareProtocolTransfer,
   type PreparedTransfer as ProtocolPreparedTransfer,
+  type TransferPurpose,
 } from "./protocol";
 
 export interface PreparedLoopFrame {
@@ -25,10 +26,30 @@ export async function prepareTransfer(
   options: {
     rootName: string;
     chunkSize: number;
+    purpose?: TransferPurpose;
+    connectionId?: Uint8Array;
+    transferId?: number;
+    createdAtMs?: number;
+    manifestInterval?: number;
   },
 ): Promise<PreparedTransfer> {
   const stableArchive = Uint8Array.from(archiveBytes);
   const prepared = await prepareProtocolTransfer(stableArchive, options);
+  return decorateStablePreparedTransfer(stableArchive, prepared);
+}
+
+/** Adds sender-animation metadata to an already prepared protocol transfer. */
+export function decoratePreparedTransfer(
+  archiveBytes: Uint8Array,
+  prepared: ProtocolPreparedTransfer,
+): PreparedTransfer {
+  return decorateStablePreparedTransfer(Uint8Array.from(archiveBytes), prepared);
+}
+
+function decorateStablePreparedTransfer(
+  stableArchive: Uint8Array,
+  prepared: ProtocolPreparedTransfer,
+): PreparedTransfer {
   const dataIndexByFrame = new Map(
     prepared.dataFrames.map((encoded, index) => [encoded, index]),
   );

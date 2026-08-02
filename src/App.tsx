@@ -17,7 +17,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="site-header">
-        <a className="brand" href="#" aria-label="AirGap QR home">
+        <div className="brand" aria-label="AirGap QR">
           <span className="brand-mark" aria-hidden="true">
             <QrCode size={22} strokeWidth={2.4} />
           </span>
@@ -25,13 +25,13 @@ export default function App() {
             <strong>AirGap</strong>
             <span>QR</span>
           </span>
-        </a>
+        </div>
 
-        <div className="mode-switch" role="tablist" aria-label="Transfer mode">
+        <div className="mode-switch" role="group" aria-label="Transfer mode">
           <button
             type="button"
-            role="tab"
-            aria-selected={mode === "sender"}
+            aria-pressed={mode === "sender"}
+            aria-controls="sender-workspace"
             className={mode === "sender" ? "active" : ""}
             onClick={() => setMode("sender")}
           >
@@ -40,8 +40,8 @@ export default function App() {
           </button>
           <button
             type="button"
-            role="tab"
-            aria-selected={mode === "receiver"}
+            aria-pressed={mode === "receiver"}
+            aria-controls="receiver-workspace"
             className={mode === "receiver" ? "active" : ""}
             onClick={() => setMode("receiver")}
           >
@@ -57,7 +57,12 @@ export default function App() {
       </header>
 
       <main>
-        {mode === "sender" ? <Sender /> : <Receiver />}
+        <div id="sender-workspace" hidden={mode !== "sender"}>
+          <Sender active={mode === "sender"} />
+        </div>
+        <div id="receiver-workspace" hidden={mode !== "receiver"}>
+          <Receiver active={mode === "receiver"} />
+        </div>
       </main>
 
       <footer className="site-footer">
@@ -67,7 +72,7 @@ export default function App() {
         </p>
         <span className="footer-protocol">
           <Fingerprint size={17} />
-          SHA-256 verified
+          SHA-256 integrity checks
         </span>
       </footer>
     </div>

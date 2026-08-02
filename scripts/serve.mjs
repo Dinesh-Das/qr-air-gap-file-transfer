@@ -41,7 +41,22 @@ const contentTypes = {
   ".wasm": "application/wasm",
 };
 
+const securityHeaders = {
+  "Cache-Control": "no-store",
+  "Cross-Origin-Resource-Policy": "same-origin",
+  "Cross-Origin-Opener-Policy": "same-origin",
+  "Content-Security-Policy":
+    "default-src 'self'; connect-src 'none'; img-src 'self' data: blob:; media-src 'self' blob:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+  "Permissions-Policy": "camera=(self), microphone=(), geolocation=()",
+  "Referrer-Policy": "no-referrer",
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "DENY",
+};
+
 createServer((request, response) => {
+  for (const [name, value] of Object.entries(securityHeaders)) {
+    response.setHeader(name, value);
+  }
   if (request.method !== "GET" && request.method !== "HEAD") {
     response.writeHead(405, { Allow: "GET, HEAD" });
     response.end("Method not allowed");
@@ -72,13 +87,25 @@ createServer((request, response) => {
     return;
   }
 
-  if (!existsSync(candidate) || !statSync(candidate).isFile()) {
-    response.writeHead(404);
-    response.end("Not found");
+  let realCandidate;
+  try {
+    if (!statSync(candidate).isFile()) {
+      response.writeHead(404);
+      response.end("Not found");
+      return;
+    }
+    realCandidate = realpathSync(candidate);
+  } catch (error) {
+    const code = error && typeof error === "object" && "code" in error
+      ? error.code
+      : undefined;
+    response.writeHead(code === "ENOENT" || code === "ENOTDIR" ? 404 : 500);
+    response.end(code === "ENOENT" || code === "ENOTDIR"
+      ? "Not found"
+      : "Unable to resolve asset");
     return;
   }
 
-  const realCandidate = realpathSync(candidate);
   const realCandidateRelative = relative(realDistributionDirectory, realCandidate);
   if (
     realCandidateRelative === ".." ||
@@ -96,13 +123,6 @@ createServer((request, response) => {
 
   response.writeHead(200, {
     "Content-Type": contentType,
-    "Cache-Control": "no-store",
-    "Cross-Origin-Opener-Policy": "same-origin",
-    "Content-Security-Policy":
-      "default-src 'self'; connect-src 'none'; img-src 'self' data: blob:; media-src 'self' blob:; script-src 'self'; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:; base-uri 'none'; form-action 'none'",
-    "Permissions-Policy": "camera=(self), microphone=(), geolocation=()",
-    "Referrer-Policy": "no-referrer",
-    "X-Content-Type-Options": "nosniff",
   });
   if (request.method === "HEAD") {
     response.end();

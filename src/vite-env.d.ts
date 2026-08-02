@@ -13,7 +13,10 @@ interface FileSystemHandle {
 interface FileSystemFileHandle extends FileSystemHandle {
   readonly kind: "file";
   getFile(): Promise<File>;
-  createWritable(): Promise<FileSystemWritableFileStream>;
+  createWritable(options?: {
+    keepExistingData?: boolean;
+    mode?: "exclusive" | "siloed";
+  }): Promise<FileSystemWritableFileStream>;
 }
 
 interface FileSystemDirectoryHandle extends FileSystemHandle {
@@ -28,11 +31,13 @@ interface FileSystemDirectoryHandle extends FileSystemHandle {
     name: string,
     options?: { create?: boolean },
   ): Promise<FileSystemFileHandle>;
+  removeEntry(name: string, options?: { recursive?: boolean }): Promise<void>;
 }
 
 interface FileSystemWritableFileStream extends WritableStream {
   write(data: BufferSource | Blob | string): Promise<void>;
   close(): Promise<void>;
+  abort(reason?: unknown): Promise<void>;
 }
 
 interface Window {

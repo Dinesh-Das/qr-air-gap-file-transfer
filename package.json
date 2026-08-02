@@ -13,7 +13,8 @@
     "serve": "node scripts/serve.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc -b --pretty false"
+    "typecheck": "tsc -b --pretty false",
+    "check": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
     "@digitalbazaar/base45": "^1.0.0",
