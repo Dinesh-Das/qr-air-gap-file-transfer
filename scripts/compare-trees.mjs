@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
-import { readdir, readFile, stat } from "node:fs/promises";
+import { createReadStream } from "node:fs";
+import { readdir, stat } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
 
 const [sourceArgument, destinationArgument] = process.argv.slice(2);
@@ -28,13 +29,12 @@ async function inventory(root) {
         result.set(path, { type: "directory" });
         await walk(absolutePath);
       } else if (entry.isFile()) {
-        const data = await readFile(absolutePath);
         const path = relative(root, absolutePath).split(sep).join("/");
         const info = await stat(absolutePath);
         result.set(path, {
           type: "file",
           bytes: info.size,
-          sha256: createHash("sha256").update(data).digest("hex"),
+          sha256: await hashFile(absolutePath),
         });
       }
     }
@@ -42,6 +42,12 @@ async function inventory(root) {
 
   await walk(root);
   return result;
+}
+
+async function hashFile(path) {
+  const hash = createHash("sha256");
+  for await (const chunk of createReadStream(path)) hash.update(chunk);
+  return hash.digest("hex");
 }
 
 const [source, destination] = await Promise.all([
