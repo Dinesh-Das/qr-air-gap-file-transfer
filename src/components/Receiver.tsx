@@ -114,6 +114,11 @@ interface RateSample {
   bytes: number;
 }
 
+interface CameraChoice {
+  id: string;
+  label: string;
+}
+
 const EMPTY_PROGRESS: ProgressState = {
   receivedChunks: 0,
   totalChunks: 0,
@@ -197,9 +202,12 @@ export function Receiver({ active = true }: { active?: boolean }) {
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [metricsNow, setMetricsNow] = useState(Date.now());
+  const [cameras, setCameras] = useState<CameraChoice[]>([]);
+  const [selectedCamera, setSelectedCamera] = useState("environment");
   const videoRef = useRef<HTMLVideoElement>(null);
   const scanOverlayRef = useRef<HTMLDivElement>(null);
   const scannerRef = useRef<QrScanner | null>(null);
+  const selectedCameraRef = useRef(selectedCamera);
   const accumulatorRef = useRef(createProbeAccumulator());
   const ingestQueueRef = useRef<Promise<void>>(Promise.resolve());
   const persistenceQueueRef = useRef<Promise<void>>(Promise.resolve());
@@ -218,6 +226,23 @@ export function Receiver({ active = true }: { active?: boolean }) {
   const pendingCheckpointWritesRef = useRef(0);
   const pendingCheckpointFramesRef = useRef(new Map<string, number>());
   const failedCheckpointFramesRef = useRef(new Set<string>());
+
+  useEffect(() => {
+    selectedCameraRef.current = selectedCamera;
+  }, [selectedCamera]);
+
+  useEffect(() => {
+    if (!navigator.mediaDevices) return;
+    const refresh = () => {
+      void QrScanner.listCameras(false)
+        .then((next) => setCameras(next))
+        .catch(() => undefined);
+    };
+    refresh();
+    navigator.mediaDevices.addEventListener?.("devicechange", refresh);
+    return () =>
+      navigator.mediaDevices.removeEventListener?.("devicechange", refresh);
+  }, []);
 
   activeRef.current = active;
   connectionRef.current = connection;
@@ -854,7 +879,7 @@ export function Receiver({ active = true }: { active?: boolean }) {
           video,
           (result) => queueDecodedFrame(result.data, generation),
           {
-            preferredCamera: "environment",
+            preferredCamera: selectedCameraRef.current,
             maxScansPerSecond: 14,
             returnDetailedScanResult: true,
             highlightScanRegion: true,
@@ -865,6 +890,8 @@ export function Receiver({ active = true }: { active?: boolean }) {
         createdScanner = scanner;
         scannerRef.current = scanner;
         await scanner.start();
+        const nextCameras = await QrScanner.listCameras(false);
+        setCameras(nextCameras);
         if (!activeRef.current || generation !== receiverGenerationRef.current) {
           await stopScannerInstance(scanner, true);
           if (generation === receiverGenerationRef.current) setPhase("paused");
@@ -1397,6 +1424,33 @@ export function Receiver({ active = true }: { active?: boolean }) {
             )}
             {scanning && <div className="camera-badge">{phase === "testing" ? "Dummy test only" : "Files scanning"}</div>}
             <div ref={scanOverlayRef} className={`scan-overlay ${scanning ? "visible" : ""}`} aria-hidden="true"><div className="scan-line" /></div>
+          </div>
+
+          <div className="field camera-picker">
+            <label htmlFor="receiver-camera">Camera</label>
+            <select
+              id="receiver-camera"
+              value={selectedCamera}
+              disabled={phase === "starting" || phase === "finalizing"}
+              onChange={(event) => {
+                const camera = event.target.value;
+                setSelectedCamera(camera);
+                selectedCameraRef.current = camera;
+                if (scannerRef.current) {
+                  void scannerRef.current.setCamera(camera).catch((caught) =>
+                    setError(cameraErrorMessage(caught)),
+                  );
+                }
+              }}
+            >
+              <option value="environment">Rear / environment camera</option>
+              <option value="user">Front / user camera</option>
+              {cameras.map((camera) => (
+                <option key={camera.id} value={camera.id}>
+                  {camera.label}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="playback-controls">

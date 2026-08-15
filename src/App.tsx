@@ -5,14 +5,19 @@ import {
   Fingerprint,
   QrCode,
   ShieldCheck,
+  HardDrive,
 } from "lucide-react";
 import { Receiver } from "./components/Receiver";
 import { Sender } from "./components/Sender";
+import { LargeReceiver } from "./components/LargeReceiver";
+import { LargeSender } from "./components/LargeSender";
 
 type Mode = "sender" | "receiver";
+type TransferEngine = "large" | "classic";
 
 export default function App() {
   const [mode, setMode] = useState<Mode>("sender");
+  const [engine, setEngine] = useState<TransferEngine>("large");
 
   return (
     <div className="app-shell">
@@ -57,11 +62,15 @@ export default function App() {
       </header>
 
       <main>
+        <div className="engine-switch" role="group" aria-label="Transfer engine">
+          <button type="button" className={engine === "large" ? "active" : ""} aria-pressed={engine === "large"} onClick={() => setEngine("large")}><HardDrive size={16} />Large QRF3</button>
+          <button type="button" className={engine === "classic" ? "active" : ""} aria-pressed={engine === "classic"} onClick={() => setEngine("classic")}><QrCode size={16} />Classic QRF2</button>
+        </div>
         <div id="sender-workspace" hidden={mode !== "sender"}>
-          <Sender active={mode === "sender"} />
+          {engine === "large" ? <LargeSender active={mode === "sender"} /> : <Sender active={mode === "sender"} />}
         </div>
         <div id="receiver-workspace" hidden={mode !== "receiver"}>
-          <Receiver active={mode === "receiver"} />
+          {engine === "large" ? <LargeReceiver active={mode === "receiver"} /> : <Receiver active={mode === "receiver"} />}
         </div>
       </main>
 
