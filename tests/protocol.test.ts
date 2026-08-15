@@ -6,6 +6,7 @@ import {
   TransferPurpose,
   TransferAccumulator,
   crc32,
+  createTransferPassFrames,
   encodeFrame,
   encodeManifest,
   parseEncodedFrame,
@@ -59,6 +60,36 @@ describe('QRF2 protocol', () => {
     expect(prepared.loopFrames).toHaveLength(15)
     expect(parseEncodedFrame(prepared.loopFrames[0]).type).toBe(FrameType.Manifest)
     expect(parseEncodedFrame(prepared.loopFrames[11]).type).toBe(FrameType.Manifest)
+  })
+
+  it('changes QRF2 data order across passes while keeping complete valid framing', async () => {
+    const prepared = await prepareTransfer(
+      Uint8Array.from({ length: 230 }, (_, index) => index),
+      {
+        rootName: 'rotating',
+        chunkSize: 10,
+        transferId: 0x12345678,
+        createdAtMs: 11,
+        manifestInterval: 7,
+      },
+    )
+    const dataOrder = (pass: number) =>
+      createTransferPassFrames(prepared, pass)
+        .map(parseEncodedFrame)
+        .filter((frame) => frame.type === FrameType.Data)
+        .map((frame) => frame.chunkIndex)
+    const first = dataOrder(0)
+    const second = dataOrder(1)
+    const periodicallyLost = (order: number[]) =>
+      new Set(order.filter((_, position) => position % 5 === 2))
+
+    expect(new Set(first)).toEqual(new Set(prepared.dataFrames.map((_, index) => index)))
+    expect(new Set(second)).toEqual(new Set(first))
+    expect(second).not.toEqual(first)
+    expect(periodicallyLost(second)).not.toEqual(periodicallyLost(first))
+    expect(createTransferPassFrames(prepared, 1).filter(
+      (encoded) => parseEncodedFrame(encoded).type === FrameType.Manifest,
+    )).toHaveLength(4)
   })
 
   it('deduplicates and reconstructs byte-exact data received out of order', async () => {

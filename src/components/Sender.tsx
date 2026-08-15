@@ -45,6 +45,7 @@ import {
   TransferPurpose,
 } from "../lib/protocol";
 import {
+  createPreparedTransferPassFrames,
   decoratePreparedTransfer,
   prepareTransfer,
   type PreparedLoopFrame,
@@ -154,7 +155,16 @@ export function Sender({ active = true }: { active?: boolean }) {
     settings.chunkSize,
     settings.framesPerSecond,
   );
-  const activeFrame = prepared?.loopFrames[framePosition];
+  const activeLoopFrames = useMemo(
+    () =>
+      prepared
+        ? loopCount === 0
+          ? prepared.loopFrames
+          : createPreparedTransferPassFrames(prepared, loopCount)
+        : [],
+    [loopCount, prepared],
+  );
+  const activeFrame = activeLoopFrames[framePosition];
   const streamIsFiles = prepared?.purpose === TransferPurpose.Files;
   const connectionHex = connectionId ? bytesToHex(connectionId) : "";
 
@@ -717,7 +727,7 @@ export function Sender({ active = true }: { active?: boolean }) {
       !playing ||
       paused ||
       !prepared ||
-      prepared.loopFrames.length === 0 ||
+      activeLoopFrames.length === 0 ||
       (prepared.purpose === TransferPurpose.Files &&
         connectionPhase !== "verified")
     ) {
@@ -728,7 +738,7 @@ export function Sender({ active = true }: { active?: boolean }) {
     let timeoutId: number | undefined;
 
     const drawAndSchedule = async () => {
-      const frame = prepared.loopFrames[framePosition];
+      const frame = activeLoopFrames[framePosition];
       const canvas = canvasRef.current;
       if (!frame || !canvas || cancelled || generation !== renderGenerationRef.current) {
         return;
@@ -762,14 +772,12 @@ export function Sender({ active = true }: { active?: boolean }) {
 
       timeoutId = window.setTimeout(() => {
         if (cancelled || generation !== renderGenerationRef.current) return;
-        setFramePosition((current) => {
-          const next = current + 1;
-          if (next >= prepared.loopFrames.length) {
-            setLoopCount((count) => count + 1);
-            return 0;
-          }
-          return next;
-        });
+        if (framePosition + 1 >= activeLoopFrames.length) {
+          setFramePosition(0);
+          setLoopCount((count) => count + 1);
+        } else {
+          setFramePosition((current) => current + 1);
+        }
       }, 1000 / settings.framesPerSecond);
     };
 
@@ -780,6 +788,7 @@ export function Sender({ active = true }: { active?: boolean }) {
     };
   }, [
     framePosition,
+    activeLoopFrames,
     connectionPhase,
     paused,
     playing,
@@ -816,12 +825,12 @@ export function Sender({ active = true }: { active?: boolean }) {
     : 0;
   const nominalPayloadRate = prepared
     ? prepared.archiveBytes.length /
-      (prepared.loopFrames.length / settings.framesPerSecond)
+      (activeLoopFrames.length / settings.framesPerSecond)
     : 0;
   const remainingFrames = prepared
     ? Math.max(
         0,
-        prepared.loopFrames.length - framePosition - (hasRenderedFrame ? 1 : 0),
+        activeLoopFrames.length - framePosition - (hasRenderedFrame ? 1 : 0),
       )
     : 0;
   const effectiveRenderedFps =
@@ -1034,8 +1043,8 @@ export function Sender({ active = true }: { active?: boolean }) {
                   <span role="status" aria-live="polite" className={`live-dot ${paused ? "paused" : playing ? "" : "stopped"}`}>{playing ? (paused ? "Paused" : streamIsFiles ? "Files broadcasting" : "Dummy test only") : "Stopped"}</span>
                   <span aria-hidden="true">{hasRenderedFrame ? describeFrame(activeFrame) : "Ready"}</span>
                 </div>
-                <div className="progress-track" role="progressbar" aria-label="Current broadcast pass" aria-valuemin={0} aria-valuemax={prepared.loopFrames.length} aria-valuenow={hasRenderedFrame ? framePosition + 1 : 0}>
-                  <div className="progress-fill" style={{ width: `${hasRenderedFrame ? ((framePosition + 1) / prepared.loopFrames.length) * 100 : 0}%` }} />
+                <div className="progress-track" role="progressbar" aria-label="Current broadcast pass" aria-valuemin={0} aria-valuemax={activeLoopFrames.length} aria-valuenow={hasRenderedFrame ? framePosition + 1 : 0}>
+                  <div className="progress-fill" style={{ width: `${hasRenderedFrame ? ((framePosition + 1) / activeLoopFrames.length) * 100 : 0}%` }} />
                 </div>
                 <div className="metric-grid metric-grid-four">
                   <div className="metric"><span>Nominal payload</span><strong>{formatRate(nominalPayloadRate)}</strong></div>

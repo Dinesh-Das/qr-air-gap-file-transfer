@@ -1,4 +1,5 @@
 import { decode as decodeBase45, encode as encodeBase45 } from '@digitalbazaar/base45'
+import { createOpticalPassSchedule } from './optical-schedule'
 
 export const FRAME_HEADER_SIZE = 23
 export const DEFAULT_CHUNK_SIZE = 700
@@ -73,8 +74,10 @@ export interface PreparedTransfer {
   manifest: TransferManifest
   manifestFrame: string
   dataFrames: string[]
-  /** One complete sender pass. Repeat this sequence until the receiver finishes. */
+  /** Initial sender pass. Build later passes with createTransferPassFrames. */
   loopFrames: string[]
+  /** Number of data frames between repeated manifest frames. */
+  manifestInterval: number
   totalChunks: number
   purpose: TransferPurpose
   connectionId: Uint8Array
@@ -399,13 +402,10 @@ export async function prepareTransfer(
     )
   }
 
-  const loopFrames = [manifestFrame]
-  for (let index = 0; index < dataFrames.length; index += 1) {
-    loopFrames.push(dataFrames[index])
-    if ((index + 1) % manifestInterval === 0 && index + 1 < dataFrames.length) {
-      loopFrames.push(manifestFrame)
-    }
-  }
+  const loopFrames = createTransferPassFrames(
+    { transferId, manifestFrame, dataFrames, totalChunks, manifestInterval },
+    0,
+  )
 
   return {
     transferId,
@@ -413,10 +413,54 @@ export async function prepareTransfer(
     manifestFrame,
     dataFrames,
     loopFrames,
+    manifestInterval,
     totalChunks,
     purpose,
     connectionId: connectionId.slice(),
   }
+}
+
+/**
+ * Builds one complete, wire-compatible sender pass. Later passes permute only
+ * the order of existing Data frames so periodic camera loss does not keep
+ * erasing the same chunk indices.
+ */
+export function createTransferPassFrames(
+  transfer: Pick<
+    PreparedTransfer,
+    'transferId' | 'manifestFrame' | 'dataFrames' | 'totalChunks' | 'manifestInterval'
+  >,
+  pass: number,
+): string[] {
+  if (!Number.isSafeInteger(pass) || pass < 0) {
+    throw new ProtocolError('pass must be a non-negative safe integer.', 'INVALID_PASS')
+  }
+  if (transfer.totalChunks !== transfer.dataFrames.length) {
+    throw new ProtocolError('Prepared transfer data-frame count is inconsistent.', 'INVALID_TRANSFER')
+  }
+  if (!Number.isSafeInteger(transfer.manifestInterval) || transfer.manifestInterval < 1) {
+    throw new ProtocolError('manifestInterval must be a positive integer.', 'INVALID_MANIFEST_INTERVAL')
+  }
+
+  const frames = [transfer.manifestFrame]
+  if (transfer.totalChunks === 0) return frames
+  const schedule = createOpticalPassSchedule({
+    totalChunks: transfer.totalChunks,
+    pass,
+    seed: transfer.transferId,
+  })
+  let position = 0
+  for (const chunkIndex of schedule) {
+    frames.push(transfer.dataFrames[chunkIndex])
+    position += 1
+    if (
+      position % transfer.manifestInterval === 0 &&
+      position < transfer.totalChunks
+    ) {
+      frames.push(transfer.manifestFrame)
+    }
+  }
+  return frames
 }
 
 export class TransferAccumulator {
