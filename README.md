@@ -1,10 +1,13 @@
 # AirGap QR
 
-AirGap QR is a local-only web application that moves a folder between two
-computers through an animated sequence of QR codes. Large QRF3 mode streams
-file slices directly from the sender's disk and received blocks directly into
-the receiver's private browser filesystem; Classic QRF2 remains available for
-small, ZIP-compatible transfers.
+AirGap QR is a local-only web application with two transfer paths. QR transfer
+moves the complete folder through animated QR codes. Offline WebRTC exchanges
+only connection details through QR, then moves encrypted blocks directly over
+an existing local Wi-Fi network or hotspot without a signaling server, STUN,
+TURN, cloud upload, or internet service. Large QRF3 streams file slices directly
+from the sender's disk and received blocks directly into the receiver's private
+browser filesystem; Classic QRF2 remains available for small, ZIP-compatible
+transfers.
 
 The app never treats “all frames seen” as success. Completion requires:
 
@@ -44,10 +47,51 @@ node scripts/serve.mjs
 
 The runtime needs Node.js but does not need `node_modules` or registry access.
 All browser assets are included in `dist`; after loading from loopback, the app
-makes no external network requests. Open `http://127.0.0.1:4173`, choose
-**Sender** on the source computer, and **Receiver** on the destination computer.
+makes no internet requests. Open `http://127.0.0.1:4173` on each device, choose
+the same transfer method, then choose **Sender** on the source computer and
+**Receiver** on the destination computer.
 
-## Transfer workflow
+## Offline WebRTC workflow
+
+Offline WebRTC is the practical path for large folders when both authorized
+devices may join the same offline local network. It is not an air gap. The app
+uses `RTCPeerConnection({ iceServers: [] })`, so candidates are limited to the
+local environment; globally routable and non-host candidates are removed before
+the QR handshake is displayed. There is no signaling or relay server. The
+reliable ordered data channel is encrypted by WebRTC.
+
+1. Connect both devices to the same authorized Wi-Fi network or to a hotspot.
+   Internet access is not required. Local peer isolation must be disabled.
+2. Open the app locally on both devices and choose **WebRTC file transfer**.
+3. On the sender, select the source folder and prepare it. The app hashes the
+   same bounded-memory virtual tree used by QRF3 and displays an animated offer
+   QR.
+4. On the receiver, scan every offer frame. It displays an animated answer QR;
+   scan that answer on the sender.
+5. Compare the six-digit authentication code on both displays. Confirm only if
+   all digits match. File data stays locked until both devices confirm.
+6. The receiver opens durable OPFS storage and reports already received block
+   ranges. The sender transmits only missing 60 KiB blocks, applies data-channel
+   backpressure, and counts a block only after the receiver durably writes and
+   acknowledges it.
+7. If the connection is interrupted, reconnect and select the same source
+   folder. Its deterministic manifest identity reopens the partial receive and
+   resumes missing blocks without re-sending completed ones.
+8. Completion requires a SHA-256 match for the complete virtual stream. The
+   receiver then reconstructs the folder, verifies each destination file, and
+   reclaims its temporary browser payload after a successful save.
+
+While a handshake or transfer is active, the app locks its method and
+sender/receiver switches to prevent an accidental click from closing the peer.
+Use the explicit stop button if you need to end or reconnect a transfer. Keep
+both devices awake and the browser tabs open until verification completes.
+
+Browser or operating-system firewalls can block local peer traffic. WebRTC will
+not work across client-isolated guest Wi-Fi, unrelated subnets without local
+routing, or policies that disable host candidates. In those cases, use the
+existing QR transfer path or an organization-approved transfer method.
+
+## QR transfer workflow
 
 Large QRF3 is the default. Use a current Chromium browser on both sides, because
 large mode requires the directory picker and Origin Private File System. The
@@ -91,6 +135,12 @@ path and byte, but browsers do not expose empty directories through that API.
 Large QRF3 always uses the Chromium directory picker.
 
 ## Practical limits
+
+WebRTC throughput depends on the devices, browser, storage, and local network.
+Its 60 KiB binary blocks and bounded 96-block acknowledgement window are meant
+for gigabyte-scale transfer without retaining the source or destination in
+JavaScript memory. The receiver's OPFS quota must cover the virtual stream until
+the verified destination write completes.
 
 Large QRF3 is bounded-memory but the optical channel is still slow. At the
 default 700-byte payload and 6 frames per second, one GiB needs roughly 71 hours
