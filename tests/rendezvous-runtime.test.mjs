@@ -6,6 +6,8 @@ import {
   createDiscoveryProof,
   createPairingCode,
   createRendezvousRuntime,
+  unicastDiscoveryAddresses,
+  unicastDiscoveryAddressesFromInterfaces,
 } from "../scripts/rendezvous.mjs";
 
 const sessionId = "0123456789abcdef0123456789abcdef";
@@ -56,6 +58,31 @@ describe("LAN rendezvous room registry", () => {
   });
 
 
+
+  it("builds a bounded unicast scan for the preferred private LAN", () => {
+    const targets = unicastDiscoveryAddressesFromInterfaces({
+      "vEthernet (WSL)": [{ family: "IPv4", internal: false, address: "172.28.16.1" }],
+      Ethernet: [{ family: "IPv4", internal: false, address: "10.0.0.5" }],
+      "Wi-Fi": [{ family: "IPv4", internal: false, address: "192.168.1.10" }],
+      Public: [{ family: "IPv4", internal: false, address: "203.0.113.5" }],
+    });
+
+    expect(targets).toHaveLength(253);
+    expect(targets).toContain("192.168.1.1");
+    expect(targets).toContain("192.168.1.254");
+    expect(targets).not.toContain("192.168.1.10");
+    expect(targets.some((address) => address.startsWith("172.28.16."))).toBe(false);
+    expect(targets.some((address) => address.startsWith("10.0.0."))).toBe(false);
+    expect(targets.some((address) => address.startsWith("203.0.113."))).toBe(false);
+  });
+
+  it("keeps runtime-derived unicast discovery targets private and bounded", () => {
+    const targets = unicastDiscoveryAddresses();
+    expect(new Set(targets).size).toBe(targets.length);
+    expect(targets.length).toBeLessThanOrEqual(254);
+    for (const address of targets) expect(address).toMatch(/^\d{1,3}(?:\.\d{1,3}){3}$/);
+  });
+
   it("pairs through the same local runtime without relying on LAN broadcast", async () => {
     const signalPort = await freeUdpPort();
     const runtime = createRendezvousRuntime({ signalPort, discoveryTimeoutMs: 100 });
@@ -78,6 +105,33 @@ describe("LAN rendezvous room registry", () => {
       await postJson(`${baseUrl}/joins/${joined.joinId}/answer`, { sessionId, sdp: answerSdp });
       const status = await postJson(`${baseUrl}/rooms/${created.roomId}`, { ownerToken: created.ownerToken });
       expect(status).toEqual({ status: "answered", sessionId, sdp: answerSdp });
+    } finally {
+      await runtime.stop();
+      await new Promise((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
+    }
+  });
+
+  it("returns 404 when no sender can be discovered", async () => {
+    const signalPort = await freeUdpPort();
+    const runtime = createRendezvousRuntime({ signalPort, discoveryTimeoutMs: 20 });
+    const server = createServer(async (request, response) => {
+      if (await runtime.handleHttp(request, response)) return;
+      response.writeHead(404);
+      response.end();
+    });
+    await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+    const address = server.address();
+    if (!address || typeof address === "string") throw new Error("Test HTTP server did not start.");
+
+    try {
+      const response = await fetch(`http://127.0.0.1:${address.port}/api/rendezvous/join`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code: "123456" }),
+      });
+      const body = await response.json();
+      expect(response.status).toBe(404);
+      expect(body.error).toContain("No sender was found for that code");
     } finally {
       await runtime.stop();
       await new Promise((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));

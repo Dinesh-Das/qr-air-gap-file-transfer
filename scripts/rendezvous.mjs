@@ -12,6 +12,7 @@ const MAX_SDP_BYTES = 48 * 1024;
 const MAX_UDP_BYTES = 60 * 1024;
 const DISCOVERY_RATE_WINDOW_MS = 60_000;
 const DISCOVERY_RATE_LIMIT = 120;
+const MAX_UNICAST_DISCOVERY_TARGETS = 254;
 const LOCAL_JOIN_ADDRESS = "127.0.0.1";
 
 export function isValidPairingCode(value) {
@@ -370,16 +371,20 @@ export function createRendezvousRuntime({
         reject: (error) => finish(reject, error),
       };
       pendingDiscoveries.set(requestId, pending);
-      const announce = () => broadcast(socket, signalPort, {
+      const discoveryMessage = {
         v: PROTOCOL_VERSION,
         t: "d",
         requestId,
         nonce,
         proof,
-      });
+      };
+      const announce = () => {
+        broadcast(socket, signalPort, discoveryMessage);
+        unicastDiscover(socket, signalPort, discoveryMessage);
+      };
       interval = setInterval(announce, DISCOVERY_INTERVAL_MS);
       const timeout = setTimeout(() => {
-        finish(reject, new Error("No sender was found for that code. Check the code, Wi-Fi, and firewall, then retry."));
+        finish(reject, new PairingNotFoundError("No sender was found for that code. Check the code and confirm both devices are on the same Wi-Fi or hotspot, then retry."));
       }, discoveryTimeoutMs);
       announce();
     });
@@ -472,6 +477,55 @@ function broadcast(socket, port, message) {
   for (const address of broadcastAddresses()) sendUdp(socket, address, port, message);
 }
 
+function unicastDiscover(socket, port, message) {
+  for (const address of unicastDiscoveryAddresses()) sendUdp(socket, address, port, message);
+}
+
+export function unicastDiscoveryAddresses() {
+  return unicastDiscoveryAddressesFromInterfaces(networkInterfaces());
+}
+
+export function unicastDiscoveryAddressesFromInterfaces(interfaces) {
+  const addresses = new Set();
+  const candidates = [];
+  for (const [name, entries] of Object.entries(interfaces ?? {})) {
+    if (isLikelyVirtualInterface(name)) continue;
+    for (const info of entries ?? []) {
+      if (info.family !== "IPv4" || info.internal || !isPrivateIpv4(info.address)) continue;
+      const parts = info.address.split(".");
+      if (parts.length !== 4) continue;
+      candidates.push({ name, address: info.address, prefix: parts.slice(0, 3).join(".") });
+    }
+  }
+
+  candidates.sort((left, right) => interfacePriority(left.name) - interfacePriority(right.name));
+  const candidate = candidates[0];
+  if (!candidate) return [];
+  for (let host = 1; host <= 254 && addresses.size < MAX_UNICAST_DISCOVERY_TARGETS; host += 1) {
+    const address = `${candidate.prefix}.${host}`;
+    if (address !== candidate.address) addresses.add(address);
+  }
+  return [...addresses];
+}
+
+function isPrivateIpv4(address) {
+  const value = ipv4ToInt(address);
+  if (value === null) return false;
+  return (value >= 0x0a000000 && value <= 0x0affffff)
+    || (value >= 0xac100000 && value <= 0xac1fffff)
+    || (value >= 0xc0a80000 && value <= 0xc0a8ffff);
+}
+
+function isLikelyVirtualInterface(name) {
+  return /(?:virtual|vmware|virtualbox|vbox|hyper-v|vethernet|wsl|docker|tailscale|zerotier|loopback|vpn|tunnel|tap|tun)/i.test(name);
+}
+
+function interfacePriority(name) {
+  if (/(?:wi-?fi|wireless|wlan)/i.test(name)) return 0;
+  if (/(?:ethernet|\beth\d*\b|\ben\w*\b)/i.test(name)) return 1;
+  return 2;
+}
+
 function broadcastAddresses() {
   const addresses = new Set(["255.255.255.255"]);
   for (const entries of Object.values(networkInterfaces())) {
@@ -544,11 +598,13 @@ function json(response, status, value) {
 
 function statusForError(error) {
   if (error instanceof BadRequestError) return 400;
+  if (error instanceof PairingNotFoundError) return 404;
   if (error instanceof PayloadTooLargeError) return 413;
   return 500;
 }
 
 class BadRequestError extends Error {}
+class PairingNotFoundError extends Error {}
 class PayloadTooLargeError extends Error {
   constructor() {
     super("Request body is too large.");
