@@ -12,6 +12,7 @@ const MAX_SDP_BYTES = 48 * 1024;
 const MAX_UDP_BYTES = 60 * 1024;
 const DISCOVERY_RATE_WINDOW_MS = 60_000;
 const DISCOVERY_RATE_LIMIT = 120;
+const LOCAL_JOIN_ADDRESS = "127.0.0.1";
 
 export function isValidPairingCode(value) {
   return typeof value === "string" && /^\d{6}$/.test(value);
@@ -303,7 +304,7 @@ export function createRendezvousRuntime({
           json(response, 400, { error: "Enter the six-digit pairing code shown on the sender." });
           return true;
         }
-        const remote = await discoverRemoteRoom(body.code);
+        const remote = discoverLocalRoom(body.code) ?? await discoverRemoteRoom(body.code);
         const joinId = token(16);
         localJoins.set(joinId, { ...remote, expiresAt: Date.now() + 30_000 });
         json(response, 200, { joinId, sessionId: remote.sessionId, sdp: remote.sdp });
@@ -335,6 +336,18 @@ export function createRendezvousRuntime({
       json(response, statusForError(error), { error: error instanceof Error ? error.message : String(error) });
       return true;
     }
+  }
+
+  function discoverLocalRoom(code) {
+    const requestId = token(16);
+    const nonce = token(32);
+    const offer = registry.discover({
+      requestId,
+      nonce,
+      proof: createDiscoveryProof(code, nonce),
+      address: LOCAL_JOIN_ADDRESS,
+    });
+    return offer ? { ...offer, local: true } : null;
   }
 
   function discoverRemoteRoom(code) {
@@ -373,6 +386,18 @@ export function createRendezvousRuntime({
   }
 
   function publishRemoteAnswer(join, sdp) {
+    if (join.local) {
+      const accepted = registry.acceptAnswer({
+        roomId: join.roomId,
+        joinToken: join.joinToken,
+        sessionId: join.sessionId,
+        sdp,
+        address: LOCAL_JOIN_ADDRESS,
+      });
+      if (!accepted) return Promise.reject(new Error("The sender did not accept the connection answer."));
+      return Promise.resolve();
+    }
+
     const answerId = token(16);
     return new Promise((resolve, reject) => {
       let settled = false;

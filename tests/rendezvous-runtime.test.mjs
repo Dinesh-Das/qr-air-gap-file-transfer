@@ -1,8 +1,11 @@
+import { createServer } from "node:http";
+import dgram from "node:dgram";
 import { describe, expect, it } from "vitest";
 import {
   RoomRegistry,
   createDiscoveryProof,
   createPairingCode,
+  createRendezvousRuntime,
 } from "../scripts/rendezvous.mjs";
 
 const sessionId = "0123456789abcdef0123456789abcdef";
@@ -52,6 +55,35 @@ describe("LAN rendezvous room registry", () => {
     });
   });
 
+
+  it("pairs through the same local runtime without relying on LAN broadcast", async () => {
+    const signalPort = await freeUdpPort();
+    const runtime = createRendezvousRuntime({ signalPort, discoveryTimeoutMs: 100 });
+    const server = createServer(async (request, response) => {
+      if (await runtime.handleHttp(request, response)) return;
+      response.writeHead(404);
+      response.end();
+    });
+    await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+    const address = server.address();
+    if (!address || typeof address === "string") throw new Error("Test HTTP server did not start.");
+    const baseUrl = `http://127.0.0.1:${address.port}/api/rendezvous`;
+
+    try {
+      const created = await postJson(`${baseUrl}/rooms`, { sessionId, sdp: offerSdp });
+      const joined = await postJson(`${baseUrl}/join`, { code: created.code });
+      expect(joined.sessionId).toBe(sessionId);
+      expect(joined.sdp).toBe(offerSdp);
+
+      await postJson(`${baseUrl}/joins/${joined.joinId}/answer`, { sessionId, sdp: answerSdp });
+      const status = await postJson(`${baseUrl}/rooms/${created.roomId}`, { ownerToken: created.ownerToken });
+      expect(status).toEqual({ status: "answered", sessionId, sdp: answerSdp });
+    } finally {
+      await runtime.stop();
+      await new Promise((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
+    }
+  });
+
   it("expires rooms by TTL", () => {
     let now = 1_000;
     const registry = new RoomRegistry({ ttlMs: 500, now: () => now });
@@ -61,3 +93,26 @@ describe("LAN rendezvous room registry", () => {
     expect(registry.wait(room.roomId, room.ownerToken)).toBeNull();
   });
 });
+
+async function postJson(url, body) {
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const value = await response.json();
+  if (!response.ok) throw new Error(value.error ?? `HTTP ${response.status}`);
+  return value;
+}
+
+async function freeUdpPort() {
+  const socket = dgram.createSocket("udp4");
+  await new Promise((resolve, reject) => {
+    socket.once("error", reject);
+    socket.bind(0, "127.0.0.1", resolve);
+  });
+  const address = socket.address();
+  const port = address.port;
+  await new Promise((resolve) => socket.close(resolve));
+  return port;
+}
