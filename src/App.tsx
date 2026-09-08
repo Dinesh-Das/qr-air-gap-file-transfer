@@ -130,7 +130,7 @@ function TransportHome({ onChoose }: { onChoose: (transport: Transport) => void 
         <button type="button" className="transport-option recommended" onClick={() => onChoose("webrtc")}>
           <span className="recommended-badge"><Zap size={12} /> Faster</span>
           <span className="transport-option-icon"><Wifi size={30} /></span>
-          <span className="transport-option-copy"><span className="option-kicker">Same offline Wi-Fi</span><strong>WebRTC file transfer</strong><small>Exchange connection details by QR, then send encrypted file blocks directly over the local network with resume.</small><span className="option-facts"><span>No server</span><span>SHA-256 verified</span></span></span>
+          <span className="transport-option-copy"><span className="option-kicker">Same offline Wi-Fi</span><strong>WebRTC file transfer</strong><small>Pair with a six-digit code, then send encrypted file blocks directly over the local network with resume.</small><span className="option-facts"><span>LAN-only pairing</span><span>SHA-256 verified</span></span></span>
           <ArrowRight className="option-arrow" size={21} />
         </button>
       </div>

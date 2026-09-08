@@ -1517,6 +1517,64 @@ main {
   letter-spacing: 0.12em;
 }
 
+.pairing-entry {
+  display: grid;
+  min-height: 360px;
+  padding: 34px 24px;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.pairing-entry h2,
+.pairing-entry p {
+  margin: 0;
+}
+
+.pairing-entry p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.pairing-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 1px solid #bfe1d5;
+  border-radius: 50%;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
+.pairing-input {
+  width: min(100%, 260px);
+  margin: 8px 0 2px;
+  padding: 14px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  outline: none;
+  font-family: "DM Mono", monospace;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-align: center;
+  background: #fff;
+}
+
+.pairing-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(10, 121, 95, 0.1);
+}
+
+.pairing-code-large {
+  color: var(--accent-dark) !important;
+  font-family: "DM Mono", monospace;
+  font-size: 30px !important;
+  letter-spacing: 0.12em;
+}
+
 .confirm-button,
 .signal-action {
   margin-top: 14px;

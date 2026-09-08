@@ -1,10 +1,11 @@
 # AirGap QR
 
 AirGap QR is a local-only web application with two transfer paths. QR transfer
-moves the complete folder through animated QR codes. Offline WebRTC exchanges
-only connection details through QR, then moves encrypted blocks directly over
-an existing local Wi-Fi network or hotspot without a signaling server, STUN,
-TURN, cloud upload, or internet service. Large QRF3 streams file slices directly
+moves the complete folder through animated QR codes. Offline WebRTC pairs the
+devices with a short-lived six-digit code, exchanges connection details between
+the two local Node runtimes on the LAN, then moves encrypted blocks directly over
+an existing local Wi-Fi network or hotspot without STUN, TURN, cloud upload, or
+internet service. Large QRF3 streams file slices directly
 from the sender's disk and received blocks directly into the receiver's private
 browser filesystem; Classic QRF2 remains available for small, ZIP-compatible
 transfers.
@@ -38,8 +39,8 @@ npm ci
 npm run build
 ```
 
-Then stage the same `dist/` directory and `scripts/serve.mjs` file on each
-computer, keeping those paths as siblings, and run:
+Then stage the same `dist/` directory and `scripts/` directory on each computer,
+keeping those paths as siblings, and run:
 
 ```sh
 node scripts/serve.mjs
@@ -47,7 +48,9 @@ node scripts/serve.mjs
 
 The runtime needs Node.js but does not need `node_modules` or registry access.
 All browser assets are included in `dist`; after loading from loopback, the app
-makes no internet requests. Open `http://127.0.0.1:4173` on each device, choose
+makes no internet requests. The local runtime uses UDP port `4174` by default
+for LAN pairing discovery; set `QRFT_SIGNAL_PORT` to the same alternate port on
+both devices if needed. Open `http://127.0.0.1:4173` on each device, choose
 the same transfer method, then choose **Sender** on the source computer and
 **Receiver** on the destination computer.
 
@@ -57,27 +60,27 @@ Offline WebRTC is the practical path for large folders when both authorized
 devices may join the same offline local network. It is not an air gap. The app
 uses `RTCPeerConnection({ iceServers: [] })`, so candidates are limited to the
 local environment; globally routable and non-host candidates are removed before
-the QR handshake is displayed. There is no signaling or relay server. The
-reliable ordered data channel is encrypted by WebRTC.
+they are shared. Each device's loopback Node runtime performs a short-lived,
+LAN-only rendezvous for signaling. File data never passes through that runtime;
+the reliable ordered data channel is encrypted by WebRTC.
 
 1. Connect both devices to the same authorized Wi-Fi network or to a hotspot.
    Internet access is not required. Local peer isolation must be disabled.
 2. Open the app locally on both devices and choose **WebRTC file transfer**.
 3. On the sender, select the source folder and prepare it. The app hashes the
-   same bounded-memory virtual tree used by QRF3 and displays an animated offer
-   QR.
-4. On the receiver, scan every offer frame. It displays an animated answer QR;
-   scan that answer on the sender.
-5. Compare the six-digit authentication code on both displays. Confirm only if
-   all digits match. File data stays locked until both devices confirm.
-6. The receiver opens durable OPFS storage and reports already received block
+   same bounded-memory virtual tree used by QRF3 and displays a random six-digit
+   pairing code.
+4. On the receiver, enter that six-digit code and choose **Connect to sender**.
+   The local runtimes discover each other on the LAN and exchange only the
+   WebRTC offer and answer. The room expires quickly and is single-use.
+5. The receiver opens durable OPFS storage and reports already received block
    ranges. The sender transmits only missing 60 KiB blocks, applies data-channel
    backpressure, and counts a block only after the receiver durably writes and
    acknowledges it.
-7. If the connection is interrupted, reconnect and select the same source
+6. If the connection is interrupted, reconnect and select the same source
    folder. Its deterministic manifest identity reopens the partial receive and
    resumes missing blocks without re-sending completed ones.
-8. Completion requires a SHA-256 match for the complete virtual stream. The
+7. Completion requires a SHA-256 match for the complete virtual stream. The
    receiver then reconstructs the folder, verifies each destination file, and
    reclaims its temporary browser payload after a successful save.
 
@@ -88,7 +91,8 @@ both devices awake and the browser tabs open until verification completes.
 
 Browser or operating-system firewalls can block local peer traffic. WebRTC will
 not work across client-isolated guest Wi-Fi, unrelated subnets without local
-routing, or policies that disable host candidates. In those cases, use the
+routing, policies that block the local UDP pairing port, or policies that disable
+host candidates. In those cases, use the
 existing QR transfer path or an organization-approved transfer method.
 
 ## QR transfer workflow

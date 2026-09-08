@@ -21,23 +21,23 @@ import {
 import { OfflineDestinationReceiver, type OfflineTransferProgress } from "../lib/webrtc-transfer";
 import { supportsDurableBlockStore } from "../lib/block-store";
 import {
-  createAuthenticationCode,
-  encodeOfflineSignal,
   limitSdpToLocalCandidates,
   waitForIceGatheringComplete,
-  type OfflineSignalBundle,
 } from "../lib/webrtc-signaling";
-import { WebRtcSignalDisplay, WebRtcSignalScanner } from "./WebRtcSignalQr";
+import {
+  isValidPairingCode,
+  joinRendezvousRoom,
+  normalizePairingCode,
+  publishRendezvousAnswer,
+} from "../lib/webrtc-rendezvous";
 
-type Phase = "offer" | "preparing" | "answer" | "confirming" | "waiting" | "receiving" | "verifying" | "complete" | "saving" | "saved" | "failed";
+type Phase = "pairing" | "preparing" | "waiting" | "receiving" | "verifying" | "complete" | "saving" | "saved" | "failed";
 
 export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean) => void }) {
   const [capabilityError] = useState(() => offlineReceiverCapabilityError());
-  const [phase, setPhase] = useState<Phase>(() => capabilityError ? "failed" : "offer");
-  const [answerFrames, setAnswerFrames] = useState<string[]>([]);
-  const [authCode, setAuthCode] = useState<string | null>(null);
+  const [phase, setPhase] = useState<Phase>(() => capabilityError ? "failed" : "pairing");
+  const [pairingCode, setPairingCode] = useState("");
   const [connected, setConnected] = useState(false);
-  const [remoteConfirmed, setRemoteConfirmed] = useState(false);
   const [manifest, setManifest] = useState<OfflineTransferManifest | null>(null);
   const [progress, setProgress] = useState<OfflineTransferProgress | null>(null);
   const [verifyBytes, setVerifyBytes] = useState(0);
@@ -148,7 +148,7 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
     };
   }, [fail]);
 
-  const busy = !["offer", "complete", "saved", "failed"].includes(phase);
+  const busy = !["pairing", "complete", "saved", "failed"].includes(phase);
   useEffect(() => {
     onBusyChange?.(busy);
   }, [busy, onBusyChange]);
@@ -223,13 +223,22 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
     setConnected(false);
   }, []);
 
+  const confirmPairing = useCallback(() => {
+    const channel = channelRef.current;
+    if (localConfirmedRef.current || channel?.readyState !== "open") return;
+    localConfirmedRef.current = true;
+    authorizedRef.current = remoteConfirmedRef.current;
+    channel.send(encodeOfflineControl({ type: "peer-confirmed" }));
+    setPhase("waiting");
+  }, []);
+
   const installChannel = useCallback((channel: RTCDataChannel, generation: number) => {
     channel.binaryType = "arraybuffer";
     channelRef.current = channel;
     channel.addEventListener("open", () => {
       if (generation !== lifecycleRef.current) return;
       setConnected(true);
-      setPhase("confirming");
+      confirmPairing();
     });
     channel.addEventListener("close", () => {
       if (generation !== lifecycleRef.current) return;
@@ -251,7 +260,6 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
         switch (message.type) {
           case "peer-confirmed":
             remoteConfirmedRef.current = true;
-            setRemoteConfirmed(true);
             authorizedRef.current = localConfirmedRef.current;
             break;
           case "manifest":
@@ -269,15 +277,22 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
         }
       }).catch(fail);
     });
-  }, [acceptData, acceptManifest, fail, verifyTransfer]);
+  }, [acceptData, acceptManifest, confirmPairing, fail, verifyTransfer]);
 
-  const acceptOffer = useCallback(async (bundle: OfflineSignalBundle) => {
+  const connect = useCallback(async () => {
+    if (!isValidPairingCode(pairingCode)) {
+      setError("Enter the six-digit pairing code shown on the sender.");
+      return;
+    }
     const generation = lifecycleRef.current;
     const controller = new AbortController();
     taskAbortRef.current = controller;
     setError(null);
     setPhase("preparing");
     try {
+      const join = await joinRendezvousRoom(pairingCode, controller.signal);
+      const bundle = join.bundle;
+      if (generation !== lifecycleRef.current) return;
       const peer = new RTCPeerConnection({ iceServers: [] });
       peerRef.current = peer;
       watchPeerHealth(peer, generation);
@@ -289,22 +304,13 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
       const rawSdp = peer.localDescription?.sdp;
       if (!rawSdp) throw new Error("The browser did not create a local connection answer.");
       const sdp = limitSdpToLocalCandidates(rawSdp);
-      setAnswerFrames(encodeOfflineSignal({ v: 1, kind: "answer", sessionId: bundle.sessionId, sdp }));
-      setAuthCode(await createAuthenticationCode(bundle.sessionId, bundle.sdp, sdp));
-      setPhase("answer");
+      await publishRendezvousAnswer(join.joinId, { v: 1, kind: "answer", sessionId: bundle.sessionId, sdp }, controller.signal);
+      if (generation !== lifecycleRef.current) return;
+      confirmPairing();
     } catch (caught) {
       fail(caught);
     }
-  }, [fail, installChannel, watchPeerHealth]);
-
-  const confirmPeer = useCallback(() => {
-    const channel = channelRef.current;
-    if (channel?.readyState !== "open") return;
-    localConfirmedRef.current = true;
-    authorizedRef.current = remoteConfirmedRef.current;
-    channel.send(encodeOfflineControl({ type: "peer-confirmed" }));
-    setPhase("waiting");
-  }, []);
+  }, [confirmPairing, fail, installChannel, pairingCode, watchPeerHealth]);
 
   const save = useCallback(() => {
     const task = (async () => {
@@ -365,11 +371,9 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
     authorizedRef.current = false;
     verificationStartedRef.current = false;
     const nextCapabilityError = offlineReceiverCapabilityError();
-    setPhase(nextCapabilityError ? "failed" : "offer");
-    setAnswerFrames([]);
-    setAuthCode(null);
+    setPhase(nextCapabilityError ? "failed" : "pairing");
+    setPairingCode("");
     setConnected(false);
-    setRemoteConfirmed(false);
     setManifest(null);
     setProgress(null);
     setVerifyBytes(0);
@@ -401,20 +405,16 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
 
   return (
     <section className="workspace">
-      <div className="page-heading"><span className="eyebrow">Offline network receiver</span><h1>Receive directly to durable storage.</h1><p>Scan the sender's connection QR, return the answer QR, verify the device code, and keep this tab open while blocks arrive.</p></div>
+      <div className="page-heading"><span className="eyebrow">Offline network receiver</span><h1>Receive directly to durable storage.</h1><p>Enter the six-digit code shown on the sender, connect, and keep this tab open while blocks arrive.</p></div>
       <div className="notice-strip policy-warning"><AlertTriangle size={18} /><span>Both devices must already be on the same authorized offline Wi-Fi or hotspot. This mode does not bypass company controls or create an air gap.</span></div>
       <div className="transfer-card receiver-layout">
         <div className="panel">
-          {(phase === "offer") && <WebRtcSignalScanner expected="offer" onComplete={acceptOffer} onError={setError} />}
-          {(phase === "preparing") && <div className="qr-placeholder"><div className="qr-placeholder-inner"><span className="spinner dark-spinner" /><strong>Creating local answer</strong></div></div>}
-          {(phase === "answer" || phase === "confirming") && <WebRtcSignalDisplay frames={answerFrames} label="WebRTC connection answer" />}
-          {!(["offer", "preparing", "answer", "confirming"] as Phase[]).includes(phase) && <div className="qr-placeholder"><div className="qr-placeholder-inner">{phase === "saved" ? <FolderCheck size={48} /> : <Database size={48} />}<strong>{phase === "saved" ? "Files reconstructed" : "QR handshake finished"}</strong><span>File bytes are written to private browser storage before acknowledgement.</span></div></div>}
+          {phase === "pairing" ? <div className="pairing-entry"><span className="pairing-icon"><Link2 size={28} /></span><h2>Enter pairing code</h2><p>Use the six digits shown on the sending device.</p><input className="pairing-input" value={pairingCode} onChange={(event) => setPairingCode(normalizePairingCode(event.target.value))} inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6}" maxLength={6} placeholder="000000" aria-label="Six-digit pairing code" /><button className="button button-primary button-wide" onClick={() => void connect()} disabled={!isValidPairingCode(pairingCode)}><Link2 size={16} />Connect to sender</button></div> : phase === "preparing" ? <div className="qr-placeholder"><div className="qr-placeholder-inner"><span className="spinner dark-spinner" /><strong>Finding sender and creating connection</strong><span>The local runtimes are exchanging WebRTC connection details over this LAN.</span></div></div> : <div className="qr-placeholder"><div className="qr-placeholder-inner">{phase === "saved" ? <FolderCheck size={48} /> : <Database size={48} />}<strong>{phase === "saved" ? "Files reconstructed" : connected ? "Devices connected" : "Pairing complete"}</strong><span>File bytes are written to private browser storage before acknowledgement.</span></div></div>}
         </div>
         <div className="panel receiver-status">
           <div className="panel-kicker"><Database size={15} /> Destination</div><h2>Verified receive</h2><p className="panel-description">Received blocks survive interruption. Reconnect and resend the same folder to resume automatically.</p>
-          {authCode && <div className="authentication-card"><ShieldCheck size={22} /><div><span>Compare on both devices</span><strong>{authCode.slice(0, 3)} {authCode.slice(3)}</strong><small>Confirm only if every digit matches.</small></div></div>}
-          {(phase === "answer" || phase === "confirming") && <button className="button button-primary button-wide confirm-button" onClick={confirmPeer} disabled={!connected || localConfirmedRef.current}><ShieldCheck size={16} />{!connected ? "Let sender scan this answer" : localConfirmedRef.current ? "Confirmed — waiting for sender" : "Codes match — trust this sender"}</button>}
-          {phase === "waiting" && !manifest && <div className="status-box success compact-status"><Link2 size={16} />{remoteConfirmed ? "Peer verified. Waiting for the folder manifest." : "This device is confirmed. Waiting for the sender to compare and confirm the code."}</div>}
+          {phase === "preparing" && <div className="status-box compact-status"><span className="spinner" />Discovering the sender for code {pairingCode}…</div>}
+          {phase === "waiting" && !manifest && <div className="status-box success compact-status"><ShieldCheck size={16} />Peer verified. Waiting for the folder manifest.</div>}
           {progress && (phase === "waiting" || phase === "receiving" || phase === "verifying" || phase === "complete") && <div className="transfer-progress-card"><div className="selection-header"><strong>{phase === "verifying" ? "Verifying whole stream" : phase === "complete" ? "Ready to save" : "Receiving to disk"}</strong><span>{phase === "verifying" && manifest ? `${((verifyBytes / manifest.totalBytes) * 100).toFixed(1)}%` : `${percentage.toFixed(1)}%`}</span></div><div className="progress-track"><div className="progress-fill" style={{ width: `${phase === "verifying" && manifest ? (verifyBytes / manifest.totalBytes) * 100 : percentage}%` }} /></div><div className="metric-grid"><div className="metric"><span>Durable</span><strong>{formatBytes(progress.completedBytes)}</strong></div><div className="metric"><span>Speed</span><strong>{formatRate(rate)}</strong></div><div className="metric"><span>Resumed</span><strong>{formatBytes(progress.resumedBytes)}</strong></div></div></div>}
           {phase === "complete" && tree && <><div className="status-box success compact-status"><CheckCircle2 size={17} />SHA-256 and folder metadata verified. Choose a parent folder to reconstruct “{tree.rootName}”.</div><button className="button button-primary button-wide confirm-button" onClick={save}><FolderCheck size={16} />Choose destination and save</button></>}
           {phase === "saving" && <div className="status-box compact-status"><span className="spinner" />{destinationProgress?.path ? `${destinationProgress.phase}: ${destinationProgress.path}` : "Reconstructing and verifying destination files…"}</div>}
@@ -443,9 +443,6 @@ function toMessage(value: unknown): string {
 function offlineReceiverCapabilityError(): string | null {
   if (typeof RTCPeerConnection === "undefined") {
     return "Offline network transfer requires WebRTC support.";
-  }
-  if (!window.isSecureContext || !navigator.mediaDevices?.getUserMedia) {
-    return "Camera access requires http://127.0.0.1 or HTTPS in a browser with camera support.";
   }
   if (!supportsDurableBlockStore()) {
     return "Offline network receive requires Chromium OPFS, Web Locks, and dedicated Worker support.";

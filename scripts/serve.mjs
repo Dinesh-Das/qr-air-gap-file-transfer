@@ -10,6 +10,7 @@ import {
   sep,
 } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createRendezvousRuntime } from "./rendezvous.mjs";
 
 const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
 const projectDirectory = resolve(scriptDirectory, "..");
@@ -17,6 +18,7 @@ const distributionDirectory = resolve(projectDirectory, "dist");
 const rawPort = process.env.QRFT_PORT ?? "4173";
 const port = Number(rawPort);
 const host = "127.0.0.1";
+const rendezvous = createRendezvousRuntime();
 
 if (!existsSync(join(distributionDirectory, "index.html"))) {
   console.error('No production build found. Run "npm run build" first.');
@@ -46,17 +48,18 @@ const securityHeaders = {
   "Cross-Origin-Resource-Policy": "same-origin",
   "Cross-Origin-Opener-Policy": "same-origin",
   "Content-Security-Policy":
-    "default-src 'self'; connect-src 'none'; img-src 'self' data: blob:; media-src 'self' blob:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+    "default-src 'self'; connect-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
   "Permissions-Policy": "camera=(self), microphone=(), geolocation=()",
   "Referrer-Policy": "no-referrer",
   "X-Content-Type-Options": "nosniff",
   "X-Frame-Options": "DENY",
 };
 
-createServer((request, response) => {
+createServer(async (request, response) => {
   for (const [name, value] of Object.entries(securityHeaders)) {
     response.setHeader(name, value);
   }
+  if (await rendezvous.handleHttp(request, response)) return;
   if (request.method !== "GET" && request.method !== "HEAD") {
     response.writeHead(405, { Allow: "GET, HEAD" });
     response.end("Method not allowed");
@@ -136,5 +139,6 @@ createServer((request, response) => {
   stream.pipe(response);
 }).listen(port, host, () => {
   console.log(`AirGap QR is running at http://${host}:${port}`);
+  console.log(`Six-digit WebRTC pairing uses UDP ${process.env.QRFT_SIGNAL_PORT ?? "4174"} on the local LAN.`);
   console.log("Press Ctrl+C to stop.");
 });
