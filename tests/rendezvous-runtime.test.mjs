@@ -1,3 +1,4 @@
+import { freeSignalPort } from "./free-signal-port.mjs";
 import { createServer } from "node:http";
 import dgram from "node:dgram";
 import { describe, expect, it } from "vitest";
@@ -6,8 +7,9 @@ import {
   createDiscoveryProof,
   createPairingCode,
   createRendezvousRuntime,
-  unicastDiscoveryAddresses,
-  unicastDiscoveryAddressesFromInterfaces,
+  allowDiscovery,
+  broadcastAddressesFromInterfaces,
+  calculateBroadcastAddress,
 } from "../scripts/rendezvous.mjs";
 
 const sessionId = "0123456789abcdef0123456789abcdef";
@@ -59,32 +61,90 @@ describe("LAN rendezvous room registry", () => {
 
 
 
-  it("builds a bounded unicast scan for the preferred private LAN", () => {
-    const targets = unicastDiscoveryAddressesFromInterfaces({
-      "vEthernet (WSL)": [{ family: "IPv4", internal: false, address: "172.28.16.1" }],
-      Ethernet: [{ family: "IPv4", internal: false, address: "10.0.0.5" }],
-      "Wi-Fi": [{ family: "IPv4", internal: false, address: "192.168.1.10" }],
-      Public: [{ family: "IPv4", internal: false, address: "203.0.113.5" }],
-    });
-
-    expect(targets).toHaveLength(253);
-    expect(targets).toContain("192.168.1.1");
-    expect(targets).toContain("192.168.1.254");
-    expect(targets).not.toContain("192.168.1.10");
-    expect(targets.some((address) => address.startsWith("172.28.16."))).toBe(false);
-    expect(targets.some((address) => address.startsWith("10.0.0."))).toBe(false);
-    expect(targets.some((address) => address.startsWith("203.0.113."))).toBe(false);
+  it("computes broadcasts for synthetic adapter subnet records without enumerating hosts", () => {
+    const adapter = (address, netmask) => ({ family: "IPv4", internal: false, address, netmask });
+    expect(broadcastAddressesFromInterfaces({
+      "Wi-Fi": [adapter("192.168.5.10", "255.255.252.0")],
+      Ethernet: [adapter("10.20.3.5", "255.255.0.0")],
+      "vEthernet (hotspot)": [adapter("192.168.137.1", "255.255.255.0")],
+      Duplicate: [adapter("192.168.137.2", "255.255.255.0")],
+      LinkLocal: [adapter("169.254.12.3", "255.255.0.0")],
+      Loopback: [{ ...adapter("127.0.0.1", "255.0.0.0"), internal: true }],
+      Ipv6: [{ family: "IPv6", address: "::1", internal: false }],
+    })).toEqual(["192.168.7.255", "10.20.255.255", "192.168.137.255", "169.254.255.255"]);
   });
 
-  it("keeps runtime-derived unicast discovery targets private and bounded", () => {
-    const targets = unicastDiscoveryAddresses();
-    expect(new Set(targets).size).toBe(targets.length);
-    expect(targets.length).toBeLessThanOrEqual(254);
-    for (const address of targets) expect(address).toMatch(/^\d{1,3}(?:\.\d{1,3}){3}$/);
+  it("rejects malformed masks and addresses and non-broadcast routes", () => {
+    for (const mask of [undefined, "bad", "255.0.255.0", "0.0.0.0", "255.255.255.254", "255.255.255.255"]) {
+      expect(calculateBroadcastAddress("192.168.1.2", mask)).toBeNull();
+    }
+    for (const address of [undefined, "bad", "192.168.001.2", "256.1.1.1", "0.1.1.1", "127.0.0.1", "224.1.1.1", "255.255.255.255", "192.168.1.0", "192.168.1.255"]) {
+      expect(calculateBroadcastAddress(address, "255.255.255.0")).toBeNull();
+    }
+    expect(calculateBroadcastAddress("10.0.0.1", "255.255.255.252")).toBe("10.0.0.3");
+    expect(broadcastAddressesFromInterfaces(undefined)).toEqual([]);
+  });
+
+  it("bounds broadcasts even with excessive adapter aliases", () => {
+    const entries = Array.from({ length: 100 }, (_, index) => ({
+      family: "IPv4", internal: false, address: `10.0.${index}.1`, netmask: "255.255.255.0",
+    }));
+    expect(broadcastAddressesFromInterfaces({ Ethernet: entries })).toHaveLength(32);
+  });
+
+  it.each(["TCP", "UDP"])("retries LAN startup after an occupied %s port is released", async (transport) => {
+    const signalPort = await freeSignalPort();
+    const occupied = transport === "TCP" ? createServer() : dgram.createSocket("udp4");
+    await new Promise((resolve, reject) => {
+      occupied.once("error", reject);
+      if (transport === "TCP") occupied.listen(signalPort, "0.0.0.0", resolve);
+      else occupied.bind(signalPort, "0.0.0.0", resolve);
+    });
+    let released = false;
+    const runtime = createRendezvousRuntime({ signalPort });
+    const server = createServer((request, response) => { void runtime.handleHttp(request, response); });
+    await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+    const healthUrl = `http://127.0.0.1:${server.address().port}/api/rendezvous/health`;
+    try {
+      await expect(runtime.start()).rejects.toThrow(`LAN pairing ${transport} port ${signalPort} is already in use`);
+      await expect(postJson(healthUrl, {})).rejects.toThrow(`LAN pairing ${transport} port ${signalPort} is already in use`);
+      await new Promise((resolve) => occupied.close(resolve));
+      released = true;
+      expect(await postJson(healthUrl, {})).toEqual({ ready: true, protocol: 2 });
+      expect(runtime.stats()).toMatchObject({ rooms: 0, localJoins: 0 });
+      // A second start must be idempotent after recovery, not bind again.
+      await runtime.start();
+    } finally {
+      await runtime.stop();
+      server.closeAllConnections();
+      await new Promise((resolve) => server.close(resolve));
+      if (!released) await new Promise((resolve) => occupied.close(resolve));
+    }
+  });
+
+  it("allows only same-origin JSON connection checks and returns no interface or room data", async () => {
+    const runtime = createRendezvousRuntime({ signalPort: await freeSignalPort() });
+    const server = createServer((request, response) => { void runtime.handleHttp(request, response); });
+    await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+    const origin = `http://127.0.0.1:${server.address().port}`;
+    const url = `${origin}/api/rendezvous/health`;
+    try {
+      expect((await fetch(url)).status).toBe(405);
+      expect((await fetch(url, { method: "POST", headers: { Origin: "https://example.test", "Content-Type": "application/json" }, body: "{}" })).status).toBe(403);
+      for (const value of [true, 42, [], { ready: true }]) {
+        await expect(postJson(url, value)).rejects.toThrow();
+      }
+      expect(await postJson(url, {})).toEqual({ ready: true, protocol: 2 });
+      expect(runtime.stats()).toMatchObject({ rooms: 0, localJoins: 0, pendingDiscoveries: 0, pendingSignals: 0 });
+    } finally {
+      await runtime.stop();
+      server.closeAllConnections();
+      await new Promise((resolve) => server.close(resolve));
+    }
   });
 
   it("pairs through the same local runtime without relying on LAN broadcast", async () => {
-    const signalPort = await freeUdpPort();
+    const signalPort = await freeSignalPort();
     const runtime = createRendezvousRuntime({ signalPort, discoveryTimeoutMs: 100 });
     const server = createServer(async (request, response) => {
       if (await runtime.handleHttp(request, response)) return;
@@ -112,7 +172,7 @@ describe("LAN rendezvous room registry", () => {
   });
 
   it("returns 404 when no sender can be discovered", async () => {
-    const signalPort = await freeUdpPort();
+    const signalPort = await freeSignalPort();
     const runtime = createRendezvousRuntime({ signalPort, discoveryTimeoutMs: 20 });
     const server = createServer(async (request, response) => {
       if (await runtime.handleHttp(request, response)) return;
@@ -126,7 +186,7 @@ describe("LAN rendezvous room registry", () => {
     try {
       const response = await fetch(`http://127.0.0.1:${address.port}/api/rendezvous/join`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Origin: `http://127.0.0.1:${address.port}` },
         body: JSON.stringify({ code: "123456" }),
       });
       const body = await response.json();
@@ -146,27 +206,52 @@ describe("LAN rendezvous room registry", () => {
     now = 1_501;
     expect(registry.wait(room.roomId, room.ownerToken)).toBeNull();
   });
+
+  it("bounds discovery rate entries and does not allocate for malformed messages", () => {
+    const rates = new Map();
+    for (let index = 0; index < 2000; index += 1) {
+      expect(allowDiscovery(`bad-${index}`, "bad", rates, 0)).toBe(false);
+    }
+    expect(rates.size).toBe(0);
+    for (let index = 0; index < 2000; index += 1) allowDiscovery(`host-${index}`, "a".repeat(32), rates, 0);
+    expect(rates.size).toBe(1024);
+    expect(allowDiscovery("new-host", "a".repeat(32), rates, 0)).toBe(false);
+  });
+
+  it("cleans expired joins, rooms and UDP rate entries without another client request", async () => {
+    let time = 1000;
+    const signalPort = await freeSignalPort();
+    const runtime = createRendezvousRuntime({ signalPort, now: () => time, cleanupIntervalMs: 5 });
+    const server = createServer((request, response) => { void runtime.handleHttp(request, response); });
+    await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+    const baseUrl = `http://127.0.0.1:${server.address().port}/api/rendezvous`;
+    const socket = dgram.createSocket("udp4");
+    try {
+      const created = await postJson(`${baseUrl}/rooms`, { sessionId, sdp: offerSdp });
+      await postJson(`${baseUrl}/join`, { code: created.code });
+      expect(runtime.stats().localJoins).toBe(1);
+      socket.send(JSON.stringify({ v: 2, t: "d", requestId: "d".repeat(32) }), signalPort, "127.0.0.1");
+      await new Promise((resolve) => setTimeout(resolve, 20));
+      expect(runtime.stats().discoveryRates).toBe(1);
+      time = 200_000;
+      await new Promise((resolve) => setTimeout(resolve, 20));
+      expect(runtime.stats()).toMatchObject({ localJoins: 0, rooms: 0, discoveryRates: 0 });
+    } finally {
+      await new Promise((resolve) => socket.close(resolve));
+      await runtime.stop();
+      server.closeAllConnections();
+      await new Promise((resolve) => server.close(resolve));
+    }
+  });
 });
 
 async function postJson(url, body) {
   const response = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", Origin: new URL(url).origin },
     body: JSON.stringify(body),
   });
   const value = await response.json();
   if (!response.ok) throw new Error(value.error ?? `HTTP ${response.status}`);
   return value;
-}
-
-async function freeUdpPort() {
-  const socket = dgram.createSocket("udp4");
-  await new Promise((resolve, reject) => {
-    socket.once("error", reject);
-    socket.bind(0, "127.0.0.1", resolve);
-  });
-  const address = socket.address();
-  const port = address.port;
-  await new Promise((resolve) => socket.close(resolve));
-  return port;
 }
