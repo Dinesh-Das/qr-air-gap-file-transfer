@@ -11,6 +11,7 @@ import {
 } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRendezvousRuntime } from "./rendezvous.mjs";
+import { assertLocalRequest, configureLocalHttpServer } from "./local-http-security.mjs";
 
 const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
 const projectDirectory = resolve(scriptDirectory, "..");
@@ -55,9 +56,14 @@ const securityHeaders = {
   "X-Frame-Options": "DENY",
 };
 
-createServer(async (request, response) => {
+const server = configureLocalHttpServer(createServer(async (request, response) => {
   for (const [name, value] of Object.entries(securityHeaders)) {
     response.setHeader(name, value);
+  }
+  try { assertLocalRequest(request); } catch (error) {
+    response.writeHead(error.status ?? 403, { "Content-Type": "text/plain; charset=utf-8" });
+    response.end(error.message);
+    return;
   }
   if (await rendezvous.handleHttp(request, response)) return;
   if (request.method !== "GET" && request.method !== "HEAD") {
@@ -137,8 +143,51 @@ createServer(async (request, response) => {
     response.end("Unable to read asset");
   });
   stream.pipe(response);
-}).listen(port, host, () => {
-  console.log(`AirGap QR is running at http://${host}:${port}`);
-  console.log(`Six-digit WebRTC pairing uses UDP ${process.env.QRFT_SIGNAL_PORT ?? "4174"} on the local LAN.`);
-  console.log("Press Ctrl+C to stop.");
+}));
+server.on("error", (error) => {
+  console.error(error.code === "EADDRINUSE"
+    ? "The application is already open, or its local address is in use. Close the other runtime and launch again."
+    : `Unable to start the local application: ${error.message}`);
+  process.exitCode = 1;
+  void shutdown().catch((shutdownError) => {
+    console.error(`Unable to finish shutdown: ${shutdownError.message}`);
+    if (process.connected) process.disconnect();
+  });
 });
+server.listen(port, host, () => {
+  console.log(`AirGap QR is running at http://${host}:${port}`);
+  console.log("Choose Send or Receive to check the local connection service.");
+  console.log("Press Ctrl+C to stop.");
+  process.send?.({ type: "qrft-runtime-ready", url: `http://${host}:${port}` });
+});
+
+let stopping = false;
+async function shutdown() {
+  if (stopping) return;
+  stopping = true;
+  const closed = new Promise((resolve) => server.close(resolve));
+  server.closeAllConnections();
+  await rendezvous.stop();
+  await closed;
+  if (process.connected) process.disconnect();
+}
+for (const signal of ["SIGINT", "SIGTERM"]) {
+  process.once(signal, () => { void shutdown().catch((error) => {
+    console.error(`Unable to finish shutdown: ${error.message}`);
+    process.exitCode = 1;
+  }); });
+}
+
+// A launcher controls only its own child over a private IPC channel. Closing
+// the launcher also closes this runtime instead of leaving occupied ports.
+if (process.send) {
+  const stopFromLauncher = () => { void shutdown().catch((error) => {
+    console.error(`Unable to finish shutdown: ${error.message}`);
+    process.exitCode = 1;
+    if (process.connected) process.disconnect();
+  }); };
+  process.on("message", (message) => {
+    if (message?.type === "qrft-runtime-stop") stopFromLauncher();
+  });
+  process.once("disconnect", stopFromLauncher);
+}
