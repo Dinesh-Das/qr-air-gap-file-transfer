@@ -1,4 +1,21 @@
 node_modules/
 dist/
+artifacts/
 .tmp/
 *.log
+test-results/
+playwright-report/
+ci-evidence/
+
+# Browser runs keep disposable profiles and traces outside version control.
+/test-results-*/
+/release-evidence/*traces/
+/release-evidence/*report/
+/release-evidence/*failures/
+
+# Local credentials and private keys.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
