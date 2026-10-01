@@ -90,3 +90,11 @@ type WellKnownDirectory =
   | "music"
   | "pictures"
   | "videos";
+
+interface Window {
+  showOpenFilePicker?(options?: { id?: string; multiple?: boolean }): Promise<FileSystemFileHandle[]>;
+}
+
+interface DataTransferItem {
+  getAsFileSystemHandle?(): Promise<FileSystemFileHandle | FileSystemDirectoryHandle | null>;
+}
