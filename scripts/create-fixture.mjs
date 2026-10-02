@@ -1,5 +1,5 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
-import { basename, isAbsolute, relative, resolve, sep } from "node:path";
+import { mkdir, realpath, writeFile } from "node:fs/promises";
+import { basename, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
@@ -9,13 +9,9 @@ const fixtureRoot = resolve(
   projectDirectory,
   process.argv[2] ?? ".tmp/qrft-fixture-source",
 );
-const pathFromStaging = relative(fixtureStagingDirectory, fixtureRoot);
 
 if (
-  fixtureRoot === fixtureStagingDirectory ||
-  pathFromStaging === ".." ||
-  pathFromStaging.startsWith(`..${sep}`) ||
-  isAbsolute(pathFromStaging) ||
+  dirname(fixtureRoot) !== fixtureStagingDirectory ||
   !basename(fixtureRoot).startsWith("qrft-fixture")
 ) {
   throw new Error(
@@ -23,8 +19,14 @@ if (
   );
 }
 
-await rm(fixtureRoot, { recursive: true, force: true });
-await mkdir(fixtureRoot, { recursive: true });
+await mkdir(fixtureStagingDirectory, { recursive: true });
+const realProject = await realpath(projectDirectory);
+if (await realpath(fixtureStagingDirectory) !== resolve(realProject, ".tmp")) {
+  throw new Error("Fixture staging must not redirect outside the project's .tmp directory.");
+}
+// Never delete or overwrite an existing tree, including a link or junction.
+// mkdir without recursive mode fails if any entry already occupies this name.
+await mkdir(fixtureRoot);
 
 const files = new Map([
   ["README.txt", Buffer.from("AirGap QR fixture\nनमस्ते • こんにちは • café\n", "utf8")],
