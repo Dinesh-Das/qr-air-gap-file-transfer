@@ -25,7 +25,7 @@ export interface OfflineTransferManifest {
 }
 
 export type OfflineControlMessage =
-  | { type: "peer-confirmed" }
+  | { type: "peer-confirmed"; sessionId: string; transcriptHash: string }
   | { type: "manifest"; manifest: OfflineTransferManifest }
   | { type: "resume-ranges"; ranges: Array<[number, number]> }
   | { type: "resume-complete" }
@@ -117,6 +117,21 @@ export function encodeOfflineDataBlock(index: number, payload: Uint8Array): Uint
 }
 
 export function decodeOfflineDataBlock(value: ArrayBuffer | Uint8Array): OfflineDataBlock {
+  const { index, payload, routingHeader, expectedHash } = readDataBlock(value);
+  assertBlockHash(hashDataBlock(routingHeader, payload), expectedHash);
+  return { index, payload };
+}
+
+/** Same authenticated wire format, with native SHA-256 for bounded receive batches. */
+export async function decodeOfflineDataBlockAsync(value: ArrayBuffer | Uint8Array): Promise<OfflineDataBlock> {
+  if (!globalThis.crypto?.subtle) return decodeOfflineDataBlock(value);
+  // All authenticated fields and payload are copied before the first await.
+  const { index, payload, routingHeader, expectedHash } = readDataBlock(value);
+  assertBlockHash(await hashDataBlockAsync(routingHeader, payload), expectedHash);
+  return { index, payload };
+}
+
+function readDataBlock(value: ArrayBuffer | Uint8Array): OfflineDataBlock & { routingHeader: Uint8Array; expectedHash: Uint8Array } {
   const bytes = value instanceof Uint8Array ? value : new Uint8Array(value);
   if (bytes.byteLength < OFFLINE_DATA_HEADER_BYTES) {
     throw new Error("Truncated data block.");
@@ -134,22 +149,27 @@ export function decodeOfflineDataBlock(value: ArrayBuffer | Uint8Array): Offline
   ) {
     throw new Error("Invalid data block length.");
   }
-  const payload = bytes.slice(OFFLINE_DATA_HEADER_BYTES);
-  const actual = hashDataBlock(bytes.subarray(0, 12), payload);
+  return { index, payload: bytes.slice(OFFLINE_DATA_HEADER_BYTES), routingHeader: bytes.slice(0, 12), expectedHash: bytes.slice(12, OFFLINE_DATA_HEADER_BYTES) };
+}
+
+function assertBlockHash(actual: Uint8Array, expected: Uint8Array): void {
+  if (actual.length !== 32 || expected.length !== 32) throw new Error("Invalid SHA-256 digest length.");
   for (let offset = 0; offset < actual.length; offset += 1) {
-    if (actual[offset] !== bytes[12 + offset]) {
+    if (actual[offset] !== expected[offset]) {
       throw new Error("Data block failed its SHA-256 integrity check.");
     }
   }
-  return { index, payload };
 }
 
 /** Converts a durable receipt bitset to compact half-open block ranges. */
 export function receiptBitsToRanges(bits: Uint8Array, totalBlocks: number): Array<[number, number]> {
+  return [...iterateReceiptRanges(bits, totalBlocks)];
+}
+
+function* iterateReceiptRanges(bits: Uint8Array, totalBlocks: number): Generator<[number, number]> {
   if (!Number.isSafeInteger(totalBlocks) || totalBlocks < 0) {
     throw new Error("Invalid total block count.");
   }
-  const ranges: Array<[number, number]> = [];
   let index = 0;
   while (index < totalBlocks) {
     if (!isReceiptBitSet(bits, index)) {
@@ -158,9 +178,18 @@ export function receiptBitsToRanges(bits: Uint8Array, totalBlocks: number): Arra
     }
     const start = index;
     while (index < totalBlocks && isReceiptBitSet(bits, index)) index += 1;
-    ranges.push([start, index]);
+    yield [start, index];
   }
-  return ranges;
+}
+
+/** Keeps fragmented resume metadata bounded to one control-message page. */
+export function* receiptBitsToRangePages(bits: Uint8Array, totalBlocks: number): Generator<Array<[number, number]>> {
+  let page: Array<[number, number]> = [];
+  for (const range of iterateReceiptRanges(bits, totalBlocks)) {
+    page.push(range);
+    if (page.length === OFFLINE_MAX_RESUME_RANGES) { yield page; page = []; }
+  }
+  if (page.length > 0) yield page;
 }
 
 export function applyReceiptRanges(
@@ -208,6 +237,11 @@ function validateOfflineControl(value: unknown): OfflineControlMessage {
   const message = value as Record<string, unknown>;
   switch (message.type) {
     case "peer-confirmed":
+      if (typeof message.sessionId !== "string" || !HEX_32.test(message.sessionId) ||
+          typeof message.transcriptHash !== "string" || !HEX_64.test(message.transcriptHash)) {
+        throw new Error("Invalid device confirmation. Update both devices to the same app version.");
+      }
+      return { type: "peer-confirmed", sessionId: message.sessionId, transcriptHash: message.transcriptHash };
     case "resume-complete":
     case "sender-complete":
     case "receiver-complete":
@@ -265,6 +299,7 @@ function validateManifest(value: unknown): OfflineTransferManifest {
     typeof manifest.rootName !== "string" ||
     !Number.isSafeInteger(manifest.totalBytes) ||
     Number(manifest.totalBytes) < 1 ||
+    Math.ceil(Number(manifest.totalBytes) / OFFLINE_BLOCK_BYTES) > MAX_BLOCK_STORE_BLOCKS ||
     manifest.blockSize !== OFFLINE_BLOCK_BYTES ||
     typeof manifest.streamSha256 !== "string" ||
     !HEX_64.test(manifest.streamSha256)
@@ -312,4 +347,14 @@ function hashDataBlock(routingHeader: Uint8Array, payload: Uint8Array): Uint8Arr
     .update(routingHeader)
     .update(payload)
     .digest();
+}
+
+async function hashDataBlockAsync(routingHeader: Uint8Array, payload: Uint8Array): Promise<Uint8Array> {
+  const input = new Uint8Array(DATA_DIGEST_DOMAIN.length + routingHeader.length + payload.length);
+  input.set(DATA_DIGEST_DOMAIN);
+  input.set(routingHeader, DATA_DIGEST_DOMAIN.length);
+  input.set(payload, DATA_DIGEST_DOMAIN.length + routingHeader.length);
+  const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", input));
+  if (digest.length !== 32) throw new Error("Invalid SHA-256 digest length.");
+  return digest;
 }
