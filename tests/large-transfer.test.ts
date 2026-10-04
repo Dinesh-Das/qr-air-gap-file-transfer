@@ -48,6 +48,30 @@ function fakeSelection(): LargeSourceSelection {
 }
 
 describe("large transfer virtual tree", () => {
+  it.each([0, 1, 2])("stops metadata reads when cancelled after read %i", async (abortAfter) => {
+    const metadata = encodeLargeTreeMetadata({ rootName: "cancel-fixture", directories: [],
+      files: abortAfter === 2 ? Array.from({ length: 20_000 }, (_, index) => ({
+        path: `file-${index}-${"x".repeat(180)}`, size: 0, lastModified: 1, sha256Hex: "0".repeat(64),
+      })) : [] });
+    if (abortAfter === 2) expect(metadata.length).toBeGreaterThan(LARGE_TREE_READ_BYTES);
+    const footer = new Uint8Array(LARGE_TREE_FOOTER_BYTES);
+    new DataView(footer.buffer).setBigUint64(0, BigInt(metadata.length), true);
+    footer.set(new TextEncoder().encode("QRF3END1"), 8);
+    const stream = new Uint8Array(metadata.length + footer.length);
+    stream.set(metadata); stream.set(footer, metadata.length);
+    const controller = new AbortController();
+    const reason = new DOMException("Cancelled metadata fixture", "AbortError");
+    let reads = 0;
+    if (abortAfter === 0) controller.abort(reason);
+    const reader = { size: BigInt(stream.length), async read(offset: bigint, length: number) {
+      reads += 1;
+      if (reads === abortAfter) controller.abort(reason);
+      return stream.slice(Number(offset), Number(offset) + length);
+    } };
+    await expect(readLargeTreeManifest(reader, controller.signal)).rejects.toBe(reason);
+    expect(reads).toBe(abortAfter);
+  });
+
   it("hashes and reads a multi-file source without concatenating it", async () => {
     const prepared = await prepareLargeSource(fakeSelection());
     expect(prepared.totalFileBytes).toBe(18n);

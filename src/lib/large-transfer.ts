@@ -331,7 +331,9 @@ export async function readPreparedLargeRange(
 /** Reads and validates the tree trailer from a completed random-access store. */
 export async function readLargeTreeManifest(
   reader: RandomAccessReader,
+  signal?: AbortSignal,
 ): Promise<LargeTreeManifest> {
+  throwIfAborted(signal);
   if (reader.size < BigInt(LARGE_TREE_FOOTER_BYTES)) {
     throw new Error("The received stream is too short to contain tree metadata.");
   }
@@ -339,6 +341,7 @@ export async function readLargeTreeManifest(
     reader.size - BigInt(LARGE_TREE_FOOTER_BYTES),
     LARGE_TREE_FOOTER_BYTES,
   );
+  throwIfAborted(signal);
   if (footer.length !== LARGE_TREE_FOOTER_BYTES) {
     throw new Error("The received tree footer is truncated.");
   }
@@ -357,6 +360,7 @@ export async function readLargeTreeManifest(
   const metadataBytes = new Uint8Array(Number(metadataLength));
   let metadataPosition = 0;
   while (metadataPosition < metadataBytes.length) {
+    throwIfAborted(signal);
     const length = Math.min(
       LARGE_TREE_READ_BYTES,
       metadataBytes.length - metadataPosition,
@@ -365,6 +369,7 @@ export async function readLargeTreeManifest(
       metadataOffset + BigInt(metadataPosition),
       length,
     );
+    throwIfAborted(signal);
     if (chunk.length !== length) {
       throw new Error("The received tree metadata is truncated.");
     }
