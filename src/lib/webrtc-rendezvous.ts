@@ -3,11 +3,43 @@ import type { OfflineSignalBundle } from "./webrtc-signaling";
 const API_ROOT = "/api/rendezvous";
 const POLL_INTERVAL_MS = 500;
 
+export class RendezvousError extends Error {
+  constructor(message: string, public readonly status: number, options?: ErrorOptions) {
+    super(message, options);
+    this.name = "RendezvousError";
+  }
+}
+
+/** Checks the local runtime and its TCP/UDP binds, not the remote network. */
+export async function checkRendezvousReadiness(signal?: AbortSignal): Promise<void> {
+  throwIfAborted(signal);
+  const controller = new AbortController();
+  const abort = () => controller.abort(signal?.reason);
+  signal?.addEventListener("abort", abort, { once: true });
+  let timedOut = false;
+  const timer = setTimeout(() => { timedOut = true; controller.abort(); }, 5_000);
+  try {
+    const value = await requestJson(`${API_ROOT}/health`, { method: "POST", body: "{}", signal: controller.signal });
+    throwIfAborted(signal);
+    if (!isRecord(value) || value.ready !== true || value.protocol !== 2) {
+      throw new Error("The local connection service is out of date or not ready. Reopen the current app bundle and retry the check.");
+    }
+  } catch (error) {
+    throwIfAborted(signal);
+    if (timedOut) throw new RendezvousError("The local connection check timed out. Reopen the app and retry the check.", 503);
+    throw new RendezvousError("The local connection service is unavailable. Close other copies of the app and retry. If needed, reopen the app using its launcher.", 503, { cause: error });
+  } finally {
+    clearTimeout(timer);
+    signal?.removeEventListener("abort", abort);
+  }
+}
+
 export type RendezvousRoom = {
   roomId: string;
   ownerToken: string;
   code: string;
   expiresAt: number;
+  addresses?: string[];
 };
 
 export type RendezvousJoin = {
@@ -49,6 +81,7 @@ export async function createRendezvousRoom(
     ownerToken: value.ownerToken,
     code: value.code,
     expiresAt: value.expiresAt,
+    addresses: Array.isArray(value.addresses) ? value.addresses.filter((entry): entry is string => typeof entry === "string" && entry.length <= 64).slice(0, 32) : [],
   };
 }
 
@@ -74,7 +107,7 @@ export async function waitForRendezvousAnswer(
       return { v: 1, kind: "answer", sessionId: expectedSessionId, sdp: value.sdp };
     }
     if (value.status !== "waiting") throw new Error("The local pairing service returned an unknown status.");
-    if (Date.now() >= room.expiresAt) throw new Error("The pairing code expired. Prepare the transfer again for a new code.");
+    if (Date.now() >= room.expiresAt) throw new RendezvousError("The pairing code expired. Prepare the transfer again for a new code.", 410);
     await delay(POLL_INTERVAL_MS, signal);
   }
 }
@@ -92,11 +125,11 @@ export async function cancelRendezvousRoom(room: RendezvousRoom): Promise<void> 
   }
 }
 
-export async function joinRendezvousRoom(code: string, signal?: AbortSignal): Promise<RendezvousJoin> {
+export async function joinRendezvousRoom(code: string, signal?: AbortSignal, address?: string): Promise<RendezvousJoin> {
   if (!isValidPairingCode(code)) throw new Error("Enter the six-digit pairing code shown on the sender.");
   const value = await requestJson(`${API_ROOT}/join`, {
     method: "POST",
-    body: JSON.stringify({ code }),
+    body: JSON.stringify({ code, ...(address?.trim() ? { address: address.trim() } : {}) }),
     signal,
   });
   if (!isRecord(value)
@@ -135,9 +168,9 @@ async function requestJson(url: string, init: RequestInit): Promise<unknown> {
     });
   } catch (error) {
     if (error instanceof DOMException && error.name === "AbortError") throw error;
-    throw new Error("The local pairing service is unavailable. Restart the local app runtime and retry.");
+    throw new RendezvousError("The local pairing service is unavailable. Restart the local app runtime and retry.", 0);
   }
-  if (!response.ok) throw new Error(await responseError(response));
+  if (!response.ok) throw new RendezvousError(await responseError(response), response.status);
   try {
     return await response.json();
   } catch {
