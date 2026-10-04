@@ -71,13 +71,17 @@ async function dispatch(request: BlockStoreWorkerRequest): Promise<void> {
     }
     case "append-journal": {
       const journal = requireJournal();
-      if (journal.getSize() !== request.offset) {
-        throw new Error("The OPFS journal position changed unexpectedly.");
+      const actualSize = journal.getSize();
+      if (actualSize !== request.offset) {
+        throw new Error(`The OPFS journal position changed unexpectedly (expected ${request.offset}, found ${actualSize}).`);
       }
       const bytes = new Uint8Array(request.bytes);
       writeAll(journal, bytes, request.offset);
       journal.truncate(request.offset + bytes.byteLength);
       journal.flush();
+      if (journal.getSize() !== request.offset + bytes.byteLength) {
+        throw new Error("Temporary storage did not retain the transfer receipt. Reconnect in a normal browser window.");
+      }
       respondDone(request.id);
       return;
     }

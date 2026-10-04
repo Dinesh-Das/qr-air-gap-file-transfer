@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import {
   BlockStoreError,
@@ -10,6 +10,7 @@ import {
   requiredAdditionalBlockStorageBytes,
   requiredBlockStorageBytes,
   supportsDurableBlockStore,
+  supportsOpfsBlockStore,
 } from "../src/lib/block-store";
 
 describe("block store", () => {
@@ -186,6 +187,57 @@ describe("block store", () => {
     expect(estimate.hasEnoughSpace).toBeUndefined();
     expect(supportsDurableBlockStore()).toBe(false);
     await expect(deleteAllBlockStores()).resolves.toBeUndefined();
+  });
+
+  describe.sequential("cryptography preflight", () => {
+    afterEach(() => vi.unstubAllGlobals());
+
+    function installStorageCapabilities() {
+      const getDirectory = vi.fn();
+      const requestLock = vi.fn();
+      const persist = vi.fn();
+      const worker = vi.fn();
+      vi.stubGlobal("navigator", {
+        storage: { getDirectory, persist },
+        locks: { request: requestLock },
+      });
+      vi.stubGlobal("Worker", worker);
+      return { getDirectory, requestLock, persist, worker };
+    }
+
+    it("accepts the available native digest API without opening storage", () => {
+      const calls = installStorageCapabilities();
+      expect(supportsDurableBlockStore()).toBe(true);
+      expect(supportsOpfsBlockStore()).toBe(true);
+      for (const call of Object.values(calls)) expect(call).not.toHaveBeenCalled();
+    });
+
+    it.each([
+      ["crypto", undefined],
+      ["SubtleCrypto", {}],
+      ["digest", { subtle: {} }],
+    ])("rejects missing %s before requesting storage or persistence", async (_name, crypto) => {
+      const calls = installStorageCapabilities();
+      vi.stubGlobal("crypto", crypto);
+      expect.soft(supportsDurableBlockStore()).toBe(false);
+      expect.soft(supportsOpfsBlockStore()).toBe(false);
+      await expect(openBlockStore(
+        { storeId: "missing-crypto", totalBytes: 4, blockSize: 4 },
+        { backend: "opfs", requestPersistence: true },
+      )).rejects.toMatchObject({ code: "UNSUPPORTED" });
+      for (const call of Object.values(calls)) expect(call).not.toHaveBeenCalled();
+    });
+
+    it("keeps the explicit memory backend usable without browser cryptography", async () => {
+      vi.stubGlobal("crypto", undefined);
+      const store = await openBlockStore(
+        { storeId: "memory-without-crypto", totalBytes: 4, blockSize: 4 },
+        { backend: "memory", memoryRepository: new MemoryBlockStoreRepository() },
+      );
+      await store.writeBlock(0, Uint8Array.of(1, 2, 3, 4));
+      expect(await store.readBlock(0)).toEqual(Uint8Array.of(1, 2, 3, 4));
+      await store.close();
+    });
   });
 
   it("accounts only for remaining payload and unmet peak metadata on resume", () => {

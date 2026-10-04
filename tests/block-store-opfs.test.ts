@@ -1,7 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { sha256 } from "@noble/hashes/sha2.js";
+import { crc32 } from "../src/lib/protocol";
+import { OfflineDestinationReceiver } from "../src/lib/webrtc-transfer";
+import { bytesToHex, type OfflineTransferManifest } from "../src/lib/webrtc-protocol";
 
 import {
   deleteAllBlockStores,
+  discardOpfsBlockStore,
   openBlockStore,
   type BlockStore,
 } from "../src/lib/block-store";
@@ -24,6 +29,186 @@ describe.sequential("OPFS block-store lifecycle", () => {
 
   afterEach(() => {
     environment.restore();
+  });
+
+  it("discards only a closed selected copy while another store stays open", async () => {
+    const selected = await openOpfs({ storeId: "discard-selected", totalBytes: 4, blockSize: 4 });
+    await selected.writeBlock(0, Uint8Array.of(1, 2, 3, 4)); await selected.close();
+    const other = await openOpfs({ storeId: "keep-active", totalBytes: 4, blockSize: 4 });
+    await other.writeBlock(0, Uint8Array.of(5, 6, 7, 8));
+    await discardOpfsBlockStore("discard-selected");
+    expect(await other.readBlock(0)).toEqual(Uint8Array.of(5, 6, 7, 8));
+    const fresh = await openOpfs({ storeId: "discard-selected", totalBytes: 4, blockSize: 4 });
+    expect(fresh.progress().receivedBytes).toBe(0);
+    await fresh.close(); await other.close();
+  });
+
+  it("refuses discard while the selected store is open", async () => {
+    const selected = await openOpfs({ storeId: "discard-busy", totalBytes: 4, blockSize: 4 });
+    await selected.writeBlock(0, Uint8Array.of(1, 2, 3, 4));
+    await expect(discardOpfsBlockStore("discard-busy")).rejects.toMatchObject({ code: "BUSY" });
+    expect(await selected.readBlock(0)).toEqual(Uint8Array.of(1, 2, 3, 4));
+    expect(environment.storeParent().removeCalls).toBe(0);
+    await selected.close();
+  });
+
+  it("releases discard locks on removal failure and permits retry", async () => {
+    const config = { storeId: "discard-removal-retry", totalBytes: 4, blockSize: 4 };
+    const selected = await openOpfs(config);
+    await selected.writeBlock(0, Uint8Array.of(1, 2, 3, 4)); await selected.close();
+    environment.storeParent().failNextRemove = true;
+    await expect(discardOpfsBlockStore(config.storeId)).rejects.toThrow();
+    const retained = await openOpfs(config);
+    expect(await retained.readBlock(0)).toEqual(Uint8Array.of(1, 2, 3, 4)); await retained.close();
+    await discardOpfsBlockStore(config.storeId);
+    await discardOpfsBlockStore(config.storeId);
+  });
+
+  it("rejects an oversized checkpoint before reading its body and releases the lease", async () => {
+    const config = { storeId: "oversized-checkpoint", totalBytes: 4, blockSize: 4 };
+    const store = await openOpfs(config);
+    await store.close();
+    const checkpoint = environment.storeDirectory().file(CHECKPOINT_ONE);
+    checkpoint.reportedSize = 1024 ** 3;
+    checkpoint.arrayBufferReads = 0;
+    let reopened: BlockStore | undefined;
+    let caught: unknown;
+    try { reopened = await openOpfs(config); } catch (error) { caught = error; }
+    finally { await reopened?.close(); }
+    expect(caught).toMatchObject({ code: "CORRUPT_STORE" });
+    expect(checkpoint.arrayBufferReads).toBe(0);
+    checkpoint.reportedSize = undefined;
+    const repaired = await openOpfs(config);
+    expect(repaired.progress().receivedBytes).toBe(0);
+    await repaired.close();
+  });
+
+  it("uses the valid alternate checkpoint without reading an oversized slot", async () => {
+    const config = { storeId: "oversized-alternate", totalBytes: 4, blockSize: 4 };
+    const store = await openOpfs(config);
+    await store.writeBlock(0, Uint8Array.of(1, 2, 3, 4));
+    await store.close();
+    const directory = environment.storeDirectory();
+    const first = directory.file(CHECKPOINT_ONE);
+    const second = await directory.getFileHandle("checkpoint-0.qbs", { create: true });
+    const writer = await second.createWritable();
+    await writer.write(new Uint8Array(first.bytes()).buffer);
+    await writer.close();
+    first.reportedSize = 1024 ** 3;
+    first.arrayBufferReads = 0;
+    const resumed = await openOpfs(config);
+    expect(resumed.progress().receivedBytes).toBe(4);
+    expect(await resumed.readBlock(0)).toEqual(Uint8Array.of(1, 2, 3, 4));
+    await resumed.close();
+    expect(first.arrayBufferReads).toBe(0);
+  });
+
+  it("recovers the trusted prefix of an oversized journal without reading the whole file", async () => {
+    const config = { storeId: "oversized-journal", totalBytes: 4, blockSize: 4 };
+    const store = await openOpfs(config);
+    await store.writeBlock(0, Uint8Array.of(1, 2, 3, 4));
+    await store.close();
+    const journal = environment.storeDirectory().file(JOURNAL_FILE_NAME);
+    journal.reportedSize = 1024 ** 3;
+    journal.arrayBufferReads = 0;
+    const reopened = await openOpfs(config);
+    expect(reopened.progress().receivedBytes).toBe(4);
+    expect(await reopened.readBlock(0)).toEqual(Uint8Array.of(1, 2, 3, 4));
+    expect(journal.arrayBufferReads).toBe(0);
+    expect(journal.sliceRequests.length).toBe(1);
+    expect(journal.sliceRequests[0]?.end).toBeLessThan(512 * 1024);
+    expect(environment.storeParent().removeCalls).toBe(0);
+    await reopened.close();
+    journal.reportedSize = undefined;
+    const repaired = await openOpfs(config);
+    expect(repaired.progress().receivedBytes).toBe(4);
+    expect(await repaired.readBlock(0)).toEqual(Uint8Array.of(1, 2, 3, 4));
+    await repaired.close();
+  });
+
+  it.each(["large junk", "truncated record", "invalid generation"] as const)("recovers only durable receipts before a %s tail", async (tailKind) => {
+    const config = { storeId: "journal-tail-" + tailKind, totalBytes: 8, blockSize: 4 };
+    const store = await openOpfs(config);
+    await store.writeBlock(0, Uint8Array.of(1, 2, 3, 4));
+    await store.close();
+    const journal = environment.storeDirectory().file(JOURNAL_FILE_NAME);
+    const good = journal.bytes();
+    let tail = new Uint8Array(300_000);
+    if (tailKind === "truncated record") tail = good.slice(0, -1);
+    if (tailKind === "invalid generation") {
+      tail = good.slice();
+      const view = new DataView(tail.buffer);
+      view.setBigUint64(8, BigInt(Number.MAX_SAFE_INTEGER) + 1n, true);
+      view.setUint32(tail.length - 4, crc32(tail.subarray(0, -4)), true);
+    }
+    journal.writeAt(journal.size, tail);
+    journal.arrayBufferReads = 0;
+    const resumed = await openOpfs(config);
+    expect(resumed.progress().receivedBytes).toBe(4);
+    expect(resumed.hasBlock(0)).toBe(true);
+    expect(resumed.hasBlock(1)).toBe(false);
+    expect(await resumed.readBlock(0)).toEqual(Uint8Array.of(1, 2, 3, 4));
+    expect(journal.size).toBe(good.length);
+    expect(journal.arrayBufferReads).toBe(0);
+    await resumed.writeBlock(1, Uint8Array.of(5, 6, 7, 8));
+    await resumed.close();
+    const reopened = await openOpfs(config);
+    expect(reopened.progress().complete).toBe(true);
+    expect(await reopened.readBlock(1)).toEqual(Uint8Array.of(5, 6, 7, 8));
+    await reopened.close();
+  });
+
+  it("drops an oversized invalid journal while preserving payload and requesting fresh receipts", async () => {
+    const config = { storeId: "journal-no-trusted-prefix", totalBytes: 4, blockSize: 4 };
+    const store = await openOpfs(config);
+    await store.writeBlock(0, Uint8Array.of(1, 2, 3, 4));
+    await store.close();
+    const journal = environment.storeDirectory().file(JOURNAL_FILE_NAME);
+    journal.writeAt(0, new Uint8Array(300_000));
+    const resumed = await openOpfs(config);
+    expect(resumed.progress().receivedBytes).toBe(0);
+    expect(resumed.progress().complete).toBe(false);
+    expect(environment.storeDirectory().file("payload.bin").bytes()).toEqual(Uint8Array.of(1, 2, 3, 4));
+    expect(journal.size).toBe(0);
+    await resumed.writeBlock(0, Uint8Array.of(1, 2, 3, 4));
+    expect(resumed.progress().complete).toBe(true);
+    await resumed.close();
+  });
+
+  it("removes poisoned WebRTC payload and receipts before reopening the same OPFS identity", async () => {
+    const bytes = Uint8Array.of(1, 2, 3, 4);
+    const manifest: OfflineTransferManifest = {
+      v: 1, type: "manifest", rootName: "fixture", transferId: "a".repeat(32),
+      manifestId: "b".repeat(64), totalBytes: 4, blockSize: 60 * 1024,
+      streamSha256: bytesToHex(sha256(bytes)),
+    };
+    const options = { backend: "opfs" as const, checkQuota: false, requestPersistence: false };
+    const receiver = await OfflineDestinationReceiver.open(manifest, options);
+    await receiver.store.writeBlock(0, Uint8Array.of(9, 2, 3, 4));
+    expect(receiver.resumeRanges()).toEqual([[0, 1]]);
+    await expect(receiver.verify(new AbortController().signal)).rejects.toThrow(/was discarded/);
+    await receiver.store.close();
+    const resumed = await OfflineDestinationReceiver.open(manifest, options);
+    expect(resumed.resumeRanges()).toEqual([]);
+    await resumed.store.writeBlock(0, bytes);
+    await expect(resumed.verify(new AbortController().signal)).resolves.toHaveProperty("size", 4n);
+    await resumed.store.close();
+  });
+
+  it("reports failed poison removal without claiming discarded data or verified success", async () => {
+    const manifest: OfflineTransferManifest = {
+      v: 1, type: "manifest", rootName: "fixture", transferId: "c".repeat(32),
+      manifestId: "d".repeat(64), totalBytes: 4, blockSize: 60 * 1024,
+      streamSha256: bytesToHex(sha256(Uint8Array.of(1, 2, 3, 4))),
+    };
+    const receiver = await OfflineDestinationReceiver.open(manifest, {
+      backend: "opfs", checkQuota: false, requestPersistence: false,
+    });
+    await receiver.store.writeBlock(0, Uint8Array.of(9, 2, 3, 4));
+    environment.storeParent().failNextRemove = true;
+    await expect(receiver.verify(new AbortController().signal)).rejects.toThrow(/could not be discarded/);
+    // The existing store deletion contract retains the lease for a safe retry.
+    await receiver.store.delete();
   });
 
   it("does not let a closed handle delete a same-ID store reopened elsewhere", async () => {
@@ -329,6 +514,9 @@ class FakeFileHandle {
   private storage = new Uint8Array();
   size = 0;
   failNextClose = false;
+  reportedSize?: number;
+  arrayBufferReads = 0;
+  sliceRequests: Array<{ start?: number; end?: number }> = [];
 
   constructor(readonly name: string) {}
 
@@ -336,7 +524,15 @@ class FakeFileHandle {
     const bytes = this.bytes();
     const buffer = new ArrayBuffer(bytes.byteLength);
     new Uint8Array(buffer).set(bytes);
-    return new File([buffer], this.name);
+    const snapshot = new File([buffer], this.name);
+    if (this.reportedSize !== undefined) Object.defineProperty(snapshot, "size", { value: this.reportedSize });
+    const read = snapshot.arrayBuffer.bind(snapshot);
+    Object.defineProperty(snapshot, "arrayBuffer", { value: () => { this.arrayBufferReads++; return read(); } });
+    const slice = snapshot.slice.bind(snapshot);
+    Object.defineProperty(snapshot, "slice", { value: (start?: number, end?: number, type?: string) => {
+      this.sliceRequests.push({ start, end }); return slice(start, end, type);
+    } });
+    return snapshot;
   }
 
   async createWritable(): Promise<FileSystemWritableFileStream> {

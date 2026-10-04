@@ -35,6 +35,8 @@ const MAX_STORE_ID_BYTES = 4096;
 const MIN_JOURNAL_COMPACTION_BYTES = 256 * 1024;
 const MAX_JOURNAL_RECORD_BYTES =
   JOURNAL_FIXED_BYTES + MAX_BLOCKS_PER_COMMIT * Uint32Array.BYTES_PER_ELEMENT + CHECKSUM_BYTES;
+const MAX_CHECKPOINT_FILE_BYTES =
+  CHECKPOINT_FIXED_BYTES + MAX_STORE_ID_BYTES + Math.ceil(MAX_BLOCK_STORE_BLOCKS / 8) + CHECKSUM_BYTES;
 const STORE_ROOT_LOCK = "airgap-qr-block-store-root-v1";
 const STORE_LOCK_PREFIX = "airgap-qr-block-store-v1:";
 
@@ -241,6 +243,7 @@ const defaultMemoryRepository = new MemoryBlockStoreRepository();
 export function supportsDurableBlockStore(): boolean {
   return (
     typeof navigator !== "undefined" &&
+    typeof globalThis.crypto?.subtle?.digest === "function" &&
     typeof navigator.storage?.getDirectory === "function" &&
     typeof navigator.locks?.request === "function" &&
     typeof Worker !== "undefined"
@@ -285,11 +288,15 @@ function peakBlockStoreMetadataBytes(config: Readonly<BlockStoreConfig>): number
   const checkpointBytes =
     CHECKPOINT_FIXED_BYTES + storeIdBytes + receiptBytes + CHECKSUM_BYTES;
   const journalPeakBytes =
-    Math.max(MIN_JOURNAL_COMPACTION_BYTES, receiptBytes * 2) +
+    journalCompactionBytes(receiptBytes) +
     MAX_JOURNAL_RECORD_BYTES;
 
   // Both checkpoint slots remain live while a third temporary file is written.
   return checkpointBytes * 3 + journalPeakBytes;
+}
+
+function journalCompactionBytes(receiptBytes: number): number {
+  return Math.max(MIN_JOURNAL_COMPACTION_BYTES, receiptBytes * 2);
 }
 
 export async function estimateBlockStorage(
@@ -354,7 +361,7 @@ export async function openBlockStore(
   }
   if (!supportsDurableBlockStore()) {
     throw new BlockStoreError(
-      "Durable OPFS storage requires Origin Private File System, Web Locks, and dedicated Worker support. Large transfers cannot safely fall back to RAM.",
+      "Durable OPFS storage requires Web Crypto SHA-256, Origin Private File System, Web Locks, and dedicated Worker support. Large transfers cannot safely fall back to RAM.",
       "UNSUPPORTED",
     );
   }
@@ -912,10 +919,7 @@ class OpfsBlockStore extends BaseBlockStore {
   }
 
   private journalCompactionThreshold(): number {
-    return Math.max(
-      MIN_JOURNAL_COMPACTION_BYTES,
-      this.state.bits.byteLength * 2,
-    );
+    return journalCompactionBytes(this.state.bits.byteLength);
   }
 
   private async compactJournal(): Promise<void> {
@@ -1162,6 +1166,28 @@ async function acquireNamedLock(
   };
 }
 
+/** Explicitly discards one app-owned copy, without opening corrupt metadata. */
+export async function discardOpfsBlockStore(storeId: string): Promise<void> {
+  const normalized = normalizeConfig({ storeId, totalBytes: 0, blockSize: 1 });
+  if (typeof navigator === "undefined" || typeof navigator.storage?.getDirectory !== "function" ||
+      typeof navigator.locks?.request !== "function") {
+    throw new BlockStoreError("Discarding a transfer copy safely requires OPFS and Web Locks.", "UNSUPPORTED");
+  }
+  const directoryName = await storeDirectoryName(normalized.storeId);
+  const lease = await acquireStoreLock(directoryName);
+  try {
+    const root = await navigator.storage.getDirectory();
+    try {
+      const parent = await root.getDirectoryHandle(STORE_ROOT_DIRECTORY);
+      await parent.removeEntry(directoryName, { recursive: true });
+    } catch (error) {
+      if (!isNotFoundError(error)) throw error;
+    }
+  } finally {
+    await lease.release();
+  }
+}
+
 /** Removes only AirGap QR's app-owned OPFS block-store directory. */
 export async function deleteAllBlockStores(): Promise<void> {
   if (
@@ -1199,7 +1225,7 @@ async function loadOpfsState(
   config: Readonly<BlockStoreConfig>,
 ): Promise<LoadedOpfsState> {
   const checkpointResults = await Promise.all(
-    CHECKPOINT_FILE_NAMES.map((name) => readFileIfPresent(directory, name)),
+    CHECKPOINT_FILE_NAMES.map((name) => readFileIfPresent(directory, name, MAX_CHECKPOINT_FILE_BYTES)),
   );
   const existingCheckpointFiles = checkpointResults.filter((result) => result.exists).length;
   const candidates = checkpointResults.flatMap((result) => {
@@ -1236,7 +1262,11 @@ async function loadOpfsState(
   let state = candidates[0];
   assertMatchingConfig(state.config, config);
 
-  const journalBytes = new Uint8Array(await (await journalFile.getFile()).arrayBuffer());
+  const journalSnapshot = await journalFile.getFile();
+  // A healthy journal fits this prefix. Replay only validated whole records;
+  // worker opening truncates any corrupt/oversized tail while we hold the lease.
+  const maximumJournalBytes = journalCompactionBytes(state.bits.byteLength) + MAX_JOURNAL_RECORD_BYTES;
+  const journalBytes = new Uint8Array(await journalSnapshot.slice(0, maximumJournalBytes).arrayBuffer());
   const replayed = replayJournal(state, journalBytes);
   state = replayed.state;
 
@@ -1268,8 +1298,12 @@ async function storedMetadataBytes(directory: FileSystemDirectoryHandle): Promis
   const names = [...CHECKPOINT_FILE_NAMES, JOURNAL_FILE_NAME];
   let total = 0;
   for (const name of names) {
-    const result = await readFileIfPresent(directory, name);
-    total += result.bytes?.byteLength ?? 0;
+    try {
+      const handle = await directory.getFileHandle(name);
+      total += (await handle.getFile()).size;
+    } catch (error) {
+      if (!isNotFoundError(error)) throw error;
+    }
   }
   return total;
 }
@@ -1300,12 +1334,17 @@ async function replaceFile(
 async function readFileIfPresent(
   directory: FileSystemDirectoryHandle,
   name: string,
+  maximumBytes: number,
 ): Promise<{ exists: boolean; bytes?: Uint8Array }> {
   try {
     const handle = await directory.getFileHandle(name);
+    const snapshot = await handle.getFile();
+    // Treat an oversized slot like an invalid checksum: use a valid alternate
+    // checkpoint if present, without allocating the corrupt slot's body.
+    if (snapshot.size > maximumBytes) return { exists: true };
     return {
       exists: true,
-      bytes: new Uint8Array(await (await handle.getFile()).arrayBuffer()),
+      bytes: new Uint8Array(await snapshot.arrayBuffer()),
     };
   } catch (error) {
     if (isNotFoundError(error)) return { exists: false };
@@ -1423,7 +1462,9 @@ function replayJournal(
       view.getUint32(recordLength - CHECKSUM_BYTES, true) !==
       crc32(record.subarray(0, -CHECKSUM_BYTES))
     ) break;
-    const generation = safeBigUint(view.getBigUint64(8, true), "journal generation");
+    const rawGeneration = view.getBigUint64(8, true);
+    if (rawGeneration < 1n || rawGeneration > BigInt(Number.MAX_SAFE_INTEGER)) break;
+    const generation = Number(rawGeneration);
 
     if (generation > state.generation) {
       if (generation !== state.generation + 1) break;
