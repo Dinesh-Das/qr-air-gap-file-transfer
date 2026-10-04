@@ -10,6 +10,11 @@ import {
 export const LARGE_DESTINATION_CHUNK_BYTES = 4 * 1024 * 1024;
 export const LARGE_DESTINATION_MARKER = ".airgap-qr-v3.partial.json";
 
+// Overlap small-file filesystem round trips without multiplying the 4 MiB
+// large-file read buffer. Every check still resolves its current path anew.
+const SMALL_DESTINATION_FILE_BYTES = 64 * 1024;
+const SMALL_DESTINATION_FILE_CONCURRENCY = 4;
+
 const JOURNAL_SCHEMA = "airgap-qr-destination-journal" as const;
 const JOURNAL_VERSION = 1 as const;
 const MAX_JOURNAL_BYTES = 1024 * 1024;
@@ -112,7 +117,7 @@ export async function writeLargeTreeToDirectory(
     if (marker) {
       completed = await readMatchingJournal(marker, plan);
       resumed = true;
-      await assertPartialDestination(root, plan);
+      await assertPartialDestination(root, plan, options.signal);
     } else if (await isDirectoryEmpty(root)) {
       completed = new Uint8Array(bitsetLength(plan.manifest.files.length));
       try {
@@ -134,6 +139,7 @@ export async function writeLargeTreeToDirectory(
       try {
         await verifyCompleteDestination(root, plan, chunkBytes, options);
       } catch (error) {
+        throwIfAborted(options.signal);
         throw new Error(
           `The destination folder ${JSON.stringify(plan.manifest.rootName)} is non-empty and is not an exact completed copy of this transfer. Choose another folder; no files were changed. (${toError(error).message})`,
         );
@@ -148,13 +154,15 @@ export async function writeLargeTreeToDirectory(
       };
     }
 
-    await ensureDirectories(root, plan.directories);
+    await ensureDirectories(root, plan.directories, options.signal);
 
     let filesWritten = 0;
     let filesReused = 0;
     let bytesComplete = 0n;
+    let savedCheckStart = -1;
+    let savedChecks: PromiseSettledResult<boolean>[] = [];
 
-    for (let index = 0; index < plan.manifest.files.length; index += 1) {
+    for (let index = 0; index < plan.manifest.files.length;) {
       throwIfAborted(options.signal);
       const file = plan.manifest.files[index];
       if (getBit(completed, index)) {
@@ -166,9 +174,26 @@ export async function writeLargeTreeToDirectory(
           bytesComplete,
           bytesTotal: plan.manifest.totalFileBytes,
         });
-        if (await destinationFileMatches(root, file, chunkBytes, options.signal)) {
+        throwIfAborted(options.signal);
+        if (index < savedCheckStart || index >= savedCheckStart + savedChecks.length) {
+          let end = smallFileBatchEnd(plan.manifest.files, index);
+          for (let next = index + 1; next < end; next++) {
+            if (!getBit(completed, next)) { end = next; break; }
+          }
+          savedCheckStart = index;
+          // Keep only a bounded group of results, never handles from writing.
+          // Final verification resolves all paths again after any repairs.
+          savedChecks = await Promise.allSettled(plan.manifest.files.slice(index, end).map(
+            (entry) => destinationFileMatches(root, entry, chunkBytes, options.signal),
+          ));
+          throwIfAborted(options.signal);
+        }
+        const savedCheck = savedChecks[index - savedCheckStart];
+        if (savedCheck.status === "rejected") throw savedCheck.reason;
+        if (savedCheck.value) {
           filesReused += 1;
           bytesComplete += file.size;
+          index++;
           continue;
         }
         // The user or another process changed a previously committed file.
@@ -177,24 +202,36 @@ export async function writeLargeTreeToDirectory(
         await writeJournal(root, plan, completed);
       }
 
-      await writeOneFile(root, file, reader, chunkBytes, options, {
-        filesComplete: index,
-        filesTotal: plan.manifest.files.length,
-        bytesComplete,
-        bytesTotal: plan.manifest.totalFileBytes,
-      });
-      setBit(completed, index, true);
-      await writeJournal(root, plan, completed);
-      filesWritten += 1;
-      bytesComplete += file.size;
-      options.onProgress?.({
-        phase: "write",
-        path: file.path,
-        filesComplete: index + 1,
-        filesTotal: plan.manifest.files.length,
-        bytesComplete,
-        bytesTotal: plan.manifest.totalFileBytes,
-      });
+      let end = smallFileBatchEnd(plan.manifest.files, index);
+      for (let next = index + 1; next < end; next++) {
+        if (getBit(completed, next)) { end = next; break; }
+      }
+      const progressBase = {
+        filesComplete: index, filesTotal: plan.manifest.files.length,
+        bytesComplete, bytesTotal: plan.manifest.totalFileBytes,
+      };
+      const writes = await Promise.allSettled(plan.manifest.files.slice(index, end).map(
+        (entry) => writeOneFile(root, entry, reader, chunkBytes, options, progressBase),
+      ));
+      throwIfAborted(options.signal);
+      // Payloads may close concurrently, but journal mutations stay ordered:
+      // one durable completion bit per successfully closed and hashed file.
+      // Unjournalled closed files are safely rewritten after an interruption.
+      for (const result of writes) {
+        if (result.status === "rejected") throw result.reason;
+        const written = plan.manifest.files[index];
+        setBit(completed, index, true);
+        await writeJournal(root, plan, completed);
+        filesWritten += 1;
+        bytesComplete += written.size;
+        index++;
+        options.onProgress?.({
+          phase: "write", path: written.path,
+          filesComplete: index, filesTotal: plan.manifest.files.length,
+          bytesComplete, bytesTotal: plan.manifest.totalFileBytes,
+        });
+        throwIfAborted(options.signal);
+      }
     }
 
     // Do not remove the ownership marker until both the exact path/type set and
@@ -210,7 +247,7 @@ export async function writeLargeTreeToDirectory(
       totalBytes: plan.manifest.totalFileBytes,
       resumed,
     };
-  });
+  }, options.signal);
 }
 
 function createDestinationPlan(
@@ -287,8 +324,9 @@ async function writeOneFile(
   const segments = file.path.split("/");
   const name = segments.pop();
   if (!name) throw new Error(`Invalid empty destination file name: ${file.path}`);
-  const parent = await descendDirectory(root, segments, false);
+  const parent = await descendDirectory(root, segments, false, options.signal);
   const handle = await parent.getFileHandle(name, { create: true });
+  throwIfAborted(options.signal);
   assertExactHandleName(handle, name, "file");
   const writable = await handle.createWritable({ keepExistingData: false });
   const hasher = sha256.create();
@@ -302,6 +340,7 @@ async function writeOneFile(
         remaining < BigInt(chunkBytes) ? remaining : BigInt(chunkBytes),
       );
       const chunk = await reader.read(file.offset + relativeOffset, length);
+      throwIfAborted(options.signal);
       if (chunk.length !== length) {
         throw new Error(`The received stream returned a truncated range for ${file.path}.`);
       }
@@ -319,6 +358,7 @@ async function writeOneFile(
         bytesTotal: progressBase.bytesTotal,
       });
     }
+    throwIfAborted(options.signal);
     const actualHash = bytesToHex(hasher.digest());
     if (actualHash !== file.sha256Hex) {
       throw new Error(
@@ -342,7 +382,7 @@ async function verifyCompleteDestination(
   chunkBytes: number,
   options: LargeDestinationOptions,
 ): Promise<void> {
-  const actual = await scanDestination(root, plan.expectedKinds.size);
+  const actual = await scanDestination(root, plan.expectedKinds.size, options.signal);
   for (const [path, expectedKind] of plan.expectedKinds) {
     const actualKind = actual.get(path);
     if (actualKind !== expectedKind) {
@@ -360,7 +400,7 @@ async function verifyCompleteDestination(
   }
 
   let bytesComplete = 0n;
-  for (let index = 0; index < plan.manifest.files.length; index += 1) {
+  for (let index = 0; index < plan.manifest.files.length;) {
     throwIfAborted(options.signal);
     const file = plan.manifest.files[index];
     options.onProgress?.({
@@ -371,10 +411,30 @@ async function verifyCompleteDestination(
       bytesComplete,
       bytesTotal: plan.manifest.totalFileBytes,
     });
-    if (!(await destinationFileMatches(root, file, chunkBytes, options.signal))) {
-      throw new Error(`Destination SHA-256 or size mismatch for ${file.path}.`);
+    throwIfAborted(options.signal);
+    const end = smallFileBatchEnd(plan.manifest.files, index);
+    // Drain every read before throwing, so cancellation or one failed check
+    // cannot release the destination lock while another check is still running.
+    const results = await Promise.allSettled(plan.manifest.files.slice(index, end).map(
+      (entry) => destinationFileMatches(root, entry, chunkBytes, options.signal),
+    ));
+    throwIfAborted(options.signal);
+    for (const result of results) {
+      const checked = plan.manifest.files[index];
+      if (result.status === "rejected") throw result.reason;
+      if (!result.value) throw new Error(`Destination SHA-256 or size mismatch for ${checked.path}.`);
+      bytesComplete += checked.size;
+      index++;
+      options.onProgress?.({
+        phase: "verify",
+        path: checked.path,
+        filesComplete: index,
+        filesTotal: plan.manifest.files.length,
+        bytesComplete,
+        bytesTotal: plan.manifest.totalFileBytes,
+      });
+      throwIfAborted(options.signal);
     }
-    bytesComplete += file.size;
   }
   options.onProgress?.({
     phase: "verify",
@@ -383,6 +443,19 @@ async function verifyCompleteDestination(
     bytesComplete,
     bytesTotal: plan.manifest.totalFileBytes,
   });
+  throwIfAborted(options.signal);
+}
+
+function smallFileBatchEnd(files: readonly LargeTreeFile[], start: number): number {
+  let end = start + 1;
+  if (files[start].size <= BigInt(SMALL_DESTINATION_FILE_BYTES)) {
+    while (
+      end < files.length &&
+      end - start < SMALL_DESTINATION_FILE_CONCURRENCY &&
+      files[end].size <= BigInt(SMALL_DESTINATION_FILE_BYTES)
+    ) end++;
+  }
+  return end;
 }
 
 async function destinationFileMatches(
@@ -397,7 +470,7 @@ async function destinationFileMatches(
   let directory: FileSystemDirectoryHandle;
   let handle: FileSystemFileHandle;
   try {
-    directory = await descendDirectory(root, segments, false);
+    directory = await descendDirectory(root, segments, false, signal);
     handle = await directory.getFileHandle(name);
   } catch (error) {
     if (isNotFoundOrTypeMismatch(error)) return false;
@@ -422,8 +495,9 @@ async function destinationFileMatches(
 async function assertPartialDestination(
   root: FileSystemDirectoryHandle,
   plan: DestinationPlan,
+  signal?: AbortSignal,
 ): Promise<void> {
-  const actual = await scanDestination(root, plan.expectedKinds.size);
+  const actual = await scanDestination(root, plan.expectedKinds.size, signal);
   for (const [path, kind] of actual) {
     const expectedKind = plan.expectedKinds.get(path);
     if (expectedKind === undefined) {
@@ -442,11 +516,14 @@ async function assertPartialDestination(
 async function scanDestination(
   root: FileSystemDirectoryHandle,
   maximumPaths: number,
+  signal?: AbortSignal,
 ): Promise<Map<string, "file" | "directory">> {
   const paths = new Map<string, "file" | "directory">();
 
   async function walk(directory: FileSystemDirectoryHandle, prefix: string) {
+    throwIfAborted(signal);
     for await (const [name, handle] of directory.entries()) {
+      throwIfAborted(signal);
       if (!prefix && name === LARGE_DESTINATION_MARKER) continue;
       const path = prefix ? `${prefix}/${name}` : name;
       if (paths.has(path)) {
@@ -467,9 +544,10 @@ async function scanDestination(
 async function ensureDirectories(
   root: FileSystemDirectoryHandle,
   directories: readonly string[],
+  signal?: AbortSignal,
 ): Promise<void> {
   for (const path of directories) {
-    await descendDirectory(root, path.split("/"), true);
+    await descendDirectory(root, path.split("/"), true, signal);
   }
 }
 
@@ -477,10 +555,13 @@ async function descendDirectory(
   root: FileSystemDirectoryHandle,
   segments: readonly string[],
   create: boolean,
+  signal?: AbortSignal,
 ): Promise<FileSystemDirectoryHandle> {
   let current = root;
   for (const segment of segments) {
+    throwIfAborted(signal);
     const next = await current.getDirectoryHandle(segment, { create });
+    throwIfAborted(signal);
     assertExactHandleName(next, segment, "folder");
     current = next;
   }
@@ -712,9 +793,10 @@ function throwIfAborted(signal?: AbortSignal): void {
 async function withDestinationLock<T>(
   name: string,
   operation: () => Promise<T>,
+  signal?: AbortSignal,
 ): Promise<T> {
   if (typeof navigator !== "undefined" && navigator.locks) {
-    return navigator.locks.request(name, { mode: "exclusive" }, operation);
+    return navigator.locks.request(name, { mode: "exclusive", signal }, operation);
   }
   return operation();
 }
