@@ -12,6 +12,28 @@ const SESSION_ID_PATTERN = /^[0-9a-f]{32}$/;
 
 export type OfflineSignalKind = "offer" | "answer";
 
+/** Local validation failure, never created from peer error names/text. */
+export class PeerCandidatePolicyError extends Error {
+  constructor(message: string) { super(message); this.name = "PeerCandidatePolicyError"; }
+}
+
+/** Validate before native processing; accepted SDP stays exact for SAS binding. */
+export function assertLocalSignalCandidates(sdp: string): void {
+  if (typeof sdp !== "string" || sdp.length < 1 || sdp.length > MAX_SDP_CHARS) {
+    throw new PeerCandidatePolicyError("The peer supplied invalid connection details.");
+  }
+  let candidates = 0;
+  for (const line of sdp.split(/\r?\n/)) {
+    if (!/^a=candidate:/i.test(line.trimStart())) continue;
+    candidates++;
+    const fields = line.trim().split(/\s+/);
+    if (fields[6]?.toLowerCase() !== "typ" || fields[7]?.toLowerCase() !== "host" || !fields[4] || !isLocalCandidateAddress(fields[4])) {
+      throw new PeerCandidatePolicyError("The peer supplied a connection candidate outside the local host-only policy.");
+    }
+  }
+  if (!candidates) throw new PeerCandidatePolicyError("The peer supplied no usable local connection candidate.");
+}
+
 export interface OfflineSignalBundle {
   v: 1;
   kind: OfflineSignalKind;
@@ -148,17 +170,21 @@ export async function createAuthenticationCode(
   offerSdp: string,
   answerSdp: string,
 ): Promise<string> {
+  const digest = createAuthenticationDigest(sessionId, offerSdp, answerSdp);
+  // Six decimal digits allow a last-moving signaling attacker to grind a
+  // matching transcript offline. Use 64 bits for the human comparison.
+  return Array.from(digest.subarray(0, 8), (byte) => byte.toString(16).padStart(2, "0")).join("").toUpperCase();
+}
+
+/** Binds the exact exchanged descriptions, including DTLS fingerprints. */
+export function createAuthenticationDigest(sessionId: string, offerSdp: string, answerSdp: string): Uint8Array {
   if (!SESSION_ID_PATTERN.test(sessionId)) throw new Error("Invalid session ID.");
-  const digest = sha256(
-    new TextEncoder().encode(`airgap-webrtc-sas-v1\n${sessionId}\n${offerSdp}\n${answerSdp}`),
-  );
-  const number =
-    (((digest[0] << 24) >>> 0) |
-      (digest[1] << 16) |
-      (digest[2] << 8) |
-      digest[3]) >>>
-    0;
-  return String(number % 1_000_000).padStart(6, "0");
+  if (!offerSdp || !answerSdp || offerSdp.length > MAX_SDP_CHARS || answerSdp.length > MAX_SDP_CHARS) {
+    throw new Error("Invalid authentication transcript.");
+  }
+  return sha256(new TextEncoder().encode(JSON.stringify([
+    "airgap-webrtc-sas-v2", sessionId, offerSdp, answerSdp,
+  ])));
 }
 
 /** Removes non-host and globally routable candidates before SDP leaves the screen. */

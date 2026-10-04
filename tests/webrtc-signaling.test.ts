@@ -46,7 +46,7 @@ describe("WebRTC QR signaling", () => {
   it("produces the same authentication code for the same transcript", async () => {
     const first = await createAuthenticationCode(offer.sessionId, offer.sdp, "answer");
     const second = await createAuthenticationCode(offer.sessionId, offer.sdp, "answer");
-    expect(first).toMatch(/^\d{6}$/);
+    expect(first).toMatch(/^[0-9A-F]{16}$/);
     expect(first).toBe(second);
   });
 
