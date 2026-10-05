@@ -37,6 +37,7 @@ import {
 import { formatBytes, formatEta, formatRate } from "../lib/format";
 import {
   deleteAllBlockStores,
+  supportsDurableBlockStore,
 } from "../lib/block-store";
 import {
   clearQrf3ReceiverConnection,
@@ -279,7 +280,7 @@ export function LargeReceiver({ active = true }: { active?: boolean }) {
     if (!manifest || !verified || !matchesQrf3FilesBinding(verified.filesBinding, manifest, verifiedStatus.manifestId)) {
       throw new Error("The completed Files stream does not match the verified QRF3 probe.");
     }
-    const parsedTree = await readLargeTreeManifest(reader);
+    const parsedTree = await readLargeTreeManifest(reader, controller.signal);
     throwIfLifecycleChanged(controller.signal, generation, generationRef.current);
     if (verificationAbortRef.current === controller) verificationAbortRef.current = null;
     readerRef.current = reader;
@@ -650,14 +651,8 @@ function throwIfLifecycleChanged(
 }
 
 function largeReceiverStorageCapabilityError(): string | null {
-  if (typeof navigator.storage?.getDirectory !== "function") {
-    return "Large receive mode requires Chromium Origin Private File System support.";
-  }
-  if (typeof Worker === "undefined") {
-    return "Large receive mode requires dedicated Worker support for safe disk writes.";
-  }
-  if (typeof navigator.locks?.request !== "function") {
-    return "Large receive mode requires Web Locks so another tab cannot corrupt the same durable transfer.";
+  if (!supportsDurableBlockStore()) {
+    return "This browser cannot store transfer data safely. Open this app in a current Edge or Chrome window.";
   }
   if (!supportsQrf3ReceiverResume()) {
     return "Large receive mode requires IndexedDB to preserve the verified connection across reloads.";
