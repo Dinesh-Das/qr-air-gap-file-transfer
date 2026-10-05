@@ -240,7 +240,7 @@ main {
 .transport-home {
   width: min(1040px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 76px 0 80px;
+  padding: 40px 0 48px;
 }
 
 .transport-options {
@@ -249,11 +249,31 @@ main {
   gap: 20px;
 }
 
+.other-methods {
+  margin-top: 28px;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.other-methods summary {
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.other-methods p {
+  line-height: 1.6;
+}
+
 .transport-option {
   position: relative;
   display: grid;
-  min-height: 290px;
-  padding: 32px;
+  min-height: 230px;
+  padding: 28px;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: start;
   gap: 20px;
@@ -290,7 +310,7 @@ main {
 
 .transport-option-copy {
   display: flex;
-  min-height: 224px;
+  min-height: 174px;
   flex-direction: column;
 }
 
@@ -337,43 +357,6 @@ main {
   color: var(--accent);
 }
 
-.recommended-badge {
-  position: absolute;
-  top: 15px;
-  right: 16px;
-  display: inline-flex;
-  padding: 5px 8px;
-  align-items: center;
-  gap: 4px;
-  border-radius: 999px;
-  color: var(--accent-dark);
-  background: var(--lime);
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.home-boundary {
-  display: flex;
-  max-width: 780px;
-  margin: 24px auto 0;
-  padding: 14px 17px;
-  align-items: flex-start;
-  gap: 11px;
-  border: 1px solid var(--line);
-  border-radius: 13px;
-  color: var(--muted);
-  background: rgba(255, 255, 255, 0.65);
-  font-size: 11px;
-  line-height: 1.55;
-}
-
-.home-boundary svg {
-  flex: 0 0 auto;
-  color: var(--accent);
-}
-
 .page-heading {
   max-width: 720px;
   margin: 0 auto 35px;
@@ -414,6 +397,71 @@ main {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.7;
+}
+
+.network-workspace {
+  padding-top: 24px;
+}
+
+.network-workspace .page-heading {
+  max-width: 840px;
+  margin-bottom: 24px;
+}
+
+.network-workspace .page-heading h1 {
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.network-workspace .page-heading p {
+  max-width: 720px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.network-workspace .panel {
+  padding: 24px;
+}
+
+.network-workspace .drop-zone {
+  min-height: 0;
+  padding: 20px;
+}
+
+.network-workspace .pairing-entry {
+  min-height: 0;
+  padding: 8px 12px 20px;
+  gap: 10px;
+}
+
+.source-picker-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.readiness-card {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.readiness-card strong {
+  color: var(--ink);
+}
+
+.readiness-card summary {
+  cursor: pointer;
+}
+
+.readiness-card p {
+  margin: 10px 0;
 }
 
 .connection-banner {
@@ -926,6 +974,11 @@ main {
   border-color: #efc7c3;
   color: #8d302d;
   background: var(--danger-soft);
+}
+
+.destination-save-status > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .status-box.success {
@@ -1594,6 +1647,52 @@ main {
   margin-top: 0;
 }
 
+.transfer-metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.transfer-metrics .metric:nth-child(odd) {
+  border-left: 0;
+}
+
+.transfer-metrics .metric:nth-child(n + 3) {
+  border-top: 1px solid var(--line);
+}
+
+.transfer-metrics .metric:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.transfer-metrics-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.transfer-error-details {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.transfer-connection-status {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.transfer-error-details pre {
+  max-height: 180px;
+  padding: 12px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
 .transfer-progress-card .button {
   margin-top: 2px;
 }
@@ -1663,6 +1762,14 @@ main {
 }
 
 @media (max-width: 900px) {
+  .sender-layout .transfer-status-panel,
+  .receiver-layout .transfer-status-panel {
+    order: -1;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
   .site-header {
     grid-template-columns: 1fr auto;
   }
@@ -1719,7 +1826,7 @@ main {
   }
 
   .transport-option-copy {
-    min-height: 210px;
+    min-height: 174px;
   }
 
   .option-arrow {
@@ -1807,3 +1914,8 @@ main {
     transition-duration: 0.01ms !important;
   }
 }
+
+.connection-diagnostics { margin-block: 1rem; overflow-wrap: anywhere; }
+.connection-diagnostics summary { cursor: pointer; }
+.connection-diagnostics dl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .4rem 1rem; }
+.connection-diagnostics dd { margin: 0; }
