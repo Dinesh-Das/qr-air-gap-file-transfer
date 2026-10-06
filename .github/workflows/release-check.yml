@@ -1,0 +1,52 @@
+name: Release checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Initialize run evidence
+        run: |
+          New-Item -ItemType Directory -Path ci-evidence | Out-Null
+          @{ commit = $env:GITHUB_SHA; runId = $env:GITHUB_RUN_ID; attempt = $env:GITHUB_RUN_ATTEMPT; node = (node --version); startedAt = (Get-Date -Format o) } | ConvertTo-Json | Set-Content ci-evidence/run.json
+      - name: Install dependencies
+        run: |
+          npm ci 2>&1 | Tee-Object -FilePath ci-evidence/install.txt
+          $commandExit = $LASTEXITCODE
+          Set-Content ci-evidence/install-exit-code.txt $commandExit
+          exit $commandExit
+      - name: Install test browser
+        run: |
+          npx playwright install chromium 2>&1 | Tee-Object -FilePath ci-evidence/browser-install.txt
+          $commandExit = $LASTEXITCODE
+          Set-Content ci-evidence/browser-install-exit-code.txt $commandExit
+          exit $commandExit
+      - name: Run complete release gate
+        run: |
+          npm run check:release 2>&1 | Tee-Object -FilePath ci-evidence/gate.txt
+          $commandExit = $LASTEXITCODE
+          Set-Content ci-evidence/gate-exit-code.txt $commandExit
+          if ($commandExit -eq 0) {
+            Copy-Item release-evidence/offline-package-smoke.json ci-evidence/package-smoke.json
+          }
+          exit $commandExit
+      - name: Retain run evidence and failure traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-check-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ci-evidence/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 14
