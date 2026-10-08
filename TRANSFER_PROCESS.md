@@ -2,13 +2,70 @@
 
 ## Purpose
 
-AirGap QR transfers a folder through the sender computer's screen and the
-receiver computer's camera. Transfer data is not uploaded or sent over a
-network. Both computers run the bundled app from loopback, and all framing,
-storage, hashing, and reconstruction happen locally.
+AirGap QR supports two transfer paths. Optical QR sends a folder through the
+sender's screen and receiver's camera without networking between them. WebRTC
+file transfer sends data over a shared local network without an internet service.
+Both computers run the bundled app locally; neither mode uploads files to a
+cloud service. Choose the mode allowed for the devices and data involved.
 
 Use the application only for data you are authorized to move. A QR stream is a
 data-transfer channel and may still be restricted by an organization's policy.
+
+## Wi-Fi / WebRTC quick start
+
+1. Before going offline, install the required Node.js version and a supported
+   Chromium browser on each laptop. Copy the same complete app bundle to both.
+2. On each laptop, double-click **Start AirGap QR.cmd** in the bundle folder.
+   It checks the bundle and opens the local app in your default browser. Keep
+   the launcher open; press Enter in that window to stop it after the transfer.
+3. Connect both laptops to the same authorized local Wi-Fi network or hotspot,
+   with peer-to-peer connections allowed. Internet access is not required.
+4. Choose **Send** on the sending laptop and **Receive** on the other. Wait for
+   the device check. On the sender, **Choose files** or **Choose folder**, then
+   **Get pairing code**. On the receiver, enter that code and **Connect to sender**.
+5. Compare the separate device verification code on both screens. Choose
+   **Codes match** on each only if every group agrees; otherwise choose
+   **Codes do not match** and reconnect. Repeat this comparison after reconnecting.
+6. Leave the source unchanged during transfer. After the receiver verifies the
+   stream, choose **Choose destination and save**. Wait for **Transfer complete**;
+   received temporary data is not yet your saved destination copy.
+
+The sender displays its pairing code before checking the file bytes. Connect
+and compare device codes while checking continues; files wait for both completed
+checking and confirmation on both laptops. A connection failure or **Stop and
+reconnect** keeps pending checking and prepared snapshots. **New transfer**
+discards that work. A reload during initial checking requires selecting the
+source again because its recovery checkpoint is saved only after checking.
+
+The local device check runs before selection and again before reading source
+bytes for preparation or recovery. A failed check leaves the selection available
+for retry. It checks this laptop’s service, not the remote laptop or firewall.
+
+If launching says the application is already open or its local address is in
+use, check for the terminal running your existing copy. Use that copy or stop it
+with Ctrl+C before launching again. The failed launch does not stop the existing
+runtime. Keep using the same local URL when resuming: browser storage belongs
+to that origin.
+
+If automatic pairing fails, open **Troubleshoot connection** on both screens. Enter the sender's displayed address
+and port for the shared network, together with its six-digit code. Guest-network
+peer isolation and firewall rules can prevent communication; manual addressing
+does not bypass those restrictions. The displayed sender address includes its
+automatically selected port. The app tries four signaling ports when one is busy;
+normal use does not require setting an environment variable. If all are
+unavailable, close other copies and retry the device check.
+
+After interruption, use **Retry connection** on the sender and **Reconnect and
+resume** on the receiver. After reloading the sender, **Recover saved source**
+reopens and rehashes the source; allow read access if prompted. If unavailable,
+select the same unchanged source again. Confirm the new device code on both.
+After a save failure, keep the partial destination unchanged and retry saving
+there: the app verifies reusable files before completing the tree. Do not clear
+browser site data if you want to retain receive progress.
+
+Choose **Other transfer methods → Offline QR / Air-gap mode** on the home
+screen for the optical QR engines described below. See README.md for
+storage limits, supported behavior and more detailed Wi-Fi recovery notes.
 
 ## Choose the transfer engine
 
@@ -49,7 +106,14 @@ npm ci
 npm run build
 ```
 
-Copy `dist/` and `scripts/serve.mjs` as sibling paths to each offline computer,
+Alternatively, run `npm run package:offline` to create a complete test bundle in
+`artifacts/`. Copy the generated folder to each computer and run
+`node scripts/verify-release.mjs` inside it before launching. This checks copy
+integrity, not publisher authenticity or release readiness. Node and the browser
+are not bundled. `npm run test:package` builds and smoke-tests a staged bundle
+outside the repository; it does not replace the physical two-laptop tests.
+
+For manual staging, copy the complete `dist/` and `scripts/` directories as sibling paths to each offline computer,
 then run:
 
 ```powershell
@@ -65,7 +129,7 @@ or registry access.
 
 ### 1. Select and prepare the source
 
-1. Choose **Large QRF3** and **Sender**.
+1. Choose **Large QRF3** and **Send**.
 2. Click **Browse folder** and select the source root.
 3. Review the discovered file, directory, and byte counts.
 4. Start preparation.
@@ -121,7 +185,7 @@ after verified completion to remove its saved handle and metadata.
 
 ### 1. Receive and verify the probe
 
-1. Choose **Large QRF3** and **Receiver**.
+1. Choose **Large QRF3** and **Receive**.
 2. Select the intended camera.
 3. Start the connection test and allow camera access.
 4. Keep the complete QR and its white border inside the scan guide.

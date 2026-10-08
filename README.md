@@ -39,6 +39,34 @@ npm ci
 npm run build
 ```
 
+For a complete offline test bundle, run `npm run package:offline`. It builds and
+stages a new folder under `artifacts/` with the app, runtime modules, instructions,
+and SHA-256 inventory. Copy that entire folder to each laptop. From that folder,
+double-click **Start AirGap QR.cmd**. The launcher checks the runtime and bundle
+contents, starts the local app and opens the default browser. Keep its window
+open; press Enter there to stop. Use a supported Chromium browser for transfers.
+For command-line use, run `node scripts/verify-release.mjs`, then
+`node scripts/serve.mjs`.
+The verifier rejects missing, extra, or changed files. Checksums detect copy
+errors; they do not authenticate the publisher. Node and a supported browser
+must already be installed. Packaging does not declare the release READY.
+
+An optional Windows x64 bundle can include Node.js 24. On the Windows build
+machine, obtain the official versioned `node.exe` and complete matching `LICENSE`
+in a trusted directory. Independently verify the binary SHA-256 against Node's
+official release checksums, then run after building:
+
+```powershell
+node scripts/package-offline.mjs "artifacts/portable bundle" --runtime-dir "D:\trusted-node-runtime" --runtime-sha256 <verified-lowercase-sha256>
+```
+
+This option copies the runtime, full license notices and recorded hashes into the
+package. The launcher prefers the bundled executable; recipients need a supported
+Chromium browser but do not need to install Node. The default package still uses
+Node on PATH. Packaging never downloads or installs software. A supplied hash is
+not publisher authentication. Qualify the chosen runtime and complete the physical
+release tests before distribution; a packaging pass does not establish READY.
+
 Then stage the same `dist/` directory and `scripts/` directory on each computer,
 keeping those paths as siblings, and run:
 
@@ -47,14 +75,90 @@ node scripts/serve.mjs
 ```
 
 The runtime needs Node.js but does not need `node_modules` or registry access.
+During Wi-Fi sending, an unpaused wait for acknowledgments or channel buffer
+drainage fails after two minutes without a wake-up. Reconnect to resume from
+the receiver's durable receipts. Explicit pause suspends this timer. This is
+not a time limit on hashing, destination saving, or final verification.
+Duplicate or empty acknowledgments do not restart the wait deadline.
+Keep the complete `scripts/` directory: the server imports the rendezvous and
+HTTP security modules. The application server accepts loopback clients with matching
+Host and Origin values; signaling mutations require same-origin JSON requests.
+Request size, duration, concurrency, and temporary signaling state are bounded.
+LAN discovery uses each IPv4 adapter's actual subnet broadcast address, with
+duplicate targets removed and at most 32 targets per announcement. It does not
+scan individual hosts. Networks that block broadcasts may prevent automatic
+pairing. In that case, open **Troubleshoot connection** on the sender and **Use sender
+address** on the receiver. Copy one displayed address (including its port) and
+enter the six-digit code. This uses TCP directly without UDP discovery. With
+multiple adapters, try the address on the network shared by both laptops.
 All browser assets are included in `dist`; after loading from loopback, the app
-makes no internet requests. The local runtime uses UDP port `4174` by default
-for LAN pairing discovery; set `QRFT_SIGNAL_PORT` to the same alternate port on
-both devices if needed. Open `http://127.0.0.1:4173` on each device, choose
-the same transfer method, then choose **Sender** on the source computer and
-**Receiver** on the destination computer.
+makes no internet requests. The local runtime automatically tries ports
+`4174`–`4177` until both UDP discovery and TCP signaling can bind to one port.
+Discovery checks these four service ports on loopback and actual adapter subnet
+broadcasts; it does not enumerate hosts. Peers can select different ports. The
+separate LAN endpoint requires a claimed room token bound to the peer address
+and session; it serves no application assets and rejects browser-origin requests.
+Signaling itself is not encrypted. Both users must still compare and confirm the
+device verification code before file data can flow. Allow both UDP and TCP on the
+selected LAN pairing port through the firewall. The sender’s **Troubleshoot
+connection** panel shows its actual address and selected port. If all four ports
+are unavailable, close other copies of the app and retry the device check.
+Open `http://127.0.0.1:4173` on each device, then choose **Send** on the source
+computer and **Receive** on the destination computer. The app URL stays stable
+so browser recovery data remains accessible.
+
+For advanced testing, `QRFT_SIGNAL_PORT` explicitly pins a single port and disables
+automatic fallback. Both devices need the same override for automatic discovery;
+a copied sender address with its port can connect directly instead.
 
 ## Offline WebRTC workflow
+
+**Current speed** uses a one-second window of safely received bytes;
+**Recent speed** smooths that progress over five seconds. Both exclude blocks
+reused from a previous attempt. **Transfer ETA** uses the smoother rate and
+covers payload transfer only; verification and destination saving take additional
+time. Pausing clears both speeds and ETA, and a stalled connection's readings
+decay instead of retaining an old rate. Both screens show transferred / total
+bytes, remaining bytes and resumed bytes. **Elapsed this attempt** starts when
+transfer progress becomes available, includes pauses and received-data checks,
+and stops after transfer verification or failure. It resets on a new connection
+attempt and does not include file preparation, earlier attempts or destination saving.
+
+When an attempt stops, its last byte counts and elapsed time remain visible and
+are explicitly marked **not verified**. Reconnect to discover which stored data
+can actually be reused. A filled progress bar alone is not successful verification.
+Pause and retry controls sit above the detailed metrics; on narrow screens the
+transfer status appears before source information. The pairing code is hidden
+once pairing is finished.
+
+Recovery messages describe the next action. **Error details** retains the original
+diagnostic, collapsed by default, without using peer-supplied error text as
+instructions. Pairing-code failures, unavailable local service, permission errors,
+changed sources, storage quotas and duplicate tabs have specific advice. Saving
+and temporary-storage cleanup failures remain distinct from transfer verification.
+
+Preflight requires the browser's SHA-256 cryptography API before enabling source
+selection or connection. The large optical receiver uses the same storage
+capability check before camera enumeration or access. Missing support produces
+an actionable browser message before storage opens; it never starts a large
+in-memory fallback.
+
+Before pairing, the receiver displays estimated temporary browser space and
+whether storage is persistent. **Refresh storage check** updates the estimate.
+Unknown or failed queries are shown explicitly. The estimate is not a reservation
+and does not describe the final destination disk; the receiver checks the actual
+transfer's remaining payload and receipt metadata requirements after pairing.
+
+Use **Choose folder** for a directory tree or **Choose files** for one or more
+individual files. Individual selections retain their basenames inside a
+**Selected files** destination folder. Duplicate or case-conflicting basenames
+are rejected rather than renamed. Both selection types support handle-based
+reload recovery with a full source recheck.
+You can also drop files or folders into the idle Wi-Fi sender. A single folder
+keeps its root name; files use **Selected files**; mixed items or multiple folders
+use **Selected items** and retain their top-level names. Drops are ignored once
+a source is selected or work is active. Browsers without dropped-handle support
+show guidance to use the pickers instead.
 
 Offline WebRTC is the practical path for large folders when both authorized
 devices may join the same offline local network. It is not an air gap. The app
@@ -64,34 +168,94 @@ they are shared. Each device's loopback Node runtime performs a short-lived,
 LAN-only rendezvous for signaling. File data never passes through that runtime;
 the reliable ordered data channel is encrypted by WebRTC.
 
+Before file selection, the app checks its required browser APIs and asks the
+local service to bind both signaling transports. It repeats the service check
+before hashing or recovering a saved source and before connecting. A failed
+check does not read source bytes or discard the selected/prepared source; use
+**Retry connection check**, **Retry connection**, or **Retry source recovery**
+as shown. Permission prompts still run from a user action. A successful local
+check does not prove firewall permissions or reachability of the other laptop.
+The receiver also reports estimated temporary storage and persistence status;
+that estimate neither reserves space nor measures the final destination disk.
+
 1. Connect both devices to the same authorized Wi-Fi network or to a hotspot.
    Internet access is not required. Local peer isolation must be disabled.
-2. Open the app locally on both devices and choose **WebRTC file transfer**.
-3. On the sender, select the source folder and prepare it. The app hashes the
-   same bounded-memory virtual tree used by QRF3 and displays a random six-digit
-   pairing code.
+2. Open the app locally on both devices. Choose **Send** on the sending laptop
+   and **Receive** on the receiving laptop. Optical modes remain available under
+   **Other transfer methods → Offline QR / Air-gap mode**.
+3. Wait for the device check, then **Choose files** or **Choose folder** and
+   **Get pairing code**. The app displays a random six-digit code, then checks
+   the files in the background using the same bounded-memory virtual tree as
+   QRF3. You can connect and compare device codes while checking continues.
+   The manifest and file bytes wait for completed checking and both confirmations.
 4. On the receiver, enter that six-digit code and choose **Connect to sender**.
    The local runtimes discover each other on the LAN and exchange only the
    WebRTC offer and answer. The room expires quickly and is single-use.
-5. The receiver opens durable OPFS storage and reports already received block
+5. Compare the **device verification code** on both laptops, then choose
+   **Codes match** on each. This separate value has four groups of letters and
+   numbers and binds the exact connection descriptions and session. If any
+   group differs, choose **Codes do not match** and reconnect. No file manifest
+   or payload is accepted before both confirmations. Both laptops must use the
+   same current application build; legacy automatic confirmations are rejected.
+6. The receiver opens durable OPFS storage and reports already received block
    ranges. The sender transmits only missing 60 KiB blocks, applies data-channel
    backpressure, and counts a block only after the receiver durably writes and
-   acknowledges it.
-6. If the connection is interrupted, reconnect and select the same source
-   folder. Its deterministic manifest identity reopens the partial receive and
-   resumes missing blocks without re-sending completed ones.
-7. Completion requires a SHA-256 match for the complete virtual stream. The
+   acknowledges it. The receiver groups up to 64 blocks per durable commit,
+   with a 75 ms deadline for a smaller group, and acknowledges committed groups.
+7. If the connection is interrupted, choose **Retry connection** on the sender
+   and **Reconnect and resume** on the receiver. While the sender tab remains
+   open, pending file checking continues and prepared source snapshots are
+   retained without reselection or another hash pass. **Stop and reconnect**
+   also keeps this work; **New transfer** discards it. Confirm the new device
+   verification code again. Its deterministic
+   manifest identity reopens the partial receive and resumes missing blocks.
+   A checkpoint is saved after checking finishes. If you reload during initial
+   checking, select the source again. After a sender reload, choose
+   **Recover saved source** to reopen the saved
+   folder handle. Allow read access if prompted. Recovery re-enumerates and
+   rehashes every file and rejects changed bytes or metadata; then pair again.
+   Only handles and transfer identities are saved, never source bytes or device
+   authorization. Up to 16 checkpoints are retained for seven days. Use
+   **Discard saved source** to remove one. If saving is unavailable, the sender
+   displays that limitation and you can reselect the folder after reload.
+8. Completion requires a SHA-256 match for the complete virtual stream. The
    receiver then reconstructs the folder, verifies each destination file, and
    reclaims its temporary browser payload after a successful save.
+   A destination error retains the verified temporary copy for another save
+   attempt. A corrupt complete receive is discarded and must be retransmitted.
+
+### Automated release checks
+
+On the development/CI machine, run `npm ci`, then
+`npx playwright install chromium`, then `npm run check:release`. This checks
+TypeScript, the unit/integration suites, the production build, and browser
+workflows. Browser tests use real WebRTC and OPFS with controlled local signaling
+and synthetic source selection. They also reconstruct a destination inside OPFS
+and independently hash its final file. They do not prove two-laptop LAN discovery,
+physical destination-picker behavior, or large-file throughput. See
+`RELEASE-HARDENING.md` for the outstanding release evidence.
+
+Use a regular browser window for multi-gigabyte work. A private Chromium test
+context lost a receipt-journal record near 1.8 GB despite reporting sufficient
+quota; the application detected the mismatch and failed closed. A 5 GiB normal
+profile fixture passed verification. This does not establish production release
+readiness; benchmark commands, raw results and limitations are in `BENCHMARKS.md`.
+Use a regular window for sender reload recovery too. The normal-profile handle
+round-trip test passed; a private-context test closed unexpectedly while loading
+the saved OPFS handle. Private-window recovery is not validated.
 
 While a handshake or transfer is active, the app locks its method and
 sender/receiver switches to prevent an accidental click from closing the peer.
-Use the explicit stop button if you need to end or reconnect a transfer. Keep
-both devices awake and the browser tabs open until verification completes.
+Use the explicit stop button if you need to end or reconnect a transfer. During
+active Wi-Fi work, the app requests a screen wake lock and displays whether it
+was granted. It releases the lock on stop/completion and requests it again when
+the tab becomes visible. If unavailable, keep the laptop awake manually; the
+notice offers a retry. Keep both tabs open. A screen wake lock does not prevent
+lid-close or forced operating-system sleep.
 
 Browser or operating-system firewalls can block local peer traffic. WebRTC will
 not work across client-isolated guest Wi-Fi, unrelated subnets without local
-routing, policies that block the local UDP pairing port, or policies that disable
+routing, policies that block the local UDP or TCP pairing port, or policies that disable
 host candidates. In those cases, use the
 existing QR transfer path or an organization-approved transfer method.
 
@@ -251,6 +415,38 @@ Create the specification fixture and compare any reconstructed tree:
 node scripts/create-fixture.mjs
 node scripts/compare-trees.mjs .tmp/qrft-fixture-source <received-folder>
 ```
+
+Fixture creation requires a new folder directly under `.tmp` whose name starts
+with `qrft-fixture`. It refuses existing folders and redirected staging paths.
+For another run, supply a new name, for example
+`node scripts/create-fixture.mjs .tmp/qrft-fixture-second`.
+
+Compare distinct source and received directories while neither is being edited.
+The comparator includes empty files and directories, rejects link/junction roots
+and self-comparison, and fails on unsupported entries instead of ignoring them.
+It reads files incrementally and rejects observed changes in byte count, size,
+file identity or modification/change times during hashing. It does not create
+a filesystem snapshot or detect every possible concurrent edit.
+
+For separate laptops, record an independent inventory on the sender before
+transferring (keep the manifest outside the selected source folder):
+
+```sh
+node scripts/compare-trees.mjs --record <source-folder> <new-source-manifest.json>
+```
+
+Preserve the printed manifest SHA-256 in your test record. Copy that manifest to
+the receiving laptop, then run:
+
+```sh
+node scripts/compare-trees.mjs --manifest <source-manifest.json> <received-folder>
+```
+
+Check that the printed manifest SHA-256 matches the sender's test record. The
+manifest is not signed; replacing both it and the expected fingerprint defeats
+this check. Verification compares the exact file/directory paths, file lengths,
+and every SHA-256, including empty files and directories. It does not require
+the sender's source directory to be accessible from the receiving laptop.
 
 The comparator exits non-zero for a missing or extra file/directory path, a
 file/directory type mismatch, or any file SHA-256 mismatch.
