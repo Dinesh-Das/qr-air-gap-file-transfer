@@ -1,0 +1,28 @@
+[
+  "",
+  " Compressing files in D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\",
+  "",
+  "",
+  "1 files within 1 directories were compressed.",
+  "89,974,352 total bytes of data are stored in 37,052,416 bytes.",
+  "The compression ratio is 2.4 to 1.",
+  {
+    "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\crash-batch-red-2026-10-14.log",
+    "bytes": 89974352,
+    "sha256": "BA12769936F9BBA7C209B9E6488A29C64F45A0C135EF9B84BE51745BCE1D56C2",
+    "byteIdentical": true
+  },
+  "",
+  " Compressing files in D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\",
+  "",
+  "",
+  "1 files within 1 directories were compressed.",
+  "21,727,913 total bytes of data are stored in 8,970,240 bytes.",
+  "The compression ratio is 2.4 to 1.",
+  {
+    "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\crash-screencast-2026-10-14.log",
+    "bytes": 21727913,
+    "sha256": "E719A60DD760FC5E1E49BF1B76B95604047D74D3168FBB80C53A1E1DCF385621",
+    "byteIdentical": true
+  }
+]

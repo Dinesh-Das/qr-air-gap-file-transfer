@@ -1,0 +1,2164 @@
+{
+  "recordedAt": "2026-10-14T00:59:20.122Z",
+  "sourceSha256": "a089fb30efaf6c5f8804fbaf51cd24840c1ca6fa2f07cff165c097bd15e6fa00",
+  "node": "v24.12.0",
+  "playwright": "1.63.0",
+  "scope": "App-free loopback HTML, one nonpersistent context, anchor page plus repeatedly crashed/replaced page. No transfer code, OPFS, WebRTC, native filesystem or physical laptop test.",
+  "requestedCycles": 40,
+  "rows": [
+    {
+      "cycle": 1,
+      "elapsedMs": 150.59000000000003,
+      "livePages": 2
+    },
+    {
+      "cycle": 2,
+      "elapsedMs": 169.9108000000001,
+      "livePages": 2
+    },
+    {
+      "cycle": 3,
+      "elapsedMs": 133.31560000000013,
+      "livePages": 2
+    },
+    {
+      "cycle": 4,
+      "elapsedMs": 136.20769999999993,
+      "livePages": 2
+    },
+    {
+      "cycle": 5,
+      "elapsedMs": 134.1923999999999,
+      "livePages": 2
+    },
+    {
+      "cycle": 6,
+      "elapsedMs": 132.2947999999999,
+      "livePages": 2
+    },
+    {
+      "cycle": 7,
+      "elapsedMs": 139.5046000000002,
+      "livePages": 2
+    },
+    {
+      "cycle": 8,
+      "elapsedMs": 139.02070000000003,
+      "livePages": 2
+    },
+    {
+      "cycle": 9,
+      "elapsedMs": 136.03160000000003,
+      "livePages": 2
+    },
+    {
+      "cycle": 10,
+      "elapsedMs": 138.5291000000002,
+      "livePages": 2
+    },
+    {
+      "cycle": 11,
+      "elapsedMs": 135.6857,
+      "livePages": 2
+    },
+    {
+      "cycle": 12,
+      "elapsedMs": 133.86590000000024,
+      "livePages": 2
+    },
+    {
+      "cycle": 13,
+      "elapsedMs": 136.89290000000028,
+      "livePages": 2
+    },
+    {
+      "cycle": 14,
+      "elapsedMs": 133.6531,
+      "livePages": 2
+    },
+    {
+      "cycle": 15,
+      "elapsedMs": 136.25319999999965,
+      "livePages": 2
+    },
+    {
+      "cycle": 16,
+      "elapsedMs": 140.31129999999985,
+      "livePages": 2
+    },
+    {
+      "cycle": 17,
+      "elapsedMs": 138.69830000000002,
+      "livePages": 2
+    },
+    {
+      "cycle": 18,
+      "elapsedMs": 138.0568000000003,
+      "livePages": 2
+    },
+    {
+      "cycle": 19,
+      "elapsedMs": 142.05539999999974,
+      "livePages": 2
+    },
+    {
+      "cycle": 20,
+      "elapsedMs": 142.39199999999983,
+      "livePages": 2
+    },
+    {
+      "cycle": 21,
+      "elapsedMs": 141.9996000000001,
+      "livePages": 2
+    },
+    {
+      "cycle": 22,
+      "elapsedMs": 138.13549999999987,
+      "livePages": 2
+    },
+    {
+      "cycle": 23,
+      "elapsedMs": 139.7581,
+      "livePages": 2
+    },
+    {
+      "cycle": 24,
+      "elapsedMs": 137.6640999999995,
+      "livePages": 2
+    },
+    {
+      "cycle": 25,
+      "elapsedMs": 140.0001000000002,
+      "livePages": 2
+    },
+    {
+      "cycle": 26,
+      "elapsedMs": 138.15089999999964,
+      "livePages": 2
+    },
+    {
+      "cycle": 27,
+      "elapsedMs": 139.8666000000003,
+      "livePages": 2
+    },
+    {
+      "cycle": 28,
+      "elapsedMs": 137.817,
+      "livePages": 2
+    },
+    {
+      "cycle": 29,
+      "elapsedMs": 136.98450000000048,
+      "livePages": 2
+    },
+    {
+      "cycle": 30,
+      "elapsedMs": 137.9256000000005,
+      "livePages": 2
+    },
+    {
+      "cycle": 31,
+      "elapsedMs": 139.19730000000072,
+      "livePages": 2
+    },
+    {
+      "cycle": 32,
+      "elapsedMs": 136.8714,
+      "livePages": 2
+    },
+    {
+      "cycle": 33,
+      "elapsedMs": 136.71109999999953,
+      "livePages": 2
+    },
+    {
+      "cycle": 34,
+      "elapsedMs": 141.9928,
+      "livePages": 2
+    },
+    {
+      "cycle": 35,
+      "elapsedMs": 141.46209999999974,
+      "livePages": 2
+    },
+    {
+      "cycle": 36,
+      "elapsedMs": 141.05539999999928,
+      "livePages": 2
+    },
+    {
+      "cycle": 37,
+      "elapsedMs": 144.09189999999944,
+      "livePages": 2
+    },
+    {
+      "cycle": 38,
+      "elapsedMs": 137.7524000000003,
+      "livePages": 2
+    },
+    {
+      "cycle": 39,
+      "elapsedMs": 139.6948999999995,
+      "livePages": 2
+    },
+    {
+      "cycle": 40,
+      "elapsedMs": 140.13900000000012,
+      "livePages": 2
+    }
+  ],
+  "cdpErrors": [
+    {
+      "cycle": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 8,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 9,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 10,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 11,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 12,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 13,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 14,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 15,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 16,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 17,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 18,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 19,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 20,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 21,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 22,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 23,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 24,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 25,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 26,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 27,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 28,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 29,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 30,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 31,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 32,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 33,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 34,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 35,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 36,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 37,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 38,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 39,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    },
+    {
+      "cycle": 40,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-replacement-2026-10-14.mjs:34:34"
+    }
+  ],
+  "browser": "155.0.8059.79",
+  "result": "completed",
+  "finalEvents": [
+    {
+      "time": 4340.0578,
+      "cycle": 25,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "A342FB1E7EA4302D9CEBB97CF00A19DD",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4347.7042,
+      "cycle": 25,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "A342FB1E7EA4302D9CEBB97CF00A19DD",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4352.6751,
+      "cycle": 25,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 4367.1759,
+      "cycle": 25,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "A342FB1E7EA4302D9CEBB97CF00A19DD",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4373.7477,
+      "cycle": 26,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 4459.5646,
+      "cycle": 26,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 4459.6638,
+      "cycle": 26,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "A342FB1E7EA4302D9CEBB97CF00A19DD",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 4465.6415,
+      "cycle": 26,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "A342FB1E7EA4302D9CEBB97CF00A19DD",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4466.0793,
+      "cycle": 26,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "A342FB1E7EA4302D9CEBB97CF00A19DD"
+      }
+    },
+    {
+      "time": 4466.0944,
+      "cycle": 26,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 4475.1661,
+      "cycle": 26,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "52C2A5A87DE950CAA25DFC76E3EC8158",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4484.1921,
+      "cycle": 26,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "52C2A5A87DE950CAA25DFC76E3EC8158",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4488.1307,
+      "cycle": 26,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 4504.707,
+      "cycle": 26,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "52C2A5A87DE950CAA25DFC76E3EC8158",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4512.2895,
+      "cycle": 27,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 4596.8524,
+      "cycle": 27,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 4596.967,
+      "cycle": 27,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "52C2A5A87DE950CAA25DFC76E3EC8158",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 4603.659,
+      "cycle": 27,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "52C2A5A87DE950CAA25DFC76E3EC8158",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4604.0244,
+      "cycle": 27,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "52C2A5A87DE950CAA25DFC76E3EC8158"
+      }
+    },
+    {
+      "time": 4604.0402,
+      "cycle": 27,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 4613.8884,
+      "cycle": 27,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "515A2B79597796E0C6A1A87BC1C31ABE",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4622.7275,
+      "cycle": 27,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "515A2B79597796E0C6A1A87BC1C31ABE",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4628.045,
+      "cycle": 27,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 4645.6075,
+      "cycle": 27,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "515A2B79597796E0C6A1A87BC1C31ABE",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4652.5989,
+      "cycle": 28,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 4740.6351,
+      "cycle": 28,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 4740.7451,
+      "cycle": 28,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "515A2B79597796E0C6A1A87BC1C31ABE",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 4746.9807,
+      "cycle": 28,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "515A2B79597796E0C6A1A87BC1C31ABE",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4747.4101,
+      "cycle": 28,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "515A2B79597796E0C6A1A87BC1C31ABE"
+      }
+    },
+    {
+      "time": 4747.4232,
+      "cycle": 28,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 4757.955,
+      "cycle": 28,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "E2E0E4FAAFC7DBEDD705A3C0BBAB0E9F",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4765.7627,
+      "cycle": 28,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "E2E0E4FAAFC7DBEDD705A3C0BBAB0E9F",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4770.8622,
+      "cycle": 28,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 4784.8667,
+      "cycle": 28,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "E2E0E4FAAFC7DBEDD705A3C0BBAB0E9F",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4790.9392,
+      "cycle": 29,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 4876.2003,
+      "cycle": 29,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 4876.3059,
+      "cycle": 29,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "E2E0E4FAAFC7DBEDD705A3C0BBAB0E9F",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 4882.6445,
+      "cycle": 29,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "E2E0E4FAAFC7DBEDD705A3C0BBAB0E9F",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4883.0374,
+      "cycle": 29,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "E2E0E4FAAFC7DBEDD705A3C0BBAB0E9F"
+      }
+    },
+    {
+      "time": 4883.0499,
+      "cycle": 29,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 4892.3769,
+      "cycle": 29,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "CA585B1E44D03C5031A9280A5F4FA66B",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4900.132,
+      "cycle": 29,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "CA585B1E44D03C5031A9280A5F4FA66B",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4905.6133,
+      "cycle": 29,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 4920.7719,
+      "cycle": 29,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "CA585B1E44D03C5031A9280A5F4FA66B",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 4928.4437,
+      "cycle": 30,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 5014.0259,
+      "cycle": 30,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 5014.1334,
+      "cycle": 30,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "CA585B1E44D03C5031A9280A5F4FA66B",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 5021.0149,
+      "cycle": 30,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "CA585B1E44D03C5031A9280A5F4FA66B",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5021.4239,
+      "cycle": 30,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "CA585B1E44D03C5031A9280A5F4FA66B"
+      }
+    },
+    {
+      "time": 5021.4364,
+      "cycle": 30,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 5031.193,
+      "cycle": 30,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "083850797E3730811288EFB71AFA28B9",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5038.8053,
+      "cycle": 30,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "083850797E3730811288EFB71AFA28B9",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5043.8045,
+      "cycle": 30,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 5058.5455,
+      "cycle": 30,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "083850797E3730811288EFB71AFA28B9",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5066.7654,
+      "cycle": 31,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 5154.1676,
+      "cycle": 31,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 5154.2854,
+      "cycle": 31,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "083850797E3730811288EFB71AFA28B9",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 5160.6075,
+      "cycle": 31,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "083850797E3730811288EFB71AFA28B9",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5161.0721,
+      "cycle": 31,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "083850797E3730811288EFB71AFA28B9"
+      }
+    },
+    {
+      "time": 5161.0871,
+      "cycle": 31,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 5170.8189,
+      "cycle": 31,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "767BA3EB2371DEA14C19ADDDF7D8E117",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5178.3057,
+      "cycle": 31,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "767BA3EB2371DEA14C19ADDDF7D8E117",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5183.5065,
+      "cycle": 31,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 5199.0341,
+      "cycle": 31,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "767BA3EB2371DEA14C19ADDDF7D8E117",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5206.3795,
+      "cycle": 32,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 5292.4784,
+      "cycle": 32,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 5292.5829,
+      "cycle": 32,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "767BA3EB2371DEA14C19ADDDF7D8E117",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 5298.6908,
+      "cycle": 32,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "767BA3EB2371DEA14C19ADDDF7D8E117",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5299.1422,
+      "cycle": 32,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "767BA3EB2371DEA14C19ADDDF7D8E117"
+      }
+    },
+    {
+      "time": 5299.1523,
+      "cycle": 32,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 5309.0408,
+      "cycle": 32,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "59B4DEF2D31F1CFB0F6B95783939DA62",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5317.231,
+      "cycle": 32,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "59B4DEF2D31F1CFB0F6B95783939DA62",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5322.106,
+      "cycle": 32,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 5337.1693,
+      "cycle": 32,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "59B4DEF2D31F1CFB0F6B95783939DA62",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5343.6464,
+      "cycle": 33,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 5428.6183,
+      "cycle": 33,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 5428.7733,
+      "cycle": 33,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "59B4DEF2D31F1CFB0F6B95783939DA62",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 5434.5102,
+      "cycle": 33,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "59B4DEF2D31F1CFB0F6B95783939DA62",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5434.5638,
+      "cycle": 33,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "59B4DEF2D31F1CFB0F6B95783939DA62"
+      }
+    },
+    {
+      "time": 5434.5712,
+      "cycle": 33,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 5444.617,
+      "cycle": 33,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "2F3AEA997205E4B8AD101D26B5CF23CC",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5453.0144,
+      "cycle": 33,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "2F3AEA997205E4B8AD101D26B5CF23CC",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5457.6421,
+      "cycle": 33,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 5472.8125,
+      "cycle": 33,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "2F3AEA997205E4B8AD101D26B5CF23CC",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5480.7688,
+      "cycle": 34,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 5569.8793,
+      "cycle": 34,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 5569.9835,
+      "cycle": 34,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "2F3AEA997205E4B8AD101D26B5CF23CC",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 5576.4038,
+      "cycle": 34,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "2F3AEA997205E4B8AD101D26B5CF23CC",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5576.8644,
+      "cycle": 34,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "2F3AEA997205E4B8AD101D26B5CF23CC"
+      }
+    },
+    {
+      "time": 5576.8736,
+      "cycle": 34,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 5587.2296,
+      "cycle": 34,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "CD1EEDC14B236D2B534F4D0F6EF9CB82",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5595.3581,
+      "cycle": 34,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "CD1EEDC14B236D2B534F4D0F6EF9CB82",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5600.7382,
+      "cycle": 34,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 5616.9683,
+      "cycle": 34,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "CD1EEDC14B236D2B534F4D0F6EF9CB82",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5623.1194,
+      "cycle": 35,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 5712.2476,
+      "cycle": 35,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 5712.3524,
+      "cycle": 35,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "CD1EEDC14B236D2B534F4D0F6EF9CB82",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 5718.5394,
+      "cycle": 35,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "CD1EEDC14B236D2B534F4D0F6EF9CB82",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5718.9409,
+      "cycle": 35,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "CD1EEDC14B236D2B534F4D0F6EF9CB82"
+      }
+    },
+    {
+      "time": 5718.954,
+      "cycle": 35,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 5728.4404,
+      "cycle": 35,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "B950CECF5CCFC3BCA33F31F3D156DC7E",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5736.5138,
+      "cycle": 35,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "B950CECF5CCFC3BCA33F31F3D156DC7E",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5742.1322,
+      "cycle": 35,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 5758.0094,
+      "cycle": 35,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "B950CECF5CCFC3BCA33F31F3D156DC7E",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5765.0216,
+      "cycle": 36,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 5853.1204,
+      "cycle": 36,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 5853.2348,
+      "cycle": 36,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "B950CECF5CCFC3BCA33F31F3D156DC7E",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 5858.7352,
+      "cycle": 36,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "B950CECF5CCFC3BCA33F31F3D156DC7E",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5859.1877,
+      "cycle": 36,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "B950CECF5CCFC3BCA33F31F3D156DC7E"
+      }
+    },
+    {
+      "time": 5859.2023,
+      "cycle": 36,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 5869.862,
+      "cycle": 36,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "37EFC52EF94E7408DFB0202B9F314C5E",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5879.3787,
+      "cycle": 36,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "37EFC52EF94E7408DFB0202B9F314C5E",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5883.5991,
+      "cycle": 36,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 5899.8144,
+      "cycle": 36,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "37EFC52EF94E7408DFB0202B9F314C5E",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 5906.4333,
+      "cycle": 37,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 5994.8564,
+      "cycle": 37,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 5994.9616,
+      "cycle": 37,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "37EFC52EF94E7408DFB0202B9F314C5E",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 6001.4401,
+      "cycle": 37,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "37EFC52EF94E7408DFB0202B9F314C5E",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6001.8048,
+      "cycle": 37,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "37EFC52EF94E7408DFB0202B9F314C5E"
+      }
+    },
+    {
+      "time": 6001.8158,
+      "cycle": 37,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 6012.5081,
+      "cycle": 37,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "385CB5976DBEDCA24B86601938D88A67",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6021.7443,
+      "cycle": 37,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "385CB5976DBEDCA24B86601938D88A67",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6026.9018,
+      "cycle": 37,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 6042.4826,
+      "cycle": 37,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "385CB5976DBEDCA24B86601938D88A67",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6050.9388,
+      "cycle": 38,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 6137.7116,
+      "cycle": 38,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 6137.8329,
+      "cycle": 38,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "385CB5976DBEDCA24B86601938D88A67",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 6143.7766,
+      "cycle": 38,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "385CB5976DBEDCA24B86601938D88A67",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6144.054,
+      "cycle": 38,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "385CB5976DBEDCA24B86601938D88A67"
+      }
+    },
+    {
+      "time": 6144.063,
+      "cycle": 38,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 6152.9236,
+      "cycle": 38,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "8C91F5719AE1D896E803309C5C3A4F30",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6160.9607,
+      "cycle": 38,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "8C91F5719AE1D896E803309C5C3A4F30",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6165.4609,
+      "cycle": 38,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 6181.3116,
+      "cycle": 38,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "8C91F5719AE1D896E803309C5C3A4F30",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6189.1471,
+      "cycle": 39,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 6276.8139,
+      "cycle": 39,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 6276.9178,
+      "cycle": 39,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "8C91F5719AE1D896E803309C5C3A4F30",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 6282.5026,
+      "cycle": 39,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "8C91F5719AE1D896E803309C5C3A4F30",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6282.9789,
+      "cycle": 39,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "8C91F5719AE1D896E803309C5C3A4F30"
+      }
+    },
+    {
+      "time": 6282.9904,
+      "cycle": 39,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 6292.5481,
+      "cycle": 39,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "6A4AF73A53923336EFAD7A3A88F3DE50",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6301.7115,
+      "cycle": 39,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "6A4AF73A53923336EFAD7A3A88F3DE50",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6306.1888,
+      "cycle": 39,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 6322.3038,
+      "cycle": 39,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "6A4AF73A53923336EFAD7A3A88F3DE50",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6329.1764,
+      "cycle": 40,
+      "kind": "crash-start",
+      "data": {}
+    },
+    {
+      "time": 6418.0919,
+      "cycle": 40,
+      "kind": "crash-observed",
+      "data": {}
+    },
+    {
+      "time": 6418.3305,
+      "cycle": 40,
+      "kind": "Target.targetCrashed",
+      "data": {
+        "targetId": "6A4AF73A53923336EFAD7A3A88F3DE50",
+        "status": "crashed",
+        "errorCode": -2147483645
+      }
+    },
+    {
+      "time": 6424.2845,
+      "cycle": 40,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "6A4AF73A53923336EFAD7A3A88F3DE50",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6424.6136,
+      "cycle": 40,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "6A4AF73A53923336EFAD7A3A88F3DE50"
+      }
+    },
+    {
+      "time": 6424.6232,
+      "cycle": 40,
+      "kind": "close-complete",
+      "data": {}
+    },
+    {
+      "time": 6433.5877,
+      "cycle": 40,
+      "kind": "Target.targetCreated",
+      "data": {
+        "targetInfo": {
+          "targetId": "50CD40D5E598A0C6DF03B4E45C8D9266",
+          "type": "page",
+          "title": "",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6441.2541,
+      "cycle": 40,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "50CD40D5E598A0C6DF03B4E45C8D9266",
+          "type": "page",
+          "title": "about:blank",
+          "url": "about:blank",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6446.2981,
+      "cycle": 40,
+      "kind": "replacement-created",
+      "data": {}
+    },
+    {
+      "time": 6462.115,
+      "cycle": 40,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "50CD40D5E598A0C6DF03B4E45C8D9266",
+          "type": "page",
+          "title": "127.0.0.1:49865",
+          "url": "http://127.0.0.1:49865/",
+          "attached": true,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6479.7954,
+      "cycle": 41,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "50CD40D5E598A0C6DF03B4E45C8D9266",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6480.0151,
+      "cycle": 41,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "50CD40D5E598A0C6DF03B4E45C8D9266"
+      }
+    },
+    {
+      "time": 6480.8324,
+      "cycle": 41,
+      "kind": "Target.targetInfoChanged",
+      "data": {
+        "targetInfo": {
+          "targetId": "D43EFE0F4A9BE8020225292690A23F45",
+          "type": "page",
+          "title": "Crash replacement diagnostic",
+          "url": "http://127.0.0.1:49865/",
+          "attached": false,
+          "canAccessOpener": false,
+          "browserContextId": "6D8E488DB1498B727B0A4EAE953AB788"
+        }
+      }
+    },
+    {
+      "time": 6480.874,
+      "cycle": 41,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "D43EFE0F4A9BE8020225292690A23F45"
+      }
+    },
+    {
+      "time": 6483.6997,
+      "cycle": 41,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "D33D136B9B5DB90690078A17D41B550E"
+      }
+    },
+    {
+      "time": 6487.8932,
+      "cycle": 41,
+      "kind": "Target.targetDestroyed",
+      "data": {
+        "targetId": "0A3857C3E4F51DE3386F0DAE7F25166C"
+      }
+    }
+  ]
+}

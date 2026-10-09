@@ -1,0 +1,28 @@
+{
+  "recordedAt": "2026-10-14T01:04:23.166Z",
+  "version": "1.64.0",
+  "scope": "Direct call of the exact installed CRSession method with controlled session/response state. Deterministic dependency-branch probe, not browser transport or diagnosis of the original app failure.",
+  "sourceFile": "node_modules/playwright-core/lib/coreBundle.js",
+  "sourceSha256": "2325ca4c1c83070e89dc49fb82525508f0a68e0cf12e2a624277968da216b7e0",
+  "exactMethod": "_onMessage(object) {\n        if (object.id && this._callbacks.has(object.id)) {\n          const callback = this._callbacks.get(object.id);\n          this._callbacks.delete(object.id);\n          if (object.error) {\n            callback.error.setMessage(object.error.message);\n            callback.reject(callback.error);\n          } else {\n            callback.resolve(object.result);\n          }\n        } else if (object.id && object.error?.code === -32001) {\n        } else if (object.id && this._crashed) {\n        } else {\n          assert(!object.id, object?.error?.message || void 0);\n          Promise.resolve().then(() => {\n            if (this._eventListener)\n              this._eventListener(object.method, object.params);\n            this.emit(object.method, object.params);\n          });\n        }\n      }",
+  "rows": [
+    {
+      "crashed": false,
+      "pendingCallbacks": 0,
+      "response": "unknown command id, successful empty result",
+      "result": "rejected",
+      "error": {
+        "name": "Error",
+        "message": "Assertion error",
+        "stack": "Error: Assertion error\n    at file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/probe-playwright-crash-response-2026-10-14.mjs:12:111\n    at Object._onMessage (eval at <anonymous> (file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/probe-playwright-crash-response-2026-10-14.mjs:12:19), <anonymous>:16:11)\n    at file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/probe-playwright-crash-response-2026-10-14.mjs:17:19"
+      }
+    },
+    {
+      "crashed": true,
+      "pendingCallbacks": 0,
+      "response": "unknown command id, successful empty result",
+      "result": "accepted"
+    }
+  ],
+  "knownResponseResolved": true
+}

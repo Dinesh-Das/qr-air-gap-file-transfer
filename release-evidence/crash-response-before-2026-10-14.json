@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-14T01:03:57.223Z",
+  "version": "1.63.0",
+  "scope": "Direct call of the exact installed CRSession method with controlled session/response state. Deterministic dependency-branch probe, not browser transport or diagnosis of the original app failure.",
+  "sourceFile": "node_modules/playwright-core/lib/coreBundle.js",
+  "sourceSha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171",
+  "exactMethod": "_onMessage(object) {\n        if (object.id && this._callbacks.has(object.id)) {\n          const callback = this._callbacks.get(object.id);\n          this._callbacks.delete(object.id);\n          if (object.error) {\n            callback.error.setMessage(object.error.message);\n            callback.reject(callback.error);\n          } else {\n            callback.resolve(object.result);\n          }\n        } else if (object.id && object.error?.code === -32001) {\n        } else {\n          assert(!object.id, object?.error?.message || void 0);\n          Promise.resolve().then(() => {\n            if (this._eventListener)\n              this._eventListener(object.method, object.params);\n            this.emit(object.method, object.params);\n          });\n        }\n      }",
+  "rows": [
+    {
+      "crashed": false,
+      "pendingCallbacks": 0,
+      "response": "unknown command id, successful empty result",
+      "result": "rejected",
+      "error": {
+        "name": "Error",
+        "message": "Assertion error",
+        "stack": "Error: Assertion error\n    at file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/probe-playwright-crash-response-2026-10-14.mjs:12:111\n    at Object._onMessage (eval at <anonymous> (file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/probe-playwright-crash-response-2026-10-14.mjs:12:19), <anonymous>:15:11)\n    at file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/probe-playwright-crash-response-2026-10-14.mjs:17:19"
+      }
+    },
+    {
+      "crashed": true,
+      "pendingCallbacks": 0,
+      "response": "unknown command id, successful empty result",
+      "result": "rejected",
+      "error": {
+        "name": "Error",
+        "message": "Assertion error",
+        "stack": "Error: Assertion error\n    at file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/probe-playwright-crash-response-2026-10-14.mjs:12:111\n    at Object._onMessage (eval at <anonymous> (file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/probe-playwright-crash-response-2026-10-14.mjs:12:19), <anonymous>:15:11)\n    at file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/probe-playwright-crash-response-2026-10-14.mjs:17:19"
+      }
+    }
+  ],
+  "knownResponseResolved": true
+}

@@ -1,0 +1,1501 @@
+{
+  "recordedAt": "2026-10-14T01:04:48.396Z",
+  "node": "v24.12.0",
+  "playwright": "1.64.0",
+  "sourceSha256": "f7399cafb8382f7143a1d7083021f0ffb50442608b247e0056a99730f6920b73",
+  "scope": "App-free animated about:blank pages; 24 sequential contexts with 8 simultaneously crashed pages each; screenshot/snapshot traces retained per completed context. Stress diagnostic, not actual app workload or physical/resource acceptance.",
+  "requestedContexts": 24,
+  "pagesPerContext": 8,
+  "contexts": [
+    {
+      "context": 1,
+      "observedCrashes": 8,
+      "elapsedMs": 746.5513
+    },
+    {
+      "context": 2,
+      "observedCrashes": 8,
+      "elapsedMs": 668.1765
+    },
+    {
+      "context": 3,
+      "observedCrashes": 8,
+      "elapsedMs": 664.2755000000002
+    },
+    {
+      "context": 4,
+      "observedCrashes": 8,
+      "elapsedMs": 644.1504
+    },
+    {
+      "context": 5,
+      "observedCrashes": 8,
+      "elapsedMs": 668.6237000000001
+    },
+    {
+      "context": 6,
+      "observedCrashes": 8,
+      "elapsedMs": 660.8523
+    },
+    {
+      "context": 7,
+      "observedCrashes": 8,
+      "elapsedMs": 686.4638000000004
+    },
+    {
+      "context": 8,
+      "observedCrashes": 8,
+      "elapsedMs": 699.7145
+    },
+    {
+      "context": 9,
+      "observedCrashes": 8,
+      "elapsedMs": 685.5340999999999
+    },
+    {
+      "context": 10,
+      "observedCrashes": 8,
+      "elapsedMs": 804.7358000000004
+    },
+    {
+      "context": 11,
+      "observedCrashes": 8,
+      "elapsedMs": 816.0447000000004
+    },
+    {
+      "context": 12,
+      "observedCrashes": 8,
+      "elapsedMs": 775.5771000000004
+    },
+    {
+      "context": 13,
+      "observedCrashes": 8,
+      "elapsedMs": 733.4035000000003
+    },
+    {
+      "context": 14,
+      "observedCrashes": 8,
+      "elapsedMs": 786.7255000000005
+    },
+    {
+      "context": 15,
+      "observedCrashes": 8,
+      "elapsedMs": 828.0944999999992
+    },
+    {
+      "context": 16,
+      "observedCrashes": 8,
+      "elapsedMs": 770.1374999999989
+    },
+    {
+      "context": 17,
+      "observedCrashes": 8,
+      "elapsedMs": 826.4987000000001
+    },
+    {
+      "context": 18,
+      "observedCrashes": 8,
+      "elapsedMs": 796.6871999999985
+    },
+    {
+      "context": 19,
+      "observedCrashes": 8,
+      "elapsedMs": 780.7602999999999
+    },
+    {
+      "context": 20,
+      "observedCrashes": 8,
+      "elapsedMs": 777.3582999999999
+    },
+    {
+      "context": 21,
+      "observedCrashes": 8,
+      "elapsedMs": 784.4668000000001
+    },
+    {
+      "context": 22,
+      "observedCrashes": 8,
+      "elapsedMs": 847.5648999999994
+    },
+    {
+      "context": 23,
+      "observedCrashes": 8,
+      "elapsedMs": 796.6129000000001
+    },
+    {
+      "context": 24,
+      "observedCrashes": 8,
+      "elapsedMs": 798.0181000000011
+    }
+  ],
+  "cdpErrors": [
+    {
+      "context": 1,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 1,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 1,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 1,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 1,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 1,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 1,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 1,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 2,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 2,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 2,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 2,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 2,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 2,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 2,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 2,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 3,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 3,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 3,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 3,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 3,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 3,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 3,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 3,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 4,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 4,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 4,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 4,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 4,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 4,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 4,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 4,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 5,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 5,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 5,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 5,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 5,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 5,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 5,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 5,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 6,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 6,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 6,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 6,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 6,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 6,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 6,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 6,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 7,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 7,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 7,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 7,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 7,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 7,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 7,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 7,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 8,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 8,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 8,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 8,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 8,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 8,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 8,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 8,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 9,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 9,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 9,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 9,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 9,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 9,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 9,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 9,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 10,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 10,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 10,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 10,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 10,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 10,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 10,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 10,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 11,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 11,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 11,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 11,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 11,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 11,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 11,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 11,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 12,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 12,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 12,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 12,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 12,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 12,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 12,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 12,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 13,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 13,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 13,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 13,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 13,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 13,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 13,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 13,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 14,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 14,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 14,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 14,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 14,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 14,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 14,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 14,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 15,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 15,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 15,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 15,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 15,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 15,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 15,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 15,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 16,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 16,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 16,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 16,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 16,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 16,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 16,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 16,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 17,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 17,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 17,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 17,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 17,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 17,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 17,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 17,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 18,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 18,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 18,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 18,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 18,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 18,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 18,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 18,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 19,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 19,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 19,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 19,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 19,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 19,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 19,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 19,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 20,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 20,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 20,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 20,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 20,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 20,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 20,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 20,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 21,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 21,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 21,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 21,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 21,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 21,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 21,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 21,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 22,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 22,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 22,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 22,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 22,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 22,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 22,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 22,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 23,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 23,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 23,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 23,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 23,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 23,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 23,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 23,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 24,
+      "pageIndex": 7,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 24,
+      "pageIndex": 6,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 24,
+      "pageIndex": 5,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 24,
+      "pageIndex": 4,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 24,
+      "pageIndex": 3,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 24,
+      "pageIndex": 2,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 24,
+      "pageIndex": 1,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    },
+    {
+      "context": 24,
+      "pageIndex": 0,
+      "name": "Error",
+      "message": "cdpSession.send: Target page, context or browser has been closed",
+      "stack": "cdpSession.send: Target page, context or browser has been closed\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\diagnose-crash-batch-2026-10-14.mjs:31:20\n    at async file:///D:/MyProjects/QR%20Air-Gap%20File%20Transfer/.tmp/diagnose-crash-batch-2026-10-14.mjs:28:5"
+    }
+  ],
+  "browser": "155.0.8059.79",
+  "browserProcesses": [
+    {
+      "type": "browser",
+      "id": 37776,
+      "cpuTime": 0.403596
+    },
+    {
+      "type": "GPU",
+      "id": 18540,
+      "cpuTime": 0.067637
+    },
+    {
+      "type": "network.mojom.NetworkService",
+      "id": 10020,
+      "cpuTime": 0.037242
+    },
+    {
+      "type": "storage.mojom.StorageService",
+      "id": 3924,
+      "cpuTime": 0.012341
+    }
+  ],
+  "result": "completed"
+}
