@@ -1,0 +1,107 @@
+{
+  "recordedAt": "2026-10-13T20:50:24.964Z",
+  "files": [
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\control-fuzz-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\control-fuzz-2026-10-14.log",
+      "sha256": "7d62edc27aad04125e4ab1e2b142d5100d5286f02cb03fd91b9e7fed7296c080"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\control-fuzz-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\control-fuzz-check-2026-10-14.log",
+      "sha256": "baf514636da8a734c93211d0beb1e5ef30632ffe8aabc1442722028213f25a27"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\control-fuzz-check-final-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\control-fuzz-check-final-2026-10-14.log",
+      "sha256": "f6d18e86cd08603b94144cb627abb30e814afdc7927d2d1a79ac1e68cfe47082"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\control-fuzz-diff-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\control-fuzz-diff-check-2026-10-14.log",
+      "sha256": "30e275ec4b749b122594dc5f36ab32c68b662c01975c7560f8d77487db4541f3"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\control-fuzz-review-2026-10-14.json",
+      "sha256": "3e9b7aec17aea3451662c3c9caeaed794a310b79e96ff3efdecae7579c0212ef"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-CHECKLIST.md",
+      "sha256": "6dbe6a4414ecc19430303d1e58a622aa71fcff134b74fb9abb1c0975dac5f324"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-HARDENING.md",
+      "sha256": "716df94ec9ec38a0a36a863e7ac8d95ab7ff2f68344e07b249bda32d3265ec74"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\SPEC-control-fuzz.md",
+      "sha256": "8ca8e0f96d892069151e05ae188654719534651dbfc33c6b55975d8fe8845950"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\tests\\webrtc-protocol.test.ts",
+      "sha256": "57ff07d72bb28efc67356256de2ee02c493f678fc28e4121bc2b836c64c0a04c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\lib\\webrtc-protocol.ts",
+      "sha256": "06c7ae26d9dd7f396e9585d17257516ee85b50eab290b9e8993bca3f7ff65cc1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\acceptance-obligations-2026-10-14.json",
+      "sha256": "e701e009c0acc902586fd2d91ba5cd3c27d087964e33d38691dc238787e0bec0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\acceptance-obligations-before-control-fuzz-2026-10-14.json",
+      "sha256": "2a5c8b78ccee6ae9ce5cf53b41e0cbf1d1bdbc4a08c4703c43a1ec7e937ba78b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\original-release-requirements.txt",
+      "sha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-review-2026-10-14.json",
+      "sha256": "e770440fbe3307ffac87fb94a75157318f76d7f4484e9135a2150f56959f773e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-before-control-fuzz-2026-10-14.json",
+      "sha256": "e770440fbe3307ffac87fb94a75157318f76d7f4484e9135a2150f56959f773e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.json",
+      "sha256": "3e9b7aec17aea3451662c3c9caeaed794a310b79e96ff3efdecae7579c0212ef"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.txt",
+      "sha256": "221e42bd4f9069fb332de65c2313b0d9db23caa8b013e1cddfca5b5b5da87906"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-verify-abort\\CHECKSUMS.json",
+      "sha256": "1e5c1a76aac8f727ed64a14e47b27ef03918a97d98b3b4a64ce149496dfb3e8e"
+    }
+  ],
+  "postRecordReview": {
+    "onlyUpdatedInputFiles": [
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputs": 145,
+    "unchangedAssets": 5,
+    "candidateVerifiedFiles": 19,
+    "review": "No actionable production findings. Fixed seeded invalid pool uses known-invalid oracle; strings valid for human error text are replaced by invalid values. Numeric-looking manifest string guards strict type even when numeric canonical value would match. Exhaustive bit mutation tests cover header/index/length/digest/payload; native crypto available. Scope excludes broad parser/security completeness; no checks suppressed."
+  }
+}
