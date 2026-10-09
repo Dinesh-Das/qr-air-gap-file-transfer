@@ -1,0 +1,118 @@
+{
+  "recordedAt": "2026-10-13T14:30:14.524Z",
+  "onlyPostGateSourceChanges": [
+    "RELEASE-CHECKLIST.md",
+    "RELEASE-HARDENING.md"
+  ],
+  "unchangedStageInputs": 138,
+  "unchangedProductionAndTestInputs": true,
+  "builtAssetsUnchanged": 5,
+  "retainedFailureArtifacts": [
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\error-context.md",
+      "sha256": "d635a8c473f39b8a2f287bf14a82a323fb495e00758cac234b8bf6a06f7aa8a7"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\trace.zip",
+      "sha256": "9d7c6c176a8f589526a40a606c0094286fefe33f318ec8b7283cc0c30cd710d0"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\error-context.md",
+      "sha256": "33176aa47a0fc5b8821c6bb7e360243f5e64e9b54103652769d14ac4619ccdaa"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\trace.zip",
+      "sha256": "3ef554aba85c53cdaaf82c02420ed2831daff2c1cc4f8a89b6070743ed164a33"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-clean-focused\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\error-context.md",
+      "sha256": "5fcca9a2881d14ce28de5a9d6b0d51faa7745dccb50b37dde5bd09d2f532456e"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-clean-focused\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\trace.zip",
+      "sha256": "c31ee226669fa128abaf287644277ab743690efb6492060d46228ad48f1fac18"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-clean-focused\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\error-context.md",
+      "sha256": "3e15f6fe84246228101454941e33dcfd0bcedefc8073971aee984ecfad97e624"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-clean-focused\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\trace.zip",
+      "sha256": "b675fb670751fddc9dc720e76cc01378decd100c9aa06b5ca8615d81cc068ca9"
+    }
+  ],
+  "files": [
+    {
+      "path": "release-evidence/clean-install-2026-10-13.json",
+      "sha256": "ede356b46f6ded8241624e088c0a862e8fc896280d5a36e87feaf8d0b006ce20"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-start.json",
+      "sha256": "3c72ebb34d4809f7f4e1a748dd423cb64204370b002a06b620bcdffe672750a1"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-install.log",
+      "sha256": "c1b430f72a225c1a49d92303556eb1820a2a506c150e66750e119a11b4be68ce"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-install-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-gate.log",
+      "sha256": "c8b3f3d9f55f6d375870dbaeec76c6ce4a217105061ae7a57d05de5104eb2d1d"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-gate-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-focused.log",
+      "sha256": "522a13529170d429fd227608ad4116f97e2383c3ab03961bab3f106164648137"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-focused-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-package.json",
+      "sha256": "457edbfe3dc50f55a7c520c71fbf58d505642424dcc80b899d9f584e2a61d3be"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-package.log",
+      "sha256": "46d6dddbf6c1d5d255488629cb3e7d496f4fcb6b305e6c730ded8d85098feb7a"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-package-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/hosted-ci-2026-10-13-runs.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "release-evidence/hosted-ci-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "sha256": "ede356b46f6ded8241624e088c0a862e8fc896280d5a36e87feaf8d0b006ce20"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "sha256": "153bf84f25e1eb81c0ac35eefcfb18fcd8080629da76c7a9b44562974e45fbf3"
+    },
+    {
+      "path": "release-evidence/release-gate-before-clean-install-2026-10-13.json",
+      "sha256": "3c0bc746b2f7d1b50dee39a67b9cd4877bcbfe077bc9c9ddb2111a5540b33522"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "sha256": "858d54fdbfb3b0a367a664f5c41d590e9d8ad597c376e61b184618037a5cf90c"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "sha256": "434010a0d311202e26bb719028a7c2465d9f53a8739e58e203e7c6feed2dac69"
+    }
+  ]
+}

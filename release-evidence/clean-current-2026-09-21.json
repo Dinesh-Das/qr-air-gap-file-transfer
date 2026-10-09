@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-10-12T16:13:12.1251744Z",
+  "install": {
+    "command": "npm ci",
+    "auditedPackages": 146,
+    "log": "release-evidence/clean-current-2026-09-21-install.txt",
+    "reportedVulnerabilities": 0,
+    "exitCode": 0,
+    "node": "v24.12.0",
+    "npmCacheReused": true
+  },
+  "releaseGate": {
+    "unitIntegrationTests": 316,
+    "rawLog": "release-evidence/clean-current-2026-09-21-gate.txt",
+    "playwrightDuration": "3.1m",
+    "offlinePackageSmoke": "release-evidence/clean-current-2026-09-21-package.json",
+    "playwrightCases": 53,
+    "exitCode": 0,
+    "offlinePackageFiles": 19,
+    "command": "npm run check:release",
+    "unitIntegrationFiles": 42,
+    "workingDirectory": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-current-20260921-082604"
+  },
+  "scope": {
+    "hostedCi": false,
+    "browserDownloaded": false,
+    "releaseStatus": "NOT READY",
+    "freshIsolatedCopy": true,
+    "physicalTwoLaptopValidation": false,
+    "freshDependencyDownload": false,
+    "nativeBrowserHandoff": false
+  },
+  "sourceBinding": {
+    "stageCurrentlyAvailable": false,
+    "stagedInputHashesVerified": false,
+    "note": "Retained install/gate/exit/package-smoke records prove their reported outcomes. The removed stage has no recorded post-run input-hash verification. This historical run predates October 12 dependency/test changes."
+  }
+}

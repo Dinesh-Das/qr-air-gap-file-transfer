@@ -1,0 +1,15 @@
+{
+  "ranAt": "2026-09-21T03:00:02.855Z",
+  "node": "v24.12.0",
+  "packagedFiles": 19,
+  "physicalTemplateCases": 42,
+  "fetchedAssets": 5,
+  "isolatedDirectoryOutsideRepository": true,
+  "pathWithSpaces": true,
+  "arbitraryWorkingDirectory": true,
+  "existingDestinationRefused": true,
+  "checksumVerification": "Verified 19 release files. This checks copy integrity, not publisher authenticity.",
+  "launch": "AirGap QR is running at http://127.0.0.1:24979\nChoose Send or Receive to check the local connection service.\nPress Ctrl+C to stop.",
+  "launcherStartedAndStopped": true,
+  "browserHandoff": "injected observer; native Windows browser opening not tested"
+}

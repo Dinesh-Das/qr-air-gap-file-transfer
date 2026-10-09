@@ -1,0 +1,12 @@
+{
+  "ranAt": "2026-09-14T05:57:16.267Z",
+  "node": "v24.12.0",
+  "packagedFiles": 15,
+  "fetchedAssets": 5,
+  "isolatedDirectoryOutsideRepository": true,
+  "pathWithSpaces": true,
+  "arbitraryWorkingDirectory": true,
+  "existingDestinationRefused": true,
+  "checksumVerification": "Verified 15 release files. This checks copy integrity, not publisher authenticity.",
+  "launch": "AirGap QR is running at http://127.0.0.1:37825\nSix-digit WebRTC pairing uses UDP and TCP 21453 on the local LAN.\nPress Ctrl+C to stop."
+}
