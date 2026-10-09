@@ -1,0 +1,39 @@
+{
+  "ranAt": "2026-09-15T01:42:34.212Z",
+  "results": [
+    {
+      "mib": 1,
+      "batchBlocks": 64,
+      "fileCount": 1,
+      "emptyFiles": 0,
+      "directoryCount": 0,
+      "metadataBytes": 224,
+      "quotaBefore": {
+        "quota": 10737418240,
+        "usage": 0,
+        "usageDetails": {}
+      },
+      "fixture": "zero bytes",
+      "verified": true,
+      "bytes": 1048816,
+      "prepareMs": 31.100000001490116,
+      "sourceReadMs": 7.499999992549419,
+      "encodeMs": 14.400000005960464,
+      "acceptMs": 18.5,
+      "transferMs": 40.5,
+      "verifyMs": 12.899999998509884,
+      "transferMBps": 25.89669135802469,
+      "counts": {
+        "payloadWrites": 18,
+        "payloadFlushes": 1,
+        "journalCommits": 1,
+        "ackGroups": 1
+      },
+      "peakJsHeap": 30365662,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "context": "temporary persistent profile",
+      "mainThreadTaskSeconds": 0.089062,
+      "mainThreadScriptSeconds": 0.0025859999999999998
+    }
+  ]
+}

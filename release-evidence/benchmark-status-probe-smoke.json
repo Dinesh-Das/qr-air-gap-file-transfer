@@ -1,0 +1,20 @@
+{
+  "ranAt": "2026-09-15T01:42:36.537Z",
+  "results": [
+    {
+      "mib": 1,
+      "batchBlocks": 64,
+      "mode": "OPFS-only quota probe",
+      "quotaBefore": {
+        "quota": 10737418240,
+        "usage": 0,
+        "usageDetails": {}
+      },
+      "verified": false,
+      "writtenBytes": 1048576,
+      "context": "temporary persistent profile",
+      "mainThreadTaskSeconds": 0.012853000000000003,
+      "mainThreadScriptSeconds": 0.0021999999999999997
+    }
+  ]
+}
