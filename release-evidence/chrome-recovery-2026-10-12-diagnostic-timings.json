@@ -1,0 +1,53 @@
+{
+  "recordedAt": "2026-10-12T16:27:27.4031151Z",
+  "diagnosticOnly": true,
+  "assertionTimeoutMs": 30000,
+  "releaseAssertionTimeoutMs": 5000,
+  "measurements": [
+    {
+      "testDirectory": "pairing-interrupted-transf-afca2-d-retries-without-rehashing",
+      "durationMs": 4087.094,
+      "error": null
+    },
+    {
+      "testDirectory": "pairing-interrupted-transf-afca2-d-retries-without-rehashing-repeat1",
+      "durationMs": 4006.108,
+      "error": null
+    },
+    {
+      "testDirectory": "pairing-interrupted-transf-afca2-d-retries-without-rehashing-repeat2",
+      "durationMs": 3935.942,
+      "error": null
+    },
+    {
+      "testDirectory": "pairing-journal-failure-at-bab85-urable-blocks-after-refresh",
+      "durationMs": 5504.186,
+      "error": null
+    },
+    {
+      "testDirectory": "pairing-journal-failure-at-bab85-urable-blocks-after-refresh-repeat1",
+      "durationMs": 3448.87,
+      "error": null
+    },
+    {
+      "testDirectory": "pairing-journal-failure-at-bab85-urable-blocks-after-refresh-repeat2",
+      "durationMs": 4574.515,
+      "error": null
+    },
+    {
+      "testDirectory": "pairing-sender-and-receive-160b9-locks-after-source-recovery",
+      "durationMs": 4618.86,
+      "error": null
+    },
+    {
+      "testDirectory": "pairing-sender-and-receive-160b9-locks-after-source-recovery-repeat1",
+      "durationMs": 3478.373,
+      "error": null
+    },
+    {
+      "testDirectory": "pairing-sender-and-receive-160b9-locks-after-source-recovery-repeat2",
+      "durationMs": 5063.343,
+      "error": null
+    }
+  ]
+}

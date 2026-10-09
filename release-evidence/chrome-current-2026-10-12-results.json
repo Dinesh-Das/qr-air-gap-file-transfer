@@ -1,0 +1,2018 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\MyProjects\\QR Air-Gap File Transfer\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--reporter=line,json",
+      "--output=test-results/chrome-current-2026-10-12"
+    ],
+    "configFile": "D:\\MyProjects\\QR Air-Gap File Transfer\\playwright.config.ts",
+    "rootDir": "D:/MyProjects/QR Air-Gap File Transfer/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/MyProjects/QR Air-Gap File Transfer/test-results/chrome-current-2026-10-12",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/MyProjects/QR Air-Gap File Transfer/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run serve",
+      "env": {
+        "QRFT_PORT": "4178",
+        "QRFT_SIGNAL_PORT": "4179"
+      },
+      "url": "http://127.0.0.1:4178",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "navigation.spec.ts",
+      "file": "navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "large optical receiver checks cryptography before requesting the camera",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 623,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:23.430Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2868f7d23420c27cca-1465de6b2f363a847b3a",
+          "file": "navigation.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "home opens Send or Receive directly and keeps both optical engines available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 764,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:24.548Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2868f7d23420c27cca-239f25b5b4e16bdaa67c",
+          "file": "navigation.spec.ts",
+          "line": 28,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pairing.spec.ts",
+      "file": "pairing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "temporary peer interruption updates both screens and disables confirmation until recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5481,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:25.341Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-1b403b8bdb19bebb9174",
+          "file": "pairing.spec.ts",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "receiver preflight blocks missing webrtc even after reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 383,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:30.833Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-ff51a1ca3fa572bb3f88",
+          "file": "pairing.spec.ts",
+          "line": 200,
+          "column": 111
+        },
+        {
+          "title": "receiver preflight blocks missing opfs even after reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 409,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:31.233Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-b686d0ce5c3d34db0925",
+          "file": "pairing.spec.ts",
+          "line": 200,
+          "column": 111
+        },
+        {
+          "title": "receiver preflight blocks missing locks even after reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 395,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:31.660Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-daaadd9a4d8f8fa412bb",
+          "file": "pairing.spec.ts",
+          "line": 200,
+          "column": 111
+        },
+        {
+          "title": "receiver preflight blocks missing worker even after reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 407,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:32.072Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-4c685baa2b3100ab0158",
+          "file": "pairing.spec.ts",
+          "line": 200,
+          "column": 111
+        },
+        {
+          "title": "receiver preflight blocks missing picker even after reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 389,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:32.495Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-08502dbf331d6908b9e3",
+          "file": "pairing.spec.ts",
+          "line": 200,
+          "column": 111
+        },
+        {
+          "title": "receiver preflight blocks missing crypto even after reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 397,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:32.895Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-a2711e0aae87b3fa93dd",
+          "file": "pairing.spec.ts",
+          "line": 200,
+          "column": 111
+        },
+        {
+          "title": "receiver preflight blocks missing subtle even after reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 407,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:33.307Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-cf7d7a6c92adbf8cfffb",
+          "file": "pairing.spec.ts",
+          "line": 200,
+          "column": 111
+        },
+        {
+          "title": "receiver preflight blocks missing digest even after reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 389,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:33.733Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-7578e7147316f0b78314",
+          "file": "pairing.spec.ts",
+          "line": 200,
+          "column": 111
+        },
+        {
+          "title": "sender checks webrtc support before reading source bytes or pairing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 373,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:34.136Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-d7a7edae7fb0a31338eb",
+          "file": "pairing.spec.ts",
+          "line": 229,
+          "column": 74
+        },
+        {
+          "title": "sender checks crypto support before reading source bytes or pairing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 362,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:34.526Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-3df84dc1de57994bb435",
+          "file": "pairing.spec.ts",
+          "line": 229,
+          "column": 74
+        },
+        {
+          "title": "sender checks subtle support before reading source bytes or pairing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 372,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:34.903Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-a3c7f4a94d013ab7aa55",
+          "file": "pairing.spec.ts",
+          "line": 229,
+          "column": 74
+        },
+        {
+          "title": "sender checks digest support before reading source bytes or pairing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 365,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:35.286Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-211a0195b651086bcd15",
+          "file": "pairing.spec.ts",
+          "line": 229,
+          "column": 74
+        },
+        {
+          "title": "local service check blocks selection and connection until a successful retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 569,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:35.667Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-9906def704f53b267443",
+          "file": "pairing.spec.ts",
+          "line": 266,
+          "column": 1
+        },
+        {
+          "title": "service loss before preparation reads no source bytes and retry retains selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 745,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:36.257Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-f22d5c066372b06c1313",
+          "file": "pairing.spec.ts",
+          "line": 292,
+          "column": 1
+        },
+        {
+          "title": "saved source recovery checks the service before reading files and offers a direct retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5081,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:37.020Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-59d2dc78e30091e1b7ab",
+          "file": "pairing.spec.ts",
+          "line": 334,
+          "column": 1
+        },
+        {
+          "title": "interrupted transfer keeps unverified progress visible and retries without rehashing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15840,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:425:87",
+                    "location": {
+                      "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+                      "column": 87,
+                      "line": 425
+                    },
+                    "snippet": "  423 |   await receiver.getByRole(\"button\", { name: \"Connect to sender\", exact: true }).click();\n  424 |   for (const page of [sender, receiver]) await page.getByRole(\"button\", { name: \"Codes match\", exact: true }).click();\n> 425 |   await expect(receiver.getByRole(\"button\", { name: \"Choose destination and save\" })).toBeVisible();\n      |                                                                                       ^\n  426 |   await expect(sender.getByText(\"The receiver checked every transferred byte. Save the files on the receiving laptop to finish.\")).toBeVisible();\n  427 |   expect(errors).toEqual([]);\n  428 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+                        "column": 87,
+                        "line": 425
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n\n\n  423 |   await receiver.getByRole(\"button\", { name: \"Connect to sender\", exact: true }).click();\n  424 |   for (const page of [sender, receiver]) await page.getByRole(\"button\", { name: \"Codes match\", exact: true }).click();\n> 425 |   await expect(receiver.getByRole(\"button\", { name: \"Choose destination and save\" })).toBeVisible();\n      |                                                                                       ^\n  426 |   await expect(sender.getByText(\"The receiver checked every transferred byte. Save the files on the receiving laptop to finish.\")).toBeVisible();\n  427 |   expect(errors).toEqual([]);\n  428 | });\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:425:87"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:42.115Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results\\chrome-current-2026-10-12\\pairing-interrupted-transf-afca2-d-retries-without-rehashing\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results\\chrome-current-2026-10-12\\pairing-interrupted-transf-afca2-d-retries-without-rehashing\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+                    "column": 87,
+                    "line": 425
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-626b023353ef2667dbf6",
+          "file": "pairing.spec.ts",
+          "line": 366,
+          "column": 1
+        },
+        {
+          "title": "failed final verification never labels the recorded bytes as safe and retry replaces corrupt storage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5317,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:16:59.939Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-c5c81e3f2001b8c60bd1",
+          "file": "pairing.spec.ts",
+          "line": 430,
+          "column": 1
+        },
+        {
+          "title": "storage worker quota errors show space recovery advice without acknowledging unwritten data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2426,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:05.524Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-71ea5387edfa724311fa",
+          "file": "pairing.spec.ts",
+          "line": 479,
+          "column": 1
+        },
+        {
+          "title": "pairing failure 404 shows recovery advice before technical details",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 515,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:07.966Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-9f22a1ee90e3695961eb",
+          "file": "pairing.spec.ts",
+          "line": 500,
+          "column": 34
+        },
+        {
+          "title": "pairing failure 503 shows recovery advice before technical details",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 539,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:08.494Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-a1c661d26d1512c0cafc",
+          "file": "pairing.spec.ts",
+          "line": 500,
+          "column": 34
+        },
+        {
+          "title": "transfer metrics retain byte totals and elapsed time through pause and verification",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9290,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:09.052Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-9db994c62d6325b9c600",
+          "file": "pairing.spec.ts",
+          "line": 517,
+          "column": 1
+        },
+        {
+          "title": "receiver storage readiness refreshes and distinguishes unknown estimates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 700,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:18.359Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-51ab58e0ee6d78a37abe",
+          "file": "pairing.spec.ts",
+          "line": 583,
+          "column": 1
+        },
+        {
+          "title": "mixed dropped items transfer and a busy sender ignores another drop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5170,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:19.073Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-7665be7b9d5d24132530",
+          "file": "pairing.spec.ts",
+          "line": 609,
+          "column": 1
+        },
+        {
+          "title": "selected files transfer preserves names, bytes and empty files",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5145,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:24.256Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-0f724c5880bd9512f399",
+          "file": "pairing.spec.ts",
+          "line": 646,
+          "column": 1
+        },
+        {
+          "title": "aborted sender checkpoint transactions do not prevent verified transfer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2847,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:29.418Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-23c7e72fbb015ae19654",
+          "file": "pairing.spec.ts",
+          "line": 675,
+          "column": 1
+        },
+        {
+          "title": "sender recovery restores handles and refuses changed source (file selection: false, browser crash: false)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3033,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:32.287Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-80ececa961d8744f3edb",
+          "file": "pairing.spec.ts",
+          "line": 692,
+          "column": 86
+        },
+        {
+          "title": "sender recovery restores handles and refuses changed source (file selection: true, browser crash: false)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2933,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:35.335Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-13d26d55a347a1861447",
+          "file": "pairing.spec.ts",
+          "line": 692,
+          "column": 86
+        },
+        {
+          "title": "sender recovery restores handles and refuses changed source (file selection: false, browser crash: true)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3068,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:38.284Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-4c6c138b5abc609fb54d",
+          "file": "pairing.spec.ts",
+          "line": 692,
+          "column": 86
+        },
+        {
+          "title": "sender recovery restores handles and refuses changed source (file selection: true, browser crash: true)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3223,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:41.369Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-eedd5b628f4b4bb1245d",
+          "file": "pairing.spec.ts",
+          "line": 692,
+          "column": 86
+        },
+        {
+          "title": "production HTTP runtime pairs browsers (manual address: false)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2298,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:44.611Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "application-request-audit",
+                      "contentType": "application/json",
+                      "body": "ewogICJtYW51YWwiOiBmYWxzZSwKICAicmVxdWVzdHMiOiBbCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4LyIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2Fzc2V0cy9pbmRleC1CRmU1QXh6Qi5qcyIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2Fzc2V0cy9pbmRleC1DNWZvV1Zqcy5jc3MiLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hcGkvcmVuZGV6dm91cy9oZWFsdGgiLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC8iLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hc3NldHMvaW5kZXgtQkZlNUF4ekIuanMiLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hc3NldHMvaW5kZXgtQzVmb1dWanMuY3NzIiwKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvYXBpL3JlbmRlenZvdXMvaGVhbHRoIiwKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvYXBpL3JlbmRlenZvdXMvaGVhbHRoIiwKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvYXBpL3JlbmRlenZvdXMvcm9vbXMiLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hcGkvcmVuZGV6dm91cy9yb29tcy8wZjlhNjQ1YmNhODhhMDI1MjVkOTllYmM5NTlmNDhhYyIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2FwaS9yZW5kZXp2b3VzL2hlYWx0aCIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2FwaS9yZW5kZXp2b3VzL2pvaW4iLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hcGkvcmVuZGV6dm91cy9qb2lucy81NDk2ZjJmMTYzZmYxNDQ2NTUzMTdkNWJmZjg4YjJhNS9hbnN3ZXIiLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hcGkvcmVuZGV6dm91cy9yb29tcy8wZjlhNjQ1YmNhODhhMDI1MjVkOTllYmM5NTlmNDhhYyIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2FwaS9yZW5kZXp2b3VzL3Jvb21zLzBmOWE2NDViY2E4OGEwMjUyNWQ5OWViYzk1OWY0OGFjIiwKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvYXNzZXRzL2Jsb2NrLXN0b3JlLndvcmtlci1EVkhaUFpRZS5qcyIKICBdCn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-17175bfcb89f0f248dbb",
+          "file": "pairing.spec.ts",
+          "line": 788,
+          "column": 37
+        },
+        {
+          "title": "production HTTP runtime pairs browsers (manual address: true)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2183,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:46.924Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "application-request-audit",
+                      "contentType": "application/json",
+                      "body": "ewogICJtYW51YWwiOiB0cnVlLAogICJyZXF1ZXN0cyI6IFsKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvIiwKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvYXNzZXRzL2luZGV4LUJGZTVBeHpCLmpzIiwKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvYXNzZXRzL2luZGV4LUM1Zm9XVmpzLmNzcyIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2FwaS9yZW5kZXp2b3VzL2hlYWx0aCIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4LyIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2Fzc2V0cy9pbmRleC1CRmU1QXh6Qi5qcyIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2Fzc2V0cy9pbmRleC1DNWZvV1Zqcy5jc3MiLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hcGkvcmVuZGV6dm91cy9oZWFsdGgiLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hcGkvcmVuZGV6dm91cy9oZWFsdGgiLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hcGkvcmVuZGV6dm91cy9yb29tcyIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2FwaS9yZW5kZXp2b3VzL3Jvb21zL2ZjM2Q0NmM4ZDBiMTNiNjQ2MmQxM2FjNzI4MTcyNjM4IiwKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvYXBpL3JlbmRlenZvdXMvaGVhbHRoIiwKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvYXBpL3JlbmRlenZvdXMvam9pbiIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2FwaS9yZW5kZXp2b3VzL2pvaW5zL2M2ZDM3ZWE0ZWJkY2JlYTYwZjYzZWQyMjQxYjBkNmI5L2Fuc3dlciIsCiAgICAiaHR0cDovLzEyNy4wLjAuMTo0MTc4L2FwaS9yZW5kZXp2b3VzL3Jvb21zL2ZjM2Q0NmM4ZDBiMTNiNjQ2MmQxM2FjNzI4MTcyNjM4IiwKICAgICJodHRwOi8vMTI3LjAuMC4xOjQxNzgvYXBpL3JlbmRlenZvdXMvcm9vbXMvZmMzZDQ2YzhkMGIxM2I2NDYyZDEzYWM3MjgxNzI2MzgiLAogICAgImh0dHA6Ly8xMjcuMC4wLjE6NDE3OC9hc3NldHMvYmxvY2stc3RvcmUud29ya2VyLURWSFpQWlFlLmpzIgogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-3fc88a7ba8bccd24d908",
+          "file": "pairing.spec.ts",
+          "line": 788,
+          "column": 37
+        },
+        {
+          "title": "real WebRTC and OPFS transfer waits for both human confirmations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2642,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:49.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-873f9f7a15e7d459b500",
+          "file": "pairing.spec.ts",
+          "line": 814,
+          "column": 1
+        },
+        {
+          "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: false)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 33080,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:17:51.785Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-6fa65b7264f7968e0094",
+          "file": "pairing.spec.ts",
+          "line": 855,
+          "column": 46
+        },
+        {
+          "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: true)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 49703,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:18:24.882Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-894c6e39867110889efd",
+          "file": "pairing.spec.ts",
+          "line": 855,
+          "column": 46
+        },
+        {
+          "title": "browser process termination during destination save preserves verified files",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 49272,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:19:14.606Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-b29fcfaa557b37b25d4a",
+          "file": "pairing.spec.ts",
+          "line": 861,
+          "column": 1
+        },
+        {
+          "title": "stopping a save removes its pending destination lock request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2761,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:03.899Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-f19beac33cd3a8abc13f",
+          "file": "pairing.spec.ts",
+          "line": 1015,
+          "column": 1
+        },
+        {
+          "title": "receiver rejects payload before human verification",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1878,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:06.676Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-42d3c9f7964baf323d1b",
+          "file": "pairing.spec.ts",
+          "line": 1049,
+          "column": 1
+        },
+        {
+          "title": "sender rejects premature success before human verification",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1967,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:08.566Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-5d6852170d91c9778866",
+          "file": "pairing.spec.ts",
+          "line": 1058,
+          "column": 1
+        },
+        {
+          "title": "rejecting the device sends no file data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2067,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:10.545Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-896a5e4b9e4e14daebee",
+          "file": "pairing.spec.ts",
+          "line": 1066,
+          "column": 1
+        },
+        {
+          "title": "altered signaling produces different verification codes and cannot authorize",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2305,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:12.623Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-ba8805681e99a3ca5639",
+          "file": "pairing.spec.ts",
+          "line": 1075,
+          "column": 1
+        },
+        {
+          "title": "premature success after authorization still cannot finish a transfer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2759,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:14.946Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-5c25fce84fd28ffd0c8a",
+          "file": "pairing.spec.ts",
+          "line": 1085,
+          "column": 1
+        },
+        {
+          "title": "pairing retry retains the prepared source without rehashing or reselecting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3450,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:17.720Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-8afb38eeefa1e6145d5d",
+          "file": "pairing.spec.ts",
+          "line": 1103,
+          "column": 1
+        },
+        {
+          "title": "a journal truncated after flush is never acknowledged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2540,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:21.185Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-6aa7133e1eacb80b22c9",
+          "file": "pairing.spec.ts",
+          "line": 1124,
+          "column": 1
+        },
+        {
+          "title": "journal failure at commit 1 resumes only durable blocks after refresh",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10570,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n\n    at exerciseJournalResume (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:1250:87)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:1144:3",
+                    "location": {
+                      "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+                      "column": 87,
+                      "line": 1250
+                    },
+                    "snippet": "  1248 |     await page.getByRole(\"button\", { name: \"Codes match\", exact: true }).click();\n  1249 |   }\n> 1250 |   await expect(receiver.getByRole(\"button\", { name: \"Choose destination and save\" })).toBeVisible();\n       |                                                                                       ^\n  1251 |   await expect(sender.getByText(\"The receiver checked every transferred byte. Save the files on the receiving laptop to finish.\")).toBeVisible();\n  1252 |   const ranges = await receiver.evaluate(() => (window as unknown as {\n  1253 |     sentControls: Array<{ type: string; ranges?: Array<[number, number]> }>;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+                        "column": 87,
+                        "line": 1250
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n\n\n  1248 |     await page.getByRole(\"button\", { name: \"Codes match\", exact: true }).click();\n  1249 |   }\n> 1250 |   await expect(receiver.getByRole(\"button\", { name: \"Choose destination and save\" })).toBeVisible();\n       |                                                                                       ^\n  1251 |   await expect(sender.getByText(\"The receiver checked every transferred byte. Save the files on the receiving laptop to finish.\")).toBeVisible();\n  1252 |   const ranges = await receiver.evaluate(() => (window as unknown as {\n  1253 |     sentControls: Array<{ type: string; ranges?: Array<[number, number]> }>;\n    at exerciseJournalResume (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:1250:87)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:1144:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:23.745Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results\\chrome-current-2026-10-12\\pairing-journal-failure-at-bab85-urable-blocks-after-refresh\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results\\chrome-current-2026-10-12\\pairing-journal-failure-at-bab85-urable-blocks-after-refresh\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+                    "column": 87,
+                    "line": 1250
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-834d9f4d6201a7fa77da",
+          "file": "pairing.spec.ts",
+          "line": 1143,
+          "column": 36
+        },
+        {
+          "title": "journal failure at commit 2 resumes only durable blocks after refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11205,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:37.524Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-49b2a07560a57dfd893a",
+          "file": "pairing.spec.ts",
+          "line": 1143,
+          "column": 36
+        },
+        {
+          "title": "sender and receiver reload resume only missing blocks after source recovery",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14212,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n\n    at exerciseJournalResume (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:1250:87)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:1149:9",
+                    "location": {
+                      "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+                      "column": 87,
+                      "line": 1250
+                    },
+                    "snippet": "  1248 |     await page.getByRole(\"button\", { name: \"Codes match\", exact: true }).click();\n  1249 |   }\n> 1250 |   await expect(receiver.getByRole(\"button\", { name: \"Choose destination and save\" })).toBeVisible();\n       |                                                                                       ^\n  1251 |   await expect(sender.getByText(\"The receiver checked every transferred byte. Save the files on the receiving laptop to finish.\")).toBeVisible();\n  1252 |   const ranges = await receiver.evaluate(() => (window as unknown as {\n  1253 |     sentControls: Array<{ type: string; ranges?: Array<[number, number]> }>;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+                        "column": 87,
+                        "line": 1250
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n\n\n  1248 |     await page.getByRole(\"button\", { name: \"Codes match\", exact: true }).click();\n  1249 |   }\n> 1250 |   await expect(receiver.getByRole(\"button\", { name: \"Choose destination and save\" })).toBeVisible();\n       |                                                                                       ^\n  1251 |   await expect(sender.getByText(\"The receiver checked every transferred byte. Save the files on the receiving laptop to finish.\")).toBeVisible();\n  1252 |   const ranges = await receiver.evaluate(() => (window as unknown as {\n  1253 |     sentControls: Array<{ type: string; ranges?: Array<[number, number]> }>;\n    at exerciseJournalResume (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:1250:87)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:1149:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:20:48.992Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results\\chrome-current-2026-10-12\\pairing-sender-and-receive-160b9-locks-after-source-recovery\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results\\chrome-current-2026-10-12\\pairing-sender-and-receive-160b9-locks-after-source-recovery\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+                    "column": 87,
+                    "line": 1250
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-efcdc4afc33474495c20",
+          "file": "pairing.spec.ts",
+          "line": 1147,
+          "column": 1
+        },
+        {
+          "title": "receiver renderer crash during receipt commit recovers durable blocks and exact output",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17156,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:21:05.769Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-77a995e1a96f2c61e191",
+          "file": "pairing.spec.ts",
+          "line": 1153,
+          "column": 1
+        },
+        {
+          "title": "browser process termination during receive resumes exact durable blocks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15742,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:21:22.954Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-dd8d1b61854c3f798db5",
+          "file": "pairing.spec.ts",
+          "line": 1159,
+          "column": 1
+        },
+        {
+          "title": "screen wake lock follows transfer lifecycle (denied: false)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3279,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:21:38.719Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-0e42e0cd4c5b198cd986",
+          "file": "pairing.spec.ts",
+          "line": 1285,
+          "column": 37
+        },
+        {
+          "title": "screen wake lock follows transfer lifecycle (denied: true)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3018,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T16:21:42.268Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "520aa2bb3acfd1058645-0e6670f6cd2fc92a0fbf",
+          "file": "pairing.spec.ts",
+          "line": 1285,
+          "column": 37
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-12T16:16:21.589Z",
+    "duration": 324986.44,
+    "expected": 50,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

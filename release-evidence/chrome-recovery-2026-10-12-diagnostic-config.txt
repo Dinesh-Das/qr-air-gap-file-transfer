@@ -1,0 +1,11 @@
+import { defineConfig } from "@playwright/test";
+import { resolve } from "node:path";
+import base from "../playwright.config";
+
+// Diagnostic observation only: release checks retain their original limits.
+export default defineConfig({
+  ...base,
+  testDir: resolve("e2e"),
+  expect: { timeout: 30_000 },
+  use: { ...base.use, trace: "on" },
+});
