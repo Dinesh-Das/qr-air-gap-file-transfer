@@ -1,0 +1,127 @@
+{
+  "recordedAt": "2026-10-13T19:08:22.581Z",
+  "files": [
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-check-2026-10-14.log",
+      "sha256": "66567e749624b3973afb0aa4135f54ca913bbe7e873a70f97163ecf70c6a686a"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-chrome-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-chrome-2026-10-14.log",
+      "sha256": "025019a2c365d5ee83c2282886b4462e4504bf2b9558dc91b872b442317a2c9e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-diff-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-diff-check-2026-10-14.log",
+      "sha256": "260daf20c5c7288b6224279a44e4514287c02dc2260f1171b57b43b5cb05d98e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-edge-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-edge-2026-10-14.log",
+      "sha256": "2183c770d4a43c0c75147476480c924fd6c2bee82de5de8d3fcafa1bf304a304"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-final-chrome-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-final-chrome-2026-10-14.log",
+      "sha256": "301251a1982386e4e8b27e674d0b5fb16e7a20f527d880635a83a9745861a9db"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-final-edge-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-final-edge-2026-10-14.log",
+      "sha256": "6ceda716c01000e3fc6bc63372ceffb9da5360cad9dee7cb9c1de5ac5e09bb36"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-review-2026-10-14.json",
+      "sha256": "e7e431ab735afd27704a2bd29b3a0720ec7a1bd350cc36cd27e2cd066900e3ab"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-start-2026-10-14.json",
+      "sha256": "8dd4646a0fa60edf33799d277b4b62191a0811e85eec000a26e832995cc51946"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-CHECKLIST.md",
+      "sha256": "a947e2d0b156987f6b3007657d92733b4354c1a771dcd5830df4cf85d1ee6990"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-HARDENING.md",
+      "sha256": "090f26d56965d285f72f1531a0ebe251a298e139ad1838fa1e9a96cdb6026ba3"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\SPEC-cancel-payload.md",
+      "sha256": "223c5a8958b17b346f51895bdac5534c7b71dce1d2ed4884c50d656116fbec3c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\cancel-save-baseline-pairing-2026-10-14.spec.txt",
+      "sha256": "0e123f968563114a487c3effddb8270a0192e0993039281eb9b05d3dc7bd1828"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+      "sha256": "fd2b5bc20a6c4ca77768c1b505b07a7ffeeb82af789da6ce469cd19ba48e48c1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\components\\WebRtcReceiver.tsx",
+      "sha256": "23c9105b567ace6946c0b4d59c5b9d2b6b039b7b81347a7d2ab51e84dd2bc917"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\lib\\large-destination.ts",
+      "sha256": "9026236beb6e1924886e77e7a224321ff85f2dba02dff769f965791d4e2d774d"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-review-2026-10-14.json",
+      "sha256": "46ee597c1e1059a05a0ef45530b4b4d28f05e035abd19d69677947b138647914"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-review-2026-10-14.json",
+      "sha256": "776d568cac9d8418d97f461e24150f4251bd49211729354496fb7b353eb9da08"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-before-cancel-payload-2026-10-14.json",
+      "sha256": "46ee597c1e1059a05a0ef45530b4b4d28f05e035abd19d69677947b138647914"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.json",
+      "sha256": "e7e431ab735afd27704a2bd29b3a0720ec7a1bd350cc36cd27e2cd066900e3ab"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.txt",
+      "sha256": "b1faa36112630380b615d904131fc5ac98ebf37d0cf1843fa011eb7806d902c2"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-terminal-control\\CHECKSUMS.json",
+      "sha256": "076c7d26d2a3479975d8766aa2976be11b52fd853c4a6923e173d69a6af317bd"
+    }
+  ],
+  "postCheckReview": {
+    "onlyUpdatedInputFiles": [
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputFiles": 141,
+    "unchangedAssets": 5,
+    "candidateVerifiedFiles": 19,
+    "review": "No actionable findings: native OPFS writer calls settle before reset, exclusive-lock contention is directly tested, receipt reuse and exactly-one rewrite are measured, and final hash/size/name expectations are independent. Production unchanged; tests or checks not weakened."
+  }
+}
