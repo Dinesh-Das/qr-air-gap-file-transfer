@@ -1,0 +1,249 @@
+{
+  "recordedAt": "2026-10-13T16:35:04.914Z",
+  "files": [
+    {
+      "path": "release-evidence/adversarial-many-file-diff-check-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/adversarial-many-file-diff-check-2026-10-13.log",
+      "sha256": "2d1805e0c9910ec0908b1b744abdecf2eb012527300dd43782e987592621a8a0"
+    },
+    {
+      "path": "release-evidence/adversarial-many-file-final-diff-check-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/adversarial-many-file-final-diff-check-2026-10-13.log",
+      "sha256": "2d1805e0c9910ec0908b1b744abdecf2eb012527300dd43782e987592621a8a0"
+    },
+    {
+      "path": "release-evidence/adversarial-many-file-review-2026-10-13.json",
+      "sha256": "3d6342c3e580f374edb7060eb0ca807926a2cfd38eaaa7707767d6fdac791a5c"
+    },
+    {
+      "path": "release-evidence/destination-adversarial-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-adversarial-2026-10-13.log",
+      "sha256": "afddb4ddc3ae12bec2ab9a7687371687768253afc23646c50c5ea01896c8d42b"
+    },
+    {
+      "path": "release-evidence/destination-adversarial-check-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-adversarial-check-2026-10-13.log",
+      "sha256": "14413e0e1c845315412ed14a4566e5559eb7a7486cd4a0cace73ac25fccb2c70"
+    },
+    {
+      "path": "release-evidence/many-file-matched-2026-10-13-inputs.json",
+      "sha256": "8ddad1182808639a241e92b68f5f82caa75bb74c7905fa7cb62dd72231c6c758"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-1-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-1-2026-10-13-preflight.json",
+      "sha256": "46cf2a7da424765db27b8aab39e6a6ae1f37828ae11949e1f9e769bd17c46583"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-1-2026-10-13.json",
+      "sha256": "750485087b570e4fc841858d1b611f89c94e4c0b8cf4cc3d932f99b02aff3cd7"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-1-2026-10-13.log",
+      "sha256": "f5b2528b478e6619aced34eff07793880eb9a3732be0514f210dd231e652e856"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-2-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-2-2026-10-13-preflight.json",
+      "sha256": "139cc51e0dd08d92322f44e5517818f6ae58bda748e0d67eae84969c5d287ea6"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-2-2026-10-13.json",
+      "sha256": "433e70a8c479f56c42722d9613c4e2cb7c91dab586d51885479a3b23c3a0dc6e"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-2-2026-10-13.log",
+      "sha256": "55f2e224c97652aae4db748807198c9a07997782e68ba0f1ab0bf26c237da57e"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-3-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-3-2026-10-13-preflight.json",
+      "sha256": "c6b68af1bd50ce1d75c07e29476117984af2bb418b0ba0518b46e64e90f27d8e"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-3-2026-10-13.json",
+      "sha256": "514737a12a68b404a6869ae78897516ec1ef5dea4d754c8ccec07eb6f2fc587d"
+    },
+    {
+      "path": "release-evidence/many-file-matched-after-3-2026-10-13.log",
+      "sha256": "b4efa96a66ac519adce9dcd3380e340d0c65af69be34ef3309b6d821c00a1b8e"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-1-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-1-2026-10-13-preflight.json",
+      "sha256": "2680ca05f28d927664b98c9d2a406d34e5281cfd5b8d5b90569ce8102deb2425"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-1-2026-10-13.json",
+      "sha256": "44831594cd0990b8126fbb8451fc6505cec0fd675eb6a8c54950ff50c515e0e6"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-1-2026-10-13.log",
+      "sha256": "ddad85557985fa4fa02256689aa7d6a9fb018fd39a7885823633e992b3c0fe67"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-2-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-2-2026-10-13-preflight.json",
+      "sha256": "34657fbf7717775cba7c0405bde6508b229b88e126d78a2075bd412f82acde40"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-2-2026-10-13.json",
+      "sha256": "2d0b7fecb9f7ba0506841f08422d2627dc3de5a39e80de92cc228f1d6f457271"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-2-2026-10-13.log",
+      "sha256": "c6867af6ffb25c967ed3a79a90407d2cc7ad2944ec9f3c27254160619edb4f1f"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-3-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-3-2026-10-13-preflight.json",
+      "sha256": "758709b10fd19241e7aedfffac311accf47b6de530937cf37c0c90772ec99650"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-3-2026-10-13.json",
+      "sha256": "03ed751642ec5df0868ba43e649c5fca8a0de2bcbac01d81a25905150e83b550"
+    },
+    {
+      "path": "release-evidence/many-file-matched-before-3-2026-10-13.log",
+      "sha256": "2868c18612889b39111b905b917eaf0a974ec9553eee080e41a99cf9ca68cde2"
+    },
+    {
+      "path": "release-evidence/many-file-matched-review-2026-10-13.json",
+      "sha256": "141584617e9a8dfad02a48087b96bfe8464e01c6a8517c119dcd663769b0a1ed"
+    },
+    {
+      "path": "BENCHMARKS.md",
+      "sha256": "48d9dfd7883377cec8ec4b8cedfd404ff2a08b24469fd992ef5c5971d1d368f5"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "sha256": "0186faa34331c0b08fabc0e5fc13149e9a1daa0e312bba1ebc1c01649dcbb360"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "sha256": "2355207271d12982bc0c6b8858e75b27a9c7ae32e627e23b0925d94c40d020e9"
+    },
+    {
+      "path": "tests/large-destination.test.ts",
+      "sha256": "3d3367617f96c61f5692ae7f75877bd275b093e80bef0faf275eaae4dd66b627"
+    },
+    {
+      "path": "src/lib/large-destination.ts",
+      "sha256": "9026236beb6e1924886e77e7a224321ff85f2dba02dff769f965791d4e2d774d"
+    },
+    {
+      "path": "scripts/benchmark-receiver.mjs",
+      "sha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431"
+    },
+    {
+      "path": "scripts/benchmark-result.mjs",
+      "sha256": "2c73f114ccb427576aa55008b08c3ace9108405fb36d0fa3310f6a9f07bc44c7"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "sha256": "3d6342c3e580f374edb7060eb0ca807926a2cfd38eaaa7707767d6fdac791a5c"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "sha256": "78a99bf9155c8147638fb1235a192d7e47e5602eb8a7e5e4a445e73d885eb6bb"
+    },
+    {
+      "path": "release-evidence/release-gate-before-adversarial-many-file-2026-10-13.json",
+      "sha256": "1eae460b7a9fdf7ede8582ab690097a0272e8d95c188128389f6875f22a9dfa5"
+    },
+    {
+      "path": "release-evidence/destination-small-file-review-2026-10-13.json",
+      "sha256": "1eae460b7a9fdf7ede8582ab690097a0272e8d95c188128389f6875f22a9dfa5"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\scripts\\benchmark-many-file-matched-2026-10-13.mjs",
+      "sha256": "5f17bce5dc6190d8160d332054ac6ccb762792a5d0ce2bdcb06282326640c007"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\scripts\\benchmark-many-file-matched-2026-10-13.mjs",
+      "sha256": "5f17bce5dc6190d8160d332054ac6ccb762792a5d0ce2bdcb06282326640c007"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\CHECKSUMS.json",
+      "sha256": "b01147cf4a54b29718b111c132806540506b46e2f8cebbc14a7244828da267fa"
+    }
+  ],
+  "postCheckReview": {
+    "onlyUpdatedInputFiles": [
+      "BENCHMARKS.md",
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputFiles": 136,
+    "unchangedRuntimeAssets": 5,
+    "candidateVerifiedFiles": 19,
+    "retainedProfiles": [
+      {
+        "trial": "before-1",
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-NSOlgj",
+        "profileExists": true,
+        "savedDataRetained": false
+      },
+      {
+        "trial": "after-1",
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\many-files-bench-profile-8J2K48",
+        "profileExists": true,
+        "savedDataRetained": false
+      },
+      {
+        "trial": "before-2",
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-pBymla",
+        "profileExists": true,
+        "savedDataRetained": false
+      },
+      {
+        "trial": "after-2",
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\many-files-bench-profile-D8MlAh",
+        "profileExists": true,
+        "savedDataRetained": false
+      },
+      {
+        "trial": "before-3",
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-JBBZDm",
+        "profileExists": true,
+        "savedDataRetained": false
+      },
+      {
+        "trial": "after-3",
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\many-files-bench-profile-MneEH1",
+        "profileExists": true,
+        "savedDataRetained": false
+      }
+    ]
+  }
+}
