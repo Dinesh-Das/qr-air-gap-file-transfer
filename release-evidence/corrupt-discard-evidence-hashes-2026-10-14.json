@@ -1,0 +1,251 @@
+{
+  "recordedAt": "2026-10-14T13:29:24.177Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/corrupt-discard-review-2026-10-14.json",
+      "bytes": 36949,
+      "sha256": "422c6e69d19eac8c7f2f9f7d5a6b8fc08e374d749e7e0051ca6e4c7c3b577b8b"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 36949,
+      "sha256": "422c6e69d19eac8c7f2f9f7d5a6b8fc08e374d749e7e0051ca6e4c7c3b577b8b"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 663,
+      "sha256": "006481d5e966c36dea5c0304a1153c3e91358f0fe7e83a4552721224544742ee"
+    },
+    {
+      "path": "release-evidence/release-gate-before-corrupt-discard-2026-10-14.json",
+      "bytes": 34184,
+      "sha256": "28072d8ebf776a75a7b87d87d22306b7d9ac4c302157f8cdf9a18a3bb44e9c36"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 81699,
+      "sha256": "1d20242f51568386dd23398cd968b6b04233eed6ce133ddc324337b4d9dae79a"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 124061,
+      "sha256": "f12800b502a57e234b6e4b9ba63c622fc93c2fbb5ccadf728d5e125cd43ed260"
+    },
+    {
+      "path": "SPEC-corrupt-copy-discard.md",
+      "bytes": 1398,
+      "sha256": "3eaa04b4cf45fdf5ba077056957ff7e3943bcc6c0a745f4051081ef17750370f"
+    },
+    {
+      "path": "release-evidence/original-release-requirements.txt",
+      "bytes": 33346,
+      "sha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077"
+    },
+    {
+      "path": "release-evidence/physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-corrupt-discard\\CHECKSUMS.json",
+      "bytes": 3165,
+      "sha256": "5bf10677bd612b9806383617572d31a5e3a079a996ebb496dafab790b2f718cf"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-chrome-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-chrome-2026-10-14.log",
+      "bytes": 10889,
+      "sha256": "e4aac33ea5fd9576d822ed7862dc041459842d8da83084c71f010f61818e82b3"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-edge-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-edge-2026-10-14.log",
+      "bytes": 10890,
+      "sha256": "ddebebeaeca869a555a956d57b2c87216de681aa0725fda5d80c34700f98b771"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-final-focused-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-final-focused-2026-10-14.log",
+      "bytes": 656,
+      "sha256": "300c8ffa889dac7f1b6804d49071efbfc9645918988bc207a03a876a96af53ae"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-green-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-green-2026-10-14.log",
+      "bytes": 655,
+      "sha256": "0df5bda67ae2ff2d2dccc33b30f60e4168f5ad6a27f03718533aa62bea4bf8c2"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-red-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-red-2026-10-14.log",
+      "bytes": 5173,
+      "sha256": "3e7eaeb08355c58192bb7b3637c6bced0fac1f118f663faf3b6db19c42f8cc58"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-2026-10-14.log",
+      "bytes": 1445,
+      "sha256": "3b4516fac2887b363188389c8c7b317bd060dce2f981e1b15fcc6f214bf0977c"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-final-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-final-2026-10-14.log",
+      "bytes": 1445,
+      "sha256": "12ef7d4b6968c1658bd9d423a6286cf2b5c2db243b9d92e7541e6fdfa7bc00f1"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-final-label-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-final-label-2026-10-14.log",
+      "bytes": 1445,
+      "sha256": "c8a5264069dc4ae73d29ea8b533efc67dd29f69eaf584649719d668a35ed4850"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-first-types-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "df4e26a04a444901b95afef44e4a96cfae34690fff2ad2c66389c70079cdff2b"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-first-types-2026-10-14.log",
+      "bytes": 511,
+      "sha256": "31e3d88816f512c6a435fdfb67994b319d863a49fcce38878c77d212dd3407cf"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-compact-discard-edge-2026-10-14.log",
+      "bytes": 207746,
+      "sha256": "f3f59a6fb8137902b6845d7877107a1919c2e3cbbb94df51b1ce6c74bd5075a9"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-compact-first-message-chrome-2026-10-14.log",
+      "bytes": 174991,
+      "sha256": "50b48a6c83d858fa8631ea2c16c592bd698a95c1a4084ee8d2c7413c6d942378"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-compact-prefix-chrome-2026-10-14.log",
+      "bytes": 179892,
+      "sha256": "53890764d2201097fb8c2a7f3437c5aa608e57122abbaf2e4661939545c5b96e"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-diff-check-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-diff-check-2026-10-14.log",
+      "bytes": 3753,
+      "sha256": "30e275ec4b749b122594dc5f36ab32c68b662c01975c7560f8d77487db4541f3"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-package-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-package-2026-10-14.log",
+      "bytes": 116,
+      "sha256": "4743f256f57b9eb8477ad3b1f6ce7f4c4f9bdb68862d0607496e53c2206da054"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-package-smoke-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-package-smoke-2026-10-14.log",
+      "bytes": 616,
+      "sha256": "921a3d5e7c586d6481640ccb6d97f921b5fbda5755b1b2ceffc7a608152d81f5"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-preserved-discard-edge-2026-10-14.json",
+      "bytes": 1250907,
+      "sha256": "ce28e6efbf9801088af0c018f55656fa97795184382b8b00dfc04d109ef4dc34"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-preserved-first-message-chrome-2026-10-14.json",
+      "bytes": 1063327,
+      "sha256": "4b212fe5e01ec649cabeb37f7813f9a036d77364210293b277c6cec65bd2500b"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-preserved-prefix-chrome-2026-10-14.json",
+      "bytes": 1204777,
+      "sha256": "8e27ff4ca4d4cf29ed5ed2195d0e4c5491a267ae0d1c14b632fa05dd0fa3887e"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-temp-root-2026-10-14.json",
+      "bytes": 295,
+      "sha256": "1f844578f8573f88280033bafbe7d2833289c489ee42f0503a8c85ba0a20cb71"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-unit-green-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-unit-green-2026-10-14.log",
+      "bytes": 245,
+      "sha256": "26de195c1e82104db90cae570ac286e0c457696a8b89408b18667930c4dec8df"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-unit-red-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-unit-red-2026-10-14.log",
+      "bytes": 2768,
+      "sha256": "d01f18984ea0721582aeb2870de76361aa77a177f5530c69e792b914809c2f18"
+    },
+    {
+      "path": "test-results-corrupt-discard-red/pairing-unusable-receive-c-bf635-eceived-damage-checkpoints-/trace.zip",
+      "bytes": 5652631,
+      "sha256": "d300bf7ce51f21cc2df1fcb023027f8454bd1140627b0d0da62b0e3216d5eea5"
+    },
+    {
+      "path": "test-results-corrupt-discard-red/pairing-unusable-receive-c-e59d9-re-received-damage-payload-/trace.zip",
+      "bytes": 5304564,
+      "sha256": "b105b2216040998e241076c5a20c9cb9a31ac57a16c06587d7f707a65b3b3908"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 313293,
+      "sha256": "33d5151d0104e53d615e107220afaecd6db6423901c8595bef860ad227a5142a"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-corrupt-discard-2026-10-14.json",
+      "bytes": 312658,
+      "sha256": "f4381c83ea0a63f82cb37d47d2004c7a05d29ecfe8fa28c15c65cd0e7c5c40a3"
+    }
+  ]
+}
