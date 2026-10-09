@@ -1,0 +1,185 @@
+{
+  "recordedAt": "2026-10-12T16:44:15.870Z",
+  "files": [
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-diagnostic-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-diagnostic.log",
+      "sha256": "dd5b2dbc3e7d909c3dcc08451023f51bd20120973e57320569514bf8f1628379"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-final-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-final-results.json",
+      "sha256": "ca67edc099074e225df45d351f2477fb2fef3500b1959db7266f345c6702274a"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-final.log",
+      "sha256": "d969c89c1da3c7d55796c3eccf1f3e0d88745ad29e1a3542dadcc7c00b54f931"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-focused-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-focused-results.json",
+      "sha256": "62d711ccbfa647d63470480eba196439090e63acdcfa0a0699ce6910243e5edf"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-focused.log",
+      "sha256": "a4402907dc336c0e888bfdd7be6a7754798eae95631478a3b99983b2c364d955"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12-results.json",
+      "sha256": "ec1a47717b903bc02fb8c1097e4907bfa3789a161d92fee6a29b03434a47ed0a"
+    },
+    {
+      "path": "release-evidence/chrome-current-2026-10-12.log",
+      "sha256": "15ba4f6e32d1b6538e2067001aaf6908fd026cef0a1072171739642f60582b28"
+    },
+    {
+      "path": "release-evidence/chrome-recovery-2026-10-12-diagnostic-config.txt",
+      "sha256": "f4688947cbf4583ad471d71d865b96a020caab43ce8d8f3b159d777c82deba8e"
+    },
+    {
+      "path": "release-evidence/chrome-recovery-2026-10-12-diagnostic-timings.json",
+      "sha256": "2cafe2ebbd79891ccd51b8b849d5227d3747afb5f416ac5bdd14bbbdce7d1216"
+    },
+    {
+      "path": "release-evidence/edge-release-2026-10-12-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/edge-release-2026-10-12-input-review.json",
+      "sha256": "80117e3ac851b943a97b2e39d9615fee0e3b2cb370b69302c97fb40dad850176"
+    },
+    {
+      "path": "release-evidence/edge-release-2026-10-12-inputs.json",
+      "sha256": "1fadfa066a371c1f38cb8863096064560bea4e0f2c3874f7af0accdc19c6b0be"
+    },
+    {
+      "path": "release-evidence/edge-release-2026-10-12-package.json",
+      "sha256": "a22b0f14755be6ba8880c94c1009e79085cfc99629f23014c2ecea35411280cc"
+    },
+    {
+      "path": "release-evidence/edge-release-2026-10-12.log",
+      "sha256": "267df7b5a7ad62413e0ba866676be600c65e499c93ac741981fa0c647e1e3548"
+    },
+    {
+      "path": "release-evidence/installed-browsers-2026-10-12-after-chrome.json",
+      "sha256": "b6d47bb2fd5268a33703d99be4cc7591aef275625397d750b892a218c8ad905c"
+    },
+    {
+      "path": "release-evidence/installed-browsers-2026-10-12-assets.json",
+      "sha256": "6b517bfd2b425faada7ef3779fe7947bbbcc0c896f804a6192bfa7a6ec5e80cf"
+    },
+    {
+      "path": "release-evidence/installed-browsers-2026-10-12-check-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/installed-browsers-2026-10-12-check.log",
+      "sha256": "f88dfd2f54ba483d7463ab0bf0748e1338ff61cd81f3ddf2656df595fa39161b"
+    },
+    {
+      "path": "release-evidence/installed-browsers-2026-10-12-final-inputs.json",
+      "sha256": "032210336101552226fa47b392de1e53a21e5ad21709cd7fdc1fb4c470519cc5"
+    },
+    {
+      "path": "release-evidence/installed-browsers-2026-10-12-inputs.json",
+      "sha256": "f4502e029c72b27413a32f360696e3c886e75b35420ad1e4e75a40f9ffd4654f"
+    },
+    {
+      "path": "release-evidence/installed-browsers-2026-10-12-runtime-versions.jsonl",
+      "sha256": "0ab501efba093fd2662e982c8b983321a4be45e5448f91d26df90bef283a3805"
+    },
+    {
+      "path": "release-evidence/installed-browsers-2026-10-12.json",
+      "sha256": "829040e197ac8fccc8d2addcb5f430d108facf6ee94860316e084aa7180b84e7"
+    },
+    {
+      "path": "release-evidence/npm-audit-2026-10-12-after-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/npm-audit-2026-10-12-after.json",
+      "sha256": "3ef72b51a540c1415fcccadb04fb2acfa315bc6e8d66658f49cd0b6f492ef56f"
+    },
+    {
+      "path": "release-evidence/npm-audit-2026-10-12-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/npm-audit-2026-10-12.json",
+      "sha256": "7cb9d460786c2729af8f61a166738a757ec09518ddaec5cf51b4f570ea626c1e"
+    },
+    {
+      "path": "release-evidence/npm-signatures-2026-10-12-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/npm-signatures-2026-10-12.log",
+      "sha256": "d8bb00b636e79282a2d115995a8e86edf214796675bca3b2d533b1129aea61b9"
+    },
+    {
+      "path": "release-evidence/offline-candidate-2026-10-12-package-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/offline-candidate-2026-10-12-package.log",
+      "sha256": "d5594320a578788dac9d09e8fc527e72bfc5de86bfe7827dcf37f87e819c70fe"
+    },
+    {
+      "path": "release-evidence/offline-candidate-browser-audit-2026-10-12.json",
+      "sha256": "8d6d72b22494c6682fa8ce765838499144b59e217a09725688e891d1ce8641b3"
+    },
+    {
+      "path": "release-evidence/release-gate-316-unit-53-browser-edge-2026-10-12.json",
+      "sha256": "f71082b0869a4a2a8260094a0383131284ef10f81b39c8a58af1756df2f866f9"
+    },
+    {
+      "path": "release-evidence/source-map-offset-2026-10-12-after-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/source-map-offset-2026-10-12-after.json",
+      "sha256": "476650df10871d84dc011f6df16e0afdfe7c740eb1e8a3618a6120120578db9f"
+    },
+    {
+      "path": "release-evidence/source-map-offset-2026-10-12-before-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/source-map-offset-2026-10-12-before.json",
+      "sha256": "f6ca84c3c04a65c48feec0c1b64963d85864d211939b0de9887497f5ec3af2e7"
+    },
+    {
+      "path": "release-evidence/source-map-offset-2026-10-12-probe.txt",
+      "sha256": "a80a350712fc636e936e750d4372c0084726b74087fe50c73f1b4bd4c5fb0b69"
+    },
+    {
+      "path": "release-evidence/source-map-update-2026-10-12-assets.json",
+      "sha256": "6d2761ae546e045d30fb94ad6668ab8222db3edeb6d0877c766df818d9c24970"
+    },
+    {
+      "path": "release-evidence/source-map-update-2026-10-12-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/source-map-update-2026-10-12-lock-diff.json",
+      "sha256": "9719b75b7374f008007e0c1e7447249645841991c9a07e0e176189e6dc92a54f"
+    },
+    {
+      "path": "release-evidence/source-map-update-2026-10-12.log",
+      "sha256": "e4afe3a63c761385174e11e8c18979f56bc26ed42085abc9fbab6607dda7f3f4"
+    }
+  ]
+}
