@@ -1,0 +1,131 @@
+{
+  "recordedAt": "2026-10-13T19:02:01.395Z",
+  "files": [
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-check-2026-10-14.log",
+      "sha256": "b6d4a0a4f4f6e24dd1d46970263bfa41e57398d03bd6a21036d0bc692be7c0a5"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-diff-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-diff-check-2026-10-14.log",
+      "sha256": "260daf20c5c7288b6224279a44e4514287c02dc2260f1171b57b43b5cb05d98e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-edge-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-edge-2026-10-14.log",
+      "sha256": "b0ebab71a77b46d1a30d70878158716fc8242ec885347d25f8506644392ab843"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-final-chrome-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-final-chrome-2026-10-14.log",
+      "sha256": "fc9e1818a6c5cea6d333b548e993b8ef8bd597fca3772a663b9f4b61ae9e3e86"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-final-edge-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-final-edge-2026-10-14.log",
+      "sha256": "3d4af10101ba2241a04f3f91022e86c4b435a3e65ea272606e6f7675f81b0a16"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-lock-chrome-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-lock-chrome-2026-10-14.log",
+      "sha256": "15c86c5cecc174ea41e030b85a960e3479a7127fb4133f3950890a1ba14a5c9c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-lock-edge-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-lock-edge-2026-10-14.log",
+      "sha256": "27f633a00638ffd2e02d84d802e07ceb3440f35c4553aa1bafbb37cb6646463f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-review-2026-10-14.json",
+      "sha256": "46ee597c1e1059a05a0ef45530b4b4d28f05e035abd19d69677947b138647914"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cleanup-retry-start-2026-10-14.json",
+      "sha256": "bc10852c8a7f2bc1adcc512605682d26bf59fa961cd98fa70747882f8b9c95b3"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-CHECKLIST.md",
+      "sha256": "0a529f7cb6b0fb6e1955b7cc069b16a2d21269da3c6ccda57fc44b84de7ca07b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-HARDENING.md",
+      "sha256": "7d2ace265b320162076ec297095f4e96e1b709ec7c856244466db104365e3ee5"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\SPEC-cleanup-retry.md",
+      "sha256": "304df0cbaba1f6e475b3853ec2094cd27cb6f610419b7de037742c77f0f58f45"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+      "sha256": "0e123f968563114a487c3effddb8270a0192e0993039281eb9b05d3dc7bd1828"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\components\\WebRtcReceiver.tsx",
+      "sha256": "23c9105b567ace6946c0b4d59c5b9d2b6b039b7b81347a7d2ab51e84dd2bc917"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\lib\\block-store.ts",
+      "sha256": "7afcda4f452264133dca46bc64b5745becb381e912b118f38bc7892f15f28ef8"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-review-2026-10-14.json",
+      "sha256": "776d568cac9d8418d97f461e24150f4251bd49211729354496fb7b353eb9da08"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-evidence-hashes-2026-10-14.json",
+      "sha256": "369f49d7bae5430f73aba2087f1f13753b3117a3cb4f6faeadbf9e3614d54980"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-before-cleanup-retry-2026-10-14.json",
+      "sha256": "776d568cac9d8418d97f461e24150f4251bd49211729354496fb7b353eb9da08"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.json",
+      "sha256": "46ee597c1e1059a05a0ef45530b4b4d28f05e035abd19d69677947b138647914"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.txt",
+      "sha256": "bc6e77fd47728e7865599d0424d34cb41131f939187eebd52761d8083d8196f4"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-terminal-control\\CHECKSUMS.json",
+      "sha256": "076c7d26d2a3479975d8766aa2976be11b52fd853c4a6923e173d69a6af317bd"
+    }
+  ],
+  "postCheckReview": {
+    "onlyUpdatedInputFiles": [
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputFiles": 140,
+    "unchangedAssets": 5,
+    "candidateVerifiedFiles": 19,
+    "review": "No actionable correctness/security findings. Synthetic failures remain scoped to the transfer-store parent, real durable operations and exclusive Web Locks are exercised, destination hashes use an independent expected fixture, and second-transfer payload counts prove receipt reuse/retransmission. Production unchanged; tests and checks not weakened."
+  }
+}
