@@ -1,0 +1,80 @@
+{
+  "recordedAt": "2026-10-14T14:53:02.464Z",
+  "files": [
+    {
+      "path": "release-evidence/exact-stream-boundary-review-2026-10-14.json",
+      "bytes": 69900,
+      "sha256": "b43f83d91072ee19b3f8adf96ed8f217b63d5357ed219f5ceb3af89f9b1f06b9"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 69900,
+      "sha256": "b43f83d91072ee19b3f8adf96ed8f217b63d5357ed219f5ceb3af89f9b1f06b9"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 554,
+      "sha256": "31dc7b372060ee4c2ee2042e2f5d9a79592d24961c3c823622134c5a2df655cd"
+    },
+    {
+      "path": "release-evidence/release-gate-before-exact-boundary-2026-10-14.json",
+      "bytes": 66761,
+      "sha256": "11127735f1fab3838a43acf33fff03c5828e1177f92c64a83121e374a80da91b"
+    },
+    {
+      "path": "release-evidence/exact-stream-boundary-focused-2026-10-14.log",
+      "bytes": 375,
+      "sha256": "2ce3a2539e9f73747dd325f92cce5abd94736db6831745bf6f5bb8d5f81acac2"
+    },
+    {
+      "path": "release-evidence/exact-stream-boundary-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/exact-stream-boundary-check-2026-10-14.log",
+      "bytes": 1459,
+      "sha256": "91062837f22663e5a29de8775c40f8f40e8cf074843bca2fc20d7b71a178b190"
+    },
+    {
+      "path": "release-evidence/exact-stream-boundary-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/webrtc-transfer-before-boundary-2026-10-14.source.txt",
+      "bytes": 23938,
+      "sha256": "52945f113f1db75120814cb4d6a3f3a844c29764bd8eeada05421b5f753352cf"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 324210,
+      "sha256": "e1f119d7dd227b4a497dbb177567fcb9ad4ba95880a05c34c66540e3a46aa5aa"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-exact-boundary-2026-10-14.json",
+      "bytes": 322533,
+      "sha256": "e1859f58daf8ee16c9bc52516c176048abb75258d9c8b40ce28a9bb2222ef00d"
+    },
+    {
+      "path": "tests/webrtc-transfer.test.ts",
+      "bytes": 27301,
+      "sha256": "40c9e6bc8a446b3a512c64c23fc0879d999ec80b36d884ef42ce92ebf71953a9"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 83640,
+      "sha256": "df858f55c332c896995fa262cbe9b06378924ec09cc3bd2c639adb3741983333"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 126002,
+      "sha256": "98274b51af9fe9ade3f38d28e79784843b5ba52f7bdecf067317a47b4cae1bbe"
+    },
+    {
+      "path": "SPEC-exact-stream-boundaries.md",
+      "bytes": 1340,
+      "sha256": "ae08746b7f2f5ab770c4b7d2abe905bf4586c70c52829cd2766bb7ea7577b2c1"
+    }
+  ]
+}
