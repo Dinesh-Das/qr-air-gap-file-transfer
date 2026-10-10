@@ -1,0 +1,521 @@
+{
+  "recordedAt": "2026-10-13T15:37:28.444Z",
+  "postGateReview": {
+    "onlyChangedInputs": [
+      "BENCHMARKS.md",
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedStageInputs": 139,
+    "unchangedOtherMainInputs": 136,
+    "unchangedMainBuiltAssets": 5
+  },
+  "files": [
+    {
+      "path": "release-evidence/clean-install-2026-10-13-diff-check-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-diff-check.log",
+      "sha256": "2d1805e0c9910ec0908b1b744abdecf2eb012527300dd43782e987592621a8a0"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-focused-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-focused.log",
+      "sha256": "522a13529170d429fd227608ad4116f97e2383c3ab03961bab3f106164648137"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-gate-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-gate.log",
+      "sha256": "c8b3f3d9f55f6d375870dbaeec76c6ce4a217105061ae7a57d05de5104eb2d1d"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-install-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-install.log",
+      "sha256": "c1b430f72a225c1a49d92303556eb1820a2a506c150e66750e119a11b4be68ce"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-package-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-package.json",
+      "sha256": "457edbfe3dc50f55a7c520c71fbf58d505642424dcc80b899d9f584e2a61d3be"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-package.log",
+      "sha256": "46d6dddbf6c1d5d255488629cb3e7d496f4fcb6b305e6c730ded8d85098feb7a"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13-start.json",
+      "sha256": "3c72ebb34d4809f7f4e1a748dd423cb64204370b002a06b620bcdffe672750a1"
+    },
+    {
+      "path": "release-evidence/clean-install-2026-10-13.json",
+      "sha256": "ede356b46f6ded8241624e088c0a862e8fc896280d5a36e87feaf8d0b006ce20"
+    },
+    {
+      "path": "release-evidence/destination-finish-profile-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-finish-profile-2026-10-13.log",
+      "sha256": "39f3f59e85b606ca27b93db222caab8e810d9f211e3e8be6dbb968309955c7a0"
+    },
+    {
+      "path": "release-evidence/destination-readback-benchmark-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-readback-benchmark-2026-10-13.json",
+      "sha256": "b096c218a7faa2e4acc94e18b9958aaba83ba6c7707b0bd268955db75e78d1c6"
+    },
+    {
+      "path": "release-evidence/destination-readback-benchmark-2026-10-13.log",
+      "sha256": "6a7bdcecc85ed355b9ec18dc0d59a9d924ba0528bcc81f1e268c0edcb592350e"
+    },
+    {
+      "path": "release-evidence/destination-readback-build-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-readback-build-2026-10-13.log",
+      "sha256": "053827577b438ce98c65f2935db73ab35a727f0f93b5c9867a901702f7183654"
+    },
+    {
+      "path": "release-evidence/destination-readback-concurrency-green-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-readback-concurrency-green-2026-10-13.log",
+      "sha256": "43cd8155b49d4dd8ce42d41dc3a11606a9157b14be89a39336ccc4b050fd2e4c"
+    },
+    {
+      "path": "release-evidence/destination-readback-concurrency-red-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/destination-readback-concurrency-red-2026-10-13.log",
+      "sha256": "e3eb53b577619907021e4d4dbd4a38aa06f2242c1c449c87db77c5378c260cb2"
+    },
+    {
+      "path": "release-evidence/destination-readback-final-gate-edge-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/destination-readback-final-gate-edge-2026-10-13.log",
+      "sha256": "67f35be5ccc7bbd65b158a30093d01eee9650232c3b9318aec5f36226bee0ed0"
+    },
+    {
+      "path": "release-evidence/destination-readback-final-install-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-readback-final-install-2026-10-13.log",
+      "sha256": "0d6bdccc6fd140f59899231120494d626a920dddca92886e0168cf16c14a031c"
+    },
+    {
+      "path": "release-evidence/destination-readback-final-stage-2026-10-13-inputs.json",
+      "sha256": "eb2222e37a5ab78d8c1bfdbed3dd9174424e3e9bf725b94155a36511b221ab96"
+    },
+    {
+      "path": "release-evidence/destination-readback-install-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-readback-install-2026-10-13.log",
+      "sha256": "3ec4be2af2eae6ceb07ba0175c2a3e9038ab42cfd7beaa67cf7f7e61c9c9c6d5"
+    },
+    {
+      "path": "release-evidence/destination-readback-safety-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-readback-safety-2026-10-13.log",
+      "sha256": "cee0442acc5f066f233e4c49e11f7a41377eff4f12b5aa1f3a12f4320e7ed40d"
+    },
+    {
+      "path": "release-evidence/destination-readback-safety-red-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/destination-readback-safety-red-2026-10-13.log",
+      "sha256": "3ab7777ec25953d5d4a51fdab28d627ed87ca62d473cc39acbae85db1710e9fb"
+    },
+    {
+      "path": "release-evidence/destination-readback-stage-2026-10-13-inputs.json",
+      "sha256": "7d94be60a6bb3b858c034371dcce609b94fa8d7c02a06e586b3aba549539e8d8"
+    },
+    {
+      "path": "release-evidence/destination-recovery-focused-after-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/destination-recovery-focused-after-2026-10-13.log",
+      "sha256": "8fb1c5787b42eab1b78b6d06677d5fbb46004b011013cce64d4a62c9800b7d35"
+    },
+    {
+      "path": "release-evidence/destination-recovery-main-comparison-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-recovery-main-comparison-2026-10-13.log",
+      "sha256": "781069c2249786500e647969a1a4f55d1682717cadbd99b9ec7ecbd380c3b7fa"
+    },
+    {
+      "path": "release-evidence/destination-recovery-profile-after-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/destination-recovery-profile-after-2026-10-13.log",
+      "sha256": "007d1f56224d461389d2a13e58c39c17cb2fb2faa1d8c229f4e853b2de6e5093"
+    },
+    {
+      "path": "release-evidence/destination-recovery-profile-before-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/destination-recovery-profile-before-2026-10-13.log",
+      "sha256": "9036a2c2bae3aab05e0149ed86ba8c75b28fd78480ec3d1c05011a118d774b1a"
+    },
+    {
+      "path": "release-evidence/destination-resume-readback-green-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-resume-readback-green-2026-10-13.log",
+      "sha256": "1b27d82d0542bc468ee1b95e6994acedf8afb69f6dc00652bb5baa95185594c6"
+    },
+    {
+      "path": "release-evidence/destination-resume-readback-red-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/destination-resume-readback-red-2026-10-13.log",
+      "sha256": "96209c1b5785315c4b512ddc2c6f2c44eece57f35ca9a058a2078632f0d7296d"
+    },
+    {
+      "path": "release-evidence/destination-small-file-diff-check-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-file-diff-check-2026-10-13.log",
+      "sha256": "2d1805e0c9910ec0908b1b744abdecf2eb012527300dd43782e987592621a8a0"
+    },
+    {
+      "path": "release-evidence/destination-small-file-evidence-hashes-2026-10-13.json",
+      "sha256": "4c8d2e676aa82203b1b5633161076e659275c580845e3977abab7ba7d303ec6f"
+    },
+    {
+      "path": "release-evidence/destination-small-file-final-diff-check-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-file-final-diff-check-2026-10-13.log",
+      "sha256": "2d1805e0c9910ec0908b1b744abdecf2eb012527300dd43782e987592621a8a0"
+    },
+    {
+      "path": "release-evidence/destination-small-file-main-build-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-file-main-build-2026-10-13.log",
+      "sha256": "5d60dbcf44c39184205c3beb356f065c64668f0eecd963b8e324765c3e3e33f4"
+    },
+    {
+      "path": "release-evidence/destination-small-file-package-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-file-package-2026-10-13.log",
+      "sha256": "247222c64ab59126f6580528d39d0b3d7d390708e90b5e792cd5ad9b6082a500"
+    },
+    {
+      "path": "release-evidence/destination-small-file-review-2026-10-13.json",
+      "sha256": "1eae460b7a9fdf7ede8582ab690097a0272e8d95c188128389f6875f22a9dfa5"
+    },
+    {
+      "path": "release-evidence/destination-small-write-browser-chrome-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-write-browser-chrome-2026-10-13.log",
+      "sha256": "4b26faf622e08b9ccf76c911bfabe8c88194ed0827706f47e0193cc599ae94b2"
+    },
+    {
+      "path": "release-evidence/destination-small-write-edge-repeated-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-write-edge-repeated-2026-10-13.log",
+      "sha256": "bf79fee60ecdeaf33cd011e5eb43311025b29a8e411435a29a30ff40cd37e4fd"
+    },
+    {
+      "path": "release-evidence/destination-small-write-gate-edge-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-write-gate-edge-2026-10-13.log",
+      "sha256": "dc180f3c41bf8b6c4874365c197102a165363d6847377f7f042fdc03940f9921"
+    },
+    {
+      "path": "release-evidence/destination-small-write-green-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-write-green-2026-10-13.log",
+      "sha256": "c0f030bc97c05e12d52184cd0abd90989fef6c01b923e4f766a1ba1326c3d843"
+    },
+    {
+      "path": "release-evidence/destination-small-write-install-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-write-install-2026-10-13.log",
+      "sha256": "abef398f77fc2f71fe00817349a42978bc92f340431f46e429e8e43c4b5483e9"
+    },
+    {
+      "path": "release-evidence/destination-small-write-package-2026-10-13.json",
+      "sha256": "a5ec83d4e5d82dd295db46076606731702f2671a878f67c84a86f57468dc4fe3"
+    },
+    {
+      "path": "release-evidence/destination-small-write-red-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/destination-small-write-red-2026-10-13.log",
+      "sha256": "a3da525724b8152ea3a3e53fc2c8882e12a6ad560aae50b2d7d462ea0ff26566"
+    },
+    {
+      "path": "release-evidence/destination-small-write-safety-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/destination-small-write-safety-2026-10-13.log",
+      "sha256": "c333f08ece11bded38701763fee69259c08d5b459a01332b1e3114c545542411"
+    },
+    {
+      "path": "release-evidence/destination-small-write-stage-2026-10-13-inputs.json",
+      "sha256": "9390c6f268a419de0b723c98804ea28a7e1d65697ace03b08a2d156c909da270"
+    },
+    {
+      "path": "release-evidence/destination-source-read-profile-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/destination-source-read-profile-2026-10-13.log",
+      "sha256": "f6e6b5b59248ccf783f1036d7db84d3762a4de569485f3064060aebea7e06340"
+    },
+    {
+      "path": "release-evidence/hosted-ci-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/hosted-ci-2026-10-13-runs.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "BENCHMARKS.md",
+      "sha256": "23fac1a427d8d6eabce7343a3b1b23620a2144d3f031376a449b101a83dc5108"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "sha256": "102769b0a3bcd945caf6579abe90b979dcf79630093378d771fd98aa82c3db51"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "sha256": "59e05c5b4cb32cb7e7122b737dbe98f473382685a3ce07c24cda87fa693718eb"
+    },
+    {
+      "path": "SPEC-destination-readback.md",
+      "sha256": "d405f66aac03e2b08b30834237b89b8dd109906204775ab48072f73762b40917"
+    },
+    {
+      "path": "src/lib/large-destination.ts",
+      "sha256": "9026236beb6e1924886e77e7a224321ff85f2dba02dff769f965791d4e2d774d"
+    },
+    {
+      "path": "tests/large-destination.test.ts",
+      "sha256": "2b0f9c81ae8809546c410dd61b503a51834136a875967c3124611f08bc23d9ae"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "sha256": "1eae460b7a9fdf7ede8582ab690097a0272e8d95c188128389f6875f22a9dfa5"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "sha256": "0714596bae2974f2549e38a039535e6da2741eb72145150c1e5a97c38872cb78"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\PHYSICAL-TEST-RECORD.md",
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\README.md",
+      "sha256": "b8c4a74d50dda0bec73c88a37726d9a702ca30ceb0fbb639e77c2db1f9de7e1b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\START-HERE.txt",
+      "sha256": "6abeb255a1b0db045a1fb0817e775b9f4b07fbde8c75d266065bb1efd60b16cb"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\Start AirGap QR.cmd",
+      "sha256": "34b42ce80ed30d01144488adf31eaebe6b87a0479f0b4d170e96f1883c6612e6"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\TRANSFER_PROCESS.md",
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\dist\\assets\\block-store.worker-DVHZPZQe.js",
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\dist\\assets\\index-C5foWVjs.css",
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\dist\\assets\\index-DlwZO34M.js",
+      "sha256": "4692ea1b0af5f4007bbb6e7effb72286bceb0a0b2ff114733f710167f52ff367"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\dist\\assets\\qr-scanner-worker.min-CJaXo3yu.js",
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\dist\\index.html",
+      "sha256": "20e986e97ec8f5b5db2a93d254ce0887614c4c0cc8d229541232ff62b7663432"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\scripts\\compare-trees.mjs",
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\scripts\\create-fixture.mjs",
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\scripts\\lan-signaling.mjs",
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\scripts\\launch.mjs",
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\scripts\\local-http-security.mjs",
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\scripts\\rendezvous.mjs",
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\scripts\\serve.mjs",
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\scripts\\verify-release.mjs",
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\templates\\physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-13-small-file-io\\CHECKSUMS.json",
+      "sha256": "b01147cf4a54b29718b111c132806540506b46e2f8cebbc14a7244828da267fa"
+    }
+  ],
+  "failureArtifacts": [
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\error-context.md",
+      "sha256": "d635a8c473f39b8a2f287bf14a82a323fb495e00758cac234b8bf6a06f7aa8a7"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\trace.zip",
+      "sha256": "9d7c6c176a8f589526a40a606c0094286fefe33f318ec8b7283cc0c30cd710d0"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\error-context.md",
+      "sha256": "33176aa47a0fc5b8821c6bb7e360243f5e64e9b54103652769d14ac4619ccdaa"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\trace.zip",
+      "sha256": "3ef554aba85c53cdaaf82c02420ed2831daff2c1cc4f8a89b6070743ed164a33"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-clean-focused\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\error-context.md",
+      "sha256": "5fcca9a2881d14ce28de5a9d6b0d51faa7745dccb50b37dde5bd09d2f532456e"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-clean-focused\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\trace.zip",
+      "sha256": "c31ee226669fa128abaf287644277ab743690efb6492060d46228ad48f1fac18"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-clean-focused\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\error-context.md",
+      "sha256": "3e15f6fe84246228101454941e33dcfd0bcedefc8073971aee984ecfad97e624"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-clean-focused\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\trace.zip",
+      "sha256": "b675fb670751fddc9dc720e76cc01378decd100c9aa06b5ca8615d81cc068ca9"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-destination-profile\\diagnostic-destination-rec-ab6d7--files-renderer-crash-true-\\error-context.md",
+      "sha256": "93cb75246de3d3effb30b13941d0a7a1d44b62782d16814196ec6f6aba5c2879"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-destination-profile\\diagnostic-destination-rec-ab6d7--files-renderer-crash-true-\\trace.zip",
+      "sha256": "776ac208efef831e212f526d8a66c544018f8d374a648acd602b59d80b1ddb32"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\test-results-destination-focused-after\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\error-context.md",
+      "sha256": "c919258a164f109f431376c2e541bd436040b102c58d1be48c234825f900f76f"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\test-results-destination-focused-after\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\trace.zip",
+      "sha256": "d2273c5db56a0920e67d96b0dfaa8283feb18b0052638f87d8472ee40e6fb373"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\test-results-destination-focused-after\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\error-context.md",
+      "sha256": "fd10b225adc6794aa8eba66b48dec9ff0617af65880b83fd849e924a67a69291"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\test-results-destination-focused-after\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-\\trace.zip",
+      "sha256": "fcadd3a8495c97d025c667df5822af44174f2659dcb404da112de1f3beb05d46"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\test-results-destination-profile-after\\diagnostic-destination-rec-ab6d7--files-renderer-crash-true-\\error-context.md",
+      "sha256": "c8966455435292063d973dc44ddcf5028262392dcfa71526201843519efb4776"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\test-results-destination-profile-after\\diagnostic-destination-rec-ab6d7--files-renderer-crash-true-\\trace.zip",
+      "sha256": "9dd9ba7e1a7589f9c22b4826311c2158710ac9d32ce8d1b6690951cd0ef5448d"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\test-results\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\error-context.md",
+      "sha256": "ed9cb67ab07ab7db3e88799add6d7cdafc29b52e6ae9ac50963b8a811b7fd4f1"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\test-results\\pairing-browser-process-te-c5317-ve-preserves-verified-files\\trace.zip",
+      "sha256": "65b4641bc77fedb0126bda908afdaa8ee10ec76e0ed47e8565fb1212e18603d4"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\test-results-destination-source-read\\diagnostic-destination-sou-d2e0b-ve-preserves-verified-files\\error-context.md",
+      "sha256": "92e5b286b3774e23b59f4d37a0fe7817b884d06b6e843ff331309e8f9b2daff7"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\test-results-destination-source-read\\diagnostic-destination-sou-d2e0b-ve-preserves-verified-files\\trace.zip",
+      "sha256": "057c84306cd792dc4728aaa779c1a1b5d003996fbebebb53439f419cfb7026b2"
+    }
+  ]
+}

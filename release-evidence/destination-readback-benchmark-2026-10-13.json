@@ -1,0 +1,93 @@
+{
+  "recordedAt": "2026-10-13T14:49:56.127Z",
+  "browser": "installed Edge",
+  "fileCount": 1200,
+  "fileBytes": 257,
+  "warmupRunsPerVersion": 1,
+  "measuredRunsPerVersion": 3,
+  "results": [
+    {
+      "label": "before",
+      "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs",
+      "sourceSha256": "663d8a1f488dbf74073fde9f68263c7f7e53263ba1592602366e502ba0d0360d",
+      "profilePreserved": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\readback-benchmark-profile-maBGCE",
+      "samplesMs": [
+        6151.799999952316,
+        6005.600000023842,
+        6564.199999928474
+      ],
+      "reports": [
+        {
+          "rootName": "readback",
+          "filesWritten": 0,
+          "filesReused": 1200,
+          "directoriesVerified": 12,
+          "totalBytes": "308400",
+          "resumed": false
+        },
+        {
+          "rootName": "readback",
+          "filesWritten": 0,
+          "filesReused": 1200,
+          "directoriesVerified": 12,
+          "totalBytes": "308400",
+          "resumed": false
+        },
+        {
+          "rootName": "readback",
+          "filesWritten": 0,
+          "filesReused": 1200,
+          "directoriesVerified": 12,
+          "totalBytes": "308400",
+          "resumed": false
+        }
+      ],
+      "independentAuditedFiles": 1200,
+      "independentHash": "Web Crypto SHA-256",
+      "independentExactBytes": true,
+      "independentExactPaths": true
+    },
+    {
+      "label": "after",
+      "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy",
+      "sourceSha256": "ab3740940cab1c0448c251a65359d8b0227ef91346b6b7a7fc8ba7865568a72c",
+      "profilePreserved": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\readback-benchmark-profile-uNYAkt",
+      "samplesMs": [
+        5547,
+        4572.399999976158,
+        5169.100000023842
+      ],
+      "reports": [
+        {
+          "rootName": "readback",
+          "filesWritten": 0,
+          "filesReused": 1200,
+          "directoriesVerified": 12,
+          "totalBytes": "308400",
+          "resumed": false
+        },
+        {
+          "rootName": "readback",
+          "filesWritten": 0,
+          "filesReused": 1200,
+          "directoriesVerified": 12,
+          "totalBytes": "308400",
+          "resumed": false
+        },
+        {
+          "rootName": "readback",
+          "filesWritten": 0,
+          "filesReused": 1200,
+          "directoriesVerified": 12,
+          "totalBytes": "308400",
+          "resumed": false
+        }
+      ],
+      "independentAuditedFiles": 1200,
+      "independentHash": "Web Crypto SHA-256",
+      "independentExactBytes": true,
+      "independentExactPaths": true
+    }
+  ],
+  "scope": "Completed-tree readback only, without app progress rendering, writing, crash recovery or network transfer. One-host persistent OPFS profiles; no physical/native performance acceptance."
+}
