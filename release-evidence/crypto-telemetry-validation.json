@@ -1,0 +1,50 @@
+{
+  "recordedAt": "2026-09-19T14:17:38.829426+00:00",
+  "fullGate": "release-gate-299-unit-48-browser.json",
+  "priorFailingRegressions": [
+    "crypto-preflight-unit-before-fix",
+    "crypto-preflight-browser-before-fix",
+    "crypto-optical-before-fix",
+    "telemetry-before-fix",
+    "current-rate-before-fix"
+  ],
+  "cryptography": {
+    "unitCasesAdded": 5,
+    "browserCasesAdded": 7,
+    "scope": "Missing crypto/subtle/digest blocks storage initialization and both Wi-Fi roles. Large optical receiver rejects missing SubtleCrypto before camera access. Explicit memory and codec-only fallback are distinct from full application support."
+  },
+  "telemetry": {
+    "currentWindowMs": 1000,
+    "smoothedWindowMs": 5000,
+    "sampleIntervalMs": 500,
+    "maxSamplesPerWindow": 11,
+    "elapsedScope": "Current attempt, from progress initialization through verification/failure; includes pauses, excludes preparation, prior attempts and saving.",
+    "browserEvidence": "Paused attempt clock advances, sender speeds/ETA clear, byte totals persist, verified clocks freeze, new-transfer view clears, journal/crash/reload resume counts match durable receipts.",
+    "visualReview": "Desktop and 390px layouts reviewed with no clipping or horizontal overflow in new metrics. Full-page sender remains long; visibility and task completion with nontechnical users are not established.",
+    "visualFiles": [
+      {
+        "path": "telemetry-final-visuals-2026-09-19/receiver-progress-narrow.png",
+        "sha256": "e220701a666e650eb0e5bbdcc4064fd7e469099d913fd1b901c71c73690d2b79"
+      },
+      {
+        "path": "telemetry-final-visuals-2026-09-19/receiver-progress.png",
+        "sha256": "f8a3fcb06d196557f04ea2bec58b07ed4f9d299e58c259552dea5ed13a6b834b"
+      },
+      {
+        "path": "telemetry-final-visuals-2026-09-19/sender-progress-narrow.png",
+        "sha256": "72335f8d4c982138894029a97f831466c0fca2fa8d416bdee03c83b92e7b7b20"
+      },
+      {
+        "path": "telemetry-final-visuals-2026-09-19/sender-progress.png",
+        "sha256": "f777cc444be02211458bf5a64908687df2dac2d3c1b1e9f99780cc494e559070"
+      }
+    ]
+  },
+  "dependencyAudit": {
+    "path": "npm-audit-2026-09-19.json",
+    "exitCode": 0,
+    "knownVulnerabilities": 0
+  },
+  "physicalCasesRun": 0,
+  "releaseReady": false
+}
