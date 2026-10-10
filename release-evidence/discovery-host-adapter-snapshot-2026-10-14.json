@@ -1,0 +1,135 @@
+[
+  {
+    "Name": "Local Area Connection* 2",
+    "Status": "Disconnected",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "vEthernet (WSL (Hyper-V firewall))",
+    "Status": "Up",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "10 Gbps"
+  },
+  {
+    "Name": "Local Area Connection* 10",
+    "Status": "Up",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Wi-Fi",
+    "Status": "Up",
+    "Virtual": false,
+    "HardwareInterface": true,
+    "LinkSpeed": "433.3 Mbps"
+  },
+  {
+    "Name": "vSwitch (WSL (Hyper-V firewall))",
+    "Status": "Up",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "10 Gbps"
+  },
+  {
+    "Name": "Local Area Connection* 9",
+    "Status": "Up",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Teredo Tunneling Pseudo-Interface",
+    "Status": "Not Present",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Local Area Connection* 7",
+    "Status": "Disconnected",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Ethernet",
+    "Status": "Disconnected",
+    "Virtual": false,
+    "HardwareInterface": true,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Local Area Connection* 8",
+    "Status": "Up",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Bluetooth Network Connection",
+    "Status": "Disconnected",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "3 Mbps"
+  },
+  {
+    "Name": "Ethernet (Kernel Debugger)",
+    "Status": "Not Present",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Local Area Connection* 4",
+    "Status": "Disconnected",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Microsoft IP-HTTPS Platform Interface",
+    "Status": "Not Present",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Local Area Connection* 1",
+    "Status": "Disconnected",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Local Area Connection* 3",
+    "Status": "Disconnected",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Local Area Connection* 6",
+    "Status": "Disconnected",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "Local Area Connection* 5",
+    "Status": "Disconnected",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  },
+  {
+    "Name": "6to4 Adapter",
+    "Status": "Not Present",
+    "Virtual": true,
+    "HardwareInterface": false,
+    "LinkSpeed": "0 bps"
+  }
+]

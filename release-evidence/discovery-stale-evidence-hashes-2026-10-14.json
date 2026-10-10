@@ -1,0 +1,76 @@
+{
+  "recordedAt": "2026-10-14T13:57:46.077Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/discovery-stale-review-2026-10-14.json",
+      "bytes": 52468,
+      "sha256": "ea2061caa7228f4efed2c1e8eaf33066565804656b41c245d22e96d8f69a7bc8"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 52468,
+      "sha256": "ea2061caa7228f4efed2c1e8eaf33066565804656b41c245d22e96d8f69a7bc8"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 688,
+      "sha256": "71868e80fbae521e0cdfcf6918704cb129d56848990ec455afca4314cbb808ca"
+    },
+    {
+      "path": "release-evidence/release-gate-before-discovery-stale-2026-10-14.json",
+      "bytes": 49628,
+      "sha256": "66ef796a5fcb2e6d2242833d63807bb2126d770f1f5cbf23aa0b18994c91345b"
+    },
+    {
+      "path": "release-evidence/discovery-stale-focused-2026-10-14.log",
+      "bytes": 324,
+      "sha256": "2c1939b10d8aded59f5481253ba6436ab1df7b19d8e04773c1e64494251b64c7"
+    },
+    {
+      "path": "release-evidence/discovery-stale-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/discovery-stale-negative-2026-10-14.log",
+      "bytes": 1682,
+      "sha256": "c97405fbcb4a1111ce1d5fc5bb24bde4e5591dfd193fcd4485eb3c30099cfe8d"
+    },
+    {
+      "path": "release-evidence/discovery-stale-negative-2026-10-14.json",
+      "bytes": 368,
+      "sha256": "ec72c63dc07c83830e0da6bc43d8da19365c651d446720be0692d019c6075e9c"
+    },
+    {
+      "path": "release-evidence/discovery-stale-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "ea453a6086f5d8144b0c1f31783ceeebd33bd9c7d968c96d577e717782d543ec"
+    },
+    {
+      "path": "release-evidence/discovery-stale-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/discovery-stale-check-final-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "50f43c18f7d129b0e06d0baf4683f69c800907667d5848aeb1c17e6d9eaf5ca1"
+    },
+    {
+      "path": "release-evidence/discovery-stale-check-final-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "tests/discovery-adversarial.test.mjs",
+      "bytes": 10243,
+      "sha256": "f1e25210b3ac1e5d5c6cf3a149c4f4c60ba46c0d7b8bad8c480423b2fa2cbbb1"
+    },
+    {
+      "path": "SPEC-discovery-adversarial.md",
+      "bytes": 2444,
+      "sha256": "93c0dc89be230388e347c815ef1f57ecd56521fc23043ef151fc9cce3dd2a1f8"
+    }
+  ]
+}

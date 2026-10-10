@@ -1,0 +1,86 @@
+{
+  "recordedAt": "2026-10-14T13:51:59.333Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/discovery-adversarial-review-2026-10-14.json",
+      "bytes": 49628,
+      "sha256": "66ef796a5fcb2e6d2242833d63807bb2126d770f1f5cbf23aa0b18994c91345b"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 49628,
+      "sha256": "66ef796a5fcb2e6d2242833d63807bb2126d770f1f5cbf23aa0b18994c91345b"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 750,
+      "sha256": "cc8859dae36ec49e8f28c7bad0f35bdd9558e43a644bef81270fe12595d89508"
+    },
+    {
+      "path": "release-evidence/release-gate-before-discovery-adversarial-2026-10-14.json",
+      "bytes": 46111,
+      "sha256": "3c3f0828377c0b0c31283df9cda5f1efc457421e35ca4225340afb6ffa4e77cb"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-focused-2026-10-14.log",
+      "bytes": 323,
+      "sha256": "d5b53470fa893188bf0925abcea7f593ed41a4be5321bb0130b5be460ab61d78"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-negative-2026-10-14.log",
+      "bytes": 1484,
+      "sha256": "43f1a17b4c366490446fca4d9a7402544fed9bdcbaec2e6e9ccf47c2c46cda4b"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-negative-2026-10-14.json",
+      "bytes": 367,
+      "sha256": "4616a9134393b49874c96ef658d169f6505fa1fa3e0d1330f8b9955ad5acf516"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-focused-final-2026-10-14.log",
+      "bytes": 335,
+      "sha256": "3770e5e8303c3dbd5f9b311a540f6b3294f4594a8e5366b785ef0f18277605bd"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-focused-final-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "259976c9410cbc351e4b686724e4c0478b43e817819eceee7b76eb2a77a82eac"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 314342,
+      "sha256": "89792d35d44a0ce92bd5a71bf91118aa2b2a7814a43fdb0f9932b15c13d84984"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-discovery-adversarial-2026-10-14.json",
+      "bytes": 313517,
+      "sha256": "27bfbdfe582f50d3204101b8770fc2287f2a1c6ccf24fbfeb55ee69e6073341b"
+    },
+    {
+      "path": "tests/discovery-adversarial.test.mjs",
+      "bytes": 6550,
+      "sha256": "8d3e19ead659dfcf52767587fbc1bbe76742fd17f5479bd8f8f25e3cbf49d635"
+    },
+    {
+      "path": "SPEC-discovery-adversarial.md",
+      "bytes": 1778,
+      "sha256": "00aa167e3f20ec1ba2b353fa9f0fe18dba7e260a5129c8f787564aa15f5b8606"
+    }
+  ]
+}

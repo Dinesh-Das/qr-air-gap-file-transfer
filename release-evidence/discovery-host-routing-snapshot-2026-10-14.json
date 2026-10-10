@@ -1,0 +1,52 @@
+{
+  "recordedAt": "2026-10-14T14:55:52.766Z",
+  "node": "v24.12.0",
+  "adapters": [
+    {
+      "name": "vEthernet (WSL (Hyper-V firewall))",
+      "entries": [
+        {
+          "family": "IPv6",
+          "internal": false
+        },
+        {
+          "family": "IPv4",
+          "internal": false,
+          "netmask": "255.255.240.0"
+        }
+      ]
+    },
+    {
+      "name": "Wi-Fi",
+      "entries": [
+        {
+          "family": "IPv6",
+          "internal": false
+        },
+        {
+          "family": "IPv4",
+          "internal": false,
+          "netmask": "255.255.255.0"
+        }
+      ]
+    },
+    {
+      "name": "Loopback Pseudo-Interface 1",
+      "entries": [
+        {
+          "family": "IPv6",
+          "internal": true
+        },
+        {
+          "family": "IPv4",
+          "internal": true,
+          "netmask": "255.0.0.0"
+        }
+      ]
+    }
+  ],
+  "computedBroadcastTargets": 2,
+  "addressesOmitted": true,
+  "actualPacketsSent": 0,
+  "scope": "Read-only OS input/calculation snapshot; no physical peer, routing, firewall or VPN connectivity test."
+}

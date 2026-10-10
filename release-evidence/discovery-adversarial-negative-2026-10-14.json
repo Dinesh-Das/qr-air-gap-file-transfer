@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-10-14T13:50:14.673Z",
+  "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+  "mutation": "Remove only buffer.byteLength > MAX_UDP_BYTES input guard",
+  "exitCode": 1,
+  "expectedFailures": 1,
+  "originalRestoredSha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc",
+  "productionWorkspaceUntouched": true
+}

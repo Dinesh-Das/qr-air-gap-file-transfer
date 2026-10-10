@@ -1,0 +1,95 @@
+{
+  "recordedAt": "2026-10-14T15:01:01.853Z",
+  "releaseStatus": "NOT READY",
+  "mappings": [
+    {
+      "id": "L861",
+      "status": "physical-proof-missing",
+      "proves": "Synthetic Wi-Fi-labelled /22 record contributes calculated broadcast. OS snapshot has Wi-Fi entry.",
+      "remaining": "No physical Wi-Fi peer/discovery/firewall experiment.",
+      "completionClaim": false
+    },
+    {
+      "id": "L862",
+      "status": "physical-proof-missing",
+      "proves": "Synthetic Ethernet-labelled /16 record contributes calculated broadcast.",
+      "remaining": "No physical Ethernet peer/discovery experiment; name alone is not hardware proof.",
+      "completionClaim": false
+    },
+    {
+      "id": "L863",
+      "status": "physical-proof-missing",
+      "proves": "Several synthetic adapter records deduplicate broadcasts;100 aliases capped32.",
+      "remaining": "No simultaneous physical-adapter routing/selectivity experiment.",
+      "completionClaim": false
+    },
+    {
+      "id": "L864",
+      "status": "partial-subnet-model-proof",
+      "proves": "Synthetic /24 hotspot192.168.137.1/255.255.255.0 produces192.168.137.255.",
+      "remaining": "No actual /24 broadcast reachability/firewall acceptance.",
+      "completionClaim": false
+    },
+    {
+      "id": "L865",
+      "status": "partial-subnet-model-proof",
+      "proves": "Synthetic /22 Wi-Fi and /16 Ethernet calculate192.168.7.255/10.20.255.255; /30 arithmetic tested.",
+      "remaining": "No real non-/24 peer/broadcast routes.",
+      "completionClaim": false
+    },
+    {
+      "id": "L866",
+      "status": "physical-proof-missing",
+      "proves": "Synthetic vEthernet/duplicate entries; read-only host snapshot includes real WSL virtual adapter.",
+      "remaining": "No active virtual-adapter interference/discovery reachability experiment.",
+      "completionClaim": false
+    },
+    {
+      "id": "L867",
+      "status": "live-VPN-proof-missing",
+      "proves": "Inspected corpus has no live VPN routing experiment; host inventory is not such a test.",
+      "remaining": "Live VPN adapter, split tunnel/routing/firewall behavior unproved.",
+      "completionClaim": false
+    },
+    {
+      "id": "L868",
+      "status": "partial-loopback-fallback-proof",
+      "proves": "Two-runtime manual TCP test uses getDiscoveryTargets()=>[] and successfully exchanges offer/answer.",
+      "remaining": "No real broadcast-suppressed network/firewall failure or automatic fallback/user latency proof.",
+      "completionClaim": false
+    },
+    {
+      "id": "L869",
+      "status": "partial-loopback-fallback-proof",
+      "proves": "Manual two-runtime TCP and production HTTP browser fixture; explicit private IPv4/port parsing accepts valid local examples/rejects URL/DNS/public/invalid forms.",
+      "remaining": "Physical fallback routing, OS firewall and nontechnical workflow unproved.",
+      "completionClaim": false
+    },
+    {
+      "id": "L871",
+      "status": "partial-native-loopback-packet-proof",
+      "proves": "Real UDP arrival observer confirms authentic1201-byte request unclaimed,1200 accepted; weakened size-guard negative control fails.",
+      "remaining": "Not every oversized datagram/flood/resource behavior or physical network proof.",
+      "completionClaim": false
+    }
+  ],
+  "inspectedSources": [
+    "tests/rendezvous-runtime.test.mjs",
+    "tests/lan-signaling.test.mjs",
+    "tests/discovery-adversarial.test.mjs",
+    "e2e/pairing.spec.ts"
+  ],
+  "runEvidence": [
+    "release-evidence/exact-stream-boundary-check-2026-10-14.log",
+    "release-evidence/verification-stream-browser-edge-2026-10-14.log",
+    "release-evidence/verification-stream-browser-chrome-2026-10-14.log"
+  ],
+  "hostSnapshot": [
+    "release-evidence/discovery-host-adapter-snapshot-2026-10-14.json",
+    "release-evidence/discovery-host-routing-snapshot-2026-10-14.json"
+  ],
+  "snapshotScope": "Read-only OS records and2computed broadcasts,0packets sent, IP/MAC addresses omitted. Adapter LinkSpeed is advertised capacity, not measured throughput.",
+  "titleCorrection": "Renamed actual-adapter wording to synthetic-adapter calculation. Assertion/body bytes unchanged; original full402-case source preserved/hashmatched, focused renamed case1passed12skipped selector.",
+  "completionClaims": 0,
+  "limitation": "Mapping includes explicit missing-proof assessments. Fewer unmapped entries does not mean physical discovery acceptance improved."
+}

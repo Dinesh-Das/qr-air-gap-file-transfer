@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-14T15:01:01.887Z",
+  "files": [
+    {
+      "path": "release-evidence/discovery-scope-review-2026-10-14.json",
+      "bytes": 71116,
+      "sha256": "f1990c4c1ed9eba423dda6fb667dc40cb0eb47e22b5b2c05335f0d9484dc228e"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 71116,
+      "sha256": "f1990c4c1ed9eba423dda6fb667dc40cb0eb47e22b5b2c05335f0d9484dc228e"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 629,
+      "sha256": "9960a946219264cb6b519d010dcae8272bba4b083e961331bbf870f29284a39c"
+    },
+    {
+      "path": "release-evidence/release-gate-before-discovery-scope-2026-10-14.json",
+      "bytes": 69900,
+      "sha256": "b43f83d91072ee19b3f8adf96ed8f217b63d5357ed219f5ceb3af89f9b1f06b9"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-discovery-scope-2026-10-14.json",
+      "bytes": 324210,
+      "sha256": "e1f119d7dd227b4a497dbb177567fcb9ad4ba95880a05c34c66540e3a46aa5aa"
+    },
+    {
+      "path": "tests/rendezvous-runtime.test.mjs",
+      "bytes": 12104,
+      "sha256": "82651b0895374cbba4aebd629914da4f8cb167ae516f0dd6e8f97757a3fbae13"
+    },
+    {
+      "path": "release-evidence/discovery-obligation-scope-review-2026-10-14.json",
+      "bytes": 4450,
+      "sha256": "060114d9568114dc81f602827ef4e83ff72370fe12b647348e85041ffcc4c547"
+    },
+    {
+      "path": "release-evidence/rendezvous-runtime-before-discovery-label-2026-10-14.source.txt",
+      "bytes": 12087,
+      "sha256": "55343bc6e4b08d66c0b57ca14b78e77885c2629acda4f7b9fe955a34795355f1"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 327372,
+      "sha256": "d57a0b67f931aeab624599d218a7bb58f69b49b9183a147d70c18176d1dd8bc6"
+    },
+    {
+      "path": "release-evidence/discovery-host-adapter-snapshot-2026-10-14.json",
+      "bytes": 3067,
+      "sha256": "f5dd9ab58ecdb8defa53e64d8fe7d59554b5c42a7177994e1ed2c83c16c7fcc1"
+    },
+    {
+      "path": "release-evidence/discovery-host-routing-snapshot-2026-10-14.json",
+      "bytes": 1100,
+      "sha256": "7c6454d33b1582bd9e5c49df5c28c2c47d7a6aedb5e753addb22519da3506ea2"
+    },
+    {
+      "path": "release-evidence/discovery-synthetic-label-check-2026-10-14.log",
+      "bytes": 361,
+      "sha256": "e8913537993a63756330a5a7cce7f969aa74318a398794aeaa568dc95825b150"
+    },
+    {
+      "path": "release-evidence/discovery-synthetic-label-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    }
+  ]
+}
