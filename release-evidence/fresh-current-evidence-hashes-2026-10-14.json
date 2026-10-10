@@ -1,0 +1,76 @@
+{
+  "recordedAt": "2026-10-14T13:40:36.981Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/fresh-current-review-2026-10-14.json",
+      "bytes": 42959,
+      "sha256": "8df968a528e1c7593df5801b6d6f32bc2aeea071e393740961ebd7c5f9b2afc5"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 42959,
+      "sha256": "8df968a528e1c7593df5801b6d6f32bc2aeea071e393740961ebd7c5f9b2afc5"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 668,
+      "sha256": "e4ae794221c86f553894cb8a731838f42d4799a99203e53da4dae5ed43192286"
+    },
+    {
+      "path": "release-evidence/release-gate-before-fresh-current-2026-10-14.json",
+      "bytes": 36949,
+      "sha256": "422c6e69d19eac8c7f2f9f7d5a6b8fc08e374d749e7e0051ca6e4c7c3b577b8b"
+    },
+    {
+      "path": "release-evidence/fresh-current-source-snapshot-2026-10-14.json",
+      "bytes": 21980,
+      "sha256": "3fc789cb64a173f505b61e16a6992644f50ba3dc1bf4c15d4762ccb713513134"
+    },
+    {
+      "path": "release-evidence/fresh-current-capacity-before-2026-10-14.json",
+      "bytes": 111,
+      "sha256": "1af3e21b293fbb3f114840b75d8bdaa9488b85e46aa009f45826222311712afc"
+    },
+    {
+      "path": "release-evidence/fresh-current-capacity-after-2026-10-14.json",
+      "bytes": 111,
+      "sha256": "a646db6ce4b5c25039dc843c09a09be6f9c9c907ce7a5f8703bd1560f48d4d84"
+    },
+    {
+      "path": "release-evidence/fresh-current-npm-version-2026-10-14.txt",
+      "bytes": 8,
+      "sha256": "94535e5dbefda0740ed46d66e241ff07352ff67862278126039b180cdabb6023"
+    },
+    {
+      "path": "release-evidence/fresh-current-install-2026-10-14.txt",
+      "bytes": 369,
+      "sha256": "3ce46b7640fe6f67048e9d0773bc3902be65b63b378798b56ffe4c93adabb444"
+    },
+    {
+      "path": "release-evidence/fresh-current-install-exit-code-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/fresh-current-check-2026-10-14.txt",
+      "bytes": 1460,
+      "sha256": "85b36fd1384cebdde1eba1ecbd7307db597104b0e46b315b4a2be2a9c2dc6dd2"
+    },
+    {
+      "path": "release-evidence/fresh-current-check-exit-code-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/fresh-current-package-smoke-2026-10-14.txt",
+      "bytes": 616,
+      "sha256": "5eac2d05152663eddf09a78b7cd3b219ab38125fd907b194a47451e08aeb2f52"
+    },
+    {
+      "path": "release-evidence/fresh-current-package-smoke-exit-code-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    }
+  ]
+}
