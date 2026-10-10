@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-09-18T20:43:41.244743+00:00",
+  "command": "npm run check:release",
+  "exitCode": 1,
+  "unitIntegrationTestsPassed": 264,
+  "unitIntegrationTestFiles": 38,
+  "browserPassed": 40,
+  "browserFailed": 1,
+  "browserDuration": "2.9m",
+  "packageSmoke": "not run after browser failure",
+  "inputsUnchangedAcrossRun": true,
+  "inputCount": 121,
+  "inputSnapshot": "gate-navigation-inputs.json",
+  "rawLog": "gate-navigation.log",
+  "rawLogSha256": "e73a7d70f6f0c4516b687856b961c557ca57247acf008ab5192ab18eb8a1b069",
+  "failure": "One-shot connection-details snapshot returned Unavailable when test demanded UDP or TCP. Underlying initial stats were not recorded, so their contents and cause are unproven.",
+  "artifacts": "navigation-failures/full-gate/"
+}
