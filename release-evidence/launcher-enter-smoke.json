@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-09-18T06:57:06.102065+00:00",
+  "bundlePath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-09-18T06-56-22-559Z",
+  "checksumManifestSha256": "aac491d86ce1a6e4a5080319a630de04a8911830134c0002732e06cebe81bf52",
+  "command": "Start AirGap QR.cmd, invoked from PowerShell PTY",
+  "startup": "Printed local app URL and Press Enter prompt after default browser opener exited successfully",
+  "stopInput": "Enter",
+  "exitCode": 0,
+  "batchTerminationPrompt": false,
+  "scope": "Native Windows command wrapper and console shutdown on one machine. No browser page inspection, native file transfer, or two-device validation."
+}

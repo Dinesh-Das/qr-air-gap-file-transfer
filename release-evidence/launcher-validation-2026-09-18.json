@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-09-18T06:53:44.818563+00:00",
+  "initialUnitGate": {
+    "log": "gate-launcher.log",
+    "exitCode": 1,
+    "passedTests": 258,
+    "failedTests": 1,
+    "failure": "Disconnect test awaited ChildProcess close; standalone probe observed exit 0 but no close event on this Windows Node build. Test changed to await exit."
+  },
+  "gateRecheck": {
+    "log": "gate-launcher-recheck.log",
+    "exitCode": 0,
+    "unitTests": 259,
+    "testFiles": 38,
+    "browserTests": 37,
+    "browserDuration": "3.2m",
+    "packagedFiles": 19,
+    "changedDuringRun": [
+      "scripts/launch.mjs"
+    ],
+    "scope": "Tests, build, browser cases and package smoke completed, but launcher browser-opener fix landed during browser stage. Not a single unchanged-input full gate; fresh final gate still needed."
+  },
+  "nativeLauncher": {
+    "bundlePath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-09-18T06-51-43-574Z",
+    "checksumManifestSha256": "2613d15e6657799df8fb42a0a250fe16cc58146f5a4a91beb76881a2aa28e2e9",
+    "initialFailure": "Default Windows argv quoting left cmd browser helper waiting without opening app. Owned helper stopped; failed candidate retained at artifacts/qrft-2026-09-18T06-49-51-619Z.",
+    "fix": "Validated numeric loopback start command uses windowsVerbatimArguments and 10-second opener timeout.",
+    "observed": [
+      "Windows command wrapper executed from a path with spaces.",
+      "Launcher printed local app URL after opening default browser.",
+      "Window inventory showed Microsoft Edge title beginning AirGap QR \u2014 Verified offline file transfer.",
+      "Ctrl+C stopped the owned Node runtime; Windows batch wrapper asked Terminate batch job (Y/N)."
+    ],
+    "pageInspection": "Computer Use ended: it could not determine the browser URL confidently enough to enforce policy. No page-content inspection or native transfer claimed.",
+    "processCleanup": "No matching Node processes remained after Ctrl+C; wrapper confirmation handled separately."
+  },
+  "releaseReady": false
+}
