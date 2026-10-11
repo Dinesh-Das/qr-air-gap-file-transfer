@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-10-15T17:22:25.803Z",
+  "path": "release-evidence/peer-policy-host-status-2026-10-14.json",
+  "sha256": "4a287d0dd29be97891a5110d8208312e54a2409b0e1ba33453d2318aae277f7e",
+  "bytes": 1241,
+  "recoveredFrom": "Own chat tool output; exact SHA-256 and byte length match the pre-existing evidence index.",
+  "sourceLine": 18549,
+  "sourceLineSha256": "c80bbeeb0d903533596d359ece4e330e0db7963d4f7853c480376948d705f006",
+  "newSnapshotPreserved": "release-evidence/portable-preflight-status-from-legacy-helper-2026-10-15.json",
+  "limitation": "A legacy status helper accidentally overwrote this file; recovered original bytes, not a newly sampled or inferred historical measurement."
+}
