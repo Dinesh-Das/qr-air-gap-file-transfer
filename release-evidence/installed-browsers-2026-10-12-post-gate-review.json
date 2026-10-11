@@ -1,0 +1,10 @@
+{
+  "recordedAt": "2026-10-12T16:44:15.870Z",
+  "changedSourceInputs": [
+    "RELEASE-CHECKLIST.md",
+    "RELEASE-HARDENING.md"
+  ],
+  "unchangedSourceInputs": 129,
+  "builtAssetsUnchanged": 5,
+  "explanation": "Only the two release documents were updated after the successful final gate. Application, server, tests, dependency lockfile and built assets still match the tested snapshot."
+}

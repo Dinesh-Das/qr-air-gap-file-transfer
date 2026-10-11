@@ -1,0 +1,124 @@
+{
+  "recordedAt": "2026-10-12T16:41:46.615Z",
+  "releaseStatus": "NOT READY",
+  "chrome": {
+    "channel": "chrome",
+    "runtimeVersion": "154.0.8037.99",
+    "exitCode": 0,
+    "startTime": "2026-10-12T16:28:06.025Z",
+    "duration": 309270.30600000004,
+    "expected": 53,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "inputSnapshot": "installed-browsers-2026-10-12-final-inputs.json",
+    "rawLog": "chrome-current-2026-10-12-final.log",
+    "results": "chrome-current-2026-10-12-final-results.json",
+    "sourceMapJsAtRun": "1.2.1"
+  },
+  "edge": {
+    "channel": "msedge",
+    "runtimeVersion": "154.0.4258.53",
+    "command": "npm run check:release",
+    "exitCode": 0,
+    "unitIntegrationTests": 316,
+    "unitIntegrationTestFiles": 42,
+    "browserTests": 53,
+    "browserDuration": "5.4m",
+    "rawLog": "edge-release-2026-10-12.log",
+    "inputSnapshot": "edge-release-2026-10-12-inputs.json",
+    "sourceMapJsAtRun": "1.2.2"
+  },
+  "sourceInputsChangedBetweenChromeAndEdge": [
+    "package-lock.json"
+  ],
+  "sameFiveBuiltAssetsAfterDependencyFix": true,
+  "inputReview": {
+    "recordedAt": "2026-10-12T16:40:28.3047881Z",
+    "sourceInputCount": 131,
+    "builtAssetCount": 5,
+    "allInputsMatch": true,
+    "physicalCaseCount": 42,
+    "physicalNotRun": 42
+  },
+  "originalChromeRun": {
+    "exitCode": 1,
+    "passed": 50,
+    "failed": 3,
+    "results": "chrome-current-2026-10-12-results.json",
+    "rawLog": "chrome-current-2026-10-12.log",
+    "retainedFailureTraces": "chrome-current-2026-10-12-failures/"
+  },
+  "unchangedFocusedRun": {
+    "exitCode": 1,
+    "passed": 6,
+    "failed": 3,
+    "results": "chrome-current-2026-10-12-focused-results.json",
+    "rawLog": "chrome-current-2026-10-12-focused.log"
+  },
+  "diagnosticRun": {
+    "exitCode": 0,
+    "passed": 9,
+    "diagnosticExpectationTimeoutMs": 30000,
+    "results": "chrome-current-2026-10-12-diagnostic-results.json",
+    "rawLog": "chrome-current-2026-10-12-diagnostic.log",
+    "timings": "chrome-recovery-2026-10-12-diagnostic-timings.json",
+    "config": "chrome-recovery-2026-10-12-diagnostic-config.txt",
+    "traceRetention": "Timing records were extracted while diagnostic traces existed. Later default-output cleanup removed raw focused/diagnostic traces. Original full-run failure traces are retained.",
+    "interpretation": "All cases completed, with save-action wait durations 3448.870 to 5504.186 ms. This establishes completion-delay variability, not a product throughput acceptance result."
+  },
+  "testCorrection": {
+    "file": "e2e/pairing.spec.ts",
+    "affectedWaitsMs": 15000,
+    "priorWaitsMs": 5000,
+    "extraAssertion": "Interrupted-transfer retry saves the 12 MiB file and independently compares its size and SHA-256."
+  },
+  "dependencyFix": {
+    "advisory": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q",
+    "upstreamRelease": "https://github.com/7rulnik/source-map-js/releases/tag/v1.2.2",
+    "dependencyPath": "vite -> postcss -> source-map-js",
+    "before": "1.2.1",
+    "after": "1.2.2",
+    "updateCommand": "npm update source-map-js --ignore-scripts",
+    "changedLockfilePackages": 1,
+    "beforeAudit": "npm-audit-2026-10-12.json",
+    "afterAudit": "npm-audit-2026-10-12-after.json",
+    "afterAuditExitCode": 0,
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "signatures": {
+      "exitCode": 0,
+      "packages": 145,
+      "attestations": 61,
+      "rawLog": "npm-signatures-2026-10-12.log"
+    },
+    "probe": {
+      "before": "source-map-offset-2026-10-12-before.json",
+      "after": "source-map-offset-2026-10-12-after.json",
+      "source": "source-map-offset-2026-10-12-probe.txt",
+      "scope": "Bounded constructor-validation probe only."
+    }
+  },
+  "offlineSmoke": {
+    "ranAt": "2026-10-12T16:39:38.563Z",
+    "node": "v24.12.0",
+    "packagedFiles": 19,
+    "physicalTemplateCases": 42,
+    "fetchedAssets": 5,
+    "isolatedDirectoryOutsideRepository": true,
+    "pathWithSpaces": true,
+    "arbitraryWorkingDirectory": true,
+    "existingDestinationRefused": true,
+    "checksumVerification": "Verified 19 release files. This checks copy integrity, not publisher authenticity.",
+    "launch": "AirGap QR is running at http://127.0.0.1:39370\nChoose Send or Receive to check the local connection service.\nPress Ctrl+C to stop.",
+    "launcherStartedAndStopped": true,
+    "browserHandoff": "injected observer; native Windows browser opening not tested"
+  },
+  "scope": "Isolated local browser profiles/contexts on one Windows host, synthetic source and picker fixtures, real WebRTC and OPFS, injected faults. Native browser opening, native source/destination pickers, hosted CI, performance/resource acceptance, nontechnical usability and real two-laptop validation remain open."
+}
