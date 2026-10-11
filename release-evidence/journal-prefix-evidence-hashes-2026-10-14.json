@@ -1,0 +1,221 @@
+{
+  "recordedAt": "2026-10-14T03:06:35.370Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/journal-prefix-review-2026-10-14.json",
+      "bytes": 34184,
+      "sha256": "28072d8ebf776a75a7b87d87d22306b7d9ac4c302157f8cdf9a18a3bb44e9c36"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 34184,
+      "sha256": "28072d8ebf776a75a7b87d87d22306b7d9ac4c302157f8cdf9a18a3bb44e9c36"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 725,
+      "sha256": "81016bf7874174c44b5c2eb2efd8093ba645cf7d05c9fd43fb26ad4f294ac78d"
+    },
+    {
+      "path": "release-evidence/release-gate-before-journal-prefix-2026-10-14.json",
+      "bytes": 44711,
+      "sha256": "a5b721828db03554eaa73ac29bae3cd0408577c6a731f3307a7fb4c5bb4492bb"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 79910,
+      "sha256": "1b8dc78bb8788a16fa48c78432820cd7540128b338aa1810e5f7732cfcead48a"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 122272,
+      "sha256": "e8a8c067d75420c4020d1ad437cb8969e06d0fcfb5b391b14f1dc1d823f16ce4"
+    },
+    {
+      "path": "SPEC-journal-prefix-recovery.md",
+      "bytes": 1958,
+      "sha256": "797df62459f653f6b82c53041f93aac66921ac452c23ca78a14c239b689c27c7"
+    },
+    {
+      "path": "SPEC-receipt-file-bounds.md",
+      "bytes": 2111,
+      "sha256": "5c9b33b0dfc79d2cb3756e63ddb29f6b33dbddebbde920de49d3674c0f4029c6"
+    },
+    {
+      "path": "release-evidence/original-release-requirements.txt",
+      "bytes": 33346,
+      "sha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077"
+    },
+    {
+      "path": "release-evidence/physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-journal-prefix\\CHECKSUMS.json",
+      "bytes": 3165,
+      "sha256": "f8abab3c469bf53a01027e5175b590589e65fe505f87cec2551040927365f428"
+    },
+    {
+      "path": "release-evidence/journal-prefix-browser-chrome-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/journal-prefix-browser-chrome-2026-10-14.log",
+      "bytes": 10490,
+      "sha256": "e15bd1e231791ad556bf5c72e062b9057b5edb5160c13fdd880ff23581bd13ed"
+    },
+    {
+      "path": "release-evidence/journal-prefix-browser-edge-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/journal-prefix-browser-edge-2026-10-14.log",
+      "bytes": 10491,
+      "sha256": "79b2b7e47755c96a17f144b5e53df3e9991646d9245c19cc05b2da488ae8feab"
+    },
+    {
+      "path": "release-evidence/journal-prefix-browser-focused-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/journal-prefix-browser-focused-2026-10-14.log",
+      "bytes": 657,
+      "sha256": "7fa560f8c4073fb5d8ef7867aeda449b8a62fc6008cbd27f17f8cdc601e44cb4"
+    },
+    {
+      "path": "release-evidence/journal-prefix-check-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/journal-prefix-check-2026-10-14.log",
+      "bytes": 1444,
+      "sha256": "9df7aedf7429333d861159f1edbeb12230cfaf5673a1d19ed2470e568a930a5a"
+    },
+    {
+      "path": "release-evidence/journal-prefix-compact-current-edge-2026-10-14.log",
+      "bytes": 199226,
+      "sha256": "af5f94303dce6f86a211b21f5ad771edc6ab4dbffed342423acc9b8a005bd80f"
+    },
+    {
+      "path": "release-evidence/journal-prefix-compact-message-chrome-2026-10-14.log",
+      "bytes": 184452,
+      "sha256": "e751fd2acb8bfba2b9c6022b593f56c8f70f10359e74349f2b23205978f0de5c"
+    },
+    {
+      "path": "release-evidence/journal-prefix-compact-message-edge-2026-10-14.log",
+      "bytes": 217318,
+      "sha256": "6d1de676a85bf1e47cf693cdb04e1be026f8f49ec721a47d7c52e2d26e5a267a"
+    },
+    {
+      "path": "release-evidence/journal-prefix-compact-receipt-chrome-2026-10-14.log",
+      "bytes": 178068,
+      "sha256": "5e7fbe3d0a0b9a3acbf7a2205075c9e7a55c61366fbb518604e046396617fd08"
+    },
+    {
+      "path": "release-evidence/journal-prefix-diff-check-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/journal-prefix-diff-check-2026-10-14.log",
+      "bytes": 3753,
+      "sha256": "30e275ec4b749b122594dc5f36ab32c68b662c01975c7560f8d77487db4541f3"
+    },
+    {
+      "path": "release-evidence/journal-prefix-focused-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/journal-prefix-focused-2026-10-14.log",
+      "bytes": 234,
+      "sha256": "348b1848b8c7c81a4c4570f8236b7eb6b91e73422f2c559ea6e585b1b838a43b"
+    },
+    {
+      "path": "release-evidence/journal-prefix-package-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/journal-prefix-package-2026-10-14.log",
+      "bytes": 115,
+      "sha256": "a5244f3b9ca854f46d7fb0b8c643d1d16b9b53b37a273aa31e4d248dfe093e5d"
+    },
+    {
+      "path": "release-evidence/journal-prefix-package-smoke-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/journal-prefix-package-smoke-2026-10-14.log",
+      "bytes": 616,
+      "sha256": "9788daffc5fbb11fac379900695a69d99d0f8bc424f989424022a90f3dfb4483"
+    },
+    {
+      "path": "release-evidence/journal-prefix-preserved-current-edge-2026-10-14.json",
+      "bytes": 1248448,
+      "sha256": "e5c23d0bdec56a387ce0a01f2d7c89d37a0f3e36a46932269ba825cf9d25cbb7"
+    },
+    {
+      "path": "release-evidence/journal-prefix-preserved-message-chrome-2026-10-14.json",
+      "bytes": 1205273,
+      "sha256": "c10b6f15ae142e77927ec9dccd319d8a020ae7e0bb35eb2e3c4270b46c61faf4"
+    },
+    {
+      "path": "release-evidence/journal-prefix-preserved-message-edge-2026-10-14.json",
+      "bytes": 1298335,
+      "sha256": "72a44dd2eb9a364c2e5478be85361c930d2938425d501721a47f6bb83663acd4"
+    },
+    {
+      "path": "release-evidence/journal-prefix-preserved-receipt-chrome-2026-10-14.json",
+      "bytes": 1204962,
+      "sha256": "e9b2ffb3d5d6e25281280b81d5474aefee6e342c01d2c9ea3853228107aa2396"
+    },
+    {
+      "path": "release-evidence/journal-prefix-red-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/journal-prefix-red-2026-10-14.log",
+      "bytes": 1310,
+      "sha256": "98366e6d4c313646859099659ba51c1e87dbbd34340256cb5e753c0e56e541f4"
+    },
+    {
+      "path": "release-evidence/journal-prefix-red-matrix-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/journal-prefix-red-matrix-2026-10-14.log",
+      "bytes": 4711,
+      "sha256": "f0bd036e2ac9c85d064f168ec234904fd7f5891533da5251faa171d1bdc77301"
+    },
+    {
+      "path": "release-evidence/journal-prefix-typecheck-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/journal-prefix-typecheck-2026-10-14.log",
+      "bytes": 73,
+      "sha256": "352bf4a8bad861e65104bee86aed6d2cbf4e862bfade1621c293158bb87562fe"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 312658,
+      "sha256": "f4381c83ea0a63f82cb37d47d2004c7a05d29ecfe8fa28c15c65cd0e7c5c40a3"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-journal-prefix-2026-10-14.json",
+      "bytes": 312366,
+      "sha256": "f2e07a8c56819f9928045fba776c163fa4a3bf5f9a7b0fbb2a78fb4a59a1be10"
+    }
+  ]
+}
