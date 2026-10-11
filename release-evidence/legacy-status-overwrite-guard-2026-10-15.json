@@ -1,0 +1,8 @@
+{
+  "helper": ".tmp/peer-policy-status-2026-10-14.mjs",
+  "expectedExit": 1,
+  "actualExit": 1,
+  "existingSnapshotUnchanged": true,
+  "sha256": "4a287d0dd29be97891a5110d8208312e54a2409b0e1ba33453d2318aae277f7e",
+  "scope": "Local evidence helper only; now refuses to overwrite an existing historical snapshot."
+}

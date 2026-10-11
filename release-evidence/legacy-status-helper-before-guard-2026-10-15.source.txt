@@ -1,0 +1,11 @@
+import { readFile, statfs, writeFile } from 'node:fs/promises';
+import { freemem, totalmem } from 'node:os';
+const stage = 'D:/MyProjects/qrft-fresh-current-2026-10-14-haEoDP';
+const log = await readFile(stage + '/validation/peer-policy-full-edge.txt', 'utf8');
+let exit = null;
+try { exit = (await readFile(stage + '/validation/peer-policy-full-edge-exit.txt', 'utf8')).trim(); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+const drives = {};
+for (const drive of ['C:/', 'D:/']) { const fs = await statfs(drive); drives[drive] = fs.bavail * fs.bsize; }
+const status = { recordedAt: new Date().toISOString(), freeRamBytes: freemem(), totalRamBytes: totalmem(), freeDiskBytes: drives, exitCode: exit, tail: log.split('\n').slice(-12) };
+await writeFile('release-evidence/peer-policy-host-status-2026-10-14.json', JSON.stringify(status, null, 2) + '\n');
+console.log(JSON.stringify(status));
