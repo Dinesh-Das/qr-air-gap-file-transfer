@@ -1,0 +1,1213 @@
+{
+  "startedAt": "2026-10-13T19:59:55.359Z",
+  "browser": "154.0.4258.53",
+  "channel": "msedge",
+  "cycles": [
+    {
+      "cycle": 1,
+      "mode": "reject",
+      "startedAt": "2026-10-13T19:59:55.762Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 37.166300000000774
+    },
+    {
+      "cycle": 2,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:00:02.551Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 37.47400000000016
+    },
+    {
+      "cycle": 3,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:00:10.277Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 40.67000000000189
+    },
+    {
+      "cycle": 4,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:00:16.523Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 36.527900000000955
+    },
+    {
+      "cycle": 5,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:00:24.346Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 39.37469999999303
+    },
+    {
+      "cycle": 6,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:00:30.538Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 29.6875
+    },
+    {
+      "cycle": 7,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:00:38.406Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 36.92210000000341
+    },
+    {
+      "cycle": 8,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:00:44.598Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 32.98639999999432
+    },
+    {
+      "cycle": 9,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:00:52.241Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 34.90720000000147
+    },
+    {
+      "cycle": 10,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:00:58.046Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 34.971999999994296
+    },
+    {
+      "cycle": 11,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:01:06.147Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 33.35040000001027
+    },
+    {
+      "cycle": 12,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:01:12.370Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 32.21490000000631
+    },
+    {
+      "cycle": 13,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:01:20.079Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 44.224400000006426
+    },
+    {
+      "cycle": 14,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:01:26.222Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 31.89220000000205
+    },
+    {
+      "cycle": 15,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:01:33.975Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 32.87810000000172
+    },
+    {
+      "cycle": 16,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:01:40.060Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 27.366699999998673
+    },
+    {
+      "cycle": 17,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:01:47.685Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 26.30689999999595
+    },
+    {
+      "cycle": 18,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:01:53.785Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 26.679799999998068
+    },
+    {
+      "cycle": 19,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:02:01.518Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 31.26260000001639
+    },
+    {
+      "cycle": 20,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:02:07.598Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 28.831800000014482
+    },
+    {
+      "cycle": 21,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:02:15.513Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 36.781500000011874
+    },
+    {
+      "cycle": 22,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:02:21.656Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 36.889999999984866
+    },
+    {
+      "cycle": 23,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:02:29.323Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 33.199099999998
+    },
+    {
+      "cycle": 24,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:02:35.404Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 33.3807000000088
+    },
+    {
+      "cycle": 25,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:02:43.014Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 36.94000000000233
+    },
+    {
+      "cycle": 26,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:02:49.193Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 27.484499999991385
+    },
+    {
+      "cycle": 27,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:02:57.853Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 50.670799999992596
+    },
+    {
+      "cycle": 28,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:03:04.032Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 34.873200000001816
+    },
+    {
+      "cycle": 29,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:03:11.877Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 31.026400000002468
+    },
+    {
+      "cycle": 30,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:03:17.966Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 27.201199999981327
+    },
+    {
+      "cycle": 31,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:03:27.042Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 37.22969999999623
+    },
+    {
+      "cycle": 32,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:03:33.210Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 31.568399999989197
+    },
+    {
+      "cycle": 33,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:03:40.998Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 34.97419999999693
+    },
+    {
+      "cycle": 34,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:03:46.767Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 32.710800000000745
+    },
+    {
+      "cycle": 35,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:03:54.384Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 27.739799999981187
+    },
+    {
+      "cycle": 36,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:04:00.624Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 27.558699999994133
+    },
+    {
+      "cycle": 37,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:04:09.400Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 33.17980000001262
+    },
+    {
+      "cycle": 38,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:04:15.492Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 38.43510000000242
+    },
+    {
+      "cycle": 39,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:04:24.303Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 31.71970000001602
+    },
+    {
+      "cycle": 40,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:04:30.357Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 29.54839999997057
+    },
+    {
+      "cycle": 41,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:04:38.345Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 38.353000000002794
+    },
+    {
+      "cycle": 42,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:04:44.460Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 31.56500000000233
+    },
+    {
+      "cycle": 43,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:04:52.244Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 33.149600000004284
+    },
+    {
+      "cycle": 44,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:04:58.392Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 36.198899999959394
+    },
+    {
+      "cycle": 45,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:05:07.005Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 37.490500000014435
+    },
+    {
+      "cycle": 46,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:05:13.200Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 27.03239999996731
+    },
+    {
+      "cycle": 47,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:05:20.808Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 37.19020000001183
+    },
+    {
+      "cycle": 48,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:05:27.012Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 36.026599999982864
+    },
+    {
+      "cycle": 49,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:05:34.768Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 26.183499999984633
+    },
+    {
+      "cycle": 50,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:05:41.046Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 31.210299999976996
+    },
+    {
+      "cycle": 51,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:05:50.131Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 48.11050000000978
+    },
+    {
+      "cycle": 52,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:05:56.222Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 27.28169999999227
+    },
+    {
+      "cycle": 53,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:06:03.892Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 36.93310000002384
+    },
+    {
+      "cycle": 54,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:06:10.007Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 33.79570000001695
+    },
+    {
+      "cycle": 55,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:06:17.748Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 28.15530000004219
+    },
+    {
+      "cycle": 56,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:06:23.941Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 33.412799999990966
+    },
+    {
+      "cycle": 57,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:06:31.722Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 39.898700000019744
+    },
+    {
+      "cycle": 58,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:06:37.902Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 41.62699999997858
+    },
+    {
+      "cycle": 59,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:06:46.712Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 29.611100000038277
+    },
+    {
+      "cycle": 60,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:06:52.851Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 26.601699999999255
+    },
+    {
+      "cycle": 61,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:07:00.976Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 35.662699999986216
+    },
+    {
+      "cycle": 62,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:07:07.003Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 47.82970000000205
+    },
+    {
+      "cycle": 63,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:07:14.754Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 35.73320000001695
+    },
+    {
+      "cycle": 64,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:07:20.847Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 31.51370000001043
+    },
+    {
+      "cycle": 65,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:07:28.579Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 40.22110000002431
+    },
+    {
+      "cycle": 66,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:07:34.665Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 30.39299999998184
+    },
+    {
+      "cycle": 67,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:07:42.396Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 27.003900000010617
+    },
+    {
+      "cycle": 68,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:07:48.474Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 32.30749999999534
+    },
+    {
+      "cycle": 69,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:07:57.095Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 27.498199999972712
+    },
+    {
+      "cycle": 70,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:08:03.411Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 37.459700000006706
+    },
+    {
+      "cycle": 71,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:08:12.223Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 39.15100000001257
+    },
+    {
+      "cycle": 72,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:08:18.254Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 35.381400000012945
+    },
+    {
+      "cycle": 73,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:08:25.867Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 33.2778999999864
+    },
+    {
+      "cycle": 74,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:08:32.041Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 34.8464999999851
+    },
+    {
+      "cycle": 75,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:08:39.780Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 41.632800000021234
+    },
+    {
+      "cycle": 76,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:08:45.987Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 43.301800000015646
+    },
+    {
+      "cycle": 77,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:08:53.892Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 32.10989999992307
+    },
+    {
+      "cycle": 78,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:09:00.074Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 39.34909999999218
+    },
+    {
+      "cycle": 79,
+      "mode": "reject",
+      "startedAt": "2026-10-13T20:09:07.882Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 2,
+      "requestFailures": [],
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 37.80009999999311
+    },
+    {
+      "cycle": 80,
+      "mode": "verified-save",
+      "startedAt": "2026-10-13T20:09:14.012Z",
+      "stylesheetResponses": 2,
+      "scriptResponses": 3,
+      "requestFailures": [],
+      "saved": {
+        "size": 120000,
+        "hash": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767"
+      },
+      "bodyPassed": true,
+      "closed": true,
+      "closeMs": 45.509699999936856
+    }
+  ],
+  "samples": [
+    {
+      "cycle": 0,
+      "processCount": 4,
+      "processTypes": [
+        "browser",
+        "GPU",
+        "network.mojom.NetworkService",
+        "storage.mojom.StorageService"
+      ],
+      "metrics": {
+        "Id": 26888,
+        "HandleCount": 1319,
+        "PrivateMemorySize64": 35123200,
+        "WorkingSet64": 123682816
+      }
+    },
+    {
+      "cycle": 10,
+      "processCount": 6,
+      "processTypes": [
+        "browser",
+        "GPU",
+        "network.mojom.NetworkService",
+        "storage.mojom.StorageService",
+        "entity_extraction_service.mojom.Extractor",
+        "edge_collections.mojom.CollectionsDataManager"
+      ],
+      "metrics": {
+        "Id": 26888,
+        "HandleCount": 1634,
+        "PrivateMemorySize64": 62255104,
+        "WorkingSet64": 187396096
+      }
+    },
+    {
+      "cycle": 20,
+      "processCount": 6,
+      "processTypes": [
+        "browser",
+        "GPU",
+        "network.mojom.NetworkService",
+        "storage.mojom.StorageService",
+        "entity_extraction_service.mojom.Extractor",
+        "edge_collections.mojom.CollectionsDataManager"
+      ],
+      "metrics": {
+        "Id": 26888,
+        "HandleCount": 1617,
+        "PrivateMemorySize64": 59359232,
+        "WorkingSet64": 185008128
+      }
+    },
+    {
+      "cycle": 30,
+      "processCount": 6,
+      "processTypes": [
+        "browser",
+        "GPU",
+        "network.mojom.NetworkService",
+        "storage.mojom.StorageService",
+        "entity_extraction_service.mojom.Extractor",
+        "edge_collections.mojom.CollectionsDataManager"
+      ],
+      "metrics": {
+        "Id": 26888,
+        "HandleCount": 1613,
+        "PrivateMemorySize64": 63168512,
+        "WorkingSet64": 188715008
+      }
+    },
+    {
+      "cycle": 40,
+      "processCount": 6,
+      "processTypes": [
+        "browser",
+        "GPU",
+        "network.mojom.NetworkService",
+        "storage.mojom.StorageService",
+        "entity_extraction_service.mojom.Extractor",
+        "edge_collections.mojom.CollectionsDataManager"
+      ],
+      "metrics": {
+        "Id": 26888,
+        "HandleCount": 1614,
+        "PrivateMemorySize64": 63434752,
+        "WorkingSet64": 189132800
+      }
+    },
+    {
+      "cycle": 50,
+      "processCount": 6,
+      "processTypes": [
+        "browser",
+        "GPU",
+        "network.mojom.NetworkService",
+        "storage.mojom.StorageService",
+        "entity_extraction_service.mojom.Extractor",
+        "edge_collections.mojom.CollectionsDataManager"
+      ],
+      "metrics": {
+        "Id": 26888,
+        "HandleCount": 1609,
+        "PrivateMemorySize64": 64462848,
+        "WorkingSet64": 190488576
+      }
+    },
+    {
+      "cycle": 60,
+      "processCount": 6,
+      "processTypes": [
+        "browser",
+        "GPU",
+        "network.mojom.NetworkService",
+        "storage.mojom.StorageService",
+        "entity_extraction_service.mojom.Extractor",
+        "edge_collections.mojom.CollectionsDataManager"
+      ],
+      "metrics": {
+        "Id": 26888,
+        "HandleCount": 1608,
+        "PrivateMemorySize64": 64823296,
+        "WorkingSet64": 190787584
+      }
+    },
+    {
+      "cycle": 70,
+      "processCount": 6,
+      "processTypes": [
+        "browser",
+        "GPU",
+        "network.mojom.NetworkService",
+        "storage.mojom.StorageService",
+        "entity_extraction_service.mojom.Extractor",
+        "edge_collections.mojom.CollectionsDataManager"
+      ],
+      "metrics": {
+        "Id": 26888,
+        "HandleCount": 1606,
+        "PrivateMemorySize64": 62410752,
+        "WorkingSet64": 188575744
+      }
+    },
+    {
+      "cycle": 80,
+      "processCount": 6,
+      "processTypes": [
+        "browser",
+        "GPU",
+        "network.mojom.NetworkService",
+        "storage.mojom.StorageService",
+        "entity_extraction_service.mojom.Extractor",
+        "edge_collections.mojom.CollectionsDataManager"
+      ],
+      "metrics": {
+        "Id": 26888,
+        "HandleCount": 1608,
+        "PrivateMemorySize64": 66060288,
+        "WorkingSet64": 192253952
+      }
+    }
+  ],
+  "assetFailures": [],
+  "consoleErrors": [],
+  "passed": true,
+  "completedAt": "2026-10-13T20:09:23.081Z"
+}

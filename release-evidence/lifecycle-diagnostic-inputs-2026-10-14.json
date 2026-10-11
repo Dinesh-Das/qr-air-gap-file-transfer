@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-10-13T19:59:52.27Z",
+  "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk",
+  "stageInputSnapshot": "verify-abort-stage-2026-10-14-inputs.json",
+  "helperSourceSha256": "345f65567a2fd78207efcef570c323cf00fc14b1949fe886d7514b9da01ac921",
+  "diagnostic": {
+    "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\diagnostics\\pairing-lifecycle-2026-10-14.source.txt",
+    "sha256": "0438f066475548d4139a3e8cafb0a666dee60a7933a5ddbe8c68ee9cf1baf781",
+    "originalPath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\e2e\\diagnostic-pairing-lifecycle.diag.ts"
+  },
+  "config": {
+    "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\diagnostics\\pairing-lifecycle-config-2026-10-14.source.txt",
+    "sha256": "d04ecc2c1012c8e3886800da92f1ddd980da6372cccf3fe28f0331594b45445c",
+    "originalPath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\diagnostic-lifecycle.config.ts"
+  },
+  "scope": "80 manually created/closed contexts within one browser process, alternating 40 rejection and 40 verified 120000-byte saves. No per-context tracing; original release assertions retained. Does not reproduce exact full-suite workload or native user contexts.",
+  "archivedAt": "2026-10-13T20:20:44.9251508Z"
+}
