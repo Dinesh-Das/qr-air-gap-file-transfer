@@ -1,0 +1,86 @@
+{
+  "recordedAt": "2026-10-14T14:31:42.026Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/native-stream-review-2026-10-14.json",
+      "bytes": 64941,
+      "sha256": "aee9a7e4537db07a12364147886ae84f8892f09cd279c681b5f1a20c3f83f8e4"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 64941,
+      "sha256": "aee9a7e4537db07a12364147886ae84f8892f09cd279c681b5f1a20c3f83f8e4"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 611,
+      "sha256": "15cd52fcbbcb14691f07fe0a393104bdaaa6c480d21a3a5708e6ab26f966e668"
+    },
+    {
+      "path": "release-evidence/release-gate-before-native-stream-2026-10-14.json",
+      "bytes": 60840,
+      "sha256": "ed1b06a59953eede1050e68f71c4d4e1636a26d2e64910d117565e21b67cf192"
+    },
+    {
+      "path": "release-evidence/native-stream-old-config-2026-10-14.json",
+      "bytes": 1000,
+      "sha256": "b28529e2f9c2dd2ea400870b228d988c867c6f042b708286ef0b021c8aaae928"
+    },
+    {
+      "path": "release-evidence/native-stream-old-2026-10-14.log",
+      "bytes": 2561,
+      "sha256": "fad1e7b476efcbc51fb428a20938dabba6160301d1e95e1bd5883ced86385318"
+    },
+    {
+      "path": "release-evidence/native-stream-old-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/native-stream-edge-2026-10-14.log",
+      "bytes": 542,
+      "sha256": "86021ea13cae86ff87174ede34fc72611939e46835fc54a2026188e4010800c4"
+    },
+    {
+      "path": "release-evidence/native-stream-edge-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/native-stream-chrome-2026-10-14.log",
+      "bytes": 542,
+      "sha256": "536d12a09f9c4c96c4e50f7245f4c4dd6c60dd0060cef31167e771742fa14620"
+    },
+    {
+      "path": "release-evidence/native-stream-chrome-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-native-stream-old\\pairing-Stop-cancels-prefe-1526c--and-resumes-without-resend\\trace.zip",
+      "bytes": 11022698,
+      "sha256": "a0d8e68715971081474ef62703d9afed3e45bd7e6ed7df2321ad25afd7d9cd5f"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 314831,
+      "sha256": "9840350cb40cf55a17d49a8435cfa3ac67eb2fe22269209aadc9d32f9d74b896"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-native-stream-2026-10-14.json",
+      "bytes": 314342,
+      "sha256": "89792d35d44a0ce92bd5a71bf91118aa2b2a7814a43fdb0f9932b15c13d84984"
+    },
+    {
+      "path": "e2e/pairing.spec.ts",
+      "bytes": 126711,
+      "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+    },
+    {
+      "path": "SPEC-verification-stream-cleanup.md",
+      "bytes": 2274,
+      "sha256": "03cc83056ca8d60190a44f341fb075912742fb907fbf6f4d1583bd23823a7d9b"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-corrupt-discard",
+  "configPath": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\native-stream-old.config.mjs",
+  "config": {
+    "testDir": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e",
+    "timeout": 45000,
+    "workers": 1,
+    "use": {
+      "channel": "msedge",
+      "baseURL": "http://127.0.0.1:29526",
+      "trace": "retain-on-failure"
+    },
+    "webServer": {
+      "command": "node \"D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-corrupt-discard\\scripts\\serve.mjs\"",
+      "env": {
+        "QRFT_PORT": "29526",
+        "QRFT_SIGNAL_PORT": "22740"
+      },
+      "url": "http://127.0.0.1:29526",
+      "reuseExistingServer": false
+    }
+  },
+  "purpose": "Run current native regression against verified unchanged historical pre-cleanup bundle; no source/build mutation."
+}
