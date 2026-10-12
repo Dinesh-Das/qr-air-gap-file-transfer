@@ -1,0 +1,9 @@
+{
+  "ranAt": "2026-09-14T15:38:38.618Z",
+  "scenario": "occupied loopback HTTP port",
+  "exitCode": 1,
+  "signal": null,
+  "output": "The application is already open, or its local address is in use. Close the other runtime and launch again.\n",
+  "existingListenerPreserved": true,
+  "passed": true
+}
