@@ -1,0 +1,16 @@
+[
+  {
+    "ProcessId": 22640,
+    "ParentProcessId": 24560,
+    "CreationDate": "2026-10-14T01:00:08.746352+05:30",
+    "Name": "msedge.exe",
+    "CommandLine": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=crashpad-handler --user-data-dir=C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results\\pairing-sender-recovery-re-9b500-n-false-browser-crash-true-\\profile /prefetch:4 --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results\\pairing-sender-recovery-re-9b500-n-false-browser-crash-true-\\profile\\Crashpad --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=154.0.8037.93 \"--annotation=exe=C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --annotation=plat=Win64 --annotation=prod=Edge --annotation=ver=154.0.4258.53 --initial-client-data=0x1b0,0x1b4,0x1b8,0x18c,0x1c0,0x7ff855bb83e0,0x7ff855bb83f0,0x7ff855bb8400"
+  },
+  {
+    "ProcessId": 15076,
+    "ParentProcessId": 24560,
+    "CreationDate": "2026-10-14T01:00:10.068684+05:30",
+    "Name": "msedge.exe",
+    "CommandLine": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=utility --utility-sub-type=PooledProcess2 --lang=en-US --service-sandbox-type=utility --no-sandbox --mute-audio --video-capture-use-gpu-memory-buffer --noerrdialogs --user-data-dir=\"C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results\\pairing-sender-recovery-re-9b500-n-false-browser-crash-true-\\profile\" --skip-read-main-dll --field-trial-handle=2060,i,16083513798977988183,660786752475170556,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AutoDeElevate,AvoidUnnecessaryBeforeUnloadCheckSync,BlockOriginHeaderModificationOnRedirect,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,OptimizationHints,PaintHolding,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=2224,i,734798303776833804,8363612432891100396,4 --trace-process-track-uuid=3190708996619331833 --mojo-platform-channel-handle=6080 /prefetch:14"
+  }
+]

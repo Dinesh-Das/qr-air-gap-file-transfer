@@ -1,0 +1,557 @@
+{
+  "recordedAt": "2026-10-15T17:06:30.360Z",
+  "readOnly": true,
+  "scope": "Eight project-owned stages referenced by retained evidence; logical file sizes, not allocated/free space or causal attribution. No deletion/compression/benchmark alteration.",
+  "folders": [
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results",
+      "bytes": 327323064,
+      "files": 5270
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\test-results",
+      "bytes": 301617357,
+      "files": 5307
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results-first-edge-verify-abort",
+      "bytes": 287510840,
+      "files": 5302
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\test-results",
+      "bytes": 286870164,
+      "files": 5273
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results",
+      "bytes": 286602946,
+      "files": 5323
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results",
+      "bytes": 286585829,
+      "files": 5299
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\test-results",
+      "bytes": 284888084,
+      "files": 5307
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results-verify-abort-chrome",
+      "bytes": 259057906,
+      "files": 5053
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\test-results-terminal-control-chrome",
+      "bytes": 257713314,
+      "files": 5005
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\test-results-small-write-chrome",
+      "bytes": 253562598,
+      "files": 5053
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\node_modules",
+      "bytes": 162336234,
+      "files": 7298
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\node_modules",
+      "bytes": 162334955,
+      "files": 7299
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\node_modules",
+      "bytes": 162234205,
+      "files": 7299
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\node_modules",
+      "bytes": 156135306,
+      "files": 7272
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\node_modules",
+      "bytes": 156135298,
+      "files": 7272
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\node_modules",
+      "bytes": 156135271,
+      "files": 7272
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\node_modules",
+      "bytes": 156135254,
+      "files": 7272
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-clean-focused",
+      "bytes": 83290605,
+      "files": 2942
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\test-results-destination-focused-after",
+      "bytes": 83026592,
+      "files": 2954
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\test-results-small-write-edge-repeated",
+      "bytes": 55311377,
+      "files": 4440
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results-destination-profile",
+      "bytes": 50462140,
+      "files": 1464
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\test-results-destination-profile-after",
+      "bytes": 49881120,
+      "files": 1466
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-receiver-renderer--4aa60-ble-blocks-and-exact-output",
+      "bytes": 37046262,
+      "files": 229
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-browser-process-te-f09f2-esumes-exact-durable-blocks",
+      "bytes": 36198177,
+      "files": 252
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-sender-and-receive-160b9-locks-after-source-recovery",
+      "bytes": 36172022,
+      "files": 225
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\isolated-npm-cache",
+      "bytes": 34689736,
+      "files": 292
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\isolated-npm-cache",
+      "bytes": 34689650,
+      "files": 292
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\isolated-npm-cache",
+      "bytes": 34689586,
+      "files": 292
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\isolated-npm-cache",
+      "bytes": 34689425,
+      "files": 292
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\isolated-npm-cache",
+      "bytes": 34689412,
+      "files": 292
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\isolated-npm-cache",
+      "bytes": 34689223,
+      "files": 292
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\isolated-npm-cache",
+      "bytes": 34689089,
+      "files": 292
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-JBBZDm",
+      "bytes": 33843840,
+      "files": 357
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\many-files-bench-profile-MneEH1",
+      "bytes": 33791071,
+      "files": 358
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\many-files-bench-profile-D8MlAh",
+      "bytes": 33791068,
+      "files": 358
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\many-files-bench-profile-8J2K48",
+      "bytes": 33726725,
+      "files": 336
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\test-results-destination-source-read",
+      "bytes": 33300082,
+      "files": 1484
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-NSOlgj",
+      "bytes": 32763926,
+      "files": 357
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-pBymla",
+      "bytes": 32704880,
+      "files": 335
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\readback-benchmark-profile-uNYAkt",
+      "bytes": 28653674,
+      "files": 1552
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\readback-benchmark-profile-maBGCE",
+      "bytes": 28647327,
+      "files": 1552
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\test-results-destination-finish",
+      "bytes": 18454973,
+      "files": 1485
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red",
+      "bytes": 18271573,
+      "files": 11
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-interrupted-many-f-ae879--files-renderer-crash-true-",
+      "bytes": 13792930,
+      "files": 1427
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-browser-process-te-c5317-ve-preserves-verified-files",
+      "bytes": 12820005,
+      "files": 1447
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-saved-source-recov-14402-s-and-offers-a-direct-retry",
+      "bytes": 11112746,
+      "files": 221
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-sender-recovery-re-8c4e3-on-true-browser-crash-true-",
+      "bytes": 10733297,
+      "files": 203
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-sender-recovery-re-9b500-n-false-browser-crash-true-",
+      "bytes": 10733295,
+      "files": 203
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-sender-recovery-re-753e2-n-true-browser-crash-false-",
+      "bytes": 9681011,
+      "files": 180
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-sender-recovery-re-6b946--false-browser-crash-false-",
+      "bytes": 9681010,
+      "files": 180
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-save-phase-red",
+      "bytes": 7536344,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\src",
+      "bytes": 687171,
+      "files": 53
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\src",
+      "bytes": 687001,
+      "files": 53
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\src",
+      "bytes": 686748,
+      "files": 53
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\src",
+      "bytes": 686655,
+      "files": 53
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\src",
+      "bytes": 685847,
+      "files": 53
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\src",
+      "bytes": 684731,
+      "files": 53
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\src",
+      "bytes": 683373,
+      "files": 53
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\dist",
+      "bytes": 625672,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\dist",
+      "bytes": 625628,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\dist",
+      "bytes": 625553,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\dist",
+      "bytes": 625508,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\dist",
+      "bytes": 625258,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\dist",
+      "bytes": 624983,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\dist",
+      "bytes": 624521,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-interrupted-transf-afca2-d-retries-without-rehashing",
+      "bytes": 363561,
+      "files": 4
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\navigation-home-opens-Send-03876-h-optical-engines-available",
+      "bytes": 347317,
+      "files": 4
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-transfer-metrics-r-176c1-ough-pause-and-verification",
+      "bytes": 333649,
+      "files": 4
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\tests",
+      "bytes": 300872,
+      "files": 45
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\e2e",
+      "bytes": 293744,
+      "files": 7
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\tests",
+      "bytes": 293502,
+      "files": 44
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\tests",
+      "bytes": 292114,
+      "files": 44
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\tests",
+      "bytes": 292114,
+      "files": 44
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\e2e",
+      "bytes": 290139,
+      "files": 7
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\tests",
+      "bytes": 285235,
+      "files": 44
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\tests",
+      "bytes": 280901,
+      "files": 44
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\tests",
+      "bytes": 278192,
+      "files": 44
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\e2e",
+      "bytes": 200721,
+      "files": 6
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\scripts",
+      "bytes": 154079,
+      "files": 18
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\scripts",
+      "bytes": 154079,
+      "files": 18
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\scripts",
+      "bytes": 143483,
+      "files": 18
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\e2e",
+      "bytes": 136699,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\scripts",
+      "bytes": 136170,
+      "files": 17
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\scripts",
+      "bytes": 136170,
+      "files": 17
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\scripts",
+      "bytes": 136170,
+      "files": 17
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\scripts",
+      "bytes": 136170,
+      "files": 17
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\e2e",
+      "bytes": 118353,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\e2e",
+      "bytes": 112814,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\e2e",
+      "bytes": 112814,
+      "files": 5
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\release-evidence",
+      "bytes": 88810,
+      "files": 3
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\release-evidence",
+      "bytes": 88807,
+      "files": 3
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\release-evidence",
+      "bytes": 88796,
+      "files": 3
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\release-evidence",
+      "bytes": 88765,
+      "files": 3
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\release-evidence",
+      "bytes": 88765,
+      "files": 3
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\release-evidence",
+      "bytes": 88132,
+      "files": 2
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\release-evidence",
+      "bytes": 88089,
+      "files": 2
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\diagnostics",
+      "bytes": 13946,
+      "files": 2
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\.github",
+      "bytes": 2025,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\.github",
+      "bytes": 2025,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-2026-10-13-1pQuQy\\.github",
+      "bytes": 2025,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\.github",
+      "bytes": 2025,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\.github",
+      "bytes": 2025,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\.github",
+      "bytes": 2025,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\.github",
+      "bytes": 2025,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results-lifecycle-chrome",
+      "bytes": 45,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results-lifecycle-edge",
+      "bytes": 45,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results-verify-abort-reject-repeat",
+      "bytes": 45,
+      "files": 1
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-preparation-pairin-6e4dd-e-source-hashing-is-pending",
+      "bytes": 0,
+      "files": 0
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-production-HTTP-ru-478f4-owsers-manual-address-true-",
+      "bytes": 0,
+      "files": 0
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-playwright-164-chrome-2026-10-14\\pairing-production-HTTP-ru-b03c7-wsers-manual-address-false-",
+      "bytes": 0,
+      "files": 0
+    }
+  ]
+}

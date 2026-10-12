@@ -1,0 +1,8 @@
+{
+  "recordedAt": "2026-10-15T17:20:01.962Z",
+  "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\node_modules",
+  "files": 7299,
+  "byteIdentical": true,
+  "previousWorkerExit": 1,
+  "scope": "Initial compact invocation failed status check; exact failure reason was not captured. Before inventory persisted and all current paths/sizes/hashes match. No all-files-compressed claim."
+}

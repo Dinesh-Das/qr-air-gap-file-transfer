@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-10-15T17:17:11.506Z",
+  "records": [
+    {
+      "path": "release-evidence/owned-c-results-1-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\test-results",
+      "files": 5270
+    },
+    {
+      "path": "release-evidence/owned-c-results-2-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-final-2026-10-13-tGBOKP\\test-results",
+      "files": 5307
+    },
+    {
+      "path": "release-evidence/owned-c-results-3-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results-first-edge-verify-abort",
+      "files": 5302
+    },
+    {
+      "path": "release-evidence/owned-c-results-4-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\test-results",
+      "files": 5273
+    },
+    {
+      "path": "release-evidence/owned-c-results-5-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results",
+      "files": 5323
+    },
+    {
+      "path": "release-evidence/owned-c-results-6-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results",
+      "files": 5299
+    },
+    {
+      "path": "release-evidence/owned-c-results-7-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\test-results",
+      "files": 5307
+    },
+    {
+      "path": "release-evidence/owned-c-results-8-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results-verify-abort-chrome",
+      "files": 5053
+    },
+    {
+      "path": "release-evidence/owned-c-results-9-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-terminal-control-2026-10-14-9hm56n\\test-results-terminal-control-chrome",
+      "files": 5005
+    },
+    {
+      "path": "release-evidence/owned-c-results-10-preservation-2026-10-15.json",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\test-results-small-write-chrome",
+      "files": 5053
+    }
+  ]
+}
