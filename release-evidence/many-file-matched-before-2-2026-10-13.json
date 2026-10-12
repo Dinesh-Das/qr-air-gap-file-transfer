@@ -1,0 +1,95 @@
+{
+  "ranAt": "2026-10-13T16:05:50.827Z",
+  "results": [
+    {
+      "mib": 10,
+      "batchBlocks": 32,
+      "fileCount": 10000,
+      "emptyFiles": 1000,
+      "directoryCount": 100,
+      "metadataBytes": 1448388,
+      "quotaBefore": {
+        "quota": 10737418240,
+        "usage": 0,
+        "usageDetails": {}
+      },
+      "fixture": "file-index and offset pattern",
+      "destinationOperations": {
+        "directory.getDirectoryHandle": {
+          "calls": 20102,
+          "ms": 15620.399996757507
+        },
+        "journal.getFileHandle": {
+          "calls": 10002,
+          "ms": 12232.899997472763
+        },
+        "journal.createWritable": {
+          "calls": 10001,
+          "ms": 27216.200003147125
+        },
+        "journal.write": {
+          "calls": 10001,
+          "ms": 24033.600002884865
+        },
+        "journal.close": {
+          "calls": 10001,
+          "ms": 37593.600001335144
+        },
+        "file.getFileHandle": {
+          "calls": 20000,
+          "ms": 34992.19999170303
+        },
+        "file.createWritable": {
+          "calls": 10000,
+          "ms": 31974.900004148483
+        },
+        "file.close": {
+          "calls": 10000,
+          "ms": 43628.500000834465
+        },
+        "file.write": {
+          "calls": 9000,
+          "ms": 21222.100006341934
+        },
+        "file.getFile": {
+          "calls": 10000,
+          "ms": 8486.199999928474
+        }
+      },
+      "destinationSaveMs": 287700.10000002384,
+      "destinationFinalVerifyMs": 42249.699999928474,
+      "destination": {
+        "verified": true,
+        "checkedFiles": 10000,
+        "checkedBytes": 10485760,
+        "filesWritten": 10000,
+        "directoriesVerified": 100,
+        "independentAuditMs": 32670
+      },
+      "verified": true,
+      "bytes": 11934164,
+      "prepareMs": 8547.399999976158,
+      "sourceReadMs": 7210.900000452995,
+      "encodeMs": 273.6999992132187,
+      "acceptMs": 276.700000166893,
+      "transferMs": 7762.100000023842,
+      "verifyMs": 261.2999999523163,
+      "transferMBps": 1.5374916581805624,
+      "counts": {
+        "payloadWrites": 195,
+        "payloadFlushes": 7,
+        "journalCommits": 7,
+        "ackGroups": 7
+      },
+      "peakJsHeap": 59670053,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+      "context": "temporary persistent profile",
+      "mainThreadTaskSeconds": 60.974865,
+      "mainThreadScriptSeconds": 0.163125,
+      "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-pBymla",
+      "profilePreserved": true,
+      "browserVersion": "154.0.4258.53",
+      "browserChannel": "msedge"
+    }
+  ]
+}

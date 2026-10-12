@@ -1,0 +1,1175 @@
+{
+  "recordedAt": "2026-10-13T16:31:46.079Z",
+  "releaseStatus": "NOT READY",
+  "configuration": {
+    "QRFT_BENCH_MIB": "10",
+    "QRFT_BENCH_BATCHES": "32",
+    "QRFT_BENCH_FILES": "10000",
+    "QRFT_BENCH_PERSISTENT": "1",
+    "QRFT_BENCH_SAVE_TREE": "1",
+    "QRFT_BENCH_KEEP_PROFILE": "1"
+  },
+  "trialOrder": [
+    "before-1",
+    "after-1",
+    "before-2",
+    "after-2",
+    "before-3",
+    "after-3"
+  ],
+  "sourceDifferences": [
+    "src/lib/large-destination.ts"
+  ],
+  "identicalHarnessSha256": "5f17bce5dc6190d8160d332054ac6ccb762792a5d0ce2bdcb06282326640c007",
+  "sourceInputs": [
+    {
+      "label": "before",
+      "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs",
+      "source": [
+        {
+          "path": "package-lock.json",
+          "sha256": "419c34395598a1eb8ab1a1d4e78387ff2b851fc91258d322ce82a52e93f6c485"
+        },
+        {
+          "path": "src/App.tsx",
+          "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
+        },
+        {
+          "path": "src/components/ConnectionDiagnostics.tsx",
+          "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+        },
+        {
+          "path": "src/components/LargeReceiver.tsx",
+          "sha256": "c74aa2aa64c8361a95d3e111cb68b4eea9aed038a93888431f742d18ae65aaae"
+        },
+        {
+          "path": "src/components/LargeSender.tsx",
+          "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+        },
+        {
+          "path": "src/components/PairingReadiness.tsx",
+          "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
+        },
+        {
+          "path": "src/components/Receiver.tsx",
+          "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+        },
+        {
+          "path": "src/components/Sender.tsx",
+          "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+        },
+        {
+          "path": "src/components/StorageReadiness.tsx",
+          "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
+        },
+        {
+          "path": "src/components/TransferMetrics.tsx",
+          "sha256": "4677d22a36c655156236fa1357e72a3cccdd9208a4ce2544e3e3dba1339d25b1"
+        },
+        {
+          "path": "src/components/TransferProblem.tsx",
+          "sha256": "656eb3a36342bb4f1d5f5c6783aa177bfbc45355e19253885f9bf0cbced6dcd8"
+        },
+        {
+          "path": "src/components/TransferWakeLock.tsx",
+          "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+        },
+        {
+          "path": "src/components/VerifyDevice.tsx",
+          "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+        },
+        {
+          "path": "src/components/WebRtcReceiver.tsx",
+          "sha256": "fb3cd8fc32b54c765e322adce520e4142c135dfb5e15a385e50d616b750ddcba"
+        },
+        {
+          "path": "src/components/WebRtcSender.tsx",
+          "sha256": "3d650829fa6f753e8d530d62cbaab73dd9cb6b86c336e1d0654202987f18fa2a"
+        },
+        {
+          "path": "src/components/WebRtcSignalQr.tsx",
+          "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+        },
+        {
+          "path": "src/lib/archive.ts",
+          "sha256": "ec7b22a082a6e658d24ceaae7977b65ec233ebc2cef54e1862a5d5c019435b40"
+        },
+        {
+          "path": "src/lib/block-store-worker-protocol.ts",
+          "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+        },
+        {
+          "path": "src/lib/block-store.ts",
+          "sha256": "7afcda4f452264133dca46bc64b5745becb381e912b118f38bc7892f15f28ef8"
+        },
+        {
+          "path": "src/lib/block-store.worker.ts",
+          "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+        },
+        {
+          "path": "src/lib/connection-path.ts",
+          "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+        },
+        {
+          "path": "src/lib/connection.ts",
+          "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+        },
+        {
+          "path": "src/lib/format.ts",
+          "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+        },
+        {
+          "path": "src/lib/large-connection.ts",
+          "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+        },
+        {
+          "path": "src/lib/large-destination.ts",
+          "sha256": "663d8a1f488dbf74073fde9f68263c7f7e53263ba1592602366e502ba0d0360d"
+        },
+        {
+          "path": "src/lib/large-receiver-resume.ts",
+          "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+        },
+        {
+          "path": "src/lib/large-receiver.ts",
+          "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+        },
+        {
+          "path": "src/lib/large-sender-playback.ts",
+          "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+        },
+        {
+          "path": "src/lib/large-sender-resume.ts",
+          "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+        },
+        {
+          "path": "src/lib/large-transfer.ts",
+          "sha256": "d313953bf225d4f480a25cd0158466772959c2cb3ff6f0280177457cf5cc3bcc"
+        },
+        {
+          "path": "src/lib/optical-schedule.ts",
+          "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+        },
+        {
+          "path": "src/lib/protocol.ts",
+          "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+        },
+        {
+          "path": "src/lib/resume.ts",
+          "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+        },
+        {
+          "path": "src/lib/screen-wake-lock.ts",
+          "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+        },
+        {
+          "path": "src/lib/selected-files.ts",
+          "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+        },
+        {
+          "path": "src/lib/sender-resume.ts",
+          "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+        },
+        {
+          "path": "src/lib/stream-protocol.ts",
+          "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+        },
+        {
+          "path": "src/lib/transfer-problem.ts",
+          "sha256": "31407c8e2efb9ddfd6432fbc6cec2554373831d62ac87a62ed8eb0211e6f22ae"
+        },
+        {
+          "path": "src/lib/transfer-rate.ts",
+          "sha256": "6fb0d18190c2f640f3f1bebb2661f98ad13a88d0abbefff575a4d67b5b993071"
+        },
+        {
+          "path": "src/lib/transfer.ts",
+          "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+        },
+        {
+          "path": "src/lib/use-pairing-readiness.ts",
+          "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
+        },
+        {
+          "path": "src/lib/use-transfer-rate.ts",
+          "sha256": "8ddb5042d0ab91350190f428f2a91d104e3dd85a75f736cd1a59c82ea89ec2c0"
+        },
+        {
+          "path": "src/lib/webrtc-authorization.ts",
+          "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+        },
+        {
+          "path": "src/lib/webrtc-control-flow.ts",
+          "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+        },
+        {
+          "path": "src/lib/webrtc-peer-health.ts",
+          "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+        },
+        {
+          "path": "src/lib/webrtc-protocol.ts",
+          "sha256": "cb7577d277a51c3fe7b15da68ad0e47bf1232d4f55092ff8b39ca67adf1aa267"
+        },
+        {
+          "path": "src/lib/webrtc-receive-queue.ts",
+          "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+        },
+        {
+          "path": "src/lib/webrtc-rendezvous.ts",
+          "sha256": "f02bc05fb6c37f52edb3b36a4fd08a1aad3ca1e3e5ae417af02ed4f7205dfa8d"
+        },
+        {
+          "path": "src/lib/webrtc-sender-resume.ts",
+          "sha256": "1a6920253bfe88279ae301c5cf631400afeb03d885eb73303f07c2b7dd594167"
+        },
+        {
+          "path": "src/lib/webrtc-signaling.ts",
+          "sha256": "7b69af782ffc6f4b3d05fabbb2e3a51c8dbe10cbee94e947eef149d11c24bd33"
+        },
+        {
+          "path": "src/lib/webrtc-transfer.ts",
+          "sha256": "2aa88029d7892238aa3af9264db511818b545a3847d8865fc98648a211752013"
+        },
+        {
+          "path": "src/main.tsx",
+          "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+        },
+        {
+          "path": "src/styles.css",
+          "sha256": "c5f1051b0fa98de99ac70978df61f98b67bd3f214b6ae27a428de57e2e4fbb11"
+        },
+        {
+          "path": "src/vite-env.d.ts",
+          "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+        }
+      ],
+      "originalBenchmarkSha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431",
+      "harnessSha256": "5f17bce5dc6190d8160d332054ac6ccb762792a5d0ce2bdcb06282326640c007"
+    },
+    {
+      "label": "after",
+      "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN",
+      "source": [
+        {
+          "path": "package-lock.json",
+          "sha256": "419c34395598a1eb8ab1a1d4e78387ff2b851fc91258d322ce82a52e93f6c485"
+        },
+        {
+          "path": "src/App.tsx",
+          "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
+        },
+        {
+          "path": "src/components/ConnectionDiagnostics.tsx",
+          "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+        },
+        {
+          "path": "src/components/LargeReceiver.tsx",
+          "sha256": "c74aa2aa64c8361a95d3e111cb68b4eea9aed038a93888431f742d18ae65aaae"
+        },
+        {
+          "path": "src/components/LargeSender.tsx",
+          "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+        },
+        {
+          "path": "src/components/PairingReadiness.tsx",
+          "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
+        },
+        {
+          "path": "src/components/Receiver.tsx",
+          "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+        },
+        {
+          "path": "src/components/Sender.tsx",
+          "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+        },
+        {
+          "path": "src/components/StorageReadiness.tsx",
+          "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
+        },
+        {
+          "path": "src/components/TransferMetrics.tsx",
+          "sha256": "4677d22a36c655156236fa1357e72a3cccdd9208a4ce2544e3e3dba1339d25b1"
+        },
+        {
+          "path": "src/components/TransferProblem.tsx",
+          "sha256": "656eb3a36342bb4f1d5f5c6783aa177bfbc45355e19253885f9bf0cbced6dcd8"
+        },
+        {
+          "path": "src/components/TransferWakeLock.tsx",
+          "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+        },
+        {
+          "path": "src/components/VerifyDevice.tsx",
+          "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+        },
+        {
+          "path": "src/components/WebRtcReceiver.tsx",
+          "sha256": "fb3cd8fc32b54c765e322adce520e4142c135dfb5e15a385e50d616b750ddcba"
+        },
+        {
+          "path": "src/components/WebRtcSender.tsx",
+          "sha256": "3d650829fa6f753e8d530d62cbaab73dd9cb6b86c336e1d0654202987f18fa2a"
+        },
+        {
+          "path": "src/components/WebRtcSignalQr.tsx",
+          "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+        },
+        {
+          "path": "src/lib/archive.ts",
+          "sha256": "ec7b22a082a6e658d24ceaae7977b65ec233ebc2cef54e1862a5d5c019435b40"
+        },
+        {
+          "path": "src/lib/block-store-worker-protocol.ts",
+          "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+        },
+        {
+          "path": "src/lib/block-store.ts",
+          "sha256": "7afcda4f452264133dca46bc64b5745becb381e912b118f38bc7892f15f28ef8"
+        },
+        {
+          "path": "src/lib/block-store.worker.ts",
+          "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+        },
+        {
+          "path": "src/lib/connection-path.ts",
+          "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+        },
+        {
+          "path": "src/lib/connection.ts",
+          "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+        },
+        {
+          "path": "src/lib/format.ts",
+          "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+        },
+        {
+          "path": "src/lib/large-connection.ts",
+          "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+        },
+        {
+          "path": "src/lib/large-destination.ts",
+          "sha256": "9026236beb6e1924886e77e7a224321ff85f2dba02dff769f965791d4e2d774d"
+        },
+        {
+          "path": "src/lib/large-receiver-resume.ts",
+          "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+        },
+        {
+          "path": "src/lib/large-receiver.ts",
+          "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+        },
+        {
+          "path": "src/lib/large-sender-playback.ts",
+          "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+        },
+        {
+          "path": "src/lib/large-sender-resume.ts",
+          "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+        },
+        {
+          "path": "src/lib/large-transfer.ts",
+          "sha256": "d313953bf225d4f480a25cd0158466772959c2cb3ff6f0280177457cf5cc3bcc"
+        },
+        {
+          "path": "src/lib/optical-schedule.ts",
+          "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+        },
+        {
+          "path": "src/lib/protocol.ts",
+          "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+        },
+        {
+          "path": "src/lib/resume.ts",
+          "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+        },
+        {
+          "path": "src/lib/screen-wake-lock.ts",
+          "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+        },
+        {
+          "path": "src/lib/selected-files.ts",
+          "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+        },
+        {
+          "path": "src/lib/sender-resume.ts",
+          "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+        },
+        {
+          "path": "src/lib/stream-protocol.ts",
+          "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+        },
+        {
+          "path": "src/lib/transfer-problem.ts",
+          "sha256": "31407c8e2efb9ddfd6432fbc6cec2554373831d62ac87a62ed8eb0211e6f22ae"
+        },
+        {
+          "path": "src/lib/transfer-rate.ts",
+          "sha256": "6fb0d18190c2f640f3f1bebb2661f98ad13a88d0abbefff575a4d67b5b993071"
+        },
+        {
+          "path": "src/lib/transfer.ts",
+          "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+        },
+        {
+          "path": "src/lib/use-pairing-readiness.ts",
+          "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
+        },
+        {
+          "path": "src/lib/use-transfer-rate.ts",
+          "sha256": "8ddb5042d0ab91350190f428f2a91d104e3dd85a75f736cd1a59c82ea89ec2c0"
+        },
+        {
+          "path": "src/lib/webrtc-authorization.ts",
+          "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+        },
+        {
+          "path": "src/lib/webrtc-control-flow.ts",
+          "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+        },
+        {
+          "path": "src/lib/webrtc-peer-health.ts",
+          "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+        },
+        {
+          "path": "src/lib/webrtc-protocol.ts",
+          "sha256": "cb7577d277a51c3fe7b15da68ad0e47bf1232d4f55092ff8b39ca67adf1aa267"
+        },
+        {
+          "path": "src/lib/webrtc-receive-queue.ts",
+          "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+        },
+        {
+          "path": "src/lib/webrtc-rendezvous.ts",
+          "sha256": "f02bc05fb6c37f52edb3b36a4fd08a1aad3ca1e3e5ae417af02ed4f7205dfa8d"
+        },
+        {
+          "path": "src/lib/webrtc-sender-resume.ts",
+          "sha256": "1a6920253bfe88279ae301c5cf631400afeb03d885eb73303f07c2b7dd594167"
+        },
+        {
+          "path": "src/lib/webrtc-signaling.ts",
+          "sha256": "7b69af782ffc6f4b3d05fabbb2e3a51c8dbe10cbee94e947eef149d11c24bd33"
+        },
+        {
+          "path": "src/lib/webrtc-transfer.ts",
+          "sha256": "2aa88029d7892238aa3af9264db511818b545a3847d8865fc98648a211752013"
+        },
+        {
+          "path": "src/main.tsx",
+          "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+        },
+        {
+          "path": "src/styles.css",
+          "sha256": "c5f1051b0fa98de99ac70978df61f98b67bd3f214b6ae27a428de57e2e4fbb11"
+        },
+        {
+          "path": "src/vite-env.d.ts",
+          "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+        }
+      ],
+      "originalBenchmarkSha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431",
+      "harnessSha256": "5f17bce5dc6190d8160d332054ac6ccb762792a5d0ce2bdcb06282326640c007"
+    }
+  ],
+  "browserVersion": "154.0.4258.53",
+  "trials": [
+    {
+      "trial": "before-1",
+      "label": "before",
+      "exitCode": 0,
+      "resultPath": "many-file-matched-before-1-2026-10-13.json",
+      "resultSha256": "44831594cd0990b8126fbb8451fc6505cec0fd675eb6a8c54950ff50c515e0e6",
+      "logPath": "many-file-matched-before-1-2026-10-13.log",
+      "logSha256": "ddad85557985fa4fa02256689aa7d6a9fb018fd39a7885823633e992b3c0fe67",
+      "preflight": {
+        "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs",
+        "trial": "before-1",
+        "recordedAt": "2026-10-13T15:47:07.8522147Z",
+        "freeCBytes": 5484503040,
+        "freeDBytes": 4548460544
+      },
+      "result": {
+        "mib": 10,
+        "batchBlocks": 32,
+        "fileCount": 10000,
+        "emptyFiles": 1000,
+        "directoryCount": 100,
+        "metadataBytes": 1448388,
+        "quotaBefore": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "fixture": "file-index and offset pattern",
+        "destinationOperations": {
+          "directory.getDirectoryHandle": {
+            "calls": 20102,
+            "ms": 15682.699994444847
+          },
+          "journal.getFileHandle": {
+            "calls": 10002,
+            "ms": 12414.600006222725
+          },
+          "journal.createWritable": {
+            "calls": 10001,
+            "ms": 27367.299996852875
+          },
+          "journal.write": {
+            "calls": 10001,
+            "ms": 24369.100007534027
+          },
+          "journal.close": {
+            "calls": 10001,
+            "ms": 38230.399988889694
+          },
+          "file.getFileHandle": {
+            "calls": 20000,
+            "ms": 35351.700013160706
+          },
+          "file.createWritable": {
+            "calls": 10000,
+            "ms": 30730.900005102158
+          },
+          "file.close": {
+            "calls": 10000,
+            "ms": 43651.89999985695
+          },
+          "file.write": {
+            "calls": 9000,
+            "ms": 21469.39999949932
+          },
+          "file.getFile": {
+            "calls": 10000,
+            "ms": 8646.099993228912
+          }
+        },
+        "destinationSaveMs": 288763.39999997616,
+        "destinationFinalVerifyMs": 42067.199999928474,
+        "destination": {
+          "verified": true,
+          "checkedFiles": 10000,
+          "checkedBytes": 10485760,
+          "filesWritten": 10000,
+          "directoriesVerified": 100,
+          "independentAuditMs": 34129.700000047684
+        },
+        "verified": true,
+        "bytes": 11934164,
+        "prepareMs": 7908.599999904633,
+        "sourceReadMs": 7423.600000143051,
+        "encodeMs": 280.39999997615814,
+        "acceptMs": 173.89999985694885,
+        "transferMs": 7879.100000023842,
+        "verifyMs": 285.7999999523163,
+        "transferMBps": 1.514660811509422,
+        "counts": {
+          "payloadWrites": 195,
+          "payloadFlushes": 7,
+          "journalCommits": 7,
+          "ackGroups": 7
+        },
+        "peakJsHeap": 85599097,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+        "context": "temporary persistent profile",
+        "mainThreadTaskSeconds": 60.32374299999999,
+        "mainThreadScriptSeconds": 0.161764,
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-NSOlgj",
+        "profilePreserved": true,
+        "browserVersion": "154.0.4258.53",
+        "browserChannel": "msedge"
+      }
+    },
+    {
+      "trial": "after-1",
+      "label": "after",
+      "exitCode": 0,
+      "resultPath": "many-file-matched-after-1-2026-10-13.json",
+      "resultSha256": "750485087b570e4fc841858d1b611f89c94e4c0b8cf4cc3d932f99b02aff3cd7",
+      "logPath": "many-file-matched-after-1-2026-10-13.log",
+      "logSha256": "f5b2528b478e6619aced34eff07793880eb9a3732be0514f210dd231e652e856",
+      "preflight": {
+        "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN",
+        "trial": "after-1",
+        "recordedAt": "2026-10-13T15:53:35.3201770Z",
+        "freeCBytes": 5441900544,
+        "freeDBytes": 4548452352
+      },
+      "result": {
+        "mib": 10,
+        "batchBlocks": 32,
+        "fileCount": 10000,
+        "emptyFiles": 1000,
+        "directoryCount": 100,
+        "metadataBytes": 1448388,
+        "quotaBefore": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "fixture": "file-index and offset pattern",
+        "destinationOperations": {
+          "directory.getDirectoryHandle": {
+            "calls": 20102,
+            "ms": 25853.30000579357
+          },
+          "journal.getFileHandle": {
+            "calls": 10002,
+            "ms": 17816.099993944168
+          },
+          "journal.createWritable": {
+            "calls": 10001,
+            "ms": 27609.699995160103
+          },
+          "journal.write": {
+            "calls": 10001,
+            "ms": 24020.70001089573
+          },
+          "journal.close": {
+            "calls": 10001,
+            "ms": 38278.69999563694
+          },
+          "file.getFileHandle": {
+            "calls": 20000,
+            "ms": 85200.2999932766
+          },
+          "file.createWritable": {
+            "calls": 10000,
+            "ms": 100515.2000029087
+          },
+          "file.close": {
+            "calls": 10000,
+            "ms": 103959.89999389648
+          },
+          "file.write": {
+            "calls": 9000,
+            "ms": 100515.90000259876
+          },
+          "file.getFile": {
+            "calls": 10000,
+            "ms": 34408.79999899864
+          }
+        },
+        "destinationSaveMs": 260174.20000004768,
+        "destinationFinalVerifyMs": 34096,
+        "destination": {
+          "verified": true,
+          "checkedFiles": 10000,
+          "checkedBytes": 10485760,
+          "filesWritten": 10000,
+          "directoriesVerified": 100,
+          "independentAuditMs": 32448.600000023842
+        },
+        "verified": true,
+        "bytes": 11934164,
+        "prepareMs": 8545.299999952316,
+        "sourceReadMs": 7560.300000071526,
+        "encodeMs": 289.60000002384186,
+        "acceptMs": 174.299999833107,
+        "transferMs": 8025.700000047684,
+        "verifyMs": 298.09999990463257,
+        "transferMBps": 1.4869935332655213,
+        "counts": {
+          "payloadWrites": 195,
+          "payloadFlushes": 7,
+          "journalCommits": 7,
+          "ackGroups": 7
+        },
+        "peakJsHeap": 85110262,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+        "context": "temporary persistent profile",
+        "mainThreadTaskSeconds": 59.736618,
+        "mainThreadScriptSeconds": 0.149763,
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\many-files-bench-profile-8J2K48",
+        "profilePreserved": true,
+        "browserVersion": "154.0.4258.53",
+        "browserChannel": "msedge"
+      }
+    },
+    {
+      "trial": "before-2",
+      "label": "before",
+      "exitCode": 0,
+      "resultPath": "many-file-matched-before-2-2026-10-13.json",
+      "resultSha256": "2d0b7fecb9f7ba0506841f08422d2627dc3de5a39e80de92cc228f1d6f457271",
+      "logPath": "many-file-matched-before-2-2026-10-13.log",
+      "logSha256": "c6867af6ffb25c967ed3a79a90407d2cc7ad2944ec9f3c27254160619edb4f1f",
+      "preflight": {
+        "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs",
+        "trial": "before-2",
+        "recordedAt": "2026-10-13T15:59:34.6840364Z",
+        "freeCBytes": 5415702528,
+        "freeDBytes": 4548440064
+      },
+      "result": {
+        "mib": 10,
+        "batchBlocks": 32,
+        "fileCount": 10000,
+        "emptyFiles": 1000,
+        "directoryCount": 100,
+        "metadataBytes": 1448388,
+        "quotaBefore": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "fixture": "file-index and offset pattern",
+        "destinationOperations": {
+          "directory.getDirectoryHandle": {
+            "calls": 20102,
+            "ms": 15620.399996757507
+          },
+          "journal.getFileHandle": {
+            "calls": 10002,
+            "ms": 12232.899997472763
+          },
+          "journal.createWritable": {
+            "calls": 10001,
+            "ms": 27216.200003147125
+          },
+          "journal.write": {
+            "calls": 10001,
+            "ms": 24033.600002884865
+          },
+          "journal.close": {
+            "calls": 10001,
+            "ms": 37593.600001335144
+          },
+          "file.getFileHandle": {
+            "calls": 20000,
+            "ms": 34992.19999170303
+          },
+          "file.createWritable": {
+            "calls": 10000,
+            "ms": 31974.900004148483
+          },
+          "file.close": {
+            "calls": 10000,
+            "ms": 43628.500000834465
+          },
+          "file.write": {
+            "calls": 9000,
+            "ms": 21222.100006341934
+          },
+          "file.getFile": {
+            "calls": 10000,
+            "ms": 8486.199999928474
+          }
+        },
+        "destinationSaveMs": 287700.10000002384,
+        "destinationFinalVerifyMs": 42249.699999928474,
+        "destination": {
+          "verified": true,
+          "checkedFiles": 10000,
+          "checkedBytes": 10485760,
+          "filesWritten": 10000,
+          "directoriesVerified": 100,
+          "independentAuditMs": 32670
+        },
+        "verified": true,
+        "bytes": 11934164,
+        "prepareMs": 8547.399999976158,
+        "sourceReadMs": 7210.900000452995,
+        "encodeMs": 273.6999992132187,
+        "acceptMs": 276.700000166893,
+        "transferMs": 7762.100000023842,
+        "verifyMs": 261.2999999523163,
+        "transferMBps": 1.5374916581805624,
+        "counts": {
+          "payloadWrites": 195,
+          "payloadFlushes": 7,
+          "journalCommits": 7,
+          "ackGroups": 7
+        },
+        "peakJsHeap": 59670053,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+        "context": "temporary persistent profile",
+        "mainThreadTaskSeconds": 60.974865,
+        "mainThreadScriptSeconds": 0.163125,
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-pBymla",
+        "profilePreserved": true,
+        "browserVersion": "154.0.4258.53",
+        "browserChannel": "msedge"
+      }
+    },
+    {
+      "trial": "after-2",
+      "label": "after",
+      "exitCode": 0,
+      "resultPath": "many-file-matched-after-2-2026-10-13.json",
+      "resultSha256": "433e70a8c479f56c42722d9613c4e2cb7c91dab586d51885479a3b23c3a0dc6e",
+      "logPath": "many-file-matched-after-2-2026-10-13.log",
+      "logSha256": "55f2e224c97652aae4db748807198c9a07997782e68ba0f1ab0bf26c237da57e",
+      "preflight": {
+        "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN",
+        "trial": "after-2",
+        "recordedAt": "2026-10-13T16:05:51.6739271Z",
+        "freeCBytes": 5375123456,
+        "freeDBytes": 4548431872
+      },
+      "result": {
+        "mib": 10,
+        "batchBlocks": 32,
+        "fileCount": 10000,
+        "emptyFiles": 1000,
+        "directoryCount": 100,
+        "metadataBytes": 1448388,
+        "quotaBefore": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "fixture": "file-index and offset pattern",
+        "destinationOperations": {
+          "directory.getDirectoryHandle": {
+            "calls": 20102,
+            "ms": 24792.80000448227
+          },
+          "journal.getFileHandle": {
+            "calls": 10002,
+            "ms": 17685.299995660782
+          },
+          "journal.createWritable": {
+            "calls": 10001,
+            "ms": 27313.79999101162
+          },
+          "journal.write": {
+            "calls": 10001,
+            "ms": 24272.200001001358
+          },
+          "journal.close": {
+            "calls": 10001,
+            "ms": 37547.80000412464
+          },
+          "file.getFileHandle": {
+            "calls": 20000,
+            "ms": 84310.19998669624
+          },
+          "file.createWritable": {
+            "calls": 10000,
+            "ms": 97291.19999957085
+          },
+          "file.close": {
+            "calls": 10000,
+            "ms": 102781.50000047684
+          },
+          "file.write": {
+            "calls": 9000,
+            "ms": 99071.09999907017
+          },
+          "file.getFile": {
+            "calls": 10000,
+            "ms": 33942.00000858307
+          }
+        },
+        "destinationSaveMs": 255711.79999995232,
+        "destinationFinalVerifyMs": 33215.5,
+        "destination": {
+          "verified": true,
+          "checkedFiles": 10000,
+          "checkedBytes": 10485760,
+          "filesWritten": 10000,
+          "directoriesVerified": 100,
+          "independentAuditMs": 34890.200000047684
+        },
+        "verified": true,
+        "bytes": 11934164,
+        "prepareMs": 8515.300000071526,
+        "sourceReadMs": 7637.299999594688,
+        "encodeMs": 285.00000059604645,
+        "acceptMs": 206.30000007152557,
+        "transferMs": 8131.199999928474,
+        "verifyMs": 243.40000009536743,
+        "transferMBps": 1.467700216463127,
+        "counts": {
+          "payloadWrites": 195,
+          "payloadFlushes": 7,
+          "journalCommits": 7,
+          "ackGroups": 7
+        },
+        "peakJsHeap": 85535472,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+        "context": "temporary persistent profile",
+        "mainThreadTaskSeconds": 59.380628,
+        "mainThreadScriptSeconds": 0.157186,
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\many-files-bench-profile-D8MlAh",
+        "profilePreserved": true,
+        "browserVersion": "154.0.4258.53",
+        "browserChannel": "msedge"
+      }
+    },
+    {
+      "trial": "before-3",
+      "label": "before",
+      "exitCode": 0,
+      "resultPath": "many-file-matched-before-3-2026-10-13.json",
+      "resultSha256": "03ed751642ec5df0868ba43e649c5fca8a0de2bcbac01d81a25905150e83b550",
+      "logPath": "many-file-matched-before-3-2026-10-13.log",
+      "logSha256": "2868c18612889b39111b905b917eaf0a974ec9553eee080e41a99cf9ca68cde2",
+      "preflight": {
+        "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs",
+        "trial": "before-3",
+        "recordedAt": "2026-10-13T16:11:51.5702403Z",
+        "freeCBytes": 5360926720,
+        "freeDBytes": 4548419584
+      },
+      "result": {
+        "mib": 10,
+        "batchBlocks": 32,
+        "fileCount": 10000,
+        "emptyFiles": 1000,
+        "directoryCount": 100,
+        "metadataBytes": 1448388,
+        "quotaBefore": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "fixture": "file-index and offset pattern",
+        "destinationOperations": {
+          "directory.getDirectoryHandle": {
+            "calls": 20102,
+            "ms": 15447.700003266335
+          },
+          "journal.getFileHandle": {
+            "calls": 10002,
+            "ms": 11928.800003051758
+          },
+          "journal.createWritable": {
+            "calls": 10001,
+            "ms": 26817.09999167919
+          },
+          "journal.write": {
+            "calls": 10001,
+            "ms": 23724.300008296967
+          },
+          "journal.close": {
+            "calls": 10001,
+            "ms": 37454.09999907017
+          },
+          "file.getFileHandle": {
+            "calls": 20000,
+            "ms": 34577.59999728203
+          },
+          "file.createWritable": {
+            "calls": 10000,
+            "ms": 32143.199997782707
+          },
+          "file.close": {
+            "calls": 10000,
+            "ms": 42784.20001363754
+          },
+          "file.write": {
+            "calls": 9000,
+            "ms": 21283.89998972416
+          },
+          "file.getFile": {
+            "calls": 10000,
+            "ms": 8283.699996709824
+          }
+        },
+        "destinationSaveMs": 284275.2000000477,
+        "destinationFinalVerifyMs": 40614,
+        "destination": {
+          "verified": true,
+          "checkedFiles": 10000,
+          "checkedBytes": 10485760,
+          "filesWritten": 10000,
+          "directoriesVerified": 100,
+          "independentAuditMs": 32752.5
+        },
+        "verified": true,
+        "bytes": 11934164,
+        "prepareMs": 8489.5,
+        "sourceReadMs": 7187.599999427795,
+        "encodeMs": 287.00000059604645,
+        "acceptMs": 177.20000004768372,
+        "transferMs": 7653.399999976158,
+        "verifyMs": 294,
+        "transferMBps": 1.5593284030675485,
+        "counts": {
+          "payloadWrites": 195,
+          "payloadFlushes": 7,
+          "journalCommits": 7,
+          "ackGroups": 7
+        },
+        "peakJsHeap": 71875665,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+        "context": "temporary persistent profile",
+        "mainThreadTaskSeconds": 60.469798999999995,
+        "mainThreadScriptSeconds": 0.164365,
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs\\many-files-bench-profile-JBBZDm",
+        "profilePreserved": true,
+        "browserVersion": "154.0.4258.53",
+        "browserChannel": "msedge"
+      }
+    },
+    {
+      "trial": "after-3",
+      "label": "after",
+      "exitCode": 0,
+      "resultPath": "many-file-matched-after-3-2026-10-13.json",
+      "resultSha256": "514737a12a68b404a6869ae78897516ec1ef5dea4d754c8ccec07eb6f2fc587d",
+      "logPath": "many-file-matched-after-3-2026-10-13.log",
+      "logSha256": "b4efa96a66ac519adce9dcd3380e340d0c65af69be34ef3309b6d821c00a1b8e",
+      "preflight": {
+        "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN",
+        "trial": "after-3",
+        "recordedAt": "2026-10-13T16:18:07.8307440Z",
+        "freeCBytes": 5330108416,
+        "freeDBytes": 4548411392
+      },
+      "result": {
+        "mib": 10,
+        "batchBlocks": 32,
+        "fileCount": 10000,
+        "emptyFiles": 1000,
+        "directoryCount": 100,
+        "metadataBytes": 1448388,
+        "quotaBefore": {
+          "quota": 10737418240,
+          "usage": 0,
+          "usageDetails": {}
+        },
+        "fixture": "file-index and offset pattern",
+        "destinationOperations": {
+          "directory.getDirectoryHandle": {
+            "calls": 20102,
+            "ms": 25462.599987983704
+          },
+          "journal.getFileHandle": {
+            "calls": 10002,
+            "ms": 17665.7000092268
+          },
+          "journal.createWritable": {
+            "calls": 10001,
+            "ms": 27243.29998922348
+          },
+          "journal.write": {
+            "calls": 10001,
+            "ms": 23981.30000257492
+          },
+          "journal.close": {
+            "calls": 10001,
+            "ms": 38109.80000829697
+          },
+          "file.getFileHandle": {
+            "calls": 20000,
+            "ms": 85421.60000705719
+          },
+          "file.createWritable": {
+            "calls": 10000,
+            "ms": 99953.59999370575
+          },
+          "file.close": {
+            "calls": 10000,
+            "ms": 103252.79999792576
+          },
+          "file.write": {
+            "calls": 9000,
+            "ms": 100565.10000169277
+          },
+          "file.getFile": {
+            "calls": 10000,
+            "ms": 33604.20000267029
+          }
+        },
+        "destinationSaveMs": 257805.70000004768,
+        "destinationFinalVerifyMs": 33558.10000002384,
+        "destination": {
+          "verified": true,
+          "checkedFiles": 10000,
+          "checkedBytes": 10485760,
+          "filesWritten": 10000,
+          "directoriesVerified": 100,
+          "independentAuditMs": 35391.5
+        },
+        "verified": true,
+        "bytes": 11934164,
+        "prepareMs": 7589.200000047684,
+        "sourceReadMs": 7465.299999237061,
+        "encodeMs": 298.50000071525574,
+        "acceptMs": 248.69999992847443,
+        "transferMs": 8013.600000023842,
+        "verifyMs": 288,
+        "transferMBps": 1.489238794045684,
+        "counts": {
+          "payloadWrites": 195,
+          "payloadFlushes": 7,
+          "journalCommits": 7,
+          "ackGroups": 7
+        },
+        "peakJsHeap": 71354198,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+        "context": "temporary persistent profile",
+        "mainThreadTaskSeconds": 59.177283,
+        "mainThreadScriptSeconds": 0.157603,
+        "profile": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN\\many-files-bench-profile-MneEH1",
+        "profilePreserved": true,
+        "browserVersion": "154.0.4258.53",
+        "browserChannel": "msedge"
+      }
+    }
+  ],
+  "before": {
+    "samplesMs": [
+      288763.39999997616,
+      287700.10000002384,
+      284275.2000000477
+    ],
+    "minMs": 284275.2000000477,
+    "maxMs": 288763.39999997616,
+    "meanMs": 286912.9000000159,
+    "medianMs": 287700.10000002384,
+    "sampleStddevMs": 2345.3672825058497
+  },
+  "after": {
+    "samplesMs": [
+      260174.20000004768,
+      255711.79999995232,
+      257805.70000004768
+    ],
+    "minMs": 255711.79999995232,
+    "maxMs": 260174.20000004768,
+    "meanMs": 257897.23333334923,
+    "medianMs": 257805.70000004768,
+    "sampleStddevMs": 2232.607713760246
+  },
+  "pairs": [
+    {
+      "index": 1,
+      "beforeMs": 288763.39999997616,
+      "afterMs": 260174.20000004768,
+      "reductionPercent": 9.900562190336737
+    },
+    {
+      "index": 2,
+      "beforeMs": 287700.10000002384,
+      "afterMs": 255711.79999995232,
+      "reductionPercent": 11.118626653264588
+    },
+    {
+      "index": 3,
+      "beforeMs": 284275.2000000477,
+      "afterMs": 257805.70000004768,
+      "reductionPercent": 9.311223771892715
+    }
+  ],
+  "meanSaveReductionPercent": 10.113057539993873,
+  "saveTimeRangesOverlap": false,
+  "independentAudit": {
+    "passedTrials": 6,
+    "filesPerTrial": 10000,
+    "emptyFilesPerTrial": 1000,
+    "directoriesPerTrial": 100,
+    "bytesPerTrial": 10485760,
+    "scope": "Separate post-save walk validates exact path/type/size sets and every byte against independent file-index/offset patterns. Library whole-stream and file hashes also pass."
+  },
+  "limitations": [
+    "Six single-host instrumented trials of 10 MiB, not physical Wi-Fi or native user-picked folders.",
+    "Profiles retained, but the original harness deletes the benchmark destination and received transfer copy after successful audit; saved data cannot be reinspected there.",
+    "API wall times overlap under concurrency, so their sums are not elapsed time or CPU time.",
+    "peakJsHeap is sampled after preparation and at receive batches, not continuously during destination save/audit; no total memory or 5 GiB full-save claim.",
+    "Alternating trials reduce ordering confounds; stage paths differ and underlying historical timing variation is not established.",
+    "Stable target-hardware throughput, 50–100 GB+ resource acceptance and all 42 physical cases remain open."
+  ]
+}

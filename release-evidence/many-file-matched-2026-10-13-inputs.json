@@ -1,0 +1,471 @@
+{
+  "recordedAt": "2026-10-13T15:46:17.802Z",
+  "stages": [
+    {
+      "label": "before",
+      "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-clean-2026-10-13-6HF2Qs",
+      "source": [
+        {
+          "path": "package-lock.json",
+          "sha256": "419c34395598a1eb8ab1a1d4e78387ff2b851fc91258d322ce82a52e93f6c485"
+        },
+        {
+          "path": "src/App.tsx",
+          "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
+        },
+        {
+          "path": "src/components/ConnectionDiagnostics.tsx",
+          "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+        },
+        {
+          "path": "src/components/LargeReceiver.tsx",
+          "sha256": "c74aa2aa64c8361a95d3e111cb68b4eea9aed038a93888431f742d18ae65aaae"
+        },
+        {
+          "path": "src/components/LargeSender.tsx",
+          "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+        },
+        {
+          "path": "src/components/PairingReadiness.tsx",
+          "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
+        },
+        {
+          "path": "src/components/Receiver.tsx",
+          "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+        },
+        {
+          "path": "src/components/Sender.tsx",
+          "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+        },
+        {
+          "path": "src/components/StorageReadiness.tsx",
+          "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
+        },
+        {
+          "path": "src/components/TransferMetrics.tsx",
+          "sha256": "4677d22a36c655156236fa1357e72a3cccdd9208a4ce2544e3e3dba1339d25b1"
+        },
+        {
+          "path": "src/components/TransferProblem.tsx",
+          "sha256": "656eb3a36342bb4f1d5f5c6783aa177bfbc45355e19253885f9bf0cbced6dcd8"
+        },
+        {
+          "path": "src/components/TransferWakeLock.tsx",
+          "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+        },
+        {
+          "path": "src/components/VerifyDevice.tsx",
+          "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+        },
+        {
+          "path": "src/components/WebRtcReceiver.tsx",
+          "sha256": "fb3cd8fc32b54c765e322adce520e4142c135dfb5e15a385e50d616b750ddcba"
+        },
+        {
+          "path": "src/components/WebRtcSender.tsx",
+          "sha256": "3d650829fa6f753e8d530d62cbaab73dd9cb6b86c336e1d0654202987f18fa2a"
+        },
+        {
+          "path": "src/components/WebRtcSignalQr.tsx",
+          "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+        },
+        {
+          "path": "src/lib/archive.ts",
+          "sha256": "ec7b22a082a6e658d24ceaae7977b65ec233ebc2cef54e1862a5d5c019435b40"
+        },
+        {
+          "path": "src/lib/block-store-worker-protocol.ts",
+          "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+        },
+        {
+          "path": "src/lib/block-store.ts",
+          "sha256": "7afcda4f452264133dca46bc64b5745becb381e912b118f38bc7892f15f28ef8"
+        },
+        {
+          "path": "src/lib/block-store.worker.ts",
+          "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+        },
+        {
+          "path": "src/lib/connection-path.ts",
+          "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+        },
+        {
+          "path": "src/lib/connection.ts",
+          "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+        },
+        {
+          "path": "src/lib/format.ts",
+          "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+        },
+        {
+          "path": "src/lib/large-connection.ts",
+          "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+        },
+        {
+          "path": "src/lib/large-destination.ts",
+          "sha256": "663d8a1f488dbf74073fde9f68263c7f7e53263ba1592602366e502ba0d0360d"
+        },
+        {
+          "path": "src/lib/large-receiver-resume.ts",
+          "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+        },
+        {
+          "path": "src/lib/large-receiver.ts",
+          "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+        },
+        {
+          "path": "src/lib/large-sender-playback.ts",
+          "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+        },
+        {
+          "path": "src/lib/large-sender-resume.ts",
+          "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+        },
+        {
+          "path": "src/lib/large-transfer.ts",
+          "sha256": "d313953bf225d4f480a25cd0158466772959c2cb3ff6f0280177457cf5cc3bcc"
+        },
+        {
+          "path": "src/lib/optical-schedule.ts",
+          "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+        },
+        {
+          "path": "src/lib/protocol.ts",
+          "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+        },
+        {
+          "path": "src/lib/resume.ts",
+          "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+        },
+        {
+          "path": "src/lib/screen-wake-lock.ts",
+          "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+        },
+        {
+          "path": "src/lib/selected-files.ts",
+          "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+        },
+        {
+          "path": "src/lib/sender-resume.ts",
+          "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+        },
+        {
+          "path": "src/lib/stream-protocol.ts",
+          "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+        },
+        {
+          "path": "src/lib/transfer-problem.ts",
+          "sha256": "31407c8e2efb9ddfd6432fbc6cec2554373831d62ac87a62ed8eb0211e6f22ae"
+        },
+        {
+          "path": "src/lib/transfer-rate.ts",
+          "sha256": "6fb0d18190c2f640f3f1bebb2661f98ad13a88d0abbefff575a4d67b5b993071"
+        },
+        {
+          "path": "src/lib/transfer.ts",
+          "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+        },
+        {
+          "path": "src/lib/use-pairing-readiness.ts",
+          "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
+        },
+        {
+          "path": "src/lib/use-transfer-rate.ts",
+          "sha256": "8ddb5042d0ab91350190f428f2a91d104e3dd85a75f736cd1a59c82ea89ec2c0"
+        },
+        {
+          "path": "src/lib/webrtc-authorization.ts",
+          "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+        },
+        {
+          "path": "src/lib/webrtc-control-flow.ts",
+          "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+        },
+        {
+          "path": "src/lib/webrtc-peer-health.ts",
+          "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+        },
+        {
+          "path": "src/lib/webrtc-protocol.ts",
+          "sha256": "cb7577d277a51c3fe7b15da68ad0e47bf1232d4f55092ff8b39ca67adf1aa267"
+        },
+        {
+          "path": "src/lib/webrtc-receive-queue.ts",
+          "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+        },
+        {
+          "path": "src/lib/webrtc-rendezvous.ts",
+          "sha256": "f02bc05fb6c37f52edb3b36a4fd08a1aad3ca1e3e5ae417af02ed4f7205dfa8d"
+        },
+        {
+          "path": "src/lib/webrtc-sender-resume.ts",
+          "sha256": "1a6920253bfe88279ae301c5cf631400afeb03d885eb73303f07c2b7dd594167"
+        },
+        {
+          "path": "src/lib/webrtc-signaling.ts",
+          "sha256": "7b69af782ffc6f4b3d05fabbb2e3a51c8dbe10cbee94e947eef149d11c24bd33"
+        },
+        {
+          "path": "src/lib/webrtc-transfer.ts",
+          "sha256": "2aa88029d7892238aa3af9264db511818b545a3847d8865fc98648a211752013"
+        },
+        {
+          "path": "src/main.tsx",
+          "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+        },
+        {
+          "path": "src/styles.css",
+          "sha256": "c5f1051b0fa98de99ac70978df61f98b67bd3f214b6ae27a428de57e2e4fbb11"
+        },
+        {
+          "path": "src/vite-env.d.ts",
+          "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+        }
+      ],
+      "originalBenchmarkSha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431",
+      "harnessSha256": "5f17bce5dc6190d8160d332054ac6ccb762792a5d0ce2bdcb06282326640c007"
+    },
+    {
+      "label": "after",
+      "stagePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-small-write-2026-10-13-LD4HbN",
+      "source": [
+        {
+          "path": "package-lock.json",
+          "sha256": "419c34395598a1eb8ab1a1d4e78387ff2b851fc91258d322ce82a52e93f6c485"
+        },
+        {
+          "path": "src/App.tsx",
+          "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
+        },
+        {
+          "path": "src/components/ConnectionDiagnostics.tsx",
+          "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+        },
+        {
+          "path": "src/components/LargeReceiver.tsx",
+          "sha256": "c74aa2aa64c8361a95d3e111cb68b4eea9aed038a93888431f742d18ae65aaae"
+        },
+        {
+          "path": "src/components/LargeSender.tsx",
+          "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+        },
+        {
+          "path": "src/components/PairingReadiness.tsx",
+          "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
+        },
+        {
+          "path": "src/components/Receiver.tsx",
+          "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+        },
+        {
+          "path": "src/components/Sender.tsx",
+          "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+        },
+        {
+          "path": "src/components/StorageReadiness.tsx",
+          "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
+        },
+        {
+          "path": "src/components/TransferMetrics.tsx",
+          "sha256": "4677d22a36c655156236fa1357e72a3cccdd9208a4ce2544e3e3dba1339d25b1"
+        },
+        {
+          "path": "src/components/TransferProblem.tsx",
+          "sha256": "656eb3a36342bb4f1d5f5c6783aa177bfbc45355e19253885f9bf0cbced6dcd8"
+        },
+        {
+          "path": "src/components/TransferWakeLock.tsx",
+          "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+        },
+        {
+          "path": "src/components/VerifyDevice.tsx",
+          "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+        },
+        {
+          "path": "src/components/WebRtcReceiver.tsx",
+          "sha256": "fb3cd8fc32b54c765e322adce520e4142c135dfb5e15a385e50d616b750ddcba"
+        },
+        {
+          "path": "src/components/WebRtcSender.tsx",
+          "sha256": "3d650829fa6f753e8d530d62cbaab73dd9cb6b86c336e1d0654202987f18fa2a"
+        },
+        {
+          "path": "src/components/WebRtcSignalQr.tsx",
+          "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+        },
+        {
+          "path": "src/lib/archive.ts",
+          "sha256": "ec7b22a082a6e658d24ceaae7977b65ec233ebc2cef54e1862a5d5c019435b40"
+        },
+        {
+          "path": "src/lib/block-store-worker-protocol.ts",
+          "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+        },
+        {
+          "path": "src/lib/block-store.ts",
+          "sha256": "7afcda4f452264133dca46bc64b5745becb381e912b118f38bc7892f15f28ef8"
+        },
+        {
+          "path": "src/lib/block-store.worker.ts",
+          "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+        },
+        {
+          "path": "src/lib/connection-path.ts",
+          "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+        },
+        {
+          "path": "src/lib/connection.ts",
+          "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+        },
+        {
+          "path": "src/lib/format.ts",
+          "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+        },
+        {
+          "path": "src/lib/large-connection.ts",
+          "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+        },
+        {
+          "path": "src/lib/large-destination.ts",
+          "sha256": "9026236beb6e1924886e77e7a224321ff85f2dba02dff769f965791d4e2d774d"
+        },
+        {
+          "path": "src/lib/large-receiver-resume.ts",
+          "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+        },
+        {
+          "path": "src/lib/large-receiver.ts",
+          "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+        },
+        {
+          "path": "src/lib/large-sender-playback.ts",
+          "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+        },
+        {
+          "path": "src/lib/large-sender-resume.ts",
+          "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+        },
+        {
+          "path": "src/lib/large-transfer.ts",
+          "sha256": "d313953bf225d4f480a25cd0158466772959c2cb3ff6f0280177457cf5cc3bcc"
+        },
+        {
+          "path": "src/lib/optical-schedule.ts",
+          "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+        },
+        {
+          "path": "src/lib/protocol.ts",
+          "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+        },
+        {
+          "path": "src/lib/resume.ts",
+          "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+        },
+        {
+          "path": "src/lib/screen-wake-lock.ts",
+          "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+        },
+        {
+          "path": "src/lib/selected-files.ts",
+          "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+        },
+        {
+          "path": "src/lib/sender-resume.ts",
+          "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+        },
+        {
+          "path": "src/lib/stream-protocol.ts",
+          "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+        },
+        {
+          "path": "src/lib/transfer-problem.ts",
+          "sha256": "31407c8e2efb9ddfd6432fbc6cec2554373831d62ac87a62ed8eb0211e6f22ae"
+        },
+        {
+          "path": "src/lib/transfer-rate.ts",
+          "sha256": "6fb0d18190c2f640f3f1bebb2661f98ad13a88d0abbefff575a4d67b5b993071"
+        },
+        {
+          "path": "src/lib/transfer.ts",
+          "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+        },
+        {
+          "path": "src/lib/use-pairing-readiness.ts",
+          "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
+        },
+        {
+          "path": "src/lib/use-transfer-rate.ts",
+          "sha256": "8ddb5042d0ab91350190f428f2a91d104e3dd85a75f736cd1a59c82ea89ec2c0"
+        },
+        {
+          "path": "src/lib/webrtc-authorization.ts",
+          "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+        },
+        {
+          "path": "src/lib/webrtc-control-flow.ts",
+          "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+        },
+        {
+          "path": "src/lib/webrtc-peer-health.ts",
+          "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+        },
+        {
+          "path": "src/lib/webrtc-protocol.ts",
+          "sha256": "cb7577d277a51c3fe7b15da68ad0e47bf1232d4f55092ff8b39ca67adf1aa267"
+        },
+        {
+          "path": "src/lib/webrtc-receive-queue.ts",
+          "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+        },
+        {
+          "path": "src/lib/webrtc-rendezvous.ts",
+          "sha256": "f02bc05fb6c37f52edb3b36a4fd08a1aad3ca1e3e5ae417af02ed4f7205dfa8d"
+        },
+        {
+          "path": "src/lib/webrtc-sender-resume.ts",
+          "sha256": "1a6920253bfe88279ae301c5cf631400afeb03d885eb73303f07c2b7dd594167"
+        },
+        {
+          "path": "src/lib/webrtc-signaling.ts",
+          "sha256": "7b69af782ffc6f4b3d05fabbb2e3a51c8dbe10cbee94e947eef149d11c24bd33"
+        },
+        {
+          "path": "src/lib/webrtc-transfer.ts",
+          "sha256": "2aa88029d7892238aa3af9264db511818b545a3847d8865fc98648a211752013"
+        },
+        {
+          "path": "src/main.tsx",
+          "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+        },
+        {
+          "path": "src/styles.css",
+          "sha256": "c5f1051b0fa98de99ac70978df61f98b67bd3f214b6ae27a428de57e2e4fbb11"
+        },
+        {
+          "path": "src/vite-env.d.ts",
+          "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+        }
+      ],
+      "originalBenchmarkSha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431",
+      "harnessSha256": "5f17bce5dc6190d8160d332054ac6ccb762792a5d0ce2bdcb06282326640c007"
+    }
+  ],
+  "trialOrder": [
+    "before-1",
+    "after-1",
+    "before-2",
+    "after-2",
+    "before-3",
+    "after-3"
+  ],
+  "configuration": {
+    "QRFT_BENCH_MIB": "10",
+    "QRFT_BENCH_BATCHES": "32",
+    "QRFT_BENCH_FILES": "10000",
+    "QRFT_BENCH_PERSISTENT": "1",
+    "QRFT_BENCH_SAVE_TREE": "1",
+    "QRFT_BENCH_KEEP_PROFILE": "1"
+  },
+  "minFreeDiskBytes": 2147483648,
+  "scope": "Matched sequential alternate trials, identical instrumentation and installed Edge. Each fresh retained persistent profile. One-host synthetic source/receiver and OPFS destination; no Wi-Fi/native target-folder or stable physical throughput acceptance."
+}
