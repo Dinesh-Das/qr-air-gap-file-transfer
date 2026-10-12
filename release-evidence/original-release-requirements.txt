@@ -1,0 +1,1255 @@
+Setup Goal /Goal for below task: 
+Build a production-ready local file-transfer application that makes transferring files between two laptops on the same Wi-Fi/LAN extremely fast, reliable, secure, and effortless.
+
+The product should:
+
+* Pair two laptops in seconds with minimal user interaction.
+* Support single files, multiple files, folders, and very large files.
+* Transfer directly over the local network at the highest practical Wi-Fi/LAN speed.
+* Keep memory usage bounded even for 10 GB, 50 GB, 100 GB+ transfers.
+* Resume interrupted transfers instead of restarting them.
+* Recover cleanly from Wi-Fi drops, refreshes, sleep/wake, crashes, and reconnects.
+* Verify transferred data using cryptographic hashes so corrupted files can never be reported as successfully transferred.
+* Make pairing secure enough that files cannot accidentally be sent to the wrong device.
+* Hide WebRTC, ports, networking, SDP, OPFS, and other technical concepts from normal users.
+* Provide a simple UX: **Send → Select Files → Pair → Transfer → Verified Complete**.
+* Show accurate transfer speed, progress, ETA, transferred size, and connection status.
+* Require no internet or cloud storage for local transfers.
+* Avoid forcing users to reselect or rehash huge files when only the connection fails.
+* Handle thousands of files and multi-gigabyte transfers without freezes, crashes, corrupted state, or excessive disk/network overhead.
+* Provide clear recovery actions whenever something goes wrong.
+
+The release standard is:
+
+**A non-technical user should be able to open the app on two laptops, connect them in seconds, transfer a huge file at near the maximum speed their Wi-Fi and disks allow, recover automatically from temporary failures, and receive a cryptographically verified copy without needing to understand how the application works.**
+
+The application must prioritize, in order:
+
+**Correctness → Data integrity → Reliability → Pairing simplicity → Transfer speed → Security → UX → Visual polish.**
+
+
+"# ROLE
+
+You are the principal engineer, security reviewer, performance engineer, QA lead, UX engineer, and release owner for this application.
+
+The application is scheduled for production release in **2 days**.
+
+Your job is NOT to merely audit it.
+
+Your job is to:
+
+**audit → reproduce → fix → refactor where necessary → add tests → benchmark → retest → attempt to break it again → fix remaining issues → produce release evidence.**
+
+Treat every bug you leave behind as a production incident.
+
+Do not stop because existing tests pass.
+
+Do not assume code is correct because it looks sophisticated.
+
+Do not preserve an implementation merely because it already exists.
+
+At the same time, do not perform pointless rewrites. Preserve the existing architecture where it is sound and make targeted, production-quality changes.
+
+---
+
+# PRODUCT GOAL
+
+This should become an extremely simple and dependable way to transfer files between **two laptops connected to the same local Wi-Fi/LAN/hotspot**.
+
+The primary experience should feel approximately like:
+
+Sender:
+
+1. Open application.
+2. Click **Send**.
+3. Select/drop files or a folder.
+4. Receive an easy pairing code.
+5. Receiver connects.
+6. Verify the intended device with minimal friction.
+7. Transfer begins.
+8. See real speed, ETA, progress and status.
+9. Transfer completes and is cryptographically verified.
+
+Receiver:
+
+1. Open application.
+2. Click **Receive**.
+3. Enter the sender's short code.
+4. Verify device if necessary.
+5. Choose destination at the appropriate point.
+6. Transfer happens.
+7. Interrupted transfers resume instead of restarting.
+8. Final files are verified.
+9. User gets an unmistakable success state.
+
+The user should NOT have to understand:
+
+* WebRTC
+* SDP
+* UDP
+* ICE
+* OPFS
+* Web Locks
+* rendezvous servers
+* block stores
+* manifests
+* Node networking
+* ports
+* network interfaces
+
+Those are implementation details.
+
+The product must hide complexity unless something goes wrong, in which case diagnostics must clearly explain what the user can do.
+
+---
+
+# CURRENT ARCHITECTURE
+
+Study the entire repository before changing anything.
+
+Important areas include:
+
+* `src/App.tsx`
+* `src/components/WebRtcSender.tsx`
+* `src/components/WebRtcReceiver.tsx`
+* `src/lib/webrtc-transfer.ts`
+* `src/lib/webrtc-protocol.ts`
+* `src/lib/webrtc-signaling.ts`
+* `src/lib/webrtc-rendezvous.ts`
+* `src/lib/large-transfer.ts`
+* `src/lib/large-destination.ts`
+* `src/lib/block-store.ts`
+* `src/lib/block-store.worker.ts`
+* `scripts/rendezvous.mjs`
+* `scripts/serve.mjs`
+* all QR/QRF2/QRF3 implementations
+* all existing tests
+* README and transfer documentation
+
+Current design includes several good ideas that should not be casually destroyed:
+
+* deterministic large-transfer representation
+* SHA-256 verification
+* resumable durable block storage
+* OPFS
+* Web Locks
+* ordered WebRTC data channel
+* backpressure
+* receipt ranges
+* source snapshots
+* bounded-memory large-file processing
+* final destination verification
+* QR fallback modes
+* local-only signaling intent
+* no cloud upload
+
+Preserve those properties unless you can replace them with something demonstrably better.
+
+---
+
+# FIRST REQUIREMENT: PERFORM A REAL ARCHITECTURAL AUDIT
+
+Before implementing features, trace the complete production path:
+
+`UI → source selection → preparation → hashing → room creation → LAN discovery → SDP exchange → WebRTC creation → peer authorization → manifest → resume exchange → sender read → data channel → receiver validation → durable write → ACK → final verification → destination reconstruction → destination verification → cleanup`
+
+For every stage determine:
+
+* what can fail;
+* whether failure is surfaced correctly;
+* whether state is recoverable;
+* whether retry duplicates work;
+* whether state can become permanently poisoned;
+* whether data can silently corrupt;
+* whether resources leak;
+* whether another tab can interfere;
+* whether browser refresh is safe;
+* whether device sleep is safe;
+* whether the network can disappear;
+* whether storage can fill mid-transfer;
+* whether source files can change;
+* whether destination files can conflict;
+* whether malicious input can exhaust CPU/RAM/disk;
+* whether a user can get stuck with no recovery action.
+
+Document findings internally, but immediately fix P0/P1 problems instead of stopping at the report.
+
+---
+
+# KNOWN HIGH-RISK AREAS YOU MUST INVESTIGATE
+
+These were identified during a preliminary review of this repository.
+
+Do not assume this list is exhaustive.
+
+## 1. PEER AUTHENTICATION IS NOT ACTUALLY BEING USED
+
+`src/lib/webrtc-signaling.ts` already contains `createAuthenticationCode(...)`.
+
+However the WebRTC components appear to automatically exchange `peer-confirmed` when the data channel opens.
+
+Review:
+
+`WebRtcSender.tsx`
+
+* `confirmPairing`
+* channel `open`
+* `maybeAuthorize`
+
+`WebRtcReceiver.tsx`
+
+* `confirmPairing`
+* channel `open`
+* authorization state
+
+The current six-digit rendezvous code selects a sender, but the actual WebRTC transcript does not appear to require human verification even though SAS functionality exists.
+
+Fix this properly.
+
+The desired UX is still extremely easy.
+
+For example:
+
+Pair devices with the short code → establish connection → derive the same authentication/SAS fingerprint from the exact offer+answer transcript → display the same verification value/device identity on both machines → require a minimal confirmation before ANY manifest/file bytes are accepted.
+
+Do not transmit file data before authentication completes.
+
+Prevent:
+
+* accidental wrong-device connection;
+* same-code collision;
+* first-claim hijacking;
+* LAN MITM where practical;
+* stale pairing state;
+* reusing authorization across sessions.
+
+Add tests for altered SDP, altered session ID, stale sessions, wrong codes, duplicate claims, and attempted data before authorization.
+
+---
+
+# 2. CURRENT RECEIVER WRITE PATH MAY DESTROY THROUGHPUT
+
+Inspect carefully:
+
+`OfflineDestinationReceiver.acceptData()`
+
+It currently reaches:
+
+`store.writeBlock(index, payload)`
+
+A WebRTC block is around 60 KiB.
+
+`writeBlock()` delegates to `writeBlocks()` with ONE block.
+
+The OPFS implementation then flushes payload data before persisting receipt state.
+
+That means WebRTC may effectively perform a durability flush and journal operation for approximately every 60 KiB.
+
+For a 10 GB file that is an enormous number of durable commits.
+
+This is unacceptable if the product claims fast LAN/Wi-Fi transfer.
+
+Redesign this path.
+
+Use bounded batching while preserving crash safety.
+
+Possible design:
+
+* receive multiple validated blocks into a bounded batch;
+* write batch payload;
+* flush payload once;
+* persist one receipt journal record containing all committed indexes;
+* flush receipt metadata;
+* ACK the entire durable block group together;
+* sender treats blocks as complete only after batched durable ACK.
+
+The existing `writeBlocks()` batching machinery should be reused where appropriate rather than reinvented.
+
+Do not sacrifice durability to fake benchmark numbers.
+
+Benchmark several batch sizes and select sensible adaptive defaults.
+
+Consider:
+
+* 16
+* 32
+* 64
+* 128 blocks
+
+or a byte/time-based policy such as:
+
+* commit at 4–16 MiB;
+* OR after ~50–100 ms;
+* whichever occurs first.
+
+Keep memory bounded.
+
+Batch ACK messages too.
+
+Do not send one JSON acknowledgement per block when hundreds can safely be acknowledged together.
+
+---
+
+# 3. FIX POISONED RESUME STATE AFTER INTEGRITY FAILURE
+
+Examine:
+
+`OfflineDestinationReceiver.verify()`.
+
+When all receipt bits are complete but final `streamSha256` verification fails, the code throws.
+
+Now inspect what `WebRtcReceiver.fail()` does with the OPFS store.
+
+Verify this scenario:
+
+1. Receiver has every block marked durable.
+2. Whole-stream SHA fails.
+3. Receiver closes store.
+4. User reconnects.
+5. Same manifest reopens.
+6. Resume ranges say all blocks already exist.
+7. Sender transmits zero blocks.
+8. Sender sends completion.
+9. SHA fails again.
+10. User can never recover through normal UI.
+
+If this behavior exists, it is a **P0 production bug**.
+
+Fix it.
+
+A store whose authoritative whole-stream integrity fails must never remain permanently trusted as complete.
+
+Implement safe remediation, for example:
+
+* delete poisoned transfer data and reacquire;
+* or identify/revalidate damaged blocks if practical.
+
+Fail closed.
+
+The user must get a clear recovery message such as:
+
+“Stored transfer data failed integrity verification and was discarded. Reconnect to retransmit.”
+
+Add a regression test reproducing the exact failure/reconnect sequence.
+
+---
+
+# 4. REDESIGN RENDEZVOUS NETWORKING FOR RELIABILITY
+
+Deep-review `scripts/rendezvous.mjs`.
+
+Current signaling needs special scrutiny.
+
+### UDP SDP payloads
+
+The code permits SDP payloads approaching tens of kilobytes to travel through UDP.
+
+Large UDP datagrams fragment at IP level and are unreliable on real Wi-Fi.
+
+Do NOT rely on huge UDP packets for robust pairing.
+
+Prefer:
+
+**small UDP discovery + reliable TCP/HTTP signaling.**
+
+Example:
+
+Receiver runtime broadcasts a tiny discovery request.
+
+Sender runtime responds with something tiny such as:
+
+* protocol version
+* room ID
+* random challenge/token
+* signaling port
+
+Receiver's local Node runtime then uses a direct authenticated LAN TCP/HTTP connection to retrieve the SDP offer and submit the SDP answer.
+
+File bytes must still use WebRTC directly.
+
+If keeping UDP-only signaling, implement explicit small packet fragmentation/reassembly, checksums, retransmission and strict limits. But reliable TCP signaling is strongly preferred.
+
+---
+
+# 5. REMOVE AGGRESSIVE /24 NETWORK SCANNING
+
+`unicastDiscoveryAddressesFromInterfaces()` currently appears to choose one preferred private interface and generate up to ~253 hosts from the first three octets.
+
+Problems to investigate:
+
+* assumes `/24`;
+* ignores actual netmask;
+* ignores other valid physical interfaces;
+* misses peers on larger subnets;
+* can generate hundreds of packets repeatedly;
+* can look like network scanning;
+* can trigger enterprise security tools;
+* is unnecessary if subnet broadcast/multicast works.
+
+Redesign discovery.
+
+Preferred order:
+
+1. loopback/same-runtime optimization;
+2. subnet broadcast using actual interface/netmask;
+3. a small LAN multicast discovery mechanism if appropriate;
+4. additional physical interfaces;
+5. graceful manual fallback.
+
+Do not spray every possible `/24` host every 500 ms.
+
+If a manual fallback is needed, make it extremely simple and hide it behind **Troubleshoot connection**.
+
+---
+
+# 6. PAIRING MUST NOT FORCE REHASHING A HUGE SOURCE
+
+Currently a pairing failure/reconnect on the sender can lead to:
+
+* losing the prepared source;
+* selecting the directory again;
+* rescanning;
+* rehashing the entire source.
+
+Imagine the source is 100 GB.
+
+A failed pairing should not cost another complete 100 GB hash pass.
+
+Separate:
+
+**prepared transfer state**
+
+from
+
+**pairing session state**.
+
+Allow:
+
+`Retry pairing`
+
+without discarding the prepared source.
+
+Persist appropriate source directory handle + deterministic transfer identity using the existing large-sender resume infrastructure where possible.
+
+On reload:
+
+* request directory permission;
+* verify that the source still matches;
+* resume safely.
+
+If the source changed, explicitly invalidate the prepared transfer.
+
+Do not silently transfer changed content under an old identity.
+
+---
+
+# 7. LARGE FILE PERFORMANCE MUST BE MEASURED, NOT ASSUMED
+
+Create reproducible benchmarks.
+
+Measure separately:
+
+* source scan;
+* source hashing;
+* source reads;
+* encode/copy cost;
+* WebRTC throughput;
+* receiver block verification;
+* OPFS writes;
+* durability commits;
+* receipt journal;
+* final OPFS SHA verification;
+* destination reconstruction;
+* final file verification.
+
+Test at least:
+
+* 10 MB
+* 100 MB
+* 1 GB synthetic fixture
+* 5 GB+ where the local test environment permits
+
+Also test:
+
+* one huge file;
+* thousands of tiny files;
+* mixed folder tree.
+
+Report:
+
+* MB/s;
+* elapsed time;
+* CPU;
+* peak JS memory where measurable;
+* number of durable flushes;
+* ACK/control-message count.
+
+Optimize actual bottlenecks.
+
+Do not claim “Wi-Fi speed” unless benchmarks justify it.
+
+For a normal modern laptop on gigabit-class LAN/Wi-Fi, the implementation should not be artificially capped at a tiny fraction of available network/storage throughput by JavaScript protocol overhead.
+
+---
+
+# 8. REVIEW WEBRTC BLOCK SIZE AND BACKPRESSURE
+
+Current values include roughly:
+
+* 60 KiB payload block;
+* 96 in-flight blocks;
+* 8 MiB bufferedAmount upper bound.
+
+Do not blindly change them.
+
+Benchmark them.
+
+Use `RTCSctpTransport.maxMessageSize` to negotiate safe limits where appropriate.
+
+Consider dynamic/adaptive behavior.
+
+Possible improvements:
+
+* larger application chunks where supported;
+* bounded pipeline of concurrent source reads;
+* fewer allocations;
+* batched hashes;
+* batched writes;
+* batched ACKs;
+* adaptive bufferedAmount thresholds.
+
+Never cause unbounded sender buffering.
+
+Test memory consumption during multi-GB transfers.
+
+---
+
+# 9. SUPPORT INDIVIDUAL FILES
+
+This is a file-transfer product.
+
+A user should not have to place a large PDF, ZIP, ISO, video, model, database dump, etc. inside a temporary folder just to send it.
+
+Add intuitive support for:
+
+* one file;
+* multiple files;
+* a folder.
+
+Provide:
+
+**Choose files**
+
+and
+
+**Choose folder**
+
+and drag-and-drop where the browser permits it.
+
+Reuse one internal transfer abstraction rather than creating three unrelated transfer engines.
+
+If multiple standalone files are selected, create a deterministic virtual transfer root safely.
+
+Preserve names, modification metadata where supported, size, path safety and hashes.
+
+---
+
+# 10. MAKE THE UX RIDICULOUSLY SIMPLE
+
+The primary WebRTC workflow currently exposes more conceptual complexity than necessary.
+
+Redesign the flow around:
+
+**Send** / **Receive**
+
+not protocol terminology.
+
+For the primary local network product, users should not initially need to choose between QRF2/QRF3/WebRTC terminology.
+
+Keep QR air-gap functionality available under something such as:
+
+**Other transfer methods → Offline QR / Air-gap mode**
+
+The LAN transfer should be visually primary.
+
+A new user should understand what to do in under 10 seconds.
+
+Add clear states:
+
+* Checking device
+* Select files
+* Preparing
+* Ready to pair
+* Looking for device
+* Device found
+* Verify device
+* Connected
+* Transferring
+* Paused
+* Reconnecting
+* Verifying
+* Saving
+* Complete
+
+Avoid technical error text unless inside diagnostics.
+
+---
+
+# 11. ADD CONNECTION PREFLIGHT
+
+Before making someone select/hash a 100 GB folder, verify the environment.
+
+Create a lightweight readiness check for:
+
+* Chromium-compatible browser;
+* WebRTC;
+* OPFS;
+* Web Locks;
+* Worker;
+* File System Access API;
+* persistent storage support;
+* local Node/rendezvous runtime reachable;
+* UDP/TCP signaling service able to bind;
+* storage quota status where meaningful.
+
+The user should discover unsupported configuration BEFORE wasting time preparing a transfer.
+
+Create a local health endpoint if appropriate.
+
+Do not expose sensitive interface data unnecessarily.
+
+---
+
+# 12. ROBUST FAILURE AND RETRY UX
+
+Handle gracefully:
+
+* incorrect pairing code;
+* expired pairing code;
+* pairing server unavailable;
+* UDP port unavailable;
+* HTTP port unavailable;
+* Windows firewall blocking LAN traffic;
+* different networks;
+* AP/client isolation;
+* peer sleeps;
+* Wi-Fi disappears;
+* browser closes;
+* page refresh;
+* receiver disk fills;
+* OPFS quota fills;
+* destination permission revoked;
+* source permission revoked;
+* source file changes;
+* receiver destination changed;
+* duplicate browser tab;
+* sender stops;
+* receiver stops;
+* sender crashes;
+* receiver crashes.
+
+A transient pairing/network failure must normally produce:
+
+**Retry connection**
+
+not:
+
+**Start everything from scratch.**
+
+Separate destructive reset from ordinary reconnect.
+
+---
+
+# 13. ADD SCREEN WAKE LOCK
+
+During active preparation/transfer/verification, use the Screen Wake Lock API where supported.
+
+Release it when:
+
+* transfer completes;
+* user stops;
+* page unmounts;
+* app becomes idle.
+
+If browser policy prevents wake lock, continue safely and provide a subtle message asking the user to keep the laptops awake.
+
+Do not make wake-lock failure abort the transfer.
+
+---
+
+# 14. IMPROVE TRANSFER TELEMETRY
+
+Display useful information:
+
+* percentage;
+* bytes transferred / total;
+* current throughput;
+* smoothed throughput;
+* ETA;
+* elapsed time;
+* resumed bytes;
+* remaining bytes;
+* current phase;
+* connection status.
+
+Avoid unstable “speed” numbers.
+
+Use rolling/EWMA throughput rather than total bytes divided by entire elapsed time if that produces misleading readings.
+
+Show:
+
+`87 MB/s · 4.3 GB / 12.8 GB · ~1m 37s remaining`
+
+when possible.
+
+---
+
+# 15. PROTECT AGAINST LOCALHOST / DNS-REBINDING / CSRF STYLE ATTACKS
+
+The Node HTTP runtime is a security boundary.
+
+Audit `scripts/serve.mjs` and rendezvous HTTP routes.
+
+Do not assume “127.0.0.1” automatically makes every request trustworthy.
+
+Review:
+
+* Host validation;
+* Origin validation;
+* `Sec-Fetch-Site`;
+* accepted content types;
+* CORS behavior;
+* DNS rebinding;
+* cross-origin form/no-cors POST;
+* request body limits;
+* request timeout;
+* header timeout;
+* malformed JSON;
+* method restrictions.
+
+Only the locally served application should be able to mutate rendezvous state.
+
+Use cryptographically random session/CSRF capability tokens where appropriate.
+
+Keep the static server loopback-only.
+
+---
+
+# 16. HARDEN RENDEZVOUS STATE AGAINST DOS
+
+Review all in-memory maps:
+
+* rooms
+* discovery rates
+* local joins
+* pending discoveries
+* pending answers
+
+Every externally influenced structure needs:
+
+* maximum size;
+* TTL;
+* cleanup;
+* bounded input;
+* predictable failure behavior.
+
+Check whether expired `localJoins` and rate-limit entries are actually removed without requiring the same client to return.
+
+Do not permit unbounded memory growth.
+
+Add tests.
+
+---
+
+# 17. PORT CONFLICTS SHOULD NOT BE A USER PROBLEM
+
+Current defaults include fixed runtime ports.
+
+Normal users should never need:
+
+`QRFT_SIGNAL_PORT=...`
+
+just because another process owns a port.
+
+Implement a better strategy where practical.
+
+For example, use a small reserved discovery port strategy plus dynamic advertised signaling port, or safely probe a bounded range.
+
+HTTP application launch should also fail with a useful actionable message rather than an ugly Node stack trace.
+
+If the application is meant for end users, provide a one-click launcher.
+
+---
+
+# 18. PRODUCT PACKAGING
+
+Requiring an ordinary user to:
+
+* install Node;
+* open a terminal;
+* copy directories;
+* type commands;
+
+is not production consumer UX.
+
+Within release scope, determine the least risky way to improve this.
+
+At minimum provide:
+
+* Windows launch script;
+* startup checks;
+* clear errors;
+* automatic browser launch;
+* graceful shutdown.
+
+If feasible without destabilizing the 2-day release, create a self-contained distributable/runtime.
+
+Do NOT undertake a massive Electron/Tauri rewrite unless it is demonstrably safer than hardening the current release.
+
+Stability wins over architectural vanity.
+
+---
+
+# 19. DO NOT REGRESS QRF2/QRF3
+
+The QR modes have substantial safety work already implemented.
+
+All existing QR functionality must continue passing tests.
+
+Do not weaken:
+
+* path validation;
+* canonical metadata;
+* connection receipt;
+* block integrity;
+* resume behavior;
+* OPFS crash safety;
+* final stream verification;
+* destination verification;
+* cleanup.
+
+WebRTC improvements should reuse proven primitives when possible.
+
+---
+
+# TESTING REQUIREMENTS
+
+Existing unit tests are not sufficient for this release.
+
+Add coverage specifically for all discovered bugs.
+
+Create tests for at least:
+
+### Pairing
+
+* normal pair;
+* wrong code;
+* expired code;
+* code collision;
+* stale room;
+* duplicate receiver;
+* pairing retry;
+* altered SDP;
+* authentication/SAS mismatch;
+* connection before peer confirmation;
+* data before authorization;
+* sender cancelled;
+* receiver cancelled.
+
+### Discovery
+
+* Wi-Fi interface;
+* Ethernet interface;
+* multiple physical interfaces;
+* `/24`;
+* non-`/24`;
+* virtual adapters present;
+* VPN adapter present;
+* broadcast unavailable;
+* manual fallback;
+* malformed UDP messages;
+* oversized UDP messages.
+
+### Transfer
+
+* zero/very small file;
+* exactly one block;
+* block-size + 1;
+* hundreds of blocks;
+* multi-GB representation;
+* thousands of tiny files;
+* duplicate block;
+* malformed index;
+* malformed length;
+* corrupted block;
+* out-of-order data if supported;
+* duplicate ACK;
+* invalid ACK;
+* paused sender;
+* sender disconnect;
+* receiver disconnect.
+
+### Durable resume
+
+Simulate interruption at:
+
+* 0%;
+* 1%;
+* 25%;
+* 50%;
+* 99%;
+* after last payload but before completion;
+* during journal persistence;
+* during verification;
+* during destination reconstruction.
+
+Ensure already durable data is not resent unnecessarily.
+
+### Corruption
+
+Explicitly test:
+
+* payload corruption;
+* journal corruption;
+* incomplete journal;
+* checkpoint corruption;
+* complete store with incorrect stream hash;
+* destination file corruption.
+
+The “complete but SHA invalid” store MUST recover correctly.
+
+### UX state machine
+
+Verify that invalid transitions cannot occur.
+
+Examples:
+
+* selecting a new source during transfer;
+* switching sender/receiver during transfer;
+* two concurrent saves;
+* double clicking connect;
+* double clicking prepare;
+* reconnect while cleanup still runs;
+* stale async completion mutating new transfer state.
+
+### Security
+
+Fuzz parsers and control messages.
+
+Validate hard limits for:
+
+* SDP;
+* JSON;
+* ACK arrays;
+* resume ranges;
+* UDP messages;
+* manifests;
+* paths;
+* file count;
+* metadata;
+* transfer sizes.
+
+### Browser E2E
+
+Add Playwright or an equivalent browser-level test layer for the major UI workflows.
+
+At minimum test the UI state machine and mocked/controlled WebRTC flow.
+
+Where real two-runtime LAN behavior cannot run in CI, create a separate integration harness and clearly document the manual release test.
+
+---
+
+# CHAOS TESTING
+
+Build a deterministic test harness capable of injecting:
+
+* packet delay;
+* disconnect;
+* reconnect;
+* ACK delay;
+* duplicate control messages;
+* reordered control where protocol permits;
+* destination write errors;
+* quota errors;
+* runtime restart;
+* aborted reads;
+* browser refresh/reinitialization.
+
+The objective is not simply “error displayed”.
+
+The objective is:
+
+**no silent corruption, no incorrect success, and a clear path to recovery.**
+
+---
+
+# PERFORMANCE ACCEPTANCE
+
+Create a benchmark harness.
+
+Do NOT hardcode fake target numbers if the underlying device cannot reach them.
+
+The acceptance rule is:
+
+On localhost / same-machine synthetic tests, protocol implementation overhead should not be the dominant bottleneck.
+
+On a modern LAN, transfer should be primarily constrained by:
+
+* Wi-Fi/network throughput;
+* source disk;
+* destination disk;
+* browser/WebRTC implementation;
+
+not by thousands of synchronous 60-KiB durability flushes or excessive JSON control traffic.
+
+Record before/after numbers.
+
+A performance regression greater than 10% requires explanation.
+
+---
+
+# RESOURCE SAFETY
+
+During multi-GB transfer verify:
+
+* whole source isn't loaded into RAM;
+* whole destination isn't loaded into RAM;
+* no unbounded message queue;
+* no unbounded ACK queue;
+* no unbounded Promise chain;
+* no unbounded Map/Set;
+* no full-transfer duplicate buffer;
+* no massive UI state copies.
+
+Keep memory approximately bounded independent of total transfer size.
+
+---
+
+# RELEASE QUALITY
+
+Add or verify:
+
+* `npm run typecheck`
+* `npm test`
+* `npm run build`
+* one command that executes the complete release gate
+* clean fresh-install build
+* no TypeScript errors
+* no unhandled Promise rejections
+* no console errors during normal flow
+* no obvious dead code
+* no stale unused authentication implementation
+* no production `TODO`/`FIXME` for P0/P1 issues
+
+Add CI if missing.
+
+At minimum CI must perform a clean:
+
+`npm ci`
+
+followed by the complete check command.
+
+---
+
+# MANUAL TWO-LAPTOP RELEASE MATRIX
+
+Before declaring release-ready, define and execute/document this matrix:
+
+Windows laptop A → Windows laptop B.
+
+Test:
+
+* same home Wi-Fi;
+* laptop hotspot;
+* Ethernet/Wi-Fi combination where available.
+
+Transfers:
+
+* 1 MB;
+* 100 MB;
+* 1 GB;
+* 10 GB if available;
+* thousands of files;
+* one large file.
+
+Failure cases:
+
+* disable Wi-Fi mid-transfer;
+* restore Wi-Fi;
+* refresh receiver;
+* restart sender;
+* sleep/wake;
+* wrong pairing code;
+* pairing timeout;
+* nearly full destination;
+* cancel and resume.
+
+For each test verify the final SHA/file tree.
+
+---
+
+# UX ACCEPTANCE TEST
+
+Give the application to someone who knows nothing about its implementation.
+
+They should be able to send a file between two laptops without reading the README.
+
+If they need to understand ports, OPFS, Node, SDP, ICE or WebRTC, the UX has failed.
+
+---
+
+# IMPORTANT IMPLEMENTATION PRINCIPLES
+
+Do not hide problems with giant try/catch blocks.
+
+Do not convert corruption into success.
+
+Do not disable verification for speed.
+
+Do not solve crashes by loading everything into memory.
+
+Do not delete partially received valid data unnecessarily.
+
+Do not restart a 100 GB transfer because pairing failed.
+
+Do not make the user repeat expensive hashing without a security/integrity reason.
+
+Do not claim a device is verified unless it actually is.
+
+Do not display “100% complete” before authoritative verification succeeds.
+
+Do not call something “saved” until destination verification succeeds.
+
+Do not introduce cloud dependencies.
+
+Do not require internet access for transfer.
+
+Do not add analytics, telemetry, trackers or external services.
+
+---
+
+# PRIORITY ORDER FOR THE NEXT 2 DAYS
+
+Treat these as P0 first:
+
+1. integrity/corruption/resume correctness;
+2. secure peer/session authorization;
+3. reliable LAN pairing;
+4. WebRTC receiver batching/performance bottleneck;
+5. retry without rehash/reselection;
+6. resource leaks/races/state-machine bugs;
+7. localhost/runtime security;
+8. large-transfer reliability.
+
+Then P1:
+
+* individual file support;
+* drag/drop;
+* connection preflight;
+* ETA/speed improvements;
+* wake lock;
+* improved retry screens;
+* one-click startup;
+* better diagnostic UX.
+
+Do not spend release time on decorative redesign before P0 is clean.
+
+---
+
+# EXECUTION METHOD
+
+Work autonomously through the repository.
+
+For every issue:
+
+1. Reproduce or prove the problem.
+2. State the root cause in your working notes.
+3. Implement the smallest robust fix.
+4. Add a regression test.
+5. Run related tests.
+6. Run full test suite.
+7. Re-audit affected adjacent code.
+8. Attempt to break the fix.
+
+Do not ask me for permission between normal code changes.
+
+Make reasonable production decisions yourself.
+
+Do not stop after generating an audit report.
+
+Continue modifying the code until release gates pass.
+
+---
+
+# FINAL ADVERSARIAL PASS
+
+After you believe the application is ready, forget that you wrote the fixes.
+
+Pretend you are an adversarial senior engineer reviewing someone else's pull request.
+
+Try specifically to discover:
+
+* corruption;
+* race conditions;
+* stale closures;
+* lifecycle bugs;
+* incorrect React state;
+* async operations updating dead sessions;
+* transfer deadlocks;
+* resume loops;
+* storage poisoning;
+* duplicate writes;
+* missing cleanup;
+* runaway memory;
+* WebRTC buffering issues;
+* partial writes;
+* pairing hijack;
+* LAN discovery failures;
+* timeout bugs;
+* huge-file integer issues;
+* Windows path problems;
+* Unicode path collisions;
+* quota bugs;
+* browser refresh bugs.
+
+If you find anything, fix it and repeat the audit.
+
+Assume another expert reviewer will try to find bugs immediately after you finish.
+
+Your goal is to leave them nothing meaningful to find.
+
+---
+
+# FINAL OUTPUT REQUIRED FROM YOU
+
+Only after implementing and testing everything, produce a final release report containing:
+
+**Release verdict:** READY / NOT READY
+
+Then include:
+
+* P0 issues found and fixed;
+* P1 issues found and fixed;
+* architecture changes;
+* pairing changes;
+* security changes;
+* resume/recovery changes;
+* performance changes;
+* benchmark before/after;
+* tests added;
+* commands executed and results;
+* manual tests still required;
+* known limitations;
+* remaining risks;
+* exact files changed.
+
+If any critical scenario is untested or failing, verdict MUST be:
+
+**NOT READY**
+
+Do not say “production ready” merely because unit tests pass.
+
+The standard is:
+
+**A normal person can move a very large file between two laptops on the same Wi-Fi with minimal setup, interruption recovery works, the final bytes are correct, pairing is dependable, and the application never falsely reports success.**
+"
