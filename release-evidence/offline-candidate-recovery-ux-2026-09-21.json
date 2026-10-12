@@ -1,0 +1,106 @@
+{
+  "recordedAt": "2026-09-21T02:54:29.9984849Z",
+  "artifact": "artifacts/qrft-2026-09-21T02-54-29-426Z",
+  "fullGate": "release-gate-316-unit-53-browser.json",
+  "packageSmoke": "gate-recovery-ux-current.log / offline-package-smoke.json",
+  "files": 19,
+  "verification": "Verified 19 release files. This checks copy integrity, not publisher authenticity.",
+  "scope": "Offline bundle packaged after the current 316-unit/53-browser gate. Checksums verify package integrity only; this is not native browser launch, clean-install, hosted CI, performance/resource or physical two-laptop acceptance.",
+  "manifestFiles": [
+    {
+      "path": "PHYSICAL-TEST-RECORD.md",
+      "bytes": 4276,
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25520,
+      "sha256": "ca532dc0ae3e5c54e3c0d14d44b09af7225f375a549d4f0e3c0664eba043b6ea"
+    },
+    {
+      "path": "START-HERE.txt",
+      "bytes": 1360,
+      "sha256": "6abeb255a1b0db045a1fb0817e775b9f4b07fbde8c75d266065bb1efd60b16cb"
+    },
+    {
+      "path": "Start AirGap QR.cmd",
+      "bytes": 489,
+      "sha256": "34b42ce80ed30d01144488adf31eaebe6b87a0479f0b4d170e96f1883c6612e6"
+    },
+    {
+      "path": "TRANSFER_PROCESS.md",
+      "bytes": 15795,
+      "sha256": "7891fbc613f12d1687ebb65608775b6351f726e507f9b2217ab89f47f1619ced"
+    },
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-BFe5AxzB.js",
+      "bytes": 550080,
+      "sha256": "592ef4f564798cafeb1d75d0d2bd7f1fd110d26258fba627106dc003cce3647f"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 627,
+      "sha256": "f6e8e3b30bfafad904a9b3bf5921ee3b8b69d12cd22b49ca29747519bee22b2c"
+    },
+    {
+      "path": "scripts/compare-trees.mjs",
+      "bytes": 6930,
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "scripts/create-fixture.mjs",
+      "bytes": 3194,
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "scripts/lan-signaling.mjs",
+      "bytes": 3591,
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "scripts/launch.mjs",
+      "bytes": 6621,
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "scripts/local-http-security.mjs",
+      "bytes": 2387,
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "scripts/rendezvous.mjs",
+      "bytes": 32051,
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "bytes": 6784,
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "bytes": 1897,
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "templates/physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    }
+  ]
+}

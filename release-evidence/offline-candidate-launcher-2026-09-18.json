@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-09-18T11:35:55.905761+00:00",
+  "bundlePath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-09-18T06-56-22-559Z",
+  "releaseReady": false,
+  "packagedFiles": 19,
+  "checksumManifestSha256": "aac491d86ce1a6e4a5080319a630de04a8911830134c0002732e06cebe81bf52",
+  "distMatchesPassingGate": true,
+  "fullLocalGate": "release-gate-260-unit-37-browser.json",
+  "nativeWrapperCheck": "launcher-enter-smoke.json",
+  "scope": "The native command wrapper opens the default browser and closes on Enter. Page inspection, native source/destination transfer and two-laptop testing are not covered."
+}
