@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-09-18T20:37:19.238449+00:00",
+  "preflight": {
+    "beforeFix": "preflight-before-fix.log: old browser bundle read a source slice before failing; expected zero, observed one",
+    "fix": "Same-origin POST health binds TCP and UDP; browser request has a five-second abortable deadline. Initial capability/readiness gates precede selection; fresh checks precede hashing/recovery/connection. Retry keeps selected or prepared source.",
+    "healthExposure": "Only ready and protocol version; no interface addresses or credentials. Does not prove firewall or remote reachability.",
+    "passedFullGate": "release-gate-264-unit-40-browser.json",
+    "recoveryFixtureFailures": [
+      "preflight-recovery-browser.log: failed to re-enter transfer method after reload",
+      "preflight-recovery-recheck.log: incognito recovery timed out/closed; root cause unestablished"
+    ],
+    "recoveryScope": "Uses the existing persistent-profile recovery fixture. No private-profile recovery acceptance claim.",
+    "failureArtifacts": "preflight-failures/"
+  },
+  "navigation": {
+    "beforeFix": "navigation-before-fix.log: no direct Send entry",
+    "changes": "Send and Receive home actions; optical engines under Other transfer methods; plain normal-state copy; manual addressing under Troubleshoot connection. Existing integrity and confirmation paths retained.",
+    "initialFocused": "navigation-targeted.log: 12 passed",
+    "layoutFault": "navigation-layout.log: Connect button only partly within 1280x720 viewport; 1 failed, 3 passed",
+    "layoutRecheck": "navigation-layout-recheck.log: passes with both initial workflow actions fully within viewport, desktop/narrow screenshots; no horizontal overflow at 390 pixels",
+    "screenshots": "navigation-reviewed/",
+    "fullGate": "release-gate-264-unit-41-browser.json: 264 unit/integration tests, 41 browser cases, 19-file package smoke passed; 121 inputs unchanged during run",
+    "initialFullGate": "gate-navigation-failed.json: 264 unit/integration passes; 40 browser passes, 1 failed; package smoke not reached",
+    "diagnosticsTest": "The test waited on a one-shot Unavailable snapshot. It now injects an empty stats report, confirms Unavailable and usable verification controls, restores the native API and manually refreshes until actual UDP/TCP is reported. Original initial stats were not captured; their contents and cause remain unestablished. No product change was made for this test failure.",
+    "diagnosticsRecheck": "navigation-diagnostics.log: 4 passed, 9.8 seconds; typecheck and diff check passed"
+  },
+  "releaseReady": false,
+  "physicalLaptopsAvailable": false
+}
