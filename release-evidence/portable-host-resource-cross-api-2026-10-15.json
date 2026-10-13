@@ -1,0 +1,149 @@
+{
+  "recordedAt": "2026-10-15T17:26:10.561Z",
+  "nodeBefore": {
+    "C:/": {
+      "available": 1209774080,
+      "free": 1209774080
+    },
+    "D:/": {
+      "available": 2316595200,
+      "free": 2316595200
+    }
+  },
+  "windows": {
+    "psDrives": [
+      {
+        "Name": "C",
+        "Free": 1209774080,
+        "Used": 433620008960
+      },
+      {
+        "Name": "D",
+        "Free": 2316320768,
+        "Used": 584674422784
+      }
+    ],
+    "logicalDisks": [
+      {
+        "DeviceID": "C:",
+        "FreeSpace": 1209774080,
+        "Size": 434829783040
+      },
+      {
+        "DeviceID": "D:",
+        "FreeSpace": 2316320768,
+        "Size": 586990743552
+      }
+    ],
+    "pageFiles": {
+      "Name": "D:\\pagefile.sys",
+      "AllocatedBaseSize": 2628,
+      "CurrentUsage": 68,
+      "PeakUsage": 116
+    },
+    "memory": {
+      "AvailableBytes": 9243729920,
+      "CommittedBytes": 33112723456,
+      "CommitLimit": 36809318400
+    },
+    "selectedProcessMetrics": [
+      {
+        "Name": "msedge#2",
+        "IDProcess": 24152,
+        "PrivateBytes": 1915367424,
+        "WorkingSet": 1734516736,
+        "IODataBytesPersec": 2836531
+      },
+      {
+        "Name": "msedge#12",
+        "IDProcess": 23840,
+        "PrivateBytes": 746766336,
+        "WorkingSet": 567050240,
+        "IODataBytesPersec": 0
+      },
+      {
+        "Name": "MsMpEng",
+        "IDProcess": 35192,
+        "PrivateBytes": 718196736,
+        "WorkingSet": 713551872,
+        "IODataBytesPersec": 0
+      },
+      {
+        "Name": "msedge#11",
+        "IDProcess": 4152,
+        "PrivateBytes": 716177408,
+        "WorkingSet": 722370560,
+        "IODataBytesPersec": 0
+      },
+      {
+        "Name": "node#13",
+        "IDProcess": 35088,
+        "PrivateBytes": 294027264,
+        "WorkingSet": 266129408,
+        "IODataBytesPersec": 3120268
+      },
+      {
+        "Name": "msedge#19",
+        "IDProcess": 34264,
+        "PrivateBytes": 286846976,
+        "WorkingSet": 275316736,
+        "IODataBytesPersec": 0
+      },
+      {
+        "Name": "chrome#2",
+        "IDProcess": 15876,
+        "PrivateBytes": 272547840,
+        "WorkingSet": 312594432,
+        "IODataBytesPersec": 921737
+      },
+      {
+        "Name": "msedge",
+        "IDProcess": 16916,
+        "PrivateBytes": 266625024,
+        "WorkingSet": 486207488,
+        "IODataBytesPersec": 89892
+      },
+      {
+        "Name": "msedge#16",
+        "IDProcess": 30920,
+        "PrivateBytes": 225136640,
+        "WorkingSet": 272842752,
+        "IODataBytesPersec": 0
+      },
+      {
+        "Name": "codex",
+        "IDProcess": 28076,
+        "PrivateBytes": 218718208,
+        "WorkingSet": 264814592,
+        "IODataBytesPersec": 2009
+      },
+      {
+        "Name": "msedge#18",
+        "IDProcess": 29364,
+        "PrivateBytes": 203436032,
+        "WorkingSet": 24023040,
+        "IODataBytesPersec": 0
+      },
+      {
+        "Name": "msedge#24",
+        "IDProcess": 28380,
+        "PrivateBytes": 201478144,
+        "WorkingSet": 459960320,
+        "IODataBytesPersec": 374963
+      }
+    ]
+  },
+  "nodeAfter": {
+    "C:/": {
+      "available": 1209643008,
+      "free": 1209643008
+    },
+    "D:/": {
+      "available": 2314199040,
+      "free": 2314199040
+    }
+  },
+  "freeRamBytes": 9254830080,
+  "totalRamBytes": 34053414912,
+  "scope": "Read-only selected host metrics. Snapshots do not identify which files grew or establish causality. No unrelated process stopped or file changed."
+}

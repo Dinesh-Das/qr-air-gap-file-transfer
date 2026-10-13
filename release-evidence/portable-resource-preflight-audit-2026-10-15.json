@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-10-15T17:24:34.421Z",
+  "cResultRoots": 10,
+  "cResultFiles": 52192,
+  "currentFilesMatchSavedBeforeInventory": true,
+  "partialDependencyFiles": 7299,
+  "partialDependencyBytesUnchanged": true,
+  "dChromeCompression": "Timed out, partial; post-only baseline, no full before/after claim.",
+  "stoppedHistoricalHelpers": 2,
+  "protectedBenchmarkRootsTouched": 0,
+  "filesDeletedOrMoved": 0,
+  "freeDiskBytes": {
+    "C:/": 1227755520,
+    "D:/": 2112364544
+  },
+  "freeRamBytes": 11580432384,
+  "scope": "Point-in-time observations. Larger C free-space movement is not wholly attributed to compression; prior disk/OOM cause remains unresolved. Not continuous reserve/resource acceptance."
+}

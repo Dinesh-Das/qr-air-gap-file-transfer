@@ -1,0 +1,37 @@
+{
+  "recordedAt": "2026-10-15T03:43:44.050Z",
+  "outputs": [
+    {
+      "variant": "external",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime",
+      "files": 19,
+      "existingOutputRefused": true,
+      "physicalTemplateBlank": true,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+        "path": "C:\\WINDOWS\\System32",
+        "handoff": "injected HTTP-byte observer; no native browser open",
+        "cleanStop": true
+      },
+      "manifestBeforeAfterIdentical": true
+    },
+    {
+      "variant": "portable",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+      "files": 22,
+      "existingOutputRefused": true,
+      "physicalTemplateBlank": true,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime\\node.exe",
+        "path": "C:\\WINDOWS\\System32",
+        "handoff": "injected HTTP-byte observer; no native browser open",
+        "cleanStop": true
+      },
+      "manifestBeforeAfterIdentical": true
+    }
+  ],
+  "nativeCmd": "Six real cmd tests use a launch-script fixture; packaged lifecycle observer injected. Actual default browser opening not exercised.",
+  "runtimeCompatibility": "Full unit/type/build under Node 24.22.0; full browser gates under this runtime still pending."
+}

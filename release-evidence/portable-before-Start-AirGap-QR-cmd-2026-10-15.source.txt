@@ -1,0 +1,15 @@
+@echo off
+setlocal DisableDelayedExpansion
+where node.exe >nul 2>nul
+if errorlevel 1 goto missing_runtime
+node.exe "%~dp0scripts\launch.mjs"
+set "QRFT_LAUNCH_EXIT=%errorlevel%"
+if not "%QRFT_LAUNCH_EXIT%"=="0" pause
+exit /b %QRFT_LAUNCH_EXIT%
+
+:missing_runtime
+echo AirGap QR could not find its required runtime.
+echo Ask the person who supplied this app for a complete Windows setup.
+echo Details: a supported Node.js runtime must be installed before this bundle can run.
+pause
+exit /b 1

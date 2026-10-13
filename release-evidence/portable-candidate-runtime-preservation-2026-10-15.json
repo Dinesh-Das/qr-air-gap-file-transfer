@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-10-15T17:11:35.885Z",
+  "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime\\node.exe",
+  "sha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c",
+  "byteIdentical": true,
+  "matchingProcessesBefore": 0,
+  "output": "\r\n Compressing files in D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime\\\r\n\r\nnode.exe             93882184 :  57876480 = 1.6 to 1 [OK]\r\n\r\n1 files within 1 directories were compressed.\r\n93,882,184 total bytes of data are stored in 57,876,480 bytes.\r\nThe compression ratio is 1.6 to 1.\r\n",
+  "scope": "Closed candidate executable only, no content change or resource acceptance claim."
+}

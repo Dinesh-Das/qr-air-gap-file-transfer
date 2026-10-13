@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-15T03:36:19.911Z",
+  "stage": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15",
+  "bundle": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces",
+  "version": "24.22.0",
+  "sources": {
+    "checksums": "https://nodejs.org/download/release/v24.22.0/SHASUMS256.txt",
+    "binary": "https://nodejs.org/download/release/v24.22.0/win-x64/node.exe",
+    "license": "https://raw.githubusercontent.com/nodejs/node/v24.22.0/LICENSE"
+  },
+  "officialBinarySha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c",
+  "runtimeBytes": 93882184,
+  "files": 21,
+  "nodeAbsentFromPath": true,
+  "probe": {
+    "node": "v24.22.0",
+    "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+    "path": "C:\\WINDOWS\\System32",
+    "handoff": "injected HTTP-byte observer; no native browser open",
+    "cleanStop": true
+  },
+  "productionCodeChanged": false,
+  "releaseCandidateUnchanged": 19,
+  "scope": "Windows x64 local prototype only. Existing cmd launcher and packager unchanged. Not a release candidate: START-HERE still describes original external-runtime requirement. No default-browser, fresh OS, ARM64, firewall, physical laptop or full-suite runtime compatibility proof.",
+  "next": "Integrate explicit verified runtime input and complete notices into optional packaging; prefer relative runtime in cmd, test missing/corrupt/incompatible runtime and cleared PATH through actual cmd; qualify current runtime with full required gates before shipping."
+}

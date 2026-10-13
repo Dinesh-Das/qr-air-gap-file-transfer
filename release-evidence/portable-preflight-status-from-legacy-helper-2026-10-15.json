@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-15T17:20:27.046Z",
+  "freeRamBytes": 9027047424,
+  "totalRamBytes": 34053414912,
+  "freeDiskBytes": {
+    "C:/": 3914747904,
+    "D:/": 2576502784
+  },
+  "exitCode": "1",
+  "tail": [
+    "    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────\r",
+    "    test-results-peer-policy-full-edge\\pairing-sender-and-receive-160b9-locks-after-source-recovery\\trace.zip\r",
+    "    Usage:\r",
+    "\r",
+    "        npx playwright show-trace test-results-peer-policy-full-edge\\pairing-sender-and-receive-160b9-locks-after-source-recovery\\trace.zip\r",
+    "\r",
+    "    ────────────────────────────────────────────────────────────────────────────────────────────────\r",
+    "\r",
+    "  1 failed\r",
+    "    e2e\\pairing.spec.ts:1746:1 › sender and receiver reload resume only missing blocks after source recovery \r",
+    "  87 passed (7.6m)\r",
+    ""
+  ]
+}

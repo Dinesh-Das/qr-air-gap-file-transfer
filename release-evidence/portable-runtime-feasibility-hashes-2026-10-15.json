@@ -1,0 +1,164 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "sha256": "3423c18914436f9ff2a2a991310328e89f1f9f2433112a52f3ac5d7aea8dd9c0",
+      "bytes": 102755
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "sha256": "0fc7a402f96d0030ebbaa7678eab6516167a8bbd38e6d519d1a5ba87cec7d036",
+      "bytes": 683
+    },
+    {
+      "path": "release-evidence/portable-runtime-feasibility-review-2026-10-15.json",
+      "sha256": "3423c18914436f9ff2a2a991310328e89f1f9f2433112a52f3ac5d7aea8dd9c0",
+      "bytes": 102755
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-portable-feasibility-2026-10-15.json",
+      "sha256": "1fa106ee0f67fef44716ac7c743d7c9e488dcc4bcb34419eeb6603166190fd00",
+      "bytes": 327663
+    },
+    {
+      "path": "release-evidence/portable-runtime-feasibility-2026-10-15.json",
+      "sha256": "e92bcd5320334211a9f70a317e40b4049c297f1252c6d7ec8f1567183df036af",
+      "bytes": 1578
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "sha256": "9110266ab43f5f55807b3b81936dd81b670a1267a390cc27af4feef03bd715fa",
+      "bytes": 328078
+    },
+    {
+      "path": ".tmp/probe-portable-runtime-2026-10-15.mjs",
+      "sha256": "064c8c60711e321d0a42c75ed9656a0849f78c1882443fd093af70340b92fc8b",
+      "bytes": 5002
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\SHASUMS256.txt",
+      "sha256": "8912ada1431af8390bb3e30328d30bca701b59c7a6d5396b491293515c092c46",
+      "bytes": 3171
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\probe.mjs",
+      "sha256": "0d54988ee99e94b70e483825e0cb12274f9d6222d3b006f80d4bcc341a2572e4",
+      "bytes": 1209
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\probe.log",
+      "sha256": "cf5d5e1d50dd7e81dcf2375180e192335eb4f34d7f0e17169584de5ccebd9d11",
+      "bytes": 239
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\CHECKSUMS.json",
+      "sha256": "21b28725ab8316614064988c82ebb117d8d40363ea81ca322afc13f3ce8972c6",
+      "bytes": 3407
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\PHYSICAL-TEST-RECORD.md",
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1",
+      "bytes": 4276
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\README.md",
+      "sha256": "b8c4a74d50dda0bec73c88a37726d9a702ca30ceb0fbb639e77c2db1f9de7e1b",
+      "bytes": 25511
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\START-HERE.txt",
+      "sha256": "6abeb255a1b0db045a1fb0817e775b9f4b07fbde8c75d266065bb1efd60b16cb",
+      "bytes": 1360
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\Start AirGap QR.cmd",
+      "sha256": "34b42ce80ed30d01144488adf31eaebe6b87a0479f0b4d170e96f1883c6612e6",
+      "bytes": 489
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\TRANSFER_PROCESS.md",
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f",
+      "bytes": 15924
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\assets\\block-store.worker-DVHZPZQe.js",
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014",
+      "bytes": 2402
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\assets\\index-BAvLvA70.js",
+      "sha256": "e9edb004df0de79dbfa19aebb8631d6f7c2ee12b96091b9d6c1751949b30a9e6",
+      "bytes": 555442
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\assets\\index-C5foWVjs.css",
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc",
+      "bytes": 26260
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\assets\\qr-scanner-worker.min-CJaXo3yu.js",
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67",
+      "bytes": 43951
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\index.html",
+      "sha256": "64e19784a05849a6de772662caa641d4e14e808857fa3f67569daadb4ddd8b2b",
+      "bytes": 903
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\LICENSE",
+      "sha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace",
+      "bytes": 157609
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+      "sha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c",
+      "bytes": 93882184
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\compare-trees.mjs",
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d",
+      "bytes": 6930
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\create-fixture.mjs",
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0",
+      "bytes": 3194
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\lan-signaling.mjs",
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60",
+      "bytes": 3591
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\launch.mjs",
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71",
+      "bytes": 6621
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\local-http-security.mjs",
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0",
+      "bytes": 2387
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\rendezvous.mjs",
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc",
+      "bytes": 32051
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\serve.mjs",
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef",
+      "bytes": 6784
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\verify-release.mjs",
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f",
+      "bytes": 1897
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\templates\\physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120",
+      "bytes": 13994
+    }
+  ]
+}
