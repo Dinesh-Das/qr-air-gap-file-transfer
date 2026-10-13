@@ -1,0 +1,296 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\MyProjects\\QR Air-Gap File Transfer\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "e2e/preparation-privacy.spec.ts",
+      "--output=release-evidence/preparation-privacy-before-2026-10-13-traces",
+      "--reporter=json"
+    ],
+    "configFile": "D:\\MyProjects\\QR Air-Gap File Transfer\\playwright.config.ts",
+    "rootDir": "D:/MyProjects/QR Air-Gap File Transfer/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/MyProjects/QR Air-Gap File Transfer/release-evidence/preparation-privacy-before-2026-10-13-traces",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/MyProjects/QR Air-Gap File Transfer/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run serve",
+      "env": {
+        "QRFT_PORT": "4178",
+        "QRFT_SIGNAL_PORT": "4179"
+      },
+      "url": "http://127.0.0.1:4178",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "preparation-privacy.spec.ts",
+      "file": "preparation-privacy.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "source failure keeps private filenames local with neither confirmed",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2011,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: not \u001b[32m\"private-acquisition-plan-SECRET-2026.txt\"\u001b[39m\nReceived string:        \u001b[31m\"{\\\"type\\\":\\\"error\\\",\\\"message\\\":\\\"The source changed after selection: \u001b[7mprivate-acquisition-plan-SECRET-2026.txt\u001b[27m\\\"}\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: not \u001b[32m\"private-acquisition-plan-SECRET-2026.txt\"\u001b[39m\nReceived string:        \u001b[31m\"{\\\"type\\\":\\\"error\\\",\\\"message\\\":\\\"The source changed after selection: \u001b[7mprivate-acquisition-plan-SECRET-2026.txt\u001b[27m\\\"}\"\u001b[39m\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts:97:34",
+                    "location": {
+                      "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts",
+                      "column": 34,
+                      "line": 97
+                    },
+                    "snippet": "   95 |   // quickly must not hide an attempted diagnostic disclosure from the test.\n   96 |   const emitted = await sender.evaluate(() => (window as unknown as PrivacyState).sentMessages);\n>  97 |   expect(emitted.join(\"\\n\")).not.toContain(secretName);\n      |                                  ^\n   98 |   expect(emitted.map((message) => JSON.parse(message).type)).not.toContain(\"manifest\");\n   99 |   expect(await sender.evaluate(() => (window as unknown as PrivacyState).sentBytes)).toBe(0);\n  100 |   const received = await receiver.evaluate(() => (window as unknown as PrivacyState).receivedMessages);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts",
+                        "column": 34,
+                        "line": 97
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: not \u001b[32m\"private-acquisition-plan-SECRET-2026.txt\"\u001b[39m\nReceived string:        \u001b[31m\"{\\\"type\\\":\\\"error\\\",\\\"message\\\":\\\"The source changed after selection: \u001b[7mprivate-acquisition-plan-SECRET-2026.txt\u001b[27m\\\"}\"\u001b[39m\n\n   95 |   // quickly must not hide an attempted diagnostic disclosure from the test.\n   96 |   const emitted = await sender.evaluate(() => (window as unknown as PrivacyState).sentMessages);\n>  97 |   expect(emitted.join(\"\\n\")).not.toContain(secretName);\n      |                                  ^\n   98 |   expect(emitted.map((message) => JSON.parse(message).type)).not.toContain(\"manifest\");\n   99 |   expect(await sender.evaluate(() => (window as unknown as PrivacyState).sentBytes)).toBe(0);\n  100 |   const received = await receiver.evaluate(() => (window as unknown as PrivacyState).receivedMessages);\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts:97:34"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T13:31:10.520Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\preparation-privacy-before-2026-10-13-traces\\preparation-privacy-source-70b9c-ocal-with-neither-confirmed\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\preparation-privacy-before-2026-10-13-traces\\preparation-privacy-source-70b9c-ocal-with-neither-confirmed\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts",
+                    "column": 34,
+                    "line": 97
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "7ded58b1ff66efff2430-9283702ef1a8ba0146b2",
+          "file": "preparation-privacy.spec.ts",
+          "line": 85,
+          "column": 82
+        },
+        {
+          "title": "source failure keeps private filenames local with sender only confirmed",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1643,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: not \u001b[32m\"private-acquisition-plan-SECRET-2026.txt\"\u001b[39m\nReceived string:        \u001b[31m\"{\\\"type\\\":\\\"peer-confirmed\\\",\\\"sessionId\\\":\\\"c88d5063be99c9f69e3a7aabbd69d79b\\\",\\\"transcriptHash\\\":\\\"2ecb3b88681ab216e34c3d5a4c6ce9847f59eb613ecf412ddfcd07cd04f5ceb2\\\"}\u001b[39m\n\u001b[31m{\\\"type\\\":\\\"error\\\",\\\"message\\\":\\\"The source changed after selection: \u001b[7mprivate-acquisition-plan-SECRET-2026.txt\u001b[27m\\\"}\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: not \u001b[32m\"private-acquisition-plan-SECRET-2026.txt\"\u001b[39m\nReceived string:        \u001b[31m\"{\\\"type\\\":\\\"peer-confirmed\\\",\\\"sessionId\\\":\\\"c88d5063be99c9f69e3a7aabbd69d79b\\\",\\\"transcriptHash\\\":\\\"2ecb3b88681ab216e34c3d5a4c6ce9847f59eb613ecf412ddfcd07cd04f5ceb2\\\"}\u001b[39m\n\u001b[31m{\\\"type\\\":\\\"error\\\",\\\"message\\\":\\\"The source changed after selection: \u001b[7mprivate-acquisition-plan-SECRET-2026.txt\u001b[27m\\\"}\"\u001b[39m\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts:97:34",
+                    "location": {
+                      "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts",
+                      "column": 34,
+                      "line": 97
+                    },
+                    "snippet": "   95 |   // quickly must not hide an attempted diagnostic disclosure from the test.\n   96 |   const emitted = await sender.evaluate(() => (window as unknown as PrivacyState).sentMessages);\n>  97 |   expect(emitted.join(\"\\n\")).not.toContain(secretName);\n      |                                  ^\n   98 |   expect(emitted.map((message) => JSON.parse(message).type)).not.toContain(\"manifest\");\n   99 |   expect(await sender.evaluate(() => (window as unknown as PrivacyState).sentBytes)).toBe(0);\n  100 |   const received = await receiver.evaluate(() => (window as unknown as PrivacyState).receivedMessages);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts",
+                        "column": 34,
+                        "line": 97
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: not \u001b[32m\"private-acquisition-plan-SECRET-2026.txt\"\u001b[39m\nReceived string:        \u001b[31m\"{\\\"type\\\":\\\"peer-confirmed\\\",\\\"sessionId\\\":\\\"c88d5063be99c9f69e3a7aabbd69d79b\\\",\\\"transcriptHash\\\":\\\"2ecb3b88681ab216e34c3d5a4c6ce9847f59eb613ecf412ddfcd07cd04f5ceb2\\\"}\u001b[39m\n\u001b[31m{\\\"type\\\":\\\"error\\\",\\\"message\\\":\\\"The source changed after selection: \u001b[7mprivate-acquisition-plan-SECRET-2026.txt\u001b[27m\\\"}\"\u001b[39m\n\n   95 |   // quickly must not hide an attempted diagnostic disclosure from the test.\n   96 |   const emitted = await sender.evaluate(() => (window as unknown as PrivacyState).sentMessages);\n>  97 |   expect(emitted.join(\"\\n\")).not.toContain(secretName);\n      |                                  ^\n   98 |   expect(emitted.map((message) => JSON.parse(message).type)).not.toContain(\"manifest\");\n   99 |   expect(await sender.evaluate(() => (window as unknown as PrivacyState).sentBytes)).toBe(0);\n  100 |   const received = await receiver.evaluate(() => (window as unknown as PrivacyState).receivedMessages);\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts:97:34"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T13:31:15.668Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\preparation-privacy-before-2026-10-13-traces\\preparation-privacy-source-63c22--with-sender-only-confirmed\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\preparation-privacy-before-2026-10-13-traces\\preparation-privacy-source-63c22--with-sender-only-confirmed\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts",
+                    "column": 34,
+                    "line": 97
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "7ded58b1ff66efff2430-23ba198aea936a3fce94",
+          "file": "preparation-privacy.spec.ts",
+          "line": 85,
+          "column": 82
+        },
+        {
+          "title": "source failure keeps private filenames local with receiver only confirmed",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1642,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: not \u001b[32m\"private-acquisition-plan-SECRET-2026.txt\"\u001b[39m\nReceived string:        \u001b[31m\"{\\\"type\\\":\\\"error\\\",\\\"message\\\":\\\"The source changed after selection: \u001b[7mprivate-acquisition-plan-SECRET-2026.txt\u001b[27m\\\"}\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: not \u001b[32m\"private-acquisition-plan-SECRET-2026.txt\"\u001b[39m\nReceived string:        \u001b[31m\"{\\\"type\\\":\\\"error\\\",\\\"message\\\":\\\"The source changed after selection: \u001b[7mprivate-acquisition-plan-SECRET-2026.txt\u001b[27m\\\"}\"\u001b[39m\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts:97:34",
+                    "location": {
+                      "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts",
+                      "column": 34,
+                      "line": 97
+                    },
+                    "snippet": "   95 |   // quickly must not hide an attempted diagnostic disclosure from the test.\n   96 |   const emitted = await sender.evaluate(() => (window as unknown as PrivacyState).sentMessages);\n>  97 |   expect(emitted.join(\"\\n\")).not.toContain(secretName);\n      |                                  ^\n   98 |   expect(emitted.map((message) => JSON.parse(message).type)).not.toContain(\"manifest\");\n   99 |   expect(await sender.evaluate(() => (window as unknown as PrivacyState).sentBytes)).toBe(0);\n  100 |   const received = await receiver.evaluate(() => (window as unknown as PrivacyState).receivedMessages);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts",
+                        "column": 34,
+                        "line": 97
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: not \u001b[32m\"private-acquisition-plan-SECRET-2026.txt\"\u001b[39m\nReceived string:        \u001b[31m\"{\\\"type\\\":\\\"error\\\",\\\"message\\\":\\\"The source changed after selection: \u001b[7mprivate-acquisition-plan-SECRET-2026.txt\u001b[27m\\\"}\"\u001b[39m\n\n   95 |   // quickly must not hide an attempted diagnostic disclosure from the test.\n   96 |   const emitted = await sender.evaluate(() => (window as unknown as PrivacyState).sentMessages);\n>  97 |   expect(emitted.join(\"\\n\")).not.toContain(secretName);\n      |                                  ^\n   98 |   expect(emitted.map((message) => JSON.parse(message).type)).not.toContain(\"manifest\");\n   99 |   expect(await sender.evaluate(() => (window as unknown as PrivacyState).sentBytes)).toBe(0);\n  100 |   const received = await receiver.evaluate(() => (window as unknown as PrivacyState).receivedMessages);\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts:97:34"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T13:31:17.975Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\preparation-privacy-before-2026-10-13-traces\\preparation-privacy-source-5cae8-ith-receiver-only-confirmed\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\preparation-privacy-before-2026-10-13-traces\\preparation-privacy-source-5cae8-ith-receiver-only-confirmed\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\preparation-privacy.spec.ts",
+                    "column": 34,
+                    "line": 97
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "7ded58b1ff66efff2430-d07c900518d00ad4113b",
+          "file": "preparation-privacy.spec.ts",
+          "line": 85,
+          "column": 82
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T13:31:09.177Z",
+    "duration": 11105.903999999999,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

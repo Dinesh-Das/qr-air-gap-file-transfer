@@ -1,0 +1,946 @@
+{
+  "zipPath": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-interrupted-many-f-93e2e-files-renderer-crash-false-/trace.zip",
+  "records": [
+    {
+      "trace": "test.trace",
+      "callId": "hook@1",
+      "start": 111732.972,
+      "end": 111771.01,
+      "durationMs": 38.038000000000466,
+      "method": "hook",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "fixture@30",
+      "start": 111740.613,
+      "end": 111770.953,
+      "durationMs": 30.339999999996508,
+      "method": "fixture",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@31",
+      "start": 111741.299,
+      "end": 111768.339,
+      "durationMs": 27.04000000000815,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@32",
+      "start": 111772.092,
+      "end": 111772.502,
+      "durationMs": 0.40999999998894054,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@33",
+      "start": 111772.876,
+      "end": 111773.415,
+      "durationMs": 0.5389999999897555,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@34",
+      "start": 111773.75,
+      "end": 111874.583,
+      "durationMs": 100.83299999999872,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@35",
+      "start": 111875.036,
+      "end": 111908.945,
+      "durationMs": 33.9090000000142,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@36",
+      "start": 111909.787,
+      "end": 112148.279,
+      "durationMs": 238.49199999999837,
+      "method": "pw:api",
+      "params": {
+        "url": "/"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@37",
+      "start": 112149.062,
+      "end": 112353.197,
+      "durationMs": 204.13499999999476,
+      "method": "pw:api",
+      "params": {
+        "locator": "getByRole('button', { name: 'Send', exact: true })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@38",
+      "start": 112328.471,
+      "end": 112330.591,
+      "durationMs": 2.1199999999953434,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@39",
+      "start": 112354.7,
+      "end": 112510.71,
+      "durationMs": 156.0100000000093,
+      "method": "pw:api",
+      "params": {
+        "url": "/"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@40",
+      "start": 112511.241,
+      "end": 112579.583,
+      "durationMs": 68.34200000000419,
+      "method": "pw:api",
+      "params": {
+        "locator": "getByRole('button', { name: 'Receive', exact: true })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@41",
+      "start": 112569.222,
+      "end": 112571.801,
+      "durationMs": 2.5790000000124564,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "expect@42",
+      "start": 112580.24,
+      "end": 112593.443,
+      "durationMs": 13.202999999994063,
+      "method": "expect",
+      "params": {
+        "locator": "getByRole('button', { name: 'Choose folder', exact: true })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@43",
+      "start": 112594.049,
+      "end": 113495.248,
+      "durationMs": 901.1990000000078,
+      "method": "pw:api",
+      "params": {
+        "locator": "getByRole('button', { name: 'Choose folder', exact: true })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@44",
+      "start": 113496.999,
+      "end": 113555.612,
+      "durationMs": 58.612999999997555,
+      "method": "pw:api",
+      "params": {
+        "locator": "getByRole('button', { name: 'Get pairing code' })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@45",
+      "start": 113536.602,
+      "end": 113537.301,
+      "durationMs": 0.6990000000077998,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "expect@46",
+      "start": 113556.875,
+      "end": 113854.042,
+      "durationMs": 297.1670000000013,
+      "method": "expect",
+      "params": {
+        "locator": "locator('.pairing-code-large')",
+        "expected": "Object"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@47",
+      "start": 113747.265,
+      "end": 113749.266,
+      "durationMs": 2.0010000000038417,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@48",
+      "start": 113759.128,
+      "end": 113761.638,
+      "durationMs": 2.5100000000093132,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@49",
+      "start": 113854.831,
+      "end": 113875.63,
+      "durationMs": 20.79899999999907,
+      "method": "pw:api",
+      "params": {
+        "locator": "locator('.pairing-code-large')"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@50",
+      "start": 113876.41,
+      "end": 113905.111,
+      "durationMs": 28.70100000000093,
+      "method": "pw:api",
+      "params": {
+        "locator": "getByRole('textbox', { name: 'Six-digit pairing code' })",
+        "value": "123456"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@51",
+      "start": 113905.861,
+      "end": 113958.628,
+      "durationMs": 52.76699999999255,
+      "method": "pw:api",
+      "params": {
+        "locator": "getByRole('button', { name: 'Connect to sender' })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@52",
+      "start": 113951.963,
+      "end": 113954.089,
+      "durationMs": 2.1260000000038417,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@53",
+      "start": 113956.673,
+      "end": 113961.932,
+      "durationMs": 5.2590000000054715,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "expect@54",
+      "start": 113959.305,
+      "end": 114353.634,
+      "durationMs": 394.32900000001246,
+      "method": "expect",
+      "params": {
+        "locator": "getByRole('button', { name: 'Codes match', exact: true })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@55",
+      "start": 113989.179,
+      "end": 113991.947,
+      "durationMs": 2.767999999996391,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@56",
+      "start": 114299.644,
+      "end": 114301.793,
+      "durationMs": 2.1490000000048894,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@57",
+      "start": 114321.102,
+      "end": 114322.943,
+      "durationMs": 1.8410000000003492,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "expect@58",
+      "start": 114354.399,
+      "end": 114365.521,
+      "durationMs": 11.121999999988475,
+      "method": "expect",
+      "params": {
+        "locator": "getByRole('button', { name: 'Codes match', exact: true })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@59",
+      "start": 114366.259,
+      "end": 114440.332,
+      "durationMs": 74.0729999999894,
+      "method": "pw:api",
+      "params": {
+        "locator": "getByRole('button', { name: 'Codes match', exact: true })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@60",
+      "start": 114441.102,
+      "end": 114478.911,
+      "durationMs": 37.80899999999383,
+      "method": "pw:api",
+      "params": {
+        "locator": "getByRole('button', { name: 'Codes match', exact: true })"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "expect@61",
+      "start": 114479.575,
+      "end": 119503.418,
+      "durationMs": 5023.843000000008,
+      "method": "expect",
+      "params": {
+        "locator": "getByRole('button', { name: 'Choose destination and save' })"
+      },
+      "error": {
+        "name": "",
+        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n",
+        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Choose destination and save' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Choose destination and save' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Choose destination and save' })\u001b[22m\n\n    at exerciseDestinationRecovery (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:904:87)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts:871:9"
+      }
+    },
+    {
+      "trace": "test.trace",
+      "callId": "hook@62",
+      "start": 119504.21,
+      "end": 120186.424,
+      "durationMs": 682.2139999999927,
+      "method": "hook",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "fixture@63",
+      "start": 119505.468,
+      "end": 120164.09,
+      "durationMs": 658.622000000003,
+      "method": "fixture",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "pw:api@64",
+      "start": 120143.76,
+      "end": 120164.018,
+      "durationMs": 20.25800000000163,
+      "method": "pw:api",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "attach@672d8e99f1cb0fbb9a32453a78144a01",
+      "start": 120175.601,
+      "end": 120175.619,
+      "durationMs": 0.01800000001094304,
+      "method": "test.attach",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "fixture@73",
+      "start": 120176.7,
+      "end": 120176.724,
+      "durationMs": 0.024000000004889444,
+      "method": "fixture",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "hook@98",
+      "start": 120186.768,
+      "end": 120663.287,
+      "durationMs": 476.51900000000023,
+      "method": "hook",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "fixture@103",
+      "start": 120188.744,
+      "end": 120661.064,
+      "durationMs": 472.31999999999243,
+      "method": "fixture",
+      "params": {}
+    },
+    {
+      "trace": "test.trace",
+      "callId": "fixture@110",
+      "start": 120662.535,
+      "end": 120662.551,
+      "durationMs": 0.01600000000325963,
+      "method": "fixture",
+      "params": {}
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3543",
+      "start": 111772.329,
+      "end": 111772.403,
+      "durationMs": 0.07400000000779983,
+      "method": "setNetworkInterceptionPatterns",
+      "params": {
+        "patterns": [
+          {
+            "glob": "**/api/rendezvous/**"
+          }
+        ]
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3545",
+      "start": 111773.152,
+      "end": 111773.282,
+      "durationMs": 0.1300000000046566,
+      "method": "addInitScript",
+      "params": {
+        "source": "(({\n    fileBytes,\n    durableSource,\n    manyFiles,\n    reuseSource\n  }) => {\n    const state = window;\n    state.sentControls = [];\n    state.sentBytes = 0;\n    state.sourceReads = 0;\n    const originalSend = RTCDataChannel.prototype.send;\n    RTCDataChannel.prototype.send = function (data) {\n      if (typeof data === \"string\") state.sentControls.push(JSON.parse(data));else state.sentBytes += data instanceof Blob ? data.size : data.byteLength;\n      return Reflect.apply(originalSend, this, [data]);\n    };\n    const OriginalPeer = RTCPeerConnection;\n    window.RTCPeerConnection = class extends OriginalPeer {\n      constructor(config) {\n        super(config);\n        window.testPeer = this;\n        this.addEventListener(\"datachannel\", event => {\n          state.testChannel = event.channel;\n        });\n      }\n      createDataChannel(label, options) {\n        const channel = super.createDataChannel(label, options);\n        state.testChannel = channel;\n        return channel;\n      }\n    };\n    const file = new File([new Uint8Array(fileBytes).fill(37)], \"test.bin\", {\n      lastModified: 7\n    });\n    const slice = file.slice.bind(file);\n    file.slice = (...args) => {\n      state.sourceReads += 1;\n      return slice(...args);\n    };\n    state.showDirectoryPicker = async () => ({\n      kind: \"directory\",\n      name: \"browser-fixture\",\n      async *entries() {\n        yield [file.name, {\n          kind: \"file\",\n          name: file.name,\n          getFile: async () => file\n        }];\n      }\n    });\n    if (durableSource) state.showDirectoryPicker = async () => {\n      const root = await navigator.storage.getDirectory();\n      const directory = await root.getDirectoryHandle(\"browser-fixture\", {\n        create: true\n      });\n      const handle = await directory.getFileHandle(\"test.bin\", {\n        create: true\n      });\n      if (!reuseSource) {\n        const writer = await handle.createWritable();\n        await writer.write(new Uint8Array(fileBytes).fill(37));\n        await writer.close();\n      }\n      return directory;\n    };\n    window.showOpenFilePicker = async () => {\n      const directory = await state.showDirectoryPicker();\n      const empty = await directory.getFileHandle(\"empty.bin\", {\n        create: true\n      });\n      const writer = await empty.createWritable();\n      await writer.close();\n      return [await directory.getFileHandle(\"test.bin\"), empty];\n    };\n    if (manyFiles) state.showDirectoryPicker = async () => {\n      const directory = (name, entries) => ({\n        kind: \"directory\",\n        name,\n        async *entries() {\n          yield* entries;\n        }\n      });\n      const groups = [];\n      for (let group = 0; group < 12; group++) {\n        const entries = [];\n        for (let offset = 0; offset < 100; offset++) {\n          const index = group * 100 + offset;\n          const name = `file-${String(index).padStart(6, \"0\")}.bin`;\n          const bytes = new Uint8Array(index % 10 === 0 ? 0 : 257);\n          for (let n = 0; n < bytes.length; n++) bytes[n] = index >>> n % 4 * 8 ^ n * 31;\n          const file = new File([bytes], name, {\n            lastModified: 7\n          });\n          entries.push([name, {\n            kind: \"file\",\n            name,\n            getFile: async () => file\n          }]);\n        }\n        const name = `group-${String(group).padStart(2, \"0\")}`;\n        groups.push([name, directory(name, entries)]);\n      }\n      groups.push([\"empty\", directory(\"empty\", [[\"nested\", directory(\"nested\", [])]])]);\n      return directory(\"many-files\", groups);\n    };\n  })({\"fileBytes\":120000,\"durableSource\":false,\"manyFiles\":true,\"reuseSource\":false})"
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3547",
+      "start": 111774.017,
+      "end": 111874.178,
+      "durationMs": 100.16099999999278,
+      "method": "newPage",
+      "params": {}
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3549",
+      "start": 111875.302,
+      "end": 111908.566,
+      "durationMs": 33.26400000001013,
+      "method": "newPage",
+      "params": {}
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3552",
+      "start": 111910.09,
+      "end": 112001.945,
+      "durationMs": 91.85500000001048,
+      "method": "goto",
+      "params": {
+        "url": "/",
+        "waitUntil": "load"
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3554",
+      "start": 112149.436,
+      "end": 112340.419,
+      "durationMs": 190.9829999999929,
+      "method": "click",
+      "params": {
+        "selector": "internal:role=button[name=\"Send\"s]",
+        "strict": true
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3556",
+      "start": 112329.124,
+      "end": 112330.417,
+      "durationMs": 1.2930000000051223,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "27"
+          }
+        ],
+        "body": "{\"ready\":true,\"protocol\":2}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3559",
+      "start": 112355.235,
+      "end": 112473.632,
+      "durationMs": 118.3969999999972,
+      "method": "goto",
+      "params": {
+        "url": "/",
+        "waitUntil": "load"
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3561",
+      "start": 112511.494,
+      "end": 112573.425,
+      "durationMs": 61.93099999999686,
+      "method": "click",
+      "params": {
+        "selector": "internal:role=button[name=\"Receive\"s]",
+        "strict": true
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3563",
+      "start": 112569.935,
+      "end": 112571.283,
+      "durationMs": 1.3479999999981374,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "27"
+          }
+        ],
+        "body": "{\"ready\":true,\"protocol\":2}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3565",
+      "start": 112581.092,
+      "end": 112589.916,
+      "durationMs": 8.823999999993248,
+      "method": "expect",
+      "params": {
+        "selector": "internal:role=button[name=\"Choose folder\"s]",
+        "expression": "to.be.enabled",
+        "expectedValue": {
+          "value": {
+            "v": "undefined"
+          },
+          "handles": []
+        },
+        "isNot": false,
+        "timeout": 5000
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3567",
+      "start": 112594.317,
+      "end": 113488.813,
+      "durationMs": 894.4959999999992,
+      "method": "click",
+      "params": {
+        "selector": "internal:role=button[name=\"Choose folder\"s]",
+        "strict": true
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3569",
+      "start": 113497.57,
+      "end": 113542.874,
+      "durationMs": 45.30399999998917,
+      "method": "click",
+      "params": {
+        "selector": "internal:role=button[name=\"Get pairing code\"i]",
+        "strict": true
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3571",
+      "start": 113536.813,
+      "end": 113537.236,
+      "durationMs": 0.4230000000097789,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "27"
+          }
+        ],
+        "body": "{\"ready\":true,\"protocol\":2}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3573",
+      "start": 113558.444,
+      "end": 113843.172,
+      "durationMs": 284.7280000000028,
+      "method": "expect",
+      "params": {
+        "selector": ".pairing-code-large",
+        "expression": "to.have.text",
+        "expectedText": [
+          {
+            "regexSource": "\\d{3} \\d{3}",
+            "regexFlags": "",
+            "normalizeWhiteSpace": true
+          }
+        ],
+        "expectedValue": {
+          "value": {
+            "v": "undefined"
+          },
+          "handles": []
+        },
+        "isNot": false,
+        "timeout": 5000
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3575",
+      "start": 113748.027,
+      "end": 113749.075,
+      "durationMs": 1.047999999995227,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "167"
+          }
+        ],
+        "body": "{\"roomId\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"ownerToken\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"code\":\"123456\",\"expiresAt\":1791899166158}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3577",
+      "start": 113759.966,
+      "end": 113761.398,
+      "durationMs": 1.4320000000006985,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "20"
+          }
+        ],
+        "body": "{\"status\":\"waiting\"}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3579",
+      "start": 113855.371,
+      "end": 113868.494,
+      "durationMs": 13.123000000006869,
+      "method": "textContent",
+      "params": {
+        "selector": ".pairing-code-large",
+        "strict": true
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3581",
+      "start": 113876.996,
+      "end": 113902.852,
+      "durationMs": 25.855999999999767,
+      "method": "fill",
+      "params": {
+        "selector": "internal:role=textbox[name=\"Six-digit pairing code\"i]",
+        "strict": true,
+        "value": "123456"
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3583",
+      "start": 113906.195,
+      "end": 113954.764,
+      "durationMs": 48.56899999998859,
+      "method": "click",
+      "params": {
+        "selector": "internal:role=button[name=\"Connect to sender\"i]",
+        "strict": true
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3585",
+      "start": 113952.458,
+      "end": 113953.842,
+      "durationMs": 1.3840000000054715,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "27"
+          }
+        ],
+        "body": "{\"ready\":true,\"protocol\":2}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3587",
+      "start": 113957.553,
+      "end": 113961.242,
+      "durationMs": 3.6889999999984866,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "724"
+          }
+        ],
+        "body": "{\"joinId\":\"cccccccccccccccccccccccccccccccc\",\"sessionId\":\"f5f814eb8b0e397fcea1bbff6796eb3c\",\"sdp\":\"v=0\\r\\no=- 8284224701403384975 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 0\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=candidate:4148725273 1 udp 2113937151 4120fc7a-c235-4a0a-8d80-2b645c2b205b.local 62433 typ host generation 0 network-cost 999\\r\\na=ice-ufrag:b9wz\\r\\na=ice-pwd:e0ghCkgZeV8HohyQzZkn/U8L\\r\\na=ice-options:trickle\\r\\na=fingerprint:sha-256 51:E6:94:D0:6E:AC:F0:A0:4F:E4:3E:A7:55:B6:24:3E:1D:A0:1C:1D:06:7D:3C:4C:0F:CC:5C:91:48:47:E8:B3\\r\\na=setup:actpass\\r\\na=mid:0\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\"}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3589",
+      "start": 113960.572,
+      "end": 114349.219,
+      "durationMs": 388.6469999999972,
+      "method": "expect",
+      "params": {
+        "selector": "internal:role=button[name=\"Codes match\"s]",
+        "expression": "to.be.enabled",
+        "expectedValue": {
+          "value": {
+            "v": "undefined"
+          },
+          "handles": []
+        },
+        "isNot": false,
+        "timeout": 5000
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3591",
+      "start": 113989.827,
+      "end": 113991.527,
+      "durationMs": 1.6999999999970896,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "11"
+          }
+        ],
+        "body": "{\"ok\":true}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3593",
+      "start": 114300.371,
+      "end": 114301.621,
+      "durationMs": 1.25,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "699"
+          }
+        ],
+        "body": "{\"status\":\"answered\",\"sessionId\":\"f5f814eb8b0e397fcea1bbff6796eb3c\",\"sdp\":\"v=0\\r\\no=- 1227539875804895224 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 0\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=candidate:4096920536 1 udp 2113937151 5d966d51-4220-416c-a0e7-891955bf90d1.local 58623 typ host generation 0 network-cost 999\\r\\na=ice-ufrag:MwVe\\r\\na=ice-pwd:ZdnbRGzmQ2x/CFobyVtg/+/w\\r\\na=ice-options:trickle\\r\\na=fingerprint:sha-256 FA:92:28:D8:16:1B:0C:21:B0:9C:53:0D:56:72:ED:1F:8F:97:16:48:D0:48:CE:E2:F9:C3:17:B6:F0:13:10:1B\\r\\na=setup:active\\r\\na=mid:0\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\"}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3595",
+      "start": 114321.751,
+      "end": 114322.722,
+      "durationMs": 0.9709999999904539,
+      "method": "fulfill",
+      "params": {
+        "status": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "content-length",
+            "value": "11"
+          }
+        ],
+        "body": "{\"ok\":true}",
+        "isBase64": false
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3597",
+      "start": 114355.676,
+      "end": 114363.846,
+      "durationMs": 8.169999999998254,
+      "method": "expect",
+      "params": {
+        "selector": "internal:role=button[name=\"Codes match\"s]",
+        "expression": "to.be.enabled",
+        "expectedValue": {
+          "value": {
+            "v": "undefined"
+          },
+          "handles": []
+        },
+        "isNot": false,
+        "timeout": 5000
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3599",
+      "start": 114366.656,
+      "end": 114433.677,
+      "durationMs": 67.02099999999336,
+      "method": "click",
+      "params": {
+        "selector": "internal:role=button[name=\"Codes match\"s]",
+        "strict": true
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3601",
+      "start": 114441.566,
+      "end": 114477.213,
+      "durationMs": 35.646999999997206,
+      "method": "click",
+      "params": {
+        "selector": "internal:role=button[name=\"Codes match\"s]",
+        "strict": true
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "callId": "call@3603",
+      "start": 114480.534,
+      "end": 119492.183,
+      "durationMs": 5011.649000000005,
+      "method": "expect",
+      "params": {
+        "selector": "internal:role=button[name=\"Choose destination and save\"i]",
+        "expression": "to.be.visible",
+        "expectedValue": {
+          "value": {
+            "v": "undefined"
+          },
+          "handles": []
+        },
+        "isNot": false,
+        "timeout": 5000
+      },
+      "error": {
+        "message": "Expect failed",
+        "stack": "ExpectError: Expect failed\n    at _Frame.expect (D:\\MyProjects\\QR Air-Gap File Transfer\\node_modules\\playwright-core\\lib\\coreBundle.js:24312:17)\n    at _FrameDispatcher.expect (D:\\MyProjects\\QR Air-Gap File Transfer\\node_modules\\playwright-core\\lib\\coreBundle.js:54886:11)\n    at _ProgressController.run (D:\\MyProjects\\QR Air-Gap File Transfer\\node_modules\\playwright-core\\lib\\coreBundle.js:12374:27)\n    at DispatcherConnection.dispatch (D:\\MyProjects\\QR Air-Gap File Transfer\\node_modules\\playwright-core\\lib\\coreBundle.js:19135:27)",
+        "name": "ExpectError"
+      }
+    },
+    {
+      "trace": "1-trace.trace",
+      "framePage": "page@6b553e0393d724cdb49cbb428c644b39",
+      "time": 113853.748,
+      "sourcePreparing": true,
+      "readyToSave": false
+    },
+    {
+      "trace": "1-trace.trace",
+      "framePage": "page@430462cd5229393dc7ace03bc68f5443",
+      "time": 119497.746,
+      "sourcePreparing": false,
+      "readyToSave": true
+    }
+  ]
+}

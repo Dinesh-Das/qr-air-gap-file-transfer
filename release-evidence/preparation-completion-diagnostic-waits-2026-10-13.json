@@ -1,0 +1,33 @@
+{
+  "scope": "Unchanged tests with 30-second diagnostic observation, trace-on. Waits include preparation+receive+verification.",
+  "waits": [
+    {
+      "case": "pairing-browser-process-te-c5317-ve-preserves-verified-files",
+      "trace": "1-trace.trace",
+      "callId": "call@447",
+      "durationMs": 1889.7640000000101,
+      "error": null
+    },
+    {
+      "case": "pairing-interrupted-many-f-93e2e-files-renderer-crash-false-",
+      "trace": "1-trace.trace",
+      "callId": "call@69",
+      "durationMs": 3966.4450000000006,
+      "error": null
+    },
+    {
+      "case": "pairing-interrupted-many-f-ae879--files-renderer-crash-true-",
+      "trace": "1-trace.trace",
+      "callId": "call@184",
+      "durationMs": 3934.7000000000044,
+      "error": null
+    },
+    {
+      "case": "pairing-interrupted-many-f-ae879--files-renderer-crash-true-",
+      "trace": "1-trace.trace",
+      "callId": "call@260",
+      "durationMs": 2894.2880000000005,
+      "error": null
+    }
+  ]
+}
