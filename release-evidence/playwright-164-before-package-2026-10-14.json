@@ -1,0 +1,46 @@
+{
+  "name": "qr-air-gap-file-transfer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "package:offline": "npm run build && node scripts/package-offline.mjs",
+    "test:package": "npm run build && node scripts/smoke-offline.mjs",
+    "preview": "vite preview",
+    "serve": "node scripts/serve.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:browser": "playwright test",
+    "check:release": "npm run check && npm run test:browser && node scripts/smoke-offline.mjs",
+    "benchmark:receiver": "node scripts/benchmark-receiver.mjs",
+    "benchmark:webrtc": "node scripts/benchmark-webrtc.mjs",
+    "typecheck": "tsc -b --pretty false",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@digitalbazaar/base45": "^1.0.0",
+    "@noble/hashes": "^2.2.0",
+    "fflate": "^0.8.3",
+    "lucide-react": "^0.468.0",
+    "qr-scanner": "^1.4.2",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.10.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.11"
+  }
+}
