@@ -1,0 +1,507 @@
+{
+  "schema": "qrft-process-memory-review-v1",
+  "reviewedAt": "2026-10-13T02:16:48.444Z",
+  "releaseStatus": "NOT READY",
+  "cases": [
+    {
+      "raw": "webrtc-process-memory-smoke-2026-10-12.json",
+      "rawSha256": "32a08e00743a4f52d9b83c237d5e6920c150a7a1ce8e9cb839615f467932b880",
+      "log": "webrtc-process-memory-smoke-2026-10-12.log",
+      "exitCode": 0,
+      "mib": 10,
+      "mode": "transfer",
+      "processMemoryEnabled": true,
+      "saveTree": true,
+      "startedAt": "2026-10-12T16:52:25.443Z",
+      "completedAt": "2026-10-12T16:52:36.892Z",
+      "inputsUnchanged": true,
+      "verified": true,
+      "accountingValidated": true,
+      "streamBytes": 10486010,
+      "destinationCheckedBytes": 10485760,
+      "senderPrivatePeakBytes": 207585280,
+      "receiverPrivatePeakBytes": 189755392,
+      "receiverWorkingSetSumPeakBytes": 537960448,
+      "receiverPrivatePeaksByPhase": {
+        "setup": {
+          "samples": 1,
+          "peakPrivateBytes": 114479104,
+          "peakWorkingSetBytes": 455868416,
+          "lastProcessCount": 5
+        },
+        "receive": {
+          "samples": 1,
+          "peakPrivateBytes": 134094848,
+          "peakWorkingSetBytes": 482033664,
+          "lastProcessCount": 5
+        },
+        "verify->destination": {
+          "samples": 1,
+          "peakPrivateBytes": 189755392,
+          "peakWorkingSetBytes": 537960448,
+          "lastProcessCount": 5
+        }
+      },
+      "receiverHeapByPhase": {
+        "setup": {
+          "peakBytes": 3981608,
+          "lastBytes": 3981608,
+          "samples": 3
+        },
+        "receive": {
+          "peakBytes": 35992125,
+          "lastBytes": 35992125,
+          "samples": 62
+        },
+        "verify": {
+          "peakBytes": 44033359,
+          "lastBytes": 44033359,
+          "samples": 2
+        },
+        "destination": {
+          "peakBytes": 54646171,
+          "lastBytes": 36502022,
+          "samples": 7
+        },
+        "audit": {
+          "peakBytes": 47047178,
+          "lastBytes": 47047178,
+          "samples": 4
+        }
+      },
+      "receiverPrivateBeforeCollectionBytes": null,
+      "receiverPrivateAfterCollectionBytes": null,
+      "receiverBackingAfterCollectionBytes": 2835828,
+      "samples": 3,
+      "maxObserverMs": 469.59850000000006,
+      "nativeObservationsValid": true,
+      "transferMBps": 2.5808540487324634,
+      "streamVerifyMs": 254.70000004768372,
+      "destinationSaveMs": 625.4000000953674,
+      "destinationAuditMs": 46.5,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "cleanupErrors": [],
+      "browserErrors": []
+    },
+    {
+      "raw": "webrtc-process-memory-100MiB-1GiB-2026-10-12.json",
+      "rawSha256": "8743e025fc05b8cc1c0379d48deed071a250405530666837dd2ff1d291c5035f",
+      "log": "webrtc-process-memory-100MiB-1GiB-2026-10-12.log",
+      "exitCode": 0,
+      "mib": 100,
+      "mode": "transfer",
+      "processMemoryEnabled": true,
+      "saveTree": true,
+      "startedAt": "2026-10-12T16:55:17.561Z",
+      "completedAt": "2026-10-12T16:55:38.921Z",
+      "inputsUnchanged": true,
+      "verified": true,
+      "accountingValidated": true,
+      "streamBytes": 104857851,
+      "destinationCheckedBytes": 104857600,
+      "senderPrivatePeakBytes": 189394944,
+      "receiverPrivatePeakBytes": 227635200,
+      "receiverWorkingSetSumPeakBytes": 544563200,
+      "receiverPrivatePeaksByPhase": {
+        "setup": {
+          "samples": 2,
+          "peakPrivateBytes": 113467392,
+          "peakWorkingSetBytes": 420614144,
+          "lastProcessCount": 5
+        },
+        "receive": {
+          "samples": 2,
+          "peakPrivateBytes": 192086016,
+          "peakWorkingSetBytes": 508329984,
+          "lastProcessCount": 5
+        },
+        "verify": {
+          "samples": 1,
+          "peakPrivateBytes": 209928192,
+          "peakWorkingSetBytes": 525508608,
+          "lastProcessCount": 5
+        },
+        "destination": {
+          "samples": 2,
+          "peakPrivateBytes": 205979648,
+          "peakWorkingSetBytes": 522457088,
+          "lastProcessCount": 5
+        },
+        "destination->audit": {
+          "samples": 1,
+          "peakPrivateBytes": 227635200,
+          "peakWorkingSetBytes": 544563200,
+          "lastProcessCount": 5
+        }
+      },
+      "receiverHeapByPhase": {
+        "setup": {
+          "peakBytes": 4022112,
+          "lastBytes": 4022112,
+          "samples": 4
+        },
+        "receive": {
+          "peakBytes": 63506955,
+          "lastBytes": 53933870,
+          "samples": 140
+        },
+        "verify": {
+          "peakBytes": 84560747,
+          "lastBytes": 29946899,
+          "samples": 22
+        },
+        "destination": {
+          "peakBytes": 101372463,
+          "lastBytes": 34233566,
+          "samples": 55
+        },
+        "audit": {
+          "peakBytes": 118401121,
+          "lastBytes": 34324722,
+          "samples": 33
+        }
+      },
+      "receiverPrivateBeforeCollectionBytes": 206983168,
+      "receiverPrivateAfterCollectionBytes": 176443392,
+      "receiverBackingAfterCollectionBytes": 2651722,
+      "samples": 8,
+      "maxObserverMs": 525.9894999999997,
+      "nativeObservationsValid": true,
+      "transferMBps": 16.416615940824105,
+      "streamVerifyMs": 2275.600000023842,
+      "destinationSaveMs": 5622.100000023842,
+      "destinationAuditMs": 683.3999999761581,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "cleanupErrors": [],
+      "browserErrors": []
+    },
+    {
+      "raw": "webrtc-process-memory-100MiB-1GiB-2026-10-12.json",
+      "rawSha256": "8743e025fc05b8cc1c0379d48deed071a250405530666837dd2ff1d291c5035f",
+      "log": "webrtc-process-memory-100MiB-1GiB-2026-10-12.log",
+      "exitCode": 0,
+      "mib": 1024,
+      "mode": "transfer",
+      "processMemoryEnabled": true,
+      "saveTree": true,
+      "startedAt": "2026-10-12T16:55:38.990Z",
+      "completedAt": "2026-10-12T16:58:54.004Z",
+      "inputsUnchanged": true,
+      "verified": true,
+      "accountingValidated": true,
+      "streamBytes": 1073742076,
+      "destinationCheckedBytes": 1073741824,
+      "senderPrivatePeakBytes": 236437504,
+      "receiverPrivatePeakBytes": 348246016,
+      "receiverWorkingSetSumPeakBytes": 668606464,
+      "receiverPrivatePeaksByPhase": {
+        "setup": {
+          "samples": 19,
+          "peakPrivateBytes": 113364992,
+          "peakWorkingSetBytes": 422670336,
+          "lastProcessCount": 5
+        },
+        "setup->receive": {
+          "samples": 1,
+          "peakPrivateBytes": 127918080,
+          "peakWorkingSetBytes": 444989440,
+          "lastProcessCount": 5
+        },
+        "receive": {
+          "samples": 23,
+          "peakPrivateBytes": 270278656,
+          "peakWorkingSetBytes": 583372800,
+          "lastProcessCount": 5
+        },
+        "verify": {
+          "samples": 10,
+          "peakPrivateBytes": 284622848,
+          "peakWorkingSetBytes": 605044736,
+          "lastProcessCount": 5
+        },
+        "destination": {
+          "samples": 23,
+          "peakPrivateBytes": 288002048,
+          "peakWorkingSetBytes": 608735232,
+          "lastProcessCount": 5
+        },
+        "audit": {
+          "samples": 3,
+          "peakPrivateBytes": 348246016,
+          "peakWorkingSetBytes": 668606464,
+          "lastProcessCount": 5
+        }
+      },
+      "receiverHeapByPhase": {
+        "setup": {
+          "peakBytes": 3666871,
+          "lastBytes": 3666871,
+          "samples": 4
+        },
+        "receive": {
+          "peakBytes": 83211017,
+          "lastBytes": 18459783,
+          "samples": 1244
+        },
+        "verify": {
+          "peakBytes": 214968638,
+          "lastBytes": 47100710,
+          "samples": 214
+        },
+        "destination": {
+          "peakBytes": 206596631,
+          "lastBytes": 101721663,
+          "samples": 521
+        },
+        "audit": {
+          "peakBytes": 307294382,
+          "lastBytes": 139530258,
+          "samples": 316
+        }
+      },
+      "receiverPrivateBeforeCollectionBytes": 263364608,
+      "receiverPrivateAfterCollectionBytes": 127574016,
+      "receiverBackingAfterCollectionBytes": 2960893,
+      "samples": 79,
+      "maxObserverMs": 594.3334000000032,
+      "nativeObservationsValid": true,
+      "transferMBps": 18.93080619825884,
+      "streamVerifyMs": 24578.899999976158,
+      "destinationSaveMs": 56892.799999952316,
+      "destinationAuditMs": 5860.200000047684,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "cleanupErrors": [],
+      "browserErrors": []
+    },
+    {
+      "raw": "webrtc-process-memory-5GiB-2026-10-12.json",
+      "rawSha256": "68b841e9170f141700337d6cd0f731c2a7d637338072061c7e13975a2959eddf",
+      "log": "webrtc-process-memory-5GiB-2026-10-12.log",
+      "exitCode": 0,
+      "mib": 5120,
+      "mode": "transfer",
+      "processMemoryEnabled": true,
+      "saveTree": false,
+      "startedAt": "2026-10-12T17:05:13.289Z",
+      "completedAt": "2026-10-12T17:16:00.691Z",
+      "inputsUnchanged": true,
+      "verified": true,
+      "accountingValidated": true,
+      "streamBytes": 5368709372,
+      "destinationCheckedBytes": null,
+      "senderPrivatePeakBytes": 242802688,
+      "receiverPrivatePeakBytes": 398577664,
+      "receiverWorkingSetSumPeakBytes": 718876672,
+      "receiverPrivatePeaksByPhase": {
+        "setup": {
+          "samples": 101,
+          "peakPrivateBytes": 115703808,
+          "peakWorkingSetBytes": 422944768,
+          "lastProcessCount": 5
+        },
+        "setup->receive": {
+          "samples": 1,
+          "peakPrivateBytes": 118042624,
+          "peakWorkingSetBytes": 434241536,
+          "lastProcessCount": 5
+        },
+        "receive": {
+          "samples": 106,
+          "peakPrivateBytes": 273084416,
+          "peakWorkingSetBytes": 587735040,
+          "lastProcessCount": 5
+        },
+        "verify": {
+          "samples": 54,
+          "peakPrivateBytes": 398577664,
+          "peakWorkingSetBytes": 718876672,
+          "lastProcessCount": 5
+        }
+      },
+      "receiverHeapByPhase": {
+        "setup": {
+          "peakBytes": 4102390,
+          "lastBytes": 4102390,
+          "samples": 5
+        },
+        "receive": {
+          "peakBytes": 84989975,
+          "lastBytes": 66002618,
+          "samples": 5633
+        },
+        "verify": {
+          "peakBytes": 342028741,
+          "lastBytes": 69248681,
+          "samples": 1207
+        }
+      },
+      "receiverPrivateBeforeCollectionBytes": 192704512,
+      "receiverPrivateAfterCollectionBytes": 128163840,
+      "receiverBackingAfterCollectionBytes": 4076024,
+      "samples": 262,
+      "maxObserverMs": 750.5346000000136,
+      "nativeObservationsValid": true,
+      "transferMBps": 20.979232491320055,
+      "streamVerifyMs": 133071.69999992847,
+      "destinationSaveMs": null,
+      "destinationAuditMs": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "cleanupErrors": [],
+      "browserErrors": []
+    },
+    {
+      "raw": "webrtc-process-memory-disabled-2026-10-13.json",
+      "rawSha256": "d1cb0727cdad3841860ce783d5a7f37a0bc79ecbf536beb6c962f66da2279a43",
+      "log": "webrtc-process-memory-disabled-2026-10-13.log",
+      "exitCode": 0,
+      "mib": 10,
+      "mode": "raw",
+      "processMemoryEnabled": false,
+      "saveTree": false,
+      "startedAt": "2026-10-13T02:04:44.827Z",
+      "completedAt": "2026-10-13T02:04:53.373Z",
+      "inputsUnchanged": true,
+      "verified": true,
+      "accountingValidated": true,
+      "streamBytes": 10485760,
+      "destinationCheckedBytes": null,
+      "senderPrivatePeakBytes": null,
+      "receiverPrivatePeakBytes": null,
+      "receiverWorkingSetSumPeakBytes": null,
+      "receiverPrivatePeaksByPhase": null,
+      "receiverHeapByPhase": {
+        "setup": {
+          "peakBytes": 3758468,
+          "lastBytes": 3758468,
+          "samples": 2
+        },
+        "receive": {
+          "peakBytes": 14469064,
+          "lastBytes": 14469064,
+          "samples": 62
+        }
+      },
+      "receiverPrivateBeforeCollectionBytes": null,
+      "receiverPrivateAfterCollectionBytes": null,
+      "receiverBackingAfterCollectionBytes": 1422904,
+      "samples": null,
+      "maxObserverMs": null,
+      "nativeObservationsValid": null,
+      "transferMBps": 2.656034853908838,
+      "streamVerifyMs": null,
+      "destinationSaveMs": null,
+      "destinationAuditMs": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "cleanupErrors": [],
+      "browserErrors": []
+    },
+    {
+      "raw": "webrtc-process-memory-disabled-2026-10-13.json",
+      "rawSha256": "d1cb0727cdad3841860ce783d5a7f37a0bc79ecbf536beb6c962f66da2279a43",
+      "log": "webrtc-process-memory-disabled-2026-10-13.log",
+      "exitCode": 0,
+      "mib": 10,
+      "mode": "transfer",
+      "processMemoryEnabled": false,
+      "saveTree": true,
+      "startedAt": "2026-10-13T02:04:53.456Z",
+      "completedAt": "2026-10-13T02:04:55.976Z",
+      "inputsUnchanged": true,
+      "verified": true,
+      "accountingValidated": true,
+      "streamBytes": 10486010,
+      "destinationCheckedBytes": 10485760,
+      "senderPrivatePeakBytes": null,
+      "receiverPrivatePeakBytes": null,
+      "receiverWorkingSetSumPeakBytes": null,
+      "receiverPrivatePeaksByPhase": null,
+      "receiverHeapByPhase": {
+        "setup": {
+          "peakBytes": 3943380,
+          "lastBytes": 3943380,
+          "samples": 3
+        },
+        "receive": {
+          "peakBytes": 35745261,
+          "lastBytes": 35745261,
+          "samples": 5
+        },
+        "verify": {
+          "peakBytes": 40597027,
+          "lastBytes": 40597027,
+          "samples": 1
+        },
+        "destination": {
+          "peakBytes": 46076125,
+          "lastBytes": 38972546,
+          "samples": 4
+        },
+        "audit": {
+          "peakBytes": 49517258,
+          "lastBytes": 49517258,
+          "samples": 4
+        }
+      },
+      "receiverPrivateBeforeCollectionBytes": null,
+      "receiverPrivateAfterCollectionBytes": null,
+      "receiverBackingAfterCollectionBytes": 5354868,
+      "samples": null,
+      "maxObserverMs": null,
+      "nativeObservationsValid": null,
+      "transferMBps": 40.7065605740764,
+      "streamVerifyMs": 125.5,
+      "destinationSaveMs": 293.7999999523163,
+      "destinationAuditMs": 32.700000047683716,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "cleanupErrors": [],
+      "browserErrors": []
+    }
+  ],
+  "changes": [
+    {
+      "path": "scripts/browser-process-memory.mjs",
+      "sha256": "8fb651a94d4c5902c5ac806ea6e342b78a36520988ad3e685fc49c6a81e86f36"
+    },
+    {
+      "path": "scripts/browser-process-memory.ps1",
+      "sha256": "86395d780f2498229cdef346b2d19ac41a1fc7f2a9b3a633165a1e9893bb3d03"
+    },
+    {
+      "path": "tests/browser-process-memory.test.mjs",
+      "sha256": "bb8f3233aeb3b9043893af10810be10eaa47165a3743f434abc2d6c8961ecb2c"
+    },
+    {
+      "path": "scripts/benchmark-webrtc.mjs",
+      "sha256": "ffd283e8e93f788c70099a193074c0b9cdf0b1d9ced041a1458d78819b22edcc"
+    },
+    {
+      "path": "scripts/benchmark-webrtc-page.mjs",
+      "sha256": "2c52adeedaa92a378f8cfd44cc461e615d77b1d45cf6385fbf064916a1bd17cb"
+    }
+  ],
+  "validation": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "tests": 318,
+    "testFiles": 43,
+    "newObserverTests": 2,
+    "rawLog": "process-memory-check-2026-10-13.log",
+    "existingBrowserTestAndRuntimeInputsUnchanged": 113,
+    "builtAssetsUnchanged": 5,
+    "fullBrowserGateNotRepeated": true
+  },
+  "methodology": "Windows Process.PrivateMemorySize64 and WorkingSet64 for process IDs reported by each isolated Chromium process. Two-second delay after each bounded sample; no per-sample history retained. Bracketed phase transitions, explicit missing-ID/error tracking. Main-page GC only after timed work, with before/after process and CDP snapshots.",
+  "limitations": [
+    "Single trials, one host, bundled HeadlessChrome 153.0.8010.12, synthetic sources and direct harness SDP exchange.",
+    "100 MiB and 1 GiB include OPFS destination save and independent byte audit; 5 GiB is receive/whole-stream verification only.",
+    "Periodic sampling can miss peaks and processes created between observations. Working-set sums can double-count shared resident pages and are not unique machine RAM.",
+    "Observer CPU/IPC overhead affects timings; these are diagnostic rates, not matched optimization or LAN speed acceptance.",
+    "Forced collection is diagnostic and is not part of production transfer. Worker/native allocations are not all forced to collect.",
+    "The historical 728 MB 5 GiB full-save/audit heap peak remains retained; this run neither repeats that entire scope nor proves it fixed.",
+    "50–100 GB+, native Windows folders, physical networks/devices, hosted CI, updated isolated install, usability and broader adversarial acceptance remain unproven."
+  ],
+  "sources": [
+    "https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.privatememorysize64",
+    "https://learn.microsoft.com/en-us/windows/win32/procthread/process-working-set"
+  ]
+}

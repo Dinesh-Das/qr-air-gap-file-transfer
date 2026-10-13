@@ -1,0 +1,131 @@
+{
+  "schema": "qrft-evidence-hash-index-v1",
+  "recordedAt": "2026-10-13T02:50:12.4607063+00:00",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "BENCHMARKS.md",
+      "sha256": "e324ccc87bcaf631ddeaab198d98772e2f0e228249b541edbfe9f3346b904ec4"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "sha256": "4a9b7759e13cf6ef4f612065ed8e09ddaaa9abc3e3be7c34938951d1edd7020b"
+    },
+    {
+      "path": "release-evidence/process-memory-check-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/process-memory-check-2026-10-13.log",
+      "sha256": "e3c143b1be98262ed3023a46b2190ffac91d4ec5403b28147a17fcba12442684"
+    },
+    {
+      "path": "release-evidence/process-memory-observer-after-2026-10-12-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/process-memory-observer-after-2026-10-12.log",
+      "sha256": "d6a8009e549a2dad2144333702523de1b95a0cc664324190bb7554b498c146ec"
+    },
+    {
+      "path": "release-evidence/process-memory-observer-before-2026-10-12-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/process-memory-observer-before-2026-10-12.log",
+      "sha256": "571b3b160b1c8a4110772230bd2a504822a3cce6cb43c21dace5b8adff0d7eee"
+    },
+    {
+      "path": "release-evidence/process-memory-observer-final-2026-10-12-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/process-memory-observer-final-2026-10-12.log",
+      "sha256": "666c621172d5cff2b5c7d107a39ffc10133189e547e2f4361d72e6199becdeb8"
+    },
+    {
+      "path": "release-evidence/process-memory-product-assets-2026-10-13.json",
+      "sha256": "81f0a5bf6fffc2c540eed5c1deaa03939f9bf8c3060a7e64b5552d6dd1aca573"
+    },
+    {
+      "path": "release-evidence/process-memory-review-2026-10-13.json",
+      "sha256": "f0bfb3edad29d2de11cb593a0de76d35491118ab42079edcfc57e911c8b8bd76"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-100MiB-1GiB-2026-10-12-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-100MiB-1GiB-2026-10-12.json",
+      "sha256": "8743e025fc05b8cc1c0379d48deed071a250405530666837dd2ff1d291c5035f"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-100MiB-1GiB-2026-10-12.log",
+      "sha256": "6417061f35c20098fd78b8224dcc03777eaa80dd81e2f4c16bc2bfbc25e58167"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-5GiB-2026-10-12-capacity.json",
+      "sha256": "6f6e251808345b48b96a88c24215dce8395c85537191e9549b5511da6fe21504"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-5GiB-2026-10-12-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-5GiB-2026-10-12.json",
+      "sha256": "68b841e9170f141700337d6cd0f731c2a7d637338072061c7e13975a2959eddf"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-5GiB-2026-10-12.log",
+      "sha256": "93c41a04355d3cc368b4d8cbf8a8e9294437dee4fe4663ecdf92cab3dc36ff93"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-disabled-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-disabled-2026-10-13.json",
+      "sha256": "d1cb0727cdad3841860ce783d5a7f37a0bc79ecbf536beb6c962f66da2279a43"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-disabled-2026-10-13.log",
+      "sha256": "7c0c5d08c9216b58cd2e3a3220db59597d475c75be629492d5e18b45b146b874"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-smoke-2026-10-12-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-smoke-2026-10-12.json",
+      "sha256": "32a08e00743a4f52d9b83c237d5e6920c150a7a1ce8e9cb839615f467932b880"
+    },
+    {
+      "path": "release-evidence/webrtc-process-memory-smoke-2026-10-12.log",
+      "sha256": "f5c6ce15e50807bf952c1e3614da69eabee870e502975c277bca296d88925eca"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "sha256": "f82649379f07443365d55710cb011f2e6ef5e4a7e684eb20b8b943339b7cdfdf"
+    },
+    {
+      "path": "scripts/benchmark-webrtc-page.mjs",
+      "sha256": "2c52adeedaa92a378f8cfd44cc461e615d77b1d45cf6385fbf064916a1bd17cb"
+    },
+    {
+      "path": "scripts/benchmark-webrtc.mjs",
+      "sha256": "ffd283e8e93f788c70099a193074c0b9cdf0b1d9ced041a1458d78819b22edcc"
+    },
+    {
+      "path": "scripts/browser-process-memory.mjs",
+      "sha256": "8fb651a94d4c5902c5ac806ea6e342b78a36520988ad3e685fc49c6a81e86f36"
+    },
+    {
+      "path": "scripts/browser-process-memory.ps1",
+      "sha256": "86395d780f2498229cdef346b2d19ac41a1fc7f2a9b3a633165a1e9893bb3d03"
+    },
+    {
+      "path": "tests/browser-process-memory.test.mjs",
+      "sha256": "bb8f3233aeb3b9043893af10810be10eaa47165a3743f434abc2d6c8961ecb2c"
+    }
+  ]
+}
