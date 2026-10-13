@@ -1,0 +1,10 @@
+{
+  "source": "exec_command output chunk4ed8e8 retained in conversation",
+  "runBoundary": "Chrome cases79/80 completed, before final cases; process65735 still live at preceding poll",
+  "cFreeBytes": 2217984000,
+  "dFreeBytes": 2013573120,
+  "reserveBytes": 2147483648,
+  "dBelowReserveBytes": 133910528,
+  "conclusion": "This observed D free-space reading is below2GiB. No continuous reserve/resource acceptance claim.",
+  "limitation": "One observed PowerShell snapshot, not continuous monitoring or causal attribution. Raw observation is preserved in conversation; this file records selected fields."
+}

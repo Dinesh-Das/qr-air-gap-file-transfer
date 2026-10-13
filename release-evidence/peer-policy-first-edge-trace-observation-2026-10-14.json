@@ -1,0 +1,312 @@
+{
+  "recordedAt": "2026-10-14T15:36:49.022Z",
+  "path": "D:/MyProjects/qrft-fresh-current-2026-10-14-haEoDP/test-results-peer-policy-full-edge/pairing-sender-and-receive-160b9-locks-after-source-recovery/trace.zip",
+  "compressedBytes": 26165,
+  "files": [
+    {
+      "name": "test.trace",
+      "events": 25,
+      "actions": [
+        {
+          "type": "after",
+          "callId": "hvyv@13612",
+          "endTime": 354248.156,
+          "annotations": []
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13614",
+          "startTime": 354248.564,
+          "class": "Test",
+          "method": "pw:api",
+          "title": "Add init script",
+          "params": {},
+          "stack": [
+            {
+              "file": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e\\pairing.spec.ts",
+              "line": 24,
+              "column": 3,
+              "function": "setupPair"
+            },
+            {
+              "file": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e\\pairing.spec.ts",
+              "line": 1780,
+              "column": 16,
+              "function": "exerciseJournalResume"
+            },
+            {
+              "file": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e\\pairing.spec.ts",
+              "line": 1748,
+              "column": 9
+            }
+          ],
+          "group": "configuration"
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13614",
+          "endTime": 354250.209,
+          "annotations": []
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13616",
+          "startTime": 354250.687,
+          "class": "Test",
+          "method": "pw:api",
+          "title": "Create page",
+          "params": {},
+          "stack": [
+            {
+              "file": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e\\pairing.spec.ts",
+              "line": 97,
+              "column": 32,
+              "function": "setupPair"
+            },
+            {
+              "file": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e\\pairing.spec.ts",
+              "line": 1780,
+              "column": 16,
+              "function": "exerciseJournalResume"
+            },
+            {
+              "file": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e\\pairing.spec.ts",
+              "line": 1748,
+              "column": 9
+            }
+          ]
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13616",
+          "endTime": 354280.76,
+          "annotations": []
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13618",
+          "startTime": 354281.219,
+          "class": "Test",
+          "method": "pw:api",
+          "title": "Create page",
+          "params": {},
+          "stack": [
+            {
+              "file": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e\\pairing.spec.ts",
+              "line": 98,
+              "column": 34,
+              "function": "setupPair"
+            },
+            {
+              "file": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e\\pairing.spec.ts",
+              "line": 1780,
+              "column": 16,
+              "function": "exerciseJournalResume"
+            },
+            {
+              "file": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e\\pairing.spec.ts",
+              "line": 1748,
+              "column": 9
+            }
+          ]
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13620",
+          "startTime": 398898.588,
+          "class": "Test",
+          "method": "hook",
+          "title": "After Hooks",
+          "params": {},
+          "stack": []
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13631",
+          "startTime": 398993.66,
+          "class": "Test",
+          "method": "test.attach",
+          "title": "Attach \"error-context\"",
+          "params": {},
+          "stack": []
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13631",
+          "endTime": 398993.676,
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "file": "attachments/99388b8000d02b750f3f841074a368e0823f416f"
+            }
+          ]
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13634",
+          "parentId": "hvyv@13620",
+          "startTime": 398994.356,
+          "class": "Test",
+          "method": "fixture",
+          "title": "Fixture \"baseURL\"",
+          "params": {},
+          "stack": [
+            {
+              "file": "project#",
+              "line": 1,
+              "column": 1
+            }
+          ],
+          "group": "configuration"
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13634",
+          "endTime": 398994.367,
+          "annotations": []
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13620",
+          "endTime": 398998.09,
+          "annotations": []
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13660",
+          "startTime": 398998.357,
+          "class": "Test",
+          "method": "hook",
+          "title": "Worker Cleanup",
+          "params": {},
+          "stack": []
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13665",
+          "parentId": "hvyv@13660",
+          "startTime": 398999.221,
+          "class": "Test",
+          "method": "fixture",
+          "title": "Fixture \"browser\"",
+          "params": {},
+          "stack": []
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13665",
+          "endTime": 399360.896,
+          "annotations": []
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13673",
+          "parentId": "hvyv@13660",
+          "startTime": 399362.407,
+          "class": "Test",
+          "method": "fixture",
+          "title": "Fixture \"channel\"",
+          "params": {},
+          "stack": [
+            {
+              "file": "project#",
+              "line": 1,
+              "column": 1
+            }
+          ],
+          "group": "configuration"
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13673",
+          "endTime": 399362.426,
+          "annotations": []
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13660",
+          "endTime": 399363.13,
+          "annotations": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "1-trace.trace",
+      "events": 10,
+      "actions": [
+        {
+          "type": "before",
+          "callId": "hvyv@13612",
+          "startTime": 354247.033,
+          "title": "Route requests",
+          "class": "BrowserContext",
+          "method": "setNetworkInterceptionPatterns",
+          "params": {
+            "patterns": [
+              {
+                "glob": "**/api/rendezvous/**"
+              }
+            ]
+          }
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13612",
+          "endTime": 354247.996
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13614",
+          "startTime": 354248.83,
+          "class": "BrowserContext",
+          "method": "addInitScript",
+          "params": {
+            "source": "(({\n    fileBytes,\n    durableSource,\n    manyFiles,\n    reuseSource\n  }) => {\n    const state = window;\n    state.sentControls = [];\n    state.sentBytes = 0;\n    state.sourceReads = 0;\n    const originalSend = RTCDataChannel.prototype.send;\n    RTCDataChannel.prototype.send = function (data) {\n      if (typeof data === \"string\") state.sentControls.push(JSON.parse(data));else state.sentBytes += data instanceof Blob ? data.size : data.byteLength;\n      return Reflect.apply(originalSend, this, [data]);\n    };\n    const OriginalPeer = RTCPeerConnection;\n    window.RTCPeerConnection = class extends OriginalPeer {\n      constructor(config) {\n        super(config);\n        window.testPeer = this;\n        this.addEventListener(\"datachannel\", event => {\n          state.testChannel = event.channel;\n        });\n      }\n      createDataChannel(label, options) {\n        const channel = super.createDataChannel(label, options);\n        state.testChannel = channel;\n        return channel;\n      }\n    };\n    const file = new File([new Uint8Array(fileBytes).fill(37)], \"test.bin\", {\n      lastModified: 7\n    });\n    const slice = file.slice.bind(file);\n    file.slice = (...args) => {\n      state.sourceReads += 1;\n      return slice(...args);\n    };\n    state.showDirectoryPicker = async () => ({\n      kind: \"directory\",\n      name: \"browser-fixture\",\n      async *entries() {\n        yield [file.name, {\n          kind: \"file\",\n          name: file.name,\n          getFile: async () => file\n        }];\n      }\n    });\n    if (durableSource) state.showDirectoryPicker = async () => {\n      const root = await navigator.storage.getDirectory();\n      const directory = await root.getDirectoryHandle(\"browser-fixture\", {\n        create: true\n      });\n      const handle = await directory.getFileHandle(\"test.bin\", {\n        create: true\n      });\n      if (!reuseSource) {\n        const writer = await handle.createWritable();\n        await writer.write(new Uint8Array(fileBytes).fill(37));\n        await writer.close();\n      }\n      return directory;\n    };\n    window.showOpenFilePicker = async () => {\n      const directory = await state.showDirectoryPicker();\n      const empty = await directory.getFileHandle(\"empty.bin\", {\n        create: true\n      });\n      const writer = await empty.createWritable();\n      await writer.close();\n      return [await directory.getFileHandle(\"test.bin\"), empty];\n    };\n    if (manyFiles) state.showDirectoryPicker = async () => {\n      const directory = (name, entries) => ({\n        kind: \"directory\",\n        name,\n        async *entries() {\n          yield* entries;\n        }\n      });\n      const groups = [];\n      for (let group = 0; group < 12; group++) {\n        const entries = [];\n        for (let offset = 0; offset < 100; offset++) {\n          const index = group * 100 + offset;\n          const name = `file-${String(index).padStart(6, \"0\")}.bin`;\n          const bytes = new Uint8Array(index % 10 === 0 ? 0 : 257);\n          for (let n = 0; n < bytes.length; n++) bytes[n] = index >>> n % 4 * 8 ^ n * 31;\n          const file = new File([bytes], name, {\n            lastModified: 7\n          });\n          entries.push([name, {\n            kind: \"file\",\n            name,\n            getFile: async () => file\n          }]);\n        }\n        const name = `group-${String(group).padStart(2, \"0\")}`;\n        groups.push([name, directory(name, entries)]);\n      }\n      groups.push([\"empty\", directory(\"empty\", [[\"nested\", directory(\"nested\", [])]])]);\n      return directory(\"many-files\", groups);\n    };\n  })({\"fileBytes\":12582912,\"durableSource\":true,\"manyFiles\":false,\"reuseSource\":false})"
+          }
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13614",
+          "endTime": 354250.023,
+          "result": {
+            "disposable": "<Disposable>"
+          }
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13616",
+          "startTime": 354250.891,
+          "class": "BrowserContext",
+          "method": "newPage",
+          "params": {}
+        },
+        {
+          "type": "after",
+          "callId": "hvyv@13616",
+          "endTime": 354280.385,
+          "result": {
+            "page": "<Page>"
+          }
+        },
+        {
+          "type": "before",
+          "callId": "hvyv@13618",
+          "startTime": 354281.491,
+          "class": "BrowserContext",
+          "method": "newPage",
+          "params": {}
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "0-trace.trace",
+      "events": 1,
+      "actions": [],
+      "errors": []
+    }
+  ],
+  "limitation": "Trace observation, not causal attribution to candidate guard or host resource symptoms."
+}

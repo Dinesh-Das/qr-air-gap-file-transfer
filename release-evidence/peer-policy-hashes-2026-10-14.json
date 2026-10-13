@@ -1,0 +1,180 @@
+{
+  "recordedAt": "2026-10-14T15:29:19.051Z",
+  "files": [
+    {
+      "path": "release-evidence/peer-policy-review-2026-10-14.json",
+      "bytes": 80050,
+      "sha256": "17ed256ae364efa55cc36141c74bc379596228c24ea0ca34b71d67f84a54623d"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 80050,
+      "sha256": "17ed256ae364efa55cc36141c74bc379596228c24ea0ca34b71d67f84a54623d"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 495,
+      "sha256": "a5dbd318fad68f1e4c69ef2292794e2e651cb168d2e80ed693ab772fb96f3876"
+    },
+    {
+      "path": "release-evidence/release-gate-before-peer-policy-2026-10-14.json",
+      "bytes": 72817,
+      "sha256": "b3e28907b035678e1604026797096bc8a3926651624fc15e72812c8282e447e0"
+    },
+    {
+      "path": "release-evidence/peer-candidate-unit-green-2026-10-14.log",
+      "bytes": 353,
+      "sha256": "9617fa741242bf4b0472ae9c5a0d1ccfb2a3d62e334269dff4a28d47e0a73400"
+    },
+    {
+      "path": "release-evidence/peer-candidate-unit-green-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-candidate-unit-red-2026-10-14.log",
+      "bytes": 3018,
+      "sha256": "d67af9cb63d5e6e4884df7d97a533de58c29158f17cada226f7ca21443de52b1"
+    },
+    {
+      "path": "release-evidence/peer-candidate-unit-red-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/peer-policy-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "d6ebac59092468b1f4c8f1c015e6e8704205e29b315bdfc1d3338083383084aa"
+    },
+    {
+      "path": "release-evidence/peer-policy-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-native-green-2026-10-14.log",
+      "bytes": 785,
+      "sha256": "dd6ce4cfff30ace53973cf33a84808efc41862790eadfa9e1ddc32d224026974"
+    },
+    {
+      "path": "release-evidence/peer-policy-native-green-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-native-red-2026-10-14.log",
+      "bytes": 4860,
+      "sha256": "69605efeec0a2982b9e9484ecbea419784b4d438b43ffd8f994057e60f445a97"
+    },
+    {
+      "path": "release-evidence/peer-policy-native-red-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/peer-policy-package-2026-10-14.log",
+      "bytes": 112,
+      "sha256": "59a2add1cd6cc230450fc3b5dd835129ad2290c43c870f2388a303745c622c75"
+    },
+    {
+      "path": "release-evidence/peer-policy-package-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-smoke-2026-10-14.log",
+      "bytes": 616,
+      "sha256": "bb313c8aacffc818b1c4d3c5d7305f2990a8a93d9b9aa47e18c52dc58fd04b39"
+    },
+    {
+      "path": "release-evidence/peer-policy-smoke-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-workspace-build-2026-10-14.log",
+      "bytes": 981,
+      "sha256": "cf20e7501b06f92ba88f21213506546c18d9ac86cc42315455bef649f5fade36"
+    },
+    {
+      "path": "release-evidence/peer-policy-workspace-build-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-current-chrome-2026-10-14.json",
+      "bytes": 1204399,
+      "sha256": "ed089577e1873bfb59cb3588034115ea8f19706fc1a66d424b673e1e374170c7"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-current-chrome-2026-10-14.log",
+      "bytes": 190403,
+      "sha256": "fff52ab980532b9186cb5eca62d8132f57d91775ea145b2e50146c117b0ef5b9"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-peer-policy-red\\peer-candidate-policy-reje-15428-ative-SDP-processing-sender\\trace.zip",
+      "bytes": 794744,
+      "sha256": "27e10627159c103c3c89c18da789c56af386082a08dad0934f9433e86cf6c60f"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-peer-policy-red\\peer-candidate-policy-reje-cf148-ive-SDP-processing-receiver\\trace.zip",
+      "bytes": 204642,
+      "sha256": "0b50adc692a818acf25d39871a047c3abc7a315a472b0c3460a5daf4fd287afc"
+    },
+    {
+      "path": "src/lib/webrtc-signaling.ts",
+      "bytes": 11957,
+      "sha256": "fe7d9e75ea14fa526e3e8ceb8445c8d631c9cfe5bc10001c1f651223a7b41421"
+    },
+    {
+      "path": "src/lib/transfer-problem.ts",
+      "bytes": 6079,
+      "sha256": "fe539d75660d16e14f376f42c68a358089d4d1b7961a96b8242b98038a82e89e"
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "bytes": 30643,
+      "sha256": "81424fea165b16a9f89177617bcaef671ac1b80961e6400ab41320476ce29b0b"
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "bytes": 32542,
+      "sha256": "e0f44f8541b9305b0ebbab1e8a529322c8863d68fd31af5833810a29d8f9e6c8"
+    },
+    {
+      "path": "tests/transfer-problem.test.ts",
+      "bytes": 6129,
+      "sha256": "ac0a32276a185fe9159bfd061553147ba42482f1283233c5e2c53696c57c74b5"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 85017,
+      "sha256": "ebf7d8b8ac6fa9548df323d552a95917bcba903404b14ae2a508474e4327c7df"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 127379,
+      "sha256": "8146e244813c26b2d10971ca8fd20a51d95356381f587f16c9bbc9199e839fd6"
+    },
+    {
+      "path": "tests/remote-sdp-policy.test.ts",
+      "bytes": 1694,
+      "sha256": "f9ba6740bcd14c83a3bc48aee6566a60dc9513cb94439ab50f69c7cda7aead9a"
+    },
+    {
+      "path": "e2e/peer-candidate-policy.spec.ts",
+      "bytes": 3629,
+      "sha256": "eb1e02ca726fc4647ee040c2fd9b49651bf346a16574372836c20d2a97cd5e28"
+    },
+    {
+      "path": "SPEC-peer-candidate-policy.md",
+      "bytes": 1780,
+      "sha256": "f8abf73929079d03903e0a5defb05371a1db83045c297c8310e90341e314db7f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-peer-policy\\CHECKSUMS.json",
+      "bytes": 3165,
+      "sha256": "5609f42ce74889a35389c06f104e0a41bd60b0133aa3e27e8cb35767fd4204e1"
+    }
+  ]
+}

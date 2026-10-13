@@ -1,0 +1,8 @@
+{
+  "observation": "Separate default PowerShell status process failed during startup while full Edge gate was running.",
+  "exitCode": -2146232797,
+  "exception": "System.OutOfMemoryException",
+  "stackBoundary": "InitialSessionState.CreateDefault2 / PSSnapInReader.ReadCoreEngineSnapIn / InlineArrayAsReadOnlySpan",
+  "source": "exec_command result chunk4450d4 retained in conversation; this file records key observed fields, not a copied complete stderr log.",
+  "applicationAttribution": "Not established. Subsequent Node/cmd and PowerShell observations succeeded. Does not prove failure79 was caused by this exception or memory/disk pressure."
+}

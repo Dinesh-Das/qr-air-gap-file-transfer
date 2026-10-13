@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-10-15T02:57:39.699Z",
+  "files": [
+    {
+      "path": "release-evidence/peer-policy-edge-rerun-review-2026-10-15.json",
+      "bytes": 85028,
+      "sha256": "f3cf389cefb90cfea43fbd19bc0543d23028ae962c2272c12c33e16a2903ae1b"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 85028,
+      "sha256": "f3cf389cefb90cfea43fbd19bc0543d23028ae962c2272c12c33e16a2903ae1b"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 571,
+      "sha256": "523fecc25cc005993eaa15615992e4d0f48fd657f0086f4bf1f180a933fc1bc5"
+    },
+    {
+      "path": "release-evidence/release-gate-before-peer-policy-edge-rerun-2026-10-15.json",
+      "bytes": 83647,
+      "sha256": "1213c14ee6e37f9eabee616f6c527c4be8b9260ca2b0f7924a7613c28a6a86c6"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-edge-rerun-2026-10-15.log",
+      "bytes": 11394,
+      "sha256": "314d9d19552f1f5ce99f34f82d8467cbd5168b704f7c451dbc669bb9ae54c084"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-edge-rerun-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-preserved-edge-rerun-2026-10-15.json",
+      "bytes": 1280708,
+      "sha256": "d438774650e2dc9f869310cac7e9e2d515d20232df1ffbbef19869b3b0e74843"
+    },
+    {
+      "path": "release-evidence/peer-policy-preserved-edge-rerun-2026-10-15.log",
+      "bytes": 240900,
+      "sha256": "8c5c6c4cc03773fdb9169688547ad68ffe3523419d21bd135b51039b0c51c6de"
+    }
+  ]
+}

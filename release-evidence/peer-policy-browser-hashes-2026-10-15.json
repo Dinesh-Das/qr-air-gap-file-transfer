@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-10-15T03:04:34.143Z",
+  "files": [
+    {
+      "path": "release-evidence/peer-policy-browser-review-2026-10-15.json",
+      "bytes": 84589,
+      "sha256": "b32f73caad03cebb94e55a1a6a0bc985d8b95cb76933dba0ca868d5f2a9b47a4"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 84589,
+      "sha256": "b32f73caad03cebb94e55a1a6a0bc985d8b95cb76933dba0ca868d5f2a9b47a4"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 590,
+      "sha256": "f63b958bc9a3eb2bdafda886675a8808ad1c9ed70e5646e49ffb06423ad54ddf"
+    },
+    {
+      "path": "release-evidence/release-gate-before-peer-policy-browsers-2026-10-15.json",
+      "bytes": 85028,
+      "sha256": "f3cf389cefb90cfea43fbd19bc0543d23028ae962c2272c12c33e16a2903ae1b"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-chrome-2026-10-15.log",
+      "bytes": 11244,
+      "sha256": "77011a8e7832f7a922032f6569e8f262fbd19e037693f158521d0980ec202a9e"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-chrome-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-during-chrome-reserve-observation-2026-10-15.json",
+      "bytes": 607,
+      "sha256": "81cad7acf492e2d671ec03b4b966fb0c08f8cb90eb65eab2e7b52831bec711f7"
+    },
+    {
+      "path": "release-evidence/peer-policy-post-chrome-capacity-2026-10-15.json",
+      "bytes": 111,
+      "sha256": "89c6e2e5039b5f5962805ec6d3fc9ca9a7f858277082c10d95adb3b65074a1e5"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 85323,
+      "sha256": "a017104d0bf6b7cf2be9db5e1024265c411361799e751b61880d58e5597d559d"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 127685,
+      "sha256": "68d32e95f316eaf2e8844f820cf0dc58eb22ca389df8a5159907753bb1563607"
+    }
+  ]
+}

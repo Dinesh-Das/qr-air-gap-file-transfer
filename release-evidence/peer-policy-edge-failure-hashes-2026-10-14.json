@@ -1,0 +1,80 @@
+{
+  "recordedAt": "2026-10-14T15:42:33.664Z",
+  "files": [
+    {
+      "path": "release-evidence/peer-policy-edge-failure-review-2026-10-14.json",
+      "bytes": 83647,
+      "sha256": "1213c14ee6e37f9eabee616f6c527c4be8b9260ca2b0f7924a7613c28a6a86c6"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 83647,
+      "sha256": "1213c14ee6e37f9eabee616f6c527c4be8b9260ca2b0f7924a7613c28a6a86c6"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 493,
+      "sha256": "2363411dd49dad009ef3f5a64c9664c9f67036d732ac02d8f390e80d08d7457a"
+    },
+    {
+      "path": "release-evidence/release-gate-before-peer-policy-edge-failure-2026-10-14.json",
+      "bytes": 80050,
+      "sha256": "17ed256ae364efa55cc36141c74bc379596228c24ea0ca34b71d67f84a54623d"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-edge-2026-10-14.log",
+      "bytes": 12609,
+      "sha256": "881febc8c39c1c443d9f5811b6bc072dd07321b3d8605d8f1df558c2ac3629a9"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-edge-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/peer-policy-reload-retry-2026-10-14.log",
+      "bytes": 536,
+      "sha256": "cea3706131cb968784e1290385091206939ea5b566c8e56586c6845d33a38e45"
+    },
+    {
+      "path": "release-evidence/peer-policy-reload-retry-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-host-status-2026-10-14.json",
+      "bytes": 1241,
+      "sha256": "4a287d0dd29be97891a5110d8208312e54a2409b0e1ba33453d2318aae277f7e"
+    },
+    {
+      "path": "release-evidence/peer-policy-host-owned-artifact-sizes-2026-10-14.json",
+      "bytes": 512,
+      "sha256": "b3ee28f6a498c6d91d0d0fac2000563d636e94ee4ad0e8f75fee356bd5f2235d"
+    },
+    {
+      "path": "release-evidence/peer-policy-first-edge-trace-observation-2026-10-14.json",
+      "bytes": 12275,
+      "sha256": "11b16652f3786f46fc3d363c7bed5e99802dd1dd087137daf8a998319309fded"
+    },
+    {
+      "path": "release-evidence/peer-policy-pagefile-observation-2026-10-14.json",
+      "bytes": 110,
+      "sha256": "50687db0a475dbf922c6fa354c29da525827363e4f95a1277c6a13cf09831f3c"
+    },
+    {
+      "path": "release-evidence/peer-policy-commit-observation-2026-10-14.json",
+      "bytes": 136,
+      "sha256": "6736931020424b2f5350a4b3612682aac57561cf4193b398a1618c27c7d47486"
+    },
+    {
+      "path": "release-evidence/peer-policy-shell-startup-failure-2026-10-14.json",
+      "bytes": 650,
+      "sha256": "f49550b24e3eb746d72efc5c503e5ce41c97ca80c65e3d68fac277718fab8c56"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-peer-policy-full-edge\\pairing-sender-and-receive-160b9-locks-after-source-recovery\\trace.zip",
+      "bytes": 26165,
+      "sha256": "6019908cb16b838f91f940bf46ee402b1664ed674639260ec7d1d2659ee6571b"
+    }
+  ]
+}

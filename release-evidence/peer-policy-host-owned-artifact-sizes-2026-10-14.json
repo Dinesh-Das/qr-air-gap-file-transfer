@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-10-14T15:34:32.996Z",
+  "folders": [
+    {
+      "path": "D:/MyProjects/qrft-fresh-current-2026-10-14-haEoDP/test-results-peer-policy-full-edge",
+      "bytes": 250407435,
+      "files": 5241
+    },
+    {
+      "path": "D:/MyProjects/qrft-fresh-current-2026-10-14-haEoDP/validation/temp",
+      "bytes": 4159306,
+      "files": 83
+    }
+  ],
+  "limitation": "Logical bytes in these two owned directories only; not allocated disk bytes or causal attribution of host free-space changes."
+}
