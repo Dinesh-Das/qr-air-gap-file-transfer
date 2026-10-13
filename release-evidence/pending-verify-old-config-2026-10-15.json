@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-15T03:21:18.545Z",
+  "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-corrupt-discard",
+  "config": {
+    "testDir": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\e2e",
+    "timeout": 45000,
+    "workers": 1,
+    "use": {
+      "channel": "msedge",
+      "baseURL": "http://127.0.0.1:44938",
+      "trace": "retain-on-failure"
+    },
+    "webServer": {
+      "command": "node \"D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-corrupt-discard\\scripts\\serve.mjs\"",
+      "env": {
+        "QRFT_PORT": "44938",
+        "QRFT_SIGNAL_PORT": "41972"
+      },
+      "url": "http://127.0.0.1:44938",
+      "reuseExistingServer": false
+    }
+  }
+}

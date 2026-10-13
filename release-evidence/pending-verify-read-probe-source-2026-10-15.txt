@@ -1,0 +1,182 @@
+import { browserChannel } from "./browser-channel";
+import { test, expect, chromium, type Page, type BrowserContext } from "@playwright/test";
+import { createHash } from "node:crypto";
+import { formatBytes } from "../src/lib/format";
+
+async function setupPair(context: BrowserContext, alteredOffer = false, fileBytes = 120_000, realRuntime = false, manual = false, durableSource = false, selectFiles = false, dropSource = false, manyFiles = false, reuseSource = false) {
+  let offer: { sessionId: string; sdp: string };
+  let answer: { sessionId: string; sdp: string } | undefined;
+  if (!realRuntime) await context.route("**/api/rendezvous/**", async (route) => {
+    const request = route.request();
+    const path = new URL(request.url()).pathname;
+    let json: unknown;
+    if (request.method() === "DELETE") json = { ok: true };
+    else if (path.endsWith("/health")) json = { ready: true, protocol: 2 };
+    else if (path.endsWith("/rooms")) {
+      answer = undefined;
+      offer = request.postDataJSON();
+      json = { roomId: "a".repeat(32), ownerToken: "b".repeat(64), code: "123456", expiresAt: Date.now() + 120_000 };
+    } else if (path.endsWith("/join")) json = { joinId: "c".repeat(32), ...offer, sdp: offer.sdp + (alteredOffer ? "a=x-test:altered\r\n" : "") };
+    else if (path.endsWith("/answer")) { answer = request.postDataJSON(); json = { ok: true }; }
+    else json = answer ? { status: "answered", ...answer } : { status: "waiting" };
+    await route.fulfill({ json });
+  });
+  await context.addInitScript(({ fileBytes, durableSource, manyFiles, reuseSource }) => {
+    const state = window as unknown as {
+      sentControls: Array<{ type: string }>; sentBytes: number; testChannel: RTCDataChannel; sourceReads: number;
+      showDirectoryPicker: () => Promise<unknown>;
+    };
+    state.sentControls = [];
+    state.sentBytes = 0;
+    state.sourceReads = 0;
+    const originalSend = RTCDataChannel.prototype.send;
+    RTCDataChannel.prototype.send = function(data: string | Blob | ArrayBuffer | ArrayBufferView<ArrayBuffer>) {
+      if (typeof data === "string") state.sentControls.push(JSON.parse(data));
+      else state.sentBytes += data instanceof Blob ? data.size : data.byteLength;
+      return Reflect.apply(originalSend, this, [data]);
+    };
+    const OriginalPeer = RTCPeerConnection;
+    window.RTCPeerConnection = class extends OriginalPeer {
+      constructor(config?: RTCConfiguration) {
+        super(config);
+        (window as unknown as { testPeer: RTCPeerConnection }).testPeer = this;
+        this.addEventListener("datachannel", (event) => { state.testChannel = event.channel; });
+      }
+      createDataChannel(label: string, options?: RTCDataChannelInit) {
+        const channel = super.createDataChannel(label, options);
+        state.testChannel = channel;
+        return channel;
+      }
+    };
+    const file = new File([new Uint8Array(fileBytes).fill(37)], "test.bin", { lastModified: 7 });
+    const slice = file.slice.bind(file);
+    file.slice = (...args) => { state.sourceReads += 1; return slice(...args); };
+    state.showDirectoryPicker = async () => ({
+      kind: "directory", name: "browser-fixture",
+      async *entries() { yield [file.name, { kind: "file", name: file.name, getFile: async () => file }]; },
+    });
+    if (durableSource) state.showDirectoryPicker = async () => {
+      const root = await navigator.storage.getDirectory();
+      const directory = await root.getDirectoryHandle("browser-fixture", { create: true });
+      const handle = await directory.getFileHandle("test.bin", { create: true });
+      if (!reuseSource) {
+        const writer = await handle.createWritable();
+        await writer.write(new Uint8Array(fileBytes).fill(37));
+        await writer.close();
+      }
+      return directory;
+    };
+    window.showOpenFilePicker = async () => {
+      const directory = await state.showDirectoryPicker() as FileSystemDirectoryHandle;
+      const empty = await directory.getFileHandle("empty.bin", { create: true });
+      const writer = await empty.createWritable(); await writer.close();
+      return [await directory.getFileHandle("test.bin"), empty];
+    };
+    if (manyFiles) state.showDirectoryPicker = async () => {
+      const directory = (name: string, entries: Array<[string, unknown]>): unknown => ({
+        kind: "directory", name, async *entries() { yield* entries; },
+      });
+      const groups: Array<[string, unknown]> = [];
+      for (let group = 0; group < 12; group++) {
+        const entries: Array<[string, unknown]> = [];
+        for (let offset = 0; offset < 100; offset++) {
+          const index = group * 100 + offset;
+          const name = `file-${String(index).padStart(6, "0")}.bin`;
+          const bytes = new Uint8Array(index % 10 === 0 ? 0 : 257);
+          for (let n = 0; n < bytes.length; n++) bytes[n] = (index >>> ((n % 4) * 8)) ^ (n * 31);
+          const file = new File([bytes], name, { lastModified: 7 });
+          entries.push([name, { kind: "file", name, getFile: async () => file }]);
+        }
+        const name = `group-${String(group).padStart(2, "0")}`;
+        groups.push([name, directory(name, entries)]);
+      }
+      groups.push(["empty", directory("empty", [["nested", directory("nested", [])]])]);
+      return directory("many-files", groups);
+    };
+  }, { fileBytes, durableSource, manyFiles, reuseSource });
+  const sender = await context.newPage();
+  const receiver = await context.newPage();
+  const errors: string[] = [];
+  for (const page of [sender, receiver]) {
+    page.on("pageerror", (error) => errors.push(error.message));
+    page.on("console", (message) => { if (message.type() === "error") errors.push(message.text()); });
+    await page.goto("/");
+    await page.getByRole("button", { name: page === sender ? "Send" : "Receive", exact: true }).click();
+  }
+  await expect(sender.getByRole("button", { name: "Choose folder", exact: true })).toBeEnabled();
+  if (dropSource) await sender.evaluate(async () => {
+    const folder = await window.showDirectoryPicker!();
+    await folder.getDirectoryHandle("empty", { create: true });
+    const loose = await (await navigator.storage.getDirectory()).getFileHandle("loose.txt", { create: true });
+    const writer = await loose.createWritable(); await writer.write("loose"); await writer.close();
+    const handles = [folder, loose];
+    const data = new DataTransfer();
+    for (const handle of handles) data.items.add(new File([], handle.name));
+    DataTransferItem.prototype.getAsFileSystemHandle = function() { return Promise.resolve(handles.find((handle) => handle.name === this.getAsFile()?.name) ?? null); };
+    document.querySelector("#sender-workspace .workspace")!.dispatchEvent(new DragEvent("drop", { bubbles: true, cancelable: true, dataTransfer: data }));
+  });
+  else await sender.getByRole("button", { name: selectFiles ? "Choose files" : "Choose folder", exact: true }).click();
+  await sender.getByRole("button", { name: "Get pairing code" }).click();
+  await expect(sender.locator(".pairing-code-large")).toHaveText(/\d{3} \d{3}/);
+  const pairingCode = (await sender.locator(".pairing-code-large").textContent())!.replace(/\s/g, "");
+  await receiver.getByRole("textbox", { name: "Six-digit pairing code" }).fill(pairingCode);
+  if (manual) {
+    await sender.getByText("Troubleshoot connection", { exact: true }).click();
+    await receiver.getByText("Troubleshoot connection", { exact: true }).click();
+    await receiver.getByRole("textbox", { name: "Sender address", exact: true }).fill("127.0.0.1:4179");
+  }
+  await receiver.getByRole("button", { name: "Connect to sender" }).click();
+  for (const page of [sender, receiver]) await expect(page.getByRole("button", { name: "Codes match", exact: true })).toBeEnabled();
+  return { sender, receiver, errors };
+}
+
+async function controls(page: Page) {
+  return page.evaluate(() => (window as unknown as { sentControls: Array<{ type: string }> }).sentControls.map(({ type }) => type));
+}
+
+async function expectErrorDetails(page: Page, text: string | RegExp) {
+  const details = page.locator(".transfer-error-details");
+  await expect(details.locator("pre")).toBeHidden();
+  await details.locator("summary").click();
+  await expect(details.locator("pre")).toContainText(text);
+}
+
+
+test("pending verification read after Stop: 8 MiB native probe", async ({ context }) => {
+  const boundary = "stream";
+  const { sender, receiver, errors } = await setupPair(context, false, 8 * 1024 * 1024);
+  await receiver.evaluate(({ boundary }) => {
+    const original = Worker.prototype.postMessage;
+    const state = window as unknown as { verifyReads: number; verifyPending: boolean; releaseVerify: () => void; restoreVerify: () => void };
+    state.verifyReads = 0;
+    state.restoreVerify = () => { Worker.prototype.postMessage = original; };
+    let held = false;
+    Worker.prototype.postMessage = function(data: unknown, options?: Transferable[] | StructuredSerializeOptions) {
+      const args = [data, options];
+      const message = data as { type?: string; length?: number };
+      if (message?.type === "read-payload") {
+        state.verifyReads += 1;
+        if (!held && (boundary === "stream" || message.length === 16)) {
+          held = true; state.verifyPending = true;
+          state.releaseVerify = () => { Reflect.apply(original, this, args); };
+          return;
+        }
+      }
+      return Reflect.apply(original, this, args);
+    };
+  }, { boundary });
+  for (const page of [sender, receiver]) await page.getByRole("button", { name: "Codes match", exact: true }).click();
+  await expect.poll(() => receiver.evaluate(() => (window as unknown as { verifyPending?: boolean }).verifyPending)).toBe(true);
+  const beforeStop = await receiver.evaluate(() => (window as unknown as { verifyReads: number }).verifyReads);
+  await receiver.getByRole("button", { name: "Stop and reconnect", exact: true }).click();
+  await expect(receiver.getByRole("button", { name: "Choose destination and save" })).toHaveCount(0);
+  await expect(receiver.getByRole("textbox", { name: "Six-digit pairing code" })).toHaveCount(0);
+  await receiver.evaluate(() => (window as unknown as { releaseVerify: () => void }).releaseVerify());
+  await expect(receiver.getByRole("textbox", { name: "Six-digit pairing code" })).toBeVisible();
+  expect(await receiver.evaluate(() => (window as unknown as { verifyReads: number }).verifyReads)).toBe(beforeStop);
+  expect((await controls(receiver)).filter(message => message === "receiver-complete")).toEqual([]);
+  await expect(receiver.locator(".transfer-problem")).toHaveCount(0);
+  await receiver.evaluate(() => (window as unknown as { restoreVerify: () => void }).restoreVerify());
+
+  expect(errors).toEqual([]);
+});

@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-10-15T03:28:52.580Z",
+  "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+  "mutation": "Remove only verification reader.cancel call",
+  "exitCode": 1,
+  "beforeStop": 1,
+  "afterStop": 2,
+  "restoredSourceSha256": "a448c7c48c8544371b529c2fa756dd9955aeb8b5e8432192ec408e4c55a3077c",
+  "restoredBuild": true,
+  "workspaceProductionUntouched": true
+}

@@ -1,0 +1,170 @@
+{
+  "recordedAt": "2026-10-15T03:31:43.527Z",
+  "files": [
+    {
+      "path": "release-evidence/pending-verification-review-2026-10-15.json",
+      "bytes": 95065,
+      "sha256": "91e01ece25ea7d4e3f8d8d707fe91d6d412350c32c721eb9a904aad5e7b01d0a"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 95065,
+      "sha256": "91e01ece25ea7d4e3f8d8d707fe91d6d412350c32c721eb9a904aad5e7b01d0a"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 607,
+      "sha256": "fd332a7ccf30987585234bb0c4795b7242bcb70031122cfc2e2fca9cabfec598"
+    },
+    {
+      "path": "release-evidence/release-gate-before-pending-verification-2026-10-15.json",
+      "bytes": 88115,
+      "sha256": "de9e66d5fdcdeef1384c62c9cf704604d107da2d55fe110c4ae6367448330015"
+    },
+    {
+      "path": "release-evidence/pending-verify-chrome-final-2026-10-15.log",
+      "bytes": 787,
+      "sha256": "8a9f2a902ba4f728a565e364ff8959af4a9d8d028557c07d512976af12cb58b1"
+    },
+    {
+      "path": "release-evidence/pending-verify-chrome-final-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pending-verify-edge-final-2026-10-15.log",
+      "bytes": 787,
+      "sha256": "3218e78c2bd5d61606bbbb215ab3865ab77ebe74a804fcdc69ecf3aa5fceb9b2"
+    },
+    {
+      "path": "release-evidence/pending-verify-edge-final-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pending-verify-no-cancel-build-2026-10-15.log",
+      "bytes": 896,
+      "sha256": "ae942f5d31b351712a762ddeacaa40215ae10b7eb684f49ad55fe2ef2992b575"
+    },
+    {
+      "path": "release-evidence/pending-verify-no-cancel-control-2026-10-15.json",
+      "bytes": 388,
+      "sha256": "6c99fd042d93ff7b7df288de7eb330d128f22cd8576c2cf8725aa3718a13130d"
+    },
+    {
+      "path": "release-evidence/pending-verify-no-cancel-native-2026-10-15.log",
+      "bytes": 2885,
+      "sha256": "5c6f56cd431e2ffafe8f41769813a3f4974574efd1731e224d042ca113dd1d81"
+    },
+    {
+      "path": "release-evidence/pending-verify-old-config-2026-10-15.json",
+      "bytes": 800,
+      "sha256": "1570a04a22c0ab257323de97ac3f28aab87e8b23980239e45cfc88dfddc1abd0"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-old-2026-10-15.log",
+      "bytes": 2761,
+      "sha256": "9249da15e727b9988dfdd52dff3a95d9ad2871b60bc1305d20f6ad7b8bf1f303"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-old-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-old-phasewait-2026-10-15.log",
+      "bytes": 2703,
+      "sha256": "3031fc9350aa8958b11dcc38e64d91dd14fa1f3d36fb9bc73caf280b03f64208"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-old-phasewait-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-probe-2026-10-15.log",
+      "bytes": 532,
+      "sha256": "62a3a31f9366e8ac35dc15700ff10789cee90bde673ee59fad7944a62c819c19"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-probe-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-probe-longer-phase-source-2026-10-15.txt",
+      "bytes": 10757,
+      "sha256": "21cc73ef8502dfb7338f0ca3f6f63a8e22195655201079c865d5b5d5c45920c7"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-probe-source-2026-10-15.txt",
+      "bytes": 10736,
+      "sha256": "8653901025ad757b8f0ca94ef459f10b90dcae75e60af155e599cd2c63f32038"
+    },
+    {
+      "path": "release-evidence/pending-verify-restored-build-2026-10-15.log",
+      "bytes": 896,
+      "sha256": "55e75984b8d794336ccd1a75120a3bb6eb80171177ca8633c4aab4a83b05916a"
+    },
+    {
+      "path": "release-evidence/pending-verify-strengthened-edge-2026-10-15.log",
+      "bytes": 3152,
+      "sha256": "cd86a1e6e1f53599a8477085d57a7f7a0ecceac635c6388b830560c8e2ac22f9"
+    },
+    {
+      "path": "release-evidence/pending-verify-strengthened-edge-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pairing-before-pending-verify-strengthening-2026-10-15.source.txt",
+      "bytes": 126711,
+      "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-pending-verification-2026-10-15.json",
+      "bytes": 327372,
+      "sha256": "d57a0b67f931aeab624599d218a7bb58f69b49b9183a147d70c18176d1dd8bc6"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 327663,
+      "sha256": "1fa106ee0f67fef44716ac7c743d7c9e488dcc4bcb34419eeb6603166190fd00"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-read-old\\pending-verify-read-probe--d1e64-ter-Stop-8-MiB-native-probe\\trace.zip",
+      "bytes": 8762517,
+      "sha256": "37077769484e5229f3a40f78b3cf6ecbdcdea0e39b1e0a64a6c62227d26ce189"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-read-old-phasewait\\pending-verify-read-probe--d1e64-ter-Stop-8-MiB-native-probe\\trace.zip",
+      "bytes": 9661688,
+      "sha256": "42055ff10c5584fd09f989c0095b3180443bff1e91818250311491bedacd2deb"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-strengthened-edge\\pairing-Stop-during-verifi-65c63-ts-no-further-reads-stream-\\trace.zip",
+      "bytes": 10209999,
+      "sha256": "c0dd6c1c454ced9b4a8a34724ea0ff187cf86bd6ae29ce9697d87e2d56ff89b5"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-no-cancel\\pairing-Stop-during-verifi-65c63-ts-no-further-reads-stream-\\trace.zip",
+      "bytes": 10005261,
+      "sha256": "f3cfdd220dcff487e272f23599ccb16f8537e194bfbe86bff98b5456482b40b7"
+    },
+    {
+      "path": "e2e/pairing.spec.ts",
+      "bytes": 127216,
+      "sha256": "339a9fd9df3110c48412121ccfdde6d8a5b100eb9f0d15845df03cc88f968785"
+    },
+    {
+      "path": "SPEC-verification-stream-cleanup.md",
+      "bytes": 4232,
+      "sha256": "2503d9c4a000ace93025ea360dfb460c9c0034ff75adb0ac05871def0a83e083"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\pending-verify-read-probe.source.txt",
+      "bytes": 10757,
+      "sha256": "21cc73ef8502dfb7338f0ca3f6f63a8e22195655201079c865d5b5d5c45920c7"
+    }
+  ]
+}
