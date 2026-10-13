@@ -1,0 +1,40 @@
+{
+  "recordedAt": "2026-10-14T14:43:23.231Z",
+  "files": [
+    {
+      "path": "release-evidence/pairing-transfer-obligation-review-2026-10-14.json",
+      "bytes": 12720,
+      "sha256": "6f4c16c26142b3438531e7053491c46f5e5991ccba709643d209ee3db2ac78b5"
+    },
+    {
+      "path": "release-evidence/pairing-transfer-map-review-2026-10-14.json",
+      "bytes": 66761,
+      "sha256": "11127735f1fab3838a43acf33fff03c5828e1177f92c64a83121e374a80da91b"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 66761,
+      "sha256": "11127735f1fab3838a43acf33fff03c5828e1177f92c64a83121e374a80da91b"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 619,
+      "sha256": "84d20cde9a4068312a565ae0da009538c94d9c2b7b8f9b495638b3a6a57a624f"
+    },
+    {
+      "path": "release-evidence/release-gate-before-pairing-transfer-map-2026-10-14.json",
+      "bytes": 66384,
+      "sha256": "82f18b1a785061e9c964042a975b9c6d468aa721425b217ccc9d4b742d6aaa7c"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-pairing-transfer-map-2026-10-14.json",
+      "bytes": 314831,
+      "sha256": "9840350cb40cf55a17d49a8435cfa3ac67eb2fe22269209aadc9d32f9d74b896"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 322533,
+      "sha256": "e1859f58daf8ee16c9bc52516c176048abb75258d9c8b40ce28a9bb2222ef00d"
+    }
+  ]
+}

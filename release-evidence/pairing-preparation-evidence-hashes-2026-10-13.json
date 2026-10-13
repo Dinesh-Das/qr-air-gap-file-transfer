@@ -1,0 +1,698 @@
+{
+  "recordedAt": "2026-10-13T14:09:27.178Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "b8c4a74d50dda0bec73c88a37726d9a702ca30ceb0fbb639e77c2db1f9de7e1b"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "sha256": "0bc0e0a5aa859b746feddd9296a4999b8550328137ffeea53a960b5ab631c30c"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "sha256": "cc93db6a2c4325d331eb12e24f840a18541983cc43cc95a190bca8e9cfe42050"
+    },
+    {
+      "path": "SPEC-pairing-preparation.md",
+      "sha256": "c2613a50af8a8f2718bd88ce1b3e3538ce7c66855eb0e0e773d9b7cce8dbea9f"
+    },
+    {
+      "path": "TRANSFER_PROCESS.md",
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f"
+    },
+    {
+      "path": "artifacts/qrft-2026-10-13-pairing-preparation-final/CHECKSUMS.json",
+      "sha256": "bdfc11463b5d0b0ea6b5d2194cd3bf48192dbea230603d5edce8e2b3155be5c9"
+    },
+    {
+      "path": "e2e/pairing-preparation.spec.ts",
+      "sha256": "8bf63a00f2de1cde18adc61a648ab1dea6c963253038ada68d5a2dfea96c9bc6"
+    },
+    {
+      "path": "e2e/pairing.spec.ts",
+      "sha256": "06572c4be55f857c7f86c359e5f8c0f079781684f42238c4ef5168484356e94c"
+    },
+    {
+      "path": "e2e/preparation-privacy.spec.ts",
+      "sha256": "4ed4bf5e5cedb9f1721ea8d87c78e75f3cdcb2132fa86daa75dcf8eba996b12e"
+    },
+    {
+      "path": "index.html",
+      "sha256": "3b7b5e875082dc67de12a3985f466aa88e20c02d9ef7427de7cc54b6dd5e2e6b"
+    },
+    {
+      "path": "release-evidence/offline-candidate-pairing-preparation-2026-10-13.json",
+      "sha256": "051b7a3d82b7ed5fee32de4cb71fc1cc4bffa2b20a06c97d0da1056f7043ca9d"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-2026-10-13-visuals/pending-code-1024.png",
+      "sha256": "a4c0514e66934d45c2a11489033159b43790aea39206bb4598ecae6aefc913ed"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-2026-10-13-visuals/pending-code-1440.png",
+      "sha256": "4530b16e8d88a8e1282237c932c139812eb7cb998686750e271bb95049aaf81f"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-2026-10-13-visuals/pending-code-320-before.png",
+      "sha256": "a4fd357150f3a886d8455508543bc71065cd55625adbbf1687c24069877237f9"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-2026-10-13-visuals/pending-code-320.png",
+      "sha256": "e93f42c516568797b62055f837852ab2d2a5f2ff12f2799453ae2ec5c77fd7f8"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-2026-10-13-visuals/pending-code-768.png",
+      "sha256": "101b29f092e4bf52f562204bbca43e20d541599967109217282447a2da745f3d"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-2026-10-13-visuals/receiver-pairing-while-hashing.png",
+      "sha256": "38af37e9950703a793ad1a5fdde826d89e77b58e14f5dee0943c6c5632b01f0a"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-2026-10-13-visuals/sender-pairing-while-hashing.png",
+      "sha256": "99b6de8f313c4e73046786e0852a444761244637c94d01baa1274a2a9ac30da0"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-before-2026-10-13-traces/pairing-preparation-comple-fb8b8-confirmation-before-sending/trace.zip",
+      "sha256": "9f89a11fcbc2c342a49c8b9c81c75c2359b5814fb346b28b6a69ec67f6832749"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-before-2026-10-13-traces/pairing-preparation-connec-f4521--and-requires-fresh-consent/trace.zip",
+      "sha256": "f8d59d08e201d4189addfa215c530d41faf6629abb10b97ece06af8aa603f411"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-before-2026-10-13-traces/pairing-preparation-pairin-6e4dd-e-source-hashing-is-pending/trace.zip",
+      "sha256": "7ad650590844badb5fa1c9a4114e29ac4525db7b52d408b490ff38dcdf4c3f8b"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-before-2026-10-13.exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-before-2026-10-13.json",
+      "sha256": "3d6c0552c867413fc5694d6314fde35d5b3a13b5dae676d9c8664f55bbeca89a"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-before-2026-10-13.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-build-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-build-2026-10-13.log",
+      "sha256": "d69fcf24e00210d4a196b6cadf3829380691a2a2e2cb656fdabefd1a384f9540"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-check-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-check-2026-10-13.log",
+      "sha256": "521bf69b9449499c59305908cfc86747611ddb4d26411c6ceb45531402a90253"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-results.json",
+      "sha256": "a29db34e41a3e265a152fcffb0b6efe9930b59de67b0d212714c4c3a0c1cdcd4"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/home-desktop.png",
+      "sha256": "9c5445405dcdf42eb1da0c0ed83441ca17d4aa8179befca0713babad49af90a6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/home-narrow.png",
+      "sha256": "cc951c52e31c3e8db1122e02e5ed3589912969c8b984a8cd6295bf530ba48b97"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/receive-desktop.png",
+      "sha256": "411cc0a1df9b69ad8dc2755f21214869ddd8a142744d39567a8fca1f22c479e3"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/send-desktop.png",
+      "sha256": "bf38d83ca2736db0d2b87df4b721b8dda6a7c87251571b6267a8eb01f9988287"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/receiver-interrupted-narrow.png",
+      "sha256": "effefad3f8817c7c55c2a3b637cd771a1daa0f557c04dd19a17aeb2216348df6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/receiver-interrupted.png",
+      "sha256": "32595e842fe56a94e8fe0ce4fecb8d3cacf07ec5d1aef4a2716bf7dfec609d8c"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/sender-interrupted-narrow.png",
+      "sha256": "0d547df92707ad55ff323c74af671beb0580e2b015d6714799abe85566bc5ff9"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/sender-interrupted.png",
+      "sha256": "64626c05839cc91ae3f3c7a1800b13b1549f0ef159fe4529c217a865ba1a4bae"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/receiver-progress-narrow.png",
+      "sha256": "d92ab22978d91dc5b3018d5778aa743d4a26daab5d6ad491e8166b04ed034140"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/receiver-progress.png",
+      "sha256": "b03bd51dca8bb5441b3eb9d9d2513eb2508010e4cc38fccafcad292ce9aca531"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/sender-progress-narrow.png",
+      "sha256": "e8814779ad98ac873bf43cbcc4c1f1765e5329e0efd3bf33b73b47b37d1cffae"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/sender-progress.png",
+      "sha256": "bca922cfc5b6d8e92fadf422d8fa4218f9233d3beb75e368042ecef62430b4d6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-chrome-2026-10-13.log",
+      "sha256": "844215dc4f69bba5ee3d2918ef02fa68e1a9638e93b02104abe4ff26d6faae58"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-inputs.json",
+      "sha256": "ac13f48082f80965853af56f7320d39e049509e2be06a40801b858708b60f235"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-results.json",
+      "sha256": "7a9b8a149a7f7e1a5b92be63dde03fc7af2b693be20f9191f19e2e8c610c02aa"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/home-desktop.png",
+      "sha256": "9c5445405dcdf42eb1da0c0ed83441ca17d4aa8179befca0713babad49af90a6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/home-narrow.png",
+      "sha256": "cc951c52e31c3e8db1122e02e5ed3589912969c8b984a8cd6295bf530ba48b97"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/receive-desktop.png",
+      "sha256": "411cc0a1df9b69ad8dc2755f21214869ddd8a142744d39567a8fca1f22c479e3"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/send-desktop.png",
+      "sha256": "da5047cf099cd4050652aba1d47761469d945b43204e5b0b7a217e6313b03872"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/receiver-interrupted-narrow.png",
+      "sha256": "b7886a7a8ceed02e529d1efb1f922850b721103a440aad77fcfe662b47695d66"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/receiver-interrupted.png",
+      "sha256": "477081dbd6f518947995afdf00eca30440da529efc085d0175f7c263b97c45b2"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/sender-interrupted-narrow.png",
+      "sha256": "9173fa4e7acb38cf0523a0047c426d9b67736dd9d0b800070dc52dbdddd5ab00"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/sender-interrupted.png",
+      "sha256": "25917939d5c0f2c23a8a77f3b60312e120ba7bacb0846595e4c61bf69afdf172"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/receiver-progress-narrow.png",
+      "sha256": "d72fad8e505a14256917a690fd2299fe45f5b8fbdf5276311ae750c8f0d55c6d"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/receiver-progress.png",
+      "sha256": "e5df51979c22c90bdee32878f88e63f76158887d4e2156e3e62ba54731f26c51"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/sender-progress-narrow.png",
+      "sha256": "079ce525ee5ec8be78c53cbf35e8fb4be35696be0ffa2894e4a424605890ee94"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/sender-progress.png",
+      "sha256": "fa441d6cd599b5d277233347668cf684c100c0a6bf4cf1970468ae05e964c27d"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-corrected-chrome-2026-10-13.log",
+      "sha256": "b5dea405332c8e9b252a2cfd629107a365a5ed9de98a72f1a845567bbd207a3e"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-diff-check-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-diff-check-2026-10-13.log",
+      "sha256": "93f9a30387b54f9c39176d01417cff004b127ee07aa97f07ac39dae6d48493b4"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-e2e-before-stage-wait-2026-10-13.txt",
+      "sha256": "487b507ddb5241762513047c9461dc1058c01a114bace5773255d50be9275b09"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-edge-input-review-2026-10-13.json",
+      "sha256": "960f9f2b2d32a734054f53c3b05fdd291a5d0c69e1445b4940a3120f4fee8164"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-extended-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-extended-2026-10-13.log",
+      "sha256": "62b1dcdc39b14a4105e129b4d7b86c89a0376fe6d9ebe28c329cdccddbbefc70"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-2026-10-13-visuals/pending-code-1024.png",
+      "sha256": "650739e0213d8f33f4cb29fc3cd2d1c5f3e33ccf154effdec8545d3c1ac54d83"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-2026-10-13-visuals/pending-code-1440.png",
+      "sha256": "2ebfc63df007c909ff2ad3b525d6a5a788d4f68c5867e592d1c9547f78456ad1"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-2026-10-13-visuals/pending-code-320.png",
+      "sha256": "12873417aee4a07139d3378edb76ec5f71a57df67a717ed17418b320097c38ff"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-2026-10-13-visuals/pending-code-768.png",
+      "sha256": "c2ab034bde4fb62606024d2c32011cff4e214365034609a3e491f0bd89df9aa4"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-2026-10-13-visuals/receiver-pairing-while-hashing.png",
+      "sha256": "82a34312c0814c0e47281efda5fd01a4a80c03c1d8760295a0a8d8f221905e4c"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-2026-10-13-visuals/sender-pairing-while-hashing.png",
+      "sha256": "d1069dc534f4e14f24812ad2a1dcae876d8901ded291926f84895d0d73164db2"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-results.json",
+      "sha256": "5c18324327117b9ff1146c9b907824498974ce4ff73eda6328d1eadc399bd676"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/home-desktop.png",
+      "sha256": "9c5445405dcdf42eb1da0c0ed83441ca17d4aa8179befca0713babad49af90a6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/home-narrow.png",
+      "sha256": "cc951c52e31c3e8db1122e02e5ed3589912969c8b984a8cd6295bf530ba48b97"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/receive-desktop.png",
+      "sha256": "411cc0a1df9b69ad8dc2755f21214869ddd8a142744d39567a8fca1f22c479e3"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/send-desktop.png",
+      "sha256": "1499d437bda8e677f1a6fd7f33547e90ef58dc38dad3bb1489d72afc0f5f62d7"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/receiver-interrupted-narrow.png",
+      "sha256": "fa3fa2fdda55068ab0e8c6c3c49cc4255792aae02cd870396c829e2cb4380511"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/receiver-interrupted.png",
+      "sha256": "88342df6b75b828d655ce7e80efdc783d6648b43892495713b768a1872602dbe"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/sender-interrupted-narrow.png",
+      "sha256": "614884b441c4a5993deab159198f40c9cdd9390a1199fc604c7b1c5caad1e9c7"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/sender-interrupted.png",
+      "sha256": "6d6933f4bf024ab8ebb2cbcc5de4bd7c6c3e118e089e4f07fa55b3f06d84a9f7"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/receiver-progress-narrow.png",
+      "sha256": "d2779cd56ebc84bcb2c1b1a782a6723259d317906a51b500ae7e5f61666a2c3d"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/receiver-progress.png",
+      "sha256": "0b6a15e8f7f8e4a11f18489780a6bf75583c2d89ebb659c742134a2f977825c2"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/sender-progress-narrow.png",
+      "sha256": "ba9e186ad05084e98d20c0952b3aa2d596bca890e22d4047302313dafef138b1"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/sender-progress.png",
+      "sha256": "f0deda60a64cf645e57bdce98f4c3753224bdece46d875c8511c241a2579ca6c"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-chrome-2026-10-13.log",
+      "sha256": "dd4402cd91b4fc78f92a481e21d1726682637611bac38d14c1578d06e94ee5cc"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-diff-check-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-diff-check-2026-10-13.log",
+      "sha256": "2d1805e0c9910ec0908b1b744abdecf2eb012527300dd43782e987592621a8a0"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-edge-input-review-2026-10-13.json",
+      "sha256": "65a231af89fd669fa2ea03f207db51c2a76165d4e6bdd03a422a97505266187f"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-gate-2026-10-13-inputs.json",
+      "sha256": "89d7fada76a143eb495151b400b2f95952e45fd73e81a6f833a97bef2d886968"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-gate-edge-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-gate-edge-2026-10-13.log",
+      "sha256": "43726960158d1b011f2655c356ca694f982fcba5c1752355921df3840a95359e"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-final-package-2026-10-13.json",
+      "sha256": "96ec125a1886758a632935693d8c2e3af868373ab95668d3a7878ea5cff328df"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-first-fix-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-first-fix-2026-10-13.log",
+      "sha256": "cdb9eb9d4c5fe9097185693814a12cb233bc607a1590473ce07d0942bebb6910"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-gate-2026-10-13-inputs.json",
+      "sha256": "280e6fbbf979851f2f8a643f81ae326fc645983fb6b706f71a73ea92e89dab11"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-gate-edge-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-gate-edge-2026-10-13.log",
+      "sha256": "f6c0a2d6239effafece3cadff72ff0a3798c0dbc339a74a2a36799fb336cecd6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-installed-browsers-2026-10-13.json",
+      "sha256": "ad72a6fefa219eb1b93db1db782082969049e5e05b73960c883ef35613b470a1"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-package-2026-10-13.json",
+      "sha256": "5723a13e32e99e6cf272843d2ea961bf5423ff2af17641b17a0c5f8c7ec0de60"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-product-2026-10-13.patch",
+      "sha256": "3fa492f7606fd3eff573e5db5024e6fef557fb720073231698c5e52edc401cb6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-review-2026-10-13.json",
+      "sha256": "bf96402151d869e0cbf501855cfa4cb5c6e031a65d797afbeb8b60b221599083"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-review-before-privacy-2026-10-13.json",
+      "sha256": "e7d3670e603554a9c2ba174b3ec8f426c85a30c407f2245457ed994cf74710f8"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-review-before-ui-2026-10-13.json",
+      "sha256": "57b3eeefb98065d2b25d5f503686a46a40fea70762e495f2a7410dd7cd418652"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-2026-10-13-visuals/pending-code-1024.png",
+      "sha256": "6b9a5df4ca9e84385ff1a00776df6eebe2f6a8d6668bb8e60cb99d05410e3a41"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-2026-10-13-visuals/pending-code-1440.png",
+      "sha256": "8948e77dad18abb00161d95460e3a7e0e87c0d2630cfe45ee5059b1316ba8717"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-2026-10-13-visuals/pending-code-320.png",
+      "sha256": "0e70710d535fa9d7c7bf5c14bb17e1a4b4c5e6c6177c1aa7a16ba646f6d8cf3b"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-2026-10-13-visuals/pending-code-768.png",
+      "sha256": "14de9d702a957f7eb2a22dfe20f994c5e711ee3b8066b6b4fa3ad678a106ecca"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-2026-10-13-visuals/receiver-pairing-while-hashing.png",
+      "sha256": "49fe118804d4494ef4f37af0b5d0f6dbd8b75474c30d7e1f45db4142f7e1a3e2"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-2026-10-13-visuals/sender-pairing-while-hashing.png",
+      "sha256": "5a40987d59477134a6f441cc84ec6d39acdafc3921cb9f9eff4fa3870a1f47bf"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-results.json",
+      "sha256": "c981a8577520819ea3445c254b372b311e880a672497f15e185a5e1064c104af"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/home-desktop.png",
+      "sha256": "9c5445405dcdf42eb1da0c0ed83441ca17d4aa8179befca0713babad49af90a6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/home-narrow.png",
+      "sha256": "cc951c52e31c3e8db1122e02e5ed3589912969c8b984a8cd6295bf530ba48b97"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/receive-desktop.png",
+      "sha256": "411cc0a1df9b69ad8dc2755f21214869ddd8a142744d39567a8fca1f22c479e3"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/navigation-home-opens-Send-03876-h-optical-engines-available/send-desktop.png",
+      "sha256": "9f2b59c5b1385df44750db36307ed77725bcfeda16e8e7f6df27bf1cdd44d4df"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-interrupted-many-f-93e2e-files-renderer-crash-false-/trace.zip",
+      "sha256": "aea11108c4e9524a27ca7476204942c9754a00a1abbe53525c555d4c0b112ea9"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/receiver-interrupted-narrow.png",
+      "sha256": "7a2df8babd31a17e4b2ee96247a5ce1a49bfb2450b3be4abf376b7602dcbf0b5"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/receiver-interrupted.png",
+      "sha256": "274a299e50667e66f06fe4a6b81300b41492bde16807fff22bc193fe0bc3771e"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/sender-interrupted-narrow.png",
+      "sha256": "cfd9474f43ca4cd607caca2e3d47e8b51efa9ca443e4582ceb749e08fe779ca1"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-interrupted-transf-afca2-d-retries-without-rehashing/sender-interrupted.png",
+      "sha256": "dc6fca630c4cdc2839ce0c7cd2cfd7d9437ee3b5b53f96f8f5469d2b981382ee"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/receiver-progress-narrow.png",
+      "sha256": "5af757e9126cf77d4c4ceeb640268381fbe87fac09b191339bd939dd0374c380"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/receiver-progress.png",
+      "sha256": "1db5b6ca2f27deb8980d6a9b87bb47780b876272efbd0b190113f937b29e6930"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/sender-progress-narrow.png",
+      "sha256": "1bbefac416214c854d9dc9c1e639591e8ec7002df6a62311a4ebb1d076c76e7b"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13-traces/pairing-transfer-metrics-r-176c1-ough-pause-and-verification/sender-progress.png",
+      "sha256": "bca922cfc5b6d8e92fadf422d8fa4218f9233d3beb75e368042ecef62430b4d6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-chrome-2026-10-13.log",
+      "sha256": "9433cd871beb0fc92a1ca122a30f037c62bcf23041b38b0c17fa55e51f5224fe"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-edge-input-review-2026-10-13.json",
+      "sha256": "edf30aebb0181dd98cff669651b51ca42bb1b7e90b0ad07d3fe9f87a5f214843"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-gate-2026-10-13-inputs.json",
+      "sha256": "4d849f326bf48ccef9a23a1f355567924340c87cfd12ea761eb53dd70a04fee6"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-gate-edge-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-gate-edge-2026-10-13.log",
+      "sha256": "8f3be3c1b74e206bb62ba5914954b90bcace12e9bd975311c8291b08fa35b2a4"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-secure-package-2026-10-13.json",
+      "sha256": "e1528a983b83f6c8007b33f12c91c0dc94778c4795f4416a24e597465a4f53b2"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-source-before-2026-10-13.txt",
+      "sha256": "555382b339223009178109e41849c717379666df010bc14b7ee30f1df6f65028"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-2026-10-13.json",
+      "sha256": "b26236a87d3dcfc45d6ee92f2afd6dc1b8c53cb9da62a1ca7ad946c9c61f6062"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-2026-10-13.log",
+      "sha256": "93424eeda6f5f145ff76f29120c56eadfcb734c2476e5e851634920056e9cfc8"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-before-2026-10-13.json",
+      "sha256": "7df262709fd1c67e5687bd0d6aa9d14ba621a41419c1e11929cf7e03fff453ad"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-before-2026-10-13.log",
+      "sha256": "93424eeda6f5f145ff76f29120c56eadfcb734c2476e5e851634920056e9cfc8"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-diagnostic-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-diagnostic-2026-10-13.json",
+      "sha256": "fb4b59fefc102ce0ea8e6d6e0b41b5035d652b82e20cd5f1885c483e7d5fd36a"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-diagnostic-2026-10-13.log",
+      "sha256": "e87c25802d9b5a09bf3f72eb579a9a5fc67952085411ddfbab7e9ed780b31039"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-final-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-final-2026-10-13.log",
+      "sha256": "ed54657271f194534ff2666d508e0fcef08da88fb3190aa583cecc7da83e4b8f"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-initial-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-initial-2026-10-13.log",
+      "sha256": "99c1c52b82ebc8fe30c5c96ae0a943bf7eaee7ef2dfa6fccd74da0671ed83ed1"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-secure-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pairing-preparation-ui-secure-2026-10-13.log",
+      "sha256": "621851982aa50883989c538ce96d69adb39f27edb844320445fe8449e508a8ee"
+    },
+    {
+      "path": "release-evidence/preparation-completion-diagnostic-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/preparation-completion-diagnostic-2026-10-13-traces/pairing-browser-process-te-c5317-ve-preserves-verified-files/trace.zip",
+      "sha256": "5e66f2c9fe1e09615d9ae5a9e9b22c83926f162efd636e045a8bc45a4f23caf3"
+    },
+    {
+      "path": "release-evidence/preparation-completion-diagnostic-2026-10-13-traces/pairing-interrupted-many-f-93e2e-files-renderer-crash-false-/trace.zip",
+      "sha256": "cc042d3da598a723c9a4b54b5e85005f66ec3fce1442f968dce90e066bfbf3fe"
+    },
+    {
+      "path": "release-evidence/preparation-completion-diagnostic-2026-10-13-traces/pairing-interrupted-many-f-ae879--files-renderer-crash-true-/trace.zip",
+      "sha256": "c4b62ae15a9f277dbc9bbd0692839aa13dc2b826f1ab1d3714e2a8f3df71140b"
+    },
+    {
+      "path": "release-evidence/preparation-completion-diagnostic-2026-10-13.log",
+      "sha256": "a979096e765fe39c158d4610e5c1b4d59028faeb64354a59244e4ab8690a9c86"
+    },
+    {
+      "path": "release-evidence/preparation-completion-diagnostic-waits-2026-10-13.json",
+      "sha256": "69821e0de7204b15a684248e96ebe4271837ad00b13db7bbfeb6d35ad6af42ac"
+    },
+    {
+      "path": "release-evidence/preparation-completion-failure-trace-2026-10-13.json",
+      "sha256": "389105e7cdd59a228c1abc3d9130d7bede640d20c46c8f98002f7fba65282155"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-after-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-after-2026-10-13.log",
+      "sha256": "57dbd804a847b42ab716b451cea16a634f1cbe34a93702963b18425337015bda"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-before-2026-10-13-traces/preparation-privacy-source-5cae8-ith-receiver-only-confirmed/trace.zip",
+      "sha256": "c44d4e90993ab8b95a2e4ff0564a35c9be1fc2461a90523abf47fdd9394fd40b"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-before-2026-10-13-traces/preparation-privacy-source-63c22--with-sender-only-confirmed/trace.zip",
+      "sha256": "a032913ab081cc43df59d35d87abafbf6927c708f551b0a66ae3b899a1a49f11"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-before-2026-10-13-traces/preparation-privacy-source-70b9c-ocal-with-neither-confirmed/trace.zip",
+      "sha256": "7635856b08c9403feee9bdb3c50c4506815b4860b4803861772cc9727c07b5da"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-before-2026-10-13.exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-before-2026-10-13.json",
+      "sha256": "5aabf897636aa016d58567961af495d71d7fe326993856f0fe5e2792694e6c11"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-before-2026-10-13.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-build-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/preparation-privacy-build-2026-10-13.log",
+      "sha256": "5884501c3c7c510f0fb7a582cb1d4c70905f699c33a21937f61f751d74c57e22"
+    },
+    {
+      "path": "release-evidence/preparation-stage-wait-edge-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/preparation-stage-wait-edge-2026-10-13-traces/pairing-browser-process-te-c5317-ve-preserves-verified-files/profile/Default/Edge Profile Picture.png",
+      "sha256": "f894e2e468541ec0cbba2439939a2dd863f664a440b86e125c7d65d9a788821c"
+    },
+    {
+      "path": "release-evidence/preparation-stage-wait-edge-2026-10-13-traces/pairing-interrupted-many-f-ae879--files-renderer-crash-true-/profile/Default/Edge Profile Picture.png",
+      "sha256": "f894e2e468541ec0cbba2439939a2dd863f664a440b86e125c7d65d9a788821c"
+    },
+    {
+      "path": "release-evidence/preparation-stage-wait-edge-2026-10-13.log",
+      "sha256": "7ca8170c46d26e35bcadd31182dc19d7172cc5596023eecb46809e375feb2e45"
+    },
+    {
+      "path": "release-evidence/preparation-stage-wait-typecheck-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/preparation-stage-wait-typecheck-2026-10-13.log",
+      "sha256": "352bf4a8bad861e65104bee86aed6d2cbf4e862bfade1621c293158bb87562fe"
+    },
+    {
+      "path": "release-evidence/release-gate-318-unit-63-browser-edge-2026-10-13.json",
+      "sha256": "3c0bc746b2f7d1b50dee39a67b9cd4877bcbfe077bc9c9ddb2111a5540b33522"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "sha256": "3c0bc746b2f7d1b50dee39a67b9cd4877bcbfe077bc9c9ddb2111a5540b33522"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "sha256": "afee0ce38dfdc04887f4871b3ed8996fbba12d037d52a43a93dd5bd0db49fe9f"
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "sha256": "3d650829fa6f753e8d530d62cbaab73dd9cb6b86c336e1d0654202987f18fa2a"
+    }
+  ]
+}

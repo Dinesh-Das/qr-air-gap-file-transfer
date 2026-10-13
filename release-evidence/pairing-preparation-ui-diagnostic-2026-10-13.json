@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-10-13T13:16:12.475Z",
+  "browser": "154.0.8037.99",
+  "viewports": [
+    {
+      "width": 320,
+      "dimensions": {
+        "client": 320,
+        "scroll": 320
+      },
+      "screenshot": "release-evidence/pairing-preparation-2026-10-13-visuals/pending-code-320.png"
+    },
+    {
+      "width": 768,
+      "dimensions": {
+        "client": 768,
+        "scroll": 768
+      },
+      "screenshot": "release-evidence/pairing-preparation-2026-10-13-visuals/pending-code-768.png"
+    },
+    {
+      "width": 1024,
+      "dimensions": {
+        "client": 1024,
+        "scroll": 1024
+      },
+      "screenshot": "release-evidence/pairing-preparation-2026-10-13-visuals/pending-code-1024.png"
+    },
+    {
+      "width": 1440,
+      "dimensions": {
+        "client": 1440,
+        "scroll": 1440
+      },
+      "screenshot": "release-evidence/pairing-preparation-2026-10-13-visuals/pending-code-1440.png"
+    }
+  ],
+  "keyboardEnterStopAndDiscard": true,
+  "sourceStillPendingDuringViewportChecks": true,
+  "errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "consoleLocations": [
+    {
+      "url": "http://127.0.0.1:24591/favicon.ico",
+      "line": 0,
+      "column": 0,
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  ],
+  "unsuccessfulResponses": [],
+  "scope": "Synthetic picker/held source read on one host; real local production server/room. No physical/native or complete accessibility acceptance."
+}

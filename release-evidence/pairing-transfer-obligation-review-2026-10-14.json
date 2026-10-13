@@ -1,0 +1,308 @@
+{
+  "recordedAt": "2026-10-14T14:43:22.693Z",
+  "releaseStatus": "NOT READY",
+  "mappings": [
+    {
+      "id": "L845",
+      "proofs": [
+        {
+          "path": "e2e/pairing.spec.ts",
+          "title": "production HTTP runtime pairs browsers",
+          "line": 802,
+          "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+        },
+        {
+          "path": "tests/rendezvous-runtime.test.mjs",
+          "title": "pairs through the same local runtime",
+          "line": 146,
+          "sha256": "55343bc6e4b08d66c0b57ca14b78e77885c2629acda4f7b9fe955a34795355f1"
+        }
+      ],
+      "proves": "Real local HTTP runtime/RTC pairing, automatic/manual variants, no external app HTTP requests or configured ICE servers.",
+      "remaining": "Two laptops, physical adapters and firewall acceptance remain unrun.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-browser-edge-2026-10-14.log",
+        "release-evidence/verification-stream-browser-chrome-2026-10-14.log",
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L846",
+      "proofs": [
+        {
+          "path": "tests/lan-signaling.test.mjs",
+          "title": "pairs two runtimes through TCP",
+          "line": 74,
+          "sha256": "ce715c1df7868c2470878543c6f2334ec7e51d83f73c72ec62bb0bd48a743c62"
+        }
+      ],
+      "proves": "Manual loopback wrong six-digit code returns404, message mentions pairing code, no local join; correct subsequent code exchanges SDP.",
+      "remaining": "Wrong-code UI with physical peers/broadcast variants not proved by this case.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L847",
+      "proofs": [
+        {
+          "path": "tests/rendezvous-runtime.test.mjs",
+          "title": "expires rooms by TTL",
+          "line": 201,
+          "sha256": "55343bc6e4b08d66c0b57ca14b78e77885c2629acda4f7b9fe955a34795355f1"
+        }
+      ],
+      "proves": "Controlled500ms registry TTL: waiting at1000, absent at1501.",
+      "remaining": "No real-time HTTP/UI expiry, OS sleep/restart or physical delayed-peer proof.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L848",
+      "proofs": [
+        {
+          "path": "tests/rendezvous-collision.test.mjs",
+          "title": "retries a duplicate draw",
+          "line": 15,
+          "sha256": "a0ef45661ad7df380e022c453fcdbc831065b8506224f35819c983aee7224a25"
+        },
+        {
+          "path": "tests/rendezvous-collision.test.mjs",
+          "title": "bounds collision exhaustion",
+          "line": 27,
+          "sha256": "a0ef45661ad7df380e022c453fcdbc831065b8506224f35819c983aee7224a25"
+        }
+      ],
+      "proves": "Mock only randomInt; duplicate7 retries8 without replacing room,32 failed draws bounded and subsequent retry works.",
+      "remaining": "Not high-concurrency/physical acceptance or random distribution analysis.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L849",
+      "proofs": [
+        {
+          "path": "tests/rendezvous-collision.test.mjs",
+          "title": "releases a cancelled code",
+          "line": 41,
+          "sha256": "a0ef45661ad7df380e022c453fcdbc831065b8506224f35819c983aee7224a25"
+        }
+      ],
+      "proves": "Reused canceled code creates new room/token; old room/owner cannot read or cancel new capability.",
+      "remaining": "Not all stale UI/network interleavings.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L850",
+      "proofs": [
+        {
+          "path": "tests/rendezvous-runtime.test.mjs",
+          "title": "claims a room once",
+          "line": 26,
+          "sha256": "55343bc6e4b08d66c0b57ca14b78e77885c2629acda4f7b9fe955a34795355f1"
+        }
+      ],
+      "proves": "Registry second requestId/address cannot claim already bound room; bad join token rejected and bound answer accepted.",
+      "remaining": "Model only; concurrent two-browser/physical receiver contention not proved.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L851",
+      "proofs": [
+        {
+          "path": "e2e/pairing.spec.ts",
+          "title": "pairing retry retains the prepared source",
+          "line": 1702,
+          "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+        }
+      ],
+      "proves": "Native RTC fixture retry keeps source read count, requires fresh human confirmation and reaches verified receive.",
+      "remaining": "Signaling routes/pickers injected; physical reconnect and usability remain unproved.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-browser-edge-2026-10-14.log",
+        "release-evidence/verification-stream-browser-chrome-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L852",
+      "proofs": [
+        {
+          "path": "tests/webrtc-authorization.test.ts",
+          "title": "rejects %s and makes the failed authorization terminal",
+          "line": 32,
+          "sha256": "7f4520b43dfd2e14bef0f769d765f50a1d12012eb646311443071755a73d98bb"
+        },
+        {
+          "path": "e2e/pairing.spec.ts",
+          "title": "altered signaling produces different verification codes",
+          "line": 1674,
+          "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+        }
+      ],
+      "proves": "Altered offer/answer/stale session/ambiguous transcript rejected in model; native altered-offer codes differ and manifest/resume authorization never begins.",
+      "remaining": "Targeted alterations; not exhaustive SDP fuzz or adversarial physical network.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log",
+        "release-evidence/verification-stream-browser-edge-2026-10-14.log",
+        "release-evidence/verification-stream-browser-chrome-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L853",
+      "proofs": [
+        {
+          "path": "tests/webrtc-authorization.test.ts",
+          "title": "requires independent local and remote confirmations",
+          "line": 10,
+          "sha256": "7f4520b43dfd2e14bef0f769d765f50a1d12012eb646311443071755a73d98bb"
+        },
+        {
+          "path": "e2e/pairing.spec.ts",
+          "title": "altered signaling produces different verification codes",
+          "line": 1674,
+          "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+        }
+      ],
+      "proves": "Transcript mismatch terminal in model; native mismatch refuses authorization with no manifest/resume-complete.",
+      "remaining": "Human comparison errors/nontechnical usability and broader attack scenarios remain unproved.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log",
+        "release-evidence/verification-stream-browser-edge-2026-10-14.log",
+        "release-evidence/verification-stream-browser-chrome-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L854",
+      "proofs": [
+        {
+          "path": "e2e/pairing.spec.ts",
+          "title": "real WebRTC and OPFS transfer waits for both human confirmations",
+          "line": 842,
+          "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+        }
+      ],
+      "proves": "Verification screen begins with no controls; first human confirmation emits peer-confirmed but0 binary bytes; both confirmations permit manifest/receive/save.",
+      "remaining": "Local RTC fixture; does not independently assert every connection-state timing or physical pairing.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-browser-edge-2026-10-14.log",
+        "release-evidence/verification-stream-browser-chrome-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L855",
+      "proofs": [
+        {
+          "path": "e2e/pairing.spec.ts",
+          "title": "receiver rejects payload before human verification",
+          "line": 1648,
+          "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+        },
+        {
+          "path": "e2e/pairing.spec.ts",
+          "title": "sender rejects premature success before human verification",
+          "line": 1657,
+          "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+        }
+      ],
+      "proves": "Injected44-byte payload before confirmation rejected/no resume-complete; premature receiver-complete rejected/no success.",
+      "remaining": "Targeted messages, not exhaustive preauthorization flood/resource or all parser cases.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-browser-edge-2026-10-14.log",
+        "release-evidence/verification-stream-browser-chrome-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L878",
+      "proofs": [
+        {
+          "path": "tests/webrtc-transfer.test.ts",
+          "title": "transfers beyond the sender window with %i-block batches",
+          "line": 235,
+          "sha256": "52945f113f1db75120814cb4d6a3f3a844c29764bd8eeada05421b5f753352cf"
+        }
+      ],
+      "proves": "Memory transport transfers source above200 blocks in64/128-block durable batches, exact ACK count/payload completion and whole-stream verification.",
+      "remaining": "Not physical hundreds-block throughput/resource/durable native failure matrix.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L881",
+      "proofs": [
+        {
+          "path": "tests/block-store.test.ts",
+          "title": "reopens durable receipt state without retaining",
+          "line": 47,
+          "sha256": "966697a32212a4ea377e4a1d1d408aebc9b725c128afe918050f704df80d1eca"
+        }
+      ],
+      "proves": "Memory durable duplicate block0 reports0writes/1duplicate, preserves original bytes against different duplicate contents, completes exact9-byte stream.",
+      "remaining": "Raw storage-model duplicate; no exhaustive native authenticated duplicate/reordering fault coverage.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L882",
+      "proofs": [
+        {
+          "path": "tests/webrtc-protocol.test.ts",
+          "title": "binds the routing index into each block digest",
+          "line": 103,
+          "sha256": "57ff07d72bb28efc67356256de2ee02c493f678fc28e4121bc2b836c64c0a04c"
+        },
+        {
+          "path": "tests/webrtc-protocol.test.ts",
+          "title": "rejects every single-bit mutation",
+          "line": 60,
+          "sha256": "57ff07d72bb28efc67356256de2ee02c493f678fc28e4121bc2b836c64c0a04c"
+        }
+      ],
+      "proves": "Changed routing index9to10 rejects hash; all1128 single-bit wire mutations reject sync/async codecs.",
+      "remaining": "Not exhaustive identity-valid out-of-range indices or every binary/path parser.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    },
+    {
+      "id": "L883",
+      "proofs": [
+        {
+          "path": "tests/webrtc-protocol.test.ts",
+          "title": "rejects every single-bit mutation",
+          "line": 60,
+          "sha256": "57ff07d72bb28efc67356256de2ee02c493f678fc28e4121bc2b836c64c0a04c"
+        }
+      ],
+      "proves": "Header-length bit mutations,4 packet truncations and1 trailing byte reject sync/async codecs.",
+      "remaining": "Targeted bounded corpus, not exhaustive lengths or native malformed-message flood.",
+      "completionClaim": false,
+      "runEvidence": [
+        "release-evidence/verification-stream-check-2026-10-14.log"
+      ]
+    }
+  ],
+  "previous85CaseSourceReconstructedSha256": "dbfb683f58265bdc94117b3d6bfee9fe8f62e4825fff2abb89db3ff602ee2b95",
+  "scope": "Substantive review of15 listed test requirements against test bodies and retained successful gates. Only selected local proof; no global completion or additional test execution."
+}

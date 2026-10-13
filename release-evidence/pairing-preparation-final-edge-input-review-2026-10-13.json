@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-13T13:24:10.4992000+00:00",
+  "allRecordedInputsMatch": true,
+  "inputCount": 134,
+  "builtAssets": [
+    {
+      "path": "dist/index.html",
+      "sha256": "bd1cd446ed43ba3dd086db968c1d7666c74e03ab47b0bddf2adaceea18f0e684"
+    },
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-Cos066zh.js",
+      "sha256": "c04c4d4ce2a9dd10fa48fe9565cdac51dfdc5523bd96871eb37fc283e74079f5"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    }
+  ]
+}

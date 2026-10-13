@@ -1,0 +1,300 @@
+
+> qr-air-gap-file-transfer@1.0.0 test:browser
+> playwright test e2e/pairing-preparation.spec.ts --output=release-evidence/pairing-preparation-before-2026-10-13-traces --reporter=json
+
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\MyProjects\\QR Air-Gap File Transfer\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "e2e/pairing-preparation.spec.ts",
+      "--output=release-evidence/pairing-preparation-before-2026-10-13-traces",
+      "--reporter=json"
+    ],
+    "configFile": "D:\\MyProjects\\QR Air-Gap File Transfer\\playwright.config.ts",
+    "rootDir": "D:/MyProjects/QR Air-Gap File Transfer/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/MyProjects/QR Air-Gap File Transfer/release-evidence/pairing-preparation-before-2026-10-13-traces",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/MyProjects/QR Air-Gap File Transfer/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run serve",
+      "env": {
+        "QRFT_PORT": "4178",
+        "QRFT_SIGNAL_PORT": "4179"
+      },
+      "url": "http://127.0.0.1:4178",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "pairing-preparation.spec.ts",
+      "file": "pairing-preparation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "pairing and both human confirmations complete while source hashing is pending",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6028,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.pairing-code-large')\nExpected: \u001b[32m\"123 456\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.pairing-code-large') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.pairing-code-large')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.pairing-code-large')\nExpected: \u001b[32m\"123 456\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.pairing-code-large') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.pairing-code-large')\u001b[22m\n\n    at connect (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:85:55)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:119:9",
+                    "location": {
+                      "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts",
+                      "column": 55,
+                      "line": 85
+                    },
+                    "snippet": "  83 | async function connect(sender: Page, receiver: Page) {\n  84 |   // This is the regression: an unresolved source byte read must not hold up pairing.\n> 85 |   await expect(sender.locator(\".pairing-code-large\")).toHaveText(\"123 456\");\n     |                                                       ^\n  86 |   await receiver.getByRole(\"textbox\", { name: \"Six-digit pairing code\" }).fill(\"123456\");\n  87 |   await receiver.getByRole(\"button\", { name: \"Connect to sender\", exact: true }).click();\n  88 |   for (const page of [sender, receiver]) await expect(page.getByRole(\"button\", { name: \"Codes match\", exact: true })).toBeEnabled();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts",
+                        "column": 55,
+                        "line": 85
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.pairing-code-large')\nExpected: \u001b[32m\"123 456\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.pairing-code-large') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.pairing-code-large')\u001b[22m\n\n\n  83 | async function connect(sender: Page, receiver: Page) {\n  84 |   // This is the regression: an unresolved source byte read must not hold up pairing.\n> 85 |   await expect(sender.locator(\".pairing-code-large\")).toHaveText(\"123 456\");\n     |                                                       ^\n  86 |   await receiver.getByRole(\"textbox\", { name: \"Six-digit pairing code\" }).fill(\"123456\");\n  87 |   await receiver.getByRole(\"button\", { name: \"Connect to sender\", exact: true }).click();\n  88 |   for (const page of [sender, receiver]) await expect(page.getByRole(\"button\", { name: \"Codes match\", exact: true })).toBeEnabled();\n    at connect (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:85:55)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:119:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T02:53:49.300Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\pairing-preparation-before-2026-10-13-traces\\pairing-preparation-pairin-6e4dd-e-source-hashing-is-pending\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\pairing-preparation-before-2026-10-13-traces\\pairing-preparation-pairin-6e4dd-e-source-hashing-is-pending\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts",
+                    "column": 55,
+                    "line": 85
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8ef88e37f3a85f701179-11d675ea3f8dd8acbc50",
+          "file": "pairing-preparation.spec.ts",
+          "line": 117,
+          "column": 1
+        },
+        {
+          "title": "completed source hashing still requires the other human confirmation before sending",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5889,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.pairing-code-large')\nExpected: \u001b[32m\"123 456\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.pairing-code-large') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.pairing-code-large')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.pairing-code-large')\nExpected: \u001b[32m\"123 456\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.pairing-code-large') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.pairing-code-large')\u001b[22m\n\n    at connect (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:85:55)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:133:9",
+                    "location": {
+                      "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts",
+                      "column": 55,
+                      "line": 85
+                    },
+                    "snippet": "  83 | async function connect(sender: Page, receiver: Page) {\n  84 |   // This is the regression: an unresolved source byte read must not hold up pairing.\n> 85 |   await expect(sender.locator(\".pairing-code-large\")).toHaveText(\"123 456\");\n     |                                                       ^\n  86 |   await receiver.getByRole(\"textbox\", { name: \"Six-digit pairing code\" }).fill(\"123456\");\n  87 |   await receiver.getByRole(\"button\", { name: \"Connect to sender\", exact: true }).click();\n  88 |   for (const page of [sender, receiver]) await expect(page.getByRole(\"button\", { name: \"Codes match\", exact: true })).toBeEnabled();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts",
+                        "column": 55,
+                        "line": 85
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.pairing-code-large')\nExpected: \u001b[32m\"123 456\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.pairing-code-large') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.pairing-code-large')\u001b[22m\n\n\n  83 | async function connect(sender: Page, receiver: Page) {\n  84 |   // This is the regression: an unresolved source byte read must not hold up pairing.\n> 85 |   await expect(sender.locator(\".pairing-code-large\")).toHaveText(\"123 456\");\n     |                                                       ^\n  86 |   await receiver.getByRole(\"textbox\", { name: \"Six-digit pairing code\" }).fill(\"123456\");\n  87 |   await receiver.getByRole(\"button\", { name: \"Connect to sender\", exact: true }).click();\n  88 |   for (const page of [sender, receiver]) await expect(page.getByRole(\"button\", { name: \"Codes match\", exact: true })).toBeEnabled();\n    at connect (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:85:55)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:133:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T02:53:55.935Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\pairing-preparation-before-2026-10-13-traces\\pairing-preparation-comple-fb8b8-confirmation-before-sending\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\pairing-preparation-before-2026-10-13-traces\\pairing-preparation-comple-fb8b8-confirmation-before-sending\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts",
+                    "column": 55,
+                    "line": 85
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8ef88e37f3a85f701179-fa924720f10d2c7f0cad",
+          "file": "pairing-preparation.spec.ts",
+          "line": 131,
+          "column": 1
+        },
+        {
+          "title": "connection retry preserves the pending source read and requires fresh consent",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5894,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.pairing-code-large')\nExpected: \u001b[32m\"123 456\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.pairing-code-large') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.pairing-code-large')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.pairing-code-large')\nExpected: \u001b[32m\"123 456\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.pairing-code-large') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.pairing-code-large')\u001b[22m\n\n    at connect (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:85:55)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:147:9",
+                    "location": {
+                      "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts",
+                      "column": 55,
+                      "line": 85
+                    },
+                    "snippet": "  83 | async function connect(sender: Page, receiver: Page) {\n  84 |   // This is the regression: an unresolved source byte read must not hold up pairing.\n> 85 |   await expect(sender.locator(\".pairing-code-large\")).toHaveText(\"123 456\");\n     |                                                       ^\n  86 |   await receiver.getByRole(\"textbox\", { name: \"Six-digit pairing code\" }).fill(\"123456\");\n  87 |   await receiver.getByRole(\"button\", { name: \"Connect to sender\", exact: true }).click();\n  88 |   for (const page of [sender, receiver]) await expect(page.getByRole(\"button\", { name: \"Codes match\", exact: true })).toBeEnabled();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts",
+                        "column": 55,
+                        "line": 85
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.pairing-code-large')\nExpected: \u001b[32m\"123 456\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('.pairing-code-large') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.pairing-code-large')\u001b[22m\n\n\n  83 | async function connect(sender: Page, receiver: Page) {\n  84 |   // This is the regression: an unresolved source byte read must not hold up pairing.\n> 85 |   await expect(sender.locator(\".pairing-code-large\")).toHaveText(\"123 456\");\n     |                                                       ^\n  86 |   await receiver.getByRole(\"textbox\", { name: \"Six-digit pairing code\" }).fill(\"123456\");\n  87 |   await receiver.getByRole(\"button\", { name: \"Connect to sender\", exact: true }).click();\n  88 |   for (const page of [sender, receiver]) await expect(page.getByRole(\"button\", { name: \"Codes match\", exact: true })).toBeEnabled();\n    at connect (D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:85:55)\n    at D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts:147:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T02:54:02.412Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\pairing-preparation-before-2026-10-13-traces\\pairing-preparation-connec-f4521--and-requires-fresh-consent\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\pairing-preparation-before-2026-10-13-traces\\pairing-preparation-connec-f4521--and-requires-fresh-consent\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing-preparation.spec.ts",
+                    "column": 55,
+                    "line": 85
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8ef88e37f3a85f701179-8b5ced585d3ad2824adc",
+          "file": "pairing-preparation.spec.ts",
+          "line": 145,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T02:53:47.847Z",
+    "duration": 21102.988,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-10-13T13:07:51.694Z",
+  "browsers": [
+    {
+      "channel": "chrome",
+      "version": "154.0.8037.99",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+    },
+    {
+      "channel": "msedge",
+      "version": "154.0.4258.53",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0"
+    }
+  ]
+}

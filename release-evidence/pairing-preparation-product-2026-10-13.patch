@@ -1,0 +1,226 @@
+warning: in the working copy of '.tmp/WebRtcSender-before-pairing-preparation-2026-10-13.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/WebRtcSender.tsx', LF will be replaced by CRLF the next time Git touches it
+diff --git a/.tmp/WebRtcSender-before-pairing-preparation-2026-10-13.tsx b/src/components/WebRtcSender.tsx
+index bf66c15..f36c581 100644
+--- a/.tmp/WebRtcSender-before-pairing-preparation-2026-10-13.tsx
++++ b/src/components/WebRtcSender.tsx
+@@ -81,6 +81,7 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+   const [phase, setPhase] = useState<Phase>("idle");
+   const [selection, setSelection] = useState<LargeSourceSelection | null>(null);
+   const [hashProgress, setHashProgress] = useState<LargeTransferProgress | null>(null);
++  const [sourcePreparing, setSourcePreparing] = useState(false);
+   const [pairingCode, setPairingCode] = useState<string | null>(null);
+   const [pairingAddresses, setPairingAddresses] = useState<string[]>([]);
+   const [connected, setConnected] = useState(false);
+@@ -103,6 +104,9 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+   const sendingRef = useRef(false);
+   const lifecycleRef = useRef(0);
+   const taskAbortRef = useRef<AbortController | null>(null);
++  const sourceAbortRef = useRef<AbortController | null>(null);
++  const sourceLifecycleRef = useRef(0);
++  const preparationRef = useRef<Promise<void> | null>(null);
+   const peerHealthCleanupRef = useRef<(() => void) | null>(null);
+   const phaseRef = useRef<Phase>(phase);
+   phaseRef.current = phase;
+@@ -129,7 +133,19 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+     peerRef.current = null;
+   }, []);
+ 
+-  useEffect(() => closeConnection, [closeConnection]);
++  const cancelSourcePreparation = useCallback(() => {
++    sourceLifecycleRef.current += 1;
++    sourceAbortRef.current?.abort(new DOMException("Source discarded", "AbortError"));
++    sourceAbortRef.current = null;
++    preparationRef.current = null;
++    setSourcePreparing(false);
++    setHashProgress(null);
++  }, []);
++
++  useEffect(() => () => {
++    closeConnection();
++    cancelSourcePreparation();
++  }, [closeConnection, cancelSourcePreparation]);
+ 
+   useEffect(() => {
+     let cancelled = false;
+@@ -162,7 +178,7 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+     peerHealthCleanupRef.current = watchWebRtcPeerHealth(peer, () => generation === lifecycleRef.current, fail, (state) => setConnectionInterrupted(state === "disconnected"));
+   }, [fail]);
+ 
+-  const busy = !["idle", "selected", "complete", "failed"].includes(phase);
++  const busy = sourcePreparing || !["idle", "selected", "complete", "failed"].includes(phase);
+   useEffect(() => {
+     onBusyChange?.(busy);
+   }, [busy, onBusyChange]);
+@@ -175,10 +191,12 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+     if (
+       authorizedRef.current ||
+       !authorizationRef.current?.authorized ||
+-      channel?.readyState !== "open" ||
+-      !source ||
+-      !manifest
++      channel?.readyState !== "open"
+     ) return;
++    if (!source || !manifest) {
++      setPhase("preparing");
++      return;
++    }
+     const maxMessageSize = peerRef.current?.sctp?.maxMessageSize;
+     if (
+       maxMessageSize !== undefined &&
+@@ -197,6 +215,54 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+     setPhase("waiting");
+   }, [fail]);
+ 
++  const ensureSourcePrepared = useCallback(() => {
++    if (sourceRef.current && manifestRef.current) { maybeAuthorize(); return; }
++    if (!selection || preparationRef.current) return;
++    const generation = sourceLifecycleRef.current;
++    const controller = new AbortController();
++    sourceAbortRef.current = controller;
++    setSourcePreparing(true);
++    // Connection teardown must not restart a multi-gigabyte hash pass. Only
++    // discarding the source cancels this generation and its immutable snapshots.
++    const job = (async () => {
++      const source = await prepareLargeSource(selection, (next) => {
++        if (generation === sourceLifecycleRef.current) setHashProgress(next);
++      }, controller.signal);
++      controller.signal.throwIfAborted();
++      const manifest = await createOfflineTransferManifest(source);
++      if (generation !== sourceLifecycleRef.current) return;
++      if (savedSourceRef.current?.manifest.manifestId !== manifest.manifestId) {
++        const record = createSavedWebRtcSource(source, manifest);
++        try {
++          await saveWebRtcSource(record);
++          if (generation !== sourceLifecycleRef.current) { await deleteWebRtcSource(record.key); return; }
++          savedSourceRef.current = record;
++          setSavedSource(record);
++          setResumeNotice("Your selection is saved on this device for recovery. Reopening it checks every file again.");
++        } catch {
++          if (generation !== sourceLifecycleRef.current) return;
++          setResumeNotice("This source could not be saved for reload recovery. Keep this tab open or reselect the folder after reload.");
++        }
++      }
++      if (generation !== sourceLifecycleRef.current) return;
++      sourceRef.current = source;
++      manifestRef.current = manifest;
++      setHashProgress(null);
++      setSourcePreparing(false);
++      sourceAbortRef.current = null;
++      maybeAuthorize();
++    })();
++    preparationRef.current = job;
++    void job.catch((caught) => {
++      if (generation !== sourceLifecycleRef.current) return;
++      preparationRef.current = null;
++      sourceAbortRef.current = null;
++      setHashProgress(null);
++      setSourcePreparing(false);
++      fail(caught);
++    });
++  }, [fail, maybeAuthorize, selection]);
++
+   const confirmPairing = useCallback(() => {
+     const channel = channelRef.current;
+     const authorization = authorizationRef.current;
+@@ -235,7 +301,7 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+     channel.addEventListener("close", () => {
+       if (generation !== lifecycleRef.current || phaseRef.current === "complete") return;
+       setConnected(false); setConnectionInterrupted(false);
+-      if (["pairing", "verify-device", "waiting", "transferring", "verifying"].includes(phaseRef.current)) {
++      if (["preparing", "pairing", "verify-device", "waiting", "transferring", "verifying"].includes(phaseRef.current)) {
+         fail(new Error("The local connection closed. Reconnect to resume safely."));
+       }
+     });
+@@ -389,29 +455,6 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+     try {
+       await checkRendezvousReadiness(controller.signal);
+       if (generation !== lifecycleRef.current) return;
+-      setPhase("preparing");
+-      // A connection retry keeps the immutable prepared File snapshots and
+-      // deterministic identity. Only selecting a new source discards them.
+-      const source = sourceRef.current ?? await prepareLargeSource(selection, (next) => {
+-        if (generation === lifecycleRef.current) setHashProgress(next);
+-      }, controller.signal);
+-      const manifest = manifestRef.current ?? await createOfflineTransferManifest(source);
+-      if (generation !== lifecycleRef.current) return;
+-      sourceRef.current = source;
+-      manifestRef.current = manifest;
+-      if (savedSourceRef.current?.manifest.manifestId !== manifest.manifestId) {
+-        const record = createSavedWebRtcSource(source, manifest);
+-        try {
+-          await saveWebRtcSource(record);
+-          if (generation !== lifecycleRef.current) { await deleteWebRtcSource(record.key); return; }
+-          savedSourceRef.current = record;
+-          setSavedSource(record);
+-          setResumeNotice("Your selection is saved on this device for recovery. Reopening it checks every file again.");
+-        } catch {
+-          if (generation !== lifecycleRef.current) return;
+-          setResumeNotice("This source could not be saved for reload recovery. Keep this tab open or reselect the folder after reload.");
+-        }
+-      }
+       const sessionId = createOfflineSessionId();
+       const peer = new RTCPeerConnection({ iceServers: [] });
+       peerRef.current = peer;
+@@ -432,8 +475,8 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+       roomRef.current = room;
+       setPairingCode(room.code);
+       setPairingAddresses(room.addresses ?? []);
+-      setHashProgress(null);
+       setPhase("pairing");
++      ensureSourcePrepared();
+       const bundle = await waitForRendezvousAnswer(room, sessionId, controller.signal);
+       if (generation !== lifecycleRef.current) return;
+       const authorization = await PeerAuthorization.create(sessionId, sdp, bundle.sdp);
+@@ -448,10 +491,11 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+     } catch (caught) {
+       if (generation === lifecycleRef.current) fail(caught);
+     }
+-  }, [closeConnection, fail, installChannel, selection, watchPeerHealth]);
++  }, [closeConnection, ensureSourcePrepared, fail, installChannel, selection, watchPeerHealth]);
+ 
+   const reset = useCallback(() => {
+     closeConnection();
++    cancelSourcePreparation();
+     sourceRef.current = null;
+     manifestRef.current = null;
+     setVerificationCode(null);
+@@ -466,7 +510,7 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+     setError(null); setErrorDetails(null);
+     setPhase("idle");
+     readiness.retry();
+-  }, [closeConnection, readiness.retry]);
++  }, [cancelSourcePreparation, closeConnection, readiness.retry]);
+ 
+   const stopConnection = useCallback(() => {
+     closeConnection();
+@@ -474,7 +518,6 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+     setPairingCode(null);
+     setVerificationCode(null);
+     setLocalConfirmed(false);
+-    setHashProgress(null);
+     setPhase(selection ? "selected" : "idle");
+   }, [closeConnection, selection]);
+ 
+@@ -487,7 +530,7 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+   const retryAction = phase === "failed" && selection && <button className="button button-primary button-wide confirm-button" onClick={prepare}><RefreshCw size={16} />Retry connection</button>;
+   const endActions = <>
+           {busy && <button className="button button-danger button-wide confirm-button" onClick={stopConnection}>Stop and reconnect</button>}
+-          {(phase === "failed" || phase === "complete") && <button className="button button-secondary button-wide confirm-button" onClick={reset}><RefreshCw size={16} />New transfer</button>}
++          {(["selected", "failed", "complete"].includes(phase)) && <button className="button button-secondary button-wide confirm-button" onClick={reset}><RefreshCw size={16} />New transfer</button>}
+   </>;
+   const progressCard = hasTransferProgress && progress && (
+     <div className="transfer-progress-card"><div className="selection-header"><strong>{phase === "failed" ? "Transfer stopped" : phase === "complete" ? "Transfer verified" : phase === "verifying" ? "Receiver is verifying" : paused ? "Transfer paused" : "Sending directly"}</strong><span>{percentage.toFixed(1)}%</span></div>{phase === "transferring" && <button className="button button-secondary button-wide" onClick={() => { const next = !paused; setPaused(next); senderRef.current?.setPaused(next); }}>{paused ? <Play size={16} /> : <Pause size={16} />}{paused ? "Resume" : "Pause"}</button>}<div className="progress-track"><div className="progress-fill" style={{ width: `${percentage}%` }} /></div><TransferMetrics progress={progress} rate={rate} currentRate={currentRate} elapsed={elapsed} direction="send" interrupted={phase === "failed"} /></div>
+@@ -519,10 +562,10 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean)
+             <div className="selection-card">
+               <div className="folder-identity"><span className="folder-icon"><FolderOpen /></span><div><strong>{selection.rootName}</strong><span>{selection.files.length} files · {formatBytes(Number(selection.totalFileBytes))}</span></div></div>
+               <div className="metric-grid"><div className="metric"><span>Files</span><strong>{selection.files.length}</strong></div><div className="metric"><span>Folders</span><strong>{selection.directories.length}</strong></div><div className="metric"><span>Size</span><strong>{formatBytes(Number(selection.totalFileBytes))}</strong></div></div>
+-              {phase === "selected" && <div className="sender-actions"><button className="button button-primary button-wide" onClick={prepare}><Wifi size={16} />{sourceRef.current ? "Retry connection" : "Get pairing code"}</button></div>}
++              {phase === "selected" && <div className="sender-actions"><button className="button button-primary button-wide" onClick={prepare}><Wifi size={16} />{sourceRef.current || preparationRef.current ? "Retry connection" : "Get pairing code"}</button></div>}
+             </div>
+           )}
+-          {(phase === "scanning" || phase === "preparing" || phase === "checking") && <div className="status-box compact-status"><span className="spinner" />{phase === "checking" ? "Checking the local connection service…" : hashProgress?.path ? `${hashProgress.phase === "hash" ? "Checking files" : "Scanning"}: ${hashProgress.path}` : "Preparing your files…"}</div>}
++          {(sourcePreparing || phase === "scanning" || phase === "preparing" || phase === "checking") && <div className="status-box compact-status"><span className="spinner" />{phase === "checking" ? "Checking the local connection service…" : hashProgress?.path ? `${hashProgress.phase === "hash" ? "Checking files" : "Scanning"}: ${hashProgress.path}` : "Preparing your files…"}{sourcePreparing && <span> You can pair now. Files will wait until checking and device confirmation finish.</span>}</div>}
+           {pairingCode && (phase === "pairing" || phase === "verify-device") && (
+             <div className="authentication-card"><ShieldCheck size={22} /><div><span>Receiver pairing code</span><strong>{formatPairingCode(pairingCode)}</strong><small>Enter this code on the receiving device. It expires automatically.</small></div></div>
+           )}
