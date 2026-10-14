@@ -1,0 +1,65 @@
+{
+  "recordedAt": "2026-10-14T15:14:17.039Z",
+  "files": [
+    {
+      "path": "release-evidence/remote-sdp-handoff-finding-2026-10-14.json",
+      "bytes": 2540,
+      "sha256": "f10ba49e06a9ccb542bfa95d3e62fa717fbda2c9d64f9f1d0c98910d82ea13bd"
+    },
+    {
+      "path": "release-evidence/remote-sdp-probe-review-2026-10-14.json",
+      "bytes": 72817,
+      "sha256": "b3e28907b035678e1604026797096bc8a3926651624fc15e72812c8282e447e0"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 72817,
+      "sha256": "b3e28907b035678e1604026797096bc8a3926651624fc15e72812c8282e447e0"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 606,
+      "sha256": "b3fe607ce38b0da989601ecde703401e2f15a5e3de52db6867af023b87973afe"
+    },
+    {
+      "path": "release-evidence/release-gate-before-remote-sdp-probe-2026-10-14.json",
+      "bytes": 71116,
+      "sha256": "f1990c4c1ed9eba423dda6fb667dc40cb0eb47e22b5b2c05335f0d9484dc228e"
+    },
+    {
+      "path": "release-evidence/remote-sdp-boundary-probe-source-2026-10-14.txt",
+      "bytes": 3014,
+      "sha256": "5c9b53deaac6718ed6ffeb5f05c2a0d8f83e314136c0958ec5162894e5a1ff96"
+    },
+    {
+      "path": "release-evidence/remote-sdp-boundary-probe-generated-source-2026-10-14.txt",
+      "bytes": 3586,
+      "sha256": "959c165b63022fc02d9b4161e24adc09fe1d49dba38b37a0c810e20c1a345913"
+    },
+    {
+      "path": "release-evidence/remote-sdp-boundary-probe-2026-10-14.log",
+      "bytes": 818,
+      "sha256": "5220f1092bd9659f1f8c2dd04dc83c3dd99945965d13fb4c8a396c3b41b7505a"
+    },
+    {
+      "path": "release-evidence/remote-sdp-boundary-probe-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/remote-sdp-generated-2026-10-14.log",
+      "bytes": 818,
+      "sha256": "1786e874bcc184e6676aaef5769348502b9a2855a91d66e6223ef925c5aa2f65"
+    },
+    {
+      "path": "release-evidence/remote-sdp-generated-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\remote-sdp-generated-diagnostic.source.txt",
+      "bytes": 3586,
+      "sha256": "959c165b63022fc02d9b4161e24adc09fe1d49dba38b37a0c810e20c1a345913"
+    }
+  ]
+}

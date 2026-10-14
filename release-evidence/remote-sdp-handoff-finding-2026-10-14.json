@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-14T15:14:17.027Z",
+  "releaseStatus": "NOT READY",
+  "finding": "Outgoing candidate policy has no matching incoming handoff validation in either component.",
+  "code": [
+    {
+      "path": "src/lib/webrtc-signaling.ts",
+      "line": 168,
+      "role": "Outgoing filtering removes non-host/globally routable candidates."
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "line": 326,
+      "role": "Offer bundle.sdp passed unchanged to setRemoteDescription before confirmation."
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "line": 489,
+      "role": "Answer bundle.sdp passed unchanged after transcript derivation, before confirmation."
+    }
+  ],
+  "observations": {
+    "channel": "installed Edge",
+    "minimalDescriptions": 2,
+    "browserTemplateDescriptions": 2,
+    "roles": [
+      "receiver offer",
+      "sender answer"
+    ],
+    "publicCandidate": "203.0.113.1:9 typ host",
+    "nativeHandoffCallsPerCase": 1,
+    "nativeDescriptionDelegations": 0
+  },
+  "safetyAndLimits": "Method replaced before invocation and never delegated. No public ICE traffic or file leak tested/observed. Minimal SDP first probe was malformed; strengthened receiver uses browser-generated offer, sender uses actual outgoing offer reshaped as answer plus public candidate. No native acceptance or valid negotiated answer proof.",
+  "requirementInterpretation": "Original requires internet independence, not explicitly zero internet packets. Existing application outgoing private-host-only policy motivates symmetric inbound hardening; this is a consistency/input-validation finding, not a proven violation of the broader wording or exploitable leak.",
+  "proposedHardening": "Reject explicit non-host/non-local incoming candidates before creating receiver peer or applying sender answer. Preserve exact accepted SDP for SAS; do not sanitize exchanged transcript. Unit allow/reject/bounds tests and native no-handoff regressions for both roles; normal local pairing/full gates must still pass. Document mDNS and other timing/privacy limits.",
+  "standardSource": {
+    "url": "https://www.w3.org/TR/2025/REC-webrtc-20250313/",
+    "scope": "W3C remoteDescription/ICE candidate model explains why SDP is a connection input; source is not proof of this app sending public traffic."
+  },
+  "diagnosticSourceRetained": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\remote-sdp-generated-diagnostic.source.txt",
+  "productionChanged": false,
+  "fixApplied": false
+}
