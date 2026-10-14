@@ -1,0 +1,75 @@
+{
+  "ranAt": "2026-09-13T08:08:04.361Z",
+  "results": [
+    {
+      "mib": 10,
+      "batchBlocks": 64,
+      "fileCount": 10000,
+      "emptyFiles": 1000,
+      "directoryCount": 100,
+      "metadataBytes": 1448388,
+      "quotaBefore": {
+        "quota": 10737418240,
+        "usage": 0,
+        "usageDetails": {}
+      },
+      "fixture": "file-index and offset pattern",
+      "destinationOperations": {
+        "journal.createWritable": {
+          "calls": 10001,
+          "ms": 7679.10000026226
+        },
+        "journal.write": {
+          "calls": 10001,
+          "ms": 7212.999999523163
+        },
+        "journal.close": {
+          "calls": 10001,
+          "ms": 9991.200000405312
+        },
+        "file.createWritable": {
+          "calls": 10000,
+          "ms": 9072.600001648068
+        },
+        "file.close": {
+          "calls": 10000,
+          "ms": 9763.700000479817
+        },
+        "file.write": {
+          "calls": 9000,
+          "ms": 6500.5000005066395
+        }
+      },
+      "destinationSaveMs": 78752.90000000596,
+      "destinationFinalVerifyMs": 11282.800000011921,
+      "destination": {
+        "verified": true,
+        "checkedFiles": 10000,
+        "checkedBytes": 10485760,
+        "filesWritten": 10000,
+        "directoriesVerified": 100,
+        "independentAuditMs": 11164.39999999106
+      },
+      "verified": true,
+      "bytes": 11934164,
+      "prepareMs": 1942.7000000029802,
+      "sourceReadMs": 1505.7000001072884,
+      "encodeMs": 140.6999998986721,
+      "acceptMs": 272.20000000298023,
+      "transferMs": 1918.7999999970198,
+      "verifyMs": 172.5,
+      "transferMBps": 6.219597665217081,
+      "counts": {
+        "payloadWrites": 195,
+        "payloadFlushes": 4,
+        "journalCommits": 4,
+        "ackGroups": 4
+      },
+      "peakJsHeap": 76448356,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "context": "temporary persistent profile",
+      "mainThreadTaskSeconds": 15.695670000000002,
+      "mainThreadScriptSeconds": 0.099217
+    }
+  ]
+}

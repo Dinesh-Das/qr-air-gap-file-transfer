@@ -1,0 +1,28 @@
+{
+  "ranAt": "2026-09-12T14:19:14.556Z",
+  "results": [
+    {
+      "mib": 2112,
+      "batchBlocks": 64,
+      "mode": "OPFS-only quota probe",
+      "quotaBefore": {
+        "quota": 6442450944,
+        "usage": 0,
+        "usageDetails": {}
+      },
+      "error": "Error: The OPFS journal position changed unexpectedly (expected 129640, found 129360).",
+      "writtenBytes": 1820590080,
+      "quotaAfter": {
+        "quota": 8262950636,
+        "usage": 1820499692,
+        "usageDetails": {
+          "fileSystem": 1820499692
+        }
+      },
+      "cleanupError": "This block-store handle lost its lifetime lock and cannot delete a store that may have been reopened elsewhere.",
+      "context": "incognito",
+      "mainThreadTaskSeconds": 1.671295,
+      "mainThreadScriptSeconds": 0.14927200000000002
+    }
+  ]
+}

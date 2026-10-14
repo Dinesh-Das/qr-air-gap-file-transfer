@@ -1,0 +1,210 @@
+{
+  "recordedAt": "2026-09-15T20:14:06.696951+00:00",
+  "captureScope": "During first trial; no source changes made this turn",
+  "files": [
+    {
+      "path": "package-lock.json",
+      "sha256": "6def808167eb5e69e1e2a3273226bfeedf66cf9ca627a97aa9502ac3c7d56387"
+    },
+    {
+      "path": "scripts/benchmark-receiver.mjs",
+      "sha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431"
+    },
+    {
+      "path": "scripts/benchmark-result.mjs",
+      "sha256": "2c73f114ccb427576aa55008b08c3ace9108405fb36d0fa3310f6a9f07bc44c7"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "7e69ccbfc7d96444c0e54793ba1059d1d29660937c34af3dd52937dec6df0946"
+    },
+    {
+      "path": "src/components/ConnectionDiagnostics.tsx",
+      "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+    },
+    {
+      "path": "src/components/LargeReceiver.tsx",
+      "sha256": "77afbaa4f08237bb20357a689e472916d009f46fc41d13dca433d84e92c6e545"
+    },
+    {
+      "path": "src/components/LargeSender.tsx",
+      "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+    },
+    {
+      "path": "src/components/Receiver.tsx",
+      "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+    },
+    {
+      "path": "src/components/Sender.tsx",
+      "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+    },
+    {
+      "path": "src/components/StorageReadiness.tsx",
+      "sha256": "a6ff61a93cdf58ccb5da624a4bedecbf4a0f98c3d3ac41ffaed48c8bb01f6d81"
+    },
+    {
+      "path": "src/components/TransferWakeLock.tsx",
+      "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+    },
+    {
+      "path": "src/components/VerifyDevice.tsx",
+      "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "sha256": "851019e11dabc3fc7d0b22371c880453a68fbd56af9269691087f7c6eeed4af5"
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "sha256": "396b53a44e77a7d78371da50eb8310566ec987a5467814ebe5a9168939a39d90"
+    },
+    {
+      "path": "src/components/WebRtcSignalQr.tsx",
+      "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+    },
+    {
+      "path": "src/lib/archive.ts",
+      "sha256": "ec7b22a082a6e658d24ceaae7977b65ec233ebc2cef54e1862a5d5c019435b40"
+    },
+    {
+      "path": "src/lib/block-store-worker-protocol.ts",
+      "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+    },
+    {
+      "path": "src/lib/block-store.ts",
+      "sha256": "27c30a69282a2d8bc2c03bd6462aaadefa5d205560028dddddeb33a6b3120dd2"
+    },
+    {
+      "path": "src/lib/block-store.worker.ts",
+      "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+    },
+    {
+      "path": "src/lib/connection-path.ts",
+      "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+    },
+    {
+      "path": "src/lib/connection.ts",
+      "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+    },
+    {
+      "path": "src/lib/format.ts",
+      "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+    },
+    {
+      "path": "src/lib/large-connection.ts",
+      "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+    },
+    {
+      "path": "src/lib/large-destination.ts",
+      "sha256": "663d8a1f488dbf74073fde9f68263c7f7e53263ba1592602366e502ba0d0360d"
+    },
+    {
+      "path": "src/lib/large-receiver-resume.ts",
+      "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+    },
+    {
+      "path": "src/lib/large-receiver.ts",
+      "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+    },
+    {
+      "path": "src/lib/large-sender-playback.ts",
+      "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+    },
+    {
+      "path": "src/lib/large-sender-resume.ts",
+      "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+    },
+    {
+      "path": "src/lib/large-transfer.ts",
+      "sha256": "d313953bf225d4f480a25cd0158466772959c2cb3ff6f0280177457cf5cc3bcc"
+    },
+    {
+      "path": "src/lib/optical-schedule.ts",
+      "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+    },
+    {
+      "path": "src/lib/protocol.ts",
+      "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+    },
+    {
+      "path": "src/lib/resume.ts",
+      "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+    },
+    {
+      "path": "src/lib/screen-wake-lock.ts",
+      "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+    },
+    {
+      "path": "src/lib/selected-files.ts",
+      "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+    },
+    {
+      "path": "src/lib/sender-resume.ts",
+      "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+    },
+    {
+      "path": "src/lib/stream-protocol.ts",
+      "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+    },
+    {
+      "path": "src/lib/transfer-rate.ts",
+      "sha256": "630345590d87dab41321e6996c75fc775ecae8574918047eb927d872dece4f33"
+    },
+    {
+      "path": "src/lib/transfer.ts",
+      "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+    },
+    {
+      "path": "src/lib/use-transfer-rate.ts",
+      "sha256": "542c2701517d5e5662078d54dddc106b84a7c1f7f67c2253dfe0bcfd28a3f95d"
+    },
+    {
+      "path": "src/lib/webrtc-authorization.ts",
+      "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+    },
+    {
+      "path": "src/lib/webrtc-control-flow.ts",
+      "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+    },
+    {
+      "path": "src/lib/webrtc-peer-health.ts",
+      "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+    },
+    {
+      "path": "src/lib/webrtc-protocol.ts",
+      "sha256": "869b37120a0b0f637142bd3692536ee9dc7f23436488cb07774810b66da2ea83"
+    },
+    {
+      "path": "src/lib/webrtc-receive-queue.ts",
+      "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+    },
+    {
+      "path": "src/lib/webrtc-rendezvous.ts",
+      "sha256": "c0da06c313b3d447abb7d97561f320159d2cda28ce8a4ee0eb4f6b1e993e6fef"
+    },
+    {
+      "path": "src/lib/webrtc-sender-resume.ts",
+      "sha256": "968d73a9c73ab773d180da75cb35827d6fd0543a9d1d1e2f0fa2415859a4f18f"
+    },
+    {
+      "path": "src/lib/webrtc-signaling.ts",
+      "sha256": "7b69af782ffc6f4b3d05fabbb2e3a51c8dbe10cbee94e947eef149d11c24bd33"
+    },
+    {
+      "path": "src/lib/webrtc-transfer.ts",
+      "sha256": "a9d625640f3f8f5aa635493737d3ff91b5c9188618d033278846f499f3ab0167"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "a5539fa7939e33bcf1519b36cab8f872f96bb123b4b73745edac65e14d9c8671"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+    }
+  ]
+}

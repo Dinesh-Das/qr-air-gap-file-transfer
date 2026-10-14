@@ -1,0 +1,42 @@
+{
+  "recordedAt": "2026-09-18T06:35:47.987526+00:00",
+  "benchmarkRanAt": "2026-09-15T20:19:42.684Z",
+  "exitCode": 0,
+  "trials": [
+    {
+      "trial": 1,
+      "saveSeconds": 85.278,
+      "finalVerifyCallbackThroughReturnSeconds": 13.08180000000447,
+      "auditSeconds": 10.56079999999702,
+      "journalApiSeconds": 26.319100000061095,
+      "journalPercentOfSave": 30.86270784969288
+    },
+    {
+      "trial": 2,
+      "saveSeconds": 85.5986000000015,
+      "finalVerifyCallbackThroughReturnSeconds": 12.584,
+      "auditSeconds": 10.34170000000298,
+      "journalApiSeconds": 26.928600000292064,
+      "journalPercentOfSave": 31.45915937911554
+    },
+    {
+      "trial": 3,
+      "saveSeconds": 105.335,
+      "finalVerifyCallbackThroughReturnSeconds": 16.12460000000149,
+      "auditSeconds": 11.07129999999702,
+      "journalApiSeconds": 33.18730000020564,
+      "journalPercentOfSave": 31.506431860450597
+    }
+  ],
+  "saveSeconds": {
+    "mean": 92.07053333333383,
+    "median": 85.5986000000015,
+    "sampleStandardDeviation": 11.48848349667281,
+    "minimum": 85.278,
+    "maximum": 105.335
+  },
+  "allRecordedInputsStillMatch": true,
+  "rawResultSha256": "ffc348306450950776048fc3a9b7eb9b2703148999c38fd51ebaea93b1a659df",
+  "logSha256": "78e33987a7663872743d4cc53f0f5beff530bc851b89cdcbe454078100e0b705",
+  "scope": "Three sequential identical synthetic OPFS trials on one Windows machine in fresh persistent Chromium profiles. Instrumented API wall time, not physical disk flush or LAN throughput. No production optimization occurred."
+}

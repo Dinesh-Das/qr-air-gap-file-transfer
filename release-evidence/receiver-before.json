@@ -1,0 +1,45 @@
+{
+  "ranAt": "2026-09-12T09:07:27.707Z",
+  "results": [
+    {
+      "mib": 10,
+      "batchBlocks": 1,
+      "bytes": 10486001,
+      "prepareMs": 289.20000000298023,
+      "sourceReadMs": 84.6000000089407,
+      "encodeMs": 144.3999999910593,
+      "acceptMs": 375.30000000819564,
+      "transferMs": 608.5,
+      "verifyMs": 147.80000000074506,
+      "transferMBps": 17.232540673788005,
+      "counts": {
+        "payloadWrites": 171,
+        "payloadFlushes": 171,
+        "journalCommits": 171,
+        "ackGroups": 171
+      },
+      "peakJsHeap": 83799764,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+    },
+    {
+      "mib": 100,
+      "batchBlocks": 1,
+      "bytes": 104857842,
+      "prepareMs": 3131,
+      "sourceReadMs": 841.9999999590218,
+      "encodeMs": 1417.2999999970198,
+      "acceptMs": 3764.3000000417233,
+      "transferMs": 6060.300000000745,
+      "verifyMs": 1590.1000000014901,
+      "transferMBps": 17.30241770209183,
+      "counts": {
+        "payloadWrites": 1707,
+        "payloadFlushes": 1707,
+        "journalCommits": 1707,
+        "ackGroups": 1707
+      },
+      "peakJsHeap": 91187613,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+    }
+  ]
+}
