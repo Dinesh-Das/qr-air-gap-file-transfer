@@ -1,0 +1,231 @@
+{
+  "recordedAt": "2026-10-14T02:23:38.754Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/receipt-size-review-2026-10-14.json",
+      "bytes": 44711,
+      "sha256": "a5b721828db03554eaa73ac29bae3cd0408577c6a731f3307a7fb4c5bb4492bb"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 44711,
+      "sha256": "a5b721828db03554eaa73ac29bae3cd0408577c6a731f3307a7fb4c5bb4492bb"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 762,
+      "sha256": "7a2edb1783b879a4764c0f88af9b796bfdbc21973567277411628a7ea5c65dc9"
+    },
+    {
+      "path": "release-evidence/release-gate-before-receipt-size-2026-10-14.json",
+      "bytes": 149842,
+      "sha256": "690bbc32f934d012bf461565aff6ad48a673fa761cfe356ab2c23e4262f3e794"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 78284,
+      "sha256": "13e3d3c4321556d1a2dc70b4b2eb05ad1ed97d83d1c3107fc0a21d3fc45f48e9"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 120646,
+      "sha256": "5f0321f260b8fdeec6cd56df7a938ecd5c6e96eb7d4edee05f51ebd38b95764c"
+    },
+    {
+      "path": "SPEC-receipt-file-bounds.md",
+      "bytes": 1880,
+      "sha256": "76ebe4d3072ebc4a77c955166e64462d7154f6b378d3ae6ed6e153909657ead7"
+    },
+    {
+      "path": "release-evidence/original-release-requirements.txt",
+      "bytes": 33346,
+      "sha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077"
+    },
+    {
+      "path": "release-evidence/physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-receipt-size\\CHECKSUMS.json",
+      "bytes": 3165,
+      "sha256": "5760535c0380a4a5f6ad1ea55d27e27f964a51cec259886f56c4c2f60a5c8134"
+    },
+    {
+      "path": "release-evidence/receipt-size-artifact-compact-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-artifact-compact-2026-10-14.log",
+      "bytes": 199416,
+      "sha256": "7baa27be2d175155e35d180179e5572813acc9db73bb2a5149a3d2f1ae4bbffa"
+    },
+    {
+      "path": "release-evidence/receipt-size-browser-chrome-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-browser-chrome-2026-10-14.log",
+      "bytes": 10380,
+      "sha256": "ed9e6ec8a15e61e0aca42eec1d07379f4c3690eb685c428aea486743043d081e"
+    },
+    {
+      "path": "release-evidence/receipt-size-browser-edge-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-browser-edge-2026-10-14.log",
+      "bytes": 10381,
+      "sha256": "8d7cfc4b3256a9b56c5dd40a9deda5f1e0e884e3d196364d21c96c395c1cd82b"
+    },
+    {
+      "path": "release-evidence/receipt-size-browser-focused-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-browser-focused-2026-10-14.log",
+      "bytes": 548,
+      "sha256": "6ee50f8789122efc4042a584dc0bd8f2cd09d575ed7328cbb0fee592d9e49385"
+    },
+    {
+      "path": "release-evidence/receipt-size-check-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-check-2026-10-14.log",
+      "bytes": 1444,
+      "sha256": "d203fd397549064461b4c615129445c38d4d213f4ed3335404cc30d8184e5d91"
+    },
+    {
+      "path": "release-evidence/receipt-size-check-final-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-check-final-2026-10-14.log",
+      "bytes": 1444,
+      "sha256": "139278cae4f672ca9e223840f3403151ce22dfd0dae3574201407728ed6006c1"
+    },
+    {
+      "path": "release-evidence/receipt-size-check-first-types-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "df4e26a04a444901b95afef44e4a96cfae34690fff2ad2c66389c70079cdff2b"
+    },
+    {
+      "path": "release-evidence/receipt-size-check-first-types-2026-10-14.log",
+      "bytes": 2588,
+      "sha256": "0bf4c7783c8fe64f30137e0516d02f47840885fdeba36f82f25a58956a36374f"
+    },
+    {
+      "path": "release-evidence/receipt-size-chrome-artifact-compact-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-chrome-artifact-compact-2026-10-14.log",
+      "bytes": 149910,
+      "sha256": "49da475c7680a5c474bb12500ef2d19a8a8d1aa04ef32cf21aaf16e256343d1c"
+    },
+    {
+      "path": "release-evidence/receipt-size-current-edge-artifact-compact-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-current-edge-artifact-compact-2026-10-14.log",
+      "bytes": 211596,
+      "sha256": "b5c7c28007c59b20ed4519df8fabd4854911137cd6b447dc905ecf5b657c3544"
+    },
+    {
+      "path": "release-evidence/receipt-size-current-edge-artifact-compression-2026-10-14.json",
+      "bytes": 1286543,
+      "sha256": "20f47152e953476ddd1bbfd2f119cffaa2d33162e2cfacdd7da2619b3578d66e"
+    },
+    {
+      "path": "release-evidence/receipt-size-diff-check-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-diff-check-2026-10-14.log",
+      "bytes": 3753,
+      "sha256": "30e275ec4b749b122594dc5f36ab32c68b662c01975c7560f8d77487db4541f3"
+    },
+    {
+      "path": "release-evidence/receipt-size-focused-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-focused-2026-10-14.log",
+      "bytes": 234,
+      "sha256": "8b98c27d75561b5f5bb5befe4b14b0c79d2a7fe6c830c6ab36521edaa26d67a5"
+    },
+    {
+      "path": "release-evidence/receipt-size-package-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-package-2026-10-14.log",
+      "bytes": 113,
+      "sha256": "806b50edd10c24df93bf47f6f5ba95da31886b9b93e7849903c2e2674971fe2a"
+    },
+    {
+      "path": "release-evidence/receipt-size-package-smoke-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/receipt-size-package-smoke-2026-10-14.log",
+      "bytes": 616,
+      "sha256": "c83ec53c8fa7c7068795970f2c8f26d3ec7bc81d9e090d9970863b053a560398"
+    },
+    {
+      "path": "release-evidence/receipt-size-prior-chrome-artifact-compression-2026-10-14.json",
+      "bytes": 1096539,
+      "sha256": "471075b826fedfb0d817a53a62707bb9cbad1f43c562cbacaff03167480dd0fa"
+    },
+    {
+      "path": "release-evidence/receipt-size-prior-edge-artifact-compression-2026-10-14.json",
+      "bytes": 1248979,
+      "sha256": "7afe86768ad7711e2bdf2a13f7721b6013e760c4161fbfa06dc99fd54f1de929"
+    },
+    {
+      "path": "release-evidence/receipt-size-red-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/receipt-size-red-2026-10-14.log",
+      "bytes": 2850,
+      "sha256": "7005862f44b0d773bdf9b0c73cab73b90e6e1007333ca58b93cdccc3a1c49998"
+    },
+    {
+      "path": "release-evidence/receipt-size-red-first-setup-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/receipt-size-red-first-setup-2026-10-14.log",
+      "bytes": 2716,
+      "sha256": "e305c4774b5b27fbcd2322a889abc7faf063eb1808bbc421418efc6f112145ea"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 312366,
+      "sha256": "f2e07a8c56819f9928045fba776c163fa4a3bf5f9a7b0fbb2a78fb4a59a1be10"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-receipt-size-2026-10-14.json",
+      "bytes": 309842,
+      "sha256": "9a43a851fe4ef3d3375c64164da625d0610c9990485125d67351acd770b8525b"
+    }
+  ]
+}
