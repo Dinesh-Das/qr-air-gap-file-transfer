@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-10-14T00:29:38.967Z",
+  "files": [
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-CHECKLIST.md",
+      "sha256": "72b2ac194c43d2482957685728f0491e3839450cc4c17fefef96cdcbe513dbc6"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-HARDENING.md",
+      "sha256": "c586ef216d9f7b8d14bc5c0fec8cec99c320abfc83cd59dfd99ff32af36a51bc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\product-audit-review-2026-10-14.json",
+      "sha256": "86e18e919163e67de679c97d74bbbf3960dcce6b58fd3d4a8cebdbf77499092d"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\acceptance-ci-observation-2026-10-14.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\acceptance-ci-observation-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\acceptance-obligations-2026-10-14.json",
+      "sha256": "9a43a851fe4ef3d3375c64164da625d0610c9990485125d67351acd770b8525b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\acceptance-obligations-before-product-audit-2026-10-14.json",
+      "sha256": "3a533d5b8f01bbab93d4cac4289ec2bdd8e45954e57b8f68c47678b5fca1cd25"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\original-release-requirements.txt",
+      "sha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\pairing-audit-review-2026-10-14.json",
+      "sha256": "ad772d44662ac3a33468e64f26832c344512f226a0170afe847a2e56f0d76dbf"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\.github\\workflows\\release-check.yml",
+      "sha256": "00ca460575683224ab10cd7f23e143dcc30a45b29c0319bce9feaaf1fbeb55a2"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-before-product-audit-2026-10-14.json",
+      "sha256": "ad772d44662ac3a33468e64f26832c344512f226a0170afe847a2e56f0d76dbf"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.json",
+      "sha256": "86e18e919163e67de679c97d74bbbf3960dcce6b58fd3d4a8cebdbf77499092d"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.txt",
+      "sha256": "a8146dd685993bf15a8b3f2411a39892d0e467b4c9583cbb354baaf04b1fba50"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\product-audit-diff-check-2026-10-14.log",
+      "sha256": "30e275ec4b749b122594dc5f36ab32c68b662c01975c7560f8d77487db4541f3"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\product-audit-diff-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-verify-abort\\CHECKSUMS.json",
+      "sha256": "1e5c1a76aac8f727ed64a14e47b27ef03918a97d98b3b4a64ce149496dfb3e8e"
+    }
+  ],
+  "postRecordReview": {
+    "onlyUpdatedInputFiles": [
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputs": 147,
+    "unchangedAssets": 5,
+    "candidateVerifiedFiles": 19,
+    "review": "All 13 groups have current file hashes and explicit incomplete proof conditions. Historical/local evidence retains scope; empty hosted listing not counted as CI success, source descriptions not counted as physical/UX/resource acceptance."
+  }
+}
