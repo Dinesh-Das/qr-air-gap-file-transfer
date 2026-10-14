@@ -1,0 +1,91 @@
+
+> qr-air-gap-file-transfer@1.0.0 check:release
+> npm run check && npm run test:browser && node scripts/smoke-offline.mjs
+
+
+> qr-air-gap-file-transfer@1.0.0 check
+> npm run typecheck && npm test && npm run build
+
+
+> qr-air-gap-file-transfer@1.0.0 typecheck
+> tsc -b --pretty false
+
+
+> qr-air-gap-file-transfer@1.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 D:/MyProjects/QR Air-Gap File Transfer
+
+
+ Test Files  35 passed (35)
+      Tests  236 passed (236)
+   Start at  11:20:48
+   Duration  4.06s (transform 5.34s, setup 0ms, import 9.84s, tests 15.77s, environment 6ms)
+
+
+> qr-air-gap-file-transfer@1.0.0 build
+> tsc -b && vite build
+
+vite v8.2.0 building client environment for production...
+[2K
+transforming...✓ 1642 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                  0.62 kB │ gzip:   0.38 kB
+dist/assets/block-store.worker-DVHZPZQe.js       2.40 kB
+dist/assets/index-CXjII1oQ.css                  24.64 kB │ gzip:   5.74 kB
+dist/assets/qr-scanner-worker.min-CJaXo3yu.js   43.95 kB │ gzip:  10.37 kB
+dist/assets/index-D1yoj3aB.js                  538.82 kB │ gzip: 163.97 kB
+
+✓ built in 315ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+> qr-air-gap-file-transfer@1.0.0 test:browser
+> playwright test
+
+[WebServer] (node:9136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 32 tests using 1 worker
+
+(node:8908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 e2e\pairing.spec.ts:132:1 › temporary peer interruption updates both screens and disables confirmation until recovery (4.0s)
+  ok  2 e2e\pairing.spec.ts:156:81 › receiver preflight blocks missing webrtc even after reconnect (389ms)
+  ok  3 e2e\pairing.spec.ts:156:81 › receiver preflight blocks missing opfs even after reconnect (386ms)
+  ok  4 e2e\pairing.spec.ts:156:81 › receiver preflight blocks missing locks even after reconnect (390ms)
+  ok  5 e2e\pairing.spec.ts:156:81 › receiver preflight blocks missing worker even after reconnect (378ms)
+  ok  6 e2e\pairing.spec.ts:156:81 › receiver preflight blocks missing picker even after reconnect (378ms)
+  ok  7 e2e\pairing.spec.ts:183:1 › sender checks WebRTC support before reading source bytes or pairing (603ms)
+  ok  8 e2e\pairing.spec.ts:210:1 › pausing clears recent speed and ETA without losing transfer progress (5.9s)
+  ok  9 e2e\pairing.spec.ts:244:1 › receiver storage readiness refreshes and distinguishes unknown estimates (467ms)
+  ok 10 e2e\pairing.spec.ts:271:1 › mixed dropped items transfer and a busy sender ignores another drop (5.2s)
+  ok 11 e2e\pairing.spec.ts:308:1 › selected files transfer preserves names, bytes and empty files (3.3s)
+  ok 12 e2e\pairing.spec.ts:337:1 › aborted sender checkpoint transactions do not prevent verified transfer (2.1s)
+  ok 13 e2e\pairing.spec.ts:354:44 › sender reload restores handles and refuses changed source (file selection: false) (2.7s)
+  ok 14 e2e\pairing.spec.ts:354:44 › sender reload restores handles and refuses changed source (file selection: true) (2.2s)
+  ok 15 e2e\pairing.spec.ts:412:37 › production HTTP runtime pairs browsers (manual address: false) (2.3s)
+  ok 16 e2e\pairing.spec.ts:412:37 › production HTTP runtime pairs browsers (manual address: true) (1.9s)
+  ok 17 e2e\pairing.spec.ts:423:1 › real WebRTC and OPFS transfer waits for both human confirmations (2.7s)
+  ok 18 e2e\pairing.spec.ts:460:1 › interrupted many-file destination save reuses verified files and repairs changed files (12.0s)
+  ok 19 e2e\pairing.spec.ts:550:1 › stopping a save removes its pending destination lock request (2.6s)
+  ok 20 e2e\pairing.spec.ts:584:1 › receiver rejects payload before human verification (2.0s)
+  ok 21 e2e\pairing.spec.ts:593:1 › sender rejects premature success before human verification (2.0s)
+  ok 22 e2e\pairing.spec.ts:601:1 › rejecting the device sends no file data (2.0s)
+  ok 23 e2e\pairing.spec.ts:610:1 › altered signaling produces different verification codes and cannot authorize (2.1s)
+  ok 24 e2e\pairing.spec.ts:620:1 › premature success after authorization still cannot finish a transfer (2.3s)
+  ok 25 e2e\pairing.spec.ts:638:1 › pairing retry retains the prepared source without rehashing or reselecting (3.5s)
+  ok 26 e2e\pairing.spec.ts:659:1 › a journal truncated after flush is never acknowledged (2.3s)
+  ok 27 e2e\pairing.spec.ts:678:36 › journal failure at commit 1 resumes only durable blocks after refresh (7.4s)
+  ok 28 e2e\pairing.spec.ts:678:36 › journal failure at commit 2 resumes only durable blocks after refresh (7.6s)
+  ok 29 e2e\pairing.spec.ts:682:1 › sender and receiver reload resume only missing blocks after source recovery (12.2s)
+  ok 30 e2e\pairing.spec.ts:688:1 › receiver renderer crash during receipt commit recovers durable blocks and exact output (11.4s)
+  ok 31 e2e\pairing.spec.ts:786:37 › screen wake lock follows transfer lifecycle (denied: false) (2.3s)
+  ok 32 e2e\pairing.spec.ts:786:37 › screen wake lock follows transfer lifecycle (denied: true) (2.3s)
+
+  32 passed (1.9m)
+{"ranAt":"2026-09-14T05:52:52.755Z","node":"v24.12.0","packagedFiles":15,"fetchedAssets":5,"isolatedDirectoryOutsideRepository":true,"pathWithSpaces":true,"arbitraryWorkingDirectory":true,"existingDestinationRefused":true,"checksumVerification":"Verified 15 release files. This checks copy integrity, not publisher authenticity.","launch":"AirGap QR is running at http://127.0.0.1:23553\nSix-digit WebRTC pairing uses UDP and TCP 31939 on the local LAN.\nPress Ctrl+C to stop."}

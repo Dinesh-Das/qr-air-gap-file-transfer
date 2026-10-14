@@ -1,0 +1,1138 @@
+{
+  "recordedAt": "2026-10-13T20:48:03.462Z",
+  "localDate": "2026-10-14",
+  "releaseStatus": "NOT READY",
+  "productionCodeChanged": false,
+  "changes": [
+    "Added bounded deterministic malformed-field, control-limit and exhaustive single-bit binary mutation tests. No production defect reproduced."
+  ],
+  "corpus": {
+    "seed": "0x6a09e667",
+    "malformedControlSelections": 1000,
+    "scope": "Repeated selections from a small known-invalid field pool across ACK, resume range, peer confirmation, error and manifest messages; not 1000 unique arbitrary inputs.",
+    "numericLookingStrings": [
+      "",
+      "0",
+      "1"
+    ],
+    "packetBytes": 141,
+    "singleBitVariants": 1128,
+    "decoderEntryPoints": [
+      "synchronous",
+      "asynchronous with native Web Crypto required"
+    ],
+    "truncatedPackets": 4,
+    "trailingBytePackets": 1,
+    "limitChecks": {
+      "ackIndices": [
+        512,
+        513
+      ],
+      "resumeRanges": [
+        512,
+        513
+      ],
+      "humanTextCharacters": [
+        2000,
+        2001
+      ],
+      "controlWireUTF16CodeUnits": [
+        262144,
+        262145
+      ]
+    },
+    "limitations": [
+      "String cap checked in UTF-16 code units; no claim of arbitrary Unicode UTF-8 byte equivalence.",
+      "Not broad SDP/UDP/path parser fuzzing, authentication/state-machine proof, all-vulnerability absence or physical acceptance."
+    ]
+  },
+  "localCheck": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "unitIntegrationTests": 356,
+    "testFiles": 43,
+    "typecheck": "passed",
+    "build": "passed",
+    "rawLog": "control-fuzz-check-final-2026-10-14.log",
+    "sha256": "f6d18e86cd08603b94144cb627abb30e814afdc7927d2d1a79ac1e68cfe47082"
+  },
+  "priorValidation": {
+    "report": "resume-percent-review-2026-10-14.json",
+    "scope": "Production/e2e/config/lock and five assets unchanged. Prior full 347-unit/80-case browser gates and 160-context lifecycle results retain original scopes. Browser suites not rerun for unit-test/evidence-only changes.",
+    "evidence": {
+      "report": "lifecycle-diagnostic-review-2026-10-14.json",
+      "previousFullGates": {
+        "report": "verify-abort-review-2026-10-14.json",
+        "edge": {
+          "rawLog": "verify-abort-gate-edge-2026-10-14.log",
+          "sha256": "8230526741ad152f1171b6eb37fccb1704126bce6803a623592be9adc5201a77",
+          "exitCode": 0,
+          "command": "QRFT_TEST_BROWSER_CHANNEL=msedge npm run check:release",
+          "browserVersion": "154.0.4258.53",
+          "unitTests": 347,
+          "testFiles": 43,
+          "browserCases": 80,
+          "typecheck": "passed",
+          "build": "passed"
+        },
+        "chrome": {
+          "rawLog": "verify-abort-gate-chrome-2026-10-14.log",
+          "sha256": "4497f5319f944dcba6aa4cf98e592db3d6fd40a0e489a21c6be44ab4bd2f438b",
+          "exitCode": 0,
+          "command": "QRFT_TEST_BROWSER_CHANNEL=chrome npx playwright test --output test-results-verify-abort-chrome",
+          "browserVersion": "154.0.8037.99",
+          "browserCases": 80
+        },
+        "packageSmoke": {
+          "ranAt": "2026-10-13T19:46:53.693Z",
+          "node": "v24.12.0",
+          "packagedFiles": 19,
+          "physicalTemplateCases": 42,
+          "fetchedAssets": 5,
+          "isolatedDirectoryOutsideRepository": true,
+          "pathWithSpaces": true,
+          "arbitraryWorkingDirectory": true,
+          "existingDestinationRefused": true,
+          "checksumVerification": "Verified 19 release files. This checks copy integrity, not publisher authenticity.",
+          "launch": "AirGap QR is running at http://127.0.0.1:44808\nChoose Send or Receive to check the local connection service.\nPress Ctrl+C to stop.",
+          "launcherStartedAndStopped": true,
+          "browserHandoff": "injected observer; native Windows browser opening not tested"
+        },
+        "scope": "Prior 347-test check/full 80-case gates/package smoke retained on unchanged app, tests, config, lockfile and five assets. No suites rerun for this diagnostic-only checkpoint."
+      },
+      "lifecycleTrials": [
+        {
+          "channel": "edge",
+          "browserVersion": "154.0.4258.53",
+          "rawReport": "lifecycle-edge-2026-10-14.json",
+          "rawSha256": "ad729f4312019d58c6a534802ef0d965799190f17383ac3911a50908728a8268",
+          "rawLog": "lifecycle-edge-2026-10-14.log",
+          "exitCode": 0,
+          "cycles": 80,
+          "rejectedBeforePayload": 40,
+          "independentlyVerifiedSaves": 40,
+          "expectedDestinationBytes": 120000,
+          "expectedDestinationSha256": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767",
+          "failedAssetRequests": 0,
+          "pageOrConsoleErrors": 0,
+          "contextCloseMs": {
+            "min": 26.183499999984633,
+            "max": 50.670799999992596,
+            "mean": 34.45772999999851
+          },
+          "browserPid": 26888,
+          "sampledHandles": {
+            "first": 1319,
+            "last": 1608,
+            "min": 1319,
+            "max": 1634
+          },
+          "sampledBrowserPrivateBytes": {
+            "first": 35123200,
+            "last": 66060288,
+            "min": 35123200,
+            "max": 66060288
+          },
+          "samples": [
+            {
+              "cycle": 0,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 26888,
+                "HandleCount": 1319,
+                "PrivateMemorySize64": 35123200,
+                "WorkingSet64": 123682816
+              }
+            },
+            {
+              "cycle": 10,
+              "processCount": 6,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService",
+                "entity_extraction_service.mojom.Extractor",
+                "edge_collections.mojom.CollectionsDataManager"
+              ],
+              "metrics": {
+                "Id": 26888,
+                "HandleCount": 1634,
+                "PrivateMemorySize64": 62255104,
+                "WorkingSet64": 187396096
+              }
+            },
+            {
+              "cycle": 20,
+              "processCount": 6,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService",
+                "entity_extraction_service.mojom.Extractor",
+                "edge_collections.mojom.CollectionsDataManager"
+              ],
+              "metrics": {
+                "Id": 26888,
+                "HandleCount": 1617,
+                "PrivateMemorySize64": 59359232,
+                "WorkingSet64": 185008128
+              }
+            },
+            {
+              "cycle": 30,
+              "processCount": 6,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService",
+                "entity_extraction_service.mojom.Extractor",
+                "edge_collections.mojom.CollectionsDataManager"
+              ],
+              "metrics": {
+                "Id": 26888,
+                "HandleCount": 1613,
+                "PrivateMemorySize64": 63168512,
+                "WorkingSet64": 188715008
+              }
+            },
+            {
+              "cycle": 40,
+              "processCount": 6,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService",
+                "entity_extraction_service.mojom.Extractor",
+                "edge_collections.mojom.CollectionsDataManager"
+              ],
+              "metrics": {
+                "Id": 26888,
+                "HandleCount": 1614,
+                "PrivateMemorySize64": 63434752,
+                "WorkingSet64": 189132800
+              }
+            },
+            {
+              "cycle": 50,
+              "processCount": 6,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService",
+                "entity_extraction_service.mojom.Extractor",
+                "edge_collections.mojom.CollectionsDataManager"
+              ],
+              "metrics": {
+                "Id": 26888,
+                "HandleCount": 1609,
+                "PrivateMemorySize64": 64462848,
+                "WorkingSet64": 190488576
+              }
+            },
+            {
+              "cycle": 60,
+              "processCount": 6,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService",
+                "entity_extraction_service.mojom.Extractor",
+                "edge_collections.mojom.CollectionsDataManager"
+              ],
+              "metrics": {
+                "Id": 26888,
+                "HandleCount": 1608,
+                "PrivateMemorySize64": 64823296,
+                "WorkingSet64": 190787584
+              }
+            },
+            {
+              "cycle": 70,
+              "processCount": 6,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService",
+                "entity_extraction_service.mojom.Extractor",
+                "edge_collections.mojom.CollectionsDataManager"
+              ],
+              "metrics": {
+                "Id": 26888,
+                "HandleCount": 1606,
+                "PrivateMemorySize64": 62410752,
+                "WorkingSet64": 188575744
+              }
+            },
+            {
+              "cycle": 80,
+              "processCount": 6,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService",
+                "entity_extraction_service.mojom.Extractor",
+                "edge_collections.mojom.CollectionsDataManager"
+              ],
+              "metrics": {
+                "Id": 26888,
+                "HandleCount": 1608,
+                "PrivateMemorySize64": 66060288,
+                "WorkingSet64": 192253952
+              }
+            }
+          ]
+        },
+        {
+          "channel": "chrome",
+          "browserVersion": "154.0.8037.99",
+          "rawReport": "lifecycle-chrome-2026-10-14.json",
+          "rawSha256": "fcab9c36eee3b1adfedbc27d4e844e98094480dbfce6cc7f837e6c432ce16d70",
+          "rawLog": "lifecycle-chrome-2026-10-14.log",
+          "exitCode": 0,
+          "cycles": 80,
+          "rejectedBeforePayload": 40,
+          "independentlyVerifiedSaves": 40,
+          "expectedDestinationBytes": 120000,
+          "expectedDestinationSha256": "c2830d288fe085ac3840304a8952f6782f0fc3a5d025129c6bf2c92a42e7e767",
+          "failedAssetRequests": 0,
+          "pageOrConsoleErrors": 0,
+          "contextCloseMs": {
+            "min": 14.531700000006822,
+            "max": 44.85810000000038,
+            "mean": 24.77824500000171
+          },
+          "browserPid": 14024,
+          "sampledHandles": {
+            "first": 976,
+            "last": 1196,
+            "min": 976,
+            "max": 1202
+          },
+          "sampledBrowserPrivateBytes": {
+            "first": 22970368,
+            "last": 53215232,
+            "min": 22970368,
+            "max": 53215232
+          },
+          "samples": [
+            {
+              "cycle": 0,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 14024,
+                "HandleCount": 976,
+                "PrivateMemorySize64": 22970368,
+                "WorkingSet64": 86188032
+              }
+            },
+            {
+              "cycle": 10,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 14024,
+                "HandleCount": 1202,
+                "PrivateMemorySize64": 49139712,
+                "WorkingSet64": 150282240
+              }
+            },
+            {
+              "cycle": 20,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 14024,
+                "HandleCount": 1198,
+                "PrivateMemorySize64": 49266688,
+                "WorkingSet64": 150675456
+              }
+            },
+            {
+              "cycle": 30,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 14024,
+                "HandleCount": 1193,
+                "PrivateMemorySize64": 47165440,
+                "WorkingSet64": 148725760
+              }
+            },
+            {
+              "cycle": 40,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 14024,
+                "HandleCount": 1194,
+                "PrivateMemorySize64": 50163712,
+                "WorkingSet64": 151863296
+              }
+            },
+            {
+              "cycle": 50,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 14024,
+                "HandleCount": 1196,
+                "PrivateMemorySize64": 52047872,
+                "WorkingSet64": 153276416
+              }
+            },
+            {
+              "cycle": 60,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 14024,
+                "HandleCount": 1196,
+                "PrivateMemorySize64": 52183040,
+                "WorkingSet64": 153518080
+              }
+            },
+            {
+              "cycle": 70,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 14024,
+                "HandleCount": 1196,
+                "PrivateMemorySize64": 52752384,
+                "WorkingSet64": 154066944
+              }
+            },
+            {
+              "cycle": 80,
+              "processCount": 4,
+              "processTypes": [
+                "browser",
+                "GPU",
+                "network.mojom.NetworkService",
+                "storage.mojom.StorageService"
+              ],
+              "metrics": {
+                "Id": 14024,
+                "HandleCount": 1196,
+                "PrivateMemorySize64": 53215232,
+                "WorkingSet64": 154546176
+              }
+            }
+          ]
+        }
+      ],
+      "scope": "Production, e2e, scripts/config/lock and five built assets unchanged. Prior 347-unit/full 80-browser-case gates and 160-context diagnostic retain original scope; browser suites not rerun for this unit-test/evidence-only checkpoint."
+    }
+  },
+  "obligationsIndex": {
+    "path": "acceptance-obligations-2026-10-14.json",
+    "scope": "Selected Security lines annotated as partial WebRTC parser evidence; source-line index remains an incomplete acceptance audit."
+  },
+  "currentInputs": [
+    {
+      "path": ".github/workflows/release-check.yml",
+      "sha256": "00ca460575683224ab10cd7f23e143dcc30a45b29c0319bce9feaaf1fbeb55a2"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "bacd164322f31f6bc68354e54b1903899063d507da0673b1a3af30db1922eced"
+    },
+    {
+      "path": "BENCHMARKS.md",
+      "sha256": "e6fb430f1d7aa15588bd68c35f00db6ade7b4850adceba62940dcf2e500da5ec"
+    },
+    {
+      "path": "PHYSICAL-TEST-RECORD.md",
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b8c4a74d50dda0bec73c88a37726d9a702ca30ceb0fbb639e77c2db1f9de7e1b"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "sha256": "4f43ffcfe422ce220960236a5af0cce771206fbe2869685a91653a27bfc1c30c"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "sha256": "a7ff58ae4198e8fb44fd46ed35ab7726ca509e08568e92368a76eaf02377895f"
+    },
+    {
+      "path": "SPEC-cancel-payload.md",
+      "sha256": "223c5a8958b17b346f51895bdac5534c7b71dce1d2ed4884c50d656116fbec3c"
+    },
+    {
+      "path": "SPEC-cleanup-retry.md",
+      "sha256": "304df0cbaba1f6e475b3853ec2094cd27cb6f610419b7de037742c77f0f58f45"
+    },
+    {
+      "path": "SPEC-destination-readback.md",
+      "sha256": "d405f66aac03e2b08b30834237b89b8dd109906204775ab48072f73762b40917"
+    },
+    {
+      "path": "SPEC-manifest-block-boundary.md",
+      "sha256": "9989ca4bd16b32a94704297266203a40e4707223d54d47ba17a3ce94bacc4340"
+    },
+    {
+      "path": "SPEC-pairing-preparation.md",
+      "sha256": "c2613a50af8a8f2718bd88ce1b3e3538ce7c66855eb0e0e773d9b7cce8dbea9f"
+    },
+    {
+      "path": "SPEC-terminal-control-callbacks.md",
+      "sha256": "0dfa7183615d777cc2a7c0f0d40a3815b049b9f73da462b357c9a7d942c48510"
+    },
+    {
+      "path": "SPEC-verify-abort.md",
+      "sha256": "bdf37f4ee092f08c7b9e7a5d38193f2d6e67ebe0cf578b1fdaaa053081522684"
+    },
+    {
+      "path": "Start AirGap QR.cmd",
+      "sha256": "34b42ce80ed30d01144488adf31eaebe6b87a0479f0b4d170e96f1883c6612e6"
+    },
+    {
+      "path": "TRANSFER_PROCESS.md",
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f"
+    },
+    {
+      "path": "e2e/browser-channel.ts",
+      "sha256": "3fb3e73de33be4999f105f7540f503358483e039c7b115fef842e56ba0fe1ef6"
+    },
+    {
+      "path": "e2e/navigation.spec.ts",
+      "sha256": "2f96693e554160b55f1d75863c50dc2432a2433edcd716cf6dc8066621e8ad95"
+    },
+    {
+      "path": "e2e/pairing-preparation.spec.ts",
+      "sha256": "8bf63a00f2de1cde18adc61a648ab1dea6c963253038ada68d5a2dfea96c9bc6"
+    },
+    {
+      "path": "e2e/pairing.spec.ts",
+      "sha256": "ce77283cca60a42fd70a8237ee45c3c5b8a8adbacc29c5135be742098bbc0a69"
+    },
+    {
+      "path": "e2e/preparation-privacy.spec.ts",
+      "sha256": "4ed4bf5e5cedb9f1721ea8d87c78e75f3cdcb2132fa86daa75dcf8eba996b12e"
+    },
+    {
+      "path": "index.html",
+      "sha256": "3b7b5e875082dc67de12a3985f466aa88e20c02d9ef7427de7cc54b6dd5e2e6b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "419c34395598a1eb8ab1a1d4e78387ff2b851fc91258d322ce82a52e93f6c485"
+    },
+    {
+      "path": "package.json",
+      "sha256": "387481353fa53dff370af9ed800d849829f777a8b912495b027086cb62389de5"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "8308263834c0867ce012ea47286afcba5edbf5df26acce4019a29b73c01aab84"
+    },
+    {
+      "path": "release-evidence/physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "scripts/benchmark-pattern.mjs",
+      "sha256": "c123dbc053a01b317d8619e96500e774549f4d14a41afbd98725d2551017087a"
+    },
+    {
+      "path": "scripts/benchmark-receiver.mjs",
+      "sha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431"
+    },
+    {
+      "path": "scripts/benchmark-result.mjs",
+      "sha256": "2c73f114ccb427576aa55008b08c3ace9108405fb36d0fa3310f6a9f07bc44c7"
+    },
+    {
+      "path": "scripts/benchmark-webrtc-page.mjs",
+      "sha256": "2c52adeedaa92a378f8cfd44cc461e615d77b1d45cf6385fbf064916a1bd17cb"
+    },
+    {
+      "path": "scripts/benchmark-webrtc.mjs",
+      "sha256": "ffd283e8e93f788c70099a193074c0b9cdf0b1d9ced041a1458d78819b22edcc"
+    },
+    {
+      "path": "scripts/browser-process-memory.mjs",
+      "sha256": "8fb651a94d4c5902c5ac806ea6e342b78a36520988ad3e685fc49c6a81e86f36"
+    },
+    {
+      "path": "scripts/browser-process-memory.ps1",
+      "sha256": "86395d780f2498229cdef346b2d19ac41a1fc7f2a9b3a633165a1e9893bb3d03"
+    },
+    {
+      "path": "scripts/compare-trees.mjs",
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "scripts/create-fixture.mjs",
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "scripts/diagnose-storage-context.mjs",
+      "sha256": "a5d74a5f2930258112115c6f3e5e285ea4a513ce740246e009ff47b34a381b19"
+    },
+    {
+      "path": "scripts/lan-signaling.mjs",
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "scripts/launch.mjs",
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "scripts/local-http-security.mjs",
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "scripts/package-offline.mjs",
+      "sha256": "3cb5aefd1bd5cef202e15b00697a8682358be37547f843285be0e26580adb5ab"
+    },
+    {
+      "path": "scripts/rendezvous.mjs",
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "scripts/smoke-offline.mjs",
+      "sha256": "7c5ae229ff2f333dc5499ff14b5a49926165093c537f0678bd8f5314a28154cd"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
+    },
+    {
+      "path": "src/components/ConnectionDiagnostics.tsx",
+      "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+    },
+    {
+      "path": "src/components/LargeReceiver.tsx",
+      "sha256": "a5d95a2e4842b77336d8ef7df161e5b46267b5ef052940bacb35e48ea62b1935"
+    },
+    {
+      "path": "src/components/LargeSender.tsx",
+      "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+    },
+    {
+      "path": "src/components/PairingReadiness.tsx",
+      "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
+    },
+    {
+      "path": "src/components/Receiver.tsx",
+      "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+    },
+    {
+      "path": "src/components/Sender.tsx",
+      "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+    },
+    {
+      "path": "src/components/StorageReadiness.tsx",
+      "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
+    },
+    {
+      "path": "src/components/TransferMetrics.tsx",
+      "sha256": "4677d22a36c655156236fa1357e72a3cccdd9208a4ce2544e3e3dba1339d25b1"
+    },
+    {
+      "path": "src/components/TransferProblem.tsx",
+      "sha256": "656eb3a36342bb4f1d5f5c6783aa177bfbc45355e19253885f9bf0cbced6dcd8"
+    },
+    {
+      "path": "src/components/TransferWakeLock.tsx",
+      "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+    },
+    {
+      "path": "src/components/VerifyDevice.tsx",
+      "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "sha256": "4b762d405f67a4e7ad4bb0e23397b60cc9ffc02af6fb699823b46b4ed1b154c3"
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "sha256": "f250b590587f79d81a20f35240c1c008719f40d8d386eb463c27f2687d9cae36"
+    },
+    {
+      "path": "src/components/WebRtcSignalQr.tsx",
+      "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+    },
+    {
+      "path": "src/lib/archive.ts",
+      "sha256": "ec7b22a082a6e658d24ceaae7977b65ec233ebc2cef54e1862a5d5c019435b40"
+    },
+    {
+      "path": "src/lib/block-store-worker-protocol.ts",
+      "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+    },
+    {
+      "path": "src/lib/block-store.ts",
+      "sha256": "7afcda4f452264133dca46bc64b5745becb381e912b118f38bc7892f15f28ef8"
+    },
+    {
+      "path": "src/lib/block-store.worker.ts",
+      "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+    },
+    {
+      "path": "src/lib/connection-path.ts",
+      "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+    },
+    {
+      "path": "src/lib/connection.ts",
+      "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+    },
+    {
+      "path": "src/lib/format.ts",
+      "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+    },
+    {
+      "path": "src/lib/large-connection.ts",
+      "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+    },
+    {
+      "path": "src/lib/large-destination.ts",
+      "sha256": "9026236beb6e1924886e77e7a224321ff85f2dba02dff769f965791d4e2d774d"
+    },
+    {
+      "path": "src/lib/large-receiver-resume.ts",
+      "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+    },
+    {
+      "path": "src/lib/large-receiver.ts",
+      "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+    },
+    {
+      "path": "src/lib/large-sender-playback.ts",
+      "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+    },
+    {
+      "path": "src/lib/large-sender-resume.ts",
+      "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+    },
+    {
+      "path": "src/lib/large-transfer.ts",
+      "sha256": "425ebe8393e5087b1a700791b4201c2701cba6aee39f39755e84e2718fc7c6ce"
+    },
+    {
+      "path": "src/lib/optical-schedule.ts",
+      "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+    },
+    {
+      "path": "src/lib/protocol.ts",
+      "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+    },
+    {
+      "path": "src/lib/resume.ts",
+      "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+    },
+    {
+      "path": "src/lib/screen-wake-lock.ts",
+      "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+    },
+    {
+      "path": "src/lib/selected-files.ts",
+      "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+    },
+    {
+      "path": "src/lib/sender-resume.ts",
+      "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+    },
+    {
+      "path": "src/lib/stream-protocol.ts",
+      "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+    },
+    {
+      "path": "src/lib/transfer-problem.ts",
+      "sha256": "31407c8e2efb9ddfd6432fbc6cec2554373831d62ac87a62ed8eb0211e6f22ae"
+    },
+    {
+      "path": "src/lib/transfer-rate.ts",
+      "sha256": "6fb0d18190c2f640f3f1bebb2661f98ad13a88d0abbefff575a4d67b5b993071"
+    },
+    {
+      "path": "src/lib/transfer.ts",
+      "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+    },
+    {
+      "path": "src/lib/use-pairing-readiness.ts",
+      "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
+    },
+    {
+      "path": "src/lib/use-transfer-rate.ts",
+      "sha256": "8ddb5042d0ab91350190f428f2a91d104e3dd85a75f736cd1a59c82ea89ec2c0"
+    },
+    {
+      "path": "src/lib/webrtc-authorization.ts",
+      "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+    },
+    {
+      "path": "src/lib/webrtc-control-flow.ts",
+      "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+    },
+    {
+      "path": "src/lib/webrtc-peer-health.ts",
+      "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+    },
+    {
+      "path": "src/lib/webrtc-protocol.ts",
+      "sha256": "06c7ae26d9dd7f396e9585d17257516ee85b50eab290b9e8993bca3f7ff65cc1"
+    },
+    {
+      "path": "src/lib/webrtc-receive-queue.ts",
+      "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+    },
+    {
+      "path": "src/lib/webrtc-rendezvous.ts",
+      "sha256": "f02bc05fb6c37f52edb3b36a4fd08a1aad3ca1e3e5ae417af02ed4f7205dfa8d"
+    },
+    {
+      "path": "src/lib/webrtc-sender-resume.ts",
+      "sha256": "1a6920253bfe88279ae301c5cf631400afeb03d885eb73303f07c2b7dd594167"
+    },
+    {
+      "path": "src/lib/webrtc-signaling.ts",
+      "sha256": "7b69af782ffc6f4b3d05fabbb2e3a51c8dbe10cbee94e947eef149d11c24bd33"
+    },
+    {
+      "path": "src/lib/webrtc-transfer.ts",
+      "sha256": "2aa88029d7892238aa3af9264db511818b545a3847d8865fc98648a211752013"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "c5f1051b0fa98de99ac70978df61f98b67bd3f214b6ae27a428de57e2e4fbb11"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+    },
+    {
+      "path": "tests/archive.test.ts",
+      "sha256": "3a4b985b93544997d93c6bc60f0fcc480a921ad4339b249e82efd0bde1ef9fd4"
+    },
+    {
+      "path": "tests/benchmark-pattern.test.mjs",
+      "sha256": "16cfb00e0fa5a3507e1b7b43aad69854e405a651a2845876e1e159ca716690df"
+    },
+    {
+      "path": "tests/benchmark-result.test.mjs",
+      "sha256": "ff46795d8d91c4924234d45b42c6a7cd737f0255c63e9761edf278e77f918b0b"
+    },
+    {
+      "path": "tests/block-store-opfs.test.ts",
+      "sha256": "deadf92f733e33712145013eed4bcefeba3be23670728227a50972b05b822981"
+    },
+    {
+      "path": "tests/block-store.test.ts",
+      "sha256": "966697a32212a4ea377e4a1d1d408aebc9b725c128afe918050f704df80d1eca"
+    },
+    {
+      "path": "tests/browser-process-memory.test.mjs",
+      "sha256": "bb8f3233aeb3b9043893af10810be10eaa47165a3743f434abc2d6c8961ecb2c"
+    },
+    {
+      "path": "tests/compare-trees.test.mjs",
+      "sha256": "5f588899b3a15176fe6d3220629da60968e5fd2168d96fdc9145c193cc6ffd1a"
+    },
+    {
+      "path": "tests/connection-path.test.ts",
+      "sha256": "9488e8c1e827ad458049d9f308a15c4a63d304d810f72016a4b85c0556502a15"
+    },
+    {
+      "path": "tests/connection.test.ts",
+      "sha256": "24b3d1f8ef6ada5e2c0835764fc67b58571b40906cd7354612d091c7d7544fa8"
+    },
+    {
+      "path": "tests/e2e.test.ts",
+      "sha256": "a4fefb116dc82cb0c9e3beffd611aaa856a530e84358ab942431e845321e07c6"
+    },
+    {
+      "path": "tests/fixture-safety.test.mjs",
+      "sha256": "5e002887ca15685b4a27e296576f56648e884de7e289e5a17f1becf118794629"
+    },
+    {
+      "path": "tests/format.test.ts",
+      "sha256": "b7421fe9575abc5f1607129aeb224fd9e23c8ab2bc951716930c3bd4ba567e34"
+    },
+    {
+      "path": "tests/free-signal-port.mjs",
+      "sha256": "99d03ec2fd940bbe935a66f414175be1bca11557322f845e151b67037fa5e5bb"
+    },
+    {
+      "path": "tests/lan-signaling.test.mjs",
+      "sha256": "ce715c1df7868c2470878543c6f2334ec7e51d83f73c72ec62bb0bd48a743c62"
+    },
+    {
+      "path": "tests/large-connection.test.ts",
+      "sha256": "5089f24b7741cac1807027bd1e4d0e5d56f400b02d361ba4ee866f098ef6f7f0"
+    },
+    {
+      "path": "tests/large-destination.test.ts",
+      "sha256": "3d3367617f96c61f5692ae7f75877bd275b093e80bef0faf275eaae4dd66b627"
+    },
+    {
+      "path": "tests/large-receiver-resume.test.ts",
+      "sha256": "eff92f97a2da8bfe7369222349f619ef5a84b82c16ca0b8d626326ab6f34333b"
+    },
+    {
+      "path": "tests/large-receiver.test.ts",
+      "sha256": "6a50503e24c568f162dd556f19ebc68b264fa8b3a1aaf80f09820660727cf499"
+    },
+    {
+      "path": "tests/large-sender-playback.test.ts",
+      "sha256": "b23b02e57520c60403e634fa731c9b3f759795ee8e10369844156bbf77f72b91"
+    },
+    {
+      "path": "tests/large-sender-resume.test.ts",
+      "sha256": "f1a0f63edb8b26dc924f7b4bf6911285c6b43c9964e089a134f2b011c8193d28"
+    },
+    {
+      "path": "tests/large-transfer.test.ts",
+      "sha256": "ec155bcb60282d2d6988dab962cb6ec55455915225a81c4ebda6f74d367a6c8e"
+    },
+    {
+      "path": "tests/launcher.test.mjs",
+      "sha256": "b54964f03794527fb43dee3123a2d01ca53545f88b8f404346070b96ca024e9e"
+    },
+    {
+      "path": "tests/local-http-security.test.mjs",
+      "sha256": "542973958a9ca8ccbc764d82558b09c0ee5121694a6cd25d50dae915bfb5cb5a"
+    },
+    {
+      "path": "tests/offline-release.test.mjs",
+      "sha256": "ff2b63605a3b63d5cf157ba2512c8adf347727780680e2d4d47c0fe049088910"
+    },
+    {
+      "path": "tests/optical-schedule.test.ts",
+      "sha256": "2c047500793ad6d261d9e8091dd98f7541b80361c95c84eaeb615d1da3ea1260"
+    },
+    {
+      "path": "tests/protocol.test.ts",
+      "sha256": "d19f0818c1c40758304b3bbe845276bcdff29968f0e582db396cec3e3f012332"
+    },
+    {
+      "path": "tests/rendezvous-ports.test.mjs",
+      "sha256": "a4d99c219e6909a42199fce21ed066cee003f08d6ca0877747fda0a909b67c60"
+    },
+    {
+      "path": "tests/rendezvous-runtime.test.mjs",
+      "sha256": "55343bc6e4b08d66c0b57ca14b78e77885c2629acda4f7b9fe955a34795355f1"
+    },
+    {
+      "path": "tests/resume.test.ts",
+      "sha256": "557f1a72a764bb32a189530f24be5840e2501a71fae8fc84859ed36435527bfc"
+    },
+    {
+      "path": "tests/screen-wake-lock.test.ts",
+      "sha256": "72b1ae1f805d8a0e0a990f6fb37eda23d33aa9174889b8daf881508bb0c735d3"
+    },
+    {
+      "path": "tests/selected-files.test.ts",
+      "sha256": "936c5f5f28a344dfcc5738619ca7e07b1f64428b047894964fbc1b07c1e843f1"
+    },
+    {
+      "path": "tests/stream-protocol.test.ts",
+      "sha256": "f07f41b0cdf94e1938145c09df71b12a1dfab321a463296a397065943223f18d"
+    },
+    {
+      "path": "tests/transfer-problem.test.ts",
+      "sha256": "9e65045468dc9efb74abae8ebf8ffd88ded40cd51201da44bfcb28f0c75a2e8f"
+    },
+    {
+      "path": "tests/transfer-rate.test.ts",
+      "sha256": "4f4fa107c71481a3615369483bdb0eeb57b2a351b6b91ec620651f395f65ecdb"
+    },
+    {
+      "path": "tests/webrtc-authorization.test.ts",
+      "sha256": "7f4520b43dfd2e14bef0f769d765f50a1d12012eb646311443071755a73d98bb"
+    },
+    {
+      "path": "tests/webrtc-control-flow.test.ts",
+      "sha256": "f8e23789b38980514d74a5f22195af281a38cfde499fed00b570e5aa31a2f0e2"
+    },
+    {
+      "path": "tests/webrtc-native-codec.test.ts",
+      "sha256": "b310aa3903d080d4668d2ed00d5b3d62814be021fb077f75f19646c860c10ea4"
+    },
+    {
+      "path": "tests/webrtc-peer-health.test.ts",
+      "sha256": "780945cb703f9cff2de548ea46a62f69b7a32d305445ff902472bf15c4f4adf3"
+    },
+    {
+      "path": "tests/webrtc-protocol.test.ts",
+      "sha256": "57ff07d72bb28efc67356256de2ee02c493f678fc28e4121bc2b836c64c0a04c"
+    },
+    {
+      "path": "tests/webrtc-receive-queue.test.ts",
+      "sha256": "4f1ac82ad50877d8d75f2b0c3170e1a02ef6211babbaec4a7459e1e2b11fe8e2"
+    },
+    {
+      "path": "tests/webrtc-rendezvous.test.ts",
+      "sha256": "22d7ec5c8ea5894544572ad715c9c8b6239deec4392375d3e615bea3d7db9cca"
+    },
+    {
+      "path": "tests/webrtc-sender-resume.test.ts",
+      "sha256": "32264a7e82c9135e7b9b8a1f16b67be352ed8c94c75bfb12d2dadb8cde282c34"
+    },
+    {
+      "path": "tests/webrtc-signaling.test.ts",
+      "sha256": "1623940be999ac1eac62e69e3c40e05787b35535d5298d240bbb8d137b1c63b4"
+    },
+    {
+      "path": "tests/webrtc-transfer.test.ts",
+      "sha256": "5bc15d255839725c669dd4a939e968506648919086e6c0fbfaccf2e38fd3cae4"
+    },
+    {
+      "path": "tsconfig.app.json",
+      "sha256": "24907a4972f29dd4b587b25d21bcab062cefa186f4cb4d75e813bf316deb7bef"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
+    },
+    {
+      "path": "tsconfig.node.json",
+      "sha256": "f003d918a886cdc7dcf5b2ba843bdfc5e59c6db0d6b4d2667a53b55d0198f94a"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "16d87b897a1106974dfc4d04c50d0008b94acda1fe4af6f1ebeab8f7878ea64b"
+    },
+    {
+      "path": "SPEC-resume-percent-matrix.md",
+      "sha256": "8e8116305621aacbcf5761e79a98654d71be52f8405c73f5f133f27bb47cc149"
+    },
+    {
+      "path": "SPEC-control-fuzz.md",
+      "sha256": "8ca8e0f96d892069151e05ae188654719534651dbfc33c6b55975d8fe8845950"
+    }
+  ],
+  "currentInputCount": 147,
+  "builtAssets": [
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-BhKxf_3l.js",
+      "bytes": 552156,
+      "sha256": "d426c80f9633a7d7c0e3d60b770060884dda53086d1b68d01774e2efb9f521d4"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "3cc8c455f0aadd3fe47e86bd67ab1eb12d4cbe457eb6e6e8f6ffbe2a56341804"
+    }
+  ],
+  "offlineCandidate": {
+    "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-verify-abort",
+    "verifiedFiles": 19,
+    "verifiedDirectCopies": 18,
+    "generatedFile": "START-HERE.txt"
+  },
+  "physicalAcceptance": {
+    "cases": 42,
+    "notRun": 42,
+    "releaseReady": false,
+    "laptopsAvailable": false
+  },
+  "remaining": [
+    "All 42 physical cases and nontechnical usability remain untested.",
+    "Performance/resource acceptance, historical 5 GiB memory concern, native private-window behavior, hosted CI and original Edge buffer root cause remain open.",
+    "Full requirement-by-requirement evidence review remains incomplete; the obligations index is not verification."
+  ],
+  "postRecordReview": {
+    "onlyUpdatedInputFiles": [
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputs": 145,
+    "unchangedAssets": 5,
+    "candidateVerifiedFiles": 19,
+    "review": "No actionable production findings. Fixed seeded invalid pool uses known-invalid oracle; strings valid for human error text are replaced by invalid values. Numeric-looking manifest string guards strict type even when numeric canonical value would match. Exhaustive bit mutation tests cover header/index/length/digest/payload; native crypto available. Scope excludes broad parser/security completeness; no checks suppressed."
+  },
+  "exploratoryRuns": {
+    "logs": [
+      "control-fuzz-2026-10-14.log",
+      "control-fuzz-check-2026-10-14.log"
+    ],
+    "scope": "First focused run used one bit per byte; first full check expanded to all bits. Final check additionally includes numeric string 1 and explicit native-crypto availability assertion. Only check-final binds final source."
+  }
+}

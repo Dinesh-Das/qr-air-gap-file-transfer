@@ -1,0 +1,4 @@
+NOT READY
+Optional Windows x64 Node24 portable runtime packaging implemented. 447units49/type/build passed under24.22.0; 6nativecmd fixture cases+10builder cases. Portable22/external19 manifests, blanktemplates, duplicateoutputrefusal, realruntime servedbytes/cleanstop passed; browserobserver injected. Current167inputs mirror existingfreshdependency stage; no freshnpmci claim. Application5assets unchanged.
+Full new-runtime browser gates/native default handler/cleanOS/physical/resource acceptance pending. Earlier88EdgeRerun/88Chrome historical only. All42physicalunrun; Cbelowreserve andpriorhostfailures unresolved.
+See portable-runtime-implementation-review-2026-10-15.json.

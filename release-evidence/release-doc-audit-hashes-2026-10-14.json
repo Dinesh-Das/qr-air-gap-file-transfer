@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-14T14:36:31.718Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/release-doc-audit-review-2026-10-14.json",
+      "bytes": 66384,
+      "sha256": "82f18b1a785061e9c964042a975b9c6d468aa721425b217ccc9d4b742d6aaa7c"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 66384,
+      "sha256": "82f18b1a785061e9c964042a975b9c6d468aa721425b217ccc9d4b742d6aaa7c"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 615,
+      "sha256": "c400ff4965c46ba8637adf801d7d623563ca9c0765439f69619824a7b22af744"
+    },
+    {
+      "path": "release-evidence/release-gate-before-doc-audit-2026-10-14.json",
+      "bytes": 64941,
+      "sha256": "aee9a7e4537db07a12364147886ae84f8892f09cd279c681b5f1a20c3f83f8e4"
+    },
+    {
+      "path": "release-evidence/ledger-link-audit-2026-10-14.json",
+      "bytes": 419510,
+      "sha256": "58848060d9855c2adecb252ba6c62e2fd18426333eb439bb57a94927cc37b8ae"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 83640,
+      "sha256": "c79cff37c13835bb1050f103343e3d59c1fc4812726c416467c351839c6b864e"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 126002,
+      "sha256": "d4e8c8ec52e5d53ce746eaf24bd18df62b67e5cd8fc033f5cd1d6d5f4d6a24da"
+    }
+  ]
+}
