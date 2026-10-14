@@ -1,0 +1,115 @@
+{
+  "recordedAt": "2026-10-13T20:36:36.490Z",
+  "files": [
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-check-2026-10-14.log",
+      "sha256": "7bc6c06d57fcf932fd0fc81e6076f324c6ec95df5c248fa21b0994a94b547215"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-check-final-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-check-final-2026-10-14.log",
+      "sha256": "59fa73bc66dfa39647c34e5c90fe9a3feb6b457dfcf9bfb00f40ba8732698231"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-diff-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-diff-check-2026-10-14.log",
+      "sha256": "30e275ec4b749b122594dc5f36ab32c68b662c01975c7560f8d77487db4541f3"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-exact-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-exact-2026-10-14.log",
+      "sha256": "4d172aaddd06e1d43fa2b33ee82d0d0670e3cb5d5a617f7f07bb26874895bd14"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-matrix-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-matrix-2026-10-14.log",
+      "sha256": "ef0aebaaa10b650e1d1cdf8f22f8954c7d387ec860907dd2bac36ea9364975e9"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\resume-percent-review-2026-10-14.json",
+      "sha256": "e770440fbe3307ffac87fb94a75157318f76d7f4484e9135a2150f56959f773e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-CHECKLIST.md",
+      "sha256": "4f43ffcfe422ce220960236a5af0cce771206fbe2869685a91653a27bfc1c30c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-HARDENING.md",
+      "sha256": "a7ff58ae4198e8fb44fd46ed35ab7726ca509e08568e92368a76eaf02377895f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\SPEC-resume-percent-matrix.md",
+      "sha256": "8e8116305621aacbcf5761e79a98654d71be52f8405c73f5f133f27bb47cc149"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\tests\\webrtc-transfer.test.ts",
+      "sha256": "5bc15d255839725c669dd4a939e968506648919086e6c0fbfaccf2e38fd3cae4"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\lib\\webrtc-transfer.ts",
+      "sha256": "2aa88029d7892238aa3af9264db511818b545a3847d8865fc98648a211752013"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\lib\\webrtc-receive-queue.ts",
+      "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\acceptance-obligations-2026-10-14.json",
+      "sha256": "2a5c8b78ccee6ae9ce5cf53b41e0cbf1d1bdbc4a08c4703c43a1ec7e937ba78b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\original-release-requirements.txt",
+      "sha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\lifecycle-diagnostic-review-2026-10-14.json",
+      "sha256": "27bdcff7c4fdd263126e2ba38f022df108db65c2f617979a2ef1b062f641cfc6"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-before-resume-percent-2026-10-14.json",
+      "sha256": "27bdcff7c4fdd263126e2ba38f022df108db65c2f617979a2ef1b062f641cfc6"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.json",
+      "sha256": "e770440fbe3307ffac87fb94a75157318f76d7f4484e9135a2150f56959f773e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.txt",
+      "sha256": "3cf3a83937aebf0df51aa9a0075deac158db5b2a26afcbf86023c947d00e7e04"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-verify-abort\\CHECKSUMS.json",
+      "sha256": "1e5c1a76aac8f727ed64a14e47b27ef03918a97d98b3b4a64ce149496dfb3e8e"
+    }
+  ],
+  "postCheckReview": {
+    "onlyUpdatedInputFiles": [
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputs": 144,
+    "unchangedAssets": 5,
+    "candidateVerifiedFiles": 19,
+    "review": "No actionable production findings. Admitted prefix and lost final ACK are deterministic despite async commit order; initial sender cannot complete, restarted sender sends exact missing indices, whole stream and every payload byte reverified. Fake-channel/in-memory scope explicit; percentages include trailer. Original-line index preserves source without claiming a completed audit."
+  }
+}
