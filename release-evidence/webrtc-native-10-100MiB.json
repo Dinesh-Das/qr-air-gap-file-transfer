@@ -1,0 +1,1532 @@
+{
+  "schema": "qrft-webrtc-benchmark-v1",
+  "startedAt": "2026-09-19T04:00:57.264Z",
+  "node": "v24.12.0",
+  "scope": "Two separate temporary normal Chromium processes on one Windows host; synthetic source slices and OPFS destination. Direct harness SDP exchange, not application pairing, human authorization, physical LAN, source disk or native destination validation.",
+  "profile": true,
+  "saveTree": true,
+  "corruptBlock": null,
+  "sizesMiB": [
+    10,
+    100
+  ],
+  "fileCount": 1,
+  "modes": [
+    "transfer"
+  ],
+  "repeats": 3,
+  "rawBaseline": "Same ordered channel, 60 KiB payload plus 44 bytes, 96-block window, 8/2 MiB buffering thresholds and production 64-block/75 ms receive queue; pattern check and batched ACKs, no hashing/source reads/OPFS durability.",
+  "inputs": [
+    {
+      "path": "package-lock.json",
+      "sha256": "6def808167eb5e69e1e2a3273226bfeedf66cf9ca627a97aa9502ac3c7d56387"
+    },
+    {
+      "path": "package.json",
+      "sha256": "387481353fa53dff370af9ed800d849829f777a8b912495b027086cb62389de5"
+    },
+    {
+      "path": "scripts/benchmark-receiver.mjs",
+      "sha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431"
+    },
+    {
+      "path": "scripts/benchmark-result.mjs",
+      "sha256": "2c73f114ccb427576aa55008b08c3ace9108405fb36d0fa3310f6a9f07bc44c7"
+    },
+    {
+      "path": "scripts/benchmark-webrtc-page.mjs",
+      "sha256": "1e15f3c974c173b7069f9d807f5808da51ee5ca87aec6eb5adb97b960004f1fc"
+    },
+    {
+      "path": "scripts/benchmark-webrtc.mjs",
+      "sha256": "3b20a9959b62d4892e15aa78d3c081753a2eb80a7b14c2270495d802b8044b68"
+    },
+    {
+      "path": "scripts/compare-trees.mjs",
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "scripts/create-fixture.mjs",
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "scripts/lan-signaling.mjs",
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "scripts/launch.mjs",
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "scripts/local-http-security.mjs",
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "scripts/package-offline.mjs",
+      "sha256": "3cb5aefd1bd5cef202e15b00697a8682358be37547f843285be0e26580adb5ab"
+    },
+    {
+      "path": "scripts/rendezvous.mjs",
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "scripts/smoke-offline.mjs",
+      "sha256": "7c5ae229ff2f333dc5499ff14b5a49926165093c537f0678bd8f5314a28154cd"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
+    },
+    {
+      "path": "src/components/ConnectionDiagnostics.tsx",
+      "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+    },
+    {
+      "path": "src/components/LargeReceiver.tsx",
+      "sha256": "77afbaa4f08237bb20357a689e472916d009f46fc41d13dca433d84e92c6e545"
+    },
+    {
+      "path": "src/components/LargeSender.tsx",
+      "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+    },
+    {
+      "path": "src/components/PairingReadiness.tsx",
+      "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
+    },
+    {
+      "path": "src/components/Receiver.tsx",
+      "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+    },
+    {
+      "path": "src/components/Sender.tsx",
+      "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+    },
+    {
+      "path": "src/components/StorageReadiness.tsx",
+      "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
+    },
+    {
+      "path": "src/components/TransferWakeLock.tsx",
+      "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+    },
+    {
+      "path": "src/components/VerifyDevice.tsx",
+      "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "sha256": "87dc8bfd81401e4414a32ef468fdbd4502da4efbe0cd49f0283991c431ceede7"
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "sha256": "9a5e650e6cac735d51f86ec3acb658ea1c965b9668c56b7aa6e8580dc2b0630f"
+    },
+    {
+      "path": "src/components/WebRtcSignalQr.tsx",
+      "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+    },
+    {
+      "path": "src/lib/archive.ts",
+      "sha256": "ec7b22a082a6e658d24ceaae7977b65ec233ebc2cef54e1862a5d5c019435b40"
+    },
+    {
+      "path": "src/lib/block-store-worker-protocol.ts",
+      "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+    },
+    {
+      "path": "src/lib/block-store.ts",
+      "sha256": "27c30a69282a2d8bc2c03bd6462aaadefa5d205560028dddddeb33a6b3120dd2"
+    },
+    {
+      "path": "src/lib/block-store.worker.ts",
+      "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+    },
+    {
+      "path": "src/lib/connection-path.ts",
+      "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+    },
+    {
+      "path": "src/lib/connection.ts",
+      "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+    },
+    {
+      "path": "src/lib/format.ts",
+      "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+    },
+    {
+      "path": "src/lib/large-connection.ts",
+      "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+    },
+    {
+      "path": "src/lib/large-destination.ts",
+      "sha256": "663d8a1f488dbf74073fde9f68263c7f7e53263ba1592602366e502ba0d0360d"
+    },
+    {
+      "path": "src/lib/large-receiver-resume.ts",
+      "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+    },
+    {
+      "path": "src/lib/large-receiver.ts",
+      "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+    },
+    {
+      "path": "src/lib/large-sender-playback.ts",
+      "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+    },
+    {
+      "path": "src/lib/large-sender-resume.ts",
+      "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+    },
+    {
+      "path": "src/lib/large-transfer.ts",
+      "sha256": "d313953bf225d4f480a25cd0158466772959c2cb3ff6f0280177457cf5cc3bcc"
+    },
+    {
+      "path": "src/lib/optical-schedule.ts",
+      "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+    },
+    {
+      "path": "src/lib/protocol.ts",
+      "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+    },
+    {
+      "path": "src/lib/resume.ts",
+      "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+    },
+    {
+      "path": "src/lib/screen-wake-lock.ts",
+      "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+    },
+    {
+      "path": "src/lib/selected-files.ts",
+      "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+    },
+    {
+      "path": "src/lib/sender-resume.ts",
+      "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+    },
+    {
+      "path": "src/lib/stream-protocol.ts",
+      "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+    },
+    {
+      "path": "src/lib/transfer-rate.ts",
+      "sha256": "630345590d87dab41321e6996c75fc775ecae8574918047eb927d872dece4f33"
+    },
+    {
+      "path": "src/lib/transfer.ts",
+      "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+    },
+    {
+      "path": "src/lib/use-pairing-readiness.ts",
+      "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
+    },
+    {
+      "path": "src/lib/use-transfer-rate.ts",
+      "sha256": "542c2701517d5e5662078d54dddc106b84a7c1f7f67c2253dfe0bcfd28a3f95d"
+    },
+    {
+      "path": "src/lib/webrtc-authorization.ts",
+      "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+    },
+    {
+      "path": "src/lib/webrtc-control-flow.ts",
+      "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+    },
+    {
+      "path": "src/lib/webrtc-peer-health.ts",
+      "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+    },
+    {
+      "path": "src/lib/webrtc-protocol.ts",
+      "sha256": "28ac4f06922033a06fdb8b3bd0fb43a3b79427cbaabe9656d9989ca48f585243"
+    },
+    {
+      "path": "src/lib/webrtc-receive-queue.ts",
+      "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+    },
+    {
+      "path": "src/lib/webrtc-rendezvous.ts",
+      "sha256": "2a3f891a2c878c25646e37b11e7c713de7dd9256e49c79c80af6e20fadafd80c"
+    },
+    {
+      "path": "src/lib/webrtc-sender-resume.ts",
+      "sha256": "9e23bb5595a11f80f93ec2181fb8d031b4154da349646ea6c203f0edd801e03c"
+    },
+    {
+      "path": "src/lib/webrtc-signaling.ts",
+      "sha256": "7b69af782ffc6f4b3d05fabbb2e3a51c8dbe10cbee94e947eef149d11c24bd33"
+    },
+    {
+      "path": "src/lib/webrtc-transfer.ts",
+      "sha256": "3ad1bbb201321cc4b456699f5133f8598460760c8fe746ce37694c38ebadee83"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "039b3a4b94171e8d12d2d43fd2ea7b8aa541ce388ed700525d2568141f75964e"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+    }
+  ],
+  "results": [
+    {
+      "mib": 10,
+      "repetition": 1,
+      "mode": "transfer",
+      "profile": true,
+      "saveTree": true,
+      "startedAt": "2026-09-19T04:00:57.445Z",
+      "verified": true,
+      "streamBytes": 10486010,
+      "blockSize": 61440,
+      "dataHeaderBytes": 44,
+      "sender": {
+        "role": "sender",
+        "mode": "transfer",
+        "verified": true,
+        "scanMs": 1.0999999642372131,
+        "prepareMs": 298.69999998807907,
+        "transferMs": 4562.699999988079,
+        "confirmedMs": 5012.300000011921,
+        "elapsedMs": 5561.199999988079,
+        "binaryMessages": 171,
+        "binaryBytes": 10493534,
+        "receivedBytes": 0,
+        "controls": {
+          "sender-complete": {
+            "messages": 1,
+            "bytes": 26
+          }
+        },
+        "operations": {
+          "scan.collectLargeDirectory": {
+            "calls": 1,
+            "ms": 0.8999999761581421,
+            "bytes": 0
+          },
+          "prepare.syntheticSlice": {
+            "calls": 3,
+            "ms": 20.69999998807907,
+            "bytes": 10485760
+          },
+          "prepare.blobRead": {
+            "calls": 3,
+            "ms": 18.000000059604645,
+            "bytes": 10485760
+          },
+          "prepare.prepareLargeSource": {
+            "calls": 1,
+            "ms": 298.69999998807907,
+            "bytes": 0
+          },
+          "transfer.syntheticSlice": {
+            "calls": 171,
+            "ms": 85.09999960660934,
+            "bytes": 10485760
+          },
+          "transfer.blobRead": {
+            "calls": 171,
+            "ms": 82.90000033378601,
+            "bytes": 10485760
+          },
+          "transfer.readPreparedLargeRange": {
+            "calls": 171,
+            "ms": 178.39999961853027,
+            "bytes": 0
+          },
+          "transfer.encodeOfflineDataBlockAsync": {
+            "calls": 171,
+            "ms": 26.600000619888306,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 172,
+            "ms": 2.100000023841858,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 3764654,
+        "peakJsHeapBytes": 58360940,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": null,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 0.494242,
+          "mainThreadScriptSeconds": 0.004891,
+          "observedProcessCpuSeconds": 1.307612,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "receiver": {
+        "role": "receiver",
+        "mode": "transfer",
+        "verified": true,
+        "transferMs": 4555.399999976158,
+        "elapsedMs": 5254,
+        "streamVerified": true,
+        "streamVerifyMs": 116.80000001192093,
+        "destinationSaveMs": 288.80000001192093,
+        "destinationAuditMs": 41,
+        "destinationFilesWritten": 1,
+        "destinationCheckedBytes": 10485760,
+        "destinationVerified": true,
+        "binaryMessages": 171,
+        "binaryBytes": 10493534,
+        "receivedBytes": 10486010,
+        "ackIndices": 171,
+        "controls": {
+          "ack": {
+            "messages": 12,
+            "bytes": 886
+          },
+          "receiver-complete": {
+            "messages": 1,
+            "bytes": 28
+          }
+        },
+        "operations": {
+          "worker.setup.open": {
+            "calls": 1,
+            "ms": 21.799999952316284,
+            "bytes": 0
+          },
+          "receive.decodeOfflineDataBlockAsync": {
+            "calls": 171,
+            "ms": 373.49999886751175,
+            "bytes": 0
+          },
+          "worker.receive.write-payload": {
+            "calls": 171,
+            "ms": 30.100000381469727,
+            "bytes": 10486010
+          },
+          "worker.receive.flush-payload": {
+            "calls": 12,
+            "ms": 79.70000004768372,
+            "bytes": 0
+          },
+          "worker.receive.append-journal": {
+            "calls": 12,
+            "ms": 11.599999964237213,
+            "bytes": 972
+          },
+          "receive.storeWriteBlocks": {
+            "calls": 12,
+            "ms": 130.9999998807907,
+            "bytes": 0
+          },
+          "receive.acceptBatch": {
+            "calls": 12,
+            "ms": 151.9000000357628,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 13,
+            "ms": 0.3999999761581421,
+            "bytes": 0
+          },
+          "worker.verify.read-payload": {
+            "calls": 3,
+            "ms": 3.900000035762787,
+            "bytes": 10486010
+          },
+          "worker.destination.read-payload": {
+            "calls": 5,
+            "ms": 4.099999964237213,
+            "bytes": 10486010
+          },
+          "destination.verifyCompleteDestination": {
+            "calls": 1,
+            "ms": 131.80000001192093,
+            "bytes": 0
+          },
+          "destination.writeLargeTreeToDirectory": {
+            "calls": 1,
+            "ms": 288.7000000476837,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 282,
+        "peakJsHeapBytes": 47741117,
+        "workerProfilerBeforeConsumers": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": 4099198,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 0.47968900000000003,
+          "mainThreadScriptSeconds": 0.009205,
+          "observedProcessCpuSeconds": 1.3547950000000002,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "accountingValidated": true,
+      "transferMBps": 2.2982028185125905,
+      "browserErrors": [],
+      "cleanupErrors": [],
+      "completedAt": "2026-09-19T04:01:04.343Z",
+      "passed": true
+    },
+    {
+      "mib": 10,
+      "repetition": 2,
+      "mode": "transfer",
+      "profile": true,
+      "saveTree": true,
+      "startedAt": "2026-09-19T04:01:04.351Z",
+      "verified": true,
+      "streamBytes": 10486010,
+      "blockSize": 61440,
+      "dataHeaderBytes": 44,
+      "sender": {
+        "role": "sender",
+        "mode": "transfer",
+        "verified": true,
+        "scanMs": 1.0999999642372131,
+        "prepareMs": 295.10000002384186,
+        "transferMs": 2699.099999964237,
+        "confirmedMs": 3144.5,
+        "elapsedMs": 3649.600000023842,
+        "binaryMessages": 171,
+        "binaryBytes": 10493534,
+        "receivedBytes": 0,
+        "controls": {
+          "sender-complete": {
+            "messages": 1,
+            "bytes": 26
+          }
+        },
+        "operations": {
+          "scan.collectLargeDirectory": {
+            "calls": 1,
+            "ms": 0.9000000357627869,
+            "bytes": 0
+          },
+          "prepare.syntheticSlice": {
+            "calls": 3,
+            "ms": 21.399999976158142,
+            "bytes": 10485760
+          },
+          "prepare.blobRead": {
+            "calls": 3,
+            "ms": 18.600000023841858,
+            "bytes": 10485760
+          },
+          "prepare.prepareLargeSource": {
+            "calls": 1,
+            "ms": 295.10000002384186,
+            "bytes": 0
+          },
+          "transfer.syntheticSlice": {
+            "calls": 171,
+            "ms": 54.09999990463257,
+            "bytes": 10485760
+          },
+          "transfer.blobRead": {
+            "calls": 171,
+            "ms": 49.80000001192093,
+            "bytes": 10485760
+          },
+          "transfer.readPreparedLargeRange": {
+            "calls": 171,
+            "ms": 108.700000166893,
+            "bytes": 0
+          },
+          "transfer.encodeOfflineDataBlockAsync": {
+            "calls": 171,
+            "ms": 18.19999998807907,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 172,
+            "ms": 1.600000023841858,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 5565984,
+        "peakJsHeapBytes": 64400056,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": null,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 0.41415399999999997,
+          "mainThreadScriptSeconds": 0.002712,
+          "observedProcessCpuSeconds": 0.996533,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "receiver": {
+        "role": "receiver",
+        "mode": "transfer",
+        "verified": true,
+        "transferMs": 2694.800000011921,
+        "elapsedMs": 3346.5,
+        "streamVerified": true,
+        "streamVerifyMs": 125.5,
+        "destinationSaveMs": 284.89999997615814,
+        "destinationAuditMs": 32,
+        "destinationFilesWritten": 1,
+        "destinationCheckedBytes": 10485760,
+        "destinationVerified": true,
+        "binaryMessages": 171,
+        "binaryBytes": 10493534,
+        "receivedBytes": 10486010,
+        "ackIndices": 171,
+        "controls": {
+          "ack": {
+            "messages": 8,
+            "bytes": 782
+          },
+          "receiver-complete": {
+            "messages": 1,
+            "bytes": 28
+          }
+        },
+        "operations": {
+          "worker.setup.open": {
+            "calls": 1,
+            "ms": 13,
+            "bytes": 0
+          },
+          "receive.decodeOfflineDataBlockAsync": {
+            "calls": 171,
+            "ms": 384.9000008702278,
+            "bytes": 0
+          },
+          "worker.receive.write-payload": {
+            "calls": 171,
+            "ms": 14.300000011920929,
+            "bytes": 10486010
+          },
+          "worker.receive.flush-payload": {
+            "calls": 8,
+            "ms": 82.80000007152557,
+            "bytes": 0
+          },
+          "worker.receive.append-journal": {
+            "calls": 8,
+            "ms": 9.79999989271164,
+            "bytes": 876
+          },
+          "receive.storeWriteBlocks": {
+            "calls": 8,
+            "ms": 116.90000003576279,
+            "bytes": 0
+          },
+          "receive.acceptBatch": {
+            "calls": 8,
+            "ms": 132.20000004768372,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 9,
+            "ms": 0,
+            "bytes": 0
+          },
+          "worker.verify.read-payload": {
+            "calls": 3,
+            "ms": 4,
+            "bytes": 10486010
+          },
+          "worker.destination.read-payload": {
+            "calls": 5,
+            "ms": 3.699999988079071,
+            "bytes": 10486010
+          },
+          "destination.verifyCompleteDestination": {
+            "calls": 1,
+            "ms": 131.5,
+            "bytes": 0
+          },
+          "destination.writeLargeTreeToDirectory": {
+            "calls": 1,
+            "ms": 284.80000001192093,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 278,
+        "peakJsHeapBytes": 47419886,
+        "workerProfilerBeforeConsumers": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": 5902464,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 0.45811399999999997,
+          "mainThreadScriptSeconds": 0.005636,
+          "observedProcessCpuSeconds": 1.034738,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "accountingValidated": true,
+      "transferMBps": 3.88500240826162,
+      "browserErrors": [],
+      "cleanupErrors": [],
+      "completedAt": "2026-09-19T04:01:08.885Z",
+      "passed": true
+    },
+    {
+      "mib": 10,
+      "repetition": 3,
+      "mode": "transfer",
+      "profile": true,
+      "saveTree": true,
+      "startedAt": "2026-09-19T04:01:08.893Z",
+      "verified": true,
+      "streamBytes": 10486010,
+      "blockSize": 61440,
+      "dataHeaderBytes": 44,
+      "sender": {
+        "role": "sender",
+        "mode": "transfer",
+        "verified": true,
+        "scanMs": 0.800000011920929,
+        "prepareMs": 285,
+        "transferMs": 1950.800000011921,
+        "confirmedMs": 2391.699999988079,
+        "elapsedMs": 2883.199999988079,
+        "binaryMessages": 171,
+        "binaryBytes": 10493534,
+        "receivedBytes": 0,
+        "controls": {
+          "sender-complete": {
+            "messages": 1,
+            "bytes": 26
+          }
+        },
+        "operations": {
+          "scan.collectLargeDirectory": {
+            "calls": 1,
+            "ms": 0.5999999642372131,
+            "bytes": 0
+          },
+          "prepare.syntheticSlice": {
+            "calls": 3,
+            "ms": 18.499999940395355,
+            "bytes": 10485760
+          },
+          "prepare.blobRead": {
+            "calls": 3,
+            "ms": 17.399999976158142,
+            "bytes": 10485760
+          },
+          "prepare.prepareLargeSource": {
+            "calls": 1,
+            "ms": 284.89999997615814,
+            "bytes": 0
+          },
+          "transfer.syntheticSlice": {
+            "calls": 171,
+            "ms": 51.89999973773956,
+            "bytes": 10485760
+          },
+          "transfer.blobRead": {
+            "calls": 171,
+            "ms": 49.299999952316284,
+            "bytes": 10485760
+          },
+          "transfer.readPreparedLargeRange": {
+            "calls": 171,
+            "ms": 106.99999976158142,
+            "bytes": 0
+          },
+          "transfer.encodeOfflineDataBlockAsync": {
+            "calls": 171,
+            "ms": 18.90000021457672,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 172,
+            "ms": 1.9000000357627869,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 5576436,
+        "peakJsHeapBytes": 63111458,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 1
+        },
+        "peakReceiveQueueBytes": null,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 0.401889,
+          "mainThreadScriptSeconds": 0.002251,
+          "observedProcessCpuSeconds": 0.8678810000000001,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "receiver": {
+        "role": "receiver",
+        "mode": "transfer",
+        "verified": true,
+        "transferMs": 1946.8999999761581,
+        "elapsedMs": 2590.800000011921,
+        "streamVerified": true,
+        "streamVerifyMs": 120.60000002384186,
+        "destinationSaveMs": 286.10000002384186,
+        "destinationAuditMs": 31.399999976158142,
+        "destinationFilesWritten": 1,
+        "destinationCheckedBytes": 10485760,
+        "destinationVerified": true,
+        "binaryMessages": 171,
+        "binaryBytes": 10493534,
+        "receivedBytes": 10486010,
+        "ackIndices": 171,
+        "controls": {
+          "ack": {
+            "messages": 7,
+            "bytes": 756
+          },
+          "receiver-complete": {
+            "messages": 1,
+            "bytes": 28
+          }
+        },
+        "operations": {
+          "worker.setup.open": {
+            "calls": 1,
+            "ms": 13.400000035762787,
+            "bytes": 0
+          },
+          "receive.decodeOfflineDataBlockAsync": {
+            "calls": 171,
+            "ms": 404.69999969005585,
+            "bytes": 0
+          },
+          "worker.receive.write-payload": {
+            "calls": 171,
+            "ms": 17.30000013113022,
+            "bytes": 10486010
+          },
+          "worker.receive.flush-payload": {
+            "calls": 7,
+            "ms": 61.299999952316284,
+            "bytes": 0
+          },
+          "worker.receive.append-journal": {
+            "calls": 7,
+            "ms": 5.300000071525574,
+            "bytes": 852
+          },
+          "receive.storeWriteBlocks": {
+            "calls": 7,
+            "ms": 91.10000002384186,
+            "bytes": 0
+          },
+          "receive.acceptBatch": {
+            "calls": 7,
+            "ms": 107.5,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 8,
+            "ms": 0,
+            "bytes": 0
+          },
+          "worker.verify.read-payload": {
+            "calls": 3,
+            "ms": 4.100000023841858,
+            "bytes": 10486010
+          },
+          "worker.destination.read-payload": {
+            "calls": 5,
+            "ms": 4,
+            "bytes": 10486010
+          },
+          "destination.verifyCompleteDestination": {
+            "calls": 1,
+            "ms": 135,
+            "bytes": 0
+          },
+          "destination.writeLargeTreeToDirectory": {
+            "calls": 1,
+            "ms": 285.89999997615814,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 282,
+        "peakJsHeapBytes": 54541298,
+        "workerProfilerBeforeConsumers": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 1
+        },
+        "peakReceiveQueueBytes": 5902464,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 0.45656800000000003,
+          "mainThreadScriptSeconds": 0.005063,
+          "observedProcessCpuSeconds": 1.118416,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "accountingValidated": true,
+      "transferMBps": 5.375235800664303,
+      "browserErrors": [],
+      "cleanupErrors": [],
+      "completedAt": "2026-09-19T04:01:12.653Z",
+      "passed": true
+    },
+    {
+      "mib": 100,
+      "repetition": 1,
+      "mode": "transfer",
+      "profile": true,
+      "saveTree": true,
+      "startedAt": "2026-09-19T04:01:12.660Z",
+      "verified": true,
+      "streamBytes": 104857851,
+      "blockSize": 61440,
+      "dataHeaderBytes": 44,
+      "sender": {
+        "role": "sender",
+        "mode": "transfer",
+        "verified": true,
+        "scanMs": 1.199999988079071,
+        "prepareMs": 2737.5,
+        "transferMs": 3665.400000035763,
+        "confirmedMs": 7778.5,
+        "elapsedMs": 10735.599999964237,
+        "binaryMessages": 1707,
+        "binaryBytes": 104932959,
+        "receivedBytes": 0,
+        "controls": {
+          "sender-complete": {
+            "messages": 1,
+            "bytes": 26
+          }
+        },
+        "operations": {
+          "scan.collectLargeDirectory": {
+            "calls": 1,
+            "ms": 0.8999999761581421,
+            "bytes": 0
+          },
+          "prepare.syntheticSlice": {
+            "calls": 25,
+            "ms": 159.10000002384186,
+            "bytes": 104857600
+          },
+          "prepare.blobRead": {
+            "calls": 25,
+            "ms": 161.50000017881393,
+            "bytes": 104857600
+          },
+          "prepare.prepareLargeSource": {
+            "calls": 1,
+            "ms": 2737.400000035763,
+            "bytes": 0
+          },
+          "transfer.syntheticSlice": {
+            "calls": 1707,
+            "ms": 511.2999991774559,
+            "bytes": 104857600
+          },
+          "transfer.blobRead": {
+            "calls": 1707,
+            "ms": 529.0000002384186,
+            "bytes": 104857600
+          },
+          "transfer.readPreparedLargeRange": {
+            "calls": 1707,
+            "ms": 1101.1999997496605,
+            "bytes": 0
+          },
+          "transfer.encodeOfflineDataBlockAsync": {
+            "calls": 1707,
+            "ms": 197.40000063180923,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 1708,
+            "ms": 10.199999749660492,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 5411384,
+        "peakJsHeapBytes": 125024280,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": null,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 3.835596,
+          "mainThreadScriptSeconds": 0.006156,
+          "observedProcessCpuSeconds": 8.369529,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "receiver": {
+        "role": "receiver",
+        "mode": "transfer",
+        "verified": true,
+        "transferMs": 3662,
+        "elapsedMs": 7989.100000023842,
+        "streamVerified": true,
+        "streamVerifyMs": 1209.6000000238419,
+        "destinationSaveMs": 2615,
+        "destinationAuditMs": 267.39999997615814,
+        "destinationFilesWritten": 1,
+        "destinationCheckedBytes": 104857600,
+        "destinationVerified": true,
+        "binaryMessages": 1707,
+        "binaryBytes": 104932959,
+        "receivedBytes": 104857851,
+        "ackIndices": 1707,
+        "controls": {
+          "ack": {
+            "messages": 31,
+            "bytes": 8231
+          },
+          "receiver-complete": {
+            "messages": 1,
+            "bytes": 28
+          }
+        },
+        "operations": {
+          "worker.setup.open": {
+            "calls": 1,
+            "ms": 9.5,
+            "bytes": 0
+          },
+          "receive.decodeOfflineDataBlockAsync": {
+            "calls": 1707,
+            "ms": 5146.799989104271,
+            "bytes": 0
+          },
+          "worker.receive.write-payload": {
+            "calls": 1707,
+            "ms": 228.89999985694885,
+            "bytes": 104857851
+          },
+          "worker.receive.flush-payload": {
+            "calls": 31,
+            "ms": 171.79999989271164,
+            "bytes": 0
+          },
+          "worker.receive.append-journal": {
+            "calls": 31,
+            "ms": 18.20000010728836,
+            "bytes": 7572
+          },
+          "receive.storeWriteBlocks": {
+            "calls": 31,
+            "ms": 487.10000014305115,
+            "bytes": 0
+          },
+          "receive.acceptBatch": {
+            "calls": 31,
+            "ms": 651.6999999284744,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 32,
+            "ms": 0,
+            "bytes": 0
+          },
+          "worker.verify.read-payload": {
+            "calls": 26,
+            "ms": 44.799999952316284,
+            "bytes": 104857851
+          },
+          "worker.destination.read-payload": {
+            "calls": 27,
+            "ms": 36.00000011920929,
+            "bytes": 104857851
+          },
+          "destination.verifyCompleteDestination": {
+            "calls": 1,
+            "ms": 1256.9000000357628,
+            "bytes": 0
+          },
+          "destination.writeLargeTreeToDirectory": {
+            "calls": 1,
+            "ms": 2614.900000035763,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 346,
+        "peakJsHeapBytes": 117114169,
+        "workerProfilerBeforeConsumers": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": 5902464,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 4.2398050000000005,
+          "mainThreadScriptSeconds": 0.029832,
+          "observedProcessCpuSeconds": 8.970568,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "accountingValidated": true,
+      "transferMBps": 28.607478310410027,
+      "browserErrors": [],
+      "cleanupErrors": [],
+      "completedAt": "2026-09-19T04:01:24.311Z",
+      "passed": true
+    },
+    {
+      "mib": 100,
+      "repetition": 2,
+      "mode": "transfer",
+      "profile": true,
+      "saveTree": true,
+      "startedAt": "2026-09-19T04:01:24.319Z",
+      "verified": true,
+      "streamBytes": 104857851,
+      "blockSize": 61440,
+      "dataHeaderBytes": 44,
+      "sender": {
+        "role": "sender",
+        "mode": "transfer",
+        "verified": true,
+        "scanMs": 1,
+        "prepareMs": 2724.199999988079,
+        "transferMs": 4414.300000011921,
+        "confirmedMs": 8517.5,
+        "elapsedMs": 11440.699999988079,
+        "binaryMessages": 1707,
+        "binaryBytes": 104932959,
+        "receivedBytes": 0,
+        "controls": {
+          "sender-complete": {
+            "messages": 1,
+            "bytes": 26
+          }
+        },
+        "operations": {
+          "scan.collectLargeDirectory": {
+            "calls": 1,
+            "ms": 0.699999988079071,
+            "bytes": 0
+          },
+          "prepare.syntheticSlice": {
+            "calls": 25,
+            "ms": 157.70000004768372,
+            "bytes": 104857600
+          },
+          "prepare.blobRead": {
+            "calls": 25,
+            "ms": 162.9000000357628,
+            "bytes": 104857600
+          },
+          "prepare.prepareLargeSource": {
+            "calls": 1,
+            "ms": 2724.199999988079,
+            "bytes": 0
+          },
+          "transfer.syntheticSlice": {
+            "calls": 1707,
+            "ms": 501.6000011563301,
+            "bytes": 104857600
+          },
+          "transfer.blobRead": {
+            "calls": 1707,
+            "ms": 507.1999987959862,
+            "bytes": 104857600
+          },
+          "transfer.readPreparedLargeRange": {
+            "calls": 1707,
+            "ms": 1066.1000000238419,
+            "bytes": 0
+          },
+          "transfer.encodeOfflineDataBlockAsync": {
+            "calls": 1707,
+            "ms": 202.69999980926514,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 1708,
+            "ms": 11.499999940395355,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 5660224,
+        "peakJsHeapBytes": 100189701,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": null,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 3.802552,
+          "mainThreadScriptSeconds": 0.006598,
+          "observedProcessCpuSeconds": 8.27217,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "receiver": {
+        "role": "receiver",
+        "mode": "transfer",
+        "verified": true,
+        "transferMs": 4410.400000035763,
+        "elapsedMs": 8709.5,
+        "streamVerified": true,
+        "streamVerifyMs": 1215.300000011921,
+        "destinationSaveMs": 2596.5,
+        "destinationAuditMs": 269.69999998807907,
+        "destinationFilesWritten": 1,
+        "destinationCheckedBytes": 104857600,
+        "destinationVerified": true,
+        "binaryMessages": 1707,
+        "binaryBytes": 104932959,
+        "receivedBytes": 104857851,
+        "ackIndices": 1707,
+        "controls": {
+          "ack": {
+            "messages": 32,
+            "bytes": 8257
+          },
+          "receiver-complete": {
+            "messages": 1,
+            "bytes": 28
+          }
+        },
+        "operations": {
+          "worker.setup.open": {
+            "calls": 1,
+            "ms": 10.899999976158142,
+            "bytes": 0
+          },
+          "receive.decodeOfflineDataBlockAsync": {
+            "calls": 1707,
+            "ms": 5226.6999989151955,
+            "bytes": 0
+          },
+          "worker.receive.write-payload": {
+            "calls": 1707,
+            "ms": 218.59999948740005,
+            "bytes": 104857851
+          },
+          "worker.receive.flush-payload": {
+            "calls": 32,
+            "ms": 183.19999992847443,
+            "bytes": 0
+          },
+          "worker.receive.append-journal": {
+            "calls": 32,
+            "ms": 24.100000023841858,
+            "bytes": 7596
+          },
+          "receive.storeWriteBlocks": {
+            "calls": 32,
+            "ms": 496.49999982118607,
+            "bytes": 0
+          },
+          "receive.acceptBatch": {
+            "calls": 32,
+            "ms": 660.2999997138977,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 33,
+            "ms": 0.20000004768371582,
+            "bytes": 0
+          },
+          "worker.verify.read-payload": {
+            "calls": 26,
+            "ms": 46.20000010728836,
+            "bytes": 104857851
+          },
+          "worker.destination.read-payload": {
+            "calls": 27,
+            "ms": 36.299999713897705,
+            "bytes": 104857851
+          },
+          "destination.verifyCompleteDestination": {
+            "calls": 1,
+            "ms": 1246.1000000238419,
+            "bytes": 0
+          },
+          "destination.writeLargeTreeToDirectory": {
+            "calls": 1,
+            "ms": 2596.399999976158,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 346,
+        "peakJsHeapBytes": 117069241,
+        "workerProfilerBeforeConsumers": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": 5902464,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 4.245394999999999,
+          "mainThreadScriptSeconds": 0.030141,
+          "observedProcessCpuSeconds": 8.90873,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "accountingValidated": true,
+      "transferMBps": 23.75412885388778,
+      "browserErrors": [],
+      "cleanupErrors": [],
+      "completedAt": "2026-09-19T04:01:36.700Z",
+      "passed": true
+    },
+    {
+      "mib": 100,
+      "repetition": 3,
+      "mode": "transfer",
+      "profile": true,
+      "saveTree": true,
+      "startedAt": "2026-09-19T04:01:36.707Z",
+      "verified": true,
+      "streamBytes": 104857851,
+      "blockSize": 61440,
+      "dataHeaderBytes": 44,
+      "sender": {
+        "role": "sender",
+        "mode": "transfer",
+        "verified": true,
+        "scanMs": 0.9000000357627869,
+        "prepareMs": 2649.800000011921,
+        "transferMs": 3658.300000011921,
+        "confirmedMs": 7729,
+        "elapsedMs": 10597.199999988079,
+        "binaryMessages": 1707,
+        "binaryBytes": 104932959,
+        "receivedBytes": 0,
+        "controls": {
+          "sender-complete": {
+            "messages": 1,
+            "bytes": 26
+          }
+        },
+        "operations": {
+          "scan.collectLargeDirectory": {
+            "calls": 1,
+            "ms": 0.699999988079071,
+            "bytes": 0
+          },
+          "prepare.syntheticSlice": {
+            "calls": 25,
+            "ms": 155.8000002503395,
+            "bytes": 104857600
+          },
+          "prepare.blobRead": {
+            "calls": 25,
+            "ms": 159.79999995231628,
+            "bytes": 104857600
+          },
+          "prepare.prepareLargeSource": {
+            "calls": 1,
+            "ms": 2649.699999988079,
+            "bytes": 0
+          },
+          "transfer.syntheticSlice": {
+            "calls": 1707,
+            "ms": 537.4000010490417,
+            "bytes": 104857600
+          },
+          "transfer.blobRead": {
+            "calls": 1707,
+            "ms": 550.1999999284744,
+            "bytes": 104857600
+          },
+          "transfer.readPreparedLargeRange": {
+            "calls": 1707,
+            "ms": 1145.6000015735626,
+            "bytes": 0
+          },
+          "transfer.encodeOfflineDataBlockAsync": {
+            "calls": 1707,
+            "ms": 208.19999819993973,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 1708,
+            "ms": 9.099999964237213,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 5509824,
+        "peakJsHeapBytes": 125500280,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": null,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 3.8003,
+          "mainThreadScriptSeconds": 0.00548,
+          "observedProcessCpuSeconds": 8.403215,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "receiver": {
+        "role": "receiver",
+        "mode": "transfer",
+        "verified": true,
+        "transferMs": 3654.300000011921,
+        "elapsedMs": 7939,
+        "streamVerified": true,
+        "streamVerifyMs": 1200.8999999761581,
+        "destinationSaveMs": 2596.699999988079,
+        "destinationAuditMs": 268.10000002384186,
+        "destinationFilesWritten": 1,
+        "destinationCheckedBytes": 104857600,
+        "destinationVerified": true,
+        "binaryMessages": 1707,
+        "binaryBytes": 104932959,
+        "receivedBytes": 104857851,
+        "ackIndices": 1707,
+        "controls": {
+          "ack": {
+            "messages": 30,
+            "bytes": 8205
+          },
+          "receiver-complete": {
+            "messages": 1,
+            "bytes": 28
+          }
+        },
+        "operations": {
+          "worker.setup.open": {
+            "calls": 1,
+            "ms": 9.599999964237213,
+            "bytes": 0
+          },
+          "receive.decodeOfflineDataBlockAsync": {
+            "calls": 1707,
+            "ms": 5281.100001394749,
+            "bytes": 0
+          },
+          "worker.receive.write-payload": {
+            "calls": 1707,
+            "ms": 231.20000058412552,
+            "bytes": 104857851
+          },
+          "worker.receive.flush-payload": {
+            "calls": 30,
+            "ms": 131.19999992847443,
+            "bytes": 0
+          },
+          "worker.receive.append-journal": {
+            "calls": 30,
+            "ms": 19.80000013113022,
+            "bytes": 7548
+          },
+          "receive.storeWriteBlocks": {
+            "calls": 30,
+            "ms": 451.80000001192093,
+            "bytes": 0
+          },
+          "receive.acceptBatch": {
+            "calls": 30,
+            "ms": 617.5999999642372,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 31,
+            "ms": 0.30000001192092896,
+            "bytes": 0
+          },
+          "worker.verify.read-payload": {
+            "calls": 26,
+            "ms": 45.999999940395355,
+            "bytes": 104857851
+          },
+          "worker.destination.read-payload": {
+            "calls": 27,
+            "ms": 36.20000022649765,
+            "bytes": 104857851
+          },
+          "destination.verifyCompleteDestination": {
+            "calls": 1,
+            "ms": 1245.6000000238419,
+            "bytes": 0
+          },
+          "destination.writeLargeTreeToDirectory": {
+            "calls": 1,
+            "ms": 2596.599999964237,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 346,
+        "peakJsHeapBytes": 112876044,
+        "workerProfilerBeforeConsumers": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": 5902464,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 4.236723,
+          "mainThreadScriptSeconds": 0.030621,
+          "observedProcessCpuSeconds": 9.021574,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        }
+      },
+      "accountingValidated": true,
+      "transferMBps": 28.66299948053968,
+      "browserErrors": [],
+      "cleanupErrors": [],
+      "completedAt": "2026-09-19T04:01:48.225Z",
+      "passed": true
+    }
+  ],
+  "releaseReady": false,
+  "inputsUnchanged": true,
+  "finishedAt": "2026-09-19T04:01:48.246Z"
+}

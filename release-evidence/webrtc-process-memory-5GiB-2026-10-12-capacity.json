@@ -1,0 +1,10 @@
+{
+  "recordedAt": "2026-10-12T17:05:12.803Z",
+  "tempDirectory": "C:\\Users\\dines\\AppData\\Local\\Temp",
+  "availableBytes": 8215392256,
+  "payloadBytes": 5368709120,
+  "reserveBytes": 2147483648,
+  "profileAllowanceBytes": 67108864,
+  "eligible": true,
+  "scope": "Receive/verify only; no destination duplicate. Free-space preflight is a point-in-time observation."
+}

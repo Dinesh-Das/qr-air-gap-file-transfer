@@ -1,0 +1,152 @@
+{
+  "recordedAt": "2026-09-19T04:10:35.182565+00:00",
+  "scope": "Single Windows host, separate temporary normal browser processes. Synthetic source, OPFS receiving and destination, SHA plus independent destination pattern audit. No physical LAN claim.",
+  "variants": [
+    {
+      "evidence": "webrtc-baseline-calibrated-10-100MiB.json",
+      "sha256": "213e25841ae65ff87bf81050aa6364c2e8e219a50e3ef1b89a990458fe1c1e92",
+      "summaries": [
+        {
+          "mib": 10,
+          "repetitions": 3,
+          "medianMBps": 28.02247460893582,
+          "minMBps": 27.27180754226268,
+          "maxMBps": 28.082512048729757,
+          "medianReceiverMainThreadTaskSeconds": 0.585566,
+          "medianReceiverProcessCpuSeconds": 1.195262,
+          "medianReceiverPeakJsHeapBytes": 52963716
+        },
+        {
+          "mib": 100,
+          "repetitions": 3,
+          "medianMBps": 33.651428433889606,
+          "minMBps": 32.62635769589383,
+          "maxMBps": 33.69468219794344,
+          "medianReceiverMainThreadTaskSeconds": 5.537375,
+          "medianReceiverProcessCpuSeconds": 10.171240000000001,
+          "medianReceiverPeakJsHeapBytes": 104545718
+        }
+      ]
+    },
+    {
+      "evidence": "webrtc-native-10-100MiB.json",
+      "sha256": "d92560f6d17bc5f188a6239523b849bde788034c09879c86b987d73f8e31baae",
+      "summaries": [
+        {
+          "mib": 10,
+          "repetitions": 3,
+          "medianMBps": 3.88500240826162,
+          "minMBps": 2.2982028185125905,
+          "maxMBps": 5.375235800664303,
+          "medianReceiverMainThreadTaskSeconds": 0.45811399999999997,
+          "medianReceiverProcessCpuSeconds": 1.118416,
+          "medianReceiverPeakJsHeapBytes": 47741117
+        },
+        {
+          "mib": 100,
+          "repetitions": 3,
+          "medianMBps": 28.607478310410027,
+          "minMBps": 23.75412885388778,
+          "maxMBps": 28.66299948053968,
+          "medianReceiverMainThreadTaskSeconds": 4.2398050000000005,
+          "medianReceiverProcessCpuSeconds": 8.970568,
+          "medianReceiverPeakJsHeapBytes": 117069241
+        }
+      ]
+    },
+    {
+      "evidence": "webrtc-native-buffer-512KiB.json",
+      "sha256": "982f09841d5041cbe15ef62c3f370ba20465fb4ab097269f5921240e88087d01",
+      "summaries": [
+        {
+          "mib": 10,
+          "repetitions": 3,
+          "medianMBps": 3.702817896143325,
+          "minMBps": 3.319092837008335,
+          "maxMBps": 6.7308620580014615,
+          "medianReceiverMainThreadTaskSeconds": 0.45526700000000003,
+          "medianReceiverProcessCpuSeconds": 1.132506,
+          "medianReceiverPeakJsHeapBytes": 54562937
+        },
+        {
+          "mib": 100,
+          "repetitions": 3,
+          "medianMBps": 23.174542179653074,
+          "minMBps": 21.803142037248683,
+          "maxMBps": 28.426776642269328,
+          "medianReceiverMainThreadTaskSeconds": 4.268726,
+          "medianReceiverProcessCpuSeconds": 8.971973,
+          "medianReceiverPeakJsHeapBytes": 117108210
+        }
+      ]
+    },
+    {
+      "evidence": "webrtc-native-receiver-10-100MiB.json",
+      "sha256": "2064415e3b9dec05261aac16878f4dcd204f518843b33285146bb91a37a081dc",
+      "summaries": [
+        {
+          "mib": 10,
+          "repetitions": 3,
+          "medianMBps": 31.254873323397916,
+          "minMBps": 25.200696946405113,
+          "maxMBps": 31.480066043979157,
+          "medianReceiverMainThreadTaskSeconds": 0.6213069999999999,
+          "medianReceiverProcessCpuSeconds": 1.344802,
+          "medianReceiverPeakJsHeapBytes": 53840628
+        },
+        {
+          "mib": 100,
+          "repetitions": 3,
+          "medianMBps": 40.07868019704247,
+          "minMBps": 39.107093946792155,
+          "maxMBps": 40.38430618139804,
+          "medianReceiverMainThreadTaskSeconds": 4.306853,
+          "medianReceiverProcessCpuSeconds": 9.241126000000001,
+          "medianReceiverPeakJsHeapBytes": 116089443
+        }
+      ]
+    }
+  ],
+  "selected": "receiver native hashing only; original sender and buffering",
+  "largeRuns": {
+    "file": "webrtc-native-receiver-large.json",
+    "inputsUnchanged": true,
+    "exitCode": 0,
+    "dataAndDestinationVerified": [
+      1024,
+      5120
+    ],
+    "memoryAcceptance": "Unresolved: 5 GiB receiver sampled peak 727739999 bytes; lacks phase/post-collection measurements for that run."
+  },
+  "releaseReady": false,
+  "selectedThroughputChangePercent": {
+    "10": 11.535022368907244,
+    "100": 19.09949164796858
+  },
+  "observedLimitations": [
+    "Raw flow-control baseline is slower and variable; not a transport throughput ceiling. Cause unisolated.",
+    "Initial worker observer included consumer microtasks; replaced by constructor-installed observer with ordering calibration. Earlier worker timing fields are invalid as isolated RPC measurements.",
+    "Async decode timings overlap across blocks; use acceptBatch minus storeWriteBlocks for the bounded batch critical path.",
+    "Selected 100 MiB receiver sampled heap median rose about 11 percent; native digest input/snapshot buffers are bounded but add working memory.",
+    "Benchmarks use development modules with explicit optional timers. No physical device, native destination or full-process memory acceptance."
+  ],
+  "latestMatchedControl": {
+    "scope": "Revised periodic-copy fixture; synchronous codec control after OPFS initialization vs native codec. Same production/harness files, three repetitions each, separate browser processes. Wide throughput variation; not proof of a general speedup.",
+    "fallbackRaw": "webrtc-matched-fallback-recheck-100MiB.json",
+    "nativeRaw": "webrtc-matched-native-recheck-100MiB.json",
+    "fallbackMedianMBps": 20.357190199629574,
+    "nativeMedianMBps": 18.44335508483843,
+    "medianRateChangePercent": -9.401273437166047,
+    "fallbackMedianReceiverMainThreadTaskSeconds": 6.602308,
+    "nativeMedianReceiverMainThreadTaskSeconds": 5.429499
+  },
+  "memoryDiagnostic": {
+    "file": "webrtc-phase-memory-1GiB.json",
+    "exitCode": 0,
+    "receivePeakBytes": 86671038,
+    "overallPeakBytes": 300418839,
+    "postCollectionBackingBytes": 4555923,
+    "scope": "Forced collection only after timing; not a production memory fix. 5 GiB remains unproven."
+  },
+  "controlSetupFailure": "webrtc-matched-fallback-100MiB.json: hiding SubtleCrypto before OPFS initialization broke storeDirectoryName. Corrected control hides it only after store creation and restores it before cleanup. This is not evidence that the app supports browsers lacking WebCrypto."
+}
