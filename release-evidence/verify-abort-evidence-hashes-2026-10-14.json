@@ -1,0 +1,207 @@
+{
+  "recordedAt": "2026-10-13T19:55:49.940Z",
+  "files": [
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results-verify-abort-red\\pairing-Stop-during-verifi-589bc-ts-no-further-reads-footer-\\error-context.md",
+      "sha256": "f97da59b2db37b77d7ff6a9408a930d7c9f5940b623f4b29e507915bd445206f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results-verify-abort-red\\pairing-Stop-during-verifi-589bc-ts-no-further-reads-footer-\\trace.zip",
+      "sha256": "3356b92483eec7aa50009abb9079526e56024fe64b6b104a5ea6d97bce77c0a3"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results-first-edge-verify-abort\\pairing-rejecting-the-device-sends-no-file-data\\error-context.md",
+      "sha256": "f8dc6bbc6203681223858cfa615774af5ed0b3119084cbfd71f31f6157684517"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-verify-abort-2026-10-14-MK7oAk\\test-results-first-edge-verify-abort\\pairing-rejecting-the-device-sends-no-file-data\\trace.zip",
+      "sha256": "56d08fb90754cff5f76f8026555a058110e5e185ea4e52a41b5b24db8a4ca405"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-build-2026-10-14-exit.txt",
+      "sha256": "df4e26a04a444901b95afef44e4a96cfae34690fff2ad2c66389c70079cdff2b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-build-2026-10-14.log",
+      "sha256": "8abce6a34b7265073801b278243be9f3c9a74699826b5e9ef1455b23985788cb"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-build-final-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-build-final-2026-10-14.log",
+      "sha256": "80b86710a5e3dc469cdc5ce109e2f704a995313266a85a85142779862970a2dc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-diff-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-diff-check-2026-10-14.log",
+      "sha256": "30e275ec4b749b122594dc5f36ab32c68b662c01975c7560f8d77487db4541f3"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-final-build-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-final-build-2026-10-14.log",
+      "sha256": "c8a04d803434d44413125fb487aaff181f792516e1ce73d4aa1f82f08061f5e2"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-gate-chrome-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-gate-chrome-2026-10-14.log",
+      "sha256": "4497f5319f944dcba6aa4cf98e592db3d6fd40a0e489a21c6be44ab4bd2f438b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-gate-edge-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-gate-edge-2026-10-14.log",
+      "sha256": "8230526741ad152f1171b6eb37fccb1704126bce6803a623592be9adc5201a77"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-gate-edge-first-2026-10-14-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-gate-edge-first-2026-10-14.log",
+      "sha256": "e9217639093c60f81f9f25c5eea40cfab3ce4e38bbe3d60a6b8ec3e0bd2e3126"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-green-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-green-2026-10-14.log",
+      "sha256": "359a3a46d797eea1ed7fec48421047476640d167702b59771bee5cc34ac54530"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-install-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-install-2026-10-14.log",
+      "sha256": "c2aeb09ebf80a88fc83ca4a42d36f0f164ce9db80a4a60edc0cec85c625e57a7"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-package-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-package-2026-10-14.log",
+      "sha256": "9053ac998aabf332ab1e94c6d87b6cdfee4c4a785fd208194adf5dd69722c9d5"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-red-2026-10-14-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-red-2026-10-14.log",
+      "sha256": "77d5f4ae3271d5ef12c4f22a7f76e79c82bbd75de8652a1ec96d38deae16ea97"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-reject-repeat-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-reject-repeat-2026-10-14.log",
+      "sha256": "3d3e9e737307199bb63c68f3b62aca47580796892741fc905c4d9fdda74fbc3d"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-review-2026-10-14.json",
+      "sha256": "356a31d864dd219e351c440ad4b317f47a374a5e23c7da0e8675229bb014dc71"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-stage-2026-10-14-inputs.json",
+      "sha256": "edbba3e37c7fe20051b73d961b5c22e2aa5237e34aea4ef2bcd504bbb7ccd229"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-unit-green-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-unit-green-2026-10-14.log",
+      "sha256": "a43d0f0067e1c8a7e42a3d5400ccb940df05d0348ce5bea579eb89bbf6af65cb"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-unit-red-2026-10-14-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\verify-abort-unit-red-2026-10-14.log",
+      "sha256": "f535045a67096b1e78e48f83a061fc87836bb1e0d8c9f2c37e686887d0c66a95"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-CHECKLIST.md",
+      "sha256": "206410499637358a5924312ba4e5649ce835da9b464cff5f61fc43f5d87bd4b3"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-HARDENING.md",
+      "sha256": "2c1bf45c7753e567ca12572ae24991ed91ee08ae506fab45fd764f00228081cb"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\SPEC-verify-abort.md",
+      "sha256": "bdf37f4ee092f08c7b9e7a5d38193f2d6e67ebe0cf578b1fdaaa053081522684"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\verify-abort-baseline-pairing-2026-10-14.spec.txt",
+      "sha256": "fd2b5bc20a6c4ca77768c1b505b07a7ffeeb82af789da6ce469cd19ba48e48c1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\lib\\large-transfer.ts",
+      "sha256": "425ebe8393e5087b1a700791b4201c2701cba6aee39f39755e84e2718fc7c6ce"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\components\\WebRtcReceiver.tsx",
+      "sha256": "4b762d405f67a4e7ad4bb0e23397b60cc9ffc02af6fb699823b46b4ed1b154c3"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\components\\LargeReceiver.tsx",
+      "sha256": "a5d95a2e4842b77336d8ef7df161e5b46267b5ef052940bacb35e48ea62b1935"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\tests\\large-transfer.test.ts",
+      "sha256": "ec155bcb60282d2d6988dab962cb6ec55455915225a81c4ebda6f74d367a6c8e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+      "sha256": "ce77283cca60a42fd70a8237ee45c3c5b8a8adbacc29c5135be742098bbc0a69"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-before-verify-abort-2026-10-14.json",
+      "sha256": "8c2da4d92110d38094c520e09f301fe2a211c3416cb268a4618e5e2bb15512b9"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.json",
+      "sha256": "356a31d864dd219e351c440ad4b317f47a374a5e23c7da0e8675229bb014dc71"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.txt",
+      "sha256": "13dc4edb4044663bae69b024d2876ec681cbcc9cedbd1fea3ebd9560bc86f628"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-verify-abort\\CHECKSUMS.json",
+      "sha256": "1e5c1a76aac8f727ed64a14e47b27ef03918a97d98b3b4a64ce149496dfb3e8e"
+    }
+  ],
+  "postGateReview": {
+    "onlyUpdatedInputFiles": [
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputFiles": 143,
+    "unchangedAssets": 5,
+    "verifiedCandidateFiles": 19,
+    "review": "No actionable findings. Optional signal reuses established AbortError semantics; existing parsing and integrity/path limits unchanged. Both receiver controllers propagate cancellation while generations and drain/lock behavior remain intact. Red tests reproduce extra work; green tests verify no extra reads, retained receipts and independent destination SHA-256. No checks suppressed or weakened."
+  }
+}
