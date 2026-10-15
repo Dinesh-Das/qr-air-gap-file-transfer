@@ -1,0 +1,255 @@
+{
+  "recordedAt": "2026-10-13T18:52:28.100Z",
+  "files": [
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-00fc5-d-cancel-callback-on-sender\\error-context.md",
+      "sha256": "085a85ab977937285baf42b4d65cfaf8fd8a1ef1d544d7aef2198b7a839b6552"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-00fc5-d-cancel-callback-on-sender\\trace.zip",
+      "sha256": "d71c7a7f077a6c42aa78f1bbcb4f904ba3a939f51cb045e22cf2e0719ba430c5"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-21356-mpletion-callback-on-sender\\error-context.md",
+      "sha256": "ae11352b40ec90a95d74d4d77d80297da2af066c0f2499e6452c2fbda8f0f002"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-21356-mpletion-callback-on-sender\\trace.zip",
+      "sha256": "58b57a056b53cfae02e2c906c5b7e92e585216b67a0b8c79315cd6c20b1880b7"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-35ffc-ed-error-callback-on-sender\\error-context.md",
+      "sha256": "b8a4bc185b865614a639d63170a04d031b1977494fda8863e16b0693a6cd21cc"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-35ffc-ed-error-callback-on-sender\\trace.zip",
+      "sha256": "a7d634d1e6d1280a6c0e9556bdd478c14fe45c0823ad60c7e56046f0089593f0"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-64ae1--error-callback-on-receiver\\error-context.md",
+      "sha256": "5b50993b1006b7a9104a9796add3fec0dfa4eee7c6d0976d472f4a52b49a4ed6"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-64ae1--error-callback-on-receiver\\trace.zip",
+      "sha256": "55ec9e4c243fc51b130236a26ce653334c1c085d1a0c2b7fe4e4b0c3857eb3fb"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-c74b2-cancel-callback-on-receiver\\error-context.md",
+      "sha256": "78661c0b67f9619c3e52e0cddf7c5556e0f2e38f8ead8aeffa4e1d601bc19a0c"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-callback-red\\diagnostic-queued-callback-c74b2-cancel-callback-on-receiver\\trace.zip",
+      "sha256": "3bc62a78eec24ea5fd8d87a9803f7e776229a7bbf87aa2538705c7c36fa0003f"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-save-phase-red\\diagnostic-queued-save-pha-2031f--error-callback-while-saved\\error-context.md",
+      "sha256": "0a975b8f207fa41b84cf447a153a34719062744ff191f133e6e32f8751af0d3d"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-save-phase-red\\diagnostic-queued-save-pha-2031f--error-callback-while-saved\\trace.zip",
+      "sha256": "2baab5d78ea2a422d2494a871b0935020806cd276426d9aeb58342cba9a5a644"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-save-phase-red\\diagnostic-queued-save-pha-c86e7-error-callback-while-saving\\error-context.md",
+      "sha256": "a4233bb4f4b48e76d4585506b8161f884f70c4a0dfadc61774493f65b63e3190"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-manifest-boundary-2026-10-13-yqo7AK\\test-results-queued-save-phase-red\\diagnostic-queued-save-pha-c86e7-error-callback-while-saving\\trace.zip",
+      "sha256": "098bce22529d4a40ff3cf74e2c39f6b8c0cdc874b0f5df5aaaa53af9745b548b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\manifest-block-boundary-gate-edge-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\manifest-block-boundary-gate-edge-2026-10-13.log",
+      "sha256": "1827e358496de6cf78949b80f5d5e8203a77df2d32b502578c3902cd66b1cc6a"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\manifest-block-boundary-green-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\manifest-block-boundary-green-2026-10-13.log",
+      "sha256": "38c9db8147f5393f19037be98e26204ca722796c7ef518d5cc41a06c4f24949c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\manifest-block-boundary-install-2026-10-13-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\manifest-block-boundary-install-2026-10-13.log",
+      "sha256": "171dc780a0f3e84cf87639793a3505a475e7a8851e859f2339d8f0fe7a9a64c0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\manifest-block-boundary-red-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\manifest-block-boundary-red-2026-10-13.log",
+      "sha256": "3b1976c530aa9d6293e8f63c30e39e2f741c3c170322f9770a0288fb2dfec407"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\manifest-block-boundary-stage-2026-10-13-inputs.json",
+      "sha256": "7eaae7249aa784e87023a7b8db7b3d041a57a88ea3ef05434f8475192cb23178"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\queued-callback-red-2026-10-13-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\queued-callback-red-2026-10-13.log",
+      "sha256": "ad52832bb0ba7aea9c2c5a6380bd8004feebb16316a69ea48b7392b647476cfa"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\queued-save-phase-red-2026-10-14-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\queued-save-phase-red-2026-10-14.log",
+      "sha256": "08b4f1fd0ec7907533eedfefdd324a4fd90334548611a26103b7a23349efb171"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-all-green-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-all-green-2026-10-14.log",
+      "sha256": "7ba698b2f70be4aec6a3f4b80e482a70530610733d129d70721dbb5dff1acc7c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-build-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-build-2026-10-14.log",
+      "sha256": "bc13094d92e7a89a4ad6ea6186eaef7ec50569cd5ba80f71d863ce0fd60ee913"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-diff-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-diff-check-2026-10-14.log",
+      "sha256": "260daf20c5c7288b6224279a44e4514287c02dc2260f1171b57b43b5cb05d98e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-final-build-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-final-build-2026-10-14.log",
+      "sha256": "8e18b70d7b7f175073788bb936d22c8e054b6fecbc54fa397f29cc49ae2c2648"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-gate-chrome-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-gate-chrome-2026-10-14.log",
+      "sha256": "5b8c98bfe313b100c0a2d7a4787735c51252e5e9cc912010ec7034872a6b654e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-gate-edge-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-gate-edge-2026-10-14.log",
+      "sha256": "e8069fee398107e3b5b3fb68340ab34c8c61e614216abc3f88f1052f04787a5f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-green-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-green-2026-10-14.log",
+      "sha256": "1ce11c4604f0cf6b3f701558c0c8f16d91ae13a932e40468e491308d9f990304"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-install-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-install-2026-10-14.log",
+      "sha256": "4bc51d13f63bb5b6592b56348a426a947822d28274835a6d1532e741ad384581"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-package-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-package-2026-10-14.log",
+      "sha256": "570e4aa97234343d27f250843c9effbbcdbfe9f1bc068785c676ade5bda50452"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-review-2026-10-14.json",
+      "sha256": "776d568cac9d8418d97f461e24150f4251bd49211729354496fb7b353eb9da08"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\terminal-control-stage-2026-10-14-inputs.json",
+      "sha256": "739a50e8bd187458cd1f4826c9b9c75d9b71dabd4b5a4b7856e66fa6e519bb4e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-CHECKLIST.md",
+      "sha256": "56a62cd0c2361c4845db506dc121c91060bb7fb83925a8454037d9ab0e544018"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-HARDENING.md",
+      "sha256": "13d2e5cc10c7d87db088be484dfdb9f7ba5c911ed0ca3260db4d162bf5cd516f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\SPEC-manifest-block-boundary.md",
+      "sha256": "9989ca4bd16b32a94704297266203a40e4707223d54d47ba17a3ce94bacc4340"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\SPEC-terminal-control-callbacks.md",
+      "sha256": "0dfa7183615d777cc2a7c0f0d40a3815b049b9f73da462b357c9a7d942c48510"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\lib\\webrtc-protocol.ts",
+      "sha256": "06c7ae26d9dd7f396e9585d17257516ee85b50eab290b9e8993bca3f7ff65cc1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\components\\WebRtcSender.tsx",
+      "sha256": "f250b590587f79d81a20f35240c1c008719f40d8d386eb463c27f2687d9cae36"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\components\\WebRtcReceiver.tsx",
+      "sha256": "23c9105b567ace6946c0b4d59c5b9d2b6b039b7b81347a7d2ab51e84dd2bc917"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\tests\\webrtc-protocol.test.ts",
+      "sha256": "2b0bd66c5aade165b8ba13920ec76dbb7a604d38c58151449e28e319b7e599e6"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\e2e\\pairing.spec.ts",
+      "sha256": "27cee8738accf1940ef6ea6bff8fd82dace1b63b94dfb8b8fa6569ad9c3ba7ae"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.json",
+      "sha256": "776d568cac9d8418d97f461e24150f4251bd49211729354496fb7b353eb9da08"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.txt",
+      "sha256": "8e450f696639542841c124c776a83c58a321f93a3ec970fc54239e9ee1a390fd"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-before-terminal-control-2026-10-14.json",
+      "sha256": "3d6342c3e580f374edb7060eb0ca807926a2cfd38eaaa7707767d6fdac791a5c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-terminal-control\\CHECKSUMS.json",
+      "sha256": "076c7d26d2a3479975d8766aa2976be11b52fd853c4a6923e173d69a6af317bd"
+    }
+  ],
+  "postGateReview": {
+    "onlyUpdatedInputFiles": [
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputFiles": 139,
+    "unchangedRuntimeAssets": 5,
+    "candidateVerifiedFiles": 19,
+    "review": "No actionable findings in the three production changes. Manifest check uses the existing shared ceiling; completion guards require established verified phase. Existing pre-verification, privacy and resume gates retained and passed. No checks weakened."
+  }
+}
