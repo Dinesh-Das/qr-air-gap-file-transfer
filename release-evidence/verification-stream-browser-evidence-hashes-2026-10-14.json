@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-14T14:23:10.505Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/verification-stream-browser-review-2026-10-14.json",
+      "bytes": 60840,
+      "sha256": "ed1b06a59953eede1050e68f71c4d4e1636a26d2e64910d117565e21b67cf192"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 60840,
+      "sha256": "ed1b06a59953eede1050e68f71c4d4e1636a26d2e64910d117565e21b67cf192"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 752,
+      "sha256": "3a47a9a21c4143dba0761661508bb0f01a02ca850c3d408658b0806d965eb52d"
+    },
+    {
+      "path": "release-evidence/release-gate-before-verification-stream-chrome-2026-10-14.json",
+      "bytes": 60228,
+      "sha256": "b7207313b51f08f36f7bc243fe179dcbf07b5b0b5cedf163cef5aa36dd1a65c2"
+    },
+    {
+      "path": "release-evidence/verification-stream-browser-chrome-2026-10-14.log",
+      "bytes": 10892,
+      "sha256": "8b400b8e4e7156807da70c547969e4bf1a71c33181bf0be7dd18a55e4ed85cb8"
+    },
+    {
+      "path": "release-evidence/verification-stream-browser-chrome-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+import { describe, expect, it, vi } from "vitest";
+import { MemoryBlockStoreRepository } from "../src/lib/block-store";
+import { DurableReceiveQueue } from "../src/lib/webrtc-receive-queue";
+import { prepareLargeSource, readLargeTreeManifest, readPreparedLargeRange, type LargeSourceSelection } from "../src/lib/large-transfer";
+import { createOfflineTransferManifest, decodeOfflineControl, encodeOfflineDataBlock, OFFLINE_BLOCK_BYTES } from "../src/lib/webrtc-protocol";
+import { OfflineDestinationReceiver, OfflineSourceSender } from "../src/lib/webrtc-transfer";
+
+class FakeDataChannel extends EventTarget {
+  binaryType: BinaryType = "arraybuffer";
+  bufferedAmount = 0;
+  bufferedAmountLowThreshold = 0;
+  readyState: RTCDataChannelState = "open";
+  onBinary?: (bytes: ArrayBuffer) => Promise<void>;
+  controls: string[] = [];
+
+  send(value: string | ArrayBuffer): void {
+    if (typeof value === "string") {
+      this.controls.push(value);
+      return;
+    }
+    void this.onBinary?.(value);
+  }
+}
+
+function selectionWithLargeFile(blocks = 2, byteCount = OFFLINE_BLOCK_BYTES * blocks + 777): LargeSourceSelection {
+  const bytes = Uint8Array.from({ length: byteCount }, (_, index) => (index * 37) & 0xff);
+  const snapshot = new File([bytes], "large.bin", { lastModified: 7 });
+  return {
+    rootName: "offline-fixture",
+    rootHandle: { kind: "directory", name: "offline-fixture" } as FileSystemDirectoryHandle,
+    files: [{
+      path: "large.bin",
+      handle: {
+        kind: "file",
+        name: "large.bin",
+        async getFile() { return snapshot; },
+      } as FileSystemFileHandle,
+      size: snapshot.size,
+      lastModified: snapshot.lastModified,
+    }],
+    directories: ["empty"],
+    totalFileBytes: BigInt(snapshot.size),
+  };
+}
+
+
+describe("aborted verification stream resource lifetime", () => {
+  it("closes the verification stream after abort while preserving durable bytes", async () => {
+    const source = await prepareLargeSource(selectionWithLargeFile(2, 8 * 1024 * 1024));
+    const manifest = await createOfflineTransferManifest(source);
+    const receiver = await OfflineDestinationReceiver.open(manifest, { backend: "memory", memoryRepository: new MemoryBlockStoreRepository() });
+    for (let index = 0; index < receiver.store.totalBlocks; index++) {
+      const offset = index * manifest.blockSize;
+      await receiver.store.writeBlock(index, await readPreparedLargeRange(source, BigInt(offset), Math.min(manifest.blockSize, manifest.totalBytes - offset)));
+    }
+    const originalStream = receiver.store.createReadStream.bind(receiver.store);
+    let verificationStream: ReadableStream<Uint8Array> | undefined;
+    vi.spyOn(receiver.store, "createReadStream").mockImplementation(async options => {
+      verificationStream = await originalStream(options);
+      return verificationStream;
+    });
+    const controller = new AbortController();
+    try {
+      await expect(receiver.verify(controller.signal, () => controller.abort())).rejects.toMatchObject({ name: "AbortError" });
+      expect(receiver.store.progress().complete).toBe(true);
+      expect(verificationStream!.locked).toBe(false);
+      const afterAbort = verificationStream!.getReader();
+      try {
+        const next = await afterAbort.read();
+        console.log(JSON.stringify({ afterAbortDone: next.done, retainedChunkBytes: next.value?.byteLength ?? 0 }));
+        expect(next.done).toBe(true);
+      } finally { await afterAbort.cancel(); afterAbort.releaseLock(); }
+    } finally { await receiver.store.delete(); }
+  });
+});

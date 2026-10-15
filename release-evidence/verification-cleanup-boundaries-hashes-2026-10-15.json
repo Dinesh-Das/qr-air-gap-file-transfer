@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-10-15T03:14:35.356Z",
+  "files": [
+    {
+      "path": "release-evidence/verification-cleanup-boundaries-review-2026-10-15.json",
+      "bytes": 88115,
+      "sha256": "de9e66d5fdcdeef1384c62c9cf704604d107da2d55fe110c4ae6367448330015"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 88115,
+      "sha256": "de9e66d5fdcdeef1384c62c9cf704604d107da2d55fe110c4ae6367448330015"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 619,
+      "sha256": "ccaf467e9f2ea54d345ce862b380b1ceb67fa61116991fdab1e65ebc7aab75fa"
+    },
+    {
+      "path": "release-evidence/release-gate-before-cleanup-boundaries-2026-10-15.json",
+      "bytes": 84589,
+      "sha256": "b32f73caad03cebb94e55a1a6a0bc985d8b95cb76933dba0ca868d5f2a9b47a4"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-boundaries-focused-2026-10-15.log",
+      "bytes": 372,
+      "sha256": "05884edc8c39d894b58074f67b265537037aebf2a5cc83da6626cb66324546c4"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-boundaries-focused-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-negative-open-after-abort-2026-10-15.log",
+      "bytes": 1283,
+      "sha256": "677b9cbcf55d6ce34fd38b42c12e9720753ed02799b91a18460eb932a9135df2"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-negative-cleanup-masks-primary-2026-10-15.log",
+      "bytes": 3166,
+      "sha256": "34f659dc88b930ab233ce9cfcd2d258e219aeba35f0ac458d9e944e945d7b49d"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-negative-controls-2026-10-15.json",
+      "bytes": 458,
+      "sha256": "0d9da5509c3aa516d994dc42d833e1de6524d0aa23b3f9f7deff8643bb5db0b7"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-boundaries-check-2026-10-15.log",
+      "bytes": 1456,
+      "sha256": "8470277703d82e462b6bf645dc8e485f49c1ebc8de2e6f38d7eb18007b37c705"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-boundaries-check-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/webrtc-transfer-before-cleanup-boundaries-2026-10-15.source.txt",
+      "bytes": 27301,
+      "sha256": "40c9e6bc8a446b3a512c64c23fc0879d999ec80b36d884ef42ce92ebf71953a9"
+    },
+    {
+      "path": "tests/webrtc-transfer.test.ts",
+      "bytes": 30467,
+      "sha256": "6db830494f47098ee423d1c5f5d763211d6d96b0b3ec76a4b329feac2377fc8d"
+    },
+    {
+      "path": "SPEC-verification-stream-cleanup.md",
+      "bytes": 3100,
+      "sha256": "f8e8b056e495ffd91b44d2aff57e6646de97da8b8d6cc60c13ce66b6a1457704"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 85323,
+      "sha256": "75fe88f449b395f7bee0f01788f8bd66c50333f60391e1e44751e3f4806c9cf9"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 127685,
+      "sha256": "2d4bbf2a4d39a4cef133641eab8ca2d5ae91db56da77810a23e1295b2fced56f"
+    }
+  ]
+}

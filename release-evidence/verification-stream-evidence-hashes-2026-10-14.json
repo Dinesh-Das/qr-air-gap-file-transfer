@@ -1,0 +1,131 @@
+{
+  "recordedAt": "2026-10-14T14:06:51.558Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/verification-stream-review-2026-10-14.json",
+      "bytes": 57551,
+      "sha256": "61b2cd5aed3198117bcbd509bc61390794586e1d6133e6d3c84dd12c5695157e"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 57551,
+      "sha256": "61b2cd5aed3198117bcbd509bc61390794586e1d6133e6d3c84dd12c5695157e"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 621,
+      "sha256": "e4360ce9fe1d0d349ed93ed53354b3e4e55054167173c69f51332859787e2e56"
+    },
+    {
+      "path": "release-evidence/release-gate-before-verification-stream-2026-10-14.json",
+      "bytes": 52468,
+      "sha256": "ea2061caa7228f4efed2c1e8eaf33066565804656b41c245d22e96d8f69a7bc8"
+    },
+    {
+      "path": "release-evidence/verification-stream-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "172d72b073a535c672f585c6ba1008baa6ec431e29eb66d3c0668371bff40bef"
+    },
+    {
+      "path": "release-evidence/verification-stream-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-focused-2026-10-14.log",
+      "bytes": 322,
+      "sha256": "6b2fdb19822b25c232d42c8532369f910acd1a26f716debad1c231bbe677f347"
+    },
+    {
+      "path": "release-evidence/verification-stream-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-focused-final-2026-10-14.log",
+      "bytes": 323,
+      "sha256": "9d37a0c2e69643beb9900def52d6f96d8410d00514358385ddfd22e057a5f338"
+    },
+    {
+      "path": "release-evidence/verification-stream-focused-final-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-lifetime-probe-2026-10-14.json",
+      "bytes": 660,
+      "sha256": "bc0f083f7251657ecf1e08039a58c6d545193c9cd64e159535503a47977ba3d4"
+    },
+    {
+      "path": "release-evidence/verification-stream-lifetime-probe-2026-10-14.log",
+      "bytes": 1490,
+      "sha256": "efe1fe24425b7d7c49e5c939d6395d6faacf452688f6a3d5a45b74ba5cfd2299"
+    },
+    {
+      "path": "release-evidence/verification-stream-lifetime-probe-source-2026-10-14.txt",
+      "bytes": 3594,
+      "sha256": "36945b72e12c4c2a91dbbd86a02a92a5e03f780817f236dc4457f819ee713596"
+    },
+    {
+      "path": "release-evidence/verification-stream-package-2026-10-14.log",
+      "bytes": 115,
+      "sha256": "15aebbd47f01496d5cd026f8fd8ac8647d5453c0c7ed24927c90da8fb8d5fc0c"
+    },
+    {
+      "path": "release-evidence/verification-stream-package-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-red-2026-10-14.log",
+      "bytes": 355,
+      "sha256": "cf68bba307c3e47e74a9f6b913e87d4fc3d7da3f092f172b13f1c236d268a8d3"
+    },
+    {
+      "path": "release-evidence/verification-stream-red-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-smoke-2026-10-14.log",
+      "bytes": 616,
+      "sha256": "3914b10207636b550876418c1a3d179ce723f2306d7a84eb0c8c468499a969e1"
+    },
+    {
+      "path": "release-evidence/verification-stream-smoke-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-workspace-build-2026-10-14.log",
+      "bytes": 981,
+      "sha256": "b2fe84e477a5b04759c21f5c8383e7ed6ba74f9cc1cf97e1250c913f4d7fc4dd"
+    },
+    {
+      "path": "release-evidence/verification-stream-workspace-build-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "src/lib/webrtc-transfer.ts",
+      "bytes": 13732,
+      "sha256": "a448c7c48c8544371b529c2fa756dd9955aeb8b5e8432192ec408e4c55a3077c"
+    },
+    {
+      "path": "tests/webrtc-transfer.test.ts",
+      "bytes": 23938,
+      "sha256": "52945f113f1db75120814cb4d6a3f3a844c29764bd8eeada05421b5f753352cf"
+    },
+    {
+      "path": "SPEC-verification-stream-cleanup.md",
+      "bytes": 1172,
+      "sha256": "c3d7dd1194d7e65549f86ef6b00b471756d4b45addb5e73867913223a0c61a9a"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-stream-cleanup\\CHECKSUMS.json",
+      "bytes": 3165,
+      "sha256": "b076aece6926711b77691fab9f0235af708efbbbabb71f06ec6007144dd92526"
+    }
+  ]
+}

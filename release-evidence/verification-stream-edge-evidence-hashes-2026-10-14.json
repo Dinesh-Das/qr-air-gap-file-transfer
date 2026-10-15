@@ -1,0 +1,56 @@
+{
+  "recordedAt": "2026-10-14T14:16:10.249Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/verification-stream-edge-review-2026-10-14.json",
+      "bytes": 60228,
+      "sha256": "b7207313b51f08f36f7bc243fe179dcbf07b5b0b5cedf163cef5aa36dd1a65c2"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 60228,
+      "sha256": "b7207313b51f08f36f7bc243fe179dcbf07b5b0b5cedf163cef5aa36dd1a65c2"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 639,
+      "sha256": "5fab5b774f11613062e7db20d21bf3a5291e8c432a792a58f6aa957be919423e"
+    },
+    {
+      "path": "release-evidence/release-gate-before-verification-stream-edge-2026-10-14.json",
+      "bytes": 57551,
+      "sha256": "61b2cd5aed3198117bcbd509bc61390794586e1d6133e6d3c84dd12c5695157e"
+    },
+    {
+      "path": "release-evidence/verification-stream-browser-edge-2026-10-14.log",
+      "bytes": 10890,
+      "sha256": "c7ec1b38b9caa22cd36d906488e3da4a01d715793788db7540c3bbd4e2acd0e0"
+    },
+    {
+      "path": "release-evidence/verification-stream-browser-edge-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-prior-chrome-2026-10-14.json",
+      "bytes": 1204908,
+      "sha256": "c619599a174ae626d80bf6817bd14509132059588ffad9bf27b293cacd855f7b"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-prior-chrome-2026-10-14.log",
+      "bytes": 180804,
+      "sha256": "e7a69b99190e692832601dc9464b7e4999ebc545d53e54708f265e9fbeb0f676"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-current-edge-2026-10-14.json",
+      "bytes": 1270961,
+      "sha256": "e9d5de045f22835b004eb8d0691f43e75efa11a5c966c4fa774ddfb1ea92d6b7"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-current-edge-2026-10-14.log",
+      "bytes": 229517,
+      "sha256": "54bfc0475006e1427493a006b4768a9dd966e664744847c8796d8f46549b141f"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "recordedAt": "2026-10-14T14:01:00.250Z",
+  "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+  "productionSource": "src/lib/webrtc-transfer.ts",
+  "sourceSha256": "448e32d7b5a322a79120681aead9e4d8e249743ca7f568645ba4bed6fa0f076b",
+  "exitCode": 1,
+  "afterAbortDone": false,
+  "retainedChunkBytes": 4194304,
+  "backend": "MemoryBlockStore with real WHATWG ReadableStream,8MiB fixture; unchanged production verification4MiB chunks",
+  "limitations": "No browser/nativeOPFS/peakmemory/5GiBcausality/resourceacceptance proof. Probe cancels/drains its reader and deletes only its in-process fixture in finally.",
+  "workspaceUnchanged": true
+}
