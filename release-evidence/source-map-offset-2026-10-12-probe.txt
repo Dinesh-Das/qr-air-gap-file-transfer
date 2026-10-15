@@ -1,0 +1,14 @@
+const { SourceMapConsumer } = require('source-map-js');
+const { version } = require('source-map-js/package.json');
+const offsetLine = 10_000_001;
+let rejection;
+try {
+  new SourceMapConsumer({ version: 3, sections: [{
+    offset: { line: offsetLine, column: 0 },
+    map: { version: 3, sources: ['fixture.js'], names: [], mappings: 'AAAA' },
+  }] });
+} catch (error) { rejection = { name: error.name, message: error.message }; }
+console.log(JSON.stringify({ ranAt: new Date().toISOString(), version, offsetLine,
+  oversizedOffsetRejected: !!rejection, rejection: rejection ?? null,
+  scope: 'Constructor validation only; no source-map generation or large loop executed.' }, null, 2));
+process.exitCode = rejection ? 0 : 1;

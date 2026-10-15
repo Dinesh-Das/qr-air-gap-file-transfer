@@ -1,0 +1,8 @@
+{
+  "ranAt": "2026-10-12T16:31:09.391Z",
+  "version": "1.2.1",
+  "offsetLine": 10000001,
+  "oversizedOffsetRejected": false,
+  "rejection": null,
+  "scope": "Constructor validation only; no source-map generation or large loop executed."
+}
