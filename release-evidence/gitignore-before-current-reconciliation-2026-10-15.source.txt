@@ -1,0 +1,8 @@
+node_modules/
+dist/
+artifacts/
+.tmp/
+*.log
+test-results/
+playwright-report/
+ci-evidence/
