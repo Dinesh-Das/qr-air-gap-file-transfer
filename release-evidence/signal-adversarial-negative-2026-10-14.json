@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-10-14T13:44:46.453Z",
+  "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+  "mutation": "Remove only total > MAX_SIGNAL_FRAMES guard",
+  "exitCode": 1,
+  "expectedFailures": 1,
+  "originalRestoredSha256": "7b69af782ffc6f4b3d05fabbb2e3a51c8dbe10cbee94e947eef149d11c24bd33",
+  "productionWorkspaceUntouched": true
+}

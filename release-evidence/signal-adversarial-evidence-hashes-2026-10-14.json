@@ -1,0 +1,76 @@
+{
+  "recordedAt": "2026-10-14T13:46:38.282Z",
+  "releaseStatus": "NOT READY",
+  "files": [
+    {
+      "path": "release-evidence/signal-adversarial-review-2026-10-14.json",
+      "bytes": 46111,
+      "sha256": "3c3f0828377c0b0c31283df9cda5f1efc457421e35ca4225340afb6ffa4e77cb"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 46111,
+      "sha256": "3c3f0828377c0b0c31283df9cda5f1efc457421e35ca4225340afb6ffa4e77cb"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 696,
+      "sha256": "2c0774a57f189c0441007c92582a6444dd32a7db4078757cdb9d8d8f3c2c1365"
+    },
+    {
+      "path": "release-evidence/release-gate-before-signal-adversarial-2026-10-14.json",
+      "bytes": 42959,
+      "sha256": "8df968a528e1c7593df5801b6d6f32bc2aeea071e393740961ebd7c5f9b2afc5"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-focused-2026-10-14.log",
+      "bytes": 330,
+      "sha256": "373659daf895fd3e11a72f8f155ffe7c6f05371df395d18c2983607b5a86c5e2"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-negative-2026-10-14.log",
+      "bytes": 1257,
+      "sha256": "fdb86fc7f0895ce31ce37db7917a0049efcf67445450f15dd8eddd39520a23b3"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-negative-2026-10-14.json",
+      "bytes": 353,
+      "sha256": "aaa2bc5ff8418e7d7c50f354f24e7dd87c03e87d7b8a62c038e6397c9d63497f"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "8dc1da6ed1479f66893fb018f6ccfc9484cd249e89858bb40178558274fed29e"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 313517,
+      "sha256": "27bfbdfe582f50d3204101b8770fc2287f2a1c6ccf24fbfeb55ee69e6073341b"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-signal-adversarial-2026-10-14.json",
+      "bytes": 313293,
+      "sha256": "33d5151d0104e53d615e107220afaecd6db6423901c8595bef860ad227a5142a"
+    },
+    {
+      "path": "tests/webrtc-signal-adversarial.test.ts",
+      "bytes": 4948,
+      "sha256": "f31afe197cf787ffc5dfad46e41e5afd6c035af138766b2a68986a61477a9020"
+    },
+    {
+      "path": "SPEC-signal-adversarial.md",
+      "bytes": 1367,
+      "sha256": "f930be58a07d113aa6056105226f918eefbe27aa75f4cc071ea5e823ff56ae19"
+    }
+  ]
+}
