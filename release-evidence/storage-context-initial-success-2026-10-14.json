@@ -1,0 +1,525 @@
+{
+  "startedAt": "2026-10-13T19:14:18.623Z",
+  "node": "v24.12.0",
+  "totalBytes": 134217728,
+  "blockSize": 61440,
+  "expectedSha256": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+  "reserveBytes": 2147483648,
+  "trials": [
+    {
+      "channel": "msedge",
+      "mode": "persistent-profile",
+      "disks": [
+        {
+          "path": "C:/",
+          "availableBytes": 4040515584
+        },
+        {
+          "path": "D:/",
+          "availableBytes": 4508442624
+        }
+      ],
+      "startedAt": "2026-10-13T19:14:19.036Z",
+      "profile": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\storage-context-profiles\\msedge-q2Ggpu",
+      "browserVersion": "154.0.4258.53",
+      "written": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 0,
+          "receivedBytes": 0,
+          "complete": false,
+          "generation": 1,
+          "updatedAt": 1791918879038
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918893610
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10872685860,
+          "usage": 135267620,
+          "usageDetails": {
+            "fileSystem": 135267620
+          }
+        },
+        "persisted": false
+      },
+      "reopenedPage": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918879038
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918879038
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10871647680,
+          "usage": 134229440,
+          "usageDetails": {
+            "fileSystem": 134229440
+          }
+        },
+        "persisted": false
+      },
+      "afterBrowserClose": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918879038
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918879038
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10737419556,
+          "usage": 1316,
+          "usageDetails": {
+            "fileSystem": 1316
+          }
+        },
+        "persisted": false
+      },
+      "passed": true,
+      "completedAt": "2026-10-13T19:15:27.726Z"
+    },
+    {
+      "channel": "msedge",
+      "mode": "nonpersistent-context",
+      "disks": [
+        {
+          "path": "C:/",
+          "availableBytes": 4040802304
+        },
+        {
+          "path": "D:/",
+          "availableBytes": 4357718016
+        }
+      ],
+      "startedAt": "2026-10-13T19:15:28.179Z",
+      "profile": null,
+      "browserVersion": "154.0.4258.53",
+      "written": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 0,
+          "receivedBytes": 0,
+          "complete": false,
+          "generation": 1,
+          "updatedAt": 1791918928680
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918929961
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10871647680,
+          "usage": 134229440,
+          "usageDetails": {
+            "fileSystem": 134229440
+          }
+        },
+        "persisted": false
+      },
+      "reopenedPage": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918928680
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918928680
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10871647680,
+          "usage": 134229440,
+          "usageDetails": {
+            "fileSystem": 134229440
+          }
+        },
+        "persisted": false
+      },
+      "afterBrowserClose": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 0,
+          "receivedBytes": 0,
+          "complete": false,
+          "generation": 1,
+          "updatedAt": 1791918937590
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 0,
+          "receivedBytes": 0,
+          "complete": false,
+          "generation": 1,
+          "updatedAt": 1791918937590
+        },
+        "individuallyPresentBlocks": 0,
+        "sha256Hex": null,
+        "quota": {
+          "quota": 10737419556,
+          "usage": 1316,
+          "usageDetails": {
+            "fileSystem": 1316
+          }
+        },
+        "persisted": false
+      },
+      "passed": true,
+      "completedAt": "2026-10-13T19:15:37.611Z"
+    },
+    {
+      "channel": "chrome",
+      "mode": "persistent-profile",
+      "disks": [
+        {
+          "path": "C:/",
+          "availableBytes": 4040089600
+        },
+        {
+          "path": "D:/",
+          "availableBytes": 4357713920
+        }
+      ],
+      "startedAt": "2026-10-13T19:15:37.936Z",
+      "profile": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\storage-context-profiles\\chrome-yiriJz",
+      "browserVersion": "154.0.8037.99",
+      "written": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 0,
+          "receivedBytes": 0,
+          "complete": false,
+          "generation": 1,
+          "updatedAt": 1791918938852
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918939431
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10872685860,
+          "usage": 135267620,
+          "usageDetails": {
+            "fileSystem": 135267620
+          }
+        },
+        "persisted": false
+      },
+      "reopenedPage": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918938852
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918938852
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10871647680,
+          "usage": 134229440,
+          "usageDetails": {
+            "fileSystem": 134229440
+          }
+        },
+        "persisted": false
+      },
+      "afterBrowserClose": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918938852
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918938852
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10737419556,
+          "usage": 1316,
+          "usageDetails": {
+            "fileSystem": 1316
+          }
+        },
+        "persisted": false
+      },
+      "passed": true,
+      "completedAt": "2026-10-13T19:15:46.936Z"
+    },
+    {
+      "channel": "chrome",
+      "mode": "nonpersistent-context",
+      "disks": [
+        {
+          "path": "C:/",
+          "availableBytes": 4040044544
+        },
+        {
+          "path": "D:/",
+          "availableBytes": 4206223360
+        }
+      ],
+      "startedAt": "2026-10-13T19:15:47.283Z",
+      "profile": null,
+      "browserVersion": "154.0.8037.99",
+      "written": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 0,
+          "receivedBytes": 0,
+          "complete": false,
+          "generation": 1,
+          "updatedAt": 1791918947813
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918948963
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10871647680,
+          "usage": 134229440,
+          "usageDetails": {
+            "fileSystem": 134229440
+          }
+        },
+        "persisted": false
+      },
+      "reopenedPage": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918947813
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 2185,
+          "receivedBytes": 134217728,
+          "complete": true,
+          "generation": 70,
+          "updatedAt": 1791918947813
+        },
+        "individuallyPresentBlocks": 2185,
+        "sha256Hex": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+        "quota": {
+          "quota": 10871647680,
+          "usage": 134229440,
+          "usageDetails": {
+            "fileSystem": 134229440
+          }
+        },
+        "persisted": false
+      },
+      "afterBrowserClose": {
+        "before": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 0,
+          "receivedBytes": 0,
+          "complete": false,
+          "generation": 1,
+          "updatedAt": 1791918955553
+        },
+        "progress": {
+          "schemaVersion": 1,
+          "storeId": "retained-context-diagnostic-v1",
+          "totalBytes": 134217728,
+          "blockSize": 61440,
+          "totalBlocks": 2185,
+          "receivedBlocks": 0,
+          "receivedBytes": 0,
+          "complete": false,
+          "generation": 1,
+          "updatedAt": 1791918955553
+        },
+        "individuallyPresentBlocks": 0,
+        "sha256Hex": null,
+        "quota": {
+          "quota": 10737419556,
+          "usage": 1316,
+          "usageDetails": {
+            "fileSystem": 1316
+          }
+        },
+        "persisted": false
+      },
+      "passed": true,
+      "completedAt": "2026-10-13T19:15:55.575Z"
+    }
+  ],
+  "limitations": [
+    "One-host OPFS storage diagnostic, not end-to-end transfer, Wi-Fi, native destination, OS crash or power loss.",
+    "Nonpersistent Playwright contexts are not evidence of native Edge InPrivate or Chrome Incognito user workflows.",
+    "128 MiB does not prove 5 GiB, 50–100 GB+ capacity, memory bounds or quota behavior.",
+    "Persistent profiles and their payloads are retained; nonpersistent data lifetime is tested by closing and creating a fresh context."
+  ],
+  "completedAt": "2026-10-13T19:15:55.904Z"
+}

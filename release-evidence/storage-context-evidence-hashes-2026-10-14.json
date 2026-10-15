@@ -1,0 +1,133 @@
+{
+  "recordedAt": "2026-10-13T19:20:54.254Z",
+  "files": [
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-2026-10-14.json",
+      "sha256": "0a41626eabe573f2c934a917ba7b2ae5e58807cf258a65228b87d9a2c1ddcd72"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-2026-10-14.log",
+      "sha256": "46790096bc4885c9c65fc2db5a73d9e4001eaa783dfbb799b704159ccda1fca5"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-diff-check-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-diff-check-2026-10-14.log",
+      "sha256": "260daf20c5c7288b6224279a44e4514287c02dc2260f1171b57b43b5cb05d98e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-fallback-attempt-2026-10-14-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-fallback-attempt-2026-10-14.json",
+      "sha256": "d19ab48ad9c3db4a14b783b45a59845e849081680aea2abd5ed1058a85860587"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-fallback-attempt-2026-10-14.log",
+      "sha256": "175830acb21c2e479f471ee7b2ef62c67f61a78421df298d95c4484e041cf44a"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-initial-host-2026-10-14-exit.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-initial-host-2026-10-14.json",
+      "sha256": "00ab4901556fbbc6bd88b6f7355a1c1b0881f8e5ca90dbe86e3e104563d51f48"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-initial-host-2026-10-14.log",
+      "sha256": "f865aa6d738f32cdce84cf514375cf9432f264bf0ee99cb817af1a338cfb9cdc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-initial-success-2026-10-14-exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-initial-success-2026-10-14.json",
+      "sha256": "f7bffe772a54b46f6e3434d3f0ea5b767422bee64e140b41af8a239058717367"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-initial-success-2026-10-14.log",
+      "sha256": "c2ab1e30185ac4576085ff746e440bbfba2eaea6e958ac63eed24863048d234f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\storage-context-review-2026-10-14.json",
+      "sha256": "8c2da4d92110d38094c520e09f301fe2a211c3416cb268a4618e5e2bb15512b9"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\BENCHMARKS.md",
+      "sha256": "e6fb430f1d7aa15588bd68c35f00db6ade7b4850adceba62940dcf2e500da5ec"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-CHECKLIST.md",
+      "sha256": "4a98e353f22965e68b370516a26588b2fcb858ef4f6d1ad40a3910146f999a2e"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\RELEASE-HARDENING.md",
+      "sha256": "3de1ce5983be9b4e95dcb9ed5107d9faa377604ca98e72df9b67e11c9b4416a1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\scripts\\diagnose-storage-context.mjs",
+      "sha256": "a5d74a5f2930258112115c6f3e5e285ea4a513ce740246e009ff47b34a381b19"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\storage-context-initial-success-2026-10-14.mjs",
+      "sha256": "f4b3a735e7ff70d5faae3c01090ae2f01baccbaca070ae1666b83a7c6c945ec0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\storage-context-fallback-attempt-2026-10-14.mjs",
+      "sha256": "d6cf10e846e1b82f967c5b02fe264bff3951a9038d971870db660a58a6e81291"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\lib\\block-store.ts",
+      "sha256": "7afcda4f452264133dca46bc64b5745becb381e912b118f38bc7892f15f28ef8"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\src\\lib\\block-store.worker.ts",
+      "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\cancel-payload-review-2026-10-14.json",
+      "sha256": "e7e431ab735afd27704a2bd29b3a0720ec7a1bd350cc36cd27e2cd066900e3ab"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-before-storage-context-2026-10-14.json",
+      "sha256": "e7e431ab735afd27704a2bd29b3a0720ec7a1bd350cc36cd27e2cd066900e3ab"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.json",
+      "sha256": "8c2da4d92110d38094c520e09f301fe2a211c3416cb268a4618e5e2bb15512b9"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\release-gate-latest.txt",
+      "sha256": "02fcf07f703c9bfaa6e212a1174d6dbefb7a99a325618b2c93d2c5bf28cb6b36"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\physical-test-record.json",
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-terminal-control\\CHECKSUMS.json",
+      "sha256": "076c7d26d2a3479975d8766aa2976be11b52fd853c4a6923e173d69a6af317bd"
+    }
+  ],
+  "postRunReview": {
+    "onlyUpdatedInputFiles": [
+      "BENCHMARKS.md",
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "unchangedOtherInputFiles": 141,
+    "unchangedAssets": 5,
+    "verifiedCandidateFiles": 19,
+    "retainedSuccessfulProfiles": 4,
+    "review": "No production findings. Independent Node expected hash compared against bounded browser reads; every receipt checked, clean page/browser lifetimes isolated, and private-GUI/large-file/OS scope explicitly excluded. Harness startup failures retained separately; timing is not interpreted as throughput or memory."
+  }
+}

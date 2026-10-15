@@ -1,0 +1,33 @@
+{
+  "startedAt": "2026-10-13T19:11:56.019Z",
+  "node": "v24.12.0",
+  "totalBytes": 134217728,
+  "blockSize": 61440,
+  "expectedSha256": "5c51bd08a4a7309610c36de50217338947ab1a3243713e4fbf83bb10a862d356",
+  "reserveBytes": 2147483648,
+  "trials": [
+    {
+      "channel": "msedge",
+      "mode": "persistent-profile",
+      "disks": [
+        {
+          "path": "C:/",
+          "availableBytes": 4037394432
+        },
+        {
+          "path": "D:/",
+          "availableBytes": 4552953856
+        }
+      ],
+      "startedAt": "2026-10-13T19:11:56.497Z",
+      "profile": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\storage-context-profiles\\msedge-FNsOhM",
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:5173/\", waiting until \"load\"\u001b[22m\n"
+    }
+  ],
+  "limitations": [
+    "One-host OPFS storage diagnostic, not end-to-end transfer, Wi-Fi, native destination, OS crash or power loss.",
+    "Nonpersistent Playwright contexts are not evidence of native Edge InPrivate or Chrome Incognito user workflows.",
+    "128 MiB does not prove 5 GiB, 50–100 GB+ capacity, memory bounds or quota behavior.",
+    "Persistent profiles and their payloads are retained; nonpersistent data lifetime is tested by closing and creating a fresh context."
+  ]
+}
