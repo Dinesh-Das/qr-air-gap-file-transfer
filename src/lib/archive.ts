@@ -102,7 +102,7 @@ const MAX_PATH_DEPTH = 64;
 const MAX_PATH_BYTES = 4_096;
 const MAX_SEGMENT_BYTES = 255;
 const WINDOWS_RESERVED_NAME =
-  /^(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\..*)?$/i;
+  /^(?:CON|PRN|AUX|NUL|COM[1-9¹²³]|LPT[1-9¹²³])(?:\..*)?$/i;
 const OBJECT_MAGIC_NAME = /^(?:__proto__|constructor|prototype)$/;
 const ZIP_EPOCH = new Date(1980, 0, 1, 0, 0, 0);
 const DESTINATION_CHECKPOINT_PREFIX = ".airgap-qr-transfer-";
