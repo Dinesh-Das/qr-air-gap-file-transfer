@@ -1,0 +1,58 @@
+{
+  "verifiedAt": "2026-10-17T03:30:04.924Z",
+  "applicationChanged": false,
+  "canonicalChanged": false,
+  "inputs": 175,
+  "assets": 5,
+  "canonicalMetadataEvidenceUnchanged": 949,
+  "freshLocalStage": "C:/Users/dines/AppData/Local/Temp/qrft-fresh-current-2026-10-17-Oo61W0",
+  "persistentStageArchive": "C:\\Users\\dines\\QRFT-qualification-evidence\\local-requalification-2026-10-17-KtNarD\\fresh-stage",
+  "initialDependenciesAndDistAbsent": true,
+  "privateNpmCache": true,
+  "node": "24.22.0",
+  "npm": "11.6.2",
+  "freshNpmCi": 0,
+  "typecheck": 0,
+  "unitTests": 530,
+  "testFiles": 54,
+  "build": 0,
+  "freshBuildMatchesCandidate": true,
+  "npmAuditVulnerabilities": 0,
+  "registrySignatures": 145,
+  "attestations": 61,
+  "chrome": {
+    "cases": 92,
+    "exitCode": 0,
+    "version": "155.0.8059.80",
+    "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-chrome-reserve-requalification-2026-10-17-chrome-CoJopq",
+    "persistentArchive": "C:\\Users\\dines\\QRFT-qualification-evidence\\local-requalification-2026-10-17-KtNarD\\chrome-browser-artifacts",
+    "samples": 49,
+    "sampledMinimumFreeDiskBytes": {
+      "C:/": 16332390400,
+      "D:/": 2569355264
+    },
+    "sampledReserveMet": true,
+    "reserveBytes": 2147483648,
+    "scope": "10-second sampled disk/RAM observations only; no continuous floor, browser RSS/heap/GC or throughput proof."
+  },
+  "cacheArchiveFilesVerified": 35,
+  "persistentArchiveInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\local-requalification-2026-10-17-KtNarD\\INVENTORY.json",
+    "bytes": 3237146,
+    "sha256": "5ff6da750c92eaf43bdc3d7c5d1f3435893c38917e331a79fe845b7319e1a41c"
+  },
+  "preserverVerifiedFileCount": 13891,
+  "independentlyRecheckedArchiveScope": "175 source inputs,5 compiled assets,35 cache files and signed inventory digest; preserver separately verified every copied archive file.",
+  "olderExternalProfileLocationsMissing": 17,
+  "olderMetadataHashesIntact": true,
+  "olderRawRetentionCurrentlyReproducible": false,
+  "originalChromeReserveFailurePreserved": true,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY",
+  "limitations": [
+    "Fresh local source/dependency stage is not a clean OS/VM or hosted CI. The browser rerun used the existing dependency stage with the identical source and release bundle; it is separate from the fresh core checks.",
+    "Sampled reserve success is not a continuous resource guarantee, browser heap/process-memory bound, target-device throughput or50–100GB qualification.",
+    "Seventeen older C Temp profile/data locations are absent. Original observations remain historical; absent payloads were not reconstructed or silently requalified.",
+    "Native default-handler/pickers, nontechnical usability and all physical two-laptop acceptance remain unproved."
+  ]
+}
