@@ -1570,6 +1570,9 @@ test("Stop cancels prefetched native OPFS verification bytes and resumes without
   });
   try {
     for (const page of [sender, receiver]) await page.getByRole("button", { name: "Codes match", exact: true }).click();
+    // This test targets verification cancellation, after all payload ACKs.
+    // Keep transfer preparation outside the five-second verification assertion.
+    await sender.waitForFunction(() => (window as unknown as { sentControls: Array<{ type: string }> }).sentControls.some(message => message.type === "sender-complete"));
     await expect.poll(() => receiver.evaluate(() => (window as unknown as { streamHeld: boolean }).streamHeld)).toBe(true);
     await receiver.getByRole("button", { name: "Stop and reconnect", exact: true }).click();
     await expect(receiver.getByRole("button", { name: "Choose destination and save" })).toHaveCount(0);
@@ -1917,3 +1920,71 @@ for (const denied of [false, true]) test(`screen wake lock follows transfer life
   }
   expect(errors).toEqual([]);
 });
+for (const stage of ["receiving", "complete", "saving", "saved"] as const) {
+  test(`late answer-publication response failure preserves ${stage}`, async ({context}) => {
+    await context.addInitScript(({holdAcks}) => {
+      const state=window as unknown as {rejectAnswerResponse?:()=>void;answerResponseSettled?:boolean;heldAcks:Array<()=>void>;releaseAcks:()=>void};
+      state.heldAcks=[];state.releaseAcks=()=>{for(const send of state.heldAcks.splice(0))send();};
+      const fetchOriginal=window.fetch.bind(window);
+      window.fetch=async(input,init)=>{
+        const response=await fetchOriginal(input,init);
+        const url=typeof input==="string"?input:input instanceof Request?input.url:input.toString();
+        if(/\/joins\/[^/]+\/answer$/.test(new URL(url,location.href).pathname)){
+          try{return await new Promise<Response>((_resolve,reject)=>{
+            const abort=()=>reject(init?.signal?.reason);
+            state.rejectAnswerResponse=()=>{init?.signal?.removeEventListener("abort",abort);reject(new TypeError("Controlled late answer-response failure"));};
+            init?.signal?.addEventListener("abort",abort,{once:true});
+          });}finally{state.answerResponseSettled=true;}
+        }
+        return response;
+      };
+      if(holdAcks){
+        const original=RTCDataChannel.prototype.send;
+        RTCDataChannel.prototype.send=function(data:string|Blob|ArrayBuffer|ArrayBufferView<ArrayBuffer>){
+          if(typeof data==="string"&&JSON.parse(data).type==="ack"){state.heldAcks.push(()=>Reflect.apply(original,this,[data]));return;}
+          return Reflect.apply(original,this,[data]);
+        };
+      }
+    },{holdAcks:stage==="receiving"});
+    const {sender,receiver,errors}=await setupPair(context);
+    try{
+      await receiver.waitForFunction(()=>typeof (window as unknown as {rejectAnswerResponse?:()=>void}).rejectAnswerResponse==="function");
+      for(const page of [sender,receiver])await page.getByRole("button",{name:"Codes match",exact:true}).click();
+      const ready=receiver.getByRole("button",{name:"Choose destination and save"});
+      if(stage==="receiving")await receiver.waitForFunction(()=>(window as unknown as {heldAcks:Array<()=>void>}).heldAcks.length>0);
+      else await expect(ready).toBeVisible();
+      await receiver.evaluate(({holdSave})=>{
+        const state=window as unknown as {releaseSave?:()=>void;saveOpen?:boolean};
+        window.showDirectoryPicker=async()=>(await navigator.storage.getDirectory()).getDirectoryHandle("late-answer-destination",{create:true});
+        if(holdSave){const original=FileSystemFileHandle.prototype.createWritable;FileSystemFileHandle.prototype.createWritable=async function(options){
+          const writable=await original.call(this,options);
+          if(this.name==="test.bin"){state.saveOpen=true;await new Promise<void>(done=>{state.releaseSave=done;});}
+          return writable;
+        };}
+      },{holdSave:stage==="saving"});
+      if(stage==="saving"||stage==="saved"){
+        await ready.click();
+        if(stage==="saving")await receiver.waitForFunction(()=>(window as unknown as {saveOpen?:boolean}).saveOpen);
+        else await expect(receiver.getByRole("heading",{name:"Transfer complete",exact:true})).toBeVisible();
+      }
+      await receiver.evaluate(async()=>{
+        const state=window as unknown as {rejectAnswerResponse?:()=>void};if(!state.rejectAnswerResponse)throw Error("Answer response was not held");
+        state.rejectAnswerResponse();await new Promise<void>(done=>requestAnimationFrame(()=>requestAnimationFrame(()=>done())));
+      });
+      await receiver.waitForFunction(()=>(window as unknown as {answerResponseSettled?:boolean}).answerResponseSettled);
+      if(stage==="receiving")await receiver.evaluate(()=>(window as unknown as {releaseAcks:()=>void}).releaseAcks());
+      if(stage==="receiving"||stage==="complete"){await expect(ready).toBeVisible();await ready.click();}
+      if(stage==="saving"){await expect(receiver.locator(".destination-save-status")).toBeVisible();await receiver.evaluate(()=>(window as unknown as {releaseSave:()=>void}).releaseSave());}
+      await expect(receiver.getByRole("heading",{name:"Transfer complete",exact:true})).toBeVisible();
+      const saved=await receiver.evaluate(async()=>{
+        const root=await(await navigator.storage.getDirectory()).getDirectoryHandle("late-answer-destination");
+        const tree=await root.getDirectoryHandle("browser-fixture");const file=await(await tree.getFileHandle("test.bin")).getFile();
+        const bytes=new Uint8Array(await file.arrayBuffer());
+        if(bytes.length!==120000||bytes.some(byte=>byte!==37))throw Error("Exact destination bytes differ");
+        return {size:file.size,sha256:Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes)),byte=>byte.toString(16).padStart(2,"0")).join("")};
+      });
+      expect(saved).toEqual({size:120000,sha256:createHash("sha256").update(Buffer.alloc(120000,37)).digest("hex")});expect(errors).toEqual([]);
+    }finally{await receiver.evaluate(()=>(window as unknown as {releaseSave?:()=>void}).releaseSave?.()).catch(()=>undefined);}
+  });
+}
+

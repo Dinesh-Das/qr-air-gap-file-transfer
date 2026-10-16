@@ -75,6 +75,7 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
   const manifestRef = useRef<OfflineTransferManifest | null>(null);
   const authorizationRef = useRef<PeerAuthorization | null>(null);
   const lifecycleRef = useRef(0);
+  const establishedGenerationRef = useRef<number | null>(null);
   const queueRef = useRef<Promise<void>>(Promise.resolve());
   const receiveQueueRef = useRef<DurableReceiveQueue | null>(null);
   const receiveTaskRef = useRef<Promise<void>>(Promise.resolve());
@@ -90,6 +91,7 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
 
   const terminateConnection = useCallback((reason?: Error) => {
     lifecycleRef.current += 1;
+    establishedGenerationRef.current = null;
     if (receiveQueueRef.current) {
       receiveTaskRef.current = receiveQueueRef.current.stop();
       receiveQueueRef.current = null;
@@ -240,6 +242,7 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
     channelRef.current = channel;
     channel.addEventListener("open", () => {
       if (generation !== lifecycleRef.current) return;
+      establishedGenerationRef.current = generation;
       setConnected(true);
     });
     channel.addEventListener("close", () => {
@@ -337,7 +340,14 @@ export function WebRtcReceiver({ onBusyChange }: { onBusyChange?: (busy: boolean
       authorizationRef.current = authorization;
       setVerificationCode(authorization.code);
       setPhase("verify-device");
-      await publishRendezvousAnswer(join.joinId, { v: 1, kind: "answer", sessionId: bundle.sessionId, sdp }, controller.signal);
+      try {
+        await publishRendezvousAnswer(join.joinId, { v: 1, kind: "answer", sessionId: bundle.sessionId, sdp }, controller.signal);
+      } catch (caught) {
+        // An opened direct channel proves the answer reached the sender. A
+        // delayed HTTP receipt is no longer authoritative over this receive,
+        // including after verification closes the channel or saving starts.
+        if (establishedGenerationRef.current !== generation) throw caught;
+      }
       if (generation !== lifecycleRef.current) return;
     } catch (caught) {
       if (generation === lifecycleRef.current) fail(caught);
