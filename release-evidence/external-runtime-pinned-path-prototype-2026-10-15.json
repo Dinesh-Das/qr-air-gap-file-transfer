@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-15T17:43:11.556Z",
+  "root": "D:\\MyProjects\\qrft-cwd-launcher-probe-2026-10-15",
+  "prototypeCmd": "D:\\MyProjects\\qrft-cwd-launcher-probe-2026-10-15\\bundle with spaces\\Start AirGap QR.cmd",
+  "shadowedNode": {
+    "exit": 0,
+    "output": "CWD_PROBE:D:\\MyProjects\\qrft-cwd-launcher-probe-2026-10-15\\external runtime हिन्दी & (path)!\\node.exe\n"
+  },
+  "shadowedNodeAndLocator": {
+    "exit": 0,
+    "output": "CWD_PROBE:D:\\MyProjects\\qrft-cwd-launcher-probe-2026-10-15\\external runtime हिन्दी & (path)!\\node.exe\n"
+  },
+  "scope": "Isolated native CMD prototype only. Root/stage/candidate launcher unchanged during browser gates. PATH runtime directory contains Unicode, spaces and shell symbols. Uses native FOR PATH search modifier; no where.exe subprocess."
+}

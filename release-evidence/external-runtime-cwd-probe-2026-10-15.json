@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-15T17:39:22.793Z",
+  "root": "D:\\MyProjects\\qrft-cwd-launcher-probe-2026-10-15",
+  "validRuntimeOnPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime",
+  "withoutCwdExecutable": {
+    "exit": 0,
+    "output": "CWD_PROBE:D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime\\node.exe\n"
+  },
+  "withCwdExecutable": {
+    "exit": 216,
+    "output": "Press any key to continue . . . \r\nThis version of D:\\MyProjects\\qrft-cwd-launcher-probe-2026-10-15\\unrelated cwd\\node.exe is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher.\r\n"
+  },
+  "scope": "Native cmd fixture only, launcher script replaced by an executable-path observer. No app source changed. Invalid local node.exe is a harmless text fixture. Tests whether external-runtime fallback ignores an unrelated working-directory executable."
+}
