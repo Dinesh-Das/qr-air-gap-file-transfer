@@ -2,6 +2,9 @@ import type { OfflineSignalBundle } from "./webrtc-signaling";
 
 const API_ROOT = "/api/rendezvous";
 const POLL_INTERVAL_MS = 500;
+// Covers the runtime's 12-second discovery plus 6-second remote offer fetch,
+// with margin. This bounds one HTTP exchange, not the human pairing interval.
+const REQUEST_TIMEOUT_MS = 30_000;
 
 export class RendezvousError extends Error {
   constructor(message: string, public readonly status: number, options?: ErrorOptions) {
@@ -113,16 +116,16 @@ export async function waitForRendezvousAnswer(
 }
 
 export async function cancelRendezvousRoom(room: RendezvousRoom): Promise<void> {
-  const response = await fetch(`${API_ROOT}/rooms/${room.roomId}`, {
+  await requestWithDeadline(`${API_ROOT}/rooms/${room.roomId}`, {
     method: "DELETE",
-    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ownerToken: room.ownerToken }),
     cache: "no-store",
     keepalive: true,
+  }, async (response) => {
+    if (!response.ok && response.status !== 404) throw new Error(await responseError(response));
+    // Room deletion needs only its status; do not retain an unread response.
+    void response.body?.cancel().catch(() => undefined);
   });
-  if (!response.ok && response.status !== 404) {
-    throw new Error(await responseError(response));
-  }
 }
 
 export async function joinRendezvousRoom(code: string, signal?: AbortSignal, address?: string): Promise<RendezvousJoin> {
@@ -159,22 +162,47 @@ export async function publishRendezvousAnswer(
 }
 
 async function requestJson(url: string, init: RequestInit): Promise<unknown> {
-  let response: Response;
+  return requestWithDeadline(url, init, async (response) => {
+    if (!response.ok) throw new RendezvousError(await responseError(response), response.status);
+    try {
+      return await response.json();
+    } catch {
+      throw new Error("The local pairing service returned an invalid response.");
+    }
+  });
+}
+
+async function requestWithDeadline<T>(url: string, init: RequestInit, readResponse: (response: Response) => Promise<T>): Promise<T> {
+  const parent = init.signal ?? undefined;
+  throwIfAborted(parent);
+  const controller = new AbortController();
+  const abort = () => controller.abort(parent?.reason);
+  parent?.addEventListener("abort", abort, { once: true });
+  const timer = setTimeout(() => controller.abort(new RendezvousError("The local pairing request timed out. Reopen the app and retry connection.", 503)), REQUEST_TIMEOUT_MS);
   try {
-    response = await fetch(url, {
-      ...init,
-      headers: { "Content-Type": "application/json", ...init.headers },
-      cache: "no-store",
-    });
+    let response: Response;
+    try {
+      response = await fetch(url, {
+        ...init, signal: controller.signal,
+        headers: { "Content-Type": "application/json", ...init.headers },
+        cache: "no-store",
+      });
+    } catch (error) {
+      throwIfAborted(controller.signal);
+      if (error instanceof DOMException && error.name === "AbortError") throw error;
+      throw new RendezvousError("The local pairing service is unavailable. Restart the local app runtime and retry.", 0);
+    }
+    const value = await readResponse(response);
+    throwIfAborted(controller.signal);
+    return value;
   } catch (error) {
-    if (error instanceof DOMException && error.name === "AbortError") throw error;
-    throw new RendezvousError("The local pairing service is unavailable. Restart the local app runtime and retry.", 0);
-  }
-  if (!response.ok) throw new RendezvousError(await responseError(response), response.status);
-  try {
-    return await response.json();
-  } catch {
-    throw new Error("The local pairing service returned an invalid response.");
+    // Body parsing/error diagnostics must not replace a timeout or the caller's
+    // exact cancellation reason with a generic response/transport failure.
+    throwIfAborted(controller.signal);
+    throw error;
+  } finally {
+    clearTimeout(timer);
+    parent?.removeEventListener("abort", abort);
   }
 }
 
@@ -197,14 +225,14 @@ function delay(milliseconds: number, signal?: AbortSignal): Promise<void> {
     }, milliseconds);
     const onAbort = () => {
       clearTimeout(timer);
-      reject(signal?.reason ?? new DOMException("Stopped", "AbortError"));
+      reject(signal?.reason);
     };
     signal?.addEventListener("abort", onAbort, { once: true });
   });
 }
 
 function throwIfAborted(signal?: AbortSignal): void {
-  if (signal?.aborted) throw signal.reason ?? new DOMException("Stopped", "AbortError");
+  if (signal?.aborted) throw signal.reason;
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
