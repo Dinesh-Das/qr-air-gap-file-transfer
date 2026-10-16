@@ -6508,9 +6508,11 @@
       "kind": "list-item",
       "status": "partial-local-evidence-mapped",
       "evidence": [
-        "release-evidence/product-audit-review-2026-10-14.json#packaging"
+        "release-evidence/product-audit-review-2026-10-14.json#packaging",
+        "release-evidence/path-pinned-launcher-review-2026-10-15.json",
+        "release-evidence/browser-shell-fix-review-2026-10-16.json"
       ],
-      "scope": "See remaining proof conditions; no full acceptance claim."
+      "scope": "Eight native CMD entry fixtures retained; five separate native subprocess/browser-opener executable cases added. Current command file unchanged, launch.mjs system-shell selection fixed. Physical double-click/two-laptop proof remains open."
     },
     {
       "id": "L800",
@@ -6521,9 +6523,11 @@
       "kind": "list-item",
       "status": "partial-local-evidence-mapped",
       "evidence": [
-        "release-evidence/product-audit-review-2026-10-14.json#packaging"
+        "release-evidence/product-audit-review-2026-10-14.json#packaging",
+        "release-evidence/path-pinned-launcher-review-2026-10-15.json",
+        "release-evidence/browser-shell-fix-review-2026-10-16.json"
       ],
-      "scope": "See remaining proof conditions; no full acceptance claim."
+      "scope": "Full456unit51/type/build passNode24.22; current package copy/runtime/health checks pass. Missing/relative SystemRoot tested by changing it after Node initialization; initial removal prevented Node startup and is not product-level proof. Clean OS/environment acceptance remains open."
     },
     {
       "id": "L801",
@@ -6534,9 +6538,11 @@
       "kind": "list-item",
       "status": "partial-local-evidence-mapped",
       "evidence": [
-        "release-evidence/product-audit-review-2026-10-14.json#packaging"
+        "release-evidence/product-audit-review-2026-10-14.json#packaging",
+        "release-evidence/path-pinned-launcher-review-2026-10-15.json",
+        "release-evidence/browser-shell-fix-review-2026-10-16.json"
       ],
-      "scope": "See remaining proof conditions; no full acceptance claim."
+      "scope": "Cwd/PATH cmd shadow defect reproduced and fixed; missing/relative SystemRoot rejected before spawn with advice. Fixed loopback URL and quoting checks retained. Not every native OS/error dialog or physical recovery is verified."
     },
     {
       "id": "L802",
@@ -6547,9 +6553,11 @@
       "kind": "list-item",
       "status": "partial-local-evidence-mapped",
       "evidence": [
-        "release-evidence/product-audit-review-2026-10-14.json#packaging"
+        "release-evidence/product-audit-review-2026-10-14.json#packaging",
+        "release-evidence/path-pinned-launcher-review-2026-10-15.json",
+        "release-evidence/browser-shell-fix-review-2026-10-16.json"
       ],
-      "scope": "See remaining proof conditions; no full acceptance claim."
+      "scope": "Historical real CMD/default-browser dispatch passed before this change, GUI unobserved. Current packaged default-opener function selects actual system cmd and executes exit0 in place of start; this does not prove current native browser dispatch/rendering. Physical acceptance open."
     },
     {
       "id": "L803",
@@ -6560,9 +6568,11 @@
       "kind": "list-item",
       "status": "partial-local-evidence-mapped",
       "evidence": [
-        "release-evidence/product-audit-review-2026-10-14.json#packaging"
+        "release-evidence/product-audit-review-2026-10-14.json#packaging",
+        "release-evidence/path-pinned-launcher-review-2026-10-15.json",
+        "release-evidence/browser-shell-fix-review-2026-10-16.json"
       ],
-      "scope": "See remaining proof conditions; no full acceptance claim."
+      "scope": "Both current variants stop cleanly and release HTTP plus signaling TCP/UDP ports in direct launcher-API smoke with browser command replaced by exit0. Historical CMD/Enter smoke retained separately. Physical shutdown matrix remains open."
     },
     {
       "id": "L805",
@@ -6575,9 +6585,12 @@
       "evidence": [
         "release-evidence/product-audit-review-2026-10-14.json#packaging",
         "release-evidence/portable-runtime-feasibility-2026-10-15.json",
-        "release-evidence/portable-runtime-implementation-review-2026-10-15.json"
+        "release-evidence/portable-runtime-implementation-review-2026-10-15.json",
+        "release-evidence/path-pinned-launcher-review-2026-10-15.json",
+        "release-evidence/browser-shell-fix-review-2026-10-16.json",
+        "release-evidence/device-names-fix-review-2026-10-16.json"
       ],
-      "scope": "See remaining proof conditions; no full acceptance claim. Windows x64 portable-runtime feasibility only: official Node 24.22.0 binary checksum matched; full LICENSE retained; copied app launches with Node absent from PATH, injected HTTP observer and clean stop. Packager/cmd unchanged; prototype is not a release candidate; native browser/clean OS/full runtime gates/physical acceptance remain open. Optional runtime packaging implemented; 6 native cmd fixture tests and 10 builder input tests, full 447/49/type/build on Node24.22.0; 22-file portable/19-file external manifests and injected-browser lifecycle pass. Full new-runtime browser/default-handler/clean-OS/physical/resource qualification remains incomplete. Status unchanged."
+      "scope": "Current22-file Windows x64 Node24.22 portable and19-file external candidates verify and pass scoped lifecycle checks.492unit52/type/build,88Edge/88Chrome suites against current portable serve.mjs/app assets, plus6focusedUI cases each. Browser suites do not invoke CMD/default-browser entry; nativeGUI,cleanOS,two-laptop,CI,large/resource acceptance remains open."
     },
     {
       "id": "L807",
@@ -7047,8 +7060,12 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Pairing",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/sender-read-cancel-review-2026-10-16.json",
+        "release-evidence/file-boundary-cancel-review-2026-10-17.json"
+      ],
+      "scope": "Partial sender-cancellation proof: entry/async-boundary guards prevent new cached snapshot reads after abort/failure/disposal; already-started reads settle without sends. Four failing regressions, full-window ACK race, native browser File checks and current full suites. Not full UI/network/power-loss/physical cancel-and-resume acceptance; L1085 remains unproved. Additional six-case local proof now covers a pending read within a multi-file block and preserves earlier Stop/failure reasons; seven native API cases per browser. Physical cancellation/resume L1085 remains unproved."
     },
     {
       "id": "L857",
@@ -7380,8 +7397,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Transfer",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/controlled-ack-chaos-review-2026-10-15.json"
+      ],
+      "scope": "Controlled ordered payload delivery and direct ACK-handler calls; real production queue/codec/source sender with in-memory repository. Two schedules verify exact bytes and durable-batch reuse. No native network delay, UI control dispatch, persistent OPFS/process crash, complete chaos matrix or physical acceptance claim."
     },
     {
       "id": "L887",
@@ -7570,8 +7590,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Durable resume",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/controlled-ack-chaos-review-2026-10-15.json"
+      ],
+      "scope": "Controlled ordered payload delivery and direct ACK-handler calls; real production queue/codec/source sender with in-memory repository. Two schedules verify exact bytes and durable-batch reuse. No native network delay, UI control dispatch, persistent OPFS/process crash, complete chaos matrix or physical acceptance claim."
     },
     {
       "id": "L908",
@@ -7905,8 +7928,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Security",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/device-names-fix-review-2026-10-16.json"
+      ],
+      "scope": "Partial path-security proof: six Win32-reserved superscript COM/LPT basenames rejected for archive roots/entries, outgoing tree file/directory paths, incoming metadata and selected files.30RED/36GREEN, six unchanged neighboring names. Not an exhaustive path fuzz/native-filesystem proof."
     },
     {
       "id": "L948",
@@ -8015,8 +8041,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/controlled-ack-chaos-review-2026-10-15.json"
+      ],
+      "scope": "Controlled ordered payload delivery and direct ACK-handler calls; real production queue/codec/source sender with in-memory repository. Two schedules verify exact bytes and durable-batch reuse. No native network delay, UI control dispatch, persistent OPFS/process crash, complete chaos matrix or physical acceptance claim."
     },
     {
       "id": "L967",
@@ -8025,8 +8054,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/controlled-ack-chaos-review-2026-10-15.json"
+      ],
+      "scope": "Controlled ordered payload delivery and direct ACK-handler calls; real production queue/codec/source sender with in-memory repository. Two schedules verify exact bytes and durable-batch reuse. No native network delay, UI control dispatch, persistent OPFS/process crash, complete chaos matrix or physical acceptance claim."
     },
     {
       "id": "L968",
@@ -8035,8 +8067,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/controlled-ack-chaos-review-2026-10-15.json"
+      ],
+      "scope": "Controlled ordered payload delivery and direct ACK-handler calls; real production queue/codec/source sender with in-memory repository. Two schedules verify exact bytes and durable-batch reuse. No native network delay, UI control dispatch, persistent OPFS/process crash, complete chaos matrix or physical acceptance claim."
     },
     {
       "id": "L969",
@@ -8045,8 +8080,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/controlled-ack-chaos-review-2026-10-15.json"
+      ],
+      "scope": "Controlled ordered payload delivery and direct ACK-handler calls; real production queue/codec/source sender with in-memory repository. Two schedules verify exact bytes and durable-batch reuse. No native network delay, UI control dispatch, persistent OPFS/process crash, complete chaos matrix or physical acceptance claim."
     },
     {
       "id": "L970",
@@ -8055,8 +8093,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/controlled-ack-chaos-review-2026-10-15.json"
+      ],
+      "scope": "Controlled ordered payload delivery and direct ACK-handler calls; real production queue/codec/source sender with in-memory repository. Two schedules verify exact bytes and durable-batch reuse. No native network delay, UI control dispatch, persistent OPFS/process crash, complete chaos matrix or physical acceptance claim."
     },
     {
       "id": "L971",
@@ -8145,8 +8186,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/controlled-ack-chaos-review-2026-10-15.json"
+      ],
+      "scope": "Controlled ordered payload delivery and direct ACK-handler calls; real production queue/codec/source sender with in-memory repository. Two schedules verify exact bytes and durable-batch reuse. No native network delay, UI control dispatch, persistent OPFS/process crash, complete chaos matrix or physical acceptance claim."
     },
     {
       "id": "L984",
@@ -9605,8 +9649,11 @@
       "section": "FINAL ADVERSARIAL PASS",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/pairing-recovery-review-2026-10-16.json"
+      ],
+      "scope": "Partial React/lifecycle proof: a late publication response failed four active/verified/save states before fix; native-open generation guard and exact-output E2E regressions pass. Not all state transitions or final adversarial acceptance."
     },
     {
       "id": "L1197",
@@ -9675,8 +9722,11 @@
       "section": "FINAL ADVERSARIAL PASS",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/readback-buffer-review-2026-10-16.json"
+      ],
+      "scope": "Partial memory evidence:5GiB readback reproduces large transient slice allocations; reusable-buffer production reader verifies exact hashes with~11MiB reported page peaks. Chrome native-process observer incomplete; no full-transfer/size-independent/50-100GB/physical memory acceptance or historical-root-cause closure."
     },
     {
       "id": "L1204",
@@ -9725,8 +9775,11 @@
       "section": "FINAL ADVERSARIAL PASS",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/pairing-recovery-review-2026-10-16.json"
+      ],
+      "scope": "Partial timeout proof: thirty-second per-HTTP deadline includes bodies, custom/null abort reasons and cleanup. Native-fetch controlled-loopback UI checks pass. Not physical pairing/sleep/background timing acceptance; physical L1083 remains unproved."
     },
     {
       "id": "L1209",
@@ -9745,8 +9798,12 @@
       "section": "FINAL ADVERSARIAL PASS",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/browser-shell-fix-review-2026-10-16.json",
+        "release-evidence/device-names-fix-review-2026-10-16.json"
+      ],
+      "scope": "Earlier native cwd/PATH shell/node regressions retained. Added documented Win32 superscript-device-name guard fixes and unit/built-UI rejection tests; no OS file/device access was attempted. Windows path behavior/final adversarial acceptance remains incomplete."
     },
     {
       "id": "L1211",
@@ -9755,8 +9812,11 @@
       "section": "FINAL ADVERSARIAL PASS",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-local-evidence-mapped",
+      "evidence": [
+        "release-evidence/unicode-fidelity-review-2026-10-16.json"
+      ],
+      "scope": "Case-insensitive C/D directory probes: ordinary ASCII/Greek case aliases collide, six suspected Unicode pairs remain distinct. Nine archive/large-source round-trip tests and isolated uppercase-expansion negative control protect names/bytes. No general Unicode/filesystem, native picker, physical or final-adversarial completion claim."
     },
     {
       "id": "L1212",
@@ -10060,5 +10120,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. It is not a completed requirement-by-requirement audit. Only exact percentage-model assertions and missing physical evidence are annotated in this checkpoint; review-pending items are not claimed achieved. Use original line IDs for subsequent evidence mapping without shrinking scope.",
-  "updatedAt": "2026-10-15T17:04:52.599Z"
+  "updatedAt": "2026-10-17T04:55:17.616Z"
 }
