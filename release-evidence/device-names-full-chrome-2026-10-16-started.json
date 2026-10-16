@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-15T18:51:30.903Z",
+  "before": {
+    "time": "2026-10-15T18:51:30.902Z",
+    "freeDiskBytes": {
+      "C:/": 12369108992,
+      "D:/": 3042750464
+    },
+    "freeRamBytes": 14550466560
+  },
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-portable",
+  "runtime": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-portable\\runtime\\node.exe",
+  "channel": "chrome",
+  "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-device-gate-chrome-wXrBHW"
+}

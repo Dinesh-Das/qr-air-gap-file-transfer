@@ -1,0 +1,65 @@
+{
+  "recordedAt": "2026-10-15T18:49:14.088Z",
+  "channel": "chrome",
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-portable",
+  "profilePreserved": "C:/Users/dines/AppData/Local/Temp/qrft-device-ui-chrome-iIC4z5",
+  "results": [
+    {
+      "name": "COM¹",
+      "alertRejected": true,
+      "readsBeforePreparation": 0,
+      "peerObjects": 0,
+      "roomRequests": [],
+      "recoveredSelection": true,
+      "legalName": "COM¹more.txt"
+    },
+    {
+      "name": "COM²",
+      "alertRejected": true,
+      "readsBeforePreparation": 0,
+      "peerObjects": 0,
+      "roomRequests": [],
+      "recoveredSelection": true,
+      "legalName": "COM¹more.txt"
+    },
+    {
+      "name": "COM³",
+      "alertRejected": true,
+      "readsBeforePreparation": 0,
+      "peerObjects": 0,
+      "roomRequests": [],
+      "recoveredSelection": true,
+      "legalName": "COM¹more.txt"
+    },
+    {
+      "name": "LPT¹",
+      "alertRejected": true,
+      "readsBeforePreparation": 0,
+      "peerObjects": 0,
+      "roomRequests": [],
+      "recoveredSelection": true,
+      "legalName": "COM¹more.txt"
+    },
+    {
+      "name": "LPT²",
+      "alertRejected": true,
+      "readsBeforePreparation": 0,
+      "peerObjects": 0,
+      "roomRequests": [],
+      "recoveredSelection": true,
+      "legalName": "COM¹more.txt"
+    },
+    {
+      "name": "LPT³",
+      "alertRejected": true,
+      "readsBeforePreparation": 0,
+      "peerObjects": 0,
+      "roomRequests": [],
+      "recoveredSelection": true,
+      "legalName": "COM¹more.txt"
+    }
+  ],
+  "pageErrors": [],
+  "cleanStop": true,
+  "scope": "Built app UI and actual local runtime with synthetic file-picker handles, names, and read/peer counters. No native picker, filesystem creation of device names, physical laptop or OS guarantee."
+}

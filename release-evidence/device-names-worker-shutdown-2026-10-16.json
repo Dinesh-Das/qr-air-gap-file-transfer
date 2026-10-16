@@ -1,0 +1,18 @@
+{
+  "At": "2026-10-16T00:28:14.0748188+05:30",
+  "Roots": [
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-gate-edge-qlPhMw",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-gate-chrome-wXrBHW",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-ui-msedge-08hy7b",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-ui-chrome-iIC4z5"
+  ],
+  "MatchingProcesses": [
+    {
+      "ProcessId": 23160,
+      "ParentProcessId": 28076,
+      "Name": "pwsh.exe",
+      "CreationDate": "2026-10-16T00:28:13.454371+05:30"
+    }
+  ],
+  "Count": 1
+}

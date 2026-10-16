@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-15T19:00:04.237Z",
+  "roots": [
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-gate-edge-qlPhMw",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-gate-chrome-wXrBHW",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-ui-msedge-08hy7b",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-ui-chrome-iIC4z5"
+  ],
+  "matchingBrowserProcesses": [],
+  "normalizedPathMatching": true,
+  "rebound": [
+    {
+      "port": 4178,
+      "host": "127.0.0.1",
+      "tcp": true,
+      "udp": false
+    },
+    {
+      "port": 4179,
+      "host": "0.0.0.0",
+      "tcp": true,
+      "udp": true
+    }
+  ],
+  "note": "Initial broad process query matched only its own pwsh command text (PID23160). Browser-only normalized query found zero. No process was terminated."
+}

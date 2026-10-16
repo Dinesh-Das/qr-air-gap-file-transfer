@@ -1,0 +1,12 @@
+{
+  "At": "2026-10-16T00:28:57.6886334+05:30",
+  "Roots": [
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-gate-edge-qlPhMw",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-gate-chrome-wXrBHW",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-ui-msedge-08hy7b",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-device-ui-chrome-iIC4z5"
+  ],
+  "Scope": "Only Chrome/Edge processes using these owned profile/results roots. Initial broad query also matched its own PowerShell command text; that was not a browser worker.",
+  "MatchingBrowserProcesses": [],
+  "Count": 0
+}

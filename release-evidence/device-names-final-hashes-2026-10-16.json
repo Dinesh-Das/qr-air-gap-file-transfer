@@ -1,0 +1,294 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/device-names-gate-review-2026-10-16.json",
+      "bytes": 253982,
+      "sha256": "a340d36bc9829318c5a959837d24446eeb058138c243f5c5031115c51bc1f41f"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 253982,
+      "sha256": "a340d36bc9829318c5a959837d24446eeb058138c243f5c5031115c51bc1f41f"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 601,
+      "sha256": "93adb13071921bc4c2ec6df393a3c379141610842cac1db0d9d06e9cf073f17c"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 334313,
+      "sha256": "349d1cc3e92e1ec94281c706aae8ceb6298ad7c79d9bbb40d5c1e0cee915c13b"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-device-names-2026-10-16.json",
+      "bytes": 333738,
+      "sha256": "e561fb75a02f83cb50ccf1bd13bf79791b84bc1fdc02ab41885ee3883e519682"
+    },
+    {
+      "path": "release-evidence/browser-shell-gate-verified-hashes-2026-10-16.json",
+      "bytes": 1000,
+      "sha256": "8bfc5e2b5013bc65420c69faaba980d9b128ffce16ee20b97f1657ed2fb65bb3"
+    },
+    {
+      "path": "release-evidence/browser-shell-gate-verified-review-2026-10-16.json",
+      "bytes": 229621,
+      "sha256": "930d744c29284b389b0fa068639a0074cd5f22c90931d6a875a85fa8cdac2385"
+    },
+    {
+      "path": "release-evidence/browser-shell-independent-verification-2026-10-16.json",
+      "bytes": 481,
+      "sha256": "3305363d21a0cf92b581215b774b161502333f0c8b3205f978a20c503c9a657c"
+    },
+    {
+      "path": "release-evidence/device-names-before-archive-2026-10-16.source.txt",
+      "bytes": 56594,
+      "sha256": "ec7b22a082a6e658d24ceaae7977b65ec233ebc2cef54e1862a5d5c019435b40"
+    },
+    {
+      "path": "release-evidence/device-names-before-large-transfer-2026-10-16.source.txt",
+      "bytes": 23725,
+      "sha256": "425ebe8393e5087b1a700791b4201c2701cba6aee39f39755e84e2718fc7c6ce"
+    },
+    {
+      "path": "release-evidence/device-names-before-RELEASE-CHECKLIST-md-2026-10-16.source.txt",
+      "bytes": 90553,
+      "sha256": "b2442937e299dbc96726caf712e5c0de6ea45e880c98bb8b7ef624233102330e"
+    },
+    {
+      "path": "release-evidence/device-names-before-RELEASE-HARDENING-md-2026-10-16.source.txt",
+      "bytes": 132915,
+      "sha256": "ccd6c4f02f8022f13bfe594a2a38ecff2d339d92367657b22ce90bd7f95f1afe"
+    },
+    {
+      "path": "release-evidence/device-names-browser-proposal-2026-10-16.json",
+      "bytes": 231008,
+      "sha256": "a8e402f4b03f57c25a5fc30bdece8b2dc666495af859fba693c413aa4595cfb5"
+    },
+    {
+      "path": "release-evidence/device-names-browser-runner-2026-10-16.source.txt",
+      "bytes": 4674,
+      "sha256": "b2b8ba3915daf554523f2224849533b2127c25feb7369f46c0f8d5bea01f4fbb"
+    },
+    {
+      "path": "release-evidence/device-names-build-2026-10-16.log",
+      "bytes": 896,
+      "sha256": "907eae1100bc18dfac7347a2606bb0b3e8e6675a66ed1ba515a6a944c7f05f6b"
+    },
+    {
+      "path": "release-evidence/device-names-build-exit-2026-10-16.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/device-names-final-device-names-ui-probe-2026-10-16.mjs.source.txt",
+      "bytes": 4387,
+      "sha256": "ce2b6ce1d0ada57fed2844e755f886f01af99b4227c68d8d1e8957a25c8c7b74"
+    },
+    {
+      "path": "release-evidence/device-names-final-prepare-device-names-candidates-2026-10-16.mjs.source.txt",
+      "bytes": 4598,
+      "sha256": "e2fc5ab15c72be0693a1c040868d96b0e30d2184a86575cd45b5b06307d9d2e6"
+    },
+    {
+      "path": "release-evidence/device-names-final-run-device-names-gates-2026-10-16.mjs.source.txt",
+      "bytes": 1170,
+      "sha256": "3970a2bbbed5822ded24c6a59e664a1c0b7a78b278e58b9a22a234a5e971ef25"
+    },
+    {
+      "path": "release-evidence/device-names-final-windows-device-names.test.ts.source.txt",
+      "bytes": 2796,
+      "sha256": "ff483d6757038a4cdd6d85e63bd097a23b26773f5af8a778d6a15b82dae11faa"
+    },
+    {
+      "path": "release-evidence/device-names-fix-review-2026-10-16.json",
+      "bytes": 8523,
+      "sha256": "a6bc9a2a8955172d4e1cf709020f65655a9769457a98930267b1e9a7bce038c7"
+    },
+    {
+      "path": "release-evidence/device-names-full-chrome-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/device-names-full-chrome-2026-10-16-observations.json",
+      "bytes": 6376,
+      "sha256": "9345c8dcdedc6f3e38f71b026a66e6c691f5563a45b21f53fe630d4c0ac188c8"
+    },
+    {
+      "path": "release-evidence/device-names-full-chrome-2026-10-16-server.mjs",
+      "bytes": 511,
+      "sha256": "7b94b38dd3f9e3919c43626f8becf03529bd40e5edf51a3aae417c8f92217d6a"
+    },
+    {
+      "path": "release-evidence/device-names-full-chrome-2026-10-16-started.json",
+      "bytes": 560,
+      "sha256": "5621144153c3a379ef465031026befb9911e41a2f86c353610877a80234d294d"
+    },
+    {
+      "path": "release-evidence/device-names-full-chrome-2026-10-16.config.mjs",
+      "bytes": 726,
+      "sha256": "1c1917bfb3a2e3ef666192fe55cbba700cc926488b652fae4a100357a2fde75b"
+    },
+    {
+      "path": "release-evidence/device-names-full-chrome-2026-10-16.log",
+      "bytes": 11656,
+      "sha256": "9ffe98927bff3b37d4d354a304e36338fc40d605cd78773a148f802ef4e31e3f"
+    },
+    {
+      "path": "release-evidence/device-names-full-edge-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/device-names-full-edge-2026-10-16-observations.json",
+      "bytes": 6376,
+      "sha256": "5039098a3d5b3356586814bfd0e1ee43a412ae2e0d6193954c7e25853727a3ab"
+    },
+    {
+      "path": "release-evidence/device-names-full-edge-2026-10-16-server.mjs",
+      "bytes": 511,
+      "sha256": "7b94b38dd3f9e3919c43626f8becf03529bd40e5edf51a3aae417c8f92217d6a"
+    },
+    {
+      "path": "release-evidence/device-names-full-edge-2026-10-16-started.json",
+      "bytes": 558,
+      "sha256": "9becbe0a4cbd4a69612a5eee433afedb7da15dfd9123636f5bcd9cd6b4d3b3fb"
+    },
+    {
+      "path": "release-evidence/device-names-full-edge-2026-10-16.config.mjs",
+      "bytes": 724,
+      "sha256": "fdeb46197e10b1c25d96bf9fa3d939a7313a1f92c732c12ea944c9bcecb42235"
+    },
+    {
+      "path": "release-evidence/device-names-full-edge-2026-10-16.log",
+      "bytes": 11655,
+      "sha256": "405760d552abc91e8f8fbcc7b59722f7fad7211052b40bd9023bb1a851f88b7f"
+    },
+    {
+      "path": "release-evidence/device-names-green-2026-10-16.log",
+      "bytes": 246,
+      "sha256": "cd6b2fffd60601b0b5f2f4bc4612348d581821f9b386cb6eef859e51dbaac972"
+    },
+    {
+      "path": "release-evidence/device-names-green-exit-2026-10-16.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/device-names-lifecycle-external-2026-10-16.log",
+      "bytes": 811,
+      "sha256": "df899d95b88e19333472b7b12e642a09204519453f7dca2bcde2f73672745a78"
+    },
+    {
+      "path": "release-evidence/device-names-lifecycle-portable-2026-10-16.log",
+      "bytes": 827,
+      "sha256": "50fc69b5542979ca2f0af168be3161c37cb0a858267612f2527cd7c1a32c7da8"
+    },
+    {
+      "path": "release-evidence/device-names-package-external-2026-10-16.log",
+      "bytes": 121,
+      "sha256": "498da4428c2fcd6c8d7924a79d92fdee4015ae14ac2ee0354eb717a7a11f7b4f"
+    },
+    {
+      "path": "release-evidence/device-names-package-portable-2026-10-16.log",
+      "bytes": 121,
+      "sha256": "35811bfe5cceda47ec0b639e0b9bd667790909c7082ab7d24ce9517de3402754"
+    },
+    {
+      "path": "release-evidence/device-names-package-validation-2026-10-16.json",
+      "bytes": 4042,
+      "sha256": "5dbcdf6e3a301020d0016c2f9eb118bf0b60701bcd1d72411a96665fe9f260dc"
+    },
+    {
+      "path": "release-evidence/device-names-red-2026-10-16.log",
+      "bytes": 15485,
+      "sha256": "3c2f13dae75f219ae74a72b8d32404d0d9c08fed147fc9c1de31918522069a19"
+    },
+    {
+      "path": "release-evidence/device-names-red-exit-2026-10-16.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/device-names-type-2026-10-16.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/device-names-type-exit-2026-10-16.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/device-names-ui-chrome-2026-10-16.json",
+      "bytes": 1848,
+      "sha256": "d32d5d88e6bad5e800f134011f1db12e5825197714c114deffb7724f82dba1de"
+    },
+    {
+      "path": "release-evidence/device-names-ui-chrome-2026-10-16.log",
+      "bytes": 124,
+      "sha256": "2958751ddcc66139d295c5211f2f155f14a92ebf745be98cccfde52fc4865242"
+    },
+    {
+      "path": "release-evidence/device-names-ui-chrome-exit-2026-10-16.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/device-names-ui-msedge-2026-10-16.json",
+      "bytes": 1848,
+      "sha256": "6c8e76cd0d4a05184a596ebd2bb07b77af691384c26b6e3e1525008ba58d707f"
+    },
+    {
+      "path": "release-evidence/device-names-ui-msedge-2026-10-16.log",
+      "bytes": 124,
+      "sha256": "b37935398679ecc2f3c6a70d04222d5c16a0259704828196961c8131e978251b"
+    },
+    {
+      "path": "release-evidence/device-names-ui-msedge-exit-2026-10-16.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/device-names-unit-2026-10-16.log",
+      "bytes": 242,
+      "sha256": "9651f236f885e7e8f3107b3cdc116d6e1065792e94e3f3a1f015cc44a5db21ec"
+    },
+    {
+      "path": "release-evidence/device-names-unit-exit-2026-10-16.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/device-names-worker-shutdown-2026-10-16.json",
+      "bytes": 586,
+      "sha256": "c08060b32af0afbbf84351f18ebb77e1a89fe2675c827d54f3a2144aa8a950e3"
+    },
+    {
+      "path": "release-evidence/release-gate-before-device-names-2026-10-16.json",
+      "bytes": 229621,
+      "sha256": "930d744c29284b389b0fa068639a0074cd5f22c90931d6a875a85fa8cdac2385"
+    },
+    {
+      "path": "release-evidence/device-names-gate-hashes-2026-10-16.json",
+      "bytes": 10608,
+      "sha256": "7af3851ff7421cc558858c8b2d3aef642aebad0bf0d2fa38bcdad27a92027682"
+    },
+    {
+      "path": "release-evidence/device-names-independent-verification-2026-10-16.json",
+      "bytes": 412,
+      "sha256": "385e3dcf67842f11f66558bfb1be537da305677116ad6b902d111f9216e92848"
+    },
+    {
+      "path": "release-evidence/device-names-worker-shutdown-refined-2026-10-16.json",
+      "bytes": 610,
+      "sha256": "32629a6cc7ab59203d1df5d477d422feab1dfddf84dc1f7359f91ae65dbac309"
+    },
+    {
+      "path": "release-evidence/device-names-worker-final-2026-10-16.json",
+      "bytes": 811,
+      "sha256": "e5d5817f7d072b82a514f5ace0a6277b9d78d90460376a4ae4d0fe40e854d010"
+    }
+  ]
+}

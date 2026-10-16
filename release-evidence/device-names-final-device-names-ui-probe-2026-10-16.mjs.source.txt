@@ -1,0 +1,46 @@
+import {readFile,writeFile,mkdtemp} from 'node:fs/promises';
+import {join,resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const proposal=JSON.parse(await readFile(resolve('release-evidence/device-names-browser-proposal-2026-10-16.json')));
+const stage=proposal.freshInstall.stage;
+const {chromium,expect}=await import(pathToFileURL(join(stage,'node_modules/@playwright/test/index.mjs')).href);
+const {launchOfflineApplication}=await import(pathToFileURL(join(proposal.offlineCandidate.path,'scripts/launch.mjs')).href);
+const {freeSignalPort}=await import('../tests/free-signal-port.mjs');
+const channel=process.argv[2];if(!['msedge','chrome'].includes(channel))throw Error('Select browser');
+const port=await freeSignalPort();let signalPort=await freeSignalPort();while(signalPort===port)signalPort=await freeSignalPort();
+const profile=await mkdtemp('C:/Users/dines/AppData/Local/Temp/qrft-device-ui-'+channel+'-');
+const app=await launchOfflineApplication({directory:proposal.offlineCandidate.path,env:{...process.env,QRFT_PORT:String(port),QRFT_SIGNAL_PORT:String(signalPort)},openBrowser:async()=>{}});
+let context;const results=[];const errors=[];let stop;
+try{
+ context=await chromium.launchPersistentContext(profile,{channel,headless:true});
+ for(const name of ['COM¹','COM²','COM³','LPT¹','LPT²','LPT³']){
+  const page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
+  const roomRequests=[];page.on('request',r=>{const p=new URL(r.url()).pathname;if(p.startsWith('/api/rendezvous/')&&!p.endsWith('/health'))roomRequests.push({method:r.method(),path:p});});
+  await page.addInitScript(name=>{
+   const state=window.deviceNameProbe={name:name+'.txt',reads:0,peers:0};
+   const Original=window.RTCPeerConnection;
+   window.RTCPeerConnection=class extends Original{constructor(...args){super(...args);state.peers++;}};
+   window.showOpenFilePicker=async()=>{
+    const file=new File(['payload'],state.name,{lastModified:7});
+    const slice=file.slice.bind(file),arrayBuffer=file.arrayBuffer.bind(file);
+    file.slice=(...args)=>{state.reads++;return slice(...args);};
+    file.arrayBuffer=(...args)=>{state.reads++;return arrayBuffer(...args);};
+    return [{kind:'file',name:file.name,getFile:async()=>file}];
+   };
+  },name);
+  await page.goto(app.url);await page.getByRole('button',{name:'Send',exact:true}).click();
+  const choose=page.getByRole('button',{name:'Choose files',exact:true});await expect(choose).toBeEnabled();await choose.click();
+  await expect(page.getByRole('alert')).toContainText('These files could not be prepared');
+  await expect(page.locator('.transfer-error-details')).toContainText('not portable');
+  await expect(page.getByRole('button',{name:'Get pairing code',exact:true})).toHaveCount(0);
+  const before=await page.evaluate(()=>({...window.deviceNameProbe}));if(before.reads||before.peers||roomRequests.length)throw Error('Rejected name accessed payload or pairing');
+  await page.getByRole('button',{name:'New transfer',exact:true}).click();await expect(choose).toBeEnabled();
+  await page.evaluate(()=>{window.deviceNameProbe.name='COM¹more.txt';});await choose.click();
+  await expect(page.getByRole('button',{name:'Get pairing code',exact:true})).toBeEnabled();
+  const after=await page.evaluate(()=>({...window.deviceNameProbe}));if(after.reads||after.peers||roomRequests.length)throw Error('Selection prematurely prepared/paired');
+  results.push({name,alertRejected:true,readsBeforePreparation:before.reads,peerObjects:before.peers,roomRequests,recoveredSelection:true,legalName:after.name});await page.close();
+ }
+}finally{await context?.close();stop=await app.stop();}
+if(errors.length||stop.code!==0||results.length!==6)throw Error('Probe incomplete '+JSON.stringify(errors));
+const report={recordedAt:new Date().toISOString(),channel,candidate:proposal.offlineCandidate.path,profilePreserved:profile,results,pageErrors:errors,cleanStop:true,scope:'Built app UI and actual local runtime with synthetic file-picker handles, names, and read/peer counters. No native picker, filesystem creation of device names, physical laptop or OS guarantee.'};
+await writeFile('release-evidence/device-names-ui-'+channel+'-2026-10-16.json',JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({channel,cases:results.length,profile,cleanStop:true}));

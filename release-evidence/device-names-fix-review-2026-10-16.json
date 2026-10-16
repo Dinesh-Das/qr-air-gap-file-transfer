@@ -1,0 +1,199 @@
+{
+  "recordedAt": "2026-10-15T18:58:14.758Z",
+  "releaseStatus": "NOT READY",
+  "problem": "Two portable-name validators omitted six Win32-reserved superscript COM/LPT names; accepted inputs could fail at a Windows destination.",
+  "fix": "Extend both existing device-name character classes with only superscript1,2,3; keep names/bytes unchanged and neighboring names accepted.",
+  "source": {
+    "url": "https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file",
+    "accessedLocalDate": "2026-10-16",
+    "fact": "Microsoft reserves COM/LPT device basenames using superscript1,2,3, with extensions and in every directory."
+  },
+  "regression": {
+    "before": {
+      "failed": 30,
+      "passed": 6
+    },
+    "after": {
+      "newCases": 36,
+      "focusedCombined": 86,
+      "fullTests": 492,
+      "testFiles": 52,
+      "typecheck": 0,
+      "build": 0,
+      "node": "24.22.0"
+    },
+    "browser": {
+      "edge": {
+        "status": "passed",
+        "cases": 88,
+        "exitCode": 0,
+        "channel": "msedge",
+        "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-portable",
+        "log": "release-evidence/device-names-full-edge-2026-10-16.log",
+        "node": "24.22.0",
+        "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-device-gate-edge-qlPhMw",
+        "samples": 35,
+        "sampledMinimumFreeDiskBytes": {
+          "C:/": 11822571520,
+          "D:/": 3042758656
+        },
+        "sampledReserveBreach": false,
+        "resourceScope": "10-second sampled disk/RAM observations only; no continuous floor, browser RSS/heap/GC or throughput proof.",
+        "focusedUi": {
+          "cases": 6,
+          "report": "release-evidence/device-names-ui-msedge-2026-10-16.json"
+        }
+      },
+      "chrome": {
+        "status": "passed",
+        "cases": 88,
+        "exitCode": 0,
+        "channel": "chrome",
+        "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-portable",
+        "log": "release-evidence/device-names-full-chrome-2026-10-16.log",
+        "node": "24.22.0",
+        "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-device-gate-chrome-wXrBHW",
+        "samples": 35,
+        "sampledMinimumFreeDiskBytes": {
+          "C:/": 11609333760,
+          "D:/": 3042705408
+        },
+        "sampledReserveBreach": false,
+        "resourceScope": "10-second sampled disk/RAM observations only; no continuous floor, browser RSS/heap/GC or throughput proof.",
+        "focusedUi": {
+          "cases": 6,
+          "report": "release-evidence/device-names-ui-chrome-2026-10-16.json"
+        }
+      }
+    }
+  },
+  "review": {
+    "correctness": "Both production predicates receive the same narrow addition; tests separately hit archive/root, encoder, hostile incoming metadata and selected handles. Neighbor controls and focused UI preserve names and recovery.",
+    "scope": "No native Windows device file opened/created. Source selection uses synthetic picker handles. Incoming metadata rejection does not imply zero temporary OPFS writes before end-of-stream parsing; destination validation reparses before output mutation.",
+    "architecture": "No protocol schema, public API, dependencies, chunk/window/buffering or filesystem reconstruction changes.",
+    "performance": "Metadata/name validation only; no new streaming allocation. Not a large-file performance/memory acceptance benchmark."
+  },
+  "ledger": {
+    "entries": 838,
+    "changed": [
+      "L947",
+      "L1210",
+      "L805"
+    ],
+    "withoutMappedEvidence": 333,
+    "mappedReferences": 608,
+    "completedByThisAudit": 0
+  },
+  "packages": {
+    "outputs": [
+      {
+        "variant": "external",
+        "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-external",
+        "files": 19,
+        "execution": {
+          "node": "v24.22.0",
+          "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+          "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+          "calls": [
+            {
+              "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+              "args": [
+                "/d",
+                "/s",
+                "/c",
+                "start \"\" \"http://127.0.0.1:29730\""
+              ],
+              "windowsHide": true,
+              "windowsVerbatimArguments": true
+            }
+          ],
+          "servedBytes": true,
+          "health": true,
+          "cleanStop": true,
+          "httpPort": 29730,
+          "signalPort": 36322,
+          "httpRebind": true,
+          "signalTcpUdpRebind": true,
+          "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+        }
+      },
+      {
+        "variant": "portable",
+        "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-portable",
+        "files": 22,
+        "execution": {
+          "node": "v24.22.0",
+          "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-portable\\runtime\\node.exe",
+          "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+          "calls": [
+            {
+              "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+              "args": [
+                "/d",
+                "/s",
+                "/c",
+                "start \"\" \"http://127.0.0.1:32796\""
+              ],
+              "windowsHide": true,
+              "windowsVerbatimArguments": true
+            }
+          ],
+          "servedBytes": true,
+          "health": true,
+          "cleanStop": true,
+          "httpPort": 32796,
+          "signalPort": 32295,
+          "httpRebind": true,
+          "signalTcpUdpRebind": true,
+          "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+        }
+      }
+    ],
+    "oldRemoved": [
+      {
+        "path": "dist/assets/index-BAvLvA70.js",
+        "archive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\device-names-dist-before-2026-10-16\\dist\\assets\\index-BAvLvA70.js",
+        "sha256": "e9edb004df0de79dbfa19aebb8631d6f7c2ee12b96091b9d6c1751949b30a9e6"
+      }
+    ],
+    "compiledArchive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\device-names-dist-before-2026-10-16",
+    "builtAssets": [
+      {
+        "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+        "bytes": 2402,
+        "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+      },
+      {
+        "path": "dist/assets/index-C5foWVjs.css",
+        "bytes": 26260,
+        "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+      },
+      {
+        "path": "dist/assets/index-td4UD-5p.js",
+        "bytes": 555466,
+        "sha256": "73b59bc7e4c56ae17455a1a4db1101dbec9ddbc25f781a974ead7601a5444c87"
+      },
+      {
+        "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+        "bytes": 43951,
+        "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+      },
+      {
+        "path": "dist/index.html",
+        "bytes": 903,
+        "sha256": "5fe7623037bbea10700ebff74ddd663163007816a808cadcedfcb9d853bc803d"
+      }
+    ],
+    "scope": "Actual package lifecycle substitutes native cmd exit0 for browser dispatch; no GUI/default-handler proof."
+  },
+  "limitations": [
+    "All42physicalcases notrun; actualGUI/default-handler,cleanOS,hostedCI,large-transfer/resource and historical5GiBpeak unresolved.",
+    "88each browser workflows qualify currentapp/server/runtime bytes via serve.mjs; do not prove CMD entry or native picker acceptance.",
+    "10-second resource sampling can miss peaks; no browser RSS/whole-host acceptance follows.",
+    "Release docs updated after browser execution; two documentation hashes differ from the retained170-input browser proposal. All executable/test/config/lock/assets match that proposal."
+  ]
+}

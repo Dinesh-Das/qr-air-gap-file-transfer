@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-15T18:45:32.617Z",
+  "before": {
+    "time": "2026-10-15T18:45:32.616Z",
+    "freeDiskBytes": {
+      "C:/": 12698435584,
+      "D:/": 3042795520
+    },
+    "freeRamBytes": 14159966208
+  },
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-portable",
+  "runtime": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-device-names-portable\\runtime\\node.exe",
+  "channel": "msedge",
+  "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-device-gate-edge-qlPhMw"
+}
