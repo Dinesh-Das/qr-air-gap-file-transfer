@@ -1,11 +1,182 @@
 # Release evidence and remaining work
 
-Status: **NOT READY**. Updated 2026-10-15. This inventory organizes the retained
+Status: **NOT READY**. Updated 2026-10-17. This inventory organizes the retained
 release requirements; it does not replace or narrow the original goal.
 "Local evidence" is deliberately not equivalent to physical release acceptance.
 The user last reported that both Windows laptops were unavailable.
 
-## Latest checkpoint: optional Windows x64 runtime bundle — NOT READY
+## Latest checkpoint: Windows observer failure context — NOT READY
+
+The development-only Windows process-memory observer now adds bounded error context for missing PIDs: category, error identifier, exception type and message. Missing IDs remain missing; no counters, retries, process exclusions or validity thresholds changed. This improves future diagnosis and does not alter transfer behavior.
+
+Pinned Node 24.22 typecheck, 537 unit tests in 54 files and build pass; all five client assets and both package manifests remain byte-identical.
+
+Two tests fail against the old observer (one existing control passes); all three focused tests pass after the change. A controlled native live/exited-process calibration verifies missing-ID behavior and per-request reset. An actual Chrome startup/idle probe collected 54 complete samples but did not reproduce the earlier gaps. It does not explain or clear those failures.
+
+The earlier current-code 1 GiB and 100 MiB Chrome memory diagnostics remain failed. Independent payload/save integrity succeeded; short trials also leave native phase peaks unobserved. Existing client assets and portable (22 files) and external-runtime (19 files) bundle bytes must remain identical. Their prior 92-case browser suites retain their original execution scope; this diagnostic-only change does not claim a new browser run.
+
+Current single-file 10/100 MiB and 2,000-file 100 MiB measurements are retained separately with their native sampling limits, fixture and single-host/injected-destination scope. They do not replace actual source/destination picker, real network, target-device performance/resources, hosted CI or 50–100 GB acceptance. All 42 physical cases remain not run; release is NOT READY.
+
+## Previous checkpoint: stop between cached source files — NOT READY
+
+A transfer block may span several cached File snapshots. Abort, failure or disposal during its first read now prevents the next snapshot read. A late I/O error preserves the earlier stop reason. An already-issued native read may settle. Wire framing, hashes, window limits and resume behavior are unchanged.
+
+Six regressions fail on the predecessor and pass after the fix. All 43 sender tests, 53 focused tests, 536 unit tests in 54 files, typecheck and build pass on pinned Node 24.22. Seven native File/Blob API checks pass in each browser, including a healthy two-file byte/hash control. The new portable (22 files) and external-runtime (19 files) bundles pass manifests, HTTP/health/shutdown and scoped launcher checks. Both current Edge/Chrome suites pass 92 cases with the unchanged sampled 2 GiB disk reserve. Browser bodies/deadlines are unchanged. This is headless single-host evidence; package smoke substitutes browser dispatch, and native picker/default-handler GUI acceptance remains open.
+
+Before this patch, a fresh local install passed 530 tests, typecheck, build, zero audit vulnerabilities, 145 registry signatures and 61 attestations. A full 5 GiB transfer plus destination save independently passed all fixture bytes and hashes with 968 complete native process samples. Its payload interval was 15.41 MB/s; a matched 1 GiB control was 15.92 MB/s (within 3.3%). These measurements apply to the 175-input predecessor, not this patch. Earlier 44.56 MB/s remains unexplained. Synthetic source/direct SDP/injected destination and the 256-byte repeating pattern do not establish real source-disk/LAN throughput or arbitrary high-address source offsets. Diagnostic audit memory is separate from production save memory.
+
+New Oct17 archives, profiles and payloads are retained outside Temp. Seventeen selected older C Temp paths are now externally missing; cause unknown. Intact historical JSON hashes do not prove continued raw-data retention. See temporary-profile-availability-audit-2026-10-17.json. The 5 GiB D:JSON is an explicit checksum-verified reference to persistent full raw JSON. No old missing data was recreated.
+
+Current candidate: C:\Users\dines\QRFT-release-candidates\file-boundary-cancel-2026-10-17-QadMTV\portable. All 42 physical cases remain not run; both laptops are unavailable. Native GUI, clean OS, hosted final CI, broader resources/performance, 50–100 GB and unmapped release obligations remain open. No physical or full cancellation/resume obligation is promoted.
+
+## Previous checkpoint: sender stops before new source reads — NOT READY
+
+Cancellation, failure or disposal can arrive after a writable-window promise resolves but before its continuation starts. The sender now checks at run entry and immediately before each source read. An already-aborted run reports no progress. An already-issued read may settle, but cannot send payload or a completion marker after stopping.
+
+The corrected baseline has four failing regressions and one passing control; all five pass after the fix. All 37 sender/receiver tests pass. A separate full 96-block-window ACK/Stop probe reads 97 times before the fix and 96 afterward, with no extra sends. Six native File API checks pass in each browser using a controlled channel; these checks do not establish physical WebRTC behavior.
+
+Node 24.22 typecheck, 530 unit tests in 54 files, and build pass. Portable (22 files) and external-runtime (19 files) bundles pass manifests and scoped runtime, HTTP, health and shutdown checks. Both rebuilt browser suites pass all 92 cases. Package smoke substitutes browser dispatch with native cmd exit0; actual default-handler GUI, native picker and clean-OS acceptance remain open.
+
+The first Edge run retains 91 passes and one failure: verification was checked while the 8 MiB transfer was only 65.9% complete. The corrected fixture waits for sender-complete before its unchanged five-second verification assertion. The 45-second test deadline and all cancellation checks remain unchanged. Removing reader.cancel in an isolated mutation still fails with 4 MiB queued. Some crash/recovery cases took 31–60 seconds under their existing longer deadlines; suite success is not performance acceptance.
+
+New portable candidate: C:/Users/dines/QRFT-release-candidates/sender-read-cancel-2026-10-16-TpI4Ez/portable. The new bundles use C: to preserve D: headroom; older candidates remain intact. Chrome retains seven cases on D: and the other 85 on C: through disjoint project filters, with unchanged test bodies and deadlines.
+
+Chrome fell below the unchanged 2 GiB disk reserve during the final run. Its 92 functional passes do not qualify disk headroom; the resource failure and sampled minima are retained. No resource threshold was lowered.
+
+Prior 5 GiB readback and 1 GiB transfer-memory diagnostics retain their predecessor-revision scopes and were not rerun for this sender change. All 42 physical cases, hosted final CI and broader resource/50–100 GB acceptance remain open. No physical cancel/resume obligation is promoted.
+
+## Previous checkpoint: reusable large-file readback buffers — NOT READY
+
+Large destination verification now recycles one bounded byte-stream backing
+buffer, rather than creating a sliced ArrayBuffer on every large-file read.
+Actual byte counts and SHA-256 remain authoritative. Pending reads cancel on
+abort, readers release their locks on every outcome, and failures retain the
+recovery marker. Small-file verification and its bounded concurrency are unchanged.
+
+Five corrected regressions fail against the archived old module and pass after
+the fix; all41destination cases pass. Node24.22 typecheck,525tests54files and build
+pass. The current portable22/external19 candidates pass manifests and scoped
+HTML/health/shutdown checks; both rebuilt browser suites pass92cases.
+
+Production readback of the retained5GiB native File succeeds in both Chrome and
+Edge through a read-only directory-handle adapter. Page-reported memory peaks
+are11,430,897 and11,693,889bytes, versus610,601,765 in the matched old slice loop.
+These are separate diagnostic trials, not a throughput/scaling guarantee. Edge
+process observation is complete; Chrome has one missing utility-process sample
+and the diagnostic remains failed overall. Main-page collection ran only after
+timed work; no production GC or weakened observer gate was added.
+
+Current candidate: artifacts/qrft-2026-10-16-readback-buffer-portable. The preserved
+5GiB profile is unchanged and was rehashed. A second5GiB copy does not fit the
+current reserve. This does not prove a full transfer, native destination picker,
+all causes of the historical combined peak, or50–100GiB/resource acceptance.
+All42physicalcases,actualGUI/default-handler/cleanOS/hostedCI remain open.
+
+## Previous checkpoint: bounded pairing HTTP and obsolete-response recovery — NOT READY
+
+Each pairing HTTP exchange now has a 30-second deadline covering headers and
+JSON/error bodies. The five-second preflight stays shorter; the user’s code-entry
+and device-confirmation interval is unchanged. Caller abort reasons, including
+null, survive transport/body handling; timers and forwarding listeners are removed.
+Room deletion keeps keepalive/404 behavior and cancels its unread successful body.
+
+A separate reproduced race let a late answer-publication failure terminate an
+active receive or replace verified/saving/saved state. A native channel-open event
+now establishes that connection generation; an obsolete publication receipt cannot
+overrule it. Reset clears the marker. Authentication, channel health, storage and
+verification failures remain authoritative. No ambiguous write is retried automatically.
+
+The final Node 24.22 gate passes 520 tests in 54 files, typecheck and build.
+Both browsers pass 92 cases on the current package, including four new late-response
+regressions with exact destination bytes and SHA-256. Three native-fetch UI probes
+per browser cover stalled headers, success bodies and error bodies, observe socket
+closure, and prove a new request can proceed. They use a controlled loopback server
+and an advanced page clock; a retry returning 404 is not a successful transfer.
+
+Current portable candidate: artifacts/qrft-2026-10-16-pairing-recovery-portable.
+Both 22-file portable and 19-file external variants pass manifests and scoped
+runtime/HTML/health/shutdown checks. Browser suites start serve.mjs directly;
+package smoke substitutes native cmd exit0 for browser dispatch. Actual GUI/default
+handler/native picker, all 42 physical cases, clean OS, hosted CI, large-resource
+acceptance and the historical 5 GiB memory peak remain open.
+
+## Previous checkpoint: Windows superscript device names rejected — NOT READY
+
+The portable-name guards accepted the six Win32-reserved COM/LPT names ending
+in superscript 1,2,3. Both archive and large-tree validators now reject them,
+including nested paths, case variants and extensions. Neighboring names remain
+unchanged. Microsoft documents these reservations in its Windows naming rules:
+https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file
+
+Thirty rejection tests failed before the fix; all36new cases pass. Node24.22
+typecheck,492tests52files and build pass. The rebuilt portable22-file package
+passes88Edge/88Chrome browser cases. Six focused built-UI cases per browser reject
+synthetic picker names without source-byte reads, peer creation or room requests,
+and New transfer restores selection. These use fake handles, not native picker
+or OS file-creation proof. Full suites start serve.mjs directly, not the CMD entry.
+
+Current candidate: artifacts/qrft-2026-10-16-device-names-portable. Both external
+and portable variants pass copy checks, runtime/served-byte/health checks and
+HTTP plus signaling TCP/UDP shutdown checks with browser dispatch replaced by
+exit0. Actual default-handler rendering remains unobserved. All42physicalcases,
+cleanOS,hostedCI,50–100GB/resource acceptance and the historical5GiB memory peak
+remain open. See release-evidence/release-gate-latest.json for exact scopes.
+
+## Previous checkpoint: Windows browser opener uses the system shell — NOT READY
+
+The browser opener still searched for cmd.exe by name. A harmless invalid file
+in cwd or PATH prevented startup. It now launches the full SystemRoot/System32
+path and rejects missing or relative SystemRoot before spawning. URL validation,
+fixed start arguments, hidden window and shell quoting remain unchanged.
+
+Five native subprocess tests cover cwd/PATH shadows, caller ComSpec and invalid
+environment state. The two shadow cases failed before the fix. Tests substitute
+exit 0 for the browser command, so they prove executable selection and native
+process execution, not actual default-browser rendering. The initial invalid-env
+fixture crashed Node during startup; the corrected fixture changes SystemRoot
+after initialization. Both versions and failure logs are preserved.
+
+The full Node 24.22.0 gate passes 456 tests in 51 files, typecheck and build.
+The five rebuilt app assets are unchanged. This includes the controlled ACK-delay
+and durable-batch recovery tests; the smaller memory diagnostics do not resolve
+the historical 5 GiB peak. New shell-pinned package variants retain 19/22 files.
+Only scripts/launch.mjs changes from the prior path-pinned packages. Both boot
+files differ from the full Edge88/Chrome88 predecessor, leaving 20 portable files
+identical. Those browser suites start serve.mjs directly and retain that scope.
+
+Current candidate: artifacts/qrft-2026-10-15-shell-pinned-portable.
+See release-evidence/release-gate-latest.json for package proof and exact scopes.
+All 42 physical cases, native default-handler rendering, clean OS, hosted CI and
+large-file/resource acceptance remain open. No READY claim follows.
+
+## Previous checkpoint: working-directory-independent Windows launcher — NOT READY
+
+A valid Node on PATH was blocked by an unrelated working-directory node.exe
+(native repro exit216). A working-directory where.exe could also shadow the
+locator. The launcher now uses CMD's native FOR PATH-search modifier to select
+the full executable path. Bundled runtime preference and exit codes are retained.
+Two native regressions failed before the fix; all eight launcher cases now pass,
+including Unicode, spaces and shell symbols in bundle/runtime paths.
+
+Under Node.js 24.22.0, 449 unit tests in 49 files, typecheck and build passed.
+New external (19 files) and portable (22 files) candidates differ only in the command
+launcher. The 21 other portable files, including runtime, server and app assets,
+are byte-identical to the candidate with 88 passing tests in each of Edge and Chrome.
+Those browser suites start the server directly; they do not test the command file.
+Eight native CMD tests and a real external-package CMD boot provide that scope.
+
+Real CMD startup from a cwd containing invalid node.exe/where.exe passed copy
+checks, served the app, dispatched the native default-browser opener and stopped
+with Enter. HTTP port rebind and no remaining owned backend processes were checked.
+The native browser tab was not exposed by the configured browser connectors, so
+actual GUI rendering/default-handler UX remains unverified. This is one host,
+not a physical two-laptop or clean-OS pass. All 42 physical cases, hosted CI and large
+file/resource acceptance remain open; disk/RAM sampling is not a full resource gate.
+
+Current portable candidate: artifacts/qrft-2026-10-15-path-pinned-portable.
+Canonical evidence: release-evidence/release-gate-latest.json.
+
+## Previous checkpoint: optional Windows x64 runtime bundle — NOT READY
 
 The offline packager accepts an explicit trusted runtime directory and a pinned
 SHA-256. It validates the binary before probing its Windows x64 Node.js 24 identity,
