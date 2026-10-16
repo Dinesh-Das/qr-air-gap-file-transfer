@@ -2,9 +2,8 @@
 setlocal DisableDelayedExpansion
 set "QRFT_NODE=%~dp0runtime\node.exe"
 if exist "%QRFT_NODE%" goto launch
-where node.exe >nul 2>nul
-if errorlevel 1 goto missing_runtime
-set "QRFT_NODE=node.exe"
+for %%I in (node.exe) do set "QRFT_NODE=%%~$PATH:I"
+if not defined QRFT_NODE goto missing_runtime
 
 :launch
 "%QRFT_NODE%" "%~dp0scripts\launch.mjs"

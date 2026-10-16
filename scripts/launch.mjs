@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { resolve } from "node:path";
+import { isAbsolute, resolve } from "node:path";
 import { createInterface } from "node:readline";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { verifyRelease } from "./verify-release.mjs";
@@ -21,12 +21,19 @@ function assertLocalUrl(url) {
 export async function openDefaultBrowser(url) {
   assertLocalUrl(url);
   if (process.platform !== "win32") throw new Error("This launcher requires Windows.");
+  const windowsDirectory = process.env.SystemRoot;
+  if (!windowsDirectory || !isAbsolute(windowsDirectory)) {
+    throw new Error("The Windows system directory is unavailable. Reopen the app from a normal Windows session and try again.");
+  }
+  // Pin the system executable so an unrelated cmd.exe in cwd or PATH cannot
+  // block browser opening or run in place of the Windows shell.
+  const commandInterpreter = resolve(windowsDirectory, "System32", "cmd.exe");
   // Only the validated numeric loopback URL reaches cmd's built-in start.
   // No path, argument, or environment text is interpolated into shell code.
   await new Promise((resolveOpen, reject) => {
     // cmd does not understand the backslash-escaped quotes used by the normal
     // Windows argv serializer. Pass only this fixed, validated command verbatim.
-    const opener = spawn("cmd.exe", ["/d", "/s", "/c", `start "" "${url}"`], {
+    const opener = spawn(commandInterpreter, ["/d", "/s", "/c", `start "" "${url}"`], {
       windowsHide: true, windowsVerbatimArguments: true, stdio: "ignore",
     });
     const timer = setTimeout(() => {
