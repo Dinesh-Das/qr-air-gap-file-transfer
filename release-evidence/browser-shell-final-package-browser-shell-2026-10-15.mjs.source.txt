@@ -1,0 +1,25 @@
+import {readFile,writeFile,copyFile} from 'node:fs/promises';
+import {spawnSync} from 'node:child_process';
+import {join,resolve} from 'node:path';
+import {inventory,verifyRelease} from '../scripts/verify-release.mjs';
+const r=JSON.parse(await readFile('release-evidence/release-gate-latest.json'));
+for(const p of ['RELEASE-CHECKLIST.md','RELEASE-HARDENING.md','SPEC-portable-windows-runtime.md'])await copyFile(p,join(r.freshInstall.stage,p));
+const runtimeDirectory='D:/MyProjects/qrft-portable-runtime-probe-2026-10-15/bundle with spaces/runtime';const runtime=join(runtimeDirectory,'node.exe');
+const shadow=JSON.parse(await readFile('release-evidence/browser-shell-cwd-probe-2026-10-15.json')).root;
+const outputs=[];
+for(const variant of ['external','portable']){
+ const output=resolve('artifacts/qrft-2026-10-15-shell-pinned-'+variant);
+ const args=['scripts/package-offline.mjs',output];if(variant==='portable')args.push('--runtime-dir',runtimeDirectory,'--runtime-sha256','ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c');
+ const p=spawnSync(runtime,args,{encoding:'utf8',windowsHide:true,timeout:30000});await writeFile('release-evidence/browser-shell-package-'+variant+'-2026-10-15.log',p.stdout+p.stderr,{flag:'wx'});if(p.status!==0)throw Error('Packaging failed '+variant);
+ const prior=await inventory(variant==='portable'?r.offlineCandidate.path:r.externalRuntimeCandidate.path);const current=await inventory(output);
+ const differences=current.filter(f=>prior.find(o=>o.path===f.path)?.sha256!==f.sha256).map(f=>f.path);
+ if(differences.join(',')!=='scripts/launch.mjs'||await verifyRelease(output)!==(variant==='portable'?22:19))throw Error('Package scope '+variant);
+ const env={...process.env,ComSpec:join(shadow,'cmd.exe')};for(const key of Object.keys(env))if(key.toLowerCase()==='path')delete env[key];env.PATH=shadow;
+ const probe=spawnSync(variant==='portable'?join(output,'runtime/node.exe'):runtime,[resolve('.tmp/browser-shell-package-probe-2026-10-15.mjs'),output],{cwd:shadow,env,encoding:'utf8',windowsHide:true,timeout:30000});
+ await writeFile('release-evidence/browser-shell-lifecycle-'+variant+'-2026-10-15.log',probe.stdout+probe.stderr,{flag:'wx'});if(probe.status!==0)throw Error('Lifecycle failed '+variant+' '+probe.stderr);
+ outputs.push({variant,path:output,files:current.length,differences,unchangedFiles:current.length-1,execution:JSON.parse(probe.stdout.trim())});
+}
+const qualified=await inventory(r.browsers.edge.candidate);const now=await inventory(outputs.find(o=>o.variant==='portable').path);const changes=now.filter(f=>qualified.find(o=>o.path===f.path)?.sha256!==f.sha256).map(f=>f.path).sort();
+if(changes.join(',')!=='Start AirGap QR.cmd,scripts/launch.mjs')throw Error('Browser predecessor scope');
+const report={outputs,browserPredecessor:{path:r.browsers.edge.candidate,changedFiles:changes,identicalFiles:now.length-changes.length},releaseReady:false};
+await writeFile('release-evidence/browser-shell-package-validation-2026-10-15.json',JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(report));

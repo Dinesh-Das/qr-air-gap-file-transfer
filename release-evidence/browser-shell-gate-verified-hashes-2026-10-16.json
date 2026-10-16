@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/browser-shell-gate-verified-review-2026-10-16.json",
+      "bytes": 229621,
+      "sha256": "930d744c29284b389b0fa068639a0074cd5f22c90931d6a875a85fa8cdac2385"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 229621,
+      "sha256": "930d744c29284b389b0fa068639a0074cd5f22c90931d6a875a85fa8cdac2385"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 630,
+      "sha256": "eccaeb2cc52c8ec0ce5ada6f50540317e3a13e6421b702b81d6d2b25ec263356"
+    },
+    {
+      "path": "release-evidence/browser-shell-size-reconciliation-2026-10-16.json",
+      "bytes": 1227,
+      "sha256": "a15011cabf1e1fdaa7abb92ceb2b6f44f16aadfd1aee5793892b61bc230582fb"
+    },
+    {
+      "path": "release-evidence/release-gate-before-browser-shell-size-reconciliation-2026-10-16.json",
+      "bytes": 228456,
+      "sha256": "55f568814fc0de574b5dc9512eed1c69293c757d7aa26e6fc01ba04068aa8aea"
+    }
+  ]
+}

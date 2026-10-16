@@ -1,0 +1,35 @@
+{
+  "recordedAt": "2026-10-15T18:39:14.355Z",
+  "reason": "Strict independent verifier rejected old source sizes. First recorder updated source SHA but retained optional previous bytes; no source/asset drift. Preserve old report/index, correct sizes and keep strict checks.",
+  "corrected": [
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "previousBytes": 88827,
+      "currentBytes": 90553,
+      "sha256": "b2442937e299dbc96726caf712e5c0de6ea45e880c98bb8b7ef624233102330e"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "previousBytes": 131189,
+      "currentBytes": 132915,
+      "sha256": "ccd6c4f02f8022f13bfe594a2a38ecff2d339d92367657b22ce90bd7f95f1afe"
+    },
+    {
+      "path": "scripts/launch.mjs",
+      "previousBytes": 6621,
+      "currentBytes": 7107,
+      "sha256": "194e1351a6c31be44f17af1dc4686939d180c62f206e21d9dc82121ba09358c3"
+    },
+    {
+      "path": "SPEC-portable-windows-runtime.md",
+      "previousBytes": 3767,
+      "currentBytes": 4681,
+      "sha256": "311001d89edb6eb0c847825161f06a453fbbdf0b8738b003f255f940c73cd126"
+    }
+  ],
+  "addedByteMetadata": [
+    "tests/browser-shell.test.mjs",
+    "tests/webrtc-chaos.test.ts"
+  ],
+  "productionCodeChangedByReconciliation": false
+}

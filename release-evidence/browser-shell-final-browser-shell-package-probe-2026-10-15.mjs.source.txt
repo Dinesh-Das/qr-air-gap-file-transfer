@@ -1,0 +1,34 @@
+import childProcess from 'node:child_process';
+import {syncBuiltinESMExports} from 'node:module';
+import {readFile} from 'node:fs/promises';
+import {join,resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {createServer} from 'node:http';
+import dgram from 'node:dgram';
+import {freeSignalPort} from '../tests/free-signal-port.mjs';
+const bundle=process.argv[2];const nativeSpawn=childProcess.spawn;const calls=[];
+childProcess.spawn=(executable,args,options)=>{
+ if(executable.toLowerCase().endsWith('cmd.exe')){
+  if(executable.toLowerCase()!==resolve(process.env.SystemRoot,'System32/cmd.exe').toLowerCase()||!/^start "" "http:\/\/127\.0\.0\.1:\d+"$/.test(args[3]))throw Error('Wrong browser command');
+  calls.push({executable,args,windowsHide:options.windowsHide,windowsVerbatimArguments:options.windowsVerbatimArguments});
+  return nativeSpawn(executable,['/d','/s','/c','exit 0'],options);
+ }
+ return nativeSpawn(executable,args,options);
+};
+syncBuiltinESMExports();
+const {launchOfflineApplication}=await import(pathToFileURL(join(bundle,'scripts/launch.mjs')).href);
+const httpPort=await freeSignalPort();let signalPort=await freeSignalPort();while(signalPort===httpPort)signalPort=await freeSignalPort();
+let app,stopped;
+try{
+ app=await launchOfflineApplication({directory:bundle,env:{...process.env,QRFT_PORT:String(httpPort),QRFT_SIGNAL_PORT:String(signalPort)}});
+ const response=await fetch(app.url);if(!response.ok||!Buffer.from(await response.arrayBuffer()).equals(await readFile(join(bundle,'dist/index.html'))))throw Error('Served bytes mismatch');
+ const health=await fetch(app.url+'/api/rendezvous/health',{method:'POST',headers:{Origin:app.url,'Content-Type':'application/json'},body:'{}'});
+ if(!health.ok||(await health.json()).ready!==true)throw Error('Runtime health failed');
+}finally{stopped=await app?.stop();}
+if(stopped?.code!==0||calls.length!==1)throw Error('Lifecycle failed');
+for(const [port,host,udp] of [[httpPort,'127.0.0.1',false],[signalPort,'0.0.0.0',true]]){
+ const server=createServer();const socket=udp?dgram.createSocket('udp4'):null;
+ try{await new Promise((done,reject)=>{server.once('error',reject);server.listen(port,host,done);});if(socket)await new Promise((done,reject)=>{socket.once('error',reject);socket.bind(port,host,done);});}
+ finally{if(socket)await new Promise(done=>socket.close(done));if(server.listening)await new Promise(done=>server.close(done));}
+}
+console.log(JSON.stringify({node:process.version,execPath:process.execPath,cwd:process.cwd(),path:process.env.PATH,comSpec:process.env.ComSpec,calls,servedBytes:true,health:true,cleanStop:true,httpPort,signalPort,httpRebind:true,signalTcpUdpRebind:true,scope:'Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof.'}));

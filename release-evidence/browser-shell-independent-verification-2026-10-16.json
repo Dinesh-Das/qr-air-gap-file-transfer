@@ -1,0 +1,28 @@
+{
+  "verifiedAt": "2026-10-15T18:39:15.896Z",
+  "inputs": 169,
+  "assets": 5,
+  "evidence": 528,
+  "hashIndex": 5,
+  "unit": 456,
+  "testFiles": 51,
+  "portable": 22,
+  "external": 19,
+  "browserDelta": [
+    "Start AirGap QR.cmd",
+    "scripts/launch.mjs"
+  ],
+  "scopedLedgerChanges": [
+    "L799",
+    "L800",
+    "L801",
+    "L802",
+    "L803",
+    "L805",
+    "L1210"
+  ],
+  "ledgerReferences": 605,
+  "unmapped": 334,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY"
+}

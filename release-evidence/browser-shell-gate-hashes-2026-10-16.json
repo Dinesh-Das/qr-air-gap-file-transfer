@@ -1,0 +1,184 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/browser-shell-gate-review-2026-10-16.json",
+      "bytes": 228456,
+      "sha256": "55f568814fc0de574b5dc9512eed1c69293c757d7aa26e6fc01ba04068aa8aea"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 228456,
+      "sha256": "55f568814fc0de574b5dc9512eed1c69293c757d7aa26e6fc01ba04068aa8aea"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 630,
+      "sha256": "eccaeb2cc52c8ec0ce5ada6f50540317e3a13e6421b702b81d6d2b25ec263356"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 333738,
+      "sha256": "e561fb75a02f83cb50ccf1bd13bf79791b84bc1fdc02ab41885ee3883e519682"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-browser-shell-2026-10-16.json",
+      "bytes": 333033,
+      "sha256": "7fe7e53aa84229da32f71d1cb7a35508e53d60e7271ee4ad3ef8ed7d88c003d3"
+    },
+    {
+      "path": "release-evidence/browser-shell-before-RELEASE-CHECKLIST-md-2026-10-15.source.txt",
+      "bytes": 88827,
+      "sha256": "4eaf7a2df1dd1c486b1680c4f00c2b5cfc4f0e32262652e6b5f821b8244b3de3"
+    },
+    {
+      "path": "release-evidence/browser-shell-before-RELEASE-HARDENING-md-2026-10-15.source.txt",
+      "bytes": 131189,
+      "sha256": "940faeef25ac746bd132583d0cbcaff831d9bedb72ddc6212e93068e7a006b62"
+    },
+    {
+      "path": "release-evidence/browser-shell-before-SPEC-portable-windows-runtime-md-2026-10-15.source.txt",
+      "bytes": 3767,
+      "sha256": "0c067a855775a4129b598df22aebc21422fcb0993aabea12a251b2070c11d46c"
+    },
+    {
+      "path": "release-evidence/browser-shell-build-2026-10-15.log",
+      "bytes": 896,
+      "sha256": "0ecd174516a76423b9c6c99c3b8fb4b02bba08f650bb0eac23c01278c396cf93"
+    },
+    {
+      "path": "release-evidence/browser-shell-build-exit-2026-10-15.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/browser-shell-cwd-probe-2026-10-15.json",
+      "bytes": 665,
+      "sha256": "87920759214aa118e6505b42d4b8baad187aaad69dfaeadde1288a9117737d22"
+    },
+    {
+      "path": "release-evidence/browser-shell-final-browser-shell-package-probe-2026-10-15.mjs.source.txt",
+      "bytes": 2862,
+      "sha256": "47103da2451abca7c2278756f47990214428481cf8026d551f563f202d37085a"
+    },
+    {
+      "path": "release-evidence/browser-shell-final-browser-shell.test.mjs.source.txt",
+      "bytes": 4295,
+      "sha256": "be6d6533bbb70397bbedcbfd0caf7cad8523d4db57ac29ca7dcaf70223ddd65e"
+    },
+    {
+      "path": "release-evidence/browser-shell-final-package-browser-shell-2026-10-15.mjs.source.txt",
+      "bytes": 3099,
+      "sha256": "e36cb5183b9bfd33cbf28b65e98d1c088a02613c931e0305dd847cb1310e702c"
+    },
+    {
+      "path": "release-evidence/browser-shell-final-run-browser-shell-gates-2026-10-15.mjs.source.txt",
+      "bytes": 1172,
+      "sha256": "415c26ec5fe8ab3a1087223292a7d8a46733f8950e66769abfc60b4bfe380832"
+    },
+    {
+      "path": "release-evidence/browser-shell-fix-review-2026-10-16.json",
+      "bytes": 5816,
+      "sha256": "4554bb964a9f4c46c514af3c62f4e803d690eb07d5d0521d98d9c8d443400b55"
+    },
+    {
+      "path": "release-evidence/browser-shell-green-2026-10-15.log",
+      "bytes": 245,
+      "sha256": "9d7de2b7e9d132420df0740010852d037e9ce98ee36cc51bbe8376e009339eb3"
+    },
+    {
+      "path": "release-evidence/browser-shell-green-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/browser-shell-initial-fixture-2026-10-15.source.txt",
+      "bytes": 3982,
+      "sha256": "ef704bb1a1cdf9e91f5a3490a18c0e6b958c4e9177d235f2e387523ea24387fe"
+    },
+    {
+      "path": "release-evidence/browser-shell-launcher-before-fix-2026-10-15.source.txt",
+      "bytes": 6621,
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "release-evidence/browser-shell-lifecycle-external-2026-10-15.log",
+      "bytes": 811,
+      "sha256": "a02161bcd6c7f598bc4ef33a64d13df83ca9b8245392554deb76d3063cdaf151"
+    },
+    {
+      "path": "release-evidence/browser-shell-lifecycle-portable-2026-10-15.log",
+      "bytes": 827,
+      "sha256": "33b11bb3039be7d29aa8fa89d4987b405955e368cbf1fbc96ffef4a107d5a779"
+    },
+    {
+      "path": "release-evidence/browser-shell-package-external-2026-10-15.log",
+      "bytes": 121,
+      "sha256": "83c3571d1363bee824b8e46a1568e3873ba606e64c7f57bcfcb30644285e22a1"
+    },
+    {
+      "path": "release-evidence/browser-shell-package-portable-2026-10-15.log",
+      "bytes": 121,
+      "sha256": "e2b0689f4270e33fba897717bd3bdcbd65e1b3f528ea7dce333bce2dc60e4645"
+    },
+    {
+      "path": "release-evidence/browser-shell-package-validation-2026-10-15.json",
+      "bytes": 3095,
+      "sha256": "ab0474530d5cf6433a6f83c9cf1db548454a68f2a7bfb89cf6bfaf13bf1efa36"
+    },
+    {
+      "path": "release-evidence/browser-shell-red-2026-10-15.log",
+      "bytes": 3781,
+      "sha256": "21e5f5870df6e8a2c3d53487017f533fe7c88e309e1dc219bc45e00b14e2b2ec"
+    },
+    {
+      "path": "release-evidence/browser-shell-red-corrected-2026-10-15.log",
+      "bytes": 2362,
+      "sha256": "c6697731b1be4c4c2a4d5d4fedcc77ae724d2364b3376646c7705565f78abc49"
+    },
+    {
+      "path": "release-evidence/browser-shell-red-corrected-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/browser-shell-red-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/browser-shell-type-2026-10-15.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/browser-shell-type-exit-2026-10-15.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/browser-shell-unit-2026-10-15.log",
+      "bytes": 242,
+      "sha256": "4e36f10333fc93642bad7fd6e32ec3a669c5db7eacfae0d39a6cac3d25cbefdb"
+    },
+    {
+      "path": "release-evidence/browser-shell-unit-exit-2026-10-15.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/controlled-ack-gate-verified-hashes-2026-10-15.json",
+      "bytes": 1360,
+      "sha256": "fc2e8493529dc1e67238583e9791cbc5ebb118a936925cb882c82715419d46c6"
+    },
+    {
+      "path": "release-evidence/controlled-ack-gate-verified-review-2026-10-15.json",
+      "bytes": 214869,
+      "sha256": "afcf1b90ac218363ea0cb0b7f632775c2c9a99f517f081d8baf59e0bbf519b66"
+    },
+    {
+      "path": "release-evidence/release-gate-before-browser-shell-2026-10-16.json",
+      "bytes": 214869,
+      "sha256": "afcf1b90ac218363ea0cb0b7f632775c2c9a99f517f081d8baf59e0bbf519b66"
+    }
+  ]
+}

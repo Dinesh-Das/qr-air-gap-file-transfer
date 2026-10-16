@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-15T18:26:33.660Z",
+  "node": "v24.22.0",
+  "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\runtime\\node.exe",
+  "root": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+  "command": "exit 0; no browser/UI opened",
+  "results": [
+    {
+      "executable": "cmd.exe",
+      "status": null,
+      "error": {
+        "code": "UNKNOWN",
+        "message": "spawnSync cmd.exe UNKNOWN"
+      }
+    },
+    {
+      "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+      "status": 0,
+      "error": null,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "releaseReady": false
+}

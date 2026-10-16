@@ -1,0 +1,126 @@
+{
+  "recordedAt": "2026-10-15T18:37:18.697Z",
+  "localDate": "2026-10-16",
+  "artifactDateNote": "Work and dated probes/packages began October15 before local midnight.",
+  "releaseStatus": "NOT READY",
+  "problem": "Browser opener spawn(cmd.exe) was blocked by a harmless invalid cwd or PATH cmd.exe. Native exit0 reproduction showed leaf lookup failing and full system path succeeding.",
+  "fix": "Use absolute SystemRoot/System32/cmd.exe; reject missing/relative SystemRoot before spawn. Keep numeric loopback URL validation, exact start argv, windowsHide and verbatim quoting.",
+  "reproduction": "release-evidence/browser-shell-cwd-probe-2026-10-15.json",
+  "tests": {
+    "newCases": 5,
+    "correctedRed": "4failed1passed: two shadow regressions plus two new environment preconditions; ComSpec normal control passed.",
+    "green": "Five new cases plus ten existing launcher tests pass; all456tests51files/type/build passNode24.22.",
+    "initialFixture": "Initial SystemRoot removal before Node startup crashed Node in two cases; preserved initial test source/log. Corrected tests mutate environment after startup, then valid RED before product fix.",
+    "scope": "Isolated Node child calls production openDefaultBrowser; built-in spawn shim preserves executable/options and replaces start with exit0. Actual Windows command execution, not GUI/default-handler proof."
+  },
+  "packages": {
+    "outputs": [
+      {
+        "variant": "external",
+        "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-shell-pinned-external",
+        "files": 19,
+        "differences": [
+          "scripts/launch.mjs"
+        ],
+        "unchangedFiles": 18,
+        "execution": {
+          "node": "v24.22.0",
+          "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+          "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+          "calls": [
+            {
+              "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+              "args": [
+                "/d",
+                "/s",
+                "/c",
+                "start \"\" \"http://127.0.0.1:25879\""
+              ],
+              "windowsHide": true,
+              "windowsVerbatimArguments": true
+            }
+          ],
+          "servedBytes": true,
+          "health": true,
+          "cleanStop": true,
+          "httpPort": 25879,
+          "signalPort": 24277,
+          "httpRebind": true,
+          "signalTcpUdpRebind": true,
+          "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+        }
+      },
+      {
+        "variant": "portable",
+        "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-shell-pinned-portable",
+        "files": 22,
+        "differences": [
+          "scripts/launch.mjs"
+        ],
+        "unchangedFiles": 21,
+        "execution": {
+          "node": "v24.22.0",
+          "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-shell-pinned-portable\\runtime\\node.exe",
+          "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+          "calls": [
+            {
+              "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+              "args": [
+                "/d",
+                "/s",
+                "/c",
+                "start \"\" \"http://127.0.0.1:36258\""
+              ],
+              "windowsHide": true,
+              "windowsVerbatimArguments": true
+            }
+          ],
+          "servedBytes": true,
+          "health": true,
+          "cleanStop": true,
+          "httpPort": 36258,
+          "signalPort": 31895,
+          "httpRebind": true,
+          "signalTcpUdpRebind": true,
+          "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+        }
+      }
+    ],
+    "browserPredecessor": {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+      "changedFiles": [
+        "Start AirGap QR.cmd",
+        "scripts/launch.mjs"
+      ],
+      "identicalFiles": 20
+    },
+    "releaseReady": false
+  },
+  "review": {
+    "correctness": "Full executable selection verified in cwd/PATH shadow cases and actual packaged startup. Child runtime remains process.execPath; shell command/URL restrictions unchanged. HTTP and both signaling transports rebind after shutdown.",
+    "security": "Removes executable leaf search in opener. SystemRoot still comes from host environment and absolute-path validation is not publisher/OS authentication; no malicious-host guarantee. No shell interpolation of new variable.",
+    "readability": "One local directory guard and full executable path; no new public API/dependency.",
+    "performance": "Startup-only path resolution; app transfer and five rebuilt assets byte-identical.",
+    "remaining": "No clean-OS/browser GUI, physical two-laptop, hosted final-revision CI, 50–100GB acceptance, or historical5GiB memory resolution."
+  },
+  "ledger": {
+    "entries": 838,
+    "changed": [
+      "L799",
+      "L800",
+      "L801",
+      "L802",
+      "L803",
+      "L805",
+      "L1210"
+    ],
+    "withoutMappedEvidence": 334,
+    "mappedReferences": 605,
+    "missingReferences": 0,
+    "completedByThisAudit": 0
+  }
+}

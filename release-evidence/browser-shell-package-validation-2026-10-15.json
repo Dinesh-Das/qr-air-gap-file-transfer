@@ -1,0 +1,87 @@
+{
+  "outputs": [
+    {
+      "variant": "external",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-shell-pinned-external",
+      "files": 19,
+      "differences": [
+        "scripts/launch.mjs"
+      ],
+      "unchangedFiles": 18,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:25879\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 25879,
+        "signalPort": 24277,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    },
+    {
+      "variant": "portable",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-shell-pinned-portable",
+      "files": 22,
+      "differences": [
+        "scripts/launch.mjs"
+      ],
+      "unchangedFiles": 21,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-shell-pinned-portable\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:36258\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 36258,
+        "signalPort": 31895,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    }
+  ],
+  "browserPredecessor": {
+    "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+    "changedFiles": [
+      "Start AirGap QR.cmd",
+      "scripts/launch.mjs"
+    ],
+    "identicalFiles": 20
+  },
+  "releaseReady": false
+}
