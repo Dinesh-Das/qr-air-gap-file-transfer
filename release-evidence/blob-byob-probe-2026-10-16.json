@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-16T02:45:29.625Z",
+  "profilePreserved": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-byob-probe-2026-10-16-U3lwms",
+  "result": {
+    "supported": true,
+    "count": 10003,
+    "reads": 3,
+    "recycledBufferBytes": 4096
+  }
+}
