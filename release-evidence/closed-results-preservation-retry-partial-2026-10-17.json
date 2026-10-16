@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-17T16:19:48.331Z",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/closed-results-preservation-retry-2026-10-17-EuxABB",
+  "status": "intentional-safe-stop-after-two-directories",
+  "rows": [
+    {
+      "name": "test-results-playwright-164-edge",
+      "files": 5244,
+      "bytes": 288376619,
+      "directories": 1023,
+      "original": "C:\\Users\\dines\\QRFT-qualification-evidence\\closed-results-preservation-retry-2026-10-17-EuxABB\\preserved-original\\test-results-playwright-164-edge",
+      "active": "C:\\Users\\dines\\QRFT-qualification-evidence\\closed-results-preservation-retry-2026-10-17-EuxABB\\active\\test-results-playwright-164-edge",
+      "originalDPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results-playwright-164-edge"
+    },
+    {
+      "name": "test-results-receipt-size-edge",
+      "files": 5367,
+      "bytes": 288698607,
+      "directories": 1082,
+      "original": "C:\\Users\\dines\\QRFT-qualification-evidence\\closed-results-preservation-retry-2026-10-17-EuxABB\\preserved-original\\test-results-receipt-size-edge",
+      "active": "C:\\Users\\dines\\QRFT-qualification-evidence\\closed-results-preservation-retry-2026-10-17-EuxABB\\active\\test-results-receipt-size-edge",
+      "originalDPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results-receipt-size-edge"
+    }
+  ],
+  "remainingNotMoved": [
+    "test-results-journal-prefix-edge",
+    "test-results-message-limit-edge",
+    "test-results-corrupt-discard-edge",
+    "test-results-message-limit-chrome",
+    "test-results-message-limit-chrome-rerun",
+    "test-results-receipt-size-chrome",
+    "test-results-journal-prefix-chrome",
+    "test-results-corrupt-discard-chrome"
+  ],
+  "priorIndexedPathsUnchanged": 2411,
+  "disks": {
+    "C:/": 13173538816,
+    "D:/": 143933440
+  },
+  "reason": "Original D files have NTFS Compressed attribute2080; logical bytes overestimate freed physical space. Stopped owned Node at no-native-move/no-backup boundary; original+active copies and any staging data retained. Two relocated directories independently verified including exact directory sets. Original D paths remain junctions. No evidence discarded or compressed by agent. D still fails unchanged both-drive preflight; subsequent native trial must use C only."
+}
