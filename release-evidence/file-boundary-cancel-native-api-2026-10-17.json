@@ -1,0 +1,182 @@
+{
+  "startedAt": "2026-10-17T04:47:11.610Z",
+  "scope": "Current sender API with actual browser File/slice/arrayBuffer/AbortController and controlled channel, no app UI/native picker/real WebRTC/LAN proof. Full native RTC regression suites are separate.",
+  "trials": [
+    {
+      "channel": "chrome",
+      "profilePreserved": "C:\\Users\\dines\\QRFT-qualification-evidence\\file-boundary-cancel-native-api-2026-10-17-xVgSNI\\profile-chrome-VxPFhC",
+      "pageErrors": [],
+      "browser": "155.0.8059.80",
+      "results": [
+        {
+          "mode": "healthy",
+          "reads": [
+            1,
+            1
+          ],
+          "sends": 2,
+          "payloadComplete": true,
+          "error": null,
+          "passed": true
+        },
+        {
+          "mode": "abort-resolve",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Stopped between native cached files",
+          "passed": true
+        },
+        {
+          "mode": "fail-resolve",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Stopped between native cached files",
+          "passed": true
+        },
+        {
+          "mode": "dispose-resolve",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Transfer stopped.",
+          "passed": true
+        },
+        {
+          "mode": "abort-reject",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Stopped between native cached files",
+          "passed": true
+        },
+        {
+          "mode": "fail-reject",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Stopped between native cached files",
+          "passed": true
+        },
+        {
+          "mode": "dispose-reject",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Transfer stopped.",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "closed": true
+    },
+    {
+      "channel": "msedge",
+      "profilePreserved": "C:\\Users\\dines\\QRFT-qualification-evidence\\file-boundary-cancel-native-api-2026-10-17-xVgSNI\\profile-msedge-P8YwK9",
+      "pageErrors": [],
+      "browser": "154.0.4258.53",
+      "results": [
+        {
+          "mode": "healthy",
+          "reads": [
+            1,
+            1
+          ],
+          "sends": 2,
+          "payloadComplete": true,
+          "error": null,
+          "passed": true
+        },
+        {
+          "mode": "abort-resolve",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Stopped between native cached files",
+          "passed": true
+        },
+        {
+          "mode": "fail-resolve",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Stopped between native cached files",
+          "passed": true
+        },
+        {
+          "mode": "dispose-resolve",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Transfer stopped.",
+          "passed": true
+        },
+        {
+          "mode": "abort-reject",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Stopped between native cached files",
+          "passed": true
+        },
+        {
+          "mode": "fail-reject",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Stopped between native cached files",
+          "passed": true
+        },
+        {
+          "mode": "dispose-reject",
+          "reads": [
+            1,
+            0
+          ],
+          "sends": 0,
+          "payloadComplete": false,
+          "error": "Transfer stopped.",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "closed": true
+    }
+  ],
+  "serverClosed": true,
+  "passed": true
+}

@@ -1,0 +1,78 @@
+{
+  "recordedAt": "2026-10-17T04:55:17.611Z",
+  "problem": "One virtual block can span cached files. Stop during the first pending read previously opened the next file; late I/O rejection also masked the prior Stop/failure.",
+  "fix": "An optional caller assertion runs before allocation, immediately before each cached snapshot read, and after read resolution or rejection. The sender assertion checks its AbortSignal and failure/disposal state.",
+  "regression": {
+    "red": 6,
+    "green": 6,
+    "permanentNewTests": 6,
+    "previousSenderTestsPreserved": 37,
+    "senderTests": 43,
+    "focusedTests": 53,
+    "unitTests": 536,
+    "testFiles": 54,
+    "nativeApiCasesEach": 7,
+    "browsers": {
+      "edge": 92,
+      "chrome": 92
+    }
+  },
+  "review": {
+    "correctness": "Six stopped resolve/reject combinations prevent later reads, frames and completion; exact original stop/failure reason survives. Browser healthy multi-file control verifies both files and full stream SHA. Previous 37 tests are byte-identical after removing the inserted six-case block (newline normalized).",
+    "readability": "Small optional assertion at the read boundary; explicit catch preserves an earlier stop reason without hiding active I/O errors.",
+    "architecture": "Caller owns cancellation state; generic virtual reader has no sender dependency, listener/controller lifecycle or new browser API. Existing three-argument callers keep behavior.",
+    "security": "Prevents subsequent selected-file reads after stopping. No authorization, framing, digest, window, receipt or resume changes. Already-issued native I/O can settle.",
+    "performance": "One closure per sender run, constant-time state checks per bounded read. No new payload buffers, timers, listeners or network calls. No performance acceptance inferred from check count."
+  },
+  "predecessorMeasurements": {
+    "fiveGiB": {
+      "report": "release-evidence/transfer-save-memory-5gib-independent-verification-2026-10-17.json",
+      "fileBytes": 5368709120,
+      "payloadIntervalMBps": 15.405549948226067,
+      "scope": "175-input predecessor before this patch; synthetic source, direct local SDP, production RTC/OPFS/save via injected handle. Diagnostic audit uses slice/arrayBuffer and is separate from production save. Repeating 256-byte fixture pattern is not general high-address source-offset proof."
+    },
+    "matchedOneGiB": {
+      "report": "release-evidence/transfer-memory-matched-1gib-independent-verification-2026-10-17.json",
+      "scope": "Matched predecessor control; about15.92 MB/s versus5GiB15.41, within 3.3%. Earlier 44.56 MB/s discrepancy unexplained; no size-specific or causal performance diagnosis established."
+    }
+  },
+  "artifactAvailability": "17 selected older C Temp paths are externally absent. Historical metadata hashes remain intact but do not establish retained raw data. Cause unknown; no old raw dataset recreated. New Oct17 profiles and copies are persistent outside Temp.",
+  "prior": [
+    {
+      "originalPath": "release-evidence/release-gate-latest.json",
+      "path": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\before-canonical\\release-evidence\\release-gate-latest.json",
+      "bytes": 471350,
+      "sha256": "49499249d209d4b99bf023225351347586b964243f70ca5cefd020aab6c3a3ad"
+    },
+    {
+      "originalPath": "release-evidence/release-gate-latest.txt",
+      "path": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\before-canonical\\release-evidence\\release-gate-latest.txt",
+      "bytes": 938,
+      "sha256": "69a7d55d5621cd5e4ca525b0ed376af5d8bebf6b0c1f7cf29fb796eb586fb59b"
+    },
+    {
+      "originalPath": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "path": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\before-canonical\\release-evidence\\acceptance-obligations-2026-10-14.json",
+      "bytes": 336356,
+      "sha256": "379ef1ce8a3eb06a28efa1b41a70fefe3bcd4994d90b3d46b1515be2cea0389d"
+    },
+    {
+      "originalPath": "RELEASE-CHECKLIST.md",
+      "path": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\before-canonical\\RELEASE-CHECKLIST.md",
+      "bytes": 98121,
+      "sha256": "8ae676c0924d8d82ec31728cd7d9fad50e4ce156ad4a9a2ccf622abf7b94118f"
+    },
+    {
+      "originalPath": "RELEASE-HARDENING.md",
+      "path": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\before-canonical\\RELEASE-HARDENING.md",
+      "bytes": 140483,
+      "sha256": "f5e2aa0db61c9f17e9e65429cdcf9bbce1b1ff3a3549378c3a76cd4b6db894c5"
+    }
+  ],
+  "releaseStatus": "NOT READY",
+  "limitations": [
+    "Native API channel is controlled; full browser tests are single-host headless RTC/OPFS with injected picker fixtures. No real two-laptop, native picker/default-handler GUI, clean OS or hosted CI acceptance.",
+    "The new patch has no current 5GiB rerun. Predecessor 5GiB/1GiB observations retain exact scope; 50–100GB/resource/throughput acceptance remains open.",
+    "42 physical cases remain not run. The caller assertion cannot cancel an already-issued kernel read or undo sent bytes."
+  ]
+}

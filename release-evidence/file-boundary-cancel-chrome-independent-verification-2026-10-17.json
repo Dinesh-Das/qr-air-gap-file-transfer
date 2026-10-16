@@ -1,0 +1,76 @@
+{
+  "verifiedAt": "2026-10-17T04:55:09.262Z",
+  "inputs": 176,
+  "assets": 5,
+  "canonicalPredecessorMetadataUnchanged": 949,
+  "stage": "C:/Users/dines/AppData/Local/Temp/qrft-fresh-current-2026-10-17-Oo61W0",
+  "channel": "chrome",
+  "cases": 92,
+  "exitCode": 0,
+  "candidate": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\portable",
+  "browserRoot": "C:/Users/dines/QRFT-qualification-evidence/qrft-file-boundary-cancel-2026-10-17-chrome-Hkin7d",
+  "closedProfileVersions": [
+    {
+      "path": "results/pairing-browser-process-te-c5317-ve-preserves-verified-files/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-browser-process-te-f09f2-esumes-exact-durable-blocks/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-interrupted-many-f-ae879--files-renderer-crash-true-/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-mixed-dropped-item-b39e7-sender-ignores-another-drop/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-receiver-renderer--4aa60-ble-blocks-and-exact-output/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-saved-source-recov-14402-s-and-offers-a-direct-retry/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-selected-files-tra-426ce-names-bytes-and-empty-files/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-sender-and-receive-160b9-locks-after-source-recovery/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-sender-recovery-re-6b946--false-browser-crash-false-/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-sender-recovery-re-753e2-n-true-browser-crash-false-/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-sender-recovery-re-8c4e3-on-true-browser-crash-true-/profile/Last Version",
+      "version": "155.0.8059.80"
+    },
+    {
+      "path": "results/pairing-sender-recovery-re-9b500-n-false-browser-crash-true-/profile/Last Version",
+      "version": "155.0.8059.80"
+    }
+  ],
+  "samples": 46,
+  "sampledMinimumFreeDiskBytes": {
+    "C:/": 2267865088,
+    "D:/": 2567634944
+  },
+  "reserveBytes": 2147483648,
+  "sampledReserveMet": true,
+  "artifactFiles": 5044,
+  "artifactInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\qrft-file-boundary-cancel-2026-10-17-chrome-Hkin7d\\ARTIFACTS-INDEX.json",
+    "bytes": 1247749,
+    "sha256": "dbc55abd34dbc0c270b43e996b3a1a4f7008253ff4c390200961602e8e203ab1"
+  },
+  "scope": "Native headless browser, single-host RTC/OPFS; injected pickers/local signaling fixtures. Not native default-handler/picker GUI, two-laptop validation, continuous resources, throughput or 50–100 GB scaling."
+}

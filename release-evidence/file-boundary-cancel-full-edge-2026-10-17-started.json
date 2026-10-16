@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-17T04:39:06.350Z",
+  "before": {
+    "time": "2026-10-17T04:39:06.346Z",
+    "freeDiskBytes": {
+      "C:/": 3489042432,
+      "D:/": 2567741440
+    },
+    "freeRamBytes": 13993218048
+  },
+  "candidate": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\portable",
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\portable\\runtime\\node.exe",
+  "channel": "msedge",
+  "browserRoot": "C:/Users/dines/QRFT-qualification-evidence/qrft-file-boundary-cancel-2026-10-17-edge-heXCCZ"
+}

@@ -1,0 +1,106 @@
+{
+  "outputs": [
+    {
+      "variant": "external",
+      "path": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\external",
+      "files": 19,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:20737\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 20737,
+        "signalPort": 36619,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    },
+    {
+      "variant": "portable",
+      "path": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\portable",
+      "files": 22,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\portable\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:43384\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 43384,
+        "signalPort": 33934,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    }
+  ],
+  "oldRemoved": [
+    {
+      "path": "dist/assets/index-BQkzPN2R.js",
+      "archive": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\predecessor-dist\\dist\\assets\\index-BQkzPN2R.js",
+      "sha256": "76cfa706b4fd8fdc89537ba30366c50b71b0124f5fecb1d0aa61dea6828f684f"
+    }
+  ],
+  "compiledArchive": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\predecessor-dist",
+  "builtAssets": [
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-DlXIUZZQ.js",
+      "bytes": 556584,
+      "sha256": "234519f4944ccb43d36be6cd4912bbe8a882ea5b69c3ee358b594e23b3b25c56"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "b118054ed0a9a2bc18d9cb7bcac193bd180e9207f23f01cf60b9e690731acdca"
+    }
+  ],
+  "scope": "Actual package lifecycle, exact served HTML, health and TCP/UDP rebind. Browser dispatch intercepted with native cmd exit0; no GUI/native picker proof."
+}

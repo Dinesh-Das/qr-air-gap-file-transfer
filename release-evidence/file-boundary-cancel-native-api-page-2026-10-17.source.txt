@@ -1,0 +1,34 @@
+import {prepareLargeSource} from '../src/lib/large-transfer.ts';
+import {createOfflineTransferManifest,decodeOfflineDataBlockAsync} from '../src/lib/webrtc-protocol.ts';
+import {OfflineSourceSender} from '../src/lib/webrtc-transfer.ts';
+export async function run(){
+ const results=[];
+ for(const mode of ['healthy','abort-resolve','fail-resolve','dispose-resolve','abort-reject','fail-reject','dispose-reject']){
+  const expected=[new Uint8Array(4096).fill(17),new Uint8Array(4096).fill(93)],files=expected.map((bytes,index)=>{const snapshot=new File([bytes],index+'.bin',{lastModified:7});return {path:snapshot.name,size:snapshot.size,lastModified:7,handle:{kind:'file',name:snapshot.name,getFile:async()=>snapshot}};});
+  const source=await prepareLargeSource({rootName:'native-file-boundary',rootHandle:{kind:'directory',name:'native-file-boundary'},files,directories:[],totalFileBytes:8192n});
+  const manifest=await createOfflineTransferManifest(source);if(manifest.totalBytes>=manifest.blockSize)throw Error('Fixture crosses block boundary');
+  const reads=[0,0],sent=[],controller=new AbortController(),reason=new Error('Stopped between native cached files');let entered,release,sender;
+  const started=new Promise(resolve=>{entered=resolve;}),gate=new Promise(resolve=>{release=resolve;});
+  for(let i=0;i<2;i++){
+   const snapshot=source.files[i].snapshot,nativeSlice=snapshot.slice.bind(snapshot);
+   Object.defineProperty(snapshot,'slice',{value(...args){reads[i]++;const blob=nativeSlice(...args);if(i===0&&mode!=='healthy'){const nativeRead=blob.arrayBuffer.bind(blob);Object.defineProperty(blob,'arrayBuffer',{value:async()=>{const pending=nativeRead();entered();await gate;if(mode.endsWith('reject'))throw Error('Late native source error');return pending;}});}return blob;}});
+  }
+  class Channel extends EventTarget{readyState='open';bufferedAmount=0;bufferedAmountLowThreshold=0;send(value){sent.push(value);if(value instanceof ArrayBuffer)sender.acknowledge([new DataView(value).getUint32(4,true)]);}}
+  sender=new OfflineSourceSender(new Channel(),source,manifest);
+  const task=sender.run(controller.signal).then(()=>null,error=>error);
+  try{
+   if(mode!=='healthy'){await started;if(mode.startsWith('abort'))controller.abort(reason);else if(mode.startsWith('fail'))sender.fail(reason);else sender.dispose();release();}
+   const error=await task;
+   if(mode==='healthy'){
+    if(error||reads[0]!==1||reads[1]!==1||sent.length!==2||!sender.isPayloadComplete||JSON.parse(sent[1]).type!=='sender-complete')throw Error('Healthy multi-file flow failed');
+    const block=await decodeOfflineDataBlockAsync(sent[0]);for(let i=0;i<8192;i++)if(block.payload[i]!==expected[i<4096?0:1][i%4096])throw Error('Healthy file bytes differ');
+    const sha=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',block.payload)),b=>b.toString(16).padStart(2,'0')).join('');if(sha!==manifest.streamSha256)throw Error('Whole stream hash differs');
+   }else{
+    if(!error||reads[0]!==1||reads[1]!==0||sent.length||sender.isPayloadComplete)throw Error('Stopped sender continued work '+JSON.stringify({mode,reads,sends:sent.length,error:String(error)}));
+    if(mode.startsWith('dispose')){if(error.message!=='Transfer stopped.')throw Error('Disposal reason changed');}else if(error!==reason)throw Error('Stop reason changed');
+   }
+   results.push({mode,reads,sends:sent.length,payloadComplete:sender.isPayloadComplete,error:error?.message??null,passed:true});
+  }finally{release();await task;sender.dispose();}
+ }
+ return results;
+}

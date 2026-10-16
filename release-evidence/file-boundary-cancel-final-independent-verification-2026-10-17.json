@@ -1,0 +1,44 @@
+{
+  "verifiedAt": "2026-10-17T04:56:26.507Z",
+  "checkpoint": "Cancellation between cached source files",
+  "inputs": 176,
+  "builtAssets": 5,
+  "currentMetadata": 1990,
+  "priorMetadata": 949,
+  "previousHashIndexResolvedThroughArchives": 133,
+  "previousSourceInputsPreserved": 175,
+  "postQualificationChanges": [
+    "RELEASE-CHECKLIST.md",
+    "RELEASE-HARDENING.md",
+    "L856 additive local evidence mapping"
+  ],
+  "unitTests": 536,
+  "testFiles": 54,
+  "edge": 92,
+  "chrome": 92,
+  "nativeApiCasesEach": 7,
+  "currentNativeBrowserArtifactsRehashed": true,
+  "apiInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\file-boundary-cancel-native-api-2026-10-17-xVgSNI\\ARTIFACTS-INDEX.json",
+    "bytes": 68486,
+    "sha256": "fd17c80c371a0019b04831fa4fc828d9a8e3fb199ce8d431ac818eeb048f3674"
+  },
+  "persistentArchiveInventoryHashVerified": true,
+  "raw5GiBReferenceAndBytesHashVerified": true,
+  "previous5GiBProfileInventoryHashVerified": true,
+  "measuredFilesPresent": 964,
+  "largePayloadsPresent": 3,
+  "measurementMetadataRehashed": 961,
+  "largeDatasetByteChecks": "Full predecessor 5 GiB payload and saved destination, and 1 GiB matched control were independently checked at their recorded verification time. This closure verifies inventory/raw hashes and current file presence/exact size, rehashing files up to 128 MiB. It does not rerun those transfers or re-read every large payload byte.",
+  "oldMissingSelectedPaths": 17,
+  "ledgerEntries": 838,
+  "unmappedEntries": 328,
+  "mappedReferences": 614,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY",
+  "limitations": [
+    "Native API channel is controlled; full browser tests are single-host headless RTC/OPFS with injected picker fixtures. No real two-laptop, native picker/default-handler GUI, clean OS or hosted CI acceptance.",
+    "The new patch has no current 5GiB rerun. Predecessor 5GiB/1GiB observations retain exact scope; 50–100GB/resource/throughput acceptance remains open.",
+    "42 physical cases remain not run. The caller assertion cannot cancel an already-issued kernel read or undo sent bytes."
+  ]
+}

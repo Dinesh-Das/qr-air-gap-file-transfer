@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-17T04:56:07.580Z",
+  "initialVerifierExitCode": 1,
+  "failure": "Historical metadata ledger SHA mismatch at original path after intentional additive L856 update.",
+  "changed": [
+    {
+      "originalPath": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "expected": "379ef1ce8a3eb06a28efa1b41a70fefe3bcd4994d90b3d46b1515be2cea0389d",
+      "actual": "4d4a6de17d7b2ec7b8b5937803c3a2a2e7a3f428cde92389b3230290c1dde3f7",
+      "archive": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\before-canonical\\release-evidence\\acceptance-obligations-2026-10-14.json"
+    }
+  ],
+  "preCorrectionCanonical": {
+    "path": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\before-ledger-archive-resolution.json",
+    "bytes": 442278,
+    "sha256": "1044fe71e75ceb040756b9c3c3a01b7859375858ba857277e702776e155b16b7"
+  },
+  "initialVerifierSource": {
+    "path": "release-evidence/file-boundary-cancel-final-verifier-before-ledger-archive-resolution-2026-10-17.source.txt",
+    "bytes": 9018,
+    "sha256": "87b255512b0c266f9c99cb924a859a12269565216fc9148158cc582b51313f86"
+  },
+  "resolution": "Compare historical metadata to the archived original for explicitly mapped changed paths; require exact previous SHA. All unmapped paths must remain unchanged. No hash assertion is removed and no application test or resource threshold is changed."
+}

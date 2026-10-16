@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-17T04:56:37.186Z",
+  "roots": [
+    "C:/Users/dines/QRFT-qualification-evidence/qrft-file-boundary-cancel-2026-10-17-edge-heXCCZ",
+    "C:/Users/dines/QRFT-qualification-evidence/qrft-file-boundary-cancel-2026-10-17-chrome-Hkin7d",
+    "C:/Users/dines/QRFT-qualification-evidence/file-boundary-cancel-native-api-2026-10-17-xVgSNI"
+  ],
+  "ownedWorkers": [],
+  "rebound": [
+    {
+      "port": 4178,
+      "host": "127.0.0.1",
+      "tcp": true,
+      "udp": false
+    },
+    {
+      "port": 4179,
+      "host": "0.0.0.0",
+      "tcp": true,
+      "udp": true
+    }
+  ],
+  "scope": "Read-only owned-process inventory and temporary TCP/UDP rebind checks. No processes killed or protected payloads/profiles removed, compressed or moved."
+}

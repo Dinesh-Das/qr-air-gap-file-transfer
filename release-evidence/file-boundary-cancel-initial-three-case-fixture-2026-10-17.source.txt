@@ -1,0 +1,17 @@
+import {it,expect,vi} from "vitest";
+import {prepareLargeSource} from "../src/lib/large-transfer";
+import {createOfflineTransferManifest} from "../src/lib/webrtc-protocol";
+import {OfflineSourceSender} from "../src/lib/webrtc-transfer";
+it.each(["abort","fail","dispose"] as const)("starts no later file read after %s during a virtual range",async mode=>{
+  const files=["a.bin","b.bin"].map((name,i)=>{const file=new File([new Uint8Array(4096).fill(i+1)],name,{lastModified:7});return {path:name,size:file.size,lastModified:7,handle:{kind:"file",name,getFile:async()=>file} as FileSystemFileHandle};});
+  const source=await prepareLargeSource({rootName:"multi-file-stop",rootHandle:{kind:"directory",name:"multi-file-stop"} as FileSystemDirectoryHandle,files,directories:[],totalFileBytes:8192n});
+  const manifest=await createOfflineTransferManifest(source);expect(manifest.totalBytes).toBeLessThan(manifest.blockSize);
+  let entered!:()=>void,release!:()=>void;const started=new Promise<void>(done=>{entered=done;}),gate=new Promise<void>(done=>{release=done;});
+  const first=source.files[0].snapshot,nativeSlice=first.slice.bind(first),firstRead=vi.spyOn(first,"slice").mockImplementation((start,end,type)=>{const blob=nativeSlice(start,end,type),read=blob.arrayBuffer.bind(blob);Object.defineProperty(blob,"arrayBuffer",{value:async()=>{const pending=read();entered();await gate;return pending;}});return blob;});
+  const laterRead=vi.spyOn(source.files[1].snapshot,"slice");
+  class Channel extends EventTarget{readyState="open";bufferedAmount=0;bufferedAmountLowThreshold=0;send(_value:unknown){}}
+  const channel=new Channel(),send=vi.spyOn(channel,"send"),sender=new OfflineSourceSender(channel as unknown as RTCDataChannel,source,manifest),controller=new AbortController(),reason=new Error("Stopped between cached files");
+  const task=sender.run(controller.signal).then(()=>undefined,error=>error);
+  try{await started;if(mode==="abort")controller.abort(reason);else if(mode==="fail")sender.fail(reason);else sender.dispose();release();const error=await task;if(mode==="dispose")expect(error).toHaveProperty("message","Transfer stopped.");else expect(error).toBe(reason);expect(firstRead).toHaveBeenCalledTimes(1);expect(laterRead,"No later cached snapshot may open after Stop").not.toHaveBeenCalled();expect(send).not.toHaveBeenCalled();expect(sender.isPayloadComplete).toBe(false);}
+  finally{release();await task;sender.dispose();firstRead.mockRestore();laterRead.mockRestore();}
+});
