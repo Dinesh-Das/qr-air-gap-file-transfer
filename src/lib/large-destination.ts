@@ -15,6 +15,12 @@ export const LARGE_DESTINATION_MARKER = ".airgap-qr-v3.partial.json";
 const SMALL_DESTINATION_FILE_BYTES = 64 * 1024;
 const SMALL_DESTINATION_FILE_CONCURRENCY = 4;
 
+// TypeScript's DOM declarations omit the standard optional minimum read size:
+// https://streams.spec.whatwg.org/#byob-reader-read
+interface MinimumByteReader extends ReadableStreamBYOBReader {
+  read<T extends ArrayBufferView>(view: T, options?: { min: number }): Promise<ReadableStreamReadResult<T>>;
+}
+
 const JOURNAL_SCHEMA = "airgap-qr-destination-journal" as const;
 const JOURNAL_VERSION = 1 as const;
 const MAX_JOURNAL_BYTES = 1024 * 1024;
@@ -482,12 +488,41 @@ async function destinationFileMatches(
     return false;
   }
   const hasher = sha256.create();
-  for (let offset = 0; offset < file.size; offset += chunkBytes) {
-    throwIfAborted(signal);
-    const end = Math.min(file.size, offset + chunkBytes);
-    const chunk = new Uint8Array(await file.slice(offset, end).arrayBuffer());
-    if (chunk.length !== end - offset) return false;
-    hasher.update(chunk);
+  if (file.size > SMALL_DESTINATION_FILE_BYTES) {
+    // Repeated slice().arrayBuffer() leaves large external allocations waiting
+    // for collection. A BYOB read transfers this backing store and returns it
+    // for reuse, keeping large-file readback at one configured chunk.
+    const reader: MinimumByteReader = file.stream().getReader({ mode: "byob" });
+    const abort = () => { void reader.cancel(signal?.reason).catch(() => undefined); };
+    signal?.addEventListener("abort", abort, { once: true });
+    let buffer = new Uint8Array(chunkBytes);
+    let completed = 0;
+    try {
+      while (completed < file.size) {
+        throwIfAborted(signal);
+        const { value, done } = await reader.read(buffer, { min: Math.min(chunkBytes, file.size - completed) });
+        throwIfAborted(signal);
+        if (!value?.byteLength || value.byteLength > file.size - completed) return false;
+        hasher.update(value);
+        completed += value.byteLength;
+        buffer = new Uint8Array(value.buffer);
+        if (done && completed < file.size) return false;
+      }
+    } finally {
+      signal?.removeEventListener("abort", abort);
+      // Cancellation also drains a pending read. Preserve its original error
+      // if closing an already errored stream rejects.
+      await reader.cancel().catch(() => undefined);
+      reader.releaseLock();
+    }
+  } else {
+    for (let offset = 0; offset < file.size; offset += chunkBytes) {
+      throwIfAborted(signal);
+      const end = Math.min(file.size, offset + chunkBytes);
+      const chunk = new Uint8Array(await file.slice(offset, end).arrayBuffer());
+      if (chunk.length !== end - offset) return false;
+      hasher.update(chunk);
+    }
   }
   return bytesToHex(hasher.digest()) === expected.sha256Hex;
 }

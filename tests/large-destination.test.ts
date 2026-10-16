@@ -189,6 +189,80 @@ function createFixture(
 }
 
 describe("large destination reconstruction", () => {
+  it.each(["correct", "corrupt", "truncated", "read error", "abort"])(
+    "verifies a large destination with bounded reusable stream reads: %s",
+    async (mode) => {
+      const bytes = Uint8Array.from({ length: 3 * 65_536 + 5 }, (_, i) => i * 37 & 255);
+      const fixture = createFixture([{ path: "large.bin", bytes }]);
+      const parent = new MemoryDirectoryHandle("parent");
+      const controller = new AbortController();
+      const reason = new Error("destination read interrupted");
+      const requested: number[] = [];
+      let stream: ReadableStream<Uint8Array> | undefined;
+      let cancelled = false;
+      let streamCalls = 0;
+      let sliceCalls = 0;
+      const original = MemoryFileHandle.prototype.getFile;
+      const spy = vi.spyOn(MemoryFileHandle.prototype, "getFile").mockImplementation(async function(this: MemoryFileHandle) {
+        const file = await original.call(this);
+        if (this.name !== "large.bin") return file;
+        Object.defineProperty(file, "slice", { value: () => {
+          sliceCalls++;
+          throw new Error("large readback must not allocate a new sliced ArrayBuffer per chunk");
+        } });
+        Object.defineProperty(file, "stream", { value: () => {
+          streamCalls++;
+          let offset = 0;
+          const length = bytes.length - (mode === "truncated" ? 1 : 0);
+          stream = new ReadableStream({
+            type: "bytes",
+            pull(source) {
+              if (mode === "read error") { source.error(reason); return; }
+              if (mode === "abort") { controller.abort(reason); return; }
+              const request = source.byobRequest;
+              if (!request?.view) throw new Error("verification must supply its bounded buffer");
+              const view = new Uint8Array(request.view.buffer, request.view.byteOffset, request.view.byteLength);
+              requested.push(view.byteLength);
+              const take = Math.min(view.length, length - offset);
+              view.set(bytes.subarray(offset, offset + take));
+              if (mode === "corrupt" && offset === 0) view[0] ^= 255;
+              offset += take;
+              request.respond(take);
+              if (offset === length) {
+                source.close();
+                // An under-filled BYOB request still needs its EOF response.
+                source.byobRequest?.respond(0);
+              }
+            },
+            cancel() { cancelled = true; },
+          });
+          return stream;
+        } });
+        return file;
+      });
+      const saving = writeLargeTreeToDirectory(fixture.manifest, fixture.reader, fixture.binding,
+        parent as unknown as FileSystemDirectoryHandle, { signal: controller.signal, chunkBytes: 65_536 });
+      try {
+        if (mode === "correct") await expect(saving).resolves.toMatchObject({ filesWritten: 1 });
+        else if (mode === "read error" || mode === "abort") await expect(saving).rejects.toBe(reason);
+        else await expect(saving).rejects.toThrow(/SHA-256 or size mismatch/);
+        expect(streamCalls).toBe(1);
+        expect(sliceCalls).toBe(0);
+        expect(stream?.locked).toBe(false);
+        if (["correct", "corrupt", "truncated"].includes(mode)) {
+          expect(requested.length).toBeGreaterThan(1);
+          expect(requested.every(length => length === 65_536)).toBe(true);
+        }
+        if (mode === "abort") expect(cancelled).toBe(true);
+        expect(childDirectory(parent, "received").children.has(LARGE_DESTINATION_MARKER)).toBe(mode !== "correct");
+      } finally { spy.mockRestore(); }
+      if (mode !== "correct") {
+        await expect(writeLargeTreeToDirectory(fixture.manifest, fixture.reader, fixture.binding,
+          parent as unknown as FileSystemDirectoryHandle)).resolves.toMatchObject({ resumed: true, filesReused: 1 });
+        expect(childDirectory(parent, "received").children.has(LARGE_DESTINATION_MARKER)).toBe(false);
+      }
+    },
+  );
   it.each([1, 2, 3, 4].flatMap(receipt => ["before close", "after close"].map(boundary => ({ receipt, boundary }))))(
     "recovers exact journal receipts when commit $receipt fails $boundary after out-of-order payload closes",
     async ({ receipt, boundary }) => {
