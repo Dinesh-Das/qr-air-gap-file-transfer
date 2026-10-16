@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-17T03:09:41.329Z",
+  "before": {
+    "time": "2026-10-17T03:09:41.328Z",
+    "freeDiskBytes": {
+      "C:/": 17221111808,
+      "D:/": 2569424896
+    },
+    "freeRamBytes": 13238665216
+  },
+  "candidate": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable",
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable\\runtime\\node.exe",
+  "channel": "chrome",
+  "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-chrome-reserve-requalification-2026-10-17-chrome-CoJopq"
+}

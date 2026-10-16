@@ -1,0 +1,92 @@
+{
+  "observedAt": "2026-10-17T03:13:45.819Z",
+  "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-chrome-reserve-requalification-2026-10-17-chrome-CoJopq",
+  "processes": [
+    {
+      "ProcessId": 36116,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 26912,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 31180,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 22288,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 2532,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 28792,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 36704,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 37804,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 788,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 37332,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 33696,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 22572,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 27092,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 34508,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 34372,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 27860,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    },
+    {
+      "ProcessId": 8016,
+      "ExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "fileVersion": "155.0.8059.80"
+    }
+  ],
+  "scope": "Native process executable/version metadata for uniquely owned browser profiles; not default-handler GUI or native picker observation."
+}
