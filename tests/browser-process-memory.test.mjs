@@ -14,5 +14,20 @@ it.runIf(process.platform === "win32")("reads a live process and reports missing
   expect(result.processes[0].privateBytes).toBeGreaterThan(0);
   expect(result.processes[0].workingSetBytes).toBeGreaterThan(0);
   expect(result.missingIds).toEqual([2147483647]);
+  expect(result.missingReasons).toHaveLength(1);
+  expect(result.missingReasons[0]).toMatchObject({ id: 2147483647, category: "ObjectNotFound" });
+  expect(result.missingReasons[0].errorId).toContain("NoProcessFoundForGivenId");
+  expect(result.missingReasons[0].message.length).toBeGreaterThan(0);
+  for (const [field, limit] of [["message", 256], ["errorId", 128], ["exceptionType", 128], ["category", 64]]) {
+    expect(result.missingReasons[0][field].length).toBeLessThanOrEqual(limit);
+  }
   expect(result.sampleFinishedAtMs).toBeGreaterThanOrEqual(result.sampleStartedAtMs);
+}, 20_000);
+
+it.runIf(process.platform === "win32")("reports no lookup failures for a successful observation", async () => {
+  const result = await readWindowsProcessMemory([process.pid]);
+  expect(result.processes).toHaveLength(1);
+  expect(result.processes[0].id).toBe(process.pid);
+  expect(result.missingIds).toEqual([]);
+  expect(result.missingReasons).toEqual([]);
 }, 20_000);
