@@ -1,0 +1,69 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/npm-audit-2026-10-16.json",
+      "bytes": 364,
+      "sha256": "8213ce9dee7e326a96f89eb800f533f6c67cb5fe5b9288d249630214fd81cb0d"
+    },
+    {
+      "path": "release-evidence/npm-audit-2026-10-16.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/npm-audit-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/npm-audit-run-2026-10-16.json",
+      "bytes": 1408,
+      "sha256": "1d7af29fb8cc60da4d0eeed8edab635597dda01e0c3e7b3022d477dc5a73aab8"
+    },
+    {
+      "path": "release-evidence/npm-signatures-2026-10-16.log",
+      "bytes": 116,
+      "sha256": "55f82275ed8925f5f7bcef736b9f7694200ac0c74ff3922c63c2b164792bcf4b"
+    },
+    {
+      "path": "release-evidence/npm-signatures-2026-10-16.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/npm-signatures-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/npm-signatures-run-2026-10-16.json",
+      "bytes": 1157,
+      "sha256": "cafd9b9b10551f5adf11c70104e752c2d8437453ef84453f6f5473b3a066a90d"
+    },
+    {
+      "path": "release-evidence/dependency-security-review-2026-10-16.md",
+      "bytes": 2395,
+      "sha256": "fa7e2bc27ea9363683175269b4b3025a2ad7bf3db89bb0bd78cbbf86a5f4ea22"
+    },
+    {
+      "path": ".tmp/run-dependency-audit-2026-10-16.mjs",
+      "bytes": 2618,
+      "sha256": "926d10466f65eceb727bb84639d16376fc3e7f75ef44c291def64864a43f3186"
+    },
+    {
+      "path": ".tmp/run-dependency-signatures-2026-10-16.mjs",
+      "bytes": 2705,
+      "sha256": "f44075c5ef4f25707fe0b8e1d96aa94c4fcccc4b9f0ecaff3cef578bd421ef8b"
+    },
+    {
+      "path": ".tmp/verify-dependency-security-2026-10-16.mjs",
+      "bytes": 6345,
+      "sha256": "8210d16322a3188199626ac197f1ad58a461b55ec99086fdfd594db6e7c87cde"
+    },
+    {
+      "path": "release-evidence/dependency-security-independent-verification-2026-10-16.json",
+      "bytes": 448,
+      "sha256": "a066a63310394ca7cd3649f5de1550fb30b9a7196c4840f55f6ef30a462dc256"
+    }
+  ]
+}

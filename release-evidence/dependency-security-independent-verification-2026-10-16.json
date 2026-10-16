@@ -1,0 +1,16 @@
+{
+  "verifiedAt": "2026-10-16T02:36:00.855Z",
+  "inputs": 173,
+  "assets": 5,
+  "priorEvidence": 737,
+  "sourceAndStageUnchanged": true,
+  "knownVulnerabilities": 0,
+  "lockedDependencyRecords": 169,
+  "installedRegistrySignatures": 145,
+  "verifiedAttestations": 61,
+  "absentOptionalRecords": 24,
+  "installedMetadataMatchesLock": true,
+  "installedFileBytesIndependentlyVerified": false,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY"
+}
