@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-15T18:24:59.105Z",
+  "inputs": 168,
+  "assets": 5,
+  "unit": 451,
+  "testFiles": 50,
+  "ledgerLines": 838,
+  "scopedChanges": [
+    "L886",
+    "L906",
+    "L966",
+    "L967",
+    "L968",
+    "L969",
+    "L970",
+    "L982"
+  ],
+  "unmapped": 335,
+  "mappedReferences": 598,
+  "missingReferences": 0,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY",
+  "reconciliation": "Inherited ledgerAudit.mappedReferences581 was historical, while current link count is598. Corrected latest metadata after independently checking all current references; dated first review/index remain immutable."
+}

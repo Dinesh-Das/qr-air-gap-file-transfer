@@ -1,0 +1,81 @@
+{
+  "recordedAt": "2026-10-15T18:23:48.668Z",
+  "releaseStatus": "NOT READY",
+  "productionCodeChanged": false,
+  "newTest": {
+    "path": "tests/webrtc-chaos.test.ts",
+    "bytes": 9300,
+    "sha256": "3701de9f0ad222665f5e17310cf6c0395f03d4d6b0c390edf18998e8c4ba506e"
+  },
+  "tests": [
+    {
+      "name": "drains a full window after delayed duplicate ACKs and verifies every byte",
+      "scope": "Hold all 96 emitted blocks before any receive; deliver/commit64 and withhold ACK; assert zero sender progress/no completion; deliver duplicate ACK then remaining data/ACKs; check one completion, exact indices/no retransmission, bounded queue and independent full file byte audit."
+    },
+    {
+      "name": "reconnects after a batched durable ACK is lost without resending that batch",
+      "scope": "Hold96; persist64 with ACK withheld, close channel, no sender success; close/reopen shared memory repository, recover range[0,64), resume exactly missing indices64..132, independent exact tree/path/size/file bytes audit."
+    }
+  ],
+  "distinction": "Existing percent-resume tests already lose a single final ACK. These two schedules add controlled 96-block window pressure and 64-block batched durability/ACK delay, not a newly discovered production defect.",
+  "negativeControls": [
+    {
+      "name": "resume-mutant",
+      "change": "Isolated test copy ignores recovered resume ranges; no production or committed test mutation.",
+      "expectedExit": 1,
+      "observedFailure": "Exact missing-index assertion fails, before transfer can hang.",
+      "filteredCases": 1,
+      "otherCaseExcludedByNameFilter": 1
+    },
+    {
+      "name": "pattern-mutant",
+      "change": "Isolated test copy changes first source byte before preparation; source and stream hashes remain self-consistent.",
+      "expectedExit": 1,
+      "failedCases": 2,
+      "observedFailure": "Independent pattern audit rejects byte0 after production hash verification."
+    }
+  ],
+  "validation": {
+    "node": "24.22.0",
+    "focusedCases": 2,
+    "fullTests": 451,
+    "testFiles": 50,
+    "typecheckExit": 0,
+    "unitExit": 0,
+    "buildExit": 0,
+    "rebuiltAssetsIdentical": 5,
+    "dependencies": "Existing fresh dependency stage and unchanged lock; no new npm ci.",
+    "browserScope": "Previous88Edge/88Chrome gates retained: all application/server/runtime/build inputs unchanged; no full browser rerun for test-only addition. Prior native CMD coverage composition caveats retained."
+  },
+  "review": {
+    "correctness": "Receipts counted only after durable batch, duplicated ACK does not inflate counts, close cannot report success, resume excludes durable data; hash verify plus independent byte/path checks. Negative controls fail at intended assertions.",
+    "readability": "One small local controlled channel and two explicit schedules; no reusable transport framework or production interface added.",
+    "architecture": "Production sender/receiver/queue/codec used directly; test-only wire and repository do not claim browser/process durability.",
+    "security": "No network, secrets, permissions or production-policy change.",
+    "performance": "Two bounded ~8MiB fixture tests; 2500ms failure deadline only, explicit delivery gates determine ordering. No throughput measurement."
+  },
+  "ledger": {
+    "source": "release-evidence/original-release-requirements.txt",
+    "sourceSha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077",
+    "entries": 838,
+    "changed": [
+      "L886",
+      "L906",
+      "L966",
+      "L967",
+      "L968",
+      "L969",
+      "L970",
+      "L982"
+    ],
+    "withoutMappedEvidence": 335,
+    "completedByThisAudit": 0
+  },
+  "limitations": [
+    "Logical ACK API calls bypass application authorization/control dispatch; duplicate other control types are not covered here.",
+    "In-memory reopen proves model receipt reuse, not OPFS durability under OS/process/browser crash.",
+    "No deterministic coverage claim for every chaos requirement. Native reconnect/permissions/quota/runtime restart/physical acceptance remain separate.",
+    "Initial focused log predates the added early no-resend assertion. focused-final/type/unit/build are the final test revision.",
+    "Mutant failures are intentional fixture negative controls, not discovered production bugs or failed release gates."
+  ]
+}

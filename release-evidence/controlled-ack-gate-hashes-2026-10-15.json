@@ -1,0 +1,150 @@
+{
+  "recordedAt": "2026-10-15T18:23:48.714Z",
+  "files": [
+    {
+      "path": "release-evidence/controlled-ack-gate-review-2026-10-15.json",
+      "bytes": 213910,
+      "sha256": "1840a6b4968e53ebf20d91e504868534f069b95f2cf68e0053edd0f6f1c1b7cb"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 213910,
+      "sha256": "1840a6b4968e53ebf20d91e504868534f069b95f2cf68e0053edd0f6f1c1b7cb"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 545,
+      "sha256": "167d285e499b1b103342f78696c8161fd0dd9efb9f190692413c9642070c605a"
+    },
+    {
+      "path": "tests/webrtc-chaos.test.ts",
+      "bytes": 9300,
+      "sha256": "3701de9f0ad222665f5e17310cf6c0395f03d4d6b0c390edf18998e8c4ba506e"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 333033,
+      "sha256": "7fe7e53aa84229da32f71d1cb7a35508e53d60e7271ee4ad3ef8ed7d88c003d3"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-controlled-ack-2026-10-15.json",
+      "bytes": 329569,
+      "sha256": "f6390920f0d7a8e0579e7389c93c4bf17af735543df26a1fb3900c43535e64be"
+    },
+    {
+      "path": "release-evidence/controlled-ack-build-2026-10-15.log",
+      "bytes": 896,
+      "sha256": "95cf463860fec224204302ee19b478631509864693f3f932db08793c1b8390c8"
+    },
+    {
+      "path": "release-evidence/controlled-ack-build-exit-2026-10-15.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/controlled-ack-chaos-final-2026-10-15.source.txt",
+      "bytes": 9300,
+      "sha256": "3701de9f0ad222665f5e17310cf6c0395f03d4d6b0c390edf18998e8c4ba506e"
+    },
+    {
+      "path": "release-evidence/controlled-ack-chaos-focused-2026-10-15.log",
+      "bytes": 243,
+      "sha256": "abacb14002cb23b0eb7f12be9e0b70912bcec147d300ce8568194d2f727ed884"
+    },
+    {
+      "path": "release-evidence/controlled-ack-chaos-focused-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/controlled-ack-chaos-review-2026-10-15.json",
+      "bytes": 4352,
+      "sha256": "a1c77a3a8177a21978276bf24a5d799194cabda98279fd36ced12e82872e32bc"
+    },
+    {
+      "path": "release-evidence/controlled-ack-chaos-runner-2026-10-15.source.txt",
+      "bytes": 2767,
+      "sha256": "291cad8b83bf65297c2deadc29d42a6bc53a890c2d391c084e3b3fa9eff90ec6"
+    },
+    {
+      "path": "release-evidence/controlled-ack-focused-final-2026-10-15.log",
+      "bytes": 234,
+      "sha256": "746b0a35e674ba83629db0148395c64327c0e2340105f7913e30045002e40881"
+    },
+    {
+      "path": "release-evidence/controlled-ack-focused-final-exit-2026-10-15.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/controlled-ack-pattern-mutant-2026-10-15.log",
+      "bytes": 2244,
+      "sha256": "5b09d5f35c4d814812084c9463fa08908fa90c74f2d733b7efc4f365474b3a6a"
+    },
+    {
+      "path": "release-evidence/controlled-ack-pattern-mutant-2026-10-15.source.txt",
+      "bytes": 9332,
+      "sha256": "584854b1f3015ad858acb7c7a606271fe3937b8cb679b786e705c0957b23ef01"
+    },
+    {
+      "path": "release-evidence/controlled-ack-pattern-mutant-exit-2026-10-15.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "release-evidence/controlled-ack-resume-mutant-2026-10-15.log",
+      "bytes": 2439,
+      "sha256": "07c511f27a8d8fb6c6c2764cd6292fded83ebdabd7c8b2d428b3c74cf8232510"
+    },
+    {
+      "path": "release-evidence/controlled-ack-resume-mutant-2026-10-15.source.txt",
+      "bytes": 9295,
+      "sha256": "7dba26dc74ed3cb5556ae3261b55676bf58cb143873bfdf8d31bd73c4b8d4ff3"
+    },
+    {
+      "path": "release-evidence/controlled-ack-resume-mutant-exit-2026-10-15.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "release-evidence/controlled-ack-type-2026-10-15.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/controlled-ack-type-exit-2026-10-15.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/controlled-ack-unit-2026-10-15.log",
+      "bytes": 242,
+      "sha256": "3a3abee1e7aa76e48a7e5f2e5b62d8ecf39f4e710a998646e80cfc23d0a5aa6a"
+    },
+    {
+      "path": "release-evidence/controlled-ack-unit-exit-2026-10-15.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/release-gate-before-controlled-ack-2026-10-15.json",
+      "bytes": 204318,
+      "sha256": "b0df182ffccaf6ed3cc476d82d71818911dce6c6617efac8d418d9e0722b0c5a"
+    },
+    {
+      "path": "release-evidence/save-memory-gate-hashes-2026-10-15.json",
+      "bytes": 5172,
+      "sha256": "42111d0fc9c78f70fef50d1af9d827f34998b1b221fd4ad773a6ea4b8ef919ec"
+    },
+    {
+      "path": "release-evidence/save-memory-gate-independent-verification-2026-10-15.json",
+      "bytes": 275,
+      "sha256": "d4e1127ba9f5e5d8339e5d7ca3e280100b9c8d69188459a0eafd4de6aa512bda"
+    },
+    {
+      "path": "release-evidence/save-memory-gate-review-2026-10-15.json",
+      "bytes": 204318,
+      "sha256": "b0df182ffccaf6ed3cc476d82d71818911dce6c6617efac8d418d9e0722b0c5a"
+    }
+  ]
+}

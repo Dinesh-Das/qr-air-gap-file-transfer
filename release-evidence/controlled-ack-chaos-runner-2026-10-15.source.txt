@@ -1,0 +1,32 @@
+import {readFile,writeFile,mkdir,open} from 'node:fs/promises';
+import {spawn} from 'node:child_process';
+import {join,resolve} from 'node:path';
+const r=JSON.parse(await readFile('release-evidence/release-gate-latest.json'));
+const stage=r.freshInstall.stage;
+const runtime=resolve('artifacts/qrft-2026-10-15-path-pinned-portable/runtime/node.exe');
+const source=await readFile('tests/webrtc-chaos.test.ts','utf8');
+await writeFile(join(stage,'tests/webrtc-chaos.test.ts'),source);
+const folder=join(stage,'validation/chaos-mutations-2026-10-15');await mkdir(folder);
+const env={...process.env,TEMP:join(stage,'validation/temp'),TMP:join(stage,'validation/temp')};
+async function execute(name,args,expected){
+ const path='release-evidence/controlled-ack-'+name+'-2026-10-15.log';const log=await open(path,'wx');let code;
+ try{code=await new Promise((done,reject)=>{const child=spawn(runtime,args,{cwd:stage,env,windowsHide:true,stdio:['ignore',log.fd,log.fd]});child.once('error',reject);child.once('close',done);});}finally{await log.close();}
+ await writeFile('release-evidence/controlled-ack-'+name+'-exit-2026-10-15.txt',String(code)+'\n',{flag:'wx'});
+ console.log(JSON.stringify({name,code,expected}));if(code!==expected)throw Error('Unexpected result '+name);return readFile(path,'utf8');
+}
+const cli=join(stage,'node_modules/vitest/vitest.mjs');
+for(const name of ['resume-mutant','pattern-mutant']){
+ let mutant=source.replaceAll('"../src/','"../../src/');
+ const target=name==='resume-mutant'?'second.applyResumeRanges(resumed.resumeRanges());':'const snapshot = new File([bytes]';
+ if(mutant.split(target).length!==2)throw Error('Mutation target');
+ mutant=mutant.replace(target,name==='resume-mutant'?'second.applyResumeRanges([]);':'bytes[0] ^= 1;\n  const snapshot = new File([bytes]');
+ const file=join(folder,name+'.test.ts');await writeFile(file,mutant,{flag:'wx'});
+ const config=join(folder,name+'.config.mjs');await writeFile(config,'export default '+JSON.stringify({root:stage,test:{include:['validation/chaos-mutations-2026-10-15/'+name+'.test.ts'],environment:'node'}})+';\n',{flag:'wx'});
+ await writeFile('release-evidence/controlled-ack-'+name+'-2026-10-15.source.txt',mutant,{flag:'wx'});
+ const log=await execute(name,[cli,'run','--config',config,...(name==='resume-mutant'?['-t','reconnects']:[])],1);
+ if(!log.includes(name==='resume-mutant'?'AssertionError':'Recovered byte mismatch at 0'))throw Error('Mutation failed for unexpected reason');
+}
+await execute('focused-final',[cli,'run','tests/webrtc-chaos.test.ts'],0);
+await execute('type',[join(stage,'node_modules/typescript/bin/tsc'),'-b','--pretty','false'],0);
+await execute('unit',[cli,'run'],0);
+await execute('build',[join(stage,'node_modules/vite/bin/vite.js'),'build'],0);

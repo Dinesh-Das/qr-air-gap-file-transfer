@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/controlled-ack-gate-verified-review-2026-10-15.json",
+      "bytes": 214869,
+      "sha256": "afcf1b90ac218363ea0cb0b7f632775c2c9a99f517f081d8baf59e0bbf519b66"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 214869,
+      "sha256": "afcf1b90ac218363ea0cb0b7f632775c2c9a99f517f081d8baf59e0bbf519b66"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 600,
+      "sha256": "0d7dbf8588964fe56a702deeeb80797162ae373e3ae18b202693c6eeb13bb0f4"
+    },
+    {
+      "path": "release-evidence/controlled-ack-independent-verification-2026-10-15.json",
+      "bytes": 619,
+      "sha256": "8603ad9f35f939debe11d8067ba94467468c3eeddcbd6f5101972188dcb1e185"
+    },
+    {
+      "path": "release-evidence/release-gate-before-controlled-ack-link-reconciliation-2026-10-15.json",
+      "bytes": 213910,
+      "sha256": "1840a6b4968e53ebf20d91e504868534f069b95f2cf68e0053edd0f6f1c1b7cb"
+    },
+    {
+      "path": "tests/webrtc-chaos.test.ts",
+      "bytes": 9300,
+      "sha256": "3701de9f0ad222665f5e17310cf6c0395f03d4d6b0c390edf18998e8c4ba506e"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 333033,
+      "sha256": "7fe7e53aa84229da32f71d1cb7a35508e53d60e7271ee4ad3ef8ed7d88c003d3"
+    }
+  ]
+}
