@@ -1,0 +1,21 @@
+{
+  "nativeObservation": {
+    "observedAt": "2026-10-17T09:48:36.4878414+05:30",
+    "activePowerScheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+    "processors": [
+      {
+        "Name": "Intel(R) Core(TM) i7-14700HX",
+        "CurrentClockSpeed": 2100,
+        "MaxClockSpeed": 2100,
+        "LoadPercentage": 8
+      }
+    ],
+    "battery": [
+      {
+        "BatteryStatus": 2,
+        "EstimatedChargeRemaining": 79
+      }
+    ]
+  },
+  "scope": "Read-only point-in-time host metadata, not a controlled thermal/power experiment or causal explanation. No power policy, process priority, or configuration was changed."
+}
