@@ -13,7 +13,7 @@ const MAX_PATH_DEPTH = 64;
 const MAX_PATH_BYTES = 4_096;
 const MAX_SEGMENT_BYTES = 255;
 const WINDOWS_RESERVED_NAME =
-  /^(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\..*)?$/i;
+  /^(?:CON|PRN|AUX|NUL|COM[1-9¹²³]|LPT[1-9¹²³])(?:\..*)?$/i;
 const OBJECT_MAGIC_NAME = /^(?:__proto__|constructor|prototype)$/;
 
 export interface LargeSourceFile {
@@ -270,13 +270,15 @@ export async function prepareLargeSource(
   };
 }
 
-/** Reads one bounded range from the virtual source without materializing it. */
+/** Reads a bounded virtual range, checking caller state around each snapshot read. */
 export async function readPreparedLargeRange(
   source: PreparedLargeSource,
   offset: bigint,
   length: number,
+  assertActive?: () => void,
 ): Promise<Uint8Array> {
   assertReadRange(source.totalStreamBytes, offset, length);
+  assertActive?.();
   const output = new Uint8Array(length);
   let outputOffset = 0;
   let cursor = offset;
@@ -294,11 +296,19 @@ export async function readPreparedLargeRange(
         ? available
         : BigInt(length - outputOffset),
     );
-    const chunk = new Uint8Array(
-      await file.snapshot
+    assertActive?.();
+    let chunkBytes: ArrayBuffer;
+    try {
+      chunkBytes = await file.snapshot
         .slice(Number(relativeOffset), Number(relativeOffset) + take)
-        .arrayBuffer(),
-    );
+        .arrayBuffer();
+    } catch (caught) {
+      // A late I/O failure must not replace an earlier Stop/connection failure.
+      assertActive?.();
+      throw caught;
+    }
+    assertActive?.();
+    const chunk = new Uint8Array(chunkBytes);
     if (chunk.length !== take) {
       throw new Error(`The source file became unreadable: ${file.path}`);
     }

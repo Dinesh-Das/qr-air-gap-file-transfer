@@ -117,6 +117,12 @@ export class OfflineSourceSender {
     onProgress?: (progress: OfflineTransferProgress) => void,
   ): Promise<void> {
     if (this.running) throw new Error("The transfer is already running.");
+    throwIfAborted(signal);
+    this.throwIfFailed();
+    const assertSourceActive = () => {
+      throwIfAborted(signal);
+      this.throwIfFailed();
+    };
     this.running = true;
     this.progressCallback = onProgress;
     this.resumedBytes = countReceiptBytes(
@@ -132,9 +138,13 @@ export class OfflineSourceSender {
     for (let index = 0; index < this.totalBlocks; index += 1) {
       if (isReceiptBitSet(this.receipts, index)) continue;
       await this.waitUntilWritable(signal);
+      // A resolved window wait can race with Stop or connection failure before
+      // this continuation runs. Do not start a new snapshot read afterward.
+      throwIfAborted(signal);
+      this.throwIfFailed();
       const offset = index * this.manifest.blockSize;
       const length = blockLength(index, this.manifest.totalBytes, this.manifest.blockSize);
-      const payload = await readPreparedLargeRange(this.source, BigInt(offset), length);
+      const payload = await readPreparedLargeRange(this.source, BigInt(offset), length, assertSourceActive);
       throwIfAborted(signal);
       this.throwIfFailed();
       if (this.channel.readyState !== "open") throw new Error("The local connection closed.");

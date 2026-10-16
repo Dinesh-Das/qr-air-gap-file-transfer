@@ -44,6 +44,128 @@ function selectionWithLargeFile(blocks = 2, byteCount = OFFLINE_BLOCK_BYTES * bl
 }
 
 describe("offline WebRTC transfer", () => {
+  it.each(["already aborted", "abort after start", "fail after start", "dispose after start"])(
+    "starts no source read after sender cancellation: %s",
+    async (boundary) => {
+      const selection = selectionWithLargeFile(0, 4096);
+      const source = await prepareLargeSource(selection);
+      const manifest = await createOfflineTransferManifest(source);
+      const read = vi.spyOn(source.files[0].snapshot, "slice");
+      const channel = new FakeDataChannel();
+      const send = vi.spyOn(channel, "send");
+      const sender = new OfflineSourceSender(channel as unknown as RTCDataChannel, source, manifest);
+      const controller = new AbortController();
+      const reason = new Error("Stopped before the next source read");
+      const progress = vi.fn();
+      if (boundary === "already aborted") controller.abort(reason);
+      const task = sender.run(controller.signal, progress);
+      if (boundary === "abort after start") controller.abort(reason);
+      if (boundary === "fail after start") sender.fail(reason);
+      if (boundary === "dispose after start") sender.dispose();
+      try {
+        if (boundary === "dispose after start") await expect(task).rejects.toThrow("Transfer stopped.");
+        else await expect(task).rejects.toBe(reason);
+        expect(read).not.toHaveBeenCalled();
+        expect(send).not.toHaveBeenCalled();
+        expect(sender.isPayloadComplete).toBe(false);
+        if (boundary === "already aborted") expect(progress).not.toHaveBeenCalled();
+      } finally { sender.dispose(); read.mockRestore(); }
+    },
+  );
+
+  it("drains an already-started source read without sending after cancellation", async () => {
+    const selection = selectionWithLargeFile(0, 4096);
+    const source = await prepareLargeSource(selection);
+    const manifest = await createOfflineTransferManifest(source);
+    const snapshot = source.files[0].snapshot;
+    const nativeSlice = snapshot.slice.bind(snapshot);
+    let entered!: () => void;
+    const started = new Promise<void>(resolve => { entered = resolve; });
+    let release!: () => void;
+    const gate = new Promise<void>(resolve => { release = resolve; });
+    const read = vi.spyOn(snapshot, "slice").mockImplementation((start, end, type) => {
+      const blob = nativeSlice(start, end, type);
+      const nativeRead = blob.arrayBuffer.bind(blob);
+      Object.defineProperty(blob, "arrayBuffer", { value: async () => {
+        entered(); await gate; return nativeRead();
+      } });
+      return blob;
+    });
+    const channel = new FakeDataChannel();
+    const send = vi.spyOn(channel, "send");
+    const sender = new OfflineSourceSender(channel as unknown as RTCDataChannel, source, manifest);
+    const controller = new AbortController();
+    const reason = new Error("Stopped during the current source read");
+    const task = sender.run(controller.signal);
+    try {
+      await started;
+      controller.abort(reason);
+      release();
+      await expect(task).rejects.toBe(reason);
+      expect(read).toHaveBeenCalledTimes(1);
+      expect(send).not.toHaveBeenCalled();
+      expect(sender.isPayloadComplete).toBe(false);
+    } finally { release(); sender.dispose(); read.mockRestore(); }
+  });
+
+  for (const rejectRead of [false, true]) it.each(["abort", "fail", "dispose"] as const)(
+    `stops between cached files on %s (pending read rejects: ${rejectRead})`,
+    async (boundary) => {
+      const files = ["a.bin", "b.bin"].map((name, index) => {
+        const snapshot = new File([new Uint8Array(4096).fill(index + 1)], name, { lastModified: 7 });
+        return { path: name, size: snapshot.size, lastModified: 7,
+          handle: { kind: "file", name, getFile: async () => snapshot } as FileSystemFileHandle };
+      });
+      const source = await prepareLargeSource({
+        rootName: "multi-file-stop", directories: [], files, totalFileBytes: 8192n,
+        rootHandle: { kind: "directory", name: "multi-file-stop" } as FileSystemDirectoryHandle,
+      });
+      const manifest = await createOfflineTransferManifest(source);
+      expect(manifest.totalBytes).toBeLessThan(manifest.blockSize);
+      let entered!: () => void;
+      let release!: () => void;
+      const started = new Promise<void>(resolve => { entered = resolve; });
+      const gate = new Promise<void>(resolve => { release = resolve; });
+      const first = source.files[0].snapshot;
+      const nativeSlice = first.slice.bind(first);
+      const firstRead = vi.spyOn(first, "slice").mockImplementation((start, end, type) => {
+        const blob = nativeSlice(start, end, type);
+        const nativeRead = blob.arrayBuffer.bind(blob);
+        Object.defineProperty(blob, "arrayBuffer", { value: async () => {
+          const pending = nativeRead();
+          entered(); await gate;
+          if (rejectRead) throw new Error("Late source read failure");
+          return pending;
+        } });
+        return blob;
+      });
+      const laterRead = vi.spyOn(source.files[1].snapshot, "slice");
+      const channel = new FakeDataChannel();
+      const send = vi.spyOn(channel, "send");
+      const sender = new OfflineSourceSender(channel as unknown as RTCDataChannel, source, manifest);
+      const controller = new AbortController();
+      const reason = new Error("Stopped between cached files");
+      const task = sender.run(controller.signal).then(() => undefined, (caught: unknown) => caught);
+      try {
+        await started;
+        if (boundary === "abort") controller.abort(reason);
+        else if (boundary === "fail") sender.fail(reason);
+        else sender.dispose();
+        release();
+        const caught = await task;
+        if (boundary === "dispose") expect(caught).toHaveProperty("message", "Transfer stopped.");
+        else expect(caught).toBe(reason);
+        expect(firstRead).toHaveBeenCalledTimes(1);
+        expect(laterRead).not.toHaveBeenCalled();
+        expect(send).not.toHaveBeenCalled();
+        expect(sender.isPayloadComplete).toBe(false);
+      } finally {
+        release(); await task; sender.dispose();
+        firstRead.mockRestore(); laterRead.mockRestore();
+      }
+    },
+  );
+
   it.each([
     ["empty file", 0, undefined],
     ["one-byte file", 1, undefined],
