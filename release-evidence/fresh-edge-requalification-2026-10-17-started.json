@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-17T03:30:59.642Z",
+  "before": {
+    "time": "2026-10-17T03:30:59.641Z",
+    "freeDiskBytes": {
+      "C:/": 15957348352,
+      "D:/": 2569252864
+    },
+    "freeRamBytes": 14045859840
+  },
+  "candidate": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable",
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable\\runtime\\node.exe",
+  "channel": "msedge",
+  "browserRoot": "C:/Users/dines/QRFT-qualification-evidence/qrft-fresh-edge-requalification-2026-10-17-edge-qYLEnJ"
+}
