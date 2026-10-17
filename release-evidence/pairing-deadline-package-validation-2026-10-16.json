@@ -1,0 +1,106 @@
+{
+  "outputs": [
+    {
+      "variant": "external",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-external",
+      "files": 19,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:29721\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 29721,
+        "signalPort": 42767,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    },
+    {
+      "variant": "portable",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-portable",
+      "files": 22,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-portable\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:40506\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 40506,
+        "signalPort": 37904,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    }
+  ],
+  "oldRemoved": [
+    {
+      "path": "dist/assets/index-td4UD-5p.js",
+      "archive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\pairing-deadline-dist-before-2026-10-16\\dist\\assets\\index-td4UD-5p.js",
+      "sha256": "73b59bc7e4c56ae17455a1a4db1101dbec9ddbc25f781a974ead7601a5444c87"
+    }
+  ],
+  "compiledArchive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\pairing-deadline-dist-before-2026-10-16",
+  "builtAssets": [
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-BbcNSr4a.js",
+      "bytes": 555921,
+      "sha256": "4a23699c8e362b950e73f5957a73cf9e16d7c6bd2d937529b04dfac693daf1c9"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "59c7ebe3db8ef7288ed705e04bd891c58d79df29de050740af9095c98f640042"
+    }
+  ],
+  "scope": "Actual package lifecycle substitutes native cmd exit0 for browser dispatch; no GUI/default-handler proof."
+}

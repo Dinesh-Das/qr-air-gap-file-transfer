@@ -1,0 +1,106 @@
+{
+  "outputs": [
+    {
+      "variant": "external",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-final-external",
+      "files": 19,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:26940\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 26940,
+        "signalPort": 29511,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    },
+    {
+      "variant": "portable",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-final-portable",
+      "files": 22,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-final-portable\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:44055\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 44055,
+        "signalPort": 29368,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    }
+  ],
+  "oldRemoved": [
+    {
+      "path": "dist/assets/index-BbcNSr4a.js",
+      "archive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\pairing-deadline-final-dist-before-2026-10-16\\dist\\assets\\index-BbcNSr4a.js",
+      "sha256": "4a23699c8e362b950e73f5957a73cf9e16d7c6bd2d937529b04dfac693daf1c9"
+    }
+  ],
+  "compiledArchive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\pairing-deadline-final-dist-before-2026-10-16",
+  "builtAssets": [
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-DwNV2Ed5.js",
+      "bytes": 556026,
+      "sha256": "06696368990c97b9b52b07f640cfdbf3c21ebbc54d8a822687c46cf2fe33d6f7"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "864f6713e6e53ec37440803c9ac8dea6af5aeaa7d38c46931c6605b280af2d70"
+    }
+  ],
+  "scope": "Actual package lifecycle substitutes native cmd exit0 for browser dispatch; no GUI/default-handler proof."
+}

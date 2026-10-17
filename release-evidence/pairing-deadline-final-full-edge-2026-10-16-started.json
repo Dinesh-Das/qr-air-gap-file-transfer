@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-16T01:54:48.561Z",
+  "before": {
+    "time": "2026-10-16T01:54:48.560Z",
+    "freeDiskBytes": {
+      "C:/": 11616493568,
+      "D:/": 2844565504
+    },
+    "freeRamBytes": 14091366400
+  },
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-final-portable",
+  "runtime": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-final-portable\\runtime\\node.exe",
+  "channel": "msedge",
+  "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-deadline-final-gate-edge-2OOVDe"
+}

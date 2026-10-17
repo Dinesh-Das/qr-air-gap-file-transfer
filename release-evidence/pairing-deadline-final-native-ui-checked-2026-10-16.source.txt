@@ -1,0 +1,52 @@
+import {readFile,writeFile,mkdtemp} from 'node:fs/promises';
+import {createServer} from 'node:http';
+import {join,extname} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const proposal=JSON.parse(await readFile('release-evidence/pairing-deadline-final-browser-proposal-2026-10-16.json'));
+const {chromium,expect}=await import(pathToFileURL(join(proposal.freshInstall.stage,'node_modules/@playwright/test/index.mjs')).href);
+const channel=process.argv[2];if(!['msedge','chrome'].includes(channel))throw Error('Choose browser');
+const files=new Map();for(const f of proposal.builtAssets)files.set('/'+f.path.replace(/^dist\//,''),await readFile(join(proposal.offlineCandidate.path,f.path)));files.set('/',files.get('/index.html'));
+let active;
+const server=createServer(async(req,res)=>{
+ const path=new URL(req.url,'http://127.0.0.1').pathname;
+ if(path==='/api/rendezvous/health'){res.writeHead(200,{'Content-Type':'application/json'});res.end(JSON.stringify({ready:true,protocol:2}));return;}
+ if(path==='/api/rendezvous/join'){
+  active.joinCalls++;
+  if(active.joinCalls===1){
+   const state=active;res.once('close',()=>{state.nativeResponseClosed=true;state.closed();});
+   if(state.phase!=='headers'){res.writeHead(state.phase==='success-body'?200:503,{'Content-Type':'application/json'});res.write(state.phase==='success-body'?'\x7b"joinId":"':'\x7b"error":"');}
+   state.seen();return;
+  }
+  res.writeHead(404,{'Content-Type':'application/json'});res.end(JSON.stringify({error:'Controlled current code unavailable'}));return;
+ }
+ const data=files.get(path);if(!data){res.writeHead(404);res.end();return;}
+ const type=path==='/'?'text/html':({'.html':'text/html','.js':'text/javascript','.css':'text/css'}[extname(path)]??'application/octet-stream');
+ res.writeHead(200,{'Content-Type':type+'; charset=utf-8','Cache-Control':'no-store'});res.end(data);
+});
+await new Promise((done,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',done);});
+const origin='http://127.0.0.1:'+server.address().port;
+const profile=await mkdtemp('C:/Users/dines/AppData/Local/Temp/qrft-pairing-deadline-final-ui-'+channel+'-');let context;
+const results=[],errors=[];
+try{
+ context=await chromium.launchPersistentContext(profile,{channel,headless:true});
+ for(const phase of ['headers','success-body','error-body']){
+  let seen,closed;const requestSeen=new Promise(done=>{seen=done;}),requestClosed=new Promise(done=>{closed=done;});
+  active={phase,joinCalls:0,nativeResponseClosed:false,seen,closed};const state=active;
+  const page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
+  await page.clock.install();await page.goto(origin);await page.getByRole('button',{name:'Receive',exact:true}).click();
+  const responseHeaders=phase==='headers'?null:page.waitForResponse(r=>new URL(r.url()).pathname==='/api/rendezvous/join');
+  await page.getByRole('textbox',{name:'Six-digit pairing code'}).fill('123456');await page.getByRole('button',{name:'Connect to sender',exact:true}).click();await requestSeen;if(responseHeaders)await responseHeaders;
+  await page.clock.fastForward(30_000);
+  await expect(page.getByRole('alert')).toContainText('local connection service is unavailable');
+  await expect(page.locator('.transfer-error-details')).toContainText('request timed out');
+  let deadline;try{await Promise.race([requestClosed,new Promise((_,reject)=>{deadline=setTimeout(()=>reject(Error('Native fetch did not close stalled response')),5000);})]);}finally{clearTimeout(deadline);}
+  await page.getByRole('button',{name:'Reconnect and resume',exact:true}).click();
+  await page.getByRole('textbox',{name:'Six-digit pairing code'}).fill('123456');await page.getByRole('button',{name:'Connect to sender',exact:true}).click();
+  await expect(page.getByRole('alert')).toContainText('pairing code is unavailable or expired');
+  if(state.joinCalls!==2||!state.nativeResponseClosed)throw Error('Recovery/native abort not observed');
+  results.push({phase,responseHeadersObserved:phase!=='headers',joinCalls:state.joinCalls,nativeResponseClosed:true,timeoutAdvice:true,timeoutDetails:true,retryReachedNewResponse:true});await page.close();
+ }
+}finally{await context?.close();server.closeAllConnections();await new Promise(done=>server.close(done));}
+if(errors.length||results.length!==3)throw Error('UI probe incomplete');
+await writeFile('release-evidence/pairing-deadline-final-native-ui-checked-'+channel+'-2026-10-16.json',JSON.stringify({recordedAt:new Date().toISOString(),channel,candidate:proposal.offlineCandidate.path,profilePreserved:profile,results,pageErrors:errors,scope:'Production built UI, native browser fetch and controlled same-origin loopback HTTP stalls. Playwright clock advances application timers; native response close observed. Health/join fixture is not production rendezvous runtime or physical LAN; retry deliberately gets a completed404, not a successful transfer.'},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({channel,cases:3,profile,results}));

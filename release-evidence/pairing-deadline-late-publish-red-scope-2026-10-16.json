@@ -1,0 +1,8 @@
+{
+  "code": 1,
+  "output": "C:/Users/dines/AppData/Local/Temp/qrft-late-publish-repro-w4MmXj",
+  "port": 42590,
+  "signalPort": 32358,
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-portable",
+  "scope": "Copied unchanged helper/test file plus four new controlled late-publication cases, independent ports; no production/source-input changes during initial full gates."
+}
