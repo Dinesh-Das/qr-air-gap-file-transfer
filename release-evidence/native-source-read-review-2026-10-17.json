@@ -1,0 +1,141 @@
+{
+  "verifiedAt": "2026-10-17T12:03:19.635Z",
+  "rows": [
+    {
+      "mode": "small",
+      "browserVersionFromProfile": "155.0.8059.80",
+      "root": "C:/Users/dines/QRFT-qualification-evidence/native-source-read-small-2026-10-17-z1han0",
+      "source": "C:/Users/dines/QRFT-qualification-evidence/native-source-read-small-2026-10-17-z1han0/source.bin",
+      "fileBytes": 4194321,
+      "fileSha256": "f9c533ea60853ec4e9ba2462a39d589c11fc1f586c19d2c23026e08c744b3b91",
+      "streamBytes": 4194579,
+      "streamSha256": "5f4395c4f10714cbc3811d2128d25637a68bc28e3d236e3ee35de657155f5116",
+      "sourceUnchanged": true,
+      "sourcePrepareSlices": {
+        "count": 2,
+        "bytes": 4194321,
+        "max": 4194304,
+        "next": 4194321
+      },
+      "sourceSendSlices": {
+        "count": 69,
+        "bytes": 4194321,
+        "max": 61440,
+        "next": 4194321
+      },
+      "authenticatedFrames": 69,
+      "nodeVerifiedFrameIndices": [
+        0,
+        68
+      ],
+      "maxQueuedWireBytes": 1906004,
+      "prepareMs": 109,
+      "sendIncludingVerificationWorkerMs": 129.59999990463257,
+      "completeNativeSamples": 1,
+      "incompleteNativeSamples": 0,
+      "nativeGaps": [],
+      "phasesObserved": [
+        "prepare"
+      ],
+      "peakObservedNativePrivateBytes": 291016704,
+      "peakObservedMainPageHeapBytes": 4085680,
+      "sampledDiskMinima": {
+        "C:/": 2853965824,
+        "D:/": 2580332544
+      },
+      "memoryComplete": true,
+      "dataVerified": true
+    },
+    {
+      "mode": "5gib",
+      "browserVersionFromProfile": "155.0.8059.80",
+      "root": "C:/Users/dines/QRFT-qualification-evidence/native-source-read-5gib-2026-10-17-NT0dRO",
+      "source": "C:/Users/dines/QRFT-qualification-evidence/transfer-save-memory-5gib-2026-10-17-V9ec3y/profiles/p-2pxiI2/Default/File System/000/t/00/00000011",
+      "fileBytes": 5368709120,
+      "fileSha256": "8e6a98396407258aee776bdc4a912f5c1b45fda0f688e0d5b6c00b4775040195",
+      "streamBytes": 5368709379,
+      "streamSha256": "2fd786e030f7f9c9b2c7ccacd7cb0c128ab2a6f3d7f846b92de1fa200628907e",
+      "sourceUnchanged": true,
+      "sourcePrepareSlices": {
+        "count": 1280,
+        "bytes": 5368709120,
+        "max": 4194304,
+        "next": 5368709120
+      },
+      "sourceSendSlices": {
+        "count": 87382,
+        "bytes": 5368709120,
+        "max": 61440,
+        "next": 5368709120
+      },
+      "authenticatedFrames": 87382,
+      "nodeVerifiedFrameIndices": [
+        0,
+        34952,
+        69905,
+        69906,
+        87381
+      ],
+      "maxQueuedWireBytes": 983744,
+      "prepareMs": 128898.5,
+      "sendIncludingVerificationWorkerMs": 214291.5,
+      "completeNativeSamples": 142,
+      "incompleteNativeSamples": 1,
+      "nativeGaps": [
+        {
+          "at": 1792238225446,
+          "phase": {
+            "phase": "prepare",
+            "bytes": 1212153856
+          },
+          "missingIds": [
+            26780
+          ],
+          "reasons": [
+            {
+              "message": "Cannot find a process with the process identifier 26780.",
+              "exceptionType": "Microsoft.PowerShell.Commands.ProcessCommandException",
+              "category": "ObjectNotFound",
+              "id": 26780,
+              "errorId": "NoProcessFoundForGivenId,Microsoft.PowerShell.Commands.GetProcessCommand"
+            }
+          ]
+        }
+      ],
+      "phasesObserved": [
+        "prepare",
+        "send"
+      ],
+      "peakObservedNativePrivateBytes": 555474944,
+      "peakObservedMainPageHeapBytes": 5380028,
+      "sampledDiskMinima": {
+        "C:/": 2811912192,
+        "D:/": 2579156992
+      },
+      "memoryComplete": false,
+      "dataVerified": true
+    }
+  ],
+  "priorIndexedFilesUnchanged": 2401,
+  "currentInputs": 177,
+  "currentAssets": 5,
+  "applicationChanged": false,
+  "canonicalChanged": false,
+  "ledgerChanged": false,
+  "inventories": [
+    {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/native-source-read-small-2026-10-17-z1han0/INDEPENDENT-INVENTORY.json",
+      "bytes": 61754,
+      "sha256": "f56f5acd6c9eb0d451c424862106f9d7f9fc73cd8345df1dc721fcc5e2bd4de9"
+    },
+    {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/native-source-read-5gib-2026-10-17-NT0dRO/INDEPENDENT-INVENTORY.json",
+      "bytes": 61544,
+      "sha256": "36eca32a4798413bd76ea3dc78c33cd77d31f8877a7a6ed8275e0f65a633ff1c"
+    }
+  ],
+  "ownedWorkers": [],
+  "physicalNotRun": 42,
+  "releaseReady": false,
+  "scope": "One small probe and one retained 5GiB native File source read/prepare/packet encode run. Worker authenticates and hashes each payload; local adapter ACKs. No real RTC/network/receiver/destination/picker/physical/50–100GiB claim. Native private bytes include verification worker; main page heap does not. Periodic samples are not continuous memory maxima. Repeating fixture cannot establish arbitrary large offset content correctness."
+}
