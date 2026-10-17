@@ -1,0 +1,43 @@
+{
+  "startedAt": "2026-10-16T02:33:18.316Z",
+  "finishedAt": "2026-10-16T02:33:28.619Z",
+  "node": "v24.22.0",
+  "npm": "11.6.2",
+  "npmCli": "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+  "npmCliSha256": "3ce7cba6f5128dd5f54c98b6a5036b0f850496878cc2e21044b675fe3c594e3e",
+  "command": [
+    "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable\\runtime\\node.exe",
+    "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+    "audit",
+    "--package-lock-only",
+    "--ignore-scripts",
+    "--json",
+    "--no-fund",
+    "--no-update-notifier",
+    "--registry=https://registry.npmjs.org"
+  ],
+  "exitCode": 0,
+  "inputsUnchanged": true,
+  "inputCount": 173,
+  "lockfileSha256": "1941b668b0e20e0d3ac46b4ec10637626b65325bd97eb2ef2605635fa0ac8fa5",
+  "advisoryRegistry": "https://registry.npmjs.org",
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "dependencies": {
+    "prod": 39,
+    "dev": 131,
+    "optional": 33,
+    "peer": 0,
+    "peerOptional": 0,
+    "total": 169
+  },
+  "error": null,
+  "scope": "Known npm advisories for current lockfile including development/optional dependencies. No installs, scripts or remediation. Not malware/provenance/runtime exploitability proof. Physical and performance release gates remain open."
+}
