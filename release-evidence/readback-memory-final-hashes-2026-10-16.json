@@ -1,0 +1,135 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/readback-memory-review-2026-10-16.md",
+      "bytes": 4780,
+      "sha256": "f326f9ee1744546806eb24a28a1af39b9ca1c22d917c20713f84ae9f2bbb77e0"
+    },
+    {
+      "path": "release-evidence/save-only-5gib-chrome-2026-10-16.json",
+      "bytes": 555981,
+      "sha256": "d389126900f6e405796d404b54cf41c26cc6aba1c10d510b405a8a97324516c3"
+    },
+    {
+      "path": "release-evidence/save-only-5gib-chrome-2026-10-16.log",
+      "bytes": 277,
+      "sha256": "dfb67d92439bdf9552382be3734e1c7ab6b61b3c5f6f5b4b81a31553e955cec2"
+    },
+    {
+      "path": "release-evidence/save-only-5gib-chrome-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "release-evidence/save-only-5gib-partial-independent-verification-2026-10-16.json",
+      "bytes": 3434,
+      "sha256": "940a66b1ef0528e52e928448a3d6bceef7d70797b1fd12aa399617270ff1c476"
+    },
+    {
+      "path": "release-evidence/save-only-5gib-runner-2026-10-16.mjs.source.txt",
+      "bytes": 9696,
+      "sha256": "a552d682808357281e86d668324f0e3f5cfc3761dcfb66d41f46de6169902879"
+    },
+    {
+      "path": "release-evidence/save-only-5gib-page-2026-10-16.mjs.source.txt",
+      "bytes": 3941,
+      "sha256": "1de14fc1d50260b16f503d3f9702b7fb16c370c3fe3cd58d04f667a37268f274"
+    },
+    {
+      "path": "release-evidence/blob-byob-probe-2026-10-16.json",
+      "bytes": 248,
+      "sha256": "2ef6a20657a5c5bc8f2bb92fc5eecc7a3e3ec07ef94efb8ff0cf99f0bdbcbb2b"
+    },
+    {
+      "path": "release-evidence/readback-buffer-comparison-2026-10-16.json",
+      "bytes": 379780,
+      "sha256": "aa3df7a846159f2b8199de9e499d531b32b8be25568b399214e98dc0bd85a343"
+    },
+    {
+      "path": "release-evidence/readback-buffer-comparison-2026-10-16.log",
+      "bytes": 304,
+      "sha256": "83756423b1894dc98ad2f0a9d703ed66caaf2f3680847b86a3748371e8e7658c"
+    },
+    {
+      "path": "release-evidence/readback-buffer-comparison-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/readback-buffer-independent-verification-2026-10-16.json",
+      "bytes": 80682,
+      "sha256": "0a94c5bec43b4a979a724b5c5cb550cba7ae0424a5d37092e90e2e2b875f48ba"
+    },
+    {
+      "path": "release-evidence/readback-buffer-runner-2026-10-16.mjs.source.txt",
+      "bytes": 4819,
+      "sha256": "f0e4af6f4182ab7c9be540725601938c028f1edfd37079540ec85f82baad6f16"
+    },
+    {
+      "path": "release-evidence/readback-buffer-page-2026-10-16.mjs.source.txt",
+      "bytes": 1493,
+      "sha256": "2605578d4bfa15753bea760e5acd598ccde99d46cd582959f53db65fb70ad2f9"
+    },
+    {
+      "path": "release-evidence/readback-buffer-verifier-initial-syntax-error-2026-10-16.source.txt",
+      "bytes": 9195,
+      "sha256": "068fadc832b83bd610935ed471b2d03bf3e9951af588ca77c5137a0d1639f681"
+    },
+    {
+      "path": ".tmp/save-only-5gib-runner-2026-10-16.mjs",
+      "bytes": 9696,
+      "sha256": "a552d682808357281e86d668324f0e3f5cfc3761dcfb66d41f46de6169902879"
+    },
+    {
+      "path": ".tmp/save-only-5gib-page-2026-10-16.mjs",
+      "bytes": 3941,
+      "sha256": "1de14fc1d50260b16f503d3f9702b7fb16c370c3fe3cd58d04f667a37268f274"
+    },
+    {
+      "path": ".tmp/run-save-only-5gib-2026-10-16.mjs",
+      "bytes": 1183,
+      "sha256": "3dda24dc3483159e238df75877878655b8acb83c52635ed33a2768038fb987fe"
+    },
+    {
+      "path": ".tmp/verify-save-only-5gib-2026-10-16.mjs",
+      "bytes": 7811,
+      "sha256": "b113e646c3a1cb8bf4ad907e75cc9e09c7cb346af8d3a315fe1d9e326cd9f29f"
+    },
+    {
+      "path": ".tmp/verify-save-only-5gib-partial-2026-10-16.mjs",
+      "bytes": 4628,
+      "sha256": "13813be66ca001e94054e31a10492972c3fd78df1801b12163ac2d9ecfb6c696"
+    },
+    {
+      "path": ".tmp/probe-blob-byob-2026-10-16.mjs",
+      "bytes": 1429,
+      "sha256": "d4fda0fcdfae1d356b3a240016a742572a708b8c5226de4ac412c0991598700e"
+    },
+    {
+      "path": ".tmp/readback-buffer-page-2026-10-16.mjs",
+      "bytes": 1493,
+      "sha256": "2605578d4bfa15753bea760e5acd598ccde99d46cd582959f53db65fb70ad2f9"
+    },
+    {
+      "path": ".tmp/readback-buffer-runner-2026-10-16.mjs",
+      "bytes": 4819,
+      "sha256": "f0e4af6f4182ab7c9be540725601938c028f1edfd37079540ec85f82baad6f16"
+    },
+    {
+      "path": ".tmp/run-readback-buffer-comparison-2026-10-16.mjs",
+      "bytes": 1183,
+      "sha256": "4916d1ecc83e31831ddc5bcaad16c4d8c7a8ae2ed69e459a988bc61c0cabc089"
+    },
+    {
+      "path": ".tmp/verify-readback-buffer-comparison-2026-10-16.mjs",
+      "bytes": 9195,
+      "sha256": "1147a4d084907e8c574f27de2fb29e27fa44efe1e44761a668e5c3019b83fdde"
+    },
+    {
+      "path": ".tmp/index-readback-memory-2026-10-16.mjs",
+      "bytes": 2931,
+      "sha256": "fe97a7e930a39668d403cdb411e9d1b4e47ad8ca98fa7883bf57c62465a4f7ee"
+    }
+  ],
+  "scope": "Supplemental diagnostic authority; canonical release checkpoint unchanged. Original save-only run retains FAILED status; reusable-buffer comparison passed, production patch pending."
+}
