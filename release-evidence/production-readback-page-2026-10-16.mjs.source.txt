@@ -1,0 +1,17 @@
+import {writeLargeTreeToDirectory} from '../src/lib/large-destination.ts';
+import {encodeLargeTreeMetadata,parseLargeTreeMetadata} from '../src/lib/large-transfer.ts';
+const state=globalThis.__readbackState={mode:'setup',bytes:0,sourceReads:0,heapPeakBytes:0};
+export async function run(expectedSha256){
+ const file=document.querySelector('input').files[0];if(!file)throw Error('Native input File required');
+ const empty={kind:'directory',name:'empty',async *entries(){}};
+ const payload={kind:'file',name:'large.bin',async getFile(){return file;}};
+ // Read-only directory-handle adapter around a real native File. No destination
+ // is created and no old OPFS profile is reopened or changed.
+ const tree={kind:'directory',name:'preserved',async *entries(){yield ['empty',empty];yield ['large.bin',payload];},async getDirectoryHandle(name){if(name==='empty')return empty;throw Error('Unexpected directory '+name);},async getFileHandle(name){if(name==='large.bin')return payload;throw new DOMException('No recovery marker','NotFoundError');}};
+ const parent={kind:'directory',name:'parent',async getDirectoryHandle(name){if(name==='preserved')return tree;throw Error('Unexpected root '+name);}};
+ const metadata=encodeLargeTreeMetadata({rootName:'preserved',directories:['empty'],files:[{path:'large.bin',size:file.size,lastModified:7,sha256Hex:expectedSha256}]});
+ const manifest=parseLargeTreeMetadata(metadata),reader={size:BigInt(file.size),async read(){state.sourceReads++;throw Error('Completed destination retry must not read source bytes');}};
+ const binding={transferId:new Uint8Array(16).fill(71),streamSha256:Uint8Array.from(expectedSha256.match(/../g),b=>parseInt(b,16))};
+ state.mode='production';const sample=()=>{state.heapPeakBytes=Math.max(state.heapPeakBytes,performance.memory?.usedJSHeapSize??0);};const timer=setInterval(sample,50),start=performance.now();
+ try{const report=await writeLargeTreeToDirectory(manifest,reader,binding,parent,{onProgress(p){if(p.phase==='verify')state.bytes=Number(p.bytesComplete);}});state.ms=performance.now()-start;state.fileBytes=file.size;state.destinationReport=Object.fromEntries(Object.entries(report).map(([k,v])=>[k,typeof v==='bigint'?v.toString():v]));if(report.filesWritten!==0||report.filesReused!==1||state.bytes!==file.size||state.sourceReads!==0)throw Error('Production verification accounting mismatch');state.sha256=expectedSha256;state.verified=true;sample();return structuredClone(state);}finally{clearInterval(timer);}
+}
