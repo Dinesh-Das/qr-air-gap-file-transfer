@@ -1,0 +1,14 @@
+{
+  "startedAt": "2026-10-15T17:33:28.319Z",
+  "before": {
+    "time": "2026-10-15T17:33:28.318Z",
+    "freeDiskBytes": {
+      "C:/": 2714267648,
+      "D:/": 2779852800
+    },
+    "freeRamBytes": 12761931776
+  },
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+  "runtime": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime\\node.exe",
+  "channel": "msedge"
+}
