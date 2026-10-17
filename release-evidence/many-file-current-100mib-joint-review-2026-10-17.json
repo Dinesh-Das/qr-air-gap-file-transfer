@@ -1,0 +1,565 @@
+{
+  "recordedAt": "2026-10-17T10:54:18.230Z",
+  "applicationChanged": false,
+  "canonicalChanged": false,
+  "ledgerChanged": false,
+  "currentInputs": 176,
+  "builtAssets": 5,
+  "sealedPriorPathsUnchanged": 2264,
+  "trials": [
+    {
+      "verifiedAt": "2026-10-17T10:49:45.326Z",
+      "browser": "chrome",
+      "profiles": [
+        {
+          "role": "sender",
+          "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-chrome-2026-10-17-fCECf0\\profiles\\p-YoKnwR",
+          "version": "155.0.8059.80",
+          "files": 231
+        },
+        {
+          "role": "receiver",
+          "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-chrome-2026-10-17-fCECf0\\profiles\\p-jRPbgr",
+          "version": "155.0.8059.80",
+          "files": 2248
+        }
+      ],
+      "inputs": 176,
+      "builtAssets": 5,
+      "canonicalMetadataUnchanged": 1990,
+      "applicationChanged": false,
+      "rawDiagnosticExitCode": 0,
+      "rawDiagnosticPassed": true,
+      "dataIndependentlyVerified": true,
+      "payloadBytes": 104857600,
+      "streamBytes": 105149171,
+      "streamSha256": "c5e58686e20ad94c91e6e137527efd3697d0f9a86d7b5d042235c6b161bb1c32",
+      "files": 2000,
+      "emptyFiles": 200,
+      "directories": 20,
+      "nonemptyDestinationFilesIndependentlyMatched": 1800,
+      "destinationPathsAndEmptyFiles": "Verified by retained native browser API audit, not independently decoded from Chrome File System metadata.",
+      "binaryMessages": 1712,
+      "binaryBytes": 105224499,
+      "durableAckIndices": 1712,
+      "payloadIntervalMBps": 11.004277312122564,
+      "sourceScanMs": 29.90000009536743,
+      "sourcePrepareMs": 5972.599999904633,
+      "payloadIntervalMs": 9555.299999952316,
+      "streamVerifyMs": 2502.7000000476837,
+      "destinationSaveMs": 20849.700000047684,
+      "diagnosticAuditMs": 2630.4000000953674,
+      "processMemoryObservationComplete": true,
+      "completeTimedSamples": 40,
+      "incompleteTimedSamples": [],
+      "observerErrors": [],
+      "phaseMemory": {
+        "receiver": {
+          "samples": 20,
+          "peakPrivateBytes": 459718656,
+          "peakWorkingSetBytes": 788783104,
+          "phases": {
+            "setup": {
+              "samples": 4,
+              "peakPrivateBytes": 394665984,
+              "peakWorkingSetBytes": 684695552,
+              "lastProcessCount": 8
+            },
+            "receive": {
+              "samples": 4,
+              "peakPrivateBytes": 437923840,
+              "peakWorkingSetBytes": 759865344,
+              "lastProcessCount": 8
+            },
+            "verify": {
+              "samples": 1,
+              "peakPrivateBytes": 427429888,
+              "peakWorkingSetBytes": 756817920,
+              "lastProcessCount": 8
+            },
+            "destination": {
+              "samples": 10,
+              "peakPrivateBytes": 447692800,
+              "peakWorkingSetBytes": 775290880,
+              "lastProcessCount": 8
+            },
+            "audit": {
+              "samples": 1,
+              "peakPrivateBytes": 459718656,
+              "peakWorkingSetBytes": 788783104,
+              "lastProcessCount": 8
+            }
+          },
+          "peakPrivatePhase": "audit",
+          "peakWorkingSetPhase": "audit"
+        },
+        "sender": {
+          "samples": 20,
+          "peakPrivateBytes": 475402240,
+          "peakWorkingSetBytes": 764702720,
+          "phases": {
+            "setup->prepare": {
+              "samples": 1,
+              "peakPrivateBytes": 304541696,
+              "peakWorkingSetBytes": 607539200,
+              "lastProcessCount": 8
+            },
+            "prepare": {
+              "samples": 2,
+              "peakPrivateBytes": 475402240,
+              "peakWorkingSetBytes": 764702720,
+              "lastProcessCount": 8
+            },
+            "connect": {
+              "samples": 1,
+              "peakPrivateBytes": 343769088,
+              "peakWorkingSetBytes": 660205568,
+              "lastProcessCount": 8
+            },
+            "transfer": {
+              "samples": 16,
+              "peakPrivateBytes": 426389504,
+              "peakWorkingSetBytes": 752951296,
+              "lastProcessCount": 8
+            }
+          },
+          "peakPrivatePhase": "prepare",
+          "peakWorkingSetPhase": "prepare"
+        }
+      },
+      "pageHeapPeaks": {
+        "sender": 74736470,
+        "receiver": 66143316
+      },
+      "sampledReserveMet": true,
+      "resourceSampleMinima": {
+        "C:/": 3995361280,
+        "D:/": 2579247104
+      },
+      "profileInventory": {
+        "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-chrome-2026-10-17-fCECf0\\INDEPENDENT-PROFILE-INVENTORY.json",
+        "bytes": 909491,
+        "sha256": "11424379bd08f63c97dd562bbd822378a2d3c342b1fed228985903d2f01d5286"
+      },
+      "physicalNotRun": 42,
+      "releaseStatus": "NOT READY",
+      "scope": "Current production code under dev-server timing/preservation transforms. Synthetic file-like source, separate same-host headless native browser processes, direct SDP and injected OPFS destination. No native source disk/OS picker/UI pairing/physical LAN, general resource/throughput or50–100GB acceptance. Per-file256-byte repeated fixture cannot distinguish all wrong offsets; all selected source bytes/file digests/stream SHA and nonempty destination corpus were checked independently. No timed forced GC or weakened missing-process gate.",
+      "sourceOperations": {
+        "scan.collectLargeDirectory": {
+          "calls": 1,
+          "ms": 15,
+          "bytes": 0
+        },
+        "prepare.syntheticSlice": {
+          "calls": 1800,
+          "ms": 825.2000012397766,
+          "bytes": 104857600
+        },
+        "prepare.blobRead": {
+          "calls": 1800,
+          "ms": 907.0000050067902,
+          "bytes": 104857600
+        },
+        "prepare.prepareLargeSource": {
+          "calls": 1,
+          "ms": 5972.599999904633,
+          "bytes": 0
+        },
+        "transfer.syntheticSlice": {
+          "calls": 3506,
+          "ms": 1579.4000036716461,
+          "bytes": 104857600
+        },
+        "transfer.blobRead": {
+          "calls": 3506,
+          "ms": 2042.499998807907,
+          "bytes": 104857600
+        },
+        "transfer.readPreparedLargeRange": {
+          "calls": 1712,
+          "ms": 3809.300005197525,
+          "bytes": 0
+        },
+        "transfer.encodeOfflineDataBlock": {
+          "calls": 1712,
+          "ms": 3164.8000020980835,
+          "bytes": 0
+        },
+        "channel.send": {
+          "calls": 1713,
+          "ms": 52.89999341964722,
+          "bytes": 0
+        }
+      },
+      "receiverOperations": {
+        "worker.setup.open": {
+          "calls": 1,
+          "ms": 57.200000047683716,
+          "bytes": 0
+        },
+        "receive.decodeOfflineDataBlockAsync": {
+          "calls": 1712,
+          "ms": 3596.900007009506,
+          "bytes": 0
+        },
+        "worker.receive.write-payload": {
+          "calls": 1712,
+          "ms": 543.1999950408936,
+          "bytes": 105149171
+        },
+        "worker.receive.flush-payload": {
+          "calls": 93,
+          "ms": 212.29999995231628,
+          "bytes": 0
+        },
+        "worker.receive.append-journal": {
+          "calls": 93,
+          "ms": 103.30000019073486,
+          "bytes": 9080
+        },
+        "receive.storeWriteBlocks": {
+          "calls": 93,
+          "ms": 1025.8999996185303,
+          "bytes": 0
+        },
+        "receive.acceptBatch": {
+          "calls": 93,
+          "ms": 1383.6999990940094,
+          "bytes": 0
+        },
+        "channel.send": {
+          "calls": 94,
+          "ms": 1.7999999523162842,
+          "bytes": 0
+        },
+        "worker.verify.read-payload": {
+          "calls": 26,
+          "ms": 90.99999952316284,
+          "bytes": 105149171
+        },
+        "worker.destination.read-payload": {
+          "calls": 1802,
+          "ms": 362.3999948501587,
+          "bytes": 105149171
+        },
+        "destination.verifyCompleteDestination": {
+          "calls": 1,
+          "ms": 3020.899999856949,
+          "bytes": 0
+        },
+        "destination.writeLargeTreeToDirectory": {
+          "calls": 1,
+          "ms": 20849.400000095367,
+          "bytes": 0
+        }
+      },
+      "sourceCpu": {
+        "mainThreadTaskSeconds": 13.044837,
+        "mainThreadScriptSeconds": 0.052481,
+        "observedProcessCpuSeconds": 27.919363999999998,
+        "exitedProcessCount": 0,
+        "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+      },
+      "receiverCpu": {
+        "mainThreadTaskSeconds": 11.360323000000001,
+        "mainThreadScriptSeconds": 0.142291,
+        "observedProcessCpuSeconds": 52.34354000000001,
+        "exitedProcessCount": 0,
+        "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+      },
+      "senderControls": {
+        "sender-complete": {
+          "messages": 1,
+          "bytes": 26
+        }
+      },
+      "receiverControls": {
+        "ack": {
+          "messages": 93,
+          "bytes": 9868
+        },
+        "receiver-complete": {
+          "messages": 1,
+          "bytes": 28
+        }
+      }
+    },
+    {
+      "verifiedAt": "2026-10-17T10:52:37.541Z",
+      "browser": "edge",
+      "profiles": [
+        {
+          "role": "sender",
+          "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-edge-2026-10-17-0AGNLY\\profiles\\p-qUPk0e",
+          "version": "154.0.4258.53",
+          "files": 270
+        },
+        {
+          "role": "receiver",
+          "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-edge-2026-10-17-0AGNLY\\profiles\\p-VCX00J",
+          "version": "154.0.4258.53",
+          "files": 2286
+        }
+      ],
+      "inputs": 176,
+      "builtAssets": 5,
+      "canonicalMetadataUnchanged": 1990,
+      "applicationChanged": false,
+      "rawDiagnosticExitCode": 0,
+      "rawDiagnosticPassed": true,
+      "dataIndependentlyVerified": true,
+      "payloadBytes": 104857600,
+      "streamBytes": 105149171,
+      "streamSha256": "c5e58686e20ad94c91e6e137527efd3697d0f9a86d7b5d042235c6b161bb1c32",
+      "files": 2000,
+      "emptyFiles": 200,
+      "directories": 20,
+      "nonemptyDestinationFilesIndependentlyMatched": 1800,
+      "destinationPathsAndEmptyFiles": "Verified by retained native browser API audit, not independently decoded from Chrome File System metadata.",
+      "binaryMessages": 1712,
+      "binaryBytes": 105224499,
+      "durableAckIndices": 1712,
+      "payloadIntervalMBps": 34.24385168862808,
+      "sourceScanMs": 32.09999990463257,
+      "sourcePrepareMs": 3391.7000000476837,
+      "payloadIntervalMs": 3070.600000143051,
+      "streamVerifyMs": 1322.1000001430511,
+      "destinationSaveMs": 15664.200000047684,
+      "diagnosticAuditMs": 3694.2999999523163,
+      "processMemoryObservationComplete": true,
+      "completeTimedSamples": 28,
+      "incompleteTimedSamples": [],
+      "observerErrors": [],
+      "phaseMemory": {
+        "receiver": {
+          "samples": 14,
+          "peakPrivateBytes": 446230528,
+          "peakWorkingSetBytes": 800018432,
+          "phases": {
+            "setup": {
+              "samples": 2,
+              "peakPrivateBytes": 290500608,
+              "peakWorkingSetBytes": 630534144,
+              "lastProcessCount": 10
+            },
+            "receive": {
+              "samples": 2,
+              "peakPrivateBytes": 381800448,
+              "peakWorkingSetBytes": 737144832,
+              "lastProcessCount": 10
+            },
+            "verify->destination": {
+              "samples": 1,
+              "peakPrivateBytes": 446230528,
+              "peakWorkingSetBytes": 800018432,
+              "lastProcessCount": 10
+            },
+            "destination": {
+              "samples": 7,
+              "peakPrivateBytes": 416395264,
+              "peakWorkingSetBytes": 772710400,
+              "lastProcessCount": 9
+            },
+            "audit": {
+              "samples": 2,
+              "peakPrivateBytes": 415002624,
+              "peakWorkingSetBytes": 753180672,
+              "lastProcessCount": 9
+            }
+          },
+          "peakPrivatePhase": "verify->destination",
+          "peakWorkingSetPhase": "verify->destination"
+        },
+        "sender": {
+          "samples": 14,
+          "peakPrivateBytes": 397385728,
+          "peakWorkingSetBytes": 737669120,
+          "phases": {
+            "setup->prepare": {
+              "samples": 1,
+              "peakPrivateBytes": 277622784,
+              "peakWorkingSetBytes": 556945408,
+              "lastProcessCount": 7
+            },
+            "prepare": {
+              "samples": 1,
+              "peakPrivateBytes": 358871040,
+              "peakWorkingSetBytes": 660631552,
+              "lastProcessCount": 8
+            },
+            "transfer": {
+              "samples": 12,
+              "peakPrivateBytes": 397385728,
+              "peakWorkingSetBytes": 737669120,
+              "lastProcessCount": 9
+            }
+          },
+          "peakPrivatePhase": "transfer",
+          "peakWorkingSetPhase": "transfer"
+        }
+      },
+      "pageHeapPeaks": {
+        "sender": 74301162,
+        "receiver": 74502097
+      },
+      "sampledReserveMet": true,
+      "resourceSampleMinima": {
+        "C:/": 3734077440,
+        "D:/": 2579066880
+      },
+      "profileInventory": {
+        "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-edge-2026-10-17-0AGNLY\\INDEPENDENT-PROFILE-INVENTORY.json",
+        "bytes": 925263,
+        "sha256": "2acf4e1346defed152593b1e66f552be97d39600e9c9e6a1e6569627af699387"
+      },
+      "physicalNotRun": 42,
+      "releaseStatus": "NOT READY",
+      "scope": "Current production code under dev-server timing/preservation transforms. Synthetic file-like source, separate same-host headless native browser processes, direct SDP and injected OPFS destination. No native source disk/OS picker/UI pairing/physical LAN, general resource/throughput or50–100GB acceptance. Per-file256-byte repeated fixture cannot distinguish all wrong offsets; all selected source bytes/file digests/stream SHA and nonempty destination corpus were checked independently. No timed forced GC or weakened missing-process gate.",
+      "sourceOperations": {
+        "scan.collectLargeDirectory": {
+          "calls": 1,
+          "ms": 16.600000143051147,
+          "bytes": 0
+        },
+        "prepare.syntheticSlice": {
+          "calls": 1800,
+          "ms": 420.10000014305115,
+          "bytes": 104857600
+        },
+        "prepare.blobRead": {
+          "calls": 1800,
+          "ms": 471.99999809265137,
+          "bytes": 104857600
+        },
+        "prepare.prepareLargeSource": {
+          "calls": 1,
+          "ms": 3391.600000143051,
+          "bytes": 0
+        },
+        "transfer.syntheticSlice": {
+          "calls": 3506,
+          "ms": 726.1000027656555,
+          "bytes": 104857600
+        },
+        "transfer.blobRead": {
+          "calls": 3506,
+          "ms": 866.0999946594238,
+          "bytes": 104857600
+        },
+        "transfer.readPreparedLargeRange": {
+          "calls": 1712,
+          "ms": 1669.2999999523163,
+          "bytes": 0
+        },
+        "transfer.encodeOfflineDataBlock": {
+          "calls": 1712,
+          "ms": 1316.6999998092651,
+          "bytes": 0
+        },
+        "channel.send": {
+          "calls": 1713,
+          "ms": 18.20000147819519,
+          "bytes": 0
+        }
+      },
+      "receiverOperations": {
+        "worker.setup.open": {
+          "calls": 1,
+          "ms": 19.699999809265137,
+          "bytes": 0
+        },
+        "receive.decodeOfflineDataBlockAsync": {
+          "calls": 1712,
+          "ms": 3351.699969291687,
+          "bytes": 0
+        },
+        "worker.receive.write-payload": {
+          "calls": 1712,
+          "ms": 208.30000400543213,
+          "bytes": 105149171
+        },
+        "worker.receive.flush-payload": {
+          "calls": 38,
+          "ms": 121.59999942779541,
+          "bytes": 0
+        },
+        "worker.receive.append-journal": {
+          "calls": 38,
+          "ms": 22.400001049041748,
+          "bytes": 7760
+        },
+        "receive.storeWriteBlocks": {
+          "calls": 38,
+          "ms": 427.2000005245209,
+          "bytes": 0
+        },
+        "receive.acceptBatch": {
+          "calls": 38,
+          "ms": 571.800000667572,
+          "bytes": 0
+        },
+        "channel.send": {
+          "calls": 39,
+          "ms": 0.19999980926513672,
+          "bytes": 0
+        },
+        "worker.verify.read-payload": {
+          "calls": 26,
+          "ms": 52.299999952316284,
+          "bytes": 105149171
+        },
+        "worker.destination.read-payload": {
+          "calls": 1802,
+          "ms": 267.5999939441681,
+          "bytes": 105149171
+        },
+        "destination.verifyCompleteDestination": {
+          "calls": 1,
+          "ms": 3670.600000143051,
+          "bytes": 0
+        },
+        "destination.writeLargeTreeToDirectory": {
+          "calls": 1,
+          "ms": 15664.100000143051,
+          "bytes": 0
+        }
+      },
+      "sourceCpu": {
+        "mainThreadTaskSeconds": 6.408276,
+        "mainThreadScriptSeconds": 0.014577,
+        "observedProcessCpuSeconds": 13.642025,
+        "exitedProcessCount": 0,
+        "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+      },
+      "receiverCpu": {
+        "mainThreadTaskSeconds": 7.874055,
+        "mainThreadScriptSeconds": 0.062947,
+        "observedProcessCpuSeconds": 37.006386,
+        "exitedProcessCount": 0,
+        "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+      },
+      "senderControls": {
+        "sender-complete": {
+          "messages": 1,
+          "bytes": 26
+        }
+      },
+      "receiverControls": {
+        "ack": {
+          "messages": 38,
+          "bytes": 8438
+        },
+        "receiver-complete": {
+          "messages": 1,
+          "bytes": 28
+        }
+      }
+    }
+  ],
+  "ownedWorkers": [],
+  "sameFixtureStreamHash": true,
+  "priorCurrentOneGiBMeasurement": "Still failed because one timed process sample was missing; no result was relabeled.",
+  "performanceInterpretation": "One trial per browser under normal headless profiles, not randomized/counterbalanced repeated trials or physical target devices. Differences do not establish a causal diagnosis, general browser speed advantage or accepted throughput.",
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY"
+}

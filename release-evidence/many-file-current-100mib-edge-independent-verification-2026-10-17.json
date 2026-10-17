@@ -1,0 +1,132 @@
+{
+  "verifiedAt": "2026-10-17T10:52:37.541Z",
+  "browser": "edge",
+  "profiles": [
+    {
+      "role": "sender",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-edge-2026-10-17-0AGNLY\\profiles\\p-qUPk0e",
+      "version": "154.0.4258.53",
+      "files": 270
+    },
+    {
+      "role": "receiver",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-edge-2026-10-17-0AGNLY\\profiles\\p-VCX00J",
+      "version": "154.0.4258.53",
+      "files": 2286
+    }
+  ],
+  "inputs": 176,
+  "builtAssets": 5,
+  "canonicalMetadataUnchanged": 1990,
+  "applicationChanged": false,
+  "rawDiagnosticExitCode": 0,
+  "rawDiagnosticPassed": true,
+  "dataIndependentlyVerified": true,
+  "payloadBytes": 104857600,
+  "streamBytes": 105149171,
+  "streamSha256": "c5e58686e20ad94c91e6e137527efd3697d0f9a86d7b5d042235c6b161bb1c32",
+  "files": 2000,
+  "emptyFiles": 200,
+  "directories": 20,
+  "nonemptyDestinationFilesIndependentlyMatched": 1800,
+  "destinationPathsAndEmptyFiles": "Verified by retained native browser API audit, not independently decoded from Chrome File System metadata.",
+  "binaryMessages": 1712,
+  "binaryBytes": 105224499,
+  "durableAckIndices": 1712,
+  "payloadIntervalMBps": 34.24385168862808,
+  "sourceScanMs": 32.09999990463257,
+  "sourcePrepareMs": 3391.7000000476837,
+  "payloadIntervalMs": 3070.600000143051,
+  "streamVerifyMs": 1322.1000001430511,
+  "destinationSaveMs": 15664.200000047684,
+  "diagnosticAuditMs": 3694.2999999523163,
+  "processMemoryObservationComplete": true,
+  "completeTimedSamples": 28,
+  "incompleteTimedSamples": [],
+  "observerErrors": [],
+  "phaseMemory": {
+    "receiver": {
+      "samples": 14,
+      "peakPrivateBytes": 446230528,
+      "peakWorkingSetBytes": 800018432,
+      "phases": {
+        "setup": {
+          "samples": 2,
+          "peakPrivateBytes": 290500608,
+          "peakWorkingSetBytes": 630534144,
+          "lastProcessCount": 10
+        },
+        "receive": {
+          "samples": 2,
+          "peakPrivateBytes": 381800448,
+          "peakWorkingSetBytes": 737144832,
+          "lastProcessCount": 10
+        },
+        "verify->destination": {
+          "samples": 1,
+          "peakPrivateBytes": 446230528,
+          "peakWorkingSetBytes": 800018432,
+          "lastProcessCount": 10
+        },
+        "destination": {
+          "samples": 7,
+          "peakPrivateBytes": 416395264,
+          "peakWorkingSetBytes": 772710400,
+          "lastProcessCount": 9
+        },
+        "audit": {
+          "samples": 2,
+          "peakPrivateBytes": 415002624,
+          "peakWorkingSetBytes": 753180672,
+          "lastProcessCount": 9
+        }
+      },
+      "peakPrivatePhase": "verify->destination",
+      "peakWorkingSetPhase": "verify->destination"
+    },
+    "sender": {
+      "samples": 14,
+      "peakPrivateBytes": 397385728,
+      "peakWorkingSetBytes": 737669120,
+      "phases": {
+        "setup->prepare": {
+          "samples": 1,
+          "peakPrivateBytes": 277622784,
+          "peakWorkingSetBytes": 556945408,
+          "lastProcessCount": 7
+        },
+        "prepare": {
+          "samples": 1,
+          "peakPrivateBytes": 358871040,
+          "peakWorkingSetBytes": 660631552,
+          "lastProcessCount": 8
+        },
+        "transfer": {
+          "samples": 12,
+          "peakPrivateBytes": 397385728,
+          "peakWorkingSetBytes": 737669120,
+          "lastProcessCount": 9
+        }
+      },
+      "peakPrivatePhase": "transfer",
+      "peakWorkingSetPhase": "transfer"
+    }
+  },
+  "pageHeapPeaks": {
+    "sender": 74301162,
+    "receiver": 74502097
+  },
+  "sampledReserveMet": true,
+  "resourceSampleMinima": {
+    "C:/": 3734077440,
+    "D:/": 2579066880
+  },
+  "profileInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-edge-2026-10-17-0AGNLY\\INDEPENDENT-PROFILE-INVENTORY.json",
+    "bytes": 925263,
+    "sha256": "2acf4e1346defed152593b1e66f552be97d39600e9c9e6a1e6569627af699387"
+  },
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY",
+  "scope": "Current production code under dev-server timing/preservation transforms. Synthetic file-like source, separate same-host headless native browser processes, direct SDP and injected OPFS destination. No native source disk/OS picker/UI pairing/physical LAN, general resource/throughput or50–100GB acceptance. Per-file256-byte repeated fixture cannot distinguish all wrong offsets; all selected source bytes/file digests/stream SHA and nonempty destination corpus were checked independently. No timed forced GC or weakened missing-process gate."
+}

@@ -1,0 +1,138 @@
+{
+  "verifiedAt": "2026-10-17T10:49:45.326Z",
+  "browser": "chrome",
+  "profiles": [
+    {
+      "role": "sender",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-chrome-2026-10-17-fCECf0\\profiles\\p-YoKnwR",
+      "version": "155.0.8059.80",
+      "files": 231
+    },
+    {
+      "role": "receiver",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-chrome-2026-10-17-fCECf0\\profiles\\p-jRPbgr",
+      "version": "155.0.8059.80",
+      "files": 2248
+    }
+  ],
+  "inputs": 176,
+  "builtAssets": 5,
+  "canonicalMetadataUnchanged": 1990,
+  "applicationChanged": false,
+  "rawDiagnosticExitCode": 0,
+  "rawDiagnosticPassed": true,
+  "dataIndependentlyVerified": true,
+  "payloadBytes": 104857600,
+  "streamBytes": 105149171,
+  "streamSha256": "c5e58686e20ad94c91e6e137527efd3697d0f9a86d7b5d042235c6b161bb1c32",
+  "files": 2000,
+  "emptyFiles": 200,
+  "directories": 20,
+  "nonemptyDestinationFilesIndependentlyMatched": 1800,
+  "destinationPathsAndEmptyFiles": "Verified by retained native browser API audit, not independently decoded from Chrome File System metadata.",
+  "binaryMessages": 1712,
+  "binaryBytes": 105224499,
+  "durableAckIndices": 1712,
+  "payloadIntervalMBps": 11.004277312122564,
+  "sourceScanMs": 29.90000009536743,
+  "sourcePrepareMs": 5972.599999904633,
+  "payloadIntervalMs": 9555.299999952316,
+  "streamVerifyMs": 2502.7000000476837,
+  "destinationSaveMs": 20849.700000047684,
+  "diagnosticAuditMs": 2630.4000000953674,
+  "processMemoryObservationComplete": true,
+  "completeTimedSamples": 40,
+  "incompleteTimedSamples": [],
+  "observerErrors": [],
+  "phaseMemory": {
+    "receiver": {
+      "samples": 20,
+      "peakPrivateBytes": 459718656,
+      "peakWorkingSetBytes": 788783104,
+      "phases": {
+        "setup": {
+          "samples": 4,
+          "peakPrivateBytes": 394665984,
+          "peakWorkingSetBytes": 684695552,
+          "lastProcessCount": 8
+        },
+        "receive": {
+          "samples": 4,
+          "peakPrivateBytes": 437923840,
+          "peakWorkingSetBytes": 759865344,
+          "lastProcessCount": 8
+        },
+        "verify": {
+          "samples": 1,
+          "peakPrivateBytes": 427429888,
+          "peakWorkingSetBytes": 756817920,
+          "lastProcessCount": 8
+        },
+        "destination": {
+          "samples": 10,
+          "peakPrivateBytes": 447692800,
+          "peakWorkingSetBytes": 775290880,
+          "lastProcessCount": 8
+        },
+        "audit": {
+          "samples": 1,
+          "peakPrivateBytes": 459718656,
+          "peakWorkingSetBytes": 788783104,
+          "lastProcessCount": 8
+        }
+      },
+      "peakPrivatePhase": "audit",
+      "peakWorkingSetPhase": "audit"
+    },
+    "sender": {
+      "samples": 20,
+      "peakPrivateBytes": 475402240,
+      "peakWorkingSetBytes": 764702720,
+      "phases": {
+        "setup->prepare": {
+          "samples": 1,
+          "peakPrivateBytes": 304541696,
+          "peakWorkingSetBytes": 607539200,
+          "lastProcessCount": 8
+        },
+        "prepare": {
+          "samples": 2,
+          "peakPrivateBytes": 475402240,
+          "peakWorkingSetBytes": 764702720,
+          "lastProcessCount": 8
+        },
+        "connect": {
+          "samples": 1,
+          "peakPrivateBytes": 343769088,
+          "peakWorkingSetBytes": 660205568,
+          "lastProcessCount": 8
+        },
+        "transfer": {
+          "samples": 16,
+          "peakPrivateBytes": 426389504,
+          "peakWorkingSetBytes": 752951296,
+          "lastProcessCount": 8
+        }
+      },
+      "peakPrivatePhase": "prepare",
+      "peakWorkingSetPhase": "prepare"
+    }
+  },
+  "pageHeapPeaks": {
+    "sender": 74736470,
+    "receiver": 66143316
+  },
+  "sampledReserveMet": true,
+  "resourceSampleMinima": {
+    "C:/": 3995361280,
+    "D:/": 2579247104
+  },
+  "profileInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-chrome-2026-10-17-fCECf0\\INDEPENDENT-PROFILE-INVENTORY.json",
+    "bytes": 909491,
+    "sha256": "11424379bd08f63c97dd562bbd822378a2d3c342b1fed228985903d2f01d5286"
+  },
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY",
+  "scope": "Current production code under dev-server timing/preservation transforms. Synthetic file-like source, separate same-host headless native browser processes, direct SDP and injected OPFS destination. No native source disk/OS picker/UI pairing/physical LAN, general resource/throughput or50–100GB acceptance. Per-file256-byte repeated fixture cannot distinguish all wrong offsets; all selected source bytes/file digests/stream SHA and nonempty destination corpus were checked independently. No timed forced GC or weakened missing-process gate."
+}

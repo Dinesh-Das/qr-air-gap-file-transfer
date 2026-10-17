@@ -1,0 +1,3840 @@
+{
+  "schema": "qrft-webrtc-benchmark-v1",
+  "startedAt": "2026-10-17T10:50:01.043Z",
+  "node": "v24.22.0",
+  "scope": "Two separate temporary normal Chromium processes on one Windows host; synthetic source slices and OPFS destination. Direct harness SDP exchange, not application pairing, human authorization, physical LAN, source disk or native destination validation.",
+  "profile": true,
+  "nativeHashes": true,
+  "saveTree": true,
+  "processMemory": true,
+  "corruptBlock": null,
+  "sizesMiB": [
+    100
+  ],
+  "fileCount": 2000,
+  "modes": [
+    "transfer"
+  ],
+  "repeats": 1,
+  "rawBaseline": "Same ordered channel, 60 KiB payload plus 44 bytes, 96-block window, 8/2 MiB buffering thresholds and production 64-block/75 ms receive queue; pattern check and batched ACKs, no hashing/source reads/OPFS durability.",
+  "fixtureGeneration": "256-byte periodic pattern expanded with bounded typed-array copies; same bytes as the original file-index/offset formula. Destination audit uses the independent per-byte formula.",
+  "inputs": [
+    {
+      "path": "package-lock.json",
+      "sha256": "1941b668b0e20e0d3ac46b4ec10637626b65325bd97eb2ef2605635fa0ac8fa5"
+    },
+    {
+      "path": "package.json",
+      "sha256": "e7cd4b05e001d3cf460f1c2c2421e37f464a42d9c1ec939f3f0ec24e2a7a7574"
+    },
+    {
+      "path": "scripts/benchmark-pattern.mjs",
+      "sha256": "c123dbc053a01b317d8619e96500e774549f4d14a41afbd98725d2551017087a"
+    },
+    {
+      "path": "scripts/benchmark-receiver.mjs",
+      "sha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431"
+    },
+    {
+      "path": "scripts/benchmark-result.mjs",
+      "sha256": "2c73f114ccb427576aa55008b08c3ace9108405fb36d0fa3310f6a9f07bc44c7"
+    },
+    {
+      "path": "scripts/benchmark-webrtc-page.mjs",
+      "sha256": "2c52adeedaa92a378f8cfd44cc461e615d77b1d45cf6385fbf064916a1bd17cb"
+    },
+    {
+      "path": "scripts/benchmark-webrtc.mjs",
+      "sha256": "ffd283e8e93f788c70099a193074c0b9cdf0b1d9ced041a1458d78819b22edcc"
+    },
+    {
+      "path": "scripts/browser-process-memory.mjs",
+      "sha256": "8fb651a94d4c5902c5ac806ea6e342b78a36520988ad3e685fc49c6a81e86f36"
+    },
+    {
+      "path": "scripts/browser-process-memory.ps1",
+      "sha256": "86395d780f2498229cdef346b2d19ac41a1fc7f2a9b3a633165a1e9893bb3d03"
+    },
+    {
+      "path": "scripts/compare-trees.mjs",
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "scripts/create-fixture.mjs",
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "scripts/diagnose-storage-context.mjs",
+      "sha256": "a5d74a5f2930258112115c6f3e5e285ea4a513ce740246e009ff47b34a381b19"
+    },
+    {
+      "path": "scripts/lan-signaling.mjs",
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "scripts/launch.mjs",
+      "sha256": "194e1351a6c31be44f17af1dc4686939d180c62f206e21d9dc82121ba09358c3"
+    },
+    {
+      "path": "scripts/local-http-security.mjs",
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "scripts/package-offline.mjs",
+      "sha256": "3a73722d522459c70ad817be7706026c9ecde1083358911377134b8e8527e17e"
+    },
+    {
+      "path": "scripts/rendezvous.mjs",
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "scripts/smoke-offline.mjs",
+      "sha256": "7c5ae229ff2f333dc5499ff14b5a49926165093c537f0678bd8f5314a28154cd"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "scripts/windows-runtime.mjs",
+      "sha256": "b094f2dcc9cde3552c7b95f517c984b4f509bb52658d29de2ee9546ef639a767"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
+    },
+    {
+      "path": "src/components/ConnectionDiagnostics.tsx",
+      "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+    },
+    {
+      "path": "src/components/LargeReceiver.tsx",
+      "sha256": "a5d95a2e4842b77336d8ef7df161e5b46267b5ef052940bacb35e48ea62b1935"
+    },
+    {
+      "path": "src/components/LargeSender.tsx",
+      "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+    },
+    {
+      "path": "src/components/PairingReadiness.tsx",
+      "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
+    },
+    {
+      "path": "src/components/Receiver.tsx",
+      "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+    },
+    {
+      "path": "src/components/Sender.tsx",
+      "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+    },
+    {
+      "path": "src/components/StorageReadiness.tsx",
+      "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
+    },
+    {
+      "path": "src/components/TransferMetrics.tsx",
+      "sha256": "4677d22a36c655156236fa1357e72a3cccdd9208a4ce2544e3e3dba1339d25b1"
+    },
+    {
+      "path": "src/components/TransferProblem.tsx",
+      "sha256": "656eb3a36342bb4f1d5f5c6783aa177bfbc45355e19253885f9bf0cbced6dcd8"
+    },
+    {
+      "path": "src/components/TransferWakeLock.tsx",
+      "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+    },
+    {
+      "path": "src/components/VerifyDevice.tsx",
+      "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "sha256": "93cf8e726780e232ba93a859f0cad1e8034454de7dd150396aa2098ad6d2817b"
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "sha256": "e0f44f8541b9305b0ebbab1e8a529322c8863d68fd31af5833810a29d8f9e6c8"
+    },
+    {
+      "path": "src/components/WebRtcSignalQr.tsx",
+      "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+    },
+    {
+      "path": "src/lib/archive.ts",
+      "sha256": "c241a0a91b2c59c17f8604dca57675645d8ce20abbe43882eaf72399d40bcde6"
+    },
+    {
+      "path": "src/lib/block-store-worker-protocol.ts",
+      "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+    },
+    {
+      "path": "src/lib/block-store.ts",
+      "sha256": "cb316af4cd79e4a2505eb9dd1a4755e097fe9935b99d3e160d3e2fc20b3109cc"
+    },
+    {
+      "path": "src/lib/block-store.worker.ts",
+      "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+    },
+    {
+      "path": "src/lib/connection-path.ts",
+      "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+    },
+    {
+      "path": "src/lib/connection.ts",
+      "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+    },
+    {
+      "path": "src/lib/format.ts",
+      "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+    },
+    {
+      "path": "src/lib/large-connection.ts",
+      "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+    },
+    {
+      "path": "src/lib/large-destination.ts",
+      "sha256": "96954feae06afe0e08a179c42bdddd334dc54cd7843d02ff2595f7a242e3e578"
+    },
+    {
+      "path": "src/lib/large-receiver-resume.ts",
+      "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+    },
+    {
+      "path": "src/lib/large-receiver.ts",
+      "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+    },
+    {
+      "path": "src/lib/large-sender-playback.ts",
+      "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+    },
+    {
+      "path": "src/lib/large-sender-resume.ts",
+      "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+    },
+    {
+      "path": "src/lib/large-transfer.ts",
+      "sha256": "4f6609cbc25c5be328f8d44dcb0f36e16f235025121804704e0ce397228c2aa2"
+    },
+    {
+      "path": "src/lib/optical-schedule.ts",
+      "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+    },
+    {
+      "path": "src/lib/protocol.ts",
+      "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+    },
+    {
+      "path": "src/lib/resume.ts",
+      "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+    },
+    {
+      "path": "src/lib/screen-wake-lock.ts",
+      "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+    },
+    {
+      "path": "src/lib/selected-files.ts",
+      "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+    },
+    {
+      "path": "src/lib/sender-resume.ts",
+      "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+    },
+    {
+      "path": "src/lib/stream-protocol.ts",
+      "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+    },
+    {
+      "path": "src/lib/transfer-problem.ts",
+      "sha256": "fe539d75660d16e14f376f42c68a358089d4d1b7961a96b8242b98038a82e89e"
+    },
+    {
+      "path": "src/lib/transfer-rate.ts",
+      "sha256": "6fb0d18190c2f640f3f1bebb2661f98ad13a88d0abbefff575a4d67b5b993071"
+    },
+    {
+      "path": "src/lib/transfer.ts",
+      "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+    },
+    {
+      "path": "src/lib/use-pairing-readiness.ts",
+      "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
+    },
+    {
+      "path": "src/lib/use-transfer-rate.ts",
+      "sha256": "8ddb5042d0ab91350190f428f2a91d104e3dd85a75f736cd1a59c82ea89ec2c0"
+    },
+    {
+      "path": "src/lib/webrtc-authorization.ts",
+      "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+    },
+    {
+      "path": "src/lib/webrtc-control-flow.ts",
+      "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+    },
+    {
+      "path": "src/lib/webrtc-peer-health.ts",
+      "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+    },
+    {
+      "path": "src/lib/webrtc-protocol.ts",
+      "sha256": "06c7ae26d9dd7f396e9585d17257516ee85b50eab290b9e8993bca3f7ff65cc1"
+    },
+    {
+      "path": "src/lib/webrtc-receive-queue.ts",
+      "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+    },
+    {
+      "path": "src/lib/webrtc-rendezvous.ts",
+      "sha256": "ecec62e9cf730bfb8cb210be6ebcc08a93a39ca10c69f7aee1602e2e18a46c39"
+    },
+    {
+      "path": "src/lib/webrtc-sender-resume.ts",
+      "sha256": "1a6920253bfe88279ae301c5cf631400afeb03d885eb73303f07c2b7dd594167"
+    },
+    {
+      "path": "src/lib/webrtc-signaling.ts",
+      "sha256": "fe7d9e75ea14fa526e3e8ceb8445c8d631c9cfe5bc10001c1f651223a7b41421"
+    },
+    {
+      "path": "src/lib/webrtc-transfer.ts",
+      "sha256": "2ffb0e756e82c879cd4dd4dc0edb1ea1199f0f904118d8d8973a6aa3128ff2f1"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "c5f1051b0fa98de99ac70978df61f98b67bd3f214b6ae27a428de57e2e4fbb11"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+    }
+  ],
+  "results": [
+    {
+      "mib": 100,
+      "repetition": 1,
+      "mode": "transfer",
+      "profile": true,
+      "nativeHashes": true,
+      "saveTree": true,
+      "startedAt": "2026-10-17T10:50:01.103Z",
+      "verified": true,
+      "profiles": [
+        {
+          "role": "sender",
+          "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-edge-2026-10-17-0AGNLY\\profiles\\p-qUPk0e"
+        },
+        {
+          "role": "receiver",
+          "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\many-file-current-100mib-edge-2026-10-17-0AGNLY\\profiles\\p-VCX00J"
+        }
+      ],
+      "streamBytes": 105149171,
+      "blockSize": 61440,
+      "dataHeaderBytes": 44,
+      "sender": {
+        "manifest": {
+          "v": 1,
+          "type": "manifest",
+          "transferId": "21938cb84fc0cf67a5f79f0414c98957",
+          "manifestId": "2e20ccef758bf0bd7a77aa7e844baf51a96ccfd5c16f9594db52a58088679940",
+          "rootName": "webrtc-benchmark",
+          "totalBytes": 105149171,
+          "blockSize": 61440,
+          "streamSha256": "c5e58686e20ad94c91e6e137527efd3697d0f9a86d7b5d042235c6b161bb1c32"
+        },
+        "role": "sender",
+        "mode": "transfer",
+        "verified": true,
+        "scanMs": 32.09999990463257,
+        "prepareMs": 3391.7000000476837,
+        "transferMs": 3070.600000143051,
+        "confirmedMs": 23800.200000047684,
+        "elapsedMs": 28309.800000190735,
+        "binaryMessages": 1712,
+        "binaryBytes": 105224499,
+        "receivedBytes": 0,
+        "controls": {
+          "sender-complete": {
+            "messages": 1,
+            "bytes": 26
+          }
+        },
+        "operations": {
+          "scan.collectLargeDirectory": {
+            "calls": 1,
+            "ms": 16.600000143051147,
+            "bytes": 0
+          },
+          "prepare.syntheticSlice": {
+            "calls": 1800,
+            "ms": 420.10000014305115,
+            "bytes": 104857600
+          },
+          "prepare.blobRead": {
+            "calls": 1800,
+            "ms": 471.99999809265137,
+            "bytes": 104857600
+          },
+          "prepare.prepareLargeSource": {
+            "calls": 1,
+            "ms": 3391.600000143051,
+            "bytes": 0
+          },
+          "transfer.syntheticSlice": {
+            "calls": 3506,
+            "ms": 726.1000027656555,
+            "bytes": 104857600
+          },
+          "transfer.blobRead": {
+            "calls": 3506,
+            "ms": 866.0999946594238,
+            "bytes": 104857600
+          },
+          "transfer.readPreparedLargeRange": {
+            "calls": 1712,
+            "ms": 1669.2999999523163,
+            "bytes": 0
+          },
+          "transfer.encodeOfflineDataBlock": {
+            "calls": 1712,
+            "ms": 1316.6999998092651,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 1713,
+            "ms": 18.20000147819519,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 394279,
+        "peakJsHeapBytes": 74301162,
+        "heapByPhase": {
+          "setup": {
+            "peakBytes": 5307740,
+            "lastBytes": 5307740,
+            "samples": 1
+          },
+          "prepare": {
+            "peakBytes": 74301162,
+            "lastBytes": 34782692,
+            "samples": 34
+          },
+          "connect": {
+            "peakBytes": 35586302,
+            "lastBytes": 34313893,
+            "samples": 7
+          },
+          "transfer": {
+            "peakBytes": 72500574,
+            "lastBytes": 45136381,
+            "samples": 238
+          }
+        },
+        "nativeDigestAvailable": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": null,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+        "cpu": {
+          "mainThreadTaskSeconds": 6.408276,
+          "mainThreadScriptSeconds": 0.014577,
+          "observedProcessCpuSeconds": 13.642025,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        },
+        "postRunHeap": {
+          "beforeCollection": {
+            "usedSize": 5006976,
+            "totalSize": 13266944,
+            "embedderHeapUsedSize": 999144,
+            "backingStorageSize": 40259437
+          },
+          "afterCollection": {
+            "usedSize": 3319144,
+            "totalSize": 4132864,
+            "embedderHeapUsedSize": 372312,
+            "backingStorageSize": 2628272
+          },
+          "note": "Forced collection is diagnostic, outside the timed run. Does not include all browser/native memory."
+        },
+        "postRunProcessMemory": {
+          "beforeCollection": {
+            "sampleStartedAtMs": 1792234230835,
+            "processes": [
+              {
+                "privateBytes": 76570624,
+                "workingSetBytes": 195170304,
+                "id": 36448
+              },
+              {
+                "privateBytes": 16769024,
+                "workingSetBytes": 39518208,
+                "id": 24732
+              },
+              {
+                "privateBytes": 95375360,
+                "workingSetBytes": 149147648,
+                "id": 33540
+              },
+              {
+                "privateBytes": 19230720,
+                "workingSetBytes": 52256768,
+                "id": 34944
+              },
+              {
+                "privateBytes": 119758848,
+                "workingSetBytes": 144744448,
+                "id": 36116
+              },
+              {
+                "privateBytes": 13709312,
+                "workingSetBytes": 50950144,
+                "id": 28040
+              },
+              {
+                "privateBytes": 8036352,
+                "workingSetBytes": 25505792,
+                "id": 1532
+              },
+              {
+                "privateBytes": 7757824,
+                "workingSetBytes": 24064000,
+                "id": 27752
+              },
+              {
+                "privateBytes": 7847936,
+                "workingSetBytes": 24248320,
+                "id": 29052
+              }
+            ],
+            "sampleFinishedAtMs": 1792234230939,
+            "missingIds": []
+          },
+          "afterCollection": {
+            "sampleStartedAtMs": 1792234230954,
+            "processes": [
+              {
+                "privateBytes": 63991808,
+                "workingSetBytes": 182882304,
+                "id": 36448
+              },
+              {
+                "privateBytes": 16769024,
+                "workingSetBytes": 39518208,
+                "id": 24732
+              },
+              {
+                "privateBytes": 42516480,
+                "workingSetBytes": 98877440,
+                "id": 33540
+              },
+              {
+                "privateBytes": 19230720,
+                "workingSetBytes": 52256768,
+                "id": 34944
+              },
+              {
+                "privateBytes": 119758848,
+                "workingSetBytes": 144744448,
+                "id": 36116
+              },
+              {
+                "privateBytes": 13709312,
+                "workingSetBytes": 50950144,
+                "id": 28040
+              },
+              {
+                "privateBytes": 8036352,
+                "workingSetBytes": 25505792,
+                "id": 1532
+              },
+              {
+                "privateBytes": 7757824,
+                "workingSetBytes": 24064000,
+                "id": 27752
+              },
+              {
+                "privateBytes": 7847936,
+                "workingSetBytes": 24248320,
+                "id": 29052
+              }
+            ],
+            "sampleFinishedAtMs": 1792234231051,
+            "missingIds": []
+          },
+          "note": "Diagnostic snapshots after timed work. Main-page collection does not force collection in every worker or release every native allocation."
+        }
+      },
+      "receiver": {
+        "manifest": {
+          "v": 1,
+          "type": "manifest",
+          "transferId": "21938cb84fc0cf67a5f79f0414c98957",
+          "manifestId": "2e20ccef758bf0bd7a77aa7e844baf51a96ccfd5c16f9594db52a58088679940",
+          "rootName": "webrtc-benchmark",
+          "totalBytes": 105149171,
+          "blockSize": 61440,
+          "streamSha256": "c5e58686e20ad94c91e6e137527efd3697d0f9a86d7b5d042235c6b161bb1c32"
+        },
+        "role": "receiver",
+        "mode": "transfer",
+        "verified": true,
+        "transferMs": 3065,
+        "elapsedMs": 24418.5,
+        "streamVerified": true,
+        "streamVerifyMs": 1322.1000001430511,
+        "destinationSaveMs": 15664.200000047684,
+        "destinationAuditMs": 3694.2999999523163,
+        "destinationFilesWritten": 2000,
+        "destinationCheckedBytes": 104857600,
+        "destinationVerified": true,
+        "binaryMessages": 1712,
+        "binaryBytes": 105224499,
+        "receivedBytes": 105149171,
+        "ackIndices": 1712,
+        "controls": {
+          "ack": {
+            "messages": 38,
+            "bytes": 8438
+          },
+          "receiver-complete": {
+            "messages": 1,
+            "bytes": 28
+          }
+        },
+        "operations": {
+          "worker.setup.open": {
+            "calls": 1,
+            "ms": 19.699999809265137,
+            "bytes": 0
+          },
+          "receive.decodeOfflineDataBlockAsync": {
+            "calls": 1712,
+            "ms": 3351.699969291687,
+            "bytes": 0
+          },
+          "worker.receive.write-payload": {
+            "calls": 1712,
+            "ms": 208.30000400543213,
+            "bytes": 105149171
+          },
+          "worker.receive.flush-payload": {
+            "calls": 38,
+            "ms": 121.59999942779541,
+            "bytes": 0
+          },
+          "worker.receive.append-journal": {
+            "calls": 38,
+            "ms": 22.400001049041748,
+            "bytes": 7760
+          },
+          "receive.storeWriteBlocks": {
+            "calls": 38,
+            "ms": 427.2000005245209,
+            "bytes": 0
+          },
+          "receive.acceptBatch": {
+            "calls": 38,
+            "ms": 571.800000667572,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 39,
+            "ms": 0.19999980926513672,
+            "bytes": 0
+          },
+          "worker.verify.read-payload": {
+            "calls": 26,
+            "ms": 52.299999952316284,
+            "bytes": 105149171
+          },
+          "worker.destination.read-payload": {
+            "calls": 1802,
+            "ms": 267.5999939441681,
+            "bytes": 105149171
+          },
+          "destination.verifyCompleteDestination": {
+            "calls": 1,
+            "ms": 3670.600000143051,
+            "bytes": 0
+          },
+          "destination.writeLargeTreeToDirectory": {
+            "calls": 1,
+            "ms": 15664.100000143051,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 271,
+        "peakJsHeapBytes": 74502097,
+        "heapByPhase": {
+          "setup": {
+            "peakBytes": 5318196,
+            "lastBytes": 4802444,
+            "samples": 3
+          },
+          "receive": {
+            "peakBytes": 66391286,
+            "lastBytes": 45707593,
+            "samples": 68
+          },
+          "verify": {
+            "peakBytes": 74502097,
+            "lastBytes": 45123773,
+            "samples": 14
+          },
+          "destination": {
+            "peakBytes": 53794134,
+            "lastBytes": 39810216,
+            "samples": 157
+          },
+          "audit": {
+            "peakBytes": 65483109,
+            "lastBytes": 37560560,
+            "samples": 1838
+          }
+        },
+        "workerProfilerBeforeConsumers": true,
+        "nativeDigestAvailable": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": 4488332,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+        "cpu": {
+          "mainThreadTaskSeconds": 7.874055,
+          "mainThreadScriptSeconds": 0.062947,
+          "observedProcessCpuSeconds": 37.006386,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        },
+        "postRunHeap": {
+          "beforeCollection": {
+            "usedSize": 4212228,
+            "totalSize": 17723392,
+            "embedderHeapUsedSize": 1409480,
+            "backingStorageSize": 33473159
+          },
+          "afterCollection": {
+            "usedSize": 2626752,
+            "totalSize": 3346432,
+            "embedderHeapUsedSize": 402592,
+            "backingStorageSize": 4452012
+          },
+          "note": "Forced collection is diagnostic, outside the timed run. Does not include all browser/native memory."
+        },
+        "postRunProcessMemory": {
+          "beforeCollection": {
+            "sampleStartedAtMs": 1792234231054,
+            "processes": [
+              {
+                "privateBytes": 106610688,
+                "workingSetBytes": 221835264,
+                "id": 34892
+              },
+              {
+                "privateBytes": 19611648,
+                "workingSetBytes": 42344448,
+                "id": 12724
+              },
+              {
+                "privateBytes": 118439936,
+                "workingSetBytes": 173486080,
+                "id": 36072
+              },
+              {
+                "privateBytes": 22036480,
+                "workingSetBytes": 55103488,
+                "id": 22200
+              },
+              {
+                "privateBytes": 119566336,
+                "workingSetBytes": 143892480,
+                "id": 35144
+              },
+              {
+                "privateBytes": 13807616,
+                "workingSetBytes": 50954240,
+                "id": 30392
+              },
+              {
+                "privateBytes": 8032256,
+                "workingSetBytes": 25489408,
+                "id": 19892
+              },
+              {
+                "privateBytes": 7757824,
+                "workingSetBytes": 24162304,
+                "id": 768
+              },
+              {
+                "privateBytes": 7860224,
+                "workingSetBytes": 24625152,
+                "id": 30244
+              }
+            ],
+            "sampleFinishedAtMs": 1792234231147,
+            "missingIds": []
+          },
+          "afterCollection": {
+            "sampleStartedAtMs": 1792234231168,
+            "processes": [
+              {
+                "privateBytes": 104062976,
+                "workingSetBytes": 219287552,
+                "id": 34892
+              },
+              {
+                "privateBytes": 19611648,
+                "workingSetBytes": 42344448,
+                "id": 12724
+              },
+              {
+                "privateBytes": 62078976,
+                "workingSetBytes": 119910400,
+                "id": 36072
+              },
+              {
+                "privateBytes": 22036480,
+                "workingSetBytes": 55103488,
+                "id": 22200
+              },
+              {
+                "privateBytes": 119566336,
+                "workingSetBytes": 143892480,
+                "id": 35144
+              },
+              {
+                "privateBytes": 13807616,
+                "workingSetBytes": 50954240,
+                "id": 30392
+              },
+              {
+                "privateBytes": 8032256,
+                "workingSetBytes": 25489408,
+                "id": 19892
+              },
+              {
+                "privateBytes": 7757824,
+                "workingSetBytes": 24162304,
+                "id": 768
+              },
+              {
+                "privateBytes": 7860224,
+                "workingSetBytes": 24625152,
+                "id": 30244
+              }
+            ],
+            "sampleFinishedAtMs": 1792234231290,
+            "missingIds": []
+          },
+          "note": "Diagnostic snapshots after timed work. Main-page collection does not force collection in every worker or release every native allocation."
+        }
+      },
+      "processMemory": {
+        "delayBetweenSamplesMs": 2000,
+        "samples": 14,
+        "maxObserverMs": 513.3084999999999,
+        "samplesWithMissingProcesses": 0,
+        "errors": [],
+        "roles": {
+          "receiver": {
+            "samples": 14,
+            "peakPrivateBytes": 446230528,
+            "peakWorkingSetBytes": 800018432,
+            "phases": {
+              "setup": {
+                "samples": 2,
+                "peakPrivateBytes": 290500608,
+                "peakWorkingSetBytes": 630534144,
+                "lastProcessCount": 10
+              },
+              "receive": {
+                "samples": 2,
+                "peakPrivateBytes": 381800448,
+                "peakWorkingSetBytes": 737144832,
+                "lastProcessCount": 10
+              },
+              "verify->destination": {
+                "samples": 1,
+                "peakPrivateBytes": 446230528,
+                "peakWorkingSetBytes": 800018432,
+                "lastProcessCount": 10
+              },
+              "destination": {
+                "samples": 7,
+                "peakPrivateBytes": 416395264,
+                "peakWorkingSetBytes": 772710400,
+                "lastProcessCount": 9
+              },
+              "audit": {
+                "samples": 2,
+                "peakPrivateBytes": 415002624,
+                "peakWorkingSetBytes": 753180672,
+                "lastProcessCount": 9
+              }
+            },
+            "peakPrivatePhase": "verify->destination",
+            "peakWorkingSetPhase": "verify->destination"
+          },
+          "sender": {
+            "samples": 14,
+            "peakPrivateBytes": 397385728,
+            "peakWorkingSetBytes": 737669120,
+            "phases": {
+              "setup->prepare": {
+                "samples": 1,
+                "peakPrivateBytes": 277622784,
+                "peakWorkingSetBytes": 556945408,
+                "lastProcessCount": 7
+              },
+              "prepare": {
+                "samples": 1,
+                "peakPrivateBytes": 358871040,
+                "peakWorkingSetBytes": 660631552,
+                "lastProcessCount": 8
+              },
+              "transfer": {
+                "samples": 12,
+                "peakPrivateBytes": 397385728,
+                "peakWorkingSetBytes": 737669120,
+                "lastProcessCount": 9
+              }
+            },
+            "peakPrivatePhase": "transfer",
+            "peakWorkingSetPhase": "transfer"
+          }
+        },
+        "note": "Opt-in observer overhead affects timings. Windows private bytes and working sets are summed only for IDs reported by each isolated browser. Working-set sums can double-count shared pages. Phase transitions are labeled separately; periodic sampling can miss peaks and newly created processes.",
+        "rawSamples": [
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:02.666Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 0.924793
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.112352
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 0.164067
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.066171
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.326558
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 0.174188
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053359
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234202538,
+              "processes": [
+                {
+                  "privateBytes": 48775168,
+                  "workingSetBytes": 153735168,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19976192,
+                  "workingSetBytes": 42663936,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 30908416,
+                  "workingSetBytes": 75837440,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22499328,
+                  "workingSetBytes": 55021568,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 110469120,
+                  "workingSetBytes": 121667584,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 12513280,
+                  "workingSetBytes": 47595520,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25493504,
+                  "id": 19892
+                }
+              ],
+              "sampleFinishedAtMs": 1792234202645,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:02.675Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 1.070654
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.089143
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 0.181428
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.066248
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.384386
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 0.221604
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061629
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234202538,
+              "processes": [
+                {
+                  "privateBytes": 48627712,
+                  "workingSetBytes": 153735168,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 17108992,
+                  "workingSetBytes": 39813120,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 32509952,
+                  "workingSetBytes": 78843904,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19644416,
+                  "workingSetBytes": 52162560,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 139182080,
+                  "workingSetBytes": 159277056,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 12513280,
+                  "workingSetBytes": 47607808,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                }
+              ],
+              "sampleFinishedAtMs": 1792234202650,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:05.044Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 1.754013
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.090262
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 2.214167
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.068756
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.69651
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 0.257129
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061629
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.024035
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234204967,
+              "processes": [
+                {
+                  "privateBytes": 62373888,
+                  "workingSetBytes": 172830720,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 17108992,
+                  "workingSetBytes": 39821312,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 66203648,
+                  "workingSetBytes": 116236288,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19693568,
+                  "workingSetBytes": 52707328,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 164552704,
+                  "workingSetBytes": 179245056,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13144064,
+                  "workingSetBytes": 50225152,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24059904,
+                  "id": 27752
+                }
+              ],
+              "sampleFinishedAtMs": 1792234205044,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:05.064Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 1.899932
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.115023
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 0.167745
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.0688
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.337188
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 0.218569
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053387
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.020894
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021122
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 5464,
+                "cpuTime": 0.108253
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234204967,
+              "processes": [
+                {
+                  "privateBytes": 59740160,
+                  "workingSetBytes": 178987008,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19955712,
+                  "workingSetBytes": 42651648,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 30846976,
+                  "workingSetBytes": 76201984,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22474752,
+                  "workingSetBytes": 55021568,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 110215168,
+                  "workingSetBytes": 121065472,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13135872,
+                  "workingSetBytes": 50262016,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7753728,
+                  "workingSetBytes": 24051712,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24621056,
+                  "id": 30244
+                },
+                {
+                  "privateBytes": 10485760,
+                  "workingSetBytes": 32182272,
+                  "id": 5464
+                }
+              ],
+              "sampleFinishedAtMs": 1792234205064,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:07.161Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 1.984924
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.090662
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 3.618508
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.069258
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.69867
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 0.310452
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061629
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.024035
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234207076,
+              "processes": [
+                {
+                  "privateBytes": 61366272,
+                  "workingSetBytes": 171909120,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 17113088,
+                  "workingSetBytes": 39849984,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 70688768,
+                  "workingSetBytes": 124502016,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19693568,
+                  "workingSetBytes": 52723712,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 162803712,
+                  "workingSetBytes": 178216960,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13742080,
+                  "workingSetBytes": 50552832,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24059904,
+                  "id": 27752
+                }
+              ],
+              "sampleFinishedAtMs": 1792234207161,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:07.174Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 1.954918
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.115023
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 0.243359
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.070732
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.626041
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 0.275753
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053387
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021151
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021142
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 5464,
+                "cpuTime": 0.108399
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234207076,
+              "processes": [
+                {
+                  "privateBytes": 60956672,
+                  "workingSetBytes": 182034432,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19955712,
+                  "workingSetBytes": 42651648,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 44916736,
+                  "workingSetBytes": 97767424,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22507520,
+                  "workingSetBytes": 55554048,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 171069440,
+                  "workingSetBytes": 184913920,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13746176,
+                  "workingSetBytes": 50851840,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24158208,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24621056,
+                  "id": 30244
+                },
+                {
+                  "privateBytes": 10313728,
+                  "workingSetBytes": 32010240,
+                  "id": 5464
+                }
+              ],
+              "sampleFinishedAtMs": 1792234207174,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:09.279Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 2.651722
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.090662
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 6.976476
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.069258
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699185
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 1.972612
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061629
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.024035
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234209181,
+              "processes": [
+                {
+                  "privateBytes": 71876608,
+                  "workingSetBytes": 182358016,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 17113088,
+                  "workingSetBytes": 39849984,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 116236288,
+                  "workingSetBytes": 169279488,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19693568,
+                  "workingSetBytes": 52723712,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 142962688,
+                  "workingSetBytes": 167133184,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50544640,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24059904,
+                  "id": 27752
+                }
+              ],
+              "sampleFinishedAtMs": 1792234209279,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:09.306Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 2.024143
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.115353
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 1.996322
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.071023
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.627969
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 1.937503
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053387
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021151
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021142
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 5464,
+                "cpuTime": 0.108399
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234209181,
+              "processes": [
+                {
+                  "privateBytes": 60968960,
+                  "workingSetBytes": 182087680,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19955712,
+                  "workingSetBytes": 42676224,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 74973184,
+                  "workingSetBytes": 128819200,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22507520,
+                  "workingSetBytes": 55570432,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 155693056,
+                  "workingSetBytes": 170864640,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13737984,
+                  "workingSetBytes": 50847744,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24158208,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24621056,
+                  "id": 30244
+                },
+                {
+                  "privateBytes": 10313728,
+                  "workingSetBytes": 32010240,
+                  "id": 5464
+                }
+              ],
+              "sampleFinishedAtMs": 1792234209305,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:11.377Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 2.937285
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.090662
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.351248
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.069258
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699262
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.666943
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061629
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.024035
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234211314,
+              "processes": [
+                {
+                  "privateBytes": 68341760,
+                  "workingSetBytes": 178819072,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 17113088,
+                  "workingSetBytes": 39849984,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 100544512,
+                  "workingSetBytes": 153845760,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19693568,
+                  "workingSetBytes": 52723712,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 139739136,
+                  "workingSetBytes": 164106240,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13697024,
+                  "workingSetBytes": 50532352,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24059904,
+                  "id": 27752
+                }
+              ],
+              "sampleFinishedAtMs": 1792234211376,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:11.440Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 2.049996
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.115353
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 3.973921
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.071023
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628116
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.629393
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053387
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021151
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021142
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 5464,
+                "cpuTime": 0.108492
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234211363,
+              "processes": [
+                {
+                  "privateBytes": 61050880,
+                  "workingSetBytes": 182185984,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19955712,
+                  "workingSetBytes": 42676224,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 152510464,
+                  "workingSetBytes": 204574720,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22507520,
+                  "workingSetBytes": 55570432,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 142430208,
+                  "workingSetBytes": 157757440,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13811712,
+                  "workingSetBytes": 50917376,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24158208,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24621056,
+                  "id": 30244
+                },
+                {
+                  "privateBytes": 10313728,
+                  "workingSetBytes": 32067584,
+                  "id": 5464
+                }
+              ],
+              "sampleFinishedAtMs": 1792234211440,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:13.573Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 3.511302
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.092431
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.357087
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.071223
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699782
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.694352
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061652
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.02407
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 29052,
+                "cpuTime": 0.021803
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 32624,
+                "cpuTime": 0.109953
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234213465,
+              "processes": [
+                {
+                  "privateBytes": 76963840,
+                  "workingSetBytes": 195682304,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 16769024,
+                  "workingSetBytes": 39518208,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 95219712,
+                  "workingSetBytes": 148533248,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19230720,
+                  "workingSetBytes": 52256768,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 119758848,
+                  "workingSetBytes": 144744448,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50946048,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24064000,
+                  "id": 27752
+                },
+                {
+                  "privateBytes": 7847936,
+                  "workingSetBytes": 24244224,
+                  "id": 29052
+                },
+                {
+                  "privateBytes": 10481664,
+                  "workingSetBytes": 32174080,
+                  "id": 32624
+                }
+              ],
+              "sampleFinishedAtMs": 1792234213572,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:13.574Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 4.63162
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.11615
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 4.734801
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.07158
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628642
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.641198
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053411
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021188
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021142
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 5464,
+                "cpuTime": 0.108492
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234213465,
+              "processes": [
+                {
+                  "privateBytes": 73449472,
+                  "workingSetBytes": 193810432,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19611648,
+                  "workingSetBytes": 42344448,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 128618496,
+                  "workingSetBytes": 180269056,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22036480,
+                  "workingSetBytes": 55103488,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 119566336,
+                  "workingSetBytes": 143892480,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13807616,
+                  "workingSetBytes": 50950144,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24162304,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24621056,
+                  "id": 30244
+                },
+                {
+                  "privateBytes": 10313728,
+                  "workingSetBytes": 32067584,
+                  "id": 5464
+                }
+              ],
+              "sampleFinishedAtMs": 1792234213572,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:15.677Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 7.403676
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.11615
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 5.346523
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.07158
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628642
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.641437
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053411
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021188
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021211
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234215586,
+              "processes": [
+                {
+                  "privateBytes": 83451904,
+                  "workingSetBytes": 201637888,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19611648,
+                  "workingSetBytes": 42344448,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 82677760,
+                  "workingSetBytes": 137441280,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22036480,
+                  "workingSetBytes": 55103488,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 119566336,
+                  "workingSetBytes": 143892480,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13807616,
+                  "workingSetBytes": 50954240,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24162304,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24625152,
+                  "id": 30244
+                }
+              ],
+              "sampleFinishedAtMs": 1792234215677,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:15.697Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 3.515675
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.092431
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.360424
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.071223
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699782
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.694613
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061652
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.02407
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 29052,
+                "cpuTime": 0.021826
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 32624,
+                "cpuTime": 0.110024
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234215593,
+              "processes": [
+                {
+                  "privateBytes": 76570624,
+                  "workingSetBytes": 195293184,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 16769024,
+                  "workingSetBytes": 39518208,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 95236096,
+                  "workingSetBytes": 148553728,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19230720,
+                  "workingSetBytes": 52256768,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 119758848,
+                  "workingSetBytes": 144744448,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50946048,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24064000,
+                  "id": 27752
+                },
+                {
+                  "privateBytes": 7847936,
+                  "workingSetBytes": 24244224,
+                  "id": 29052
+                },
+                {
+                  "privateBytes": 10350592,
+                  "workingSetBytes": 32043008,
+                  "id": 32624
+                }
+              ],
+              "sampleFinishedAtMs": 1792234215696,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:17.817Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 10.09828
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.116888
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 5.930133
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.072328
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628662
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.641686
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053411
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021188
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021211
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234217716,
+              "processes": [
+                {
+                  "privateBytes": 88043520,
+                  "workingSetBytes": 208703488,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19611648,
+                  "workingSetBytes": 42344448,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 94273536,
+                  "workingSetBytes": 148811776,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22036480,
+                  "workingSetBytes": 55103488,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 119566336,
+                  "workingSetBytes": 143892480,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13807616,
+                  "workingSetBytes": 50954240,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24162304,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24625152,
+                  "id": 30244
+                }
+              ],
+              "sampleFinishedAtMs": 1792234217817,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:17.825Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 3.522258
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.093004
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.364179
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.071813
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699801
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.694848
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061652
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.02407
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 29052,
+                "cpuTime": 0.021826
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 32624,
+                "cpuTime": 0.110024
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234217716,
+              "processes": [
+                {
+                  "privateBytes": 76570624,
+                  "workingSetBytes": 195297280,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 16769024,
+                  "workingSetBytes": 39518208,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 95252480,
+                  "workingSetBytes": 148570112,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19230720,
+                  "workingSetBytes": 52256768,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 119758848,
+                  "workingSetBytes": 144744448,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50946048,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24064000,
+                  "id": 27752
+                },
+                {
+                  "privateBytes": 7847936,
+                  "workingSetBytes": 24244224,
+                  "id": 29052
+                },
+                {
+                  "privateBytes": 10350592,
+                  "workingSetBytes": 32100352,
+                  "id": 32624
+                }
+              ],
+              "sampleFinishedAtMs": 1792234217824,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:19.927Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 12.868099
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.116888
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 6.550248
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.072328
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628662
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.641742
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053411
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021188
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021211
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234219835,
+              "processes": [
+                {
+                  "privateBytes": 89882624,
+                  "workingSetBytes": 210526208,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19611648,
+                  "workingSetBytes": 42344448,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 105992192,
+                  "workingSetBytes": 159969280,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22036480,
+                  "workingSetBytes": 55103488,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 119566336,
+                  "workingSetBytes": 143892480,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13807616,
+                  "workingSetBytes": 50954240,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24162304,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24625152,
+                  "id": 30244
+                }
+              ],
+              "sampleFinishedAtMs": 1792234219927,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:19.936Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 3.526653
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.093004
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.367824
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.071813
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699801
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.694867
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061652
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.02407
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 29052,
+                "cpuTime": 0.021826
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 32624,
+                "cpuTime": 0.110141
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234219834,
+              "processes": [
+                {
+                  "privateBytes": 76574720,
+                  "workingSetBytes": 195301376,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 16769024,
+                  "workingSetBytes": 39518208,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 95268864,
+                  "workingSetBytes": 148590592,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19230720,
+                  "workingSetBytes": 52256768,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 119758848,
+                  "workingSetBytes": 144744448,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50946048,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24064000,
+                  "id": 27752
+                },
+                {
+                  "privateBytes": 7847936,
+                  "workingSetBytes": 24244224,
+                  "id": 29052
+                },
+                {
+                  "privateBytes": 10350592,
+                  "workingSetBytes": 32100352,
+                  "id": 32624
+                }
+              ],
+              "sampleFinishedAtMs": 1792234219936,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:22.045Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 15.43287
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.116888
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 7.163138
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.072328
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628662
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.641991
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053411
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021188
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021211
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234221952,
+              "processes": [
+                {
+                  "privateBytes": 101593088,
+                  "workingSetBytes": 214740992,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19611648,
+                  "workingSetBytes": 42344448,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 86740992,
+                  "workingSetBytes": 141946880,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22036480,
+                  "workingSetBytes": 55103488,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 119566336,
+                  "workingSetBytes": 143892480,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13807616,
+                  "workingSetBytes": 50954240,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24162304,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24625152,
+                  "id": 30244
+                }
+              ],
+              "sampleFinishedAtMs": 1792234222045,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:22.054Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 3.532217
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.093018
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.370973
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.071842
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699813
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.695109
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061673
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.02407
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 29052,
+                "cpuTime": 0.021826
+              },
+              {
+                "type": "winrt_app_id.mojom.WinrtAppIdService",
+                "id": 32624,
+                "cpuTime": 0.110141
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234221952,
+              "processes": [
+                {
+                  "privateBytes": 76591104,
+                  "workingSetBytes": 195325952,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 16769024,
+                  "workingSetBytes": 39518208,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 95285248,
+                  "workingSetBytes": 148606976,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19230720,
+                  "workingSetBytes": 52256768,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 119758848,
+                  "workingSetBytes": 144744448,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50946048,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24064000,
+                  "id": 27752
+                },
+                {
+                  "privateBytes": 7847936,
+                  "workingSetBytes": 24244224,
+                  "id": 29052
+                },
+                {
+                  "privateBytes": 10350592,
+                  "workingSetBytes": 32100352,
+                  "id": 32624
+                }
+              ],
+              "sampleFinishedAtMs": 1792234222054,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:24.200Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 17.94267
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.116906
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 7.81246
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.072358
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628675
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.642387
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053421
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021199
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021211
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234224074,
+              "processes": [
+                {
+                  "privateBytes": 116166656,
+                  "workingSetBytes": 229912576,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19611648,
+                  "workingSetBytes": 42344448,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 101556224,
+                  "workingSetBytes": 156540928,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22036480,
+                  "workingSetBytes": 55103488,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 119566336,
+                  "workingSetBytes": 143892480,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13807616,
+                  "workingSetBytes": 50954240,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24162304,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24625152,
+                  "id": 30244
+                }
+              ],
+              "sampleFinishedAtMs": 1792234224200,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:24.208Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 3.543919
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.093018
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.3745
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.071842
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699813
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.695572
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061673
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.024094
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 29052,
+                "cpuTime": 0.021861
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234224074,
+              "processes": [
+                {
+                  "privateBytes": 76570624,
+                  "workingSetBytes": 195174400,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 16769024,
+                  "workingSetBytes": 39518208,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 95301632,
+                  "workingSetBytes": 148627456,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19230720,
+                  "workingSetBytes": 52256768,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 119758848,
+                  "workingSetBytes": 144744448,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50950144,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24064000,
+                  "id": 27752
+                },
+                {
+                  "privateBytes": 7847936,
+                  "workingSetBytes": 24248320,
+                  "id": 29052
+                }
+              ],
+              "sampleFinishedAtMs": 1792234224207,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:26.306Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 19.942651
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.116906
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 9.302361
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.072358
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628675
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.642567
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053421
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021199
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021238
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234226224,
+              "processes": [
+                {
+                  "privateBytes": 102772736,
+                  "workingSetBytes": 217559040,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19611648,
+                  "workingSetBytes": 42344448,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 90992640,
+                  "workingSetBytes": 146898944,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22036480,
+                  "workingSetBytes": 55103488,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 119566336,
+                  "workingSetBytes": 143892480,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13807616,
+                  "workingSetBytes": 50954240,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24162304,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24625152,
+                  "id": 30244
+                }
+              ],
+              "sampleFinishedAtMs": 1792234226306,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:26.311Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 3.547745
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.093018
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.378021
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.071842
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699813
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.695791
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061673
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.024094
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 29052,
+                "cpuTime": 0.021861
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234226223,
+              "processes": [
+                {
+                  "privateBytes": 76570624,
+                  "workingSetBytes": 195174400,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 16769024,
+                  "workingSetBytes": 39518208,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 95318016,
+                  "workingSetBytes": 148643840,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19230720,
+                  "workingSetBytes": 52256768,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 119758848,
+                  "workingSetBytes": 144744448,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50950144,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24064000,
+                  "id": 27752
+                },
+                {
+                  "privateBytes": 7847936,
+                  "workingSetBytes": 24248320,
+                  "id": 29052
+                }
+              ],
+              "sampleFinishedAtMs": 1792234226311,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:28.428Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 3.555045
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.093018
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.381398
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.071842
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699813
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.696185
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061673
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.024094
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 29052,
+                "cpuTime": 0.021861
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234228321,
+              "processes": [
+                {
+                  "privateBytes": 76570624,
+                  "workingSetBytes": 195170304,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 16769024,
+                  "workingSetBytes": 39518208,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 95334400,
+                  "workingSetBytes": 148598784,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19230720,
+                  "workingSetBytes": 52256768,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 119758848,
+                  "workingSetBytes": 144744448,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50950144,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24064000,
+                  "id": 27752
+                },
+                {
+                  "privateBytes": 7847936,
+                  "workingSetBytes": 24248320,
+                  "id": 29052
+                }
+              ],
+              "sampleFinishedAtMs": 1792234228428,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:28.428Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 21.906369
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.116906
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 10.30567
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.072358
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628675
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.642924
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053421
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021199
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021238
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234228321,
+              "processes": [
+                {
+                  "privateBytes": 105336832,
+                  "workingSetBytes": 220356608,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19611648,
+                  "workingSetBytes": 42344448,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 100921344,
+                  "workingSetBytes": 156270592,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22036480,
+                  "workingSetBytes": 55103488,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 119566336,
+                  "workingSetBytes": 143892480,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13807616,
+                  "workingSetBytes": 50954240,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24162304,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24625152,
+                  "id": 30244
+                }
+              ],
+              "sampleFinishedAtMs": 1792234228428,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T10:50:30.551Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 34892,
+                "cpuTime": 23.80701
+              },
+              {
+                "type": "renderer",
+                "id": 12724,
+                "cpuTime": 0.116906
+              },
+              {
+                "type": "renderer",
+                "id": 36072,
+                "cpuTime": 10.98138
+              },
+              {
+                "type": "renderer",
+                "id": 22200,
+                "cpuTime": 0.072358
+              },
+              {
+                "type": "GPU",
+                "id": 35144,
+                "cpuTime": 0.628675
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 30392,
+                "cpuTime": 2.642942
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 19892,
+                "cpuTime": 0.053421
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 768,
+                "cpuTime": 0.021199
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 30244,
+                "cpuTime": 0.021238
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234230437,
+              "processes": [
+                {
+                  "privateBytes": 105844736,
+                  "workingSetBytes": 221130752,
+                  "id": 34892
+                },
+                {
+                  "privateBytes": 19611648,
+                  "workingSetBytes": 42344448,
+                  "id": 12724
+                },
+                {
+                  "privateBytes": 110485504,
+                  "workingSetBytes": 165478400,
+                  "id": 36072
+                },
+                {
+                  "privateBytes": 22036480,
+                  "workingSetBytes": 55103488,
+                  "id": 22200
+                },
+                {
+                  "privateBytes": 119566336,
+                  "workingSetBytes": 143892480,
+                  "id": 35144
+                },
+                {
+                  "privateBytes": 13807616,
+                  "workingSetBytes": 50954240,
+                  "id": 30392
+                },
+                {
+                  "privateBytes": 8032256,
+                  "workingSetBytes": 25489408,
+                  "id": 19892
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24162304,
+                  "id": 768
+                },
+                {
+                  "privateBytes": 7860224,
+                  "workingSetBytes": 24625152,
+                  "id": 30244
+                }
+              ],
+              "sampleFinishedAtMs": 1792234230552,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T10:50:30.552Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 36448,
+                "cpuTime": 3.558527
+              },
+              {
+                "type": "renderer",
+                "id": 24732,
+                "cpuTime": 0.093018
+              },
+              {
+                "type": "renderer",
+                "id": 33540,
+                "cpuTime": 8.384858
+              },
+              {
+                "type": "renderer",
+                "id": 34944,
+                "cpuTime": 0.071842
+              },
+              {
+                "type": "GPU",
+                "id": 36116,
+                "cpuTime": 0.699813
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 28040,
+                "cpuTime": 2.696203
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 1532,
+                "cpuTime": 0.061673
+              },
+              {
+                "type": "edge_collections.mojom.CollectionsDataManager",
+                "id": 27752,
+                "cpuTime": 0.024094
+              },
+              {
+                "type": "entity_extraction_service.mojom.Extractor",
+                "id": 29052,
+                "cpuTime": 0.021861
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792234230437,
+              "processes": [
+                {
+                  "privateBytes": 76570624,
+                  "workingSetBytes": 195170304,
+                  "id": 36448
+                },
+                {
+                  "privateBytes": 16769024,
+                  "workingSetBytes": 39518208,
+                  "id": 24732
+                },
+                {
+                  "privateBytes": 95350784,
+                  "workingSetBytes": 148619264,
+                  "id": 33540
+                },
+                {
+                  "privateBytes": 19230720,
+                  "workingSetBytes": 52256768,
+                  "id": 34944
+                },
+                {
+                  "privateBytes": 119758848,
+                  "workingSetBytes": 144744448,
+                  "id": 36116
+                },
+                {
+                  "privateBytes": 13709312,
+                  "workingSetBytes": 50950144,
+                  "id": 28040
+                },
+                {
+                  "privateBytes": 8036352,
+                  "workingSetBytes": 25505792,
+                  "id": 1532
+                },
+                {
+                  "privateBytes": 7757824,
+                  "workingSetBytes": 24064000,
+                  "id": 27752
+                },
+                {
+                  "privateBytes": 7847936,
+                  "workingSetBytes": 24248320,
+                  "id": 29052
+                }
+              ],
+              "sampleFinishedAtMs": 1792234230552,
+              "missingIds": []
+            }
+          }
+        ],
+        "valid": true
+      },
+      "accountingValidated": true,
+      "transferMBps": 34.24385168862808,
+      "browserErrors": [],
+      "cleanupErrors": [],
+      "completedAt": "2026-10-17T10:50:31.930Z",
+      "passed": true
+    }
+  ],
+  "releaseReady": false,
+  "inputsUnchanged": true,
+  "finishedAt": "2026-10-17T10:50:31.935Z"
+}
