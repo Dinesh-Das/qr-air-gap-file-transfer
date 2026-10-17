@@ -1,0 +1,23 @@
+{
+  "verifiedAt": "2026-10-16T02:25:53.070Z",
+  "inputs": 173,
+  "assets": 5,
+  "evidence": 737,
+  "indexedFiles": 137,
+  "unit": 520,
+  "testFiles": 54,
+  "edge": 92,
+  "chrome": 92,
+  "nativeUiEach": 3,
+  "latePublicationCases": 4,
+  "portable": 22,
+  "external": 19,
+  "scopedLedgerChanges": [
+    "L1196",
+    "L1208"
+  ],
+  "ledgerReferences": 611,
+  "unmapped": 330,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY"
+}

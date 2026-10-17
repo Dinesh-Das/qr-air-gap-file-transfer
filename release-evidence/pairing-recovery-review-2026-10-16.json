@@ -1,0 +1,261 @@
+{
+  "recordedAt": "2026-10-16T02:25:47.641Z",
+  "releaseStatus": "NOT READY",
+  "problem": "Post-preflight HTTP could stall without a client deadline and cancellation could lose its reason. Late answer-publication failures could also override an already established or verified receive.",
+  "fix": "Bound each exchange to30seconds through response parsing, preserve exact abort reasons and cleanup. Record native-open generation and ignore obsolete answer-publication receipts only for that established generation; genuine channel/auth/storage errors still fail.",
+  "design": "Runtime discovery12seconds plus remote offer6seconds fits30seconds with margin. Deadline is per HTTP exchange, not room/user-confirmation lifetime. No automatic retries of ambiguous mutations.",
+  "regression": {
+    "unitBaseline": "Final type-safe original15cases against isolated archived old module:13fail2pass; current19cases pass. Null-reason followup4RED15pass before direct reason propagation.",
+    "latePublication": "Four controlled Native WebRTC/OPFS + mocked rendezvous response cases failed before the receiver guard; four pass with exact120000bytes and independent SHA256 in receiving/complete/saving/saved states.",
+    "final": {
+      "unit": 520,
+      "testFiles": 54,
+      "typecheck": 0,
+      "build": 0,
+      "node": "24.22.0",
+      "focusedUnit": 27,
+      "browsers": {
+        "edge": {
+          "status": "passed",
+          "cases": 92,
+          "exitCode": 0,
+          "channel": "msedge",
+          "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable",
+          "log": "release-evidence/pairing-recovery-full-edge-2026-10-16.log",
+          "node": "24.22.0",
+          "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-gate-edge-7dSvNw",
+          "samples": 35,
+          "sampledMinimumFreeDiskBytes": {
+            "C:/": 10395516928,
+            "D:/": 2747219968
+          },
+          "sampledReserveBreach": false,
+          "resourceScope": "10-second sampled disk/RAM observations only; no continuous floor, browser RSS/heap/GC or throughput proof."
+        },
+        "chrome": {
+          "status": "passed",
+          "cases": 92,
+          "exitCode": 0,
+          "channel": "chrome",
+          "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable",
+          "log": "release-evidence/pairing-recovery-full-chrome-2026-10-16.log",
+          "node": "24.22.0",
+          "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-gate-chrome-Gm2ugJ",
+          "samples": 36,
+          "sampledMinimumFreeDiskBytes": {
+            "C:/": 10160148480,
+            "D:/": 2747174912
+          },
+          "sampledReserveBreach": false,
+          "resourceScope": "10-second sampled disk/RAM observations only; no continuous floor, browser RSS/heap/GC or throughput proof."
+        }
+      },
+      "nativeUi": [
+        {
+          "channel": "msedge",
+          "report": "release-evidence/pairing-recovery-native-ui-checked-msedge-2026-10-16.json",
+          "profilePreserved": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-ui-msedge-xplHME",
+          "cases": 3,
+          "scope": "Production built UI, native browser fetch and controlled same-origin loopback HTTP stalls. Playwright clock advances application timers; native response close observed. Health/join fixture is not production rendezvous runtime or physical LAN; retry deliberately gets a completed404, not a successful transfer."
+        },
+        {
+          "channel": "chrome",
+          "report": "release-evidence/pairing-recovery-native-ui-checked-chrome-2026-10-16.json",
+          "profilePreserved": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-ui-chrome-Vwk7mC",
+          "cases": 3,
+          "scope": "Production built UI, native browser fetch and controlled same-origin loopback HTTP stalls. Playwright clock advances application timers; native response close observed. Health/join fixture is not production rendezvous runtime or physical LAN; retry deliberately gets a completed404, not a successful transfer."
+        }
+      ]
+    }
+  },
+  "intermediateEvidence": [
+    {
+      "status": "passed",
+      "cases": 88,
+      "exitCode": 0,
+      "channel": "msedge",
+      "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-portable",
+      "log": "release-evidence/pairing-deadline-full-edge-2026-10-16.log",
+      "node": "24.22.0",
+      "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-deadline-gate-edge-YlqLQs",
+      "samples": 35,
+      "sampledMinimumFreeDiskBytes": {
+        "C:/": 11263721472,
+        "D:/": 2941767680
+      },
+      "sampledReserveBreach": false,
+      "resourceScope": "10-second sampled disk/RAM observations only; no continuous floor, browser RSS/heap/GC or throughput proof.",
+      "scope": "Intermediate candidate only; not current build. Initial88cases missed the later-discovered publication race; intermediate92Edge preceded null-reason correction."
+    },
+    {
+      "status": "passed",
+      "cases": 88,
+      "exitCode": 0,
+      "channel": "chrome",
+      "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-portable",
+      "log": "release-evidence/pairing-deadline-full-chrome-2026-10-16.log",
+      "node": "24.22.0",
+      "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-deadline-gate-chrome-RpwBuX",
+      "samples": 34,
+      "sampledMinimumFreeDiskBytes": {
+        "C:/": 11044388864,
+        "D:/": 2941743104
+      },
+      "sampledReserveBreach": false,
+      "resourceScope": "10-second sampled disk/RAM observations only; no continuous floor, browser RSS/heap/GC or throughput proof.",
+      "scope": "Intermediate candidate only; not current build. Initial88cases missed the later-discovered publication race; intermediate92Edge preceded null-reason correction."
+    },
+    {
+      "status": "passed",
+      "cases": 92,
+      "exitCode": 0,
+      "channel": "msedge",
+      "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-deadline-final-portable",
+      "log": "release-evidence/pairing-deadline-final-full-edge-2026-10-16.log",
+      "node": "24.22.0",
+      "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-deadline-final-gate-edge-2OOVDe",
+      "samples": 36,
+      "sampledMinimumFreeDiskBytes": {
+        "C:/": 10714292224,
+        "D:/": 2844512256
+      },
+      "sampledReserveBreach": false,
+      "resourceScope": "10-second sampled disk/RAM observations only; no continuous floor, browser RSS/heap/GC or throughput proof.",
+      "scope": "Intermediate candidate only; not current build. Initial88cases missed the later-discovered publication race; intermediate92Edge preceded null-reason correction."
+    }
+  ],
+  "fixtureCorrections": [
+    "First typecheck rejected an incomplete Response cast in the test; replaced it with real Response plus json spy, no suppression. Corrected type/unit/build gates pass.",
+    "Initial native UI probe had redundant waiting and did not explicitly fence body-response headers. Checked/current probe awaits headers for body phases; initial logs/source remain historical."
+  ],
+  "review": {
+    "correctness": "Absolute per-exchange timer stays active through success/error JSON parsing; abort reason wins over parse/transport wrapping. Timer/listener cleanup, pre-aborted callers,29-second success and DELETE404/keepalive tested. Native-open marker is generation-bound and reset on termination.",
+    "architecture": "Only private HTTP wrapper and receiver publication lifecycle changed; no public method signature/schema, framing, hashing, buffering, destination locking or authentication policy change.",
+    "security": "Native channel-open event, not a peer control string, establishes the marker. SAS/authorization checks and genuine channel/verification/storage failures are unchanged. Error response text remains diagnostics, not recovery instructions.",
+    "performance": "One bounded timer/controller per HTTP exchange (health retains its own shorter deadline). No transfer-throughput/resource acceptance claim.",
+    "scope": "Publication callback regressions use real browser WebRTC/OPFS with mocked rendezvous routing and a held response promise. HTTP stall probes use native fetch + controlled loopback server, not production LAN discovery."
+  },
+  "ledger": {
+    "entries": 838,
+    "changed": [
+      "L1196",
+      "L1208"
+    ],
+    "withoutMappedEvidence": 330,
+    "mappedReferences": 611,
+    "completedByThisAudit": 0
+  },
+  "packages": {
+    "outputs": [
+      {
+        "variant": "external",
+        "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-external",
+        "files": 19,
+        "execution": {
+          "node": "v24.22.0",
+          "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+          "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+          "calls": [
+            {
+              "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+              "args": [
+                "/d",
+                "/s",
+                "/c",
+                "start \"\" \"http://127.0.0.1:35186\""
+              ],
+              "windowsHide": true,
+              "windowsVerbatimArguments": true
+            }
+          ],
+          "servedBytes": true,
+          "health": true,
+          "cleanStop": true,
+          "httpPort": 35186,
+          "signalPort": 42285,
+          "httpRebind": true,
+          "signalTcpUdpRebind": true,
+          "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+        }
+      },
+      {
+        "variant": "portable",
+        "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable",
+        "files": 22,
+        "execution": {
+          "node": "v24.22.0",
+          "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable\\runtime\\node.exe",
+          "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+          "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+          "calls": [
+            {
+              "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+              "args": [
+                "/d",
+                "/s",
+                "/c",
+                "start \"\" \"http://127.0.0.1:28372\""
+              ],
+              "windowsHide": true,
+              "windowsVerbatimArguments": true
+            }
+          ],
+          "servedBytes": true,
+          "health": true,
+          "cleanStop": true,
+          "httpPort": 28372,
+          "signalPort": 29617,
+          "httpRebind": true,
+          "signalTcpUdpRebind": true,
+          "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+        }
+      }
+    ],
+    "oldRemoved": [
+      {
+        "path": "dist/assets/index-DwNV2Ed5.js",
+        "archive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\pairing-recovery-dist-before-2026-10-16\\dist\\assets\\index-DwNV2Ed5.js",
+        "sha256": "06696368990c97b9b52b07f640cfdbf3c21ebbc54d8a822687c46cf2fe33d6f7"
+      }
+    ],
+    "compiledArchive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\pairing-recovery-dist-before-2026-10-16",
+    "builtAssets": [
+      {
+        "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+        "bytes": 2402,
+        "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+      },
+      {
+        "path": "dist/assets/index-C5foWVjs.css",
+        "bytes": 26260,
+        "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+      },
+      {
+        "path": "dist/assets/index-MKpU42kj.js",
+        "bytes": 555942,
+        "sha256": "2473f30f1b2830a35068537cc64fa4ef19e176631847b7964d9a812dee8dd5de"
+      },
+      {
+        "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+        "bytes": 43951,
+        "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+      },
+      {
+        "path": "dist/index.html",
+        "bytes": 903,
+        "sha256": "64fec0a4c41eda818ed9f4a4de530b73dcdfdb0aadb6c4c3944fd9f499e70c61"
+      }
+    ],
+    "scope": "Actual package lifecycle substitutes native cmd exit0 for browser dispatch; no GUI/default-handler proof."
+  },
+  "limitations": [
+    "All42physicalcases notrun; no physicalL1083 promotion. GUI/default-handler/native picker,cleanOS,hostedCI,50–100GB/resource acceptance and historical5GiBpeak remain open.",
+    "Page timers require an executing event loop; background throttling, destroyed realms and OS sleep are not wall-clock guarantees. Server TTL/caps/shutdown remain separate safeguards.",
+    "Full suites use serve.mjs, not CMD entry/default-browser dispatch. Package smoke substitutes exit0.",
+    "Two release documents updated after browser qualification; all executable/test/spec/config/lock/assets match the preserved173-input current proposal.",
+    "10-second disk/RAM samples can miss peaks; no process-memory or continuous reserve claim."
+  ]
+}

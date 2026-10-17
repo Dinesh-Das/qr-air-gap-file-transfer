@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-16T02:06:35.845Z",
+  "before": {
+    "time": "2026-10-16T02:06:35.844Z",
+    "freeDiskBytes": {
+      "C:/": 11303292928,
+      "D:/": 2747273216
+    },
+    "freeRamBytes": 14470590464
+  },
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable",
+  "runtime": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable\\runtime\\node.exe",
+  "channel": "msedge",
+  "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-gate-edge-7dSvNw"
+}

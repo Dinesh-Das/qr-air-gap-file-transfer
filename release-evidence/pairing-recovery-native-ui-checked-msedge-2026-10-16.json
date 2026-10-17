@@ -1,0 +1,37 @@
+{
+  "recordedAt": "2026-10-16T02:06:47.763Z",
+  "channel": "msedge",
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable",
+  "profilePreserved": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-ui-msedge-xplHME",
+  "results": [
+    {
+      "phase": "headers",
+      "responseHeadersObserved": false,
+      "joinCalls": 2,
+      "nativeResponseClosed": true,
+      "timeoutAdvice": true,
+      "timeoutDetails": true,
+      "retryReachedNewResponse": true
+    },
+    {
+      "phase": "success-body",
+      "responseHeadersObserved": true,
+      "joinCalls": 2,
+      "nativeResponseClosed": true,
+      "timeoutAdvice": true,
+      "timeoutDetails": true,
+      "retryReachedNewResponse": true
+    },
+    {
+      "phase": "error-body",
+      "responseHeadersObserved": true,
+      "joinCalls": 2,
+      "nativeResponseClosed": true,
+      "timeoutAdvice": true,
+      "timeoutDetails": true,
+      "retryReachedNewResponse": true
+    }
+  ],
+  "pageErrors": [],
+  "scope": "Production built UI, native browser fetch and controlled same-origin loopback HTTP stalls. Playwright clock advances application timers; native response close observed. Health/join fixture is not production rendezvous runtime or physical LAN; retry deliberately gets a completed404, not a successful transfer."
+}

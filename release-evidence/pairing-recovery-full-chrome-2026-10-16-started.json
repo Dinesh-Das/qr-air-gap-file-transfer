@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-16T02:12:27.431Z",
+  "before": {
+    "time": "2026-10-16T02:12:27.430Z",
+    "freeDiskBytes": {
+      "C:/": 10981498880,
+      "D:/": 2747195392
+    },
+    "freeRamBytes": 14523564032
+  },
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable",
+  "runtime": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable\\runtime\\node.exe",
+  "channel": "chrome",
+  "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-gate-chrome-Gm2ugJ"
+}

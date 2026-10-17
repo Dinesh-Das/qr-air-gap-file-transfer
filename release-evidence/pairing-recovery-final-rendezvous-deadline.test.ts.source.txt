@@ -1,0 +1,87 @@
+import {afterEach,describe,expect,it,vi} from "vitest";
+import {cancelRendezvousRoom,createRendezvousRoom,joinRendezvousRoom,publishRendezvousAnswer,waitForRendezvousAnswer,type RendezvousRoom} from "../src/lib/webrtc-rendezvous";
+
+const room:RendezvousRoom={roomId:"a".repeat(32),ownerToken:"b".repeat(64),code:"123456",expiresAt:Date.now()+300_000};
+const offer={v:1,kind:"offer",sessionId:"c".repeat(32),sdp:"v=0\r\n"} as const;
+const answer={...offer,kind:"answer"} as const;
+const joined={joinId:"d".repeat(32),sessionId:offer.sessionId,sdp:offer.sdp};
+const cleanups:Array<()=>void>=[];
+afterEach(async()=>{for(const cleanup of cleanups.splice(0))cleanup();await Promise.resolve();vi.unstubAllGlobals();vi.useRealTimers();});
+
+function stall(phase:"headers"|"success-body"|"error-body"){
+  const fetchMock=vi.fn((_url:unknown,init:RequestInit)=>{
+    let reject!: (error:unknown)=>void;
+    const pending=new Promise<never>((_resolve,fail)=>{reject=fail;});
+    const abort=()=>reject(init.signal?.reason??new DOMException("Stopped","AbortError"));
+    init.signal?.addEventListener("abort",abort,{once:true});
+    cleanups.push(()=>{init.signal?.removeEventListener("abort",abort);reject(new DOMException("Fixture cleanup","AbortError"));});
+    if(phase==="headers")return pending;
+    const response=new Response(null,{status:phase==="success-body"?200:503,statusText:"Service unavailable"});
+    vi.spyOn(response,"json").mockImplementation(()=>pending);
+    return Promise.resolve(response);
+  });
+  vi.stubGlobal("fetch",fetchMock);return fetchMock;
+}
+function observe(task:Promise<unknown>){
+  let result:{value?:unknown;error?:unknown}|undefined;
+  const done=task.then(value=>{result={value};},error=>{result={error};});
+  return {get result(){return result;},done};
+}
+
+describe("pairing request deadlines and cancellation",()=>{
+  it.each(["create","join","poll","publish","cancel"] as const)("bounds stalled %s headers and releases its timer",async mode=>{
+    vi.useFakeTimers();stall("headers");
+    const task=mode==="create"?createRendezvousRoom(offer):mode==="join"?joinRendezvousRoom("123456"):mode==="poll"?waitForRendezvousAnswer(room,offer.sessionId):mode==="publish"?publishRendezvousAnswer(joined.joinId,answer):cancelRendezvousRoom(room);
+    const observed=observe(task);
+    await vi.advanceTimersByTimeAsync(29_999);expect(observed.result).toBeUndefined();
+    await vi.advanceTimersByTimeAsync(1);
+    expect(observed.result).toMatchObject({error:{name:"RendezvousError",status:503,message:expect.stringContaining("request timed out")}});
+    expect(vi.getTimerCount()).toBe(0);await observed.done;
+  });
+  it.each(["success-body","error-body"] as const)("includes stalled %s in the same request deadline",async phase=>{
+    vi.useFakeTimers();stall(phase);const observed=observe(joinRendezvousRoom("123456"));
+    await vi.advanceTimersByTimeAsync(30_000);
+    expect(observed.result).toMatchObject({error:{name:"RendezvousError",status:503,message:expect.stringContaining("request timed out")}});
+    expect(vi.getTimerCount()).toBe(0);await observed.done;
+  });
+  it.each(["headers","success-body","error-body"] as const)("preserves a custom caller abort reason during %s",async phase=>{
+    vi.useFakeTimers();stall(phase);const controller=new AbortController();const reason=new Error("Stop this pairing generation");
+    const observed=observe(joinRendezvousRoom("123456",controller.signal));await Promise.resolve();controller.abort(reason);
+    await vi.advanceTimersByTimeAsync(0);expect(observed.result?.error).toBe(reason);expect(vi.getTimerCount()).toBe(0);await observed.done;
+  });
+  it("does not start a request for an already cancelled generation",async()=>{
+    const fetchMock=vi.fn().mockRejectedValue(new Error("Should not fetch"));vi.stubGlobal("fetch",fetchMock);
+    const controller=new AbortController(),reason=new Error("Already stopped");controller.abort(reason);
+    await expect(joinRendezvousRoom("123456",controller.signal)).rejects.toBe(reason);expect(fetchMock).not.toHaveBeenCalled();
+  });
+  it.each(["headers","success-body","error-body"] as const)("preserves an explicit null abort reason during %s",async phase=>{
+    vi.useFakeTimers();stall(phase);const controller=new AbortController();
+    const observed=observe(joinRendezvousRoom("123456",controller.signal));await Promise.resolve();controller.abort(null);
+    await vi.advanceTimersByTimeAsync(0);expect(observed.result?.error).toBeNull();expect(vi.getTimerCount()).toBe(0);await observed.done;
+  });
+  it("preserves null cancellation while waiting between answer polls",async()=>{
+    vi.useFakeTimers();vi.stubGlobal("window",globalThis);
+    vi.stubGlobal("fetch",vi.fn().mockResolvedValue(new Response(JSON.stringify({status:"waiting"}))));
+    const controller=new AbortController();const add=vi.spyOn(controller.signal,"addEventListener");
+    const observed=observe(waitForRendezvousAnswer(room,offer.sessionId,controller.signal));await vi.advanceTimersByTimeAsync(0);
+    expect(add.mock.calls.filter(call=>call[0]==="abort")).toHaveLength(2);
+    controller.abort(null);await vi.advanceTimersByTimeAsync(0);expect(observed.result?.error).toBeNull();expect(vi.getTimerCount()).toBe(0);await observed.done;
+  });
+  it.each([200,404])("cleans its timer and caller listener after HTTP %i",async status=>{
+    vi.useFakeTimers();const controller=new AbortController();const remove=vi.spyOn(controller.signal,"removeEventListener");
+    vi.stubGlobal("fetch",vi.fn().mockResolvedValue(new Response(JSON.stringify(status===200?joined:{error:"Expired"}),{status})));
+    if(status===200)await expect(joinRendezvousRoom("123456",controller.signal)).resolves.toMatchObject({joinId:joined.joinId});
+    else await expect(joinRendezvousRoom("123456",controller.signal)).rejects.toMatchObject({status:404});
+    expect(vi.getTimerCount()).toBe(0);expect(remove).toHaveBeenCalledWith("abort",expect.any(Function));
+  });
+  it("allows a healthy slow discovery/offer response within the thirty-second budget",async()=>{
+    vi.useFakeTimers();vi.stubGlobal("fetch",vi.fn().mockImplementation(()=>new Promise(resolve=>setTimeout(()=>resolve(new Response(JSON.stringify(joined))),29_000))));
+    const observed=observe(joinRendezvousRoom("123456"));await vi.advanceTimersByTimeAsync(29_000);
+    expect(observed.result).toMatchObject({value:{joinId:joined.joinId}});expect(vi.getTimerCount()).toBe(0);await observed.done;
+  });
+  it("retains keepalive cancellation and accepts an already absent room without parsing its body",async()=>{
+    vi.useFakeTimers();const response=new Response("ignored",{status:404});const json=vi.spyOn(response,"json");const fetchMock=vi.fn().mockResolvedValue(response);vi.stubGlobal("fetch",fetchMock);
+    await expect(cancelRendezvousRoom(room)).resolves.toBeUndefined();expect(json).not.toHaveBeenCalled();
+    expect(fetchMock).toHaveBeenCalledWith(expect.any(String),expect.objectContaining({method:"DELETE",keepalive:true,cache:"no-store"}));expect(vi.getTimerCount()).toBe(0);
+  });
+});

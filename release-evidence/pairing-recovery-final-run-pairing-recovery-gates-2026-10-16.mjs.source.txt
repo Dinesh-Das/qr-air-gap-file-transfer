@@ -1,0 +1,9 @@
+import {readFile,open,writeFile} from 'node:fs/promises';
+import {spawn} from 'node:child_process';
+import {join,resolve} from 'node:path';
+const r=JSON.parse(await readFile('release-evidence/release-gate-latest.json'));const stage=r.freshInstall.stage;
+for(const [name,args] of [['type',[join(stage,'node_modules/typescript/bin/tsc'),'-b','--pretty','false']],['unit',[join(stage,'node_modules/vitest/vitest.mjs'),'run']],['build',[join(stage,'node_modules/vite/bin/vite.js'),'build']]]){
+ const log=await open('release-evidence/pairing-recovery-'+name+'-2026-10-16.log','wx');let code;
+ try{code=await new Promise((done,reject)=>{const c=spawn(resolve('artifacts/qrft-2026-10-16-device-names-portable/runtime/node.exe'),args,{cwd:stage,env:{...process.env,TEMP:join(stage,'validation/temp'),TMP:join(stage,'validation/temp')},windowsHide:true,stdio:['ignore',log.fd,log.fd]});c.once('error',reject);c.once('close',done);});}finally{await log.close();}
+ await writeFile('release-evidence/pairing-recovery-'+name+'-exit-2026-10-16.txt',String(code)+'\n',{flag:'wx'});console.log(JSON.stringify({name,code}));if(code!==0)throw Error('Gate '+name);
+}

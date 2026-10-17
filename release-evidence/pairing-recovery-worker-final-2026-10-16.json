@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-16T02:26:35.699Z",
+  "roots": [
+    "C:/Users/dines/AppData/Local/Temp/qrft-pairing-deadline-final-gate-edge-2OOVDe",
+    "C:/Users/dines/AppData/Local/Temp/qrft-pairing-deadline-gate-chrome-RpwBuX",
+    "C:/Users/dines/AppData/Local/Temp/qrft-pairing-deadline-gate-edge-YlqLQs",
+    "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-gate-chrome-Gm2ugJ",
+    "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-gate-edge-7dSvNw",
+    "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-ui-chrome-Vwk7mC",
+    "C:/Users/dines/AppData/Local/Temp/qrft-pairing-recovery-ui-msedge-xplHME",
+    "C:/Users/dines/AppData/Local/Temp/qrft-late-publish-repro-w4MmXj",
+    "C:/Users/dines/AppData/Local/Temp/qrft-late-publish-green-1TXOtD"
+  ],
+  "matchingOwnedWorkers": [],
+  "normalizedPathMatching": true,
+  "rebound": [
+    {
+      "port": 4178,
+      "host": "127.0.0.1",
+      "tcp": true,
+      "udp": false
+    },
+    {
+      "port": 4179,
+      "host": "0.0.0.0",
+      "tcp": true,
+      "udp": true
+    }
+  ],
+  "note": "Browser and Node names filtered before command matching; own closure Node PID excluded. No process terminated. Profiles, traces, results and prior evidence preserved."
+}
