@@ -1,0 +1,15 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-1gib-c-only-retry-2026-10-17-GtwMT3/evidence/REVIEW.json",
+  "bytes": 14214,
+  "sha256": "09797c9d8d7e40a2dc12c7330de121bfa18eec9f012fac2f9d8205474d09efc7",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-1gib-c-only-retry-2026-10-17-GtwMT3",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-1gib-c-only-retry-2026-10-17-GtwMT3/evidence/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-1gib-c-only-retry-2026-10-17-GtwMT3/evidence/CLOSURE-HASHES.json",
+    "bytes": 481148,
+    "sha256": "8903d5f4f2d9a5a1bef76afc3e4a287b4c919a0701fa78919d3123f5490f5435"
+  },
+  "releaseReady": false,
+  "scope": "C-only stagedcode/runtime/source/profiles/receive/save/temp/output. Direct harness SDP, actual samehost RTC with2browserprofiles, durableOPFS and injectedOPFSdestination. Postrun verifier reads D source/evidence metadata but writes C only. No D disk qualification, actualnativeOSpicker/UIpairing/humanconsent/physicalLAN/cleanOS/hostedCI/50–100GB acceptance. Repeatingfixture limits arbitrary-offset discrimination; no throughputcomparison or general resourceacceptance. Prior memoryfailures unchanged."
+}

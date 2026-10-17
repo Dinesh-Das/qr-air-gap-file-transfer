@@ -1,0 +1,17 @@
+import {readFile,writeFile,open,statfs,mkdtemp,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {spawn} from 'node:child_process';
+import {freemem} from 'node:os';
+import {join,resolve} from 'node:path';
+const read=async p=>JSON.parse(await readFile(p)),hash=async p=>createHash('sha256').update(await readFile(p)).digest('hex'),plan=await read('release-evidence/native-file-transfer-save-1gib-retry-2026-10-17-proposal.json'),name='native-file-transfer-save-1gib-retry-2026-10-17',output=resolve('release-evidence/'+name+'.json');
+for(const f of [...plan.inputs,...plan.builtAssets])if(await hash(f.path)!==f.sha256||await hash(join(plan.stage,f.path))!==f.sha256)throw Error('Qualified source/assets drift '+f.path);
+if(await hash(plan.runtime)!==plan.runtimeSha256)throw Error('Runtime pin drift');
+const snapshots=[];async function snapshot(){const disks={};for(const drive of ['C:/','D:/']){const s=await statfs(drive);disks[drive]=s.bavail*s.bsize;}snapshots.push({at:new Date().toISOString(),disks,freeRam:freemem()});}
+await snapshot();const requiredC=plan.minimumReserveBytes+plan.expectedPayloadCopies*plan.fileBytes+plan.preflightMarginBytes,requiredD=plan.minimumReserveBytes+plan.preflightMarginBytes;
+if(snapshots[0].disks['C:/']<requiredC||snapshots[0].disks['D:/']<requiredD||snapshots[0].freeRam<4*1024**3)throw Error('Insufficient two-copy diagnostic reserve '+JSON.stringify({requiredC,requiredD,before:snapshots[0]}));
+const root=await mkdtemp('C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-1gib-retry-2026-10-17-'),profiles=join(root,'profiles'),temp=join(root,'temp');await mkdir(profiles);await mkdir(temp);
+await writeFile(join(root,'OWNER.json'),JSON.stringify({purpose:name,createdAt:new Date().toISOString(),root,profiles,output,retainAllProfilesAndDatasets:true}),{flag:'wx'});
+await writeFile('release-evidence/'+name+'-started.json',JSON.stringify({startedAt:new Date().toISOString(),root,profiles,temp,output,runtime:plan.runtime,stage:plan.stage,requiredC,requiredD,before:snapshots[0],trialDeadlineMs:plan.trialDeadlineMs},null,2)+'\n',{flag:'wx'});
+const log=await open('release-evidence/'+name+'.log','wx'),timer=setInterval(()=>void snapshot(),5000);let code;
+try{code=await new Promise((done,reject)=>{const p=spawn(plan.runtime,[plan.script],{cwd:plan.stage,env:{...process.env,TEMP:temp,TMP:temp,QRFT_PROFILE_STORAGE_BASE:profiles,QRFT_WEBRTC_MIB:'1024',QRFT_WEBRTC_REPEATS:'1',QRFT_WEBRTC_FILES:'1',QRFT_WEBRTC_MODES:'transfer',QRFT_WEBRTC_PROFILE:'1',QRFT_WEBRTC_NATIVE_HASHES:'1',QRFT_WEBRTC_SAVE_TREE:'1',QRFT_WEBRTC_PROCESS_MEMORY:'1',QRFT_WEBRTC_OUTPUT:output},windowsHide:true,stdio:['ignore',log.fd,log.fd]});p.once('error',reject);p.once('close',done);});}finally{clearInterval(timer);await snapshot();await log.close();await writeFile('release-evidence/'+name+'-resources.json',JSON.stringify({snapshots,reserveBytes:plan.minimumReserveBytes,scope:'5-second disk/RAM samples. Two1GiBpayload copies plus profile overhead retained on persistentC. Periodic samples do not guarantee continuous minima.'},null,2)+'\n',{flag:'wx'});}
+await writeFile('release-evidence/'+name+'-exit.txt',String(code)+'\n',{flag:'wx'});console.log(JSON.stringify({code,output,root}));process.exitCode=code??1;
