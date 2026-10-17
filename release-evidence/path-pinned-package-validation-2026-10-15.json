@@ -1,0 +1,34 @@
+{
+  "outputs": [
+    {
+      "variant": "external",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external",
+      "files": 19,
+      "onlyFileChanged": "Start AirGap QR.cmd",
+      "byteIdenticalFiles": 18,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+        "path": "C:\\WINDOWS\\System32",
+        "handoff": "injected HTTP-byte observer; no native browser open",
+        "cleanStop": true
+      },
+      "scope": "Packaged lifecycle uses injected browser observer; does not invoke the CMD entry point. Native cmd fixtures and actual startup remain separate."
+    },
+    {
+      "variant": "portable",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable",
+      "files": 22,
+      "onlyFileChanged": "Start AirGap QR.cmd",
+      "byteIdenticalFiles": 21,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\runtime\\node.exe",
+        "path": "C:\\WINDOWS\\System32",
+        "handoff": "injected HTTP-byte observer; no native browser open",
+        "cleanStop": true
+      },
+      "scope": "Packaged lifecycle uses injected browser observer; does not invoke the CMD entry point. Native cmd fixtures and actual startup remain separate."
+    }
+  ]
+}

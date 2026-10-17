@@ -1,0 +1,389 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/path-pinned-launcher-review-2026-10-15.json",
+      "bytes": 160255,
+      "sha256": "6024c4bfc50e6bef202a389d8ba7a5bb641f3fa30e1e27155b6df3ad828bf97d"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 160255,
+      "sha256": "6024c4bfc50e6bef202a389d8ba7a5bb641f3fa30e1e27155b6df3ad828bf97d"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 570,
+      "sha256": "63732e98ffabcf2761fb10081b17d68d6ef627c981e3d2cf46e39e1d9c0ba5e0"
+    },
+    {
+      "path": "release-evidence/release-gate-before-path-pinned-launcher-2026-10-15.json",
+      "bytes": 143062,
+      "sha256": "f1ead230a1bbe1030992406609bd376ae43c14cf947cd02824765be9b69cc256"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-path-pinned-launcher-2026-10-15.json",
+      "bytes": 328496,
+      "sha256": "f87cdfe6ba68986f1b3fc5de91bf0b090901e963712ac3e5b7b1b0198573da79"
+    },
+    {
+      "path": "release-evidence/path-pin-before-RELEASE-CHECKLIST-md-2026-10-15.source.txt",
+      "bytes": 87067,
+      "sha256": "e6091c3ea316fc36c55e0a61ee776142bb4a4c0abe6baf0bfadf4781744c545c"
+    },
+    {
+      "path": "release-evidence/path-pin-before-RELEASE-HARDENING-md-2026-10-15.source.txt",
+      "bytes": 129429,
+      "sha256": "93ed1289e0da7bdca0058acdc02f73ded89a194f953c0e293f5980fe3a845ce5"
+    },
+    {
+      "path": "release-evidence/path-pin-before-SPEC-portable-windows-runtime-md-2026-10-15.source.txt",
+      "bytes": 2548,
+      "sha256": "dde71d62eb278a8570ca40f00e1ff9ba92cc7ab0bd9c9a0f65fe0ec00e6e524a"
+    },
+    {
+      "path": "release-evidence/path-pin-before-Start-AirGap-QR-cmd-2026-10-15.source.txt",
+      "bytes": 600,
+      "sha256": "44e9909a60fd5145134c27859ed0a04b5ee03defd9d6793eda14fbc88367be36"
+    },
+    {
+      "path": "release-evidence/path-pin-before-tests-windows-launcher-test-mjs-2026-10-15.source.txt",
+      "bytes": 3526,
+      "sha256": "29e0bf3df97a89085401cd63984253f847933dbd3ace616255993c93acaf155f"
+    },
+    {
+      "path": "release-evidence/native-launcher-ui-lifecycle-2026-10-15.json",
+      "bytes": 368,
+      "sha256": "bbc49f04b8381f7888456004372743f86b3a23f3da01200ad251489f1aa655da"
+    },
+    {
+      "path": "release-evidence/native-launcher-ui-observation-scope-2026-10-15.json",
+      "bytes": 771,
+      "sha256": "975baea30bce54ab7780c88ba217ddbd917677c37cf3135647ea3dda604e6a4f"
+    },
+    {
+      "path": "release-evidence/native-launcher-ui-ready-2026-10-15.json",
+      "bytes": 669,
+      "sha256": "87e261a2b767b88b7d7cde8cf3205905515e6dcbc12d671cfc379ee38d7cb13d"
+    },
+    {
+      "path": "release-evidence/native-launcher-ui-smoke-2026-10-15.log",
+      "bytes": 152,
+      "sha256": "72e5d33bfa455d15dbc627031dfb2090de17000c6be5a6e03e8fe1228875905d"
+    },
+    {
+      "path": "release-evidence/native-launcher-ui-stop-2026-10-15.signal",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/path-pinned-package-validation-2026-10-15.json",
+      "bytes": 1487,
+      "sha256": "88b66eb580f4232d46cfe55a286e4c7b24b57680a3df170cb4426a8df25398f6"
+    },
+    {
+      "path": "release-evidence/windows-launcher-before-path-pin-2026-10-15.source.txt",
+      "bytes": 600,
+      "sha256": "44e9909a60fd5145134c27859ed0a04b5ee03defd9d6793eda14fbc88367be36"
+    },
+    {
+      "path": "release-evidence/windows-launcher-tests-before-path-pin-2026-10-15.source.txt",
+      "bytes": 3526,
+      "sha256": "29e0bf3df97a89085401cd63984253f847933dbd3ace616255993c93acaf155f"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-build-2026-10-15.log",
+      "bytes": 896,
+      "sha256": "f6ff023d0a530548b0a6a4df217ca2b68a7f66754a1918114fa600e4fa5ded96"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-build-exit-2026-10-15.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-green-2026-10-15.log",
+      "bytes": 230,
+      "sha256": "e924fb113058808cc25de295e91db32a4b2ba0fedf24203e898b13bc33eac6fe"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-green-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-red-2026-10-15.log",
+      "bytes": 1946,
+      "sha256": "418f37fb37416929fcffd355bd9cad5d3781141587c6e3dbc82e5bd0fa4e27f8"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-red-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-type-2026-10-15.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-type-exit-2026-10-15.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-unit-2026-10-15.log",
+      "bytes": 231,
+      "sha256": "c08ef562402154dd54f1770294cb9acee2b8072e444b9a266323c9bc45d7620a"
+    },
+    {
+      "path": "release-evidence/windows-path-pin-unit-exit-2026-10-15.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 329569,
+      "sha256": "f6390920f0d7a8e0579e7389c93c4bf17af735543df26a1fb3900c43535e64be"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\CHECKSUMS.json",
+      "bytes": 3165,
+      "sha256": "98ae3b5a5c6e95f4e96fe03b7efb4db5295b216468c472ff549b4eac52fbf572"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\PHYSICAL-TEST-RECORD.md",
+      "bytes": 4276,
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\README.md",
+      "bytes": 26455,
+      "sha256": "850251e0f7fdbfba853e1f996f277420ecdae9c0d52a82492b99469f57ef47d5"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\START-HERE.txt",
+      "bytes": 1360,
+      "sha256": "6abeb255a1b0db045a1fb0817e775b9f4b07fbde8c75d266065bb1efd60b16cb"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\Start AirGap QR.cmd",
+      "bytes": 610,
+      "sha256": "58a746a455a154b175be1c2601e2d37ba24c48b6c8dd6e991127316c288206f0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\TRANSFER_PROCESS.md",
+      "bytes": 15924,
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\dist\\assets\\block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\dist\\assets\\index-BAvLvA70.js",
+      "bytes": 555442,
+      "sha256": "e9edb004df0de79dbfa19aebb8631d6f7c2ee12b96091b9d6c1751949b30a9e6"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\dist\\assets\\index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\dist\\assets\\qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\dist\\index.html",
+      "bytes": 903,
+      "sha256": "64e19784a05849a6de772662caa641d4e14e808857fa3f67569daadb4ddd8b2b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\scripts\\compare-trees.mjs",
+      "bytes": 6930,
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\scripts\\create-fixture.mjs",
+      "bytes": 3194,
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\scripts\\lan-signaling.mjs",
+      "bytes": 3591,
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\scripts\\launch.mjs",
+      "bytes": 6621,
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\scripts\\local-http-security.mjs",
+      "bytes": 2387,
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\scripts\\rendezvous.mjs",
+      "bytes": 32051,
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\scripts\\serve.mjs",
+      "bytes": 6784,
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\scripts\\verify-release.mjs",
+      "bytes": 1897,
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external\\templates\\physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\CHECKSUMS.json",
+      "bytes": 3625,
+      "sha256": "ddd828d7bf6593535d053db200b50b4034ae80696ad1bfb62026567f8b5d2d1c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\PHYSICAL-TEST-RECORD.md",
+      "bytes": 4276,
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\README.md",
+      "bytes": 26455,
+      "sha256": "850251e0f7fdbfba853e1f996f277420ecdae9c0d52a82492b99469f57ef47d5"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\START-HERE.txt",
+      "bytes": 1428,
+      "sha256": "657f3724c01e15c3fda8124eb9edefad7505e1ab1f44ae94393086abc56e8a43"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\Start AirGap QR.cmd",
+      "bytes": 610,
+      "sha256": "58a746a455a154b175be1c2601e2d37ba24c48b6c8dd6e991127316c288206f0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\TRANSFER_PROCESS.md",
+      "bytes": 15924,
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\dist\\assets\\block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\dist\\assets\\index-BAvLvA70.js",
+      "bytes": 555442,
+      "sha256": "e9edb004df0de79dbfa19aebb8631d6f7c2ee12b96091b9d6c1751949b30a9e6"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\dist\\assets\\index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\dist\\assets\\qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\dist\\index.html",
+      "bytes": 903,
+      "sha256": "64e19784a05849a6de772662caa641d4e14e808857fa3f67569daadb4ddd8b2b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\runtime\\LICENSE",
+      "bytes": 157609,
+      "sha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\runtime\\ORIGIN.json",
+      "bytes": 423,
+      "sha256": "41faf3757cfa4792def93e9fdf43296d5e9b39b4b5ed7199a89b2fc6494488fb"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\runtime\\node.exe",
+      "bytes": 93882184,
+      "sha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\scripts\\compare-trees.mjs",
+      "bytes": 6930,
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\scripts\\create-fixture.mjs",
+      "bytes": 3194,
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\scripts\\lan-signaling.mjs",
+      "bytes": 3591,
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\scripts\\launch.mjs",
+      "bytes": 6621,
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\scripts\\local-http-security.mjs",
+      "bytes": 2387,
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\scripts\\rendezvous.mjs",
+      "bytes": 32051,
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\scripts\\serve.mjs",
+      "bytes": 6784,
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\scripts\\verify-release.mjs",
+      "bytes": 1897,
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-portable\\templates\\physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 88827,
+      "sha256": "4eaf7a2df1dd1c486b1680c4f00c2b5cfc4f0e32262652e6b5f821b8244b3de3"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 131189,
+      "sha256": "940faeef25ac746bd132583d0cbcaff831d9bedb72ddc6212e93068e7a006b62"
+    },
+    {
+      "path": "SPEC-portable-windows-runtime.md",
+      "bytes": 3767,
+      "sha256": "0c067a855775a4129b598df22aebc21422fcb0993aabea12a251b2070c11d46c"
+    },
+    {
+      "path": "Start AirGap QR.cmd",
+      "bytes": 610,
+      "sha256": "58a746a455a154b175be1c2601e2d37ba24c48b6c8dd6e991127316c288206f0"
+    },
+    {
+      "path": "tests/windows-launcher.test.mjs",
+      "bytes": 4198,
+      "sha256": "2bf5e64cbe64630a25ca94ca75435473b3bf212d6e16dffb4b2cec943f06380b"
+    }
+  ]
+}
