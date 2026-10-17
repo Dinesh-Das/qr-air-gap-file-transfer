@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-10-15T17:58:21.401Z",
+  "url": "http://127.0.0.1:24309",
+  "realCmdEntryPassed": true,
+  "realDefaultBrowserDispatchReturned": true,
+  "actualGuiObserved": false,
+  "connectorBrowserCount": 2,
+  "matchingNativeStartupTabs": 0,
+  "connectorScope": "Only Codex in-app browser and MCP-app surfaces were exposed; no matching native default-browser tab. No replacement tab was opened to simulate native observation.",
+  "launcherExit": 0,
+  "httpPortRebindPassed": true,
+  "ownedBackendProcesses": 0,
+  "signalPortSeparatelyRecorded": false,
+  "scope": "One current Windows host, external-runtime package, invalid cwd node.exe and where.exe ignored. Actual default-browser rendering, double-click UI, fresh OS and two-laptop acceptance remain open."
+}

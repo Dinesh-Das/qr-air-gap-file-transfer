@@ -1,0 +1,8 @@
+{
+  "recordedAt": "2026-10-15T17:56:23.134Z",
+  "url": "http://127.0.0.1:24309",
+  "exitCode": 0,
+  "stopRequested": true,
+  "nativeDefaultBrowserDispatch": true,
+  "scope": "Actual Windows command launcher from cwd containing invalid node.exe/where.exe. No injected browser opener. App stopped using its Enter/stdin path; UI and closed-port evidence are separate."
+}

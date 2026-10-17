@@ -1,0 +1,10 @@
+{
+  "recordedAt": "2026-10-15T17:54:41.296Z",
+  "url": "http://127.0.0.1:24309",
+  "bundle": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-path-pinned-external",
+  "fromWorkingDirectory": "D:\\MyProjects\\qrft-cwd-launcher-probe-2026-10-15\\unrelated cwd",
+  "realDefaultBrowserDispatch": true,
+  "processId": 22692,
+  "output": "Checking this copy of AirGap QR...\nAirGap QR is open at http://127.0.0.1:24309\nKeep this window open while using the app. Press Enter here to close it.\n",
+  "scope": "Real CMD entry and native openDefaultBrowser; default-browser UI observation is separate. Dedicated local app origin, no user files selected."
+}
