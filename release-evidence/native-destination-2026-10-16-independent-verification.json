@@ -1,0 +1,22 @@
+{
+  "verifiedAt": "2026-10-16T02:31:18.455Z",
+  "inputs": 173,
+  "assets": 5,
+  "priorEvidence": 737,
+  "sourceAndStageUnchanged": true,
+  "diagnosticTests": 2,
+  "checksPerDrive": 6,
+  "drives": [
+    "C",
+    "D"
+  ],
+  "finalPayloadFilesIndependentlyRead": 56,
+  "finalPayloadBytesIndependentlyRead": 1416,
+  "rootsPreserved": [
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-native-destination-2026-10-16-ksTBcP",
+    "D:\\MyProjects\\qrft-native-destination-2026-10-16-Ev2K36"
+  ],
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY",
+  "scope": "Production destination module via Node filesystem-handle adapter on actual Windows folders. Small synthetic bytes, one process, no Web Locks/browser/native picker/LAN/physical/power-loss/performance acceptance."
+}

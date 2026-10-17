@@ -1,0 +1,25 @@
+import {readFile,writeFile,copyFile,open,stat} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {spawn} from 'node:child_process';
+import {join,resolve} from 'node:path';
+const read=async p=>JSON.parse(await readFile(p));
+const hash=async p=>createHash('sha256').update(await readFile(p)).digest('hex');
+const r=await read('release-evidence/release-gate-latest.json'),stage=r.freshInstall.stage;
+async function verify(){for(const f of [...r.currentInputs,...r.builtAssets])if(await hash(f.path)!==f.sha256||await hash(join(stage,f.path))!==f.sha256)throw Error('Input drift '+f.path);}
+await verify();
+const name='native-destination-2026-10-16';
+const test=join(stage,'validation',name+'.test.mjs'),config=join(stage,'validation',name+'.config.mjs');
+await writeFile(test,await readFile('.tmp/'+name+'.test.mjs'),{flag:'wx'});
+await writeFile(config,'export default {test:{environment:"node",include:["validation/'+name+'.test.mjs"],maxWorkers:1,fileParallelism:false}};\n',{flag:'wx'});
+const report=resolve('release-evidence/'+name+'.json');
+const log=await open('release-evidence/'+name+'.log','wx');let code;
+try{code=await new Promise((done,reject)=>{const p=spawn(resolve('artifacts/qrft-2026-10-16-pairing-recovery-portable/runtime/node.exe'),[join(stage,'node_modules/vitest/vitest.mjs'),'run','--config',config],{cwd:stage,env:{...process.env,QRFT_NATIVE_DESTINATION_REPORT:report},windowsHide:true,stdio:['ignore',log.fd,log.fd]});p.once('error',reject);p.once('close',done);});}finally{await log.close();}
+await writeFile('release-evidence/'+name+'-exit.txt',String(code)+'\n',{flag:'wx'});
+await verify();
+await copyFile('.tmp/'+name+'.test.mjs','release-evidence/'+name+'.test.source.txt');
+await copyFile('.tmp/run-'+name+'.mjs','release-evidence/'+name+'.runner.source.txt');
+if(code!==0)throw Error('Native diagnostic failed '+code);
+const result=await read(report);if(result.results.length!==2||result.results.some(r=>r.cases.length!==6))throw Error('Scope missing');
+const files=[];for(const path of [report,'release-evidence/'+name+'.log','release-evidence/'+name+'-exit.txt','release-evidence/'+name+'.test.source.txt','release-evidence/'+name+'.runner.source.txt'])files.push({path,bytes:(await stat(path)).size,sha256:await hash(path)});
+await writeFile('release-evidence/'+name+'-hashes.json',JSON.stringify({inputsUnchanged:true,inputCount:r.currentInputs.length,assetCount:r.builtAssets.length,files},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({exitCode:code,drives:result.results.map(r=>r.drive),casesEach:6,filesEach:14,inputsUnchanged:true}));

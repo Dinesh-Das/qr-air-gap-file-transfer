@@ -1,0 +1,918 @@
+{
+  "recordedAt": "2026-10-16T02:30:00.010Z",
+  "scope": "Production destination module via Node filesystem-handle adapter on actual Windows folders. Small synthetic bytes, one process, no Web Locks/browser/native picker/LAN/physical/power-loss/performance acceptance.",
+  "results": [
+    {
+      "drive": "C",
+      "root": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-native-destination-2026-10-16-ksTBcP",
+      "cases": [
+        {
+          "name": "fresh write",
+          "report": {
+            "rootName": "received",
+            "filesWritten": 14,
+            "filesReused": 0,
+            "directoriesVerified": 4,
+            "totalBytes": "354",
+            "resumed": false
+          },
+          "exactFiles": 14
+        },
+        {
+          "name": "idempotent complete retry",
+          "report": {
+            "rootName": "received",
+            "filesWritten": 0,
+            "filesReused": 14,
+            "directoriesVerified": 4,
+            "totalBytes": "354",
+            "resumed": false
+          },
+          "additionalWrites": 0
+        },
+        {
+          "name": "interrupted journal retained",
+          "completed": "AQA=",
+          "inventory": [
+            {
+              "path": ".airgap-qr-v3.partial.json",
+              "kind": "file",
+              "bytes": 347,
+              "sha256": "98fa80c52ee6dac2932f0fe1e5e0809f136ff120a8babb264e9ae897bd78ae45"
+            },
+            {
+              "path": "Unicode",
+              "kind": "directory"
+            },
+            {
+              "path": "Unicode/ff.bin",
+              "kind": "file",
+              "bytes": 30,
+              "sha256": "a4f9048a7fe4352be6e4bf99709932ec49a0ab60f2ac5cf020140b56812d68f9"
+            },
+            {
+              "path": "Unicode/i.bin",
+              "kind": "file",
+              "bytes": 28,
+              "sha256": "ce253cc7845fbc62fb2525a8e98831194a1be5ceae0ca621a26df26730144873"
+            },
+            {
+              "path": "Unicode/s.bin",
+              "kind": "file",
+              "bytes": 28,
+              "sha256": "04d34ecd302e609e870a7b86a2dffbb84cef57d2166c72892f1d669e53567988"
+            },
+            {
+              "path": "Unicode/ss.bin",
+              "kind": "file",
+              "bytes": 29,
+              "sha256": "0842145e72b31c395eb925d760cc077a3b68c643b17df65f1af7b925d8122a00"
+            },
+            {
+              "path": "empty",
+              "kind": "directory"
+            },
+            {
+              "path": "nested",
+              "kind": "directory"
+            },
+            {
+              "path": "nested/文件",
+              "kind": "directory"
+            }
+          ]
+        },
+        {
+          "name": "changed journalled payload repaired",
+          "report": {
+            "rootName": "received",
+            "filesWritten": 14,
+            "filesReused": 0,
+            "directoriesVerified": 4,
+            "totalBytes": "354",
+            "resumed": true
+          },
+          "exactFiles": 14
+        },
+        {
+          "name": "unrelated folder refused",
+          "unchanged": true,
+          "inventory": [
+            {
+              "path": "personal.txt",
+              "kind": "file",
+              "bytes": 23,
+              "sha256": "b42d6690c0a7fd4ec257eaa9cf59ed77dc89760aa4a4e8a325889f8c32a8bc14"
+            }
+          ]
+        },
+        {
+          "name": "native root case alias refused",
+          "requested": "received",
+          "actual": "RECEIVED",
+          "unchanged": true
+        }
+      ],
+      "completeInventory": [
+        {
+          "path": "Unicode",
+          "kind": "directory"
+        },
+        {
+          "path": "Unicode/ff.bin",
+          "kind": "file",
+          "bytes": 30,
+          "sha256": "a4f9048a7fe4352be6e4bf99709932ec49a0ab60f2ac5cf020140b56812d68f9"
+        },
+        {
+          "path": "Unicode/i.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "ce253cc7845fbc62fb2525a8e98831194a1be5ceae0ca621a26df26730144873"
+        },
+        {
+          "path": "Unicode/s.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "04d34ecd302e609e870a7b86a2dffbb84cef57d2166c72892f1d669e53567988"
+        },
+        {
+          "path": "Unicode/ss.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "0842145e72b31c395eb925d760cc077a3b68c643b17df65f1af7b925d8122a00"
+        },
+        {
+          "path": "Unicode/µ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "1ee692bd40727d334054c3717481bbeb673889983bd7d2533d090616dcb8c41a"
+        },
+        {
+          "path": "Unicode/ß.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "a89d5bedb90d315ad29566ad045d63d419b9388e15bbfab339a0092d90a2409e"
+        },
+        {
+          "path": "Unicode/ı.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "648966842ed19417420ae3b362346920b7dc464160d969a9de276482af317d7e"
+        },
+        {
+          "path": "Unicode/ſ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "2a1490f01a3369c35bba5392f5357639933a647c70b8670146001367ce9f9583"
+        },
+        {
+          "path": "Unicode/μ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "f4bbf8d19c6f44a5371e81d7ed07d8a67de285561cbafe79af042c0e87f1039b"
+        },
+        {
+          "path": "Unicode/ς.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "4a6521c5f7aa7a349cb69595f0236971011ef8f3251fe30b0f4f1fbacd72a6ee"
+        },
+        {
+          "path": "Unicode/σ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "34488a34b08c125839422fe0fb324c73a3178cd73886c662ba952812cbeb17f5"
+        },
+        {
+          "path": "Unicode/ﬀ.bin",
+          "kind": "file",
+          "bytes": 31,
+          "sha256": "6fc4b153f10cd3fae3ac89992b75b7e85b52e117af3d380287746cdf86e890c8"
+        },
+        {
+          "path": "empty",
+          "kind": "directory"
+        },
+        {
+          "path": "nested",
+          "kind": "directory"
+        },
+        {
+          "path": "nested/文件",
+          "kind": "directory"
+        },
+        {
+          "path": "nested/文件/😀.bin",
+          "kind": "file",
+          "bytes": 5,
+          "sha256": "1ff6a0f78b6b13a2c2c0fbc89ff9d185316bc3c8f900d27af843a9a3113623eb"
+        },
+        {
+          "path": "zero.bin",
+          "kind": "file",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "finalInventory": [
+        {
+          "path": "alias",
+          "kind": "directory"
+        },
+        {
+          "path": "alias/RECEIVED",
+          "kind": "directory"
+        },
+        {
+          "path": "fixture-owner.json",
+          "kind": "file",
+          "bytes": 173,
+          "sha256": "c5dc2426a4cd8fdf1bb374a7cc09dae278dc7f87e9be6c2f0b0928c4eca6ed07"
+        },
+        {
+          "path": "received",
+          "kind": "directory"
+        },
+        {
+          "path": "received/Unicode",
+          "kind": "directory"
+        },
+        {
+          "path": "received/Unicode/ff.bin",
+          "kind": "file",
+          "bytes": 30,
+          "sha256": "a4f9048a7fe4352be6e4bf99709932ec49a0ab60f2ac5cf020140b56812d68f9"
+        },
+        {
+          "path": "received/Unicode/i.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "ce253cc7845fbc62fb2525a8e98831194a1be5ceae0ca621a26df26730144873"
+        },
+        {
+          "path": "received/Unicode/s.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "04d34ecd302e609e870a7b86a2dffbb84cef57d2166c72892f1d669e53567988"
+        },
+        {
+          "path": "received/Unicode/ss.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "0842145e72b31c395eb925d760cc077a3b68c643b17df65f1af7b925d8122a00"
+        },
+        {
+          "path": "received/Unicode/µ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "1ee692bd40727d334054c3717481bbeb673889983bd7d2533d090616dcb8c41a"
+        },
+        {
+          "path": "received/Unicode/ß.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "a89d5bedb90d315ad29566ad045d63d419b9388e15bbfab339a0092d90a2409e"
+        },
+        {
+          "path": "received/Unicode/ı.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "648966842ed19417420ae3b362346920b7dc464160d969a9de276482af317d7e"
+        },
+        {
+          "path": "received/Unicode/ſ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "2a1490f01a3369c35bba5392f5357639933a647c70b8670146001367ce9f9583"
+        },
+        {
+          "path": "received/Unicode/μ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "f4bbf8d19c6f44a5371e81d7ed07d8a67de285561cbafe79af042c0e87f1039b"
+        },
+        {
+          "path": "received/Unicode/ς.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "4a6521c5f7aa7a349cb69595f0236971011ef8f3251fe30b0f4f1fbacd72a6ee"
+        },
+        {
+          "path": "received/Unicode/σ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "34488a34b08c125839422fe0fb324c73a3178cd73886c662ba952812cbeb17f5"
+        },
+        {
+          "path": "received/Unicode/ﬀ.bin",
+          "kind": "file",
+          "bytes": 31,
+          "sha256": "6fc4b153f10cd3fae3ac89992b75b7e85b52e117af3d380287746cdf86e890c8"
+        },
+        {
+          "path": "received/empty",
+          "kind": "directory"
+        },
+        {
+          "path": "received/nested",
+          "kind": "directory"
+        },
+        {
+          "path": "received/nested/文件",
+          "kind": "directory"
+        },
+        {
+          "path": "received/nested/文件/😀.bin",
+          "kind": "file",
+          "bytes": 5,
+          "sha256": "1ff6a0f78b6b13a2c2c0fbc89ff9d185316bc3c8f900d27af843a9a3113623eb"
+        },
+        {
+          "path": "received/zero.bin",
+          "kind": "file",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "recovery",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/Unicode",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/Unicode/ff.bin",
+          "kind": "file",
+          "bytes": 30,
+          "sha256": "a4f9048a7fe4352be6e4bf99709932ec49a0ab60f2ac5cf020140b56812d68f9"
+        },
+        {
+          "path": "recovery/received/Unicode/i.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "ce253cc7845fbc62fb2525a8e98831194a1be5ceae0ca621a26df26730144873"
+        },
+        {
+          "path": "recovery/received/Unicode/s.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "04d34ecd302e609e870a7b86a2dffbb84cef57d2166c72892f1d669e53567988"
+        },
+        {
+          "path": "recovery/received/Unicode/ss.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "0842145e72b31c395eb925d760cc077a3b68c643b17df65f1af7b925d8122a00"
+        },
+        {
+          "path": "recovery/received/Unicode/µ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "1ee692bd40727d334054c3717481bbeb673889983bd7d2533d090616dcb8c41a"
+        },
+        {
+          "path": "recovery/received/Unicode/ß.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "a89d5bedb90d315ad29566ad045d63d419b9388e15bbfab339a0092d90a2409e"
+        },
+        {
+          "path": "recovery/received/Unicode/ı.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "648966842ed19417420ae3b362346920b7dc464160d969a9de276482af317d7e"
+        },
+        {
+          "path": "recovery/received/Unicode/ſ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "2a1490f01a3369c35bba5392f5357639933a647c70b8670146001367ce9f9583"
+        },
+        {
+          "path": "recovery/received/Unicode/μ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "f4bbf8d19c6f44a5371e81d7ed07d8a67de285561cbafe79af042c0e87f1039b"
+        },
+        {
+          "path": "recovery/received/Unicode/ς.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "4a6521c5f7aa7a349cb69595f0236971011ef8f3251fe30b0f4f1fbacd72a6ee"
+        },
+        {
+          "path": "recovery/received/Unicode/σ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "34488a34b08c125839422fe0fb324c73a3178cd73886c662ba952812cbeb17f5"
+        },
+        {
+          "path": "recovery/received/Unicode/ﬀ.bin",
+          "kind": "file",
+          "bytes": 31,
+          "sha256": "6fc4b153f10cd3fae3ac89992b75b7e85b52e117af3d380287746cdf86e890c8"
+        },
+        {
+          "path": "recovery/received/empty",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/nested",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/nested/文件",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/nested/文件/😀.bin",
+          "kind": "file",
+          "bytes": 5,
+          "sha256": "1ff6a0f78b6b13a2c2c0fbc89ff9d185316bc3c8f900d27af843a9a3113623eb"
+        },
+        {
+          "path": "recovery/received/zero.bin",
+          "kind": "file",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "unrelated",
+          "kind": "directory"
+        },
+        {
+          "path": "unrelated/received",
+          "kind": "directory"
+        },
+        {
+          "path": "unrelated/received/personal.txt",
+          "kind": "file",
+          "bytes": 23,
+          "sha256": "b42d6690c0a7fd4ec257eaa9cf59ed77dc89760aa4a4e8a325889f8c32a8bc14"
+        }
+      ]
+    },
+    {
+      "drive": "D",
+      "root": "D:\\MyProjects\\qrft-native-destination-2026-10-16-Ev2K36",
+      "cases": [
+        {
+          "name": "fresh write",
+          "report": {
+            "rootName": "received",
+            "filesWritten": 14,
+            "filesReused": 0,
+            "directoriesVerified": 4,
+            "totalBytes": "354",
+            "resumed": false
+          },
+          "exactFiles": 14
+        },
+        {
+          "name": "idempotent complete retry",
+          "report": {
+            "rootName": "received",
+            "filesWritten": 0,
+            "filesReused": 14,
+            "directoriesVerified": 4,
+            "totalBytes": "354",
+            "resumed": false
+          },
+          "additionalWrites": 0
+        },
+        {
+          "name": "interrupted journal retained",
+          "completed": "AQA=",
+          "inventory": [
+            {
+              "path": ".airgap-qr-v3.partial.json",
+              "kind": "file",
+              "bytes": 347,
+              "sha256": "98fa80c52ee6dac2932f0fe1e5e0809f136ff120a8babb264e9ae897bd78ae45"
+            },
+            {
+              "path": "Unicode",
+              "kind": "directory"
+            },
+            {
+              "path": "Unicode/ff.bin",
+              "kind": "file",
+              "bytes": 30,
+              "sha256": "a4f9048a7fe4352be6e4bf99709932ec49a0ab60f2ac5cf020140b56812d68f9"
+            },
+            {
+              "path": "Unicode/i.bin",
+              "kind": "file",
+              "bytes": 28,
+              "sha256": "ce253cc7845fbc62fb2525a8e98831194a1be5ceae0ca621a26df26730144873"
+            },
+            {
+              "path": "Unicode/s.bin",
+              "kind": "file",
+              "bytes": 28,
+              "sha256": "04d34ecd302e609e870a7b86a2dffbb84cef57d2166c72892f1d669e53567988"
+            },
+            {
+              "path": "Unicode/ss.bin",
+              "kind": "file",
+              "bytes": 29,
+              "sha256": "0842145e72b31c395eb925d760cc077a3b68c643b17df65f1af7b925d8122a00"
+            },
+            {
+              "path": "empty",
+              "kind": "directory"
+            },
+            {
+              "path": "nested",
+              "kind": "directory"
+            },
+            {
+              "path": "nested/文件",
+              "kind": "directory"
+            }
+          ]
+        },
+        {
+          "name": "changed journalled payload repaired",
+          "report": {
+            "rootName": "received",
+            "filesWritten": 14,
+            "filesReused": 0,
+            "directoriesVerified": 4,
+            "totalBytes": "354",
+            "resumed": true
+          },
+          "exactFiles": 14
+        },
+        {
+          "name": "unrelated folder refused",
+          "unchanged": true,
+          "inventory": [
+            {
+              "path": "personal.txt",
+              "kind": "file",
+              "bytes": 23,
+              "sha256": "b42d6690c0a7fd4ec257eaa9cf59ed77dc89760aa4a4e8a325889f8c32a8bc14"
+            }
+          ]
+        },
+        {
+          "name": "native root case alias refused",
+          "requested": "received",
+          "actual": "RECEIVED",
+          "unchanged": true
+        }
+      ],
+      "completeInventory": [
+        {
+          "path": "Unicode",
+          "kind": "directory"
+        },
+        {
+          "path": "Unicode/ff.bin",
+          "kind": "file",
+          "bytes": 30,
+          "sha256": "a4f9048a7fe4352be6e4bf99709932ec49a0ab60f2ac5cf020140b56812d68f9"
+        },
+        {
+          "path": "Unicode/i.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "ce253cc7845fbc62fb2525a8e98831194a1be5ceae0ca621a26df26730144873"
+        },
+        {
+          "path": "Unicode/s.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "04d34ecd302e609e870a7b86a2dffbb84cef57d2166c72892f1d669e53567988"
+        },
+        {
+          "path": "Unicode/ss.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "0842145e72b31c395eb925d760cc077a3b68c643b17df65f1af7b925d8122a00"
+        },
+        {
+          "path": "Unicode/µ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "1ee692bd40727d334054c3717481bbeb673889983bd7d2533d090616dcb8c41a"
+        },
+        {
+          "path": "Unicode/ß.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "a89d5bedb90d315ad29566ad045d63d419b9388e15bbfab339a0092d90a2409e"
+        },
+        {
+          "path": "Unicode/ı.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "648966842ed19417420ae3b362346920b7dc464160d969a9de276482af317d7e"
+        },
+        {
+          "path": "Unicode/ſ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "2a1490f01a3369c35bba5392f5357639933a647c70b8670146001367ce9f9583"
+        },
+        {
+          "path": "Unicode/μ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "f4bbf8d19c6f44a5371e81d7ed07d8a67de285561cbafe79af042c0e87f1039b"
+        },
+        {
+          "path": "Unicode/ς.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "4a6521c5f7aa7a349cb69595f0236971011ef8f3251fe30b0f4f1fbacd72a6ee"
+        },
+        {
+          "path": "Unicode/σ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "34488a34b08c125839422fe0fb324c73a3178cd73886c662ba952812cbeb17f5"
+        },
+        {
+          "path": "Unicode/ﬀ.bin",
+          "kind": "file",
+          "bytes": 31,
+          "sha256": "6fc4b153f10cd3fae3ac89992b75b7e85b52e117af3d380287746cdf86e890c8"
+        },
+        {
+          "path": "empty",
+          "kind": "directory"
+        },
+        {
+          "path": "nested",
+          "kind": "directory"
+        },
+        {
+          "path": "nested/文件",
+          "kind": "directory"
+        },
+        {
+          "path": "nested/文件/😀.bin",
+          "kind": "file",
+          "bytes": 5,
+          "sha256": "1ff6a0f78b6b13a2c2c0fbc89ff9d185316bc3c8f900d27af843a9a3113623eb"
+        },
+        {
+          "path": "zero.bin",
+          "kind": "file",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "finalInventory": [
+        {
+          "path": "alias",
+          "kind": "directory"
+        },
+        {
+          "path": "alias/RECEIVED",
+          "kind": "directory"
+        },
+        {
+          "path": "fixture-owner.json",
+          "kind": "file",
+          "bytes": 149,
+          "sha256": "8cfbc57b35c2dfe4e7621d5236efff9b7e582b00815f7eda07de74584a1bb569"
+        },
+        {
+          "path": "received",
+          "kind": "directory"
+        },
+        {
+          "path": "received/Unicode",
+          "kind": "directory"
+        },
+        {
+          "path": "received/Unicode/ff.bin",
+          "kind": "file",
+          "bytes": 30,
+          "sha256": "a4f9048a7fe4352be6e4bf99709932ec49a0ab60f2ac5cf020140b56812d68f9"
+        },
+        {
+          "path": "received/Unicode/i.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "ce253cc7845fbc62fb2525a8e98831194a1be5ceae0ca621a26df26730144873"
+        },
+        {
+          "path": "received/Unicode/s.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "04d34ecd302e609e870a7b86a2dffbb84cef57d2166c72892f1d669e53567988"
+        },
+        {
+          "path": "received/Unicode/ss.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "0842145e72b31c395eb925d760cc077a3b68c643b17df65f1af7b925d8122a00"
+        },
+        {
+          "path": "received/Unicode/µ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "1ee692bd40727d334054c3717481bbeb673889983bd7d2533d090616dcb8c41a"
+        },
+        {
+          "path": "received/Unicode/ß.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "a89d5bedb90d315ad29566ad045d63d419b9388e15bbfab339a0092d90a2409e"
+        },
+        {
+          "path": "received/Unicode/ı.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "648966842ed19417420ae3b362346920b7dc464160d969a9de276482af317d7e"
+        },
+        {
+          "path": "received/Unicode/ſ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "2a1490f01a3369c35bba5392f5357639933a647c70b8670146001367ce9f9583"
+        },
+        {
+          "path": "received/Unicode/μ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "f4bbf8d19c6f44a5371e81d7ed07d8a67de285561cbafe79af042c0e87f1039b"
+        },
+        {
+          "path": "received/Unicode/ς.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "4a6521c5f7aa7a349cb69595f0236971011ef8f3251fe30b0f4f1fbacd72a6ee"
+        },
+        {
+          "path": "received/Unicode/σ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "34488a34b08c125839422fe0fb324c73a3178cd73886c662ba952812cbeb17f5"
+        },
+        {
+          "path": "received/Unicode/ﬀ.bin",
+          "kind": "file",
+          "bytes": 31,
+          "sha256": "6fc4b153f10cd3fae3ac89992b75b7e85b52e117af3d380287746cdf86e890c8"
+        },
+        {
+          "path": "received/empty",
+          "kind": "directory"
+        },
+        {
+          "path": "received/nested",
+          "kind": "directory"
+        },
+        {
+          "path": "received/nested/文件",
+          "kind": "directory"
+        },
+        {
+          "path": "received/nested/文件/😀.bin",
+          "kind": "file",
+          "bytes": 5,
+          "sha256": "1ff6a0f78b6b13a2c2c0fbc89ff9d185316bc3c8f900d27af843a9a3113623eb"
+        },
+        {
+          "path": "received/zero.bin",
+          "kind": "file",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "recovery",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/Unicode",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/Unicode/ff.bin",
+          "kind": "file",
+          "bytes": 30,
+          "sha256": "a4f9048a7fe4352be6e4bf99709932ec49a0ab60f2ac5cf020140b56812d68f9"
+        },
+        {
+          "path": "recovery/received/Unicode/i.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "ce253cc7845fbc62fb2525a8e98831194a1be5ceae0ca621a26df26730144873"
+        },
+        {
+          "path": "recovery/received/Unicode/s.bin",
+          "kind": "file",
+          "bytes": 28,
+          "sha256": "04d34ecd302e609e870a7b86a2dffbb84cef57d2166c72892f1d669e53567988"
+        },
+        {
+          "path": "recovery/received/Unicode/ss.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "0842145e72b31c395eb925d760cc077a3b68c643b17df65f1af7b925d8122a00"
+        },
+        {
+          "path": "recovery/received/Unicode/µ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "1ee692bd40727d334054c3717481bbeb673889983bd7d2533d090616dcb8c41a"
+        },
+        {
+          "path": "recovery/received/Unicode/ß.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "a89d5bedb90d315ad29566ad045d63d419b9388e15bbfab339a0092d90a2409e"
+        },
+        {
+          "path": "recovery/received/Unicode/ı.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "648966842ed19417420ae3b362346920b7dc464160d969a9de276482af317d7e"
+        },
+        {
+          "path": "recovery/received/Unicode/ſ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "2a1490f01a3369c35bba5392f5357639933a647c70b8670146001367ce9f9583"
+        },
+        {
+          "path": "recovery/received/Unicode/μ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "f4bbf8d19c6f44a5371e81d7ed07d8a67de285561cbafe79af042c0e87f1039b"
+        },
+        {
+          "path": "recovery/received/Unicode/ς.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "4a6521c5f7aa7a349cb69595f0236971011ef8f3251fe30b0f4f1fbacd72a6ee"
+        },
+        {
+          "path": "recovery/received/Unicode/σ.bin",
+          "kind": "file",
+          "bytes": 29,
+          "sha256": "34488a34b08c125839422fe0fb324c73a3178cd73886c662ba952812cbeb17f5"
+        },
+        {
+          "path": "recovery/received/Unicode/ﬀ.bin",
+          "kind": "file",
+          "bytes": 31,
+          "sha256": "6fc4b153f10cd3fae3ac89992b75b7e85b52e117af3d380287746cdf86e890c8"
+        },
+        {
+          "path": "recovery/received/empty",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/nested",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/nested/文件",
+          "kind": "directory"
+        },
+        {
+          "path": "recovery/received/nested/文件/😀.bin",
+          "kind": "file",
+          "bytes": 5,
+          "sha256": "1ff6a0f78b6b13a2c2c0fbc89ff9d185316bc3c8f900d27af843a9a3113623eb"
+        },
+        {
+          "path": "recovery/received/zero.bin",
+          "kind": "file",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "unrelated",
+          "kind": "directory"
+        },
+        {
+          "path": "unrelated/received",
+          "kind": "directory"
+        },
+        {
+          "path": "unrelated/received/personal.txt",
+          "kind": "file",
+          "bytes": 23,
+          "sha256": "b42d6690c0a7fd4ec257eaa9cf59ed77dc89760aa4a4e8a325889f8c32a8bc14"
+        }
+      ]
+    }
+  ]
+}

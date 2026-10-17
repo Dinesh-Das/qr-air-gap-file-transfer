@@ -1,0 +1,88 @@
+import {it,expect} from 'vitest';
+import {mkdtemp,mkdir,readdir,readFile,writeFile,stat,lstat,open,rename,unlink,realpath} from 'node:fs/promises';
+import {join,basename,resolve,relative,isAbsolute,dirname} from 'node:path';
+import {createHash,randomUUID} from 'node:crypto';
+import {tmpdir} from 'node:os';
+import {writeLargeTreeToDirectory,LARGE_DESTINATION_MARKER} from '../src/lib/large-destination.ts';
+import {encodeLargeTreeMetadata,parseLargeTreeMetadata} from '../src/lib/large-transfer.ts';
+
+const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
+const pairs=[['σ','ς'],['i','ı'],['s','ſ'],['μ','µ'],['ss','ß'],['ff','ﬀ']];
+const results=[];
+const report=process.env.QRFT_NATIVE_DESTINATION_REPORT;
+if(!report||process.platform!=='win32')throw Error('Explicit Windows report path required');
+
+// Diagnostic adapter only: Node filesystem operations, not a browser picker or
+// File System Access implementation. Safe-write staging models close/abort.
+function adapter(root){
+ const writes=[];
+ const checked=p=>{const rel=relative(root,resolve(p));if(rel==='..'||rel.startsWith('..\\')||isAbsolute(rel))throw Error('Outside owned fixture');return p;};
+ const translate=e=>{if(e.code==='ENOENT')return new DOMException('Missing fixture entry','NotFoundError');if(['ENOTDIR','EISDIR'].includes(e.code))return new DOMException('Wrong fixture kind','TypeMismatchError');return e;};
+ async function handle(p,kind){
+  checked(p);
+  let canonical;try{canonical=await realpath(p);const s=await lstat(p);if(s.isSymbolicLink())throw Error('Fixture links forbidden');if((kind==='directory')!==s.isDirectory())throw new DOMException('Wrong fixture kind','TypeMismatchError');}catch(e){throw translate(e);}
+  checked(canonical);
+  const h={name:basename(canonical),kind};
+  if(kind==='directory')Object.assign(h,{
+   async getDirectoryHandle(name,options={}){const child=checked(join(canonical,name));if(options.create)try{await mkdir(child);}catch(e){if(e.code!=='EEXIST')throw translate(e);}return handle(child,'directory');},
+   async getFileHandle(name,options={}){const child=checked(join(canonical,name));if(options.create){let f;try{f=await open(child,'ax');}catch(e){if(e.code!=='EEXIST')throw translate(e);}finally{await f?.close();}}return handle(child,'file');},
+   async *entries(){for(const entry of await readdir(canonical,{withFileTypes:true})){if(entry.isSymbolicLink())throw Error('Fixture links forbidden');yield [entry.name,await handle(join(canonical,entry.name),entry.isDirectory()?'directory':'file')];}},
+   async removeEntry(name){await unlink(checked(join(canonical,name)));},
+  });
+  else Object.assign(h,{
+   async getFile(){const data=await readFile(canonical);return new File([data],h.name);},
+   async createWritable(){const staging=checked(join(dirname(canonical),'.qrft-adapter-'+randomUUID()+'.tmp'));const f=await open(staging,'wx');let done=false;
+    return {async write(bytes){await f.writeFile(bytes);},async close(){await f.close();await rename(staging,canonical);done=true;writes.push(relative(root,canonical));},async abort(){if(!done){await f.close().catch(()=>{});await unlink(staging);done=true;}}};},
+  });
+  return h;
+ }
+ return {handle,writes};
+}
+function fixture(){
+ const expected=new Map();let index=0;
+ for(const pair of pairs)for(const name of pair){const path='Unicode/'+name+'.bin';expected.set(path,Buffer.from(`distinct native payload ${index++}: ${name}`));}
+ expected.set('nested/文件/😀.bin',Buffer.from([0,255,17,128,37]));
+ expected.set('zero.bin',Buffer.alloc(0));
+ const ordered=[...expected].sort(([a],[b])=>a<b?-1:a>b?1:0);
+ const bytes=Buffer.concat(ordered.map(([,b])=>b));
+ const metadata=encodeLargeTreeMetadata({rootName:'received',directories:['Unicode','empty','nested','nested/文件'],files:ordered.map(([path,b])=>({path,size:b.length,lastModified:7,sha256Hex:digest(b)}))});
+ const manifest=parseLargeTreeMetadata(metadata);
+ const reader={size:BigInt(bytes.length),async read(offset,length){return new Uint8Array(bytes.subarray(Number(offset),Number(offset)+length));}};
+ const binding={transferId:new Uint8Array(16).fill(19),streamSha256:new Uint8Array(createHash('sha256').update(bytes).digest())};
+ return {manifest,reader,binding,expected:new Map(ordered),directories:['Unicode','empty','nested','nested/文件']};
+}
+async function inventory(root){
+ const out=[];
+ async function walk(p,prefix=''){for(const e of await readdir(p,{withFileTypes:true})){const path=prefix?prefix+'/'+e.name:e.name;if(e.isSymbolicLink())throw Error('Fixture links forbidden');if(e.isDirectory()){out.push({path,kind:'directory'});await walk(join(p,e.name),path);}else{const b=await readFile(join(p,e.name));out.push({path,kind:'file',bytes:b.length,sha256:digest(b)});}}}
+ await walk(root);return out.sort((a,b)=>a.path<b.path?-1:a.path>b.path?1:0);
+}
+async function exact(root,f){const list=await inventory(root);expect(list.filter(e=>e.kind==='directory').map(e=>e.path)).toEqual(f.directories);expect(list.filter(e=>e.kind==='file').map(e=>e.path)).toEqual([...f.expected.keys()]);for(const [path,b] of f.expected)expect(await readFile(join(root,path))).toEqual(b);return list;}
+
+for(const [drive,parent] of [['C',tmpdir()],['D','D:/MyProjects']])it('native destination reconstruction and recovery on '+drive,async()=>{
+ const root=await mkdtemp(join(parent,'qrft-native-destination-2026-10-16-'));
+ await writeFile(join(root,'fixture-owner.json'),JSON.stringify({purpose:'native destination diagnostic',root,createdAt:new Date().toISOString()}),{flag:'wx'});
+ const a=adapter(root),f=fixture(),cases=[];
+ const parentHandle=await a.handle(root,'directory');
+ const first=await writeLargeTreeToDirectory(f.manifest,f.reader,f.binding,parentHandle);
+ expect(first.filesWritten).toBe(14);expect(first.resumed).toBe(false);
+ const completeInventory=await exact(join(root,'received'),f);cases.push({name:'fresh write',report:first,exactFiles:14});
+ const writes=a.writes.length;const retry=await writeLargeTreeToDirectory(f.manifest,f.reader,f.binding,parentHandle);
+ expect(retry.filesReused).toBe(14);expect(retry.filesWritten).toBe(0);expect(a.writes.length).toBe(writes);await exact(join(root,'received'),f);cases.push({name:'idempotent complete retry',report:retry,additionalWrites:0});
+ // A distinct owned parent permits an interrupted operation from its first byte.
+ const recoveryParent=await parentHandle.getDirectoryHandle('recovery',{create:true});let interrupted=false;
+ await expect(writeLargeTreeToDirectory(f.manifest,f.reader,f.binding,recoveryParent,{onProgress(p){if(p.phase==='write'&&p.filesComplete===1&&!interrupted){interrupted=true;throw Error('injected after first journalled file');}}})).rejects.toThrow('injected after first journalled file');
+ expect(interrupted).toBe(true);const partialRoot=join(root,'recovery','received');
+ const journal=JSON.parse(await readFile(join(partialRoot,LARGE_DESTINATION_MARKER),'utf8'));expect(Buffer.from(journal.completed,'base64')[0]&1).toBe(1);
+ const partialInventory=await inventory(partialRoot);cases.push({name:'interrupted journal retained',completed:journal.completed,inventory:partialInventory});
+ const [firstPath,firstBytes]=[...f.expected][0];await writeFile(join(partialRoot,firstPath),Buffer.alloc(firstBytes.length,99));
+ const repaired=await writeLargeTreeToDirectory(f.manifest,f.reader,f.binding,recoveryParent);
+ expect(repaired.resumed).toBe(true);expect(repaired.filesReused).toBe(0);expect(repaired.filesWritten).toBe(14);await exact(partialRoot,f);cases.push({name:'changed journalled payload repaired',report:repaired,exactFiles:14});
+ // A marker-free unrelated destination must stay byte-for-byte untouched.
+ const hostileParent=await parentHandle.getDirectoryHandle('unrelated',{create:true});const hostileRoot=join(root,'unrelated','received');await mkdir(hostileRoot);await writeFile(join(hostileRoot,'personal.txt'),Buffer.from('leave my file unchanged'));
+ const before=await inventory(hostileRoot);await expect(writeLargeTreeToDirectory(f.manifest,f.reader,f.binding,hostileParent)).rejects.toThrow(/non-empty/);expect(await inventory(hostileRoot)).toEqual(before);cases.push({name:'unrelated folder refused',unchanged:true,inventory:before});
+ // Native case normalization must be exposed by the adapter, not fabricated.
+ const aliasParent=await parentHandle.getDirectoryHandle('alias',{create:true});await mkdir(join(root,'alias','RECEIVED'));const actual=await aliasParent.getDirectoryHandle('received');expect(actual.name).toBe('RECEIVED');
+ await expect(writeLargeTreeToDirectory(f.manifest,f.reader,f.binding,aliasParent)).rejects.toThrow(/normalized/);expect(await readdir(join(root,'alias','RECEIVED'))).toEqual([]);cases.push({name:'native root case alias refused',requested:'received',actual:actual.name,unchanged:true});
+ results.push({drive,root,cases,completeInventory,finalInventory:await inventory(root)});
+ await writeFile(report,JSON.stringify({recordedAt:new Date().toISOString(),scope:'Production destination module via Node filesystem-handle adapter on actual Windows folders. Small synthetic bytes, one process, no Web Locks/browser/native picker/LAN/physical/power-loss/performance acceptance.',results},(_,v)=>typeof v==='bigint'?v.toString():v,2)+'\n');
+},30_000);

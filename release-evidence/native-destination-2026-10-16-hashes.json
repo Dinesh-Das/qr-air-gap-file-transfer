@@ -1,0 +1,32 @@
+{
+  "inputsUnchanged": true,
+  "inputCount": 173,
+  "assetCount": 5,
+  "files": [
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\native-destination-2026-10-16.json",
+      "bytes": 28073,
+      "sha256": "c376875659b639f789b4bf0e4dfa8087d05c45c531d5c43158136f10732a91ea"
+    },
+    {
+      "path": "release-evidence/native-destination-2026-10-16.log",
+      "bytes": 234,
+      "sha256": "052fef61fb4f53352c5ce3536cebe46eb60b525c18cc7e78aa1b4e35ac2a1b7f"
+    },
+    {
+      "path": "release-evidence/native-destination-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/native-destination-2026-10-16.test.source.txt",
+      "bytes": 9269,
+      "sha256": "f940fa94a19116d3a9bd080ebb93cd66ae9619ff35e17b1d9fc2789d6b45fe52"
+    },
+    {
+      "path": "release-evidence/native-destination-2026-10-16.runner.source.txt",
+      "bytes": 2606,
+      "sha256": "74b58f7ccd4de435de671ddd7f48a6fed09df27c8bc5a89d0ed2b2cb5aee6b3b"
+    }
+  ]
+}
