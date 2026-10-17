@@ -1,0 +1,35 @@
+{
+  "recordedAt": "2026-10-17T03:29:19.402Z",
+  "archive": "C:\\Users\\dines\\QRFT-qualification-evidence\\local-requalification-2026-10-17-KtNarD",
+  "inventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\local-requalification-2026-10-17-KtNarD\\INVENTORY.json",
+    "bytes": 3237146,
+    "sha256": "5ff6da750c92eaf43bdc3d7c5d1f3435893c38917e331a79fe845b7319e1a41c"
+  },
+  "roots": [
+    {
+      "name": "fresh-stage",
+      "originalPath": "C:/Users/dines/AppData/Local/Temp/qrft-fresh-current-2026-10-17-Oo61W0",
+      "persistentPath": "C:\\Users\\dines\\QRFT-qualification-evidence\\local-requalification-2026-10-17-KtNarD\\fresh-stage",
+      "fileCount": 8811,
+      "bytes": 382004746
+    },
+    {
+      "name": "chrome-browser-artifacts",
+      "originalPath": "C:/Users/dines/AppData/Local/Temp/qrft-chrome-reserve-requalification-2026-10-17-chrome-CoJopq",
+      "persistentPath": "C:\\Users\\dines\\QRFT-qualification-evidence\\local-requalification-2026-10-17-KtNarD\\chrome-browser-artifacts",
+      "fileCount": 5045,
+      "bytes": 212483428
+    },
+    {
+      "name": "generated-cache-archive",
+      "originalPath": "C:/Users/dines/AppData/Local/Temp/qrft-preserved-vite-caches-2026-10-17-QVsiG6",
+      "persistentPath": "C:\\Users\\dines\\QRFT-qualification-evidence\\local-requalification-2026-10-17-KtNarD\\generated-cache-archive",
+      "fileCount": 35,
+      "bytes": 6419292
+    }
+  ],
+  "originalLocationsRetained": true,
+  "allCopiedFileHashesVerified": true,
+  "previousMissingDatasetsRecreated": false
+}
