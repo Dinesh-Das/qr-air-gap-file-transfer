@@ -1,0 +1,194 @@
+{
+  "recordedAt": "2026-10-17T03:09:16.172Z",
+  "scope": "Generated node_modules/.vite caches only; all bytes archived and rehashed on C. No browser profiles, payload datasets, release candidates or recorded evidence moved/deleted/compressed. Previous resource failures retained.",
+  "archive": "C:/Users/dines/AppData/Local/Temp/qrft-preserved-vite-caches-2026-10-17-QVsiG6",
+  "records": [
+    {
+      "source": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\node_modules\\.vite",
+      "destination": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-preserved-vite-caches-2026-10-17-QVsiG6\\dependency-stage",
+      "files": [
+        {
+          "path": "deps/@digitalbazaar_base45.js",
+          "bytes": 2613,
+          "sha256": "09e9629f0e0cab302e55ed26b6982fbee6331ec515c6189c77080cdad575901f"
+        },
+        {
+          "path": "deps/@digitalbazaar_base45.js.map",
+          "bytes": 4823,
+          "sha256": "4913ea65944948e343dfd64c70777830a56e26e4db60c4cb3f985a074e25145d"
+        },
+        {
+          "path": "deps/@noble_hashes_sha2__js.js",
+          "bytes": 28753,
+          "sha256": "ec1933235d107d6a7b3083befe8d535e4c938a5110bd46964fb61956fe6ca38f"
+        },
+        {
+          "path": "deps/@noble_hashes_sha2__js.js.map",
+          "bytes": 69002,
+          "sha256": "63f71cb8e5603f0da553d3a175b595977002eef7f098d0aedb1712758e377d74"
+        },
+        {
+          "path": "deps/fflate.js",
+          "bytes": 63654,
+          "sha256": "161ac4a6d9912ef4067998f934129de8c39bec336b024318c799154107d3d7e4"
+        },
+        {
+          "path": "deps/fflate.js.map",
+          "bytes": 149017,
+          "sha256": "38a5e7d14cd78b43a69f68d2a8cf9069c7c0065502459a0b636c9f55d7149e4a"
+        },
+        {
+          "path": "deps/lucide-react.js",
+          "bytes": 1093135,
+          "sha256": "61184997f604a073a9b23e09a509a37e70f1f5f67e5310495f6cd9b7e9eb1005"
+        },
+        {
+          "path": "deps/lucide-react.js.map",
+          "bytes": 1835083,
+          "sha256": "a256c3375386df8b865c873128530c883d4033bec41eda37c263f87eaef90471"
+        },
+        {
+          "path": "deps/package.json",
+          "bytes": 23,
+          "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+        },
+        {
+          "path": "deps/qr-scanner-worker.min-CuKAfgMP.js",
+          "bytes": 44042,
+          "sha256": "122f36e4b1504b0ad1993fe8824b212f918c5bae82191fe1339377fd1e3bac29"
+        },
+        {
+          "path": "deps/qr-scanner-worker.min-CuKAfgMP.js.map",
+          "bytes": 44560,
+          "sha256": "ccb2a79c8e807a0370c43cae344b90cb4c34cf083c8c4dab8f8e85d14927b6df"
+        },
+        {
+          "path": "deps/qr-scanner.js",
+          "bytes": 18964,
+          "sha256": "6076928c783859e2b45a9fc7384fb17f35cf78b6b1648c6e897581b372145959"
+        },
+        {
+          "path": "deps/qr-scanner.js.map",
+          "bytes": 29440,
+          "sha256": "2d60d61413fda4cdc77c00202ac5e049944277434c2d8bed6596e056fd0a1d64"
+        },
+        {
+          "path": "deps/qrcode.js",
+          "bytes": 71061,
+          "sha256": "e33d135b818e23295b8bcc11055591509669d96846e5562d28599957d25476d4"
+        },
+        {
+          "path": "deps/qrcode.js.map",
+          "bytes": 117310,
+          "sha256": "042ea1bbcab0c4aa41db17b9c376d0c54efb0236564672dd68f4cc16eafef17d"
+        },
+        {
+          "path": "deps/react-dom.js",
+          "bytes": 14535,
+          "sha256": "bbebb39ce98f58e5d69f66dc79f8392439f9878d45fc0b41141c124064b6b477"
+        },
+        {
+          "path": "deps/react-dom.js.map",
+          "bytes": 25602,
+          "sha256": "392f5943639eba2d0113930cf7ec4a78f6cb660cd60083c83c81a29a223a81fd"
+        },
+        {
+          "path": "deps/react-dom_client.js",
+          "bytes": 820711,
+          "sha256": "2470609b9d27a1333b0f2f8c36b1671c1c0982dbace5788c3091778a713fc851"
+        },
+        {
+          "path": "deps/react-dom_client.js.map",
+          "bytes": 1498893,
+          "sha256": "6476738af93e6f431c0587f299b4e509ba5e7be30eb6cb152ccfd2966b2d9b8d"
+        },
+        {
+          "path": "deps/react.js",
+          "bytes": 38246,
+          "sha256": "a1128bf380bfa8b61569f57249415e333be02e2b27a38b047e60bfeaa828fe8e"
+        },
+        {
+          "path": "deps/react.js.map",
+          "bytes": 68787,
+          "sha256": "512b5b4cb2d03e310293282adf8f7e12986bad182dbe364b53730b5f8f477fcc"
+        },
+        {
+          "path": "deps/react_jsx-dev-runtime.js",
+          "bytes": 10466,
+          "sha256": "b5cbe360c1cf656fa47993b26a008c211b9b9e7965bb3ec2990742c1c5ba9b91"
+        },
+        {
+          "path": "deps/react_jsx-dev-runtime.js.map",
+          "bytes": 18068,
+          "sha256": "a2cbbfc95fa5cbd63b00e1524fa38ba7d3cc8efc794e36e23278b4b1b16ffad3"
+        },
+        {
+          "path": "deps/react_jsx-runtime.js",
+          "bytes": 10743,
+          "sha256": "73f7a71736b3b8b4b0286c417f0e88e5533835a0625d90a3b161f0eea823a85c"
+        },
+        {
+          "path": "deps/react_jsx-runtime.js.map",
+          "bytes": 18636,
+          "sha256": "9ca0503453f56908949c3be7dcfe64eb4a63c6e0fa38dde4a9ef74119934fa6f"
+        },
+        {
+          "path": "deps/rolldown-runtime-EAsCxrDo.js",
+          "bytes": 496,
+          "sha256": "dd3545c6894fd8d3327997ebe3ada59e8d2e768d1a4ec615a6e05b99867c4258"
+        },
+        {
+          "path": "deps/_metadata.json",
+          "bytes": 2244,
+          "sha256": "f93fb5b7d63115140476196721d3ee05251e9f592638449d636ab94342fecd47"
+        },
+        {
+          "path": "vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+          "bytes": 5572,
+          "sha256": "75879482a167e1221f1ade0d89200f957a8b02e8d7a741b71661cbd880bff1eb"
+        }
+      ]
+    },
+    {
+      "source": "D:\\MyProjects\\QR Air-Gap File Transfer\\node_modules\\.vite",
+      "destination": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-preserved-vite-caches-2026-10-17-QVsiG6\\workspace",
+      "files": [
+        {
+          "path": "deps/@noble_hashes_sha2__js.js",
+          "bytes": 28753,
+          "sha256": "ec1933235d107d6a7b3083befe8d535e4c938a5110bd46964fb61956fe6ca38f"
+        },
+        {
+          "path": "deps/@noble_hashes_sha2__js.js.map",
+          "bytes": 69002,
+          "sha256": "63f71cb8e5603f0da553d3a175b595977002eef7f098d0aedb1712758e377d74"
+        },
+        {
+          "path": "deps/fflate.js",
+          "bytes": 63654,
+          "sha256": "161ac4a6d9912ef4067998f934129de8c39bec336b024318c799154107d3d7e4"
+        },
+        {
+          "path": "deps/fflate.js.map",
+          "bytes": 149017,
+          "sha256": "38a5e7d14cd78b43a69f68d2a8cf9069c7c0065502459a0b636c9f55d7149e4a"
+        },
+        {
+          "path": "deps/package.json",
+          "bytes": 23,
+          "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+        },
+        {
+          "path": "deps/_metadata.json",
+          "bytes": 483,
+          "sha256": "447cfe8c9b9c72fd732f0677e9cdfd3c4fbc531cd13a37b47af6531c124f31f0"
+        },
+        {
+          "path": "vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+          "bytes": 3881,
+          "sha256": "5b878fe1f7925e088e188d5acd01adc50d929efcf82ec7d7247c50855653dcd8"
+        }
+      ]
+    }
+  ]
+}
