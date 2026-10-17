@@ -1,0 +1,30 @@
+{
+  "recordedAt": "2026-10-16T16:31:12.608Z",
+  "roots": [
+    "C:/Users/dines/AppData/Local/Temp/qrft-readback-buffer-gate-edge-k0jqWt",
+    "C:/Users/dines/AppData/Local/Temp/qrft-readback-buffer-gate-chrome-IjALlb",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-production-readback-chrome-2026-10-16-RJPFAP",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-production-readback-msedge-2026-10-16-T5vHNl",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-slice-2026-10-16-iN6P1F",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-byob-2026-10-16-E69Mxf",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-save-only-5gib-2026-10-16-6RKwHR",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-byob-probe-2026-10-16-U3lwms"
+  ],
+  "ownedWorkers": [],
+  "normalizedPathMatching": true,
+  "rebound": [
+    {
+      "port": 4178,
+      "host": "127.0.0.1",
+      "tcp": true,
+      "udp": false
+    },
+    {
+      "port": 4179,
+      "host": "0.0.0.0",
+      "tcp": true,
+      "udp": true
+    }
+  ],
+  "note": "Only owned diagnostic/browser paths matched; own closure Node excluded. No process terminated during closure; earlier identified hung fixture worker termination remains in regression history. All profiles/datasets preserved."
+}

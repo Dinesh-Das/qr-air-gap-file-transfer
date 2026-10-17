@@ -1,0 +1,4 @@
+NOT READY
+Pairing HTTP30s header/body deadlines and exact cancellation reasons fixed. Late publication HTTP failures no longer terminate a native-open receive or replace verified/save state.520tests54/type/build passNode24.22; current portable22/external19 verify and pass scoped lifecycle.92Edge/92Chrome cases include four late-response regressions; native-fetch header/body/retry checks3each pass.
+All42physicalcases,GUI/nativepickers,cleanOS/CI/large-resource acceptance andhistorical5GiBmemory remain open. Timers depend on event-loop execution; no physical timeout or final-adversarial completion claim.
+See pairing-recovery-gate-review-2026-10-16.json.

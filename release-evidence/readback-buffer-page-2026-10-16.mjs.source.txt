@@ -1,0 +1,10 @@
+import {sha256} from '@noble/hashes/sha2.js';
+const state=globalThis.__readbackState={mode:'setup',bytes:0,reads:0,heapPeakBytes:0};
+export async function run(mode){const file=document.querySelector('input').files[0];if(!file)throw Error('File required');state.mode=mode;const hasher=sha256.create(),chunk=4*1024**2;const sample=()=>{state.heapPeakBytes=Math.max(state.heapPeakBytes,performance.memory?.usedJSHeapSize??0);};const timer=setInterval(sample,50);const start=performance.now();let reader;
+ try{
+  if(mode==='slice'){for(let offset=0;offset<file.size;offset+=chunk){const bytes=new Uint8Array(await file.slice(offset,Math.min(file.size,offset+chunk)).arrayBuffer());hasher.update(bytes);state.bytes+=bytes.length;state.reads++;sample();}}
+  else if(mode==='byob'){reader=file.stream().getReader({mode:'byob'});let view=new Uint8Array(chunk);while(state.bytes<file.size){const {value,done}=await reader.read(view,{min:Math.min(chunk,file.size-state.bytes)});if(!value?.byteLength)throw Error('Early EOF');hasher.update(value);state.bytes+=value.byteLength;state.reads++;sample();view=new Uint8Array(value.buffer);if(done&&state.bytes!==file.size)throw Error('Truncated stream');}}
+  else throw Error('Unknown mode');
+  state.sha256=Array.from(hasher.digest(),b=>b.toString(16).padStart(2,'0')).join('');state.ms=performance.now()-start;state.fileBytes=file.size;return structuredClone(state);
+ }finally{clearInterval(timer);if(reader){await reader.cancel();reader.releaseLock();}}
+}

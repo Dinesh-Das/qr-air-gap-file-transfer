@@ -1,0 +1,1373 @@
+# Release evidence and remaining work
+
+Status: **NOT READY**. Updated 2026-10-16. This inventory organizes the retained
+release requirements; it does not replace or narrow the original goal.
+"Local evidence" is deliberately not equivalent to physical release acceptance.
+The user last reported that both Windows laptops were unavailable.
+
+## Latest checkpoint: bounded pairing HTTP and obsolete-response recovery — NOT READY
+
+Each pairing HTTP exchange now has a 30-second deadline covering headers and
+JSON/error bodies. The five-second preflight stays shorter; the user’s code-entry
+and device-confirmation interval is unchanged. Caller abort reasons, including
+null, survive transport/body handling; timers and forwarding listeners are removed.
+Room deletion keeps keepalive/404 behavior and cancels its unread successful body.
+
+A separate reproduced race let a late answer-publication failure terminate an
+active receive or replace verified/saving/saved state. A native channel-open event
+now establishes that connection generation; an obsolete publication receipt cannot
+overrule it. Reset clears the marker. Authentication, channel health, storage and
+verification failures remain authoritative. No ambiguous write is retried automatically.
+
+The final Node 24.22 gate passes 520 tests in 54 files, typecheck and build.
+Both browsers pass 92 cases on the current package, including four new late-response
+regressions with exact destination bytes and SHA-256. Three native-fetch UI probes
+per browser cover stalled headers, success bodies and error bodies, observe socket
+closure, and prove a new request can proceed. They use a controlled loopback server
+and an advanced page clock; a retry returning 404 is not a successful transfer.
+
+Current portable candidate: artifacts/qrft-2026-10-16-pairing-recovery-portable.
+Both 22-file portable and 19-file external variants pass manifests and scoped
+runtime/HTML/health/shutdown checks. Browser suites start serve.mjs directly;
+package smoke substitutes native cmd exit0 for browser dispatch. Actual GUI/default
+handler/native picker, all 42 physical cases, clean OS, hosted CI, large-resource
+acceptance and the historical 5 GiB memory peak remain open.
+
+## Previous checkpoint: Windows superscript device names rejected — NOT READY
+
+The portable-name guards accepted the six Win32-reserved COM/LPT names ending
+in superscript 1,2,3. Both archive and large-tree validators now reject them,
+including nested paths, case variants and extensions. Neighboring names remain
+unchanged. Microsoft documents these reservations in its Windows naming rules:
+https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file
+
+Thirty rejection tests failed before the fix; all36new cases pass. Node24.22
+typecheck,492tests52files and build pass. The rebuilt portable22-file package
+passes88Edge/88Chrome browser cases. Six focused built-UI cases per browser reject
+synthetic picker names without source-byte reads, peer creation or room requests,
+and New transfer restores selection. These use fake handles, not native picker
+or OS file-creation proof. Full suites start serve.mjs directly, not the CMD entry.
+
+Current candidate: artifacts/qrft-2026-10-16-device-names-portable. Both external
+and portable variants pass copy checks, runtime/served-byte/health checks and
+HTTP plus signaling TCP/UDP shutdown checks with browser dispatch replaced by
+exit0. Actual default-handler rendering remains unobserved. All42physicalcases,
+cleanOS,hostedCI,50–100GB/resource acceptance and the historical5GiB memory peak
+remain open. See release-evidence/release-gate-latest.json for exact scopes.
+
+## Previous checkpoint: Windows browser opener uses the system shell — NOT READY
+
+The browser opener still searched for cmd.exe by name. A harmless invalid file
+in cwd or PATH prevented startup. It now launches the full SystemRoot/System32
+path and rejects missing or relative SystemRoot before spawning. URL validation,
+fixed start arguments, hidden window and shell quoting remain unchanged.
+
+Five native subprocess tests cover cwd/PATH shadows, caller ComSpec and invalid
+environment state. The two shadow cases failed before the fix. Tests substitute
+exit 0 for the browser command, so they prove executable selection and native
+process execution, not actual default-browser rendering. The initial invalid-env
+fixture crashed Node during startup; the corrected fixture changes SystemRoot
+after initialization. Both versions and failure logs are preserved.
+
+The full Node 24.22.0 gate passes 456 tests in 51 files, typecheck and build.
+The five rebuilt app assets are unchanged. This includes the controlled ACK-delay
+and durable-batch recovery tests; the smaller memory diagnostics do not resolve
+the historical 5 GiB peak. New shell-pinned package variants retain 19/22 files.
+Only scripts/launch.mjs changes from the prior path-pinned packages. Both boot
+files differ from the full Edge88/Chrome88 predecessor, leaving 20 portable files
+identical. Those browser suites start serve.mjs directly and retain that scope.
+
+Current candidate: artifacts/qrft-2026-10-15-shell-pinned-portable.
+See release-evidence/release-gate-latest.json for package proof and exact scopes.
+All 42 physical cases, native default-handler rendering, clean OS, hosted CI and
+large-file/resource acceptance remain open. No READY claim follows.
+
+## Previous checkpoint: working-directory-independent Windows launcher — NOT READY
+
+A valid Node on PATH was blocked by an unrelated working-directory node.exe
+(native repro exit216). A working-directory where.exe could also shadow the
+locator. The launcher now uses CMD's native FOR PATH-search modifier to select
+the full executable path. Bundled runtime preference and exit codes are retained.
+Two native regressions failed before the fix; all eight launcher cases now pass,
+including Unicode, spaces and shell symbols in bundle/runtime paths.
+
+Under Node.js 24.22.0, 449 unit tests in 49 files, typecheck and build passed.
+New external (19 files) and portable (22 files) candidates differ only in the command
+launcher. The 21 other portable files, including runtime, server and app assets,
+are byte-identical to the candidate with 88 passing tests in each of Edge and Chrome.
+Those browser suites start the server directly; they do not test the command file.
+Eight native CMD tests and a real external-package CMD boot provide that scope.
+
+Real CMD startup from a cwd containing invalid node.exe/where.exe passed copy
+checks, served the app, dispatched the native default-browser opener and stopped
+with Enter. HTTP port rebind and no remaining owned backend processes were checked.
+The native browser tab was not exposed by the configured browser connectors, so
+actual GUI rendering/default-handler UX remains unverified. This is one host,
+not a physical two-laptop or clean-OS pass. All 42 physical cases, hosted CI and large
+file/resource acceptance remain open; disk/RAM sampling is not a full resource gate.
+
+Current portable candidate: artifacts/qrft-2026-10-15-path-pinned-portable.
+Canonical evidence: release-evidence/release-gate-latest.json.
+
+## Previous checkpoint: optional Windows x64 runtime bundle — NOT READY
+
+The offline packager accepts an explicit trusted runtime directory and a pinned
+SHA-256. It validates the binary before probing its Windows x64 Node.js 24 identity,
+retains the full matching license input, and inventories runtime files. This is
+offline build-time input; the recipient flow downloads or installs nothing.
+The command launcher prefers its bundled executable, preserves exit codes, and
+still supports the external-runtime package. A present broken bundled executable
+does not silently fall back to another runtime.
+
+Under Node.js 24.22.0, 447 unit tests in 49 files, typecheck and build passed.
+Six native cmd tests cover runtime selection, missing/broken runtime, exit codes,
+and paths containing spaces and shell symbols. Those tests use a launch-script
+fixture. Both new package variants passed manifest, blank-template, existing-output
+refusal and real runtime/served-byte/clean-stop checks with an injected browser
+observer: 19 files external, 22 files portable. Neither check opens the native
+default browser. Portable package: artifacts/qrft-2026-10-15-portable-runtime.
+
+The transfer application assets remain identical to the prior peer-policy bundle.
+The earlier full Edge rerun 88/Chrome 88 gates used the previous runtime and are
+historical evidence, not qualification of Node 24.22.0. Full browser gates for the
+new runtime, native default-browser/clean-OS checks, resource acceptance and all
+42 physical cases remain open. C: is below the release reserve. Prior host failures
+and reserve breaches remain unresolved. No READY claim follows from this work.
+
+See SPEC-portable-windows-runtime.md and release-evidence/release-gate-latest.json.
+
+## Previous checkpoint: incoming peer candidate validation — NOT READY
+
+Both roles now reject explicit public or non-host peer candidates before native
+SDP processing. Receiver checks before peer creation; sender checks before
+transcript derivation and answer application. Accepted SDP remains byte-exact
+for authentication. Typed local failures provide current-app/local-network
+recovery advice; peer-controlled names/text cannot select that advice.
+
+The safe native regressions failed on the preceding bundle at both handoffs,
+then passed with zero handoffs on the fixed bundle in Edge. Native SDP processing
+was intercepted throughout; no public ICE traffic or file leak was demonstrated.
+This extends the existing outgoing host-only policy, not the wording of the
+original internet-independence requirement into a zero-packet promise.
+
+431 unit tests in 47 files, typecheck and build passed. The 19-file candidate
+at artifacts/qrft-2026-10-14-peer-policy passed package smoke. Current full
+Edge rerun passed all 88 cases in 7.4 minutes; Chrome passed all 88 in 5.3 minutes.
+The first Edge run retained 87 passes and one timeout creating a second page
+before app navigation. Its isolated retry passed; the root cause remains
+unresolved. No code changed between those runs. During Chrome, a D: snapshot
+fell below the 2 GiB reserve, so resource acceptance is not established.
+Earlier checkpoints below are historical. mDNS resolution,
+other routing directives, full physical/network/resource/private-window/hosted
+CI acceptance and all 42 physical cases remain open.
+
+See SPEC-peer-candidate-policy.md. The canonical machine record is
+release-evidence/release-gate-latest.json.
+
+## Previous checkpoint: verification stream cleanup and native regression — NOT READY
+
+Whole-stream verification now cancels its reader before releasing the lock.
+Already-aborted verification stops before opening a stream. Durable received
+bytes remain available for retry. The previous bundle retained a queued 4 MiB
+chunk after Stop in both a Node model and a native OPFS test; the fixed bundle
+returns EOF in the observed scenarios.
+
+The native 8 MiB test passed in Edge and Chrome: Stop, drain/reset, reconnect
+with zero retransmitted bytes, and a saved file matching an independent Node
+SHA-256 expectation. Pickers/signaling routes are injected and read timing is
+held by the test. This does not prove indefinite leakage, GC reachability,
+the historical 728 MB peak's cause, every I/O timing, or large-transfer bounds.
+
+Normal fresh npm ci with a new cache passed. The current production revision
+passed 402 unit tests in 46 files, typecheck/build, full 85-case Edge and Chrome
+gates, and 19-file offline package smoke. The native case was added afterward
+and passed separately once in each browser; a full 86-case run is not claimed.
+Production/package assets stayed unchanged during the test-only addition.
+Candidate: artifacts/qrft-2026-10-14-stream-cleanup.
+
+All 42 physical cases remain unrun. Hosted final-revision CI, native OS pickers
+and private-window acceptance, 50–100 GB+ resources/throughput, the original
+browser failure causes, and complete individual requirement proof remain open.
+C: remains below the reserve threshold; D: snapshots and byte-preserving
+compression of completed results do not prove continuous resource acceptance.
+
+See SPEC-verification-stream-cleanup.md and
+release-evidence/native-stream-review-2026-10-14.json. The canonical machine
+record is release-evidence/release-gate-latest.json. Earlier sections below are
+historical checkpoints and retain their original test counts and limitations.
+
+## Previous checkpoint: explicit unusable-copy recovery — NOT READY
+
+Failed opening due to untrustworthy checkpoints or payload shorter than trusted
+receipts now offers an explicit "Discard unusable transfer copy" action. Only a
+trusted local opening error selects it. The action removes one app-owned copy
+under the same per-store locks as opening, rejects a live target and preserves
+unrelated stores. It explains the data effect and requires a fresh receive.
+
+Native OPFS tests cover both damage modes, no Save/completion before recovery,
+an unrelated sentinel, failed deletion/retry, double click and blocked Home
+during removal. Fresh retransmission matches the initial wire count and saved
+120 KB hashes match independently. Model tests cover active target refusal,
+another active store, lease release on failed removal and missing-copy retry.
+Peer error name/text cannot select discard advice.
+
+All 373 unit/integration tests in 44 files, typecheck/build, 85 Edge cases,
+85 Chrome cases and package smoke passed. New 19-file candidate:
+`artifacts/qrft-2026-10-14-corrupt-discard`.
+C: fell below reserve for an unidentified reason. Browser temporary files were
+redirected to an owned D: directory after capacity checks. Completed artifacts
+were compressed with unchanged paths/sizes/hashes; no evidence was deleted.
+This does not establish a continuous reserve or physical/resource/performance
+acceptance. Existing dependencies were used; no fresh-install claim.
+
+The tested corrupt-copy cases now have a recovery action. Exhaustive
+corruption/permission/lifecycle/legacy-journal proof and all 42 physical cases,
+large resources/performance and earlier full-scope gaps remain open.
+See `SPEC-corrupt-copy-discard.md` and
+`release-evidence/corrupt-discard-review-2026-10-14.json`.
+
+## Previous checkpoint: bounded journal-prefix recovery — NOT READY
+
+Oversized journals now reopen by reading only a capped Blob slice and replaying
+validated whole records. An unrepresentable generation ends the trusted prefix.
+The existing worker truncates and flushes the remainder under the store lease,
+after payload-length checks. Payload is retained; untrusted records never
+produce receipts, and full stream/tree verification still gates saving.
+
+Five model assertions failed before the change: four recovery failures and
+one whole-file-read observation for an already recoverable partial record.
+Actual 300 KB journal tests now reconnect without manual repair. A valid prefix
+requires no payload retransmission; an entirely invalid journal requests the
+original full wire stream. Both saved 120 KB files match independent hashes.
+
+All 368 unit/integration tests in 44 files, typecheck/build, 83 Edge cases,
+83 Chrome cases and package smoke passed. New 19-file candidate:
+`artifacts/qrft-2026-10-14-journal-prefix`.
+Completed test artifacts were compressed with file paths, sizes and hashes
+unchanged; none were deleted or modified while in use.
+
+Checkpoint allocation guards remain. Valid suffix records beyond the healthy
+writer cap can require retransmission; arbitrary legacy-journal salvage is
+unproved. Both corrupt checkpoints, payload truncation and broader corruption
+recovery remain open, alongside all 42 physical cases and previous acceptance
+gaps. No fresh-install or multi-GB resource claim is made.
+See `SPEC-journal-prefix-recovery.md` and
+`release-evidence/journal-prefix-review-2026-10-14.json`.
+
+## Previous checkpoint: receipt-file allocation bounds — NOT READY
+
+Fixed an OPFS reopening path that read whole checkpoint/journal bodies before
+validating their limits. Snapshot sizes are now checked first; a valid alternate
+checkpoint remains usable, failed opening releases its lease, and oversized
+journals fail without deleting payload. Healthy compaction and format limits
+are unchanged. Initial metadata accounting reads sizes instead of bodies.
+
+Three corrected unit regressions failed before the fix. They use reported
+1 GiB sizes with small bodies, not actual 1 GiB allocations. A native browser
+case rejects an actual 300 KB journal before body read, ACK or completion.
+Test-only repair then resumes without retransmission and saves a 120 KB file
+with an independently checked SHA-256. This does not establish nontechnical
+corrupt-metadata recovery or multi-GB peak memory.
+
+All 364 unit/integration tests in 44 files, typecheck/build, 82 Edge cases,
+82 Chrome cases and isolated package smoke passed. Current candidate:
+`artifacts/qrft-2026-10-14-receipt-size`, 19 verified files.
+Existing workspace dependencies were used; no fresh install claim.
+Completed prior Edge/Chrome and current Edge artifacts were NTFS compressed
+with unchanged file paths, sizes and hashes. No artifacts were deleted.
+
+Eleven resource/corruption items now have individual partial evidence maps.
+Existing ACK buffering and streamed resume-page guards were confirmed in
+current source and tests; no new defect was established in those paths.
+All 42 physical cases and the earlier full-scope acceptance gaps remain open.
+See `SPEC-receipt-file-bounds.md` and
+`release-evidence/receipt-size-review-2026-10-14.json`.
+
+## Previous checkpoint: traced crash tooling — NOT READY
+
+Upgraded the three Playwright development packages from 1.63 to 1.64 for the
+upstream response-after-crash assertion bug. A controlled call of the exact
+installed response handler confirms the changed branch: replies whose callbacks
+were cleared by a crash are ignored; unexpected replies on an active session
+still assert. This does not prove the original bare Chrome assertion's cause.
+See the sources and scope in `SPEC-playwright-crash-response.md`.
+
+All 361 unit/integration tests in 44 files, typecheck/build, 81 Edge cases,
+81 Chrome cases and isolated package smoke passed. Tests, assertions and trace
+configuration were unchanged. App-free crash diagnostics passed 464 crashes
+before and 192 after the upgrade; no actual transport assertion reproduced.
+
+All five app build files remain byte-identical. The existing 19-file candidate
+`artifacts/qrft-2026-10-14-message-limit` still matches its current source copies.
+No new runtime performance, fresh-install, hosted CI or physical claim is made.
+Completed protocol logs were compressed without changing bytes; two finished
+Chrome artifacts were relocated with file hashes and a location map retained.
+C: briefly measured 1,544,192 bytes below the 2 GiB reserve during teardown,
+then recovered. A continuous disk reserve or resource pass is not established.
+All 42 physical cases and prior acceptance gaps remain open, including causal
+proof for the original Chrome assertion and earlier Edge asset buffer error.
+See `release-evidence/playwright-164-review-2026-10-14.json`.
+
+## Previous checkpoint: message capacity recovery — NOT READY
+
+A browser regression reproduced misleading device-verification advice after
+both human confirmations when locally observed SCTP capacity was insufficient.
+The sender now uses a trusted local error type for connection capacity advice;
+the size guard and protocol are unchanged. Peer error text/name cannot select
+this advice. The regression overrides the JavaScript capacity observation to
+1024 bytes with real local pairing, and checks no manifest or binary send.
+This is not naturally negotiated transport or physical laptop evidence.
+
+Typecheck/build and 361 unit/integration tests in 44 files passed. All 81 Edge
+cases and 81 Chrome rerun cases passed. The first Chrome gate had 80 passes and
+one bare assertion after deliberate renderer crash while opening a replacement
+page; three isolated repeats passed. Its retained trace does not explain the
+cause. The earlier Edge buffer failure also remains unresolved.
+
+Isolated package smoke passed; the current candidate is
+`artifacts/qrft-2026-10-14-message-limit`, with 19 verified files. These runs used
+existing workspace dependencies, not a fresh installation. The package smoke
+uses an injected browser-opening observer, not native Windows handoff.
+All 42 physical cases and the earlier acceptance gaps remain open.
+See `release-evidence/message-limit-review-2026-10-14.json` and
+`SPEC-message-limit-recovery.md` for evidence and limits.
+
+## Previous checkpoint: remaining product requirement map — NOT READY
+
+Requirements 7–19 now have current source/test evidence maps, complementing
+the earlier six high-risk sections. Every group remains partial local evidence
+with requirement-scoped proof conditions and explicit acceptance gaps.
+
+| Requirement | Inspected behavior | Remaining proof |
+|---|---|---|
+| 7: performance | Harnesses record preparation/read/encode/receive/durability/verification/save and frame/ACK counters; WebRTC harness has process CPU samples. Historical synthetic runs and matched many-file trials exist. | Native source scan/hash timing, final-revision stable performance, target disks/networks and multi-GB whole-process memory acceptance remain incomplete. Timings and overlapping samples are not interchangeable. |
+| 8: backpressure | 60 KiB payload plus 44-byte header, 96 in-flight blocks, 8/2 MiB high/low buffering thresholds. SCTP maxMessageSize checked before manifest send; zero is treated as unlimited. Wait timers abort and late resume/unsent ACKs fail. | No broad adaptive block/window policy or final multi-GB memory/performance acceptance established; limited-message-size UI recovery is a candidate for targeted review. |
+| 9: file-selection | Single/multiple file and folder/drop selections feed one virtual-tree abstraction. Duplicate/aliased names reject, deterministic identity and empty files tested. Source timestamps recorded in identity. | Native picker/drop permission behavior and destination timestamp preservation are not established by the local synthetic workflows. |
+| 10: simple-ux | Home presents Send/Receive; optical engines remain behind Other transfer methods. Busy state blocks switching, state-dependent retry/save/completion actions exist. | Under-ten-second comprehension and nontechnical two-laptop usability have no participant evidence. Source/state inspection is not UX acceptance. |
+| 11: preflight | API/crypto checks and runtime ready response precede selection/preparation. Runtime checks bindability, bounded timeout/cancellation; response does not expose room/interface data. Storage estimates/persistence shown. | Health cannot prove reachability to the other laptop, firewall/AP isolation, native quota accuracy or private-window durability. |
+| 12: failure-retry | Typed/state-based recovery advice, reconnect separate from destructive reset, retained source/cache, stalled/closed-peer handling and injected quota/permission/corruption/reload/crash cases exist. | Real Wi-Fi loss, OS sleep/restart, firewall and native disk/permissions require physical proof; original Edge asset buffer failure remains unexplained. |
+| 13: wake-lock | One pending request, visibility generation invalidates late grants, cleanup releases; denial/unavailable state does not abort transfer. Busy WebRTC workflows render the wake-lock component. | Actual hardware/lid/sleep/browser-policy behavior and optical physical capture are not established by mocked API tests. |
+| 14: telemetry | Bounded one/five-second rate windows sampled every 500 ms, resumed bytes excluded from new traffic; bytes/ETA/elapsed/phase/status visible and pause/verify behavior tested. | Target-network accuracy, readability and throughput stability remain unvalidated; telemetry is not a performance acceptance benchmark. |
+| 15: localhost-security | Actual loopback socket authority, Host/port, Origin and fetch-site checks, same-origin JSON mutation and no content encoding; bounded connections/headers/body/timeouts and realpath asset containment. | This is source/integration evidence, not proof of all DNS-rebinding/CSRF/security scenarios or a complete fuzz audit. |
+| 16: bounded-rendezvous | Rooms 64, joins 64, rate entries 1024, pending requests 32; TTL sweeps remove stale joins/rates/rooms. Pending discovery/signal operations delete in settled cleanup; bounded body/SDP/UDP sizes. | Host-wide DoS/resource behavior and all cap-edge interleavings require broader evidence. Original browser buffer failure is not explained by these map bounds. |
+| 17: ports | Bounded signaling port choices and runtime startup retry; launcher reports occupied app address, cleans only its child and validates opened loopback URL. | Real conflicting applications, firewalls and native default-browser Windows handoff remain physically untested. |
+| 18: packaging | 19 checksum-protected bundle files, startup/runtime checks, observer-verified browser opening and graceful child shutdown. No npm install required in bundle. | Node and compatible browser are not bundled. Native installation/default browser/nontechnical startup acceptance remains open; checksum integrity is not publisher authentication. |
+| 19: optical-regression | Existing QRF2/QRF3 tests retained and pass in current full check; path/metadata/hash/resume/destination primitives reused, optical navigation remains available. | Real camera/QR, target OS/browser and physical capture acceptance are not supplied by unit/navigation tests. |
+
+The workflow configures Windows Node 24, npm ci, browser installation, the complete
+release gate and retained artifacts. A fresh read-only GitHub run listing returned
+an empty array. That is no hosted final-revision proof; workflow configuration is
+not execution. No push, commit or hosted run was performed by this checkpoint.
+
+Current free space observed was approximately C: 2.93 GB and D: 3.90 GB. A real
+uncompressed 5 GiB full-save trial plus the 2 GiB reserve is not available here;
+smaller fixtures do not close 50–100 GB+ resource acceptance. No data cleanup or
+test-limit weakening was used to make that requirement appear satisfied.
+
+No app, existing test, config/lockfile or five-asset changes were made. Prior
+359-test check/full browser/lifecycle results retain their recorded scopes; no
+tests were rerun for audit-only work. The 19-file verify-abort candidate remains
+checksum-valid. See release-evidence/product-audit-review-2026-10-14.json.
+The 838-line original source index now has partial maps for all 19 high-risk areas,
+but detailed testing/chaos/resource/final-adversarial obligations still need proof.
+Only these two evidence documents changed after recording this audit.
+All 42 physical cases, nontechnical usability, performance/resources, native
+private-window/hosted CI acceptance and the original Edge buffer cause remain
+open. Release is NOT READY.
+
+## Previous checkpoint: pairing and discovery evidence audit — NOT READY
+
+The first six high-risk requirement sections are mapped to current source,
+tests, proof conditions and remaining limits as partial local evidence. The audit
+does not turn same-host tests into network, human or physical acceptance.
+
+| Area | Inspected local behavior | Still unproven |
+|---|---|---|
+| authentication | 64-bit displayed code derives from domain-separated SHA-256 of exact session/offer/answer. Sender and receiver require current authorization; receiver checks at arrival. Close clears both human decisions. Altered/stale/boundary transcripts reject. | Actual human usability and practical LAN MITM/wrong-device acceptance remain unproven. |
+| batching | Production queue defaults to 64 blocks or 75 ms with 192-packet byte cap, including active work. One commit/timer; acknowledgements follow acceptBatch/writeBlocks completion. 64/128-batch tail tests exceed sender window. | Throughput/resource acceptance and stable native hardware evidence remain open; fixed defaults are not claimed broadly adaptive. |
+| poisoned-resume | Whole-stream mismatch deletes bad store before releasing its lifetime lock; valid cancellation retains receipts. Regression reconnect retransmits after discard and verifies. | Physical faults and deletion-failure usability require separate evidence; no unconditional recovery when storage access is unavailable. |
+| reliable-signaling | UDP replies select only IDs/tokens/session and cap 1200 bytes; SDP is fetched/answered through POST /signal/v2 with capability/session/address validation and bounded bodies/concurrency. | Real two-runtime Wi-Fi/hotspot/mixed-interface and firewall acceptance is not supplied by same-host pairing. |
+| discovery | Actual IPv4 mask broadcasts deduplicated/capped at 32, up to four ports; no host enumeration. Unit fixtures cover Wi-Fi/Ethernet/hotspot/non-/24/aliases; hidden manual IPv4 fallback exists. Multicast is not implemented. | IPv6-only and real adapter/firewall behavior unvalidated; multicast is an optional design consideration, not recorded as implemented. |
+| prepared-source | Independent source/connection generations and abort controllers. Connection close retains prepared/pending source; explicit New transfer cancels it. Saved recovery rechecks files/identity and handles permissions. | 100 GB native-source retry, physical permission prompts and nontechnical recovery remain untested. |
+
+Three new unit cases force short-code collisions by mocking only the test
+module's randomInt draw. Actual cryptographic randomBytes still creates room and
+capability tokens. A duplicate draw retries without overwriting the old room;
+32 exhausted draws fail without allocating another room, and a later unused draw
+permits retry. Cancellation can release a short code but gives the replacement
+fresh room/owner tokens: the old owner cannot poll or cancel the new room.
+All cases pass; no production change was needed. This proves one registry's
+allocation behavior, not global uniqueness across independent runtimes.
+
+23 focused cases passed, then npm run check passed typecheck, 359 unit/integration
+tests in 44 files and build. Production/e2e/scripts/config/lock and five assets
+remain unchanged. Prior full 347-unit/80-browser gates and lifecycle diagnostics
+retain original scopes; browser suites were not rerun for this unit-test/evidence
+checkpoint. The current 19-file verify-abort candidate remains checksum-verified.
+
+See release-evidence/pairing-audit-review-2026-10-14.json and SPEC-room-collision.md.
+The original line index annotates these sections as partial evidence only; the
+complete requirement-by-requirement review remains unfinished. Only these two
+release evidence documents changed after recording the final source/checks.
+All 42 physical cases, resource/performance/private-window/hosted CI acceptance
+and the original Edge buffer cause remain open. Release is NOT READY.
+
+## Previous checkpoint: deterministic WebRTC parser corpus — NOT READY
+
+Three new WebRTC parser cases add 1,000 seeded known-invalid required-field
+selections across ACK, resume, confirmation, error and manifest messages; exact
+configured control boundaries; and every single-bit mutation of a valid 141-byte
+packet. All 1,128 bit variants reject through synchronous and asynchronous
+decoders. The async case requires native Web Crypto availability, preserving the
+native path rather than silently exercising the fallback. Four truncations and
+one trailing-byte variant reject through both entrypoints; valid packets still
+round-trip. No production defect was reproduced and no production change needed.
+
+Boundary cases cover 512/513 ACK indices and resume ranges, 2,000/2,001 character
+error/cancel text, and 262,144/262,145 control-string UTF-16 code units. The wire
+cap uses JavaScript string length; this is not a Unicode UTF-8 byte-limit claim.
+The 1,000 selections repeat a small grammar mutation pool and are not 1,000
+distinct arbitrary inputs. This is bounded WebRTC parser evidence, not broad
+SDP/UDP/path parser fuzzing, state-machine/authentication proof or all-security
+acceptance. The original obligations index marks selected Security lines only
+as partial evidence; its complete requirement review is still unfinished.
+
+npm run check passed typecheck, 356 unit/integration tests in 43 files and build.
+Production/e2e/scripts/config/lock and five assets remain unchanged. Prior full
+347-unit/80-browser gates and 160-context lifecycle checks retain original scopes;
+browser suites were not rerun for this unit-test/evidence-only change. The current
+19-file verify-abort candidate remains checksum-verified. See
+release-evidence/control-fuzz-review-2026-10-14.json and SPEC-control-fuzz.md.
+Only the two release evidence documents changed after recording this checkpoint.
+All 42 physical cases, target-hardware performance/resources, private-window/CI
+acceptance and the original Edge buffer root cause remain open. NOT READY.
+
+## Previous checkpoint: exact interruption percentage matrix — NOT READY
+
+Six new protocol-model cases cover the original required 0%, 1%, 25%,
+50%, 99% interruptions and all payload durable before completion. The virtual
+stream is exactly 6,144,000 bytes in 100 equal blocks, including its metadata and
+footer; each point is an exact byte percentage. At nonzero points, the last
+durable commit's ACK is lost and the first sender aborts without sender-complete.
+Already accepted writes drain, the repository closes/reopens, and receipt ranges
+must match the exact durable prefix. The next sender sends only missing indices.
+
+| Interrupted at | Bytes reused | Blocks retransmitted |
+|---|---:|---:|
+| 0% | 0 | 100 |
+| 1% | 61440 | 99 |
+| 25% | 1536000 | 75 |
+| 50% | 3072000 | 50 |
+| 99% | 6082560 | 1 |
+| 100% | 6144000 | 0 |
+
+Every case verifies the whole stream and validated tree, then independently
+checks every reconstructed payload byte against its file-offset pattern.
+All six pass; no production defect was reproduced. These use the real sender,
+receiver and bounded batching algorithms with a fake channel/in-memory store.
+They establish logical protocol/receipt behavior, not OPFS fsync, native storage,
+power-loss or Wi-Fi evidence, and not large-file resource bounds.
+
+npm run check passed typecheck, 353 unit/integration tests in 43 files and build.
+Production/e2e/config/lock and five assets remain unchanged. Prior full 347-unit/
+80-browser gates and the 160-context lifecycle diagnostic retain original scopes;
+browser suites were not rerun for this unit-test/evidence-only checkpoint.
+The current 19-file verify-abort offline candidate remains checksum-verified.
+
+An index preserves all 838 nonempty original requirement-source lines
+and their source numbers/headings, including narrative. It is not a completed
+requirement-by-requirement audit: only the percentage-model points and missing
+physical evidence are annotated here; review-pending items are not achieved.
+See release-evidence/acceptance-obligations-2026-10-14.json,
+release-evidence/resume-percent-review-2026-10-14.json and SPEC-resume-percent-matrix.md.
+Only these two evidence documents changed after the check. All 42 physical cases,
+resource/performance/private-window/hosted CI acceptance and the original Edge
+buffer cause remain open. Release remains NOT READY.
+
+## Previous checkpoint: repeated pairing lifecycle investigation — NOT READY
+
+A diagnostic investigated the prior Edge loopback stylesheet
+ERR_NO_BUFFER_SPACE and worker teardown timeout by keeping one browser process
+alive while creating and closing 80 contexts. Each installed browser alternated
+40 device rejections with 40 real WebRTC/OPFS verified saves. All 160 contexts
+closed successfully, with no asset-load errors or page/console errors. All 80
+saved 120,000-byte files passed independent expected SHA-256 and size checks.
+
+| Browser | Contexts | Verified saves | Asset errors | Max context close (ms) | Sampled browser handles, first → last |
+|---|---:|---:|---:|---:|---:|
+| edge 154.0.4258.53 | 80 | 40 | 0 | 50.7 | 1319 → 1608 |
+| chrome 154.0.8037.99 | 80 | 40 | 0 | 44.9 | 976 → 1196 |
+
+Nine checkpoints per browser sample its main process after closed contexts.
+Handle/private-byte counters and CDP process types are retained in raw reports.
+These are sparse browser-process samples, not continuous peaks, aggregate process
+memory, renderer/app heap or proof of bounded memory for large transfers.
+The original buffer failure did not recur; its root cause remains unknown.
+This workload does not recreate the full release suite's crash cases, per-context
+tracing or fixture behavior. Room signaling is mocked as in the failing original
+test; app assets, peer data and OPFS I/O remain real. Native folders, physical
+laptops, Wi-Fi, sleep/power loss and large files are outside this diagnostic.
+
+App code, existing tests/config/lockfile and five built assets are unchanged.
+Prior 347-test check, full 80-case Edge/Chrome gates and package smoke retain their
+recorded scopes; standard release suites were not rerun for this investigation.
+The 19-file verify-abort candidate remains checksum-verified. See
+release-evidence/lifecycle-diagnostic-review-2026-10-14.json for source binding,
+cycle results, measurements and original failure references. Diagnostic-only
+source/config files are archived separately from the stage's release sources.
+Only these two evidence documents changed after the diagnostic. All 42 physical
+cases and remaining performance/resource/private-window/hosted CI acceptance
+remain incomplete. Release remains NOT READY.
+
+## Previous checkpoint: verification metadata cancellation — NOT READY
+
+Stopping verification while the tree footer read was held still allowed an
+additional metadata read: two worker requests became three after Stop. The parser
+now accepts an optional AbortSignal and checks it before/after bounded reads.
+WebRTC and optical QRF3 receivers pass their verification controller signal.
+Already-started I/O drains before reconnect, and callers without a signal retain
+their existing behavior. No stale success or corruption was demonstrated by the
+original defect; the fix removes unnecessary work after cancellation.
+
+Three new unit cases cover pre-aborted parsing, cancellation after footer read,
+and cancellation during multi-chunk metadata. They reproduced three failures
+before the fix. Two real WebRTC/OPFS browser cases stop held stream/footer reads:
+one failed before the fix, both now pass. They assert no further reads and no
+receiver-complete, then reconnect with zero payload retransmission and independently
+verify the saved file's size and SHA-256. A test-hook overload type error was fixed
+without suppressing checks; the failed build log is retained.
+
+A preserved fresh 145-input stage with an empty separate dependency cache passed
+normal npm ci (zero reported vulnerabilities), typecheck, 347 unit/integration
+tests in 43 files, build, all 80 installed Edge browser cases and the 19-file
+package smoke. Installed Chrome passed all 80 cases on the same inputs/build.
+These full runs include the earlier cleanup and payload-cancellation additions.
+The first Edge attempt had 79 passes and one failure when a loopback stylesheet
+request reported ERR_NO_BUFFER_SPACE, followed by worker teardown timeout.
+That log and trace are retained. Five isolated rejection repeats passed before
+the unchanged full gate was rerun. The underlying transient browser/host buffer
+resource cause is not established; broader resource acceptance remains open.
+Edge 154.0.4258.53 and Chrome 154.0.8037.99 are installed host browsers. Five root
+rebuilt assets match the stage exactly. The fresh 19-file offline candidate is
+artifacts/qrft-2026-10-14-verify-abort; 18 direct copies match current files and
+START-HERE.txt is generated. Earlier terminal-control bundles are superseded.
+
+See release-evidence/verify-abort-review-2026-10-14.json and SPEC-verify-abort.md
+for source hashes, red/green/full logs, retained failure trace and candidate audit.
+Only the two release evidence documents changed after the gates; the other
+143 inputs and five assets remain unchanged. Parser unit tests and source/type
+checks cover optical signal wiring; real camera/optical acceptance remains open.
+This does not cancel hung OS I/O. All 42 physical cases, target-hardware performance,
+50–100 GB+ resources, historical 5 GiB full-save memory, native private-window
+support, hosted CI and broader acceptance remain incomplete. Release is NOT READY.
+
+## Previous checkpoint: storage context lifetimes — NOT READY
+
+A repeatable storage diagnostic writes 128 MiB in 2,185 OPFS blocks using
+the real block store, then reopens the page and cleanly restarts the browser.
+Four trials passed in installed Edge 154.0.4258.53 and Chrome 154.0.8037.99:
+persistent profiles retain all receipts and SHA-256-verified bytes after restart;
+nonpersistent automation contexts retain them across page reopen, but a fresh
+context after browser close has zero receipts. All four report persisted=false,
+so that permission flag alone cannot distinguish these observed lifetimes.
+
+The final run captures 144 input hashes and the exact origin at startup. Each
+trial enforces a 2 GiB free-space reserve plus twice the payload size on C: and D:.
+The two final persistent profiles and their payloads are retained for reinspection.
+An earlier four-trial successful run has two separate retained profiles; earlier
+Vite-host startup failures are preserved and do not count as storage trials.
+The diagnostic now uses a minimal page and isolated Vite configuration. No
+production code, existing test, config, lockfile or built asset changed.
+
+This checkpoint ran the storage diagnostic, not the unit/browser suites. Prior
+344-test check, full 71-case Edge/Chrome gates and later focused cleanup/cancel
+cases retain their recorded scopes. The 19-file terminal-control candidate
+remains checksum-verified. See release-evidence/storage-context-review-2026-10-14.json
+and scripts/diagnose-storage-context.mjs for raw data, input binding and reproduction.
+
+This is backend storage evidence on one host. It does not validate native Chrome
+Incognito or Edge InPrivate user workflows, private-mode large-file quota behavior,
+Wi-Fi, native destination folders, OS crashes/power loss or whole-process memory.
+128 MiB is not evidence of 5 GiB full saving or 50–100 GB+ resource acceptance.
+All 42 physical cases, target-hardware performance/resources, hosted CI and broader
+acceptance remain open. Three evidence documents changed after the diagnostic;
+the other 141 inputs and five runtime assets remain unchanged. Release is NOT READY.
+
+## Previous checkpoint: pending destination payload cancellation — NOT READY
+
+Three new real browser cases stop destination saving while a payload file
+open, write, or closed-file promise is held pending. All three pass in installed
+Edge and Chrome. A contending destination lock cannot acquire during the pending
+operation, and reconnect remains unavailable until the operation drains.
+
+After cancellation settles, destination and transfer-store leases are released,
+the pairing screen has no stale error, and the partial marker retains zero file
+completion bits. Aborted open/write leaves an empty payload file; a successfully
+closed payload retains its bytes but remains unjournalled. Reconnecting with the
+identical source reuses durable receipts without resending payload. A measured
+single payload-writer open proves that saving again rewrites the unmarked file.
+The final filename, size and SHA-256 match independent expected fixture values,
+and the partial marker is removed only on successful verified completion.
+No production defect was reproduced and no production change was needed.
+
+npm run check passed typecheck, 344 unit/integration tests in 43 files and build.
+Production, config, lockfile and five assets remain unchanged. The existing
+75 browser cases are unchanged after removing only the new test block and
+normalizing line endings. The previous full 71-case Edge/Chrome gates and four
+focused cleanup cases per browser retain their original scope. This checkpoint
+runs three additions per browser; the combined 78-case suite was not rerun.
+The current 19-file terminal-control offline candidate remains checksum-valid.
+
+See release-evidence/cancel-payload-review-2026-10-14.json and
+SPEC-cancel-payload.md for input binding, retained baseline, raw logs and scope.
+These tests use one-host WebRTC, OPFS and Web Locks with synthetic API delays.
+They do not prove native filesystem or physical OS/power-loss behavior, nor
+cancellation of hung system I/O. All 42 physical cases and the other open release
+requirements remain incomplete. Only these two evidence documents changed after
+the checks. Release remains NOT READY.
+
+## Previous checkpoint: temporary-storage cleanup retry — NOT READY
+
+Four new browser cases test temporary-storage cleanup after a verified
+destination save. They delay a retry after an initial removal failure, then
+allow it to succeed or fail, both while staying on the saved screen and while
+choosing Receive more files. All four pass in installed Edge and Chrome.
+
+The tests independently check saved size and SHA-256, enumerate retained or
+removed transfer directories, and prove that a contending exclusive Web Lock
+cannot acquire the store while deletion is pending. Reset waits for cleanup and
+releases the store lease without stale errors on the pairing screen. A failed
+retry while staying on the saved screen retains the lease for further retry.
+Two cases then transfer the identical source again: after failed cleanup, durable
+receipts allow zero payload bytes to be resent; after successful deletion, payload
+is sent again. Both second saves independently verify the destination and reclaim
+temporary storage. The suspected race did not reproduce; no production change
+was needed because the store queue already drains these operations safely.
+
+npm run check passed typecheck, 344 unit/integration tests in 43 files and build.
+All production, configuration and lockfile inputs and five rebuilt assets remain
+identical to the preceding full Edge/Chrome 71-case gates and 19-file package
+smoke. Existing 71 browser cases are unchanged; this checkpoint runs only the
+four additions per browser. The combined 75-case suite was not rerun. The current
+19-file terminal-control offline candidate remains checksum-verified.
+
+See release-evidence/cleanup-retry-review-2026-10-14.json and SPEC-cleanup-retry.md
+for scope, input binding, raw logs and assertions. These are one-host WebRTC/OPFS
+tests with synthetic API timing/errors, not native permission or physical
+power-loss tests. All 42 physical cases, target-hardware performance/resources,
+hosted CI and the other open release requirements remain incomplete. Only these
+two evidence documents changed after the checks. Release remains NOT READY.
+
+## Previous checkpoint: completed connection callbacks and manifest bounds — NOT READY
+
+The manifest parser now applies the durable block-map limit already enforced
+by local manifest creation and receiver storage. Five identity-valid boundary
+cases cover rejection above the ceiling and acceptance at supported sizes,
+including 100 GiB without allocating a transfer. This closes inconsistent wire
+validation; it does not demonstrate a backend allocation bypass or a real
+100 GiB transfer.
+
+Sender and receiver message listeners now ignore callbacks from their completed
+connection after verified completion. Previously a queued duplicate completion,
+error or cancellation could replace sender success or remove the receiver's
+destination save action; a late error could also disrupt saving or saved UI.
+Seven failures were reproduced on the preserved pre-fix build. Eight browser
+regressions now pass with independent destination size/SHA-256 checks. They use
+real local WebRTC and OPFS, then dispatch a callback on the retained listener
+after channel closure; they do not send packets on a closed channel. Existing
+device-confirmation and premature payload/completion rejection remain active.
+
+A fresh 141-input stage with a separate empty dependency cache passed normal
+npm ci (zero reported vulnerabilities), typecheck, 344 unit/integration tests in
+43 files, build, all 71 installed Edge browser cases and the package smoke gate.
+Installed Chrome passed the same 71 cases on the same source and build. Edge
+154.0.4258.53 and Chrome 154.0.8037.99 are installed host browsers, not newly
+downloaded browser binaries. Five root rebuilt assets match the stage exactly.
+The fresh offline test candidate is artifacts/qrft-2026-10-14-terminal-control:
+19 checksum-protected files, including 18 verified direct copies and generated
+START-HERE.txt. Older bundles and the manifest-only 63-case gate are historical
+evidence and do not represent this final source.
+
+See release-evidence/terminal-control-review-2026-10-14.json for retained input
+hashes, raw red/green/full-gate logs, browser versions, preserved stages, failure
+traces and candidate verification. Only these two evidence documents were
+updated after the final gates; production, tests and built assets are unchanged.
+All 42 physical cases remain not-run because the laptops are unavailable.
+Target-hardware performance and 50–100 GB+ resource acceptance, historical
+5 GiB full-save memory concerns, hosted CI, private browsing support and broader
+chaos/adversarial coverage remain open. Release remains NOT READY.
+
+## Previous checkpoint: receipt/path fault matrix and matched 10,000-file trials
+
+This test/evidence-only checkpoint adds ten destination abuse cases. Eight
+fail journal closes before/after receipt commits 1–4, forcing payloads to close
+out of order. They check the exact persisted completion bits, safe retry and
+every byte. Two replace a saved file or its directory after bounded resume
+prefetch and during repair; final verification rejects the changed current path,
+retains the marker and repairs only that file on retry. All cases passed; no
+production change was needed. npm run check passed typecheck, 339 unit/integration
+tests in 43 files and build. Only the unit-test file and evidence documents
+changed; all production, browser-test, scripts/config/lock inputs and five assets
+remain identical to the prior full Edge/Chrome 63-case gates and three Edge
+process-recovery repeats. Those full gates had 329 unit tests. The browser suite
+was not rerun for this checkpoint. At that checkpoint, the existing 19-file offline candidate remained current
+because its runtime and packaged instructions did not change. It is now
+superseded by the terminal-control candidate above.
+
+Six alternating matched trials saved a 10 MiB synthetic tree of 10,000 files
+(including 1,000 empty files) and 100 directories in fresh installed Edge
+persistent profiles. Both source versions used identical instrumentation; only
+large-destination.ts differs in their runtime inputs. Baseline save times were
+288.763 / 287.700 / 284.275 s; current-code times were 260.174 / 255.712 / 257.806 s. Mean saving time decreased
+10.11%, with no overlapping sample ranges. Every trial passed whole-stream
+verification and an independent exact-path/type/size/every-byte destination
+audit. The old source is a retained historical version, not a new release candidate.
+Per-file journal calls remain separate and costly; small-file performance
+acceptance is not closed by this measured local improvement.
+
+Profiles and raw records are retained. The original harness deletes synthetic
+destinations and transfer copies after successful audit, so retained profiles do
+not provide those saved files for later reinspection. Overlapping API timings
+cannot be summed as elapsed/CPU time. Heap fields sample after preparation and
+at receive batches, not throughout saving/audit. These are one-host synthetic
+source and OPFS tests, not Wi-Fi or native user-picked folder performance.
+
+See `release-evidence/adversarial-many-file-review-2026-10-13.json` and
+`release-evidence/many-file-matched-review-2026-10-13.json` for source/harness
+binding, scope, six raw trials, fault models and historical gate references.
+All 42 physical cases, native/nontechnical workflows, target-hardware throughput
+and 50–100 GB+ resources, historical 5 GiB full-save memory concerns, hosted CI
+and broader chaos/adversarial coverage remain open. The goal remains active;
+release remains NOT READY.
+
+## Previous checkpoint: bounded small-file I/O
+
+The fresh-stage recovery timeouts were addressed with bounded small-file I/O.
+Up to four consecutive files of at most 64 KiB are checked or written at once.
+Each payload hashes and closes before its separate, sequential journal commit;
+closed files without committed bits are safely rewritten after interruption.
+Large files stay sequential. Small source/read chunks total at most 256 KiB,
+with at most 256 KiB of ordinary write copies. Started operations drain before
+failure/cancellation returns, and final exact-tree/hash verification freshly
+resolves every path. No public API, protocol, test deadline or integrity
+assertion was weakened. Eleven new destination tests include nine distinct
+held-read/write cases observed failing before their respective changes.
+
+A new preserved stage with 139 fingerprinted inputs passed normal npm ci using
+an empty cache/node_modules (145 tarball cache misses, zero known vulnerabilities
+reported). The full installed Edge release gate passed typecheck/build, 329
+unit/integration tests in 43 files, all 63 browser cases (6.4m) and 19-file
+package smoke. Installed Chrome passed all 63 cases (5.9m) on the same
+source/build. The formerly failing process-recovery case passed three additional
+Edge trials with fresh persistent profiles and the original 30-second destination
+completion limit. Every recovered destination retained its independent audit.
+All 139 source/stage fingerprints matched across validation; the two release
+documents and BENCHMARKS were updated afterward.
+
+Original failed trials and intermediate partial improvements are retained.
+Readback-only samples improved from 6.01–6.56 s to 4.57–5.55 s in an intermediate
+experiment; this is not an end-to-end or physical throughput claim. The underlying
+stage-dependent variation is not established. A finishing diagnostic found about
+18 ms for marker/worker/cache cleanup; 544 source-worker reads totalled about
+220 ms in another diagnostic, so no speculative source cache was added. See
+`release-evidence/destination-small-file-review-2026-10-13.json` for source binding,
+raw logs, preserved stages, failed trials and exact limits.
+
+These remain one-host synthetic/OPFS checks, with already-installed browsers
+and injected browser opening in package smoke. Hosted CI, all 42 physical cases,
+native workflows, stable performance/resource acceptance (including the historical
+5 GiB full-save memory concern) and broader adversarial review remain open.
+The original goal stays active and the release remains NOT READY.
+
+## Previous checkpoint: fresh installation exposed recovery timeouts
+
+A fresh preserved copy of 138 current inputs began without node_modules, dist
+or npm cache. Normal npm ci installed 145 packages with 145 tarball cache misses,
+exited 0 and reported zero known vulnerabilities. Typecheck/build and all 318
+unit/integration tests in 43 files passed. The full fresh-stage release gate
+FAILED: 61 browser cases passed; renderer-crash and browser-process destination
+recovery each expired at the existing 30-second completion check. Their snapshots
+showed destination verification at 262/1200 and 273/1200 files. The unchanged
+focused rerun had 0 passed / 2 failed; no test threshold was relaxed. Root cause
+is not established. A separate 19-file package smoke passed afterward; it does
+not turn the failed release gate into a pass.
+
+All 138 source/stage inputs matched before and after both runs, and all five
+built assets matched the existing build. Source, fresh cache, failure traces and
+logs are retained; see `release-evidence/clean-install-2026-10-13.json`. Installed
+Edge 154.0.4258.53 was reused. GitHub returned no hosted workflow runs. These
+are local worktree-copy checks, with synthetic/OPFS browser fixtures and injected
+browser opening in smoke. No production code changed. The two release documents
+were updated after validation; production and test inputs remain unchanged.
+
+Both laptops are unavailable. All 42 physical cases, native workflows, hosted CI,
+performance/resource acceptance and broader adversarial review remain open.
+The goal remains active and NOT READY.
+
+## Prior evidence boundary
+
+The October 13 pairing fix creates the room/code before source hashing and keeps
+one preparation job across connection failures and Stop/reconnect. Both peers can
+verify their device codes while checking is pending; no manifest or payload is
+sent until checking and both current-session confirmations finish. New transfer
+discards pending work, with stale completion/error isolation. Ten new browser
+cases cover these orders, failure/retry, replacement and independent output hashes.
+Three pre-fix cases failed with no pairing code while a source read was held.
+A later review reproduced private filenames in source-error controls before both
+confirmations (neither/sender-only/receiver-only). All three regression cases now
+pass: useful detailed errors stay local; unconfirmed peers receive generic advice.
+
+The final Edge 154.0.4258.53 release gate passed: 318 tests in
+43 files, typecheck/build, 63 browser cases (6.2m) and 19-file offline
+smoke. Installed Chrome 154.0.8037.99 passed all 63 cases (5.9 minutes)
+on identical production sources and five assets. Recorded inputs matched within
+each run. The test-only 1,200-file preparation wait changed between full browser
+runs; all three adjusted Edge cases passed separately. Four-width UI checks and Enter-key Stop/New transfer
+activation passed; the missing favicon request and cramped narrow notice were
+corrected, with their diagnostic failures retained. See
+`release-evidence/pairing-preparation-review-2026-10-13.json`,
+`release-evidence/release-gate-318-unit-63-browser-edge-2026-10-13.json` and
+`release-evidence/release-gate-latest.json`. A fresh checksum-verified candidate is
+at `artifacts/qrft-2026-10-13-pairing-preparation-final`. README, TRANSFER_PROCESS and the
+two release documents were updated afterward; production/test inputs and assets
+remain gate-tested. These are one-host synthetic/OPFS checks, with injected native
+browser opening in package smoke. Selection/scanning, reload source validation,
+native-folder timing, real two-laptop acceptance, performance/resources, fresh
+install and hosted CI remain open.
+
+The preceding benchmark-only checkpoint added Windows process memory observation.
+Verified 100 MiB / 1 GiB transfers also passed destination byte audits; a 5 GiB
+receive/verify run passed with sampled receiver private-memory peaks of 273 MB
+during receive and 399 MB during verification, and 128 MB after diagnostic GC.
+This is one-host synthetic evidence, with observer overhead, incomplete peak
+coverage and no 5 GiB destination save in this run. See BENCHMARKS.md and
+`release-evidence/process-memory-review-2026-10-13.json`. npm run check passed
+318 tests in 43 files, typecheck and build. At that benchmark checkpoint, five
+shipped assets and 113 existing runtime/browser-test inputs matched the preceding
+installed-browser checkpoint.
+At that checkpoint, the browser gate was not rerun for benchmark-only additions;
+the later production pairing change is validated by the new gates above.
+
+The 2026-10-12 full release gate passed with installed Edge 154.0.4258.53:
+exit 0, 316 unit/integration tests in 42 files, build, all 53 browser cases
+(5.4 minutes), and 19-file offline package smoke. All 131 recorded source inputs
+and five built assets matched at review. See
+`release-evidence/edge-release-2026-10-12*`,
+`release-evidence/release-gate-316-unit-53-browser-edge-2026-10-12.json` and
+`release-evidence/release-gate-latest.json`.
+
+Installed Chrome 154.0.8037.99 passed the same 53-case suite (5.2 minutes).
+Its original run failed three five-second completion waits (50 passed); an
+unchanged focused run passed six repeats and failed three. Nine diagnostic
+runs with longer observation all completed; extracted save-action waits ranged
+from 3.45 to 5.50 seconds. The two waits used by the 12 MiB recovery fixtures
+now allow 15 seconds, and interrupted-transfer retry also saves the final file
+and independently checks its size and SHA-256. This corrects the correctness
+test timing; it does not establish performance acceptance. Original failure
+traces, logs, JSON results and extracted timings are retained. Raw focused and
+diagnostic traces were removed by a later Playwright output cleanup.
+
+A fresh audit found the high-severity source-map-js indexed-source-map denial
+of service advisory in the Vite / PostCSS build dependency path. Updating
+source-map-js 1.2.1 to 1.2.2 changed one lockfile package, with scripts disabled.
+A bounded constructor probe accepted the excessive offset before the update
+and rejected it afterward. The fresh audit reports zero known vulnerabilities
+(169 dependency entries); registry verification passed for 145 installed
+packages, with 61 verified attestations. Chrome ran before this dependency
+patch; all five rebuilt app assets are byte-for-byte identical, and the only
+recorded source-input difference between Chrome and Edge is package-lock.json.
+See `release-evidence/installed-browsers-2026-10-12.json` for the full chronology
+and exact scope. At that checkpoint only the two release documents changed after the gate; subsequent benchmark-only additions are recorded above.
+
+A new 19-file candidate at `artifacts/qrft-2026-10-12-browser-audit` was
+checksum-verified; 18 files match gate-tested inputs and START-HERE.txt is
+generated by the unchanged package script. These tests use one Windows host,
+isolated browser profiles/contexts, synthetic source/picker fixtures and real
+WebRTC/OPFS. Native browser handoff remains injected in package smoke.
+Hosted CI, native filesystem/picker acceptance, nontechnical-user usability,
+performance/resource acceptance and the real two-laptop matrix remain open.
+
+Separate two-process WebRTC benchmarks passed exact 1-/5-GiB and 1,000-file
+destination checks. An earlier 100-MiB median improved from 33.65 to 40.08 MB/s;
+later revised-fixture trials did not reproduce it despite lower receiver CPU.
+Large-run memory peaks remain unresolved. See BENCHMARKS.md.
+
+The September 21 isolated installation passed npm ci, 316 unit/integration
+tests, 53 browser cases and 19-file smoke. It reused the npm cache and
+locally available Playwright Chromium, predates the October 12 lockfile/test
+changes, and is historical. Its temporary stage is no longer available, so
+the retained raw results cannot prove a staged-input fingerprint match.
+See `release-evidence/clean-current-2026-09-21.json`. The updated dependency installation now passes with a fresh cache and retained
+stage; its full release gate fails two destination-recovery cases, recorded above.
+
+| Requirement area | Local evidence | Remaining acceptance evidence |
+| --- | --- | --- |
+| Stream and destination integrity | Protocol tests, whole-stream verification, independent destination hashes and exact-tree comparison | Every file/tree verified after each physical transfer/fault scenario |
+| Device authorization | Transcript-bound human confirmation and altered-signaling/premature-success browser cases | Two-person/device code comparison in the physical workflow |
+| Durable receipts and batching | Journal failures, post-flush truncation, reload with exact missing-block retransmission; bounded batching benchmarks | Real interruption and persistence behavior on target disks/browsers |
+| Sender recovery | OPFS handle persistence, rehash/change refusal, reload and forced browser-process recovery | Native source permissions, independent-device process interruption and OS restart |
+| Destination save/retry | 1,200-file quota/renderer/process interruption recovery, changed-file repair, exact hashes; cancellation and Web Locks | Native disk-full, independent-device process faults, sleep and power interruption |
+| Pairing before hashing | Code, SAS and both confirmations while a source read is pending; failure/Stop retries reuse pending work; stale source callbacks cannot replace new files | Native selection/scanning and code/connection timing on both target laptops |
+| LAN signaling | Loopback HTTP security, bounded discovery/TCP signaling, adapter broadcasts, manual-address runtime tests | Home Wi-Fi, hotspot and mixed Ethernet/Wi-Fi across two Windows laptops; firewall/routing failures |
+| Files, folders and drops | File/mixed-folder fixtures, empty files/directories, synthetic drop with real handles | Native Windows picker/drop workflows and representative filesystem paths |
+| Progress, readiness and recovery messages | Current/smoothed rates and ETA, transferred/total/remaining/resumed bytes, attempt elapsed time, quota/readiness refresh, crypto and other API guards, interrupted-state UI and save counts | Nontechnical-user task completion and clarity under actual slow/failing transfers |
+| Wake behavior | Wake-lock lifecycle/denial mocks and explicit-pause timer coverage | Laptop sleep/wake, lid close and OS power policies |
+| Large-file resource use | Historical 10 GB / 5 GiB full-save evidence retained; new process observation: 5 GiB receive/verify private peak 399 MB, post-GC 128 MB; 1 GiB destination audit passed | 5 GiB full-save memory and historical 728 MB heap peak remain unresolved; repeated trials, 50–100 GB+, native folders and physical matrix |
+| Small-file performance | 10,000-file synthetic save and independent audit; 78.753–142.543 s historical save observations; bounded I/O passes recovery gates plus six matched 10,000-file audits (10.11% mean local save reduction) | Target hardware and larger-count trials; stable/native throughput and resource acceptance remain open |
+| Browser/private storage | 128 MiB normal persistent-profile clean-restart checks pass in installed Edge/Chrome; nonpersistent automation contexts reset after browser close | Native private-window workflows and private-mode large-file quotas remain unvalidated |
+| Offline distribution | 19-file staged bundle with Windows launcher, checksums, no node_modules needed, isolated launch and exact asset fetches | Install/launch from copied bundle on both target laptops with no internet |
+| Dependencies and CI | 2026-10-12 patched source-map-js to 1.2.2; zero known vulnerabilities, 145 verified registry signatures, 61 attestations; fresh-cache 145-input gate (347 tests / 80 Edge and 80 Chrome cases) passed; first Edge buffer-error failure retained | Hosted CI on final revision; repeat gate after relevant changes |
+
+## Next local work
+
+1. Validate the new bounded signaling-port fallback on actual target networks
+   and firewalls. Local conflict, cross-port signaling and cleanup tests pass.
+2. Audit the remaining uncommon recovery paths and validate the new plain error
+   advice, interrupted-progress display and status-first layout through native
+   slow/failing transfers. Nontechnical-user usability acceptance is unproven.
+3. Measure WebRTC overhead and the tiny-file destination bottleneck. Any change
+   to batching or journaling needs explicit crash/retry and corruption checks.
+4. Complete the original adversarial/chaos evidence audit. Hosted CI remains
+   unexecuted.
+5. Extend local evidence to native filesystems and independent devices when the
+   laptops are available. No local gate substitutes for the physical matrix.
+
+## Physical matrix still required
+
+Use `PHYSICAL-TEST-RECORD.md` and `release-evidence/physical-test-record.json`
+to retain measurements and failures. All 42 initialized cases are not-run.
+
+Use two Windows laptops on home Wi-Fi, a hotspot and mixed Ethernet/Wi-Fi.
+Cover 1 MB, 100 MB, 1 GB, 10 GB, a single large file and thousands of files.
+Exercise network loss/recovery, receiver refresh, sender restart, sleep/wake,
+wrong/expired codes, nearly full destination, cancellation and resume.
+Record the actual network, browser/OS versions, timing, failure/recovery behavior,
+and independent exact-tree/file hashes for every case. Preserve the source
+manifest fingerprint when using `compare-trees.mjs --record/--manifest`.
+Perform a nontechnical-user usability test. No physical case is marked passed.
+
+## Evidence locations
+
+- `RELEASE-HARDENING.md`: chronological changes, validation and limitations.
+- `BENCHMARKS.md` and `release-evidence/receiver-*.json`: measurements and failures.
+- `e2e/pairing.spec.ts`: browser scenarios and explicit fault-injection boundaries.
+- `release-evidence/offline-package-smoke.json`: staged runtime smoke result.
+- `release-evidence/dependency-audit-latest.json`: npm audit result, refreshed
+  2026-09-14; zero reported vulnerabilities is not a proof of software security.
+- `release-evidence/long-save-path-900px.png`: synthetic display-text layout check.
+
+READY requires the original requirement-by-requirement audit, final reproducible
+local/CI evidence, and successful real two-laptop validation. Unavailable or
+indirect evidence remains incomplete.
+
+## Renderer-crash evidence added 2026-09-14
+
+A persistent-profile Chromium test now holds the second journal commit after
+payload flush, observes the receiver's real `crash` event after CDP `Page.crash`,
+closes the crashed tab and reopens the receiver in the same profile. The sender
+is reloaded, restores its real stored handles and rehashes the source. Recovery
+must advertise exactly the previously acknowledged block indices, send only the
+remaining payload, and save a 12 MiB file matching an independent Node SHA-256.
+The three existing journal/reload cases and this crash case passed together.
+This tests renderer termination at a controlled receipt boundary, not browser
+process termination, OS restart, physical disk failure, or power loss. Initial
+harness attempts timed out awaiting CDP responses or failed to reload the crashed
+target; the final harness waits for the crash event and opens a fresh tab.
+
+## Destination renderer-crash recovery added 2026-09-14
+
+The 1,200-file save test now also runs in a persistent Chromium profile, holds
+creation of file 600 after 600 files are journaled, and observes a real renderer
+crash through CDP. A fresh receiver tab reconnects after the sender reselects the
+same synthetic source fixture. The completed cached stream requires zero payload
+bytes. The destination marker still records 600 files. After deliberately changing
+one saved file, retry writes that file plus the remaining 600, reuses 599, checks
+all 1,200 independent Node SHA-256 hashes and 14 directories, and leaves no marker.
+Both the prior injected-quota variant and crash variant passed, plus typecheck.
+Source selection is synthetic and destination storage is OPFS. This is not
+browser-process termination, native disk-full, OS restart, or physical power loss.
+
+## Sender browser-process termination added 2026-09-14
+
+Both folder and selected-file source recovery now pass after forced termination
+of the dedicated persistent Chromium browser process. The test obtains that
+browser's PID through its own CDP SystemInfo connection, sends SIGKILL, observes
+disconnection, and launches the same profile again. Recovery rehashes the saved
+source handles. Subsequent same-length source modification is rejected, and
+discarding the checkpoint removes the stored record. The reload and process-kill
+variants all passed (four cases, 13.8 seconds), plus typecheck.
+
+Source handles point to an OPFS fixture. This covers termination after source
+checkpoint creation while pairing, not a mid-payload browser-process crash,
+native Windows picker permission restoration, receiver process termination,
+OS restart or power loss. The suite now contains 35 browser cases; saved full
+gate evidence predates these additions. No production code changed this turn.
+
+## Mid-receive browser-process termination added 2026-09-14
+
+A persistent-profile test holds the second receipt journal commit after payload
+flush, records previously acknowledged indices, force-terminates the dedicated
+Chromium browser process, and restarts the same profile. Both test tabs share
+that process and are terminated. The sender reselects the unchanged OPFS source.
+Recovery requires the identical manifest, exactly the durable index set, only
+missing payload bytes, and a saved 12 MiB file matching independent Node SHA-256.
+This and the related reload/renderer cases passed (three cases, 37.1 seconds),
+plus typecheck. The initial harness rewrote the source on restart, changing its
+modification time/transfer identity and correctly preventing resume; the final
+harness reopens it unchanged. No product defect was established in that run.
+
+This is a controlled receipt boundary in one local persistent browser profile,
+not two independent laptop processes, native filesystem permissions, OS reboot,
+or physical power loss. Browser suite count is now 36; full gate not rerun.
+
+## Destination browser-process termination added 2026-09-14
+
+The destination recovery test now also force-terminates the dedicated persistent
+Chromium browser after 600 file completions are journaled and before file 600's
+writer opens. The same profile is restarted, the identical synthetic source is
+selected, and device confirmation is repeated. Cached receive data requires zero
+payload retransmission. The marker retains 600 completions; after deliberate
+corruption of one saved file, retry reuses 599, repairs one and writes 600 more.
+All 1,200 independent file hashes and 14 directories match, with no marker left.
+
+Quota-failure, renderer-crash and browser-process variants passed together (three
+cases, 1.1 minutes), plus typecheck. Both tabs were in one browser process and
+the destination is OPFS. This is not independent-device, native disk-full,
+OS-restart or power-loss evidence. Current browser suite: 37 cases; full gate
+pending. No production changes in this checkpoint.
+
+## CI evidence retention configured 2026-09-14
+
+The Windows workflow now saves commit/run metadata, dependency/browser install
+logs and exit codes, gate output and exit code, and successful package-smoke
+evidence. An always-run upload retains these and Playwright failure traces for
+14 days. It copies package evidence only after a successful gate, avoiding
+stale checked-in results. A 20-minute job timeout bounds stalled runs.
+YAML parsing, PowerShell syntax and preservation of a failing native command's
+exit code through Tee-Object were checked locally. Hosted upload/execution has
+not been run. The latest gate fingerprint predates this workflow-only change.
+
+## Occupied local port check added 2026-09-14
+
+A real HTTP listener occupied an ephemeral loopback port while the production
+runtime attempted to use it. The runtime exited naturally with code 1, printed
+the actionable already-open/address-in-use message, did not claim to be running,
+and left the original listener reachable. Raw evidence is
+`release-evidence/occupied-port-smoke.json`. The offline guide now explains
+reusing or stopping the existing runtime and retaining the same origin for resume.
+This is a local HTTP-port collision check, not a physical firewall/routing test.
+
+## LAN port-collision retry added 2026-09-14
+
+Two tests occupy the actual TCP or UDP signaling port, confirm the specific
+startup error, release the listener, and start the same rendezvous runtime
+successfully. A repeated start remains idempotent. All 12 rendezvous tests
+passed; no runtime change was needed. This proves local socket-conflict retry,
+not firewall traversal or physical network discovery. Unit inventory is now
+241 cases; the saved complete gate covered 239 before these test additions.
+
+## Physical-test materials included in offline package 2026-09-14
+
+Packaging now includes PHYSICAL-TEST-RECORD.md and the blank 42-case JSON under
+`templates/`. START-HERE directs testers to copy that record outside the bundle
+before entering results. The isolated smoke check verifies all 17 packaged files,
+five served assets and that the template contains only unrun cases. Earlier
+15-file smoke results are historical. No physical result is supplied by packaging.
+
+## Application request boundary checked 2026-09-14
+
+The two production-runtime browser cases (automatic/manual addressing) now
+block external HTTP requests and assert all observed application requests use
+the loopback application origin. Each must observe real asset and rendezvous
+requests, finish a verified transfer, and expose an empty ICE-server list on
+both real peers. Both passed (10.8 seconds), plus typecheck.
+This is application-level request/configuration evidence, not packet capture,
+coverage of browser background services, or physical no-internet testing. No
+production code changed; test fingerprints predate these additional assertions.
+
+## 10 GB local result reviewed 2026-09-15
+
+The synthetic 10 GB receive passed whole-stream verification. Its later profile
+cleanup failed with EBUSY, so overall command exit was 1. BENCHMARKS.md records
+timing, sampled heap, raw evidence and this distinction. A short subsequent
+smoke run passed after adding bounded cleanup retries; physical and native
+destination cases remain not-run. No readiness change follows from this result.
+
+## On-demand connection states added 2026-09-15
+
+Both Wi-Fi screens now expose a collapsed Connection details panel. Opening or
+refreshing it captures connection, ICE and gathering states with a local snapshot
+time. Snapshots are bound to the peer that produced them, so a replacement peer
+does not display the previous peer's snapshot. It does not continuously poll or
+claim delivery/throughput. Browser interruption coverage checks connected,
+disconnected and refreshed recovered states on both screens, then completes
+transfer. Typecheck/build and that browser case passed. Package smoke passed.
+Earlier full-gate fingerprints precede this production UI change.
+
+## Selected transport and RTT snapshots added 2026-09-15
+
+Connection details now requests browser stats on demand. It resolves a single
+explicitly selected successful candidate pair, reports UDP/TCP from its local
+candidate and converts reported RTT seconds to milliseconds. Missing/ambiguous
+selection and invalid RTT are unavailable; no arbitrary successful pair is
+substituted. Stats errors do not fail the transfer, and older refresh responses
+cannot overwrite a newer refresh. Snapshots remain bound to their peer.
+
+Typecheck, all 250 unit/integration tests, build, three related browser cases and
+package smoke passed. A further browser assertion verified a real selected
+transport on both screens. Reported RTT is a browser connectivity measurement,
+not payload-delivery latency or independent physical network validation.
+
+## Unavailable diagnostic stats checked 2026-09-15
+
+The browser interruption/recovery case now makes both real peers' getStats
+methods reject, refreshes each diagnostic panel, checks transport and RTT become
+Unavailable, and confirms authorization stays enabled. With stats still failing,
+the transfer completes verified and no page errors occur. This targeted case
+passed (5.6 seconds), plus typecheck. No production change was required.
+
+## Saved-source permission denial checked 2026-09-15
+
+The four source-recovery cases now simulate prompt/denied read permission after
+reload or process restart for folder and file selections. Recovery reports the
+read-access error with zero getFile calls and no pairing code. Restoring normal
+permission behavior and selecting New transfer exposes the retained checkpoint;
+recovery rehashes successfully, and later source-change/discard checks still pass.
+All four cases passed (13.4 seconds), plus typecheck. This uses real stored OPFS
+handles with injected permission responses, not native Windows permission dialogs.
+No production fix was required; current test assertions postdate the saved gate.
+
+## Installed Edge browser suite added 2026-09-15
+
+All 37 browser cases passed in installed Microsoft Edge 153.0.4234.32 (2.9
+minutes, exit 0), using isolated test profiles. The browser-channel option applies
+to both standard fixtures and explicitly launched persistent/restarted contexts.
+Raw log, exit code and post-run test/source fingerprints are retained in
+`release-evidence/edge-browser-*`. This adds local branded-browser compatibility
+evidence, not physical-device, native-picker, private-mode large-file or OS
+power-fault certification. Installed Chrome results are recorded below.
+
+To select an installed browser in PowerShell, set
+`$env:QRFT_TEST_BROWSER_CHANNEL = "msedge"` (or `"chrome"`) before
+`npm run test:browser`. Remove that environment variable for bundled Chromium.
+Invalid values are rejected instead of silently selecting another browser.
+
+
+## Installed Chrome results recorded 2026-09-16
+
+Chrome 152.0.7977.83 completed the 37-case suite with 35 passes and two
+timeout failures (exit 1). The run reported 8.4 hours, including approximately
+3.0 and 5.3 hours in the failing pairing-retry and truncated-journal cases.
+Both cases passed unchanged on a focused recheck (2 passes, 8.6 seconds,
+exit 0). The cause of the long delays has not been established; the focused
+recheck does not turn the original run into a clean full-suite pass.
+
+`release-evidence/chrome-browser-suite.json` records both outcomes, log hashes,
+and post-run source/test fingerprints. Original failure traces remain under
+`test-results/`; the recheck used a separate output directory. A subsequent complete Chrome rerun passed as recorded below. These are isolated local browser tests, not native
+Windows picker or physical two-laptop acceptance evidence.
+
+
+## Complete Chrome rerun recorded 2026-09-16
+
+The unchanged suite passed all 37 cases on installed Chrome 152.0.7977.83 in
+3.0 minutes, exit 0. Both previously failing cases passed (pairing retry 3.4 s;
+truncated journal 2.3 s). All 51 recorded source/test/configuration fingerprints
+match the original run. See `release-evidence/chrome-full-recheck.json`, its
+raw log and explicit exit-code file. The original failure evidence remains
+intact, and the cause of its hours-long delays is still unexplained.
+
+This provides a complete local Chrome suite pass alongside the Edge pass.
+It does not prove native filesystem behavior, physical network operation or
+sleep/wake reliability. Status remains NOT READY.
+
+
+## Repeated small-file baseline reviewed 2026-09-18
+
+Three identical 10 MiB / 10,000-file persistent-profile OPFS trials passed
+whole-stream and independent exact-tree/byte verification (command exit 0).
+Save times were 85.278, 85.599 and 105.335 seconds; median 85.599 seconds.
+Journal create/write/close consumed 30.86–31.51% of save time. Recorded source
+and harness inputs still match. See BENCHMARKS.md and
+release-evidence/receiver-many-files-repeated-baseline-summary.json.
+
+This explains a repeatable source of overhead while retaining all per-file
+recovery writes. No speedup or hardware acceptance is claimed. Native disk and
+two-device performance measurements remain required.
+
+
+## Current offline test bundle built 2026-09-18
+
+`artifacts/qrft-2026-09-18T06-36-05-795Z` contains the current app, including
+connection diagnostics, offline guides and the blank 42-case physical record.
+Build and checksum verification passed for all 17 files. The isolated staging
+smoke also passed with five assets fetched byte-for-byte, launch from an
+arbitrary working directory and a path containing spaces, and existing
+destination refusal. The existing main-bundle size warning remains.
+
+`release-evidence/offline-candidate-2026-09-18.json` records the manifest hash,
+post-build inputs and smoke outcome. This is a test candidate, not a READY
+release. Its checksums detect changed copies and do not authenticate a publisher.
+
+
+## Original requirement audit recovered 2026-09-18
+
+The original user prompt was recovered from the saved automation configuration
+and retained verbatim in release-evidence/original-release-requirements.txt,
+with provenance and a SHA-256 fingerprint. It contains additional explicit
+acceptance work beyond the earlier condensed checklist. No existing local pass
+proves these requirements complete:
+
+- Section 10: make Send / Receive the initial workflow; keep protocol choices
+  under other methods and remove implementation terminology from normal screens.
+- Section 11: check local runtime reachability and signaling bind readiness
+  before expensive preparation, in addition to existing browser API checks.
+- Section 17: handle occupied runtime/signaling ports without asking normal
+  users to configure environment variables. The current actionable error is
+  useful but does not complete this requirement.
+- Section 18: provide a Windows launcher with startup checks, automatic browser
+  opening and graceful shutdown. Launcher implementation and local checks are recorded below;
+  a self-contained runtime remains an optional packaging improvement to assess.
+- Sections 7–8 and Performance Acceptance: measure actual WebRTC overhead and
+  negotiated message limits. Existing storage benchmarks and transfer tests do
+  not establish maximum practical LAN throughput or eliminate protocol overhead.
+- The original release-quality, adversarial, chaos and nontechnical-user
+  acceptance requirements still need their complete evidence audit.
+
+The physical matrix remains mandatory and unrun. The recovered prompt, not
+the shorter checklist, defines the original scope.
+
+
+## Windows launcher validation 2026-09-18
+
+The offline package now includes Start AirGap QR.cmd and scripts/launch.mjs.
+Startup checks the installed runtime and bundle checksums, starts only its own
+local runtime, opens the default browser, and stops the runtime through IPC.
+Missing/changed bundles, unsupported runtimes, occupied HTTP addresses, browser
+opening failure, startup timeout, cancellation and lost launcher connection have
+automated coverage. Node and a supported browser must still be installed.
+
+The gate recorded 259 passing unit/integration tests in 38 files, 37 browser
+cases (3.2 minutes) and a 19-file package smoke. During that run, a native
+Windows check found incorrect cmd argument quoting in browser opening. The
+opener was fixed and bounded to ten seconds. Because scripts/launch.mjs changed
+during the gate, this is not an unchanged-input full-gate result; rerun the gate
+after final launcher changes. Initial failures and input snapshots are retained.
+
+The corrected command wrapper opened Edge with the AirGap QR page title.
+Computer Use then stopped because it could not verify the browser URL for policy
+enforcement; page contents and a native transfer were not inspected. Ctrl+C
+stopped the owned runtime, and the command wrapper requested a Y/N termination
+confirmation. That shutdown prompt should be improved for ordinary users.
+See release-evidence/launcher-validation-2026-09-18.json. The latest test bundle
+is artifacts/qrft-2026-09-18T06-51-43-574Z; the earlier launcher candidate is
+retained as failed evidence. No physical acceptance case is passed.
+
+
+## Enter-to-close launcher check 2026-09-18
+
+The launcher now prompts for Enter to close. Its Windows command wrapper was
+executed from the 19-file bundle in a path with spaces. After the browser opener
+returned successfully, Enter stopped the runtime and exited the wrapper with
+code 0, without the Windows batch termination question. No matching owned Node
+process remained. A console regression also verifies the live endpoint before
+Enter and port release afterward. The 23 related launcher/runtime/package tests
+passed. See release-evidence/launcher-enter-smoke.json. Browser page contents
+and native transfers remain outside this check; a fresh full gate follows.
+
+
+## Launcher gate completed
+
+The final launcher gate passed with unchanged inputs; this supersedes the
+incomplete input-consistency claim of gate-launcher-recheck while preserving
+that earlier run. The current bundle is
+artifacts/qrft-2026-09-18T06-56-22-559Z; its five app assets match the passing
+gate build and all 19 bundle checksums match. Evidence is recorded in
+release-evidence/offline-candidate-launcher-2026-09-18.json.
+
+Remaining implementation work includes the original runtime/signaling preflight,
+primary Send/Receive workflow, automatic port-conflict handling and measured
+WebRTC performance improvements. Native transfer, nontechnical-user usability,
+final clean-install/CI and the physical laptop matrix remain incomplete.
+
+## Connection preflight and primary flow, 2026-09-19
+
+The former section 11 runtime/signaling gap now has initial and pre-hash checks,
+including saved-source recovery, with retained failure/retry coverage and a
+264-test / 40-browser full gate. The primary section 10 Send / Receive entry is
+implemented, with optical modes under Other transfer methods and plain normal
+status copy. Focused tests cover direct role entry, both optical engines,
+initial action visibility, and navigation locked during active transfer.
+Their full current gate passed with 264 unit/integration tests, 41 browser cases
+and a 19-file package smoke. The old launcher bundle above predates these changes. See `release-evidence/preflight-and-navigation-validation.json`.
+
+The health check returns no addresses or credentials and does not establish
+remote reachability. Receiver storage remains an estimate, not a reservation
+or a measurement of destination-disk free space. All physical cases remain
+not-run, and nontechnical-user acceptance still requires an independent person.
+
+## Primary-flow full recheck completed
+
+The first navigation gate's single unavailable-transport snapshot failure is
+retained. The refreshed test deliberately starts with missing stats, checks the
+unavailable state without blocking confirmation, then requires a real reported
+UDP/TCP transport from a new native snapshot. The full recheck passed all 41
+browser cases and the package smoke with 121 unchanged inputs. See
+`release-evidence/gate-navigation-failed.json` and
+`release-evidence/release-gate-264-unit-41-browser.json` for exact scope.
+
+The new offline candidate is
+`artifacts/qrft-2026-09-18T20-49-51-325Z`. All 19 checksums pass; its five app
+assets and 13 copied source/instruction/template files match the full gate.
+START-HERE is generated by the tested packaging script. See
+`release-evidence/offline-candidate-navigation-2026-09-19.json`. This remains a
+test candidate, not physical release approval.
+
+## Automatic signaling port fallback
+
+Default startup now tries 4174–4177 and selects a port where both UDP and TCP
+bind successfully. Discovery covers the same small set of service ports on
+loopback and actual adapter broadcasts; manual addresses include the selected
+port. Explicit advanced configuration remains pinned. The HTTP origin remains
+stable for receive recovery. Local socket tests cover conflict, exhaustion,
+retry, cross-port automatic/manual pairing and concurrent or interrupted startup,
+including an incoming stalled request during partial-bind cleanup. The current
+full gate passed 276 unit/integration tests in 39 files, all 41 browser cases
+(2.5 minutes), typecheck, build and the 19-file package smoke. All 122 input
+fingerprints matched across the run. Original failures are retained under
+`release-evidence/ports-before-fix*`, `ports-coverage*` and `ports-sparse-before-fix*`.
+This does not pass any physical firewall or two-laptop case.
+
+The refreshed candidate is `artifacts/qrft-2026-09-19T03-38-58-666Z`. All 19
+checksums pass; its five app assets and 13 copied inputs match this gate.
+START-HERE is generated by the tested packaging script. See
+`release-evidence/offline-candidate-ports-2026-09-19.json`.
+
+## Native receiver and WebRTC benchmark checkpoint
+
+The complete gate passed 293 unit/integration tests in 41 files, 41 browser
+cases (2.8 minutes), typecheck, build and 19-file package smoke. All 127 inputs
+matched. See `release-evidence/release-gate-293-unit-41-browser.json`.
+That checkpoint's candidate is `artifacts/qrft-2026-09-19T09-15-17-121Z`, with all
+19 checksums valid and its five app assets plus 13 copied inputs matching the
+gate. See `release-evidence/offline-candidate-native-receiver-2026-09-19.json`.
+The earlier launcher/preflight/port candidates and browser/clean-install runs
+remain historical; none substitutes for current physical acceptance.
+
+## Cryptography and telemetry checkpoint
+
+At this historical checkpoint, the gate was 299 unit/integration tests, 48 browser cases and a 19-file
+package smoke, with all 128 inputs unchanged. Regression evidence and reviewed
+desktop/narrow screenshots are indexed in
+`release-evidence/crypto-telemetry-validation.json`. The new metrics cover both
+speed windows, byte totals, remaining/resumed bytes and elapsed time for this
+attempt; this does not establish native usability under every interruption.
+The current sender page remains long, and prominence during transfer still needs
+usability review. Plain error messages and the broader acceptance work remain open.
+
+The offline candidate at this historical checkpoint was `artifacts/qrft-2026-09-19T14-16-50-077Z`; it is superseded by the current candidate above.
+All 19 checksums pass; five built assets and 13 copied files match the full gate.
+START-HERE is generated by the tested packaging script. See
+`release-evidence/offline-candidate-crypto-telemetry-2026-09-19.json`.
+Previous candidates and performance/browser/clean-install runs retain their
+original scope. No physical case has been completed by these local checks.

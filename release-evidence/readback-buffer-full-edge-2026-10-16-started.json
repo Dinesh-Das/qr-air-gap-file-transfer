@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-16T03:04:09.045Z",
+  "before": {
+    "time": "2026-10-16T03:04:09.043Z",
+    "freeDiskBytes": {
+      "C:/": 5196869632,
+      "D:/": 2651127808
+    },
+    "freeRamBytes": 15149924352
+  },
+  "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-readback-buffer-portable",
+  "runtime": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-readback-buffer-portable\\runtime\\node.exe",
+  "channel": "msedge",
+  "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-readback-buffer-gate-edge-k0jqWt"
+}

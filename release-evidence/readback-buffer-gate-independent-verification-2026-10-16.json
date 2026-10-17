@@ -1,0 +1,27 @@
+{
+  "verifiedAt": "2026-10-16T16:31:01.373Z",
+  "inputs": 174,
+  "assets": 5,
+  "evidence": 840,
+  "indexedFiles": 107,
+  "unitTests": 525,
+  "testFiles": 54,
+  "edge": 92,
+  "chrome": 92,
+  "oldDestinationTestsPreserved": 36,
+  "newRegressionCases": 5,
+  "portable": 22,
+  "external": 19,
+  "production5GiBDataVerifiedBothBrowsers": true,
+  "production5GiBProcessMemoryQualification": false,
+  "chromeMissingUtilityProcessSamples": 1,
+  "ledgerEntries": 838,
+  "scopedLedgerChanges": [
+    "L1203"
+  ],
+  "ledgerReferences": 612,
+  "ledgerFragmentReferencesResolved": 446,
+  "withoutMappedEvidence": 329,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY"
+}

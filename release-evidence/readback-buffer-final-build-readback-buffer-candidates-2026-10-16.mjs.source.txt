@@ -1,0 +1,37 @@
+import {readFile,writeFile,mkdir,copyFile,unlink,stat} from 'node:fs/promises';
+import {spawnSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {join,resolve,dirname} from 'node:path';
+import {inventory,verifyRelease} from '../scripts/verify-release.mjs';
+const r=JSON.parse(await readFile('release-evidence/release-gate-latest.json'));const stage=r.freshInstall.stage;
+const hash=async p=>createHash('sha256').update(await readFile(p)).digest('hex');
+const allowed=new Set(['src/lib/large-destination.ts','tests/large-destination.test.ts']);
+for(const f of r.currentInputs){const actual=await hash(f.path);if(!allowed.has(f.path)&&actual!==f.sha256)throw Error('Unrelated input drift '+f.path);if(await hash(join(stage,f.path))!==actual)throw Error('Stage drift '+f.path);}
+for(const [path,archive]of [['src/lib/large-destination.ts','release-evidence/readback-buffer-before-large-destination-2026-10-16.source.txt'],['tests/large-destination.test.ts','release-evidence/readback-buffer-before-destination-tests-2026-10-16.source.txt']])if(await hash(archive)!==r.currentInputs.find(f=>f.path===path).sha256)throw Error('Baseline archive drift '+path);
+if(await hash('SPEC-destination-readback-buffer.md')!==await hash(join(stage,'SPEC-destination-readback-buffer.md')))throw Error('Spec stage drift');
+const archive=resolve('.tmp/readback-buffer-dist-before-2026-10-16');await mkdir(archive);
+for(const f of r.builtAssets){if(await hash(f.path)!==f.sha256)throw Error('Old build drift');const dest=join(archive,f.path);await mkdir(dirname(dest),{recursive:true});await copyFile(f.path,dest);}
+const built=await inventory(join(stage,'dist'));if(built.length!==5)throw Error('Unexpected build assets');
+for(const f of built){const target=resolve('dist',f.path);await mkdir(dirname(target),{recursive:true});await copyFile(join(stage,'dist',f.path),target);}
+const oldRemoved=[];for(const f of r.builtAssets){const relative=f.path.replaceAll('\\','/').replace(/^dist\//,'');if(!built.some(b=>b.path===relative)){const target=resolve(f.path);if(!target.startsWith(resolve('dist')+'\\')||await hash(join(archive,f.path))!==f.sha256||await hash(target)!==f.sha256)throw Error('Unexpected stale compiled file');await unlink(target);oldRemoved.push({path:f.path,archive:join(archive,f.path),sha256:f.sha256});}}
+const outputs=[];const runtimeDirectory='D:/MyProjects/qrft-portable-runtime-probe-2026-10-15/bundle with spaces/runtime';const runtime=join(runtimeDirectory,'node.exe');
+const shadow=JSON.parse(await readFile('release-evidence/browser-shell-cwd-probe-2026-10-15.json')).root;
+for(const variant of ['external','portable']){
+ const path=resolve('artifacts/qrft-2026-10-16-readback-buffer-'+variant);const args=['scripts/package-offline.mjs',path];if(variant==='portable')args.push('--runtime-dir',runtimeDirectory,'--runtime-sha256','ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c');
+ const pkg=spawnSync(runtime,args,{encoding:'utf8',windowsHide:true,timeout:30000});await writeFile('release-evidence/readback-buffer-package-'+variant+'-2026-10-16.log',pkg.stdout+pkg.stderr,{flag:'wx'});if(pkg.status!==0)throw Error('Package failed');
+ if(await verifyRelease(path)!==(variant==='portable'?22:19))throw Error('Manifest');
+ const env={...process.env,ComSpec:join(shadow,'cmd.exe')};for(const key of Object.keys(env))if(key.toLowerCase()==='path')delete env[key];env.PATH=shadow;
+ const probe=spawnSync(variant==='portable'?join(path,'runtime/node.exe'):runtime,[resolve('.tmp/browser-shell-package-probe-2026-10-15.mjs'),path],{cwd:shadow,env,encoding:'utf8',windowsHide:true,timeout:30000});
+ await writeFile('release-evidence/readback-buffer-lifecycle-'+variant+'-2026-10-16.log',probe.stdout+probe.stderr,{flag:'wx'});if(probe.status!==0)throw Error('Lifecycle failed '+probe.stderr);
+ outputs.push({variant,path,files:variant==='portable'?22:19,execution:JSON.parse(probe.stdout.trim())});
+}
+r.currentInputs.push({path:'SPEC-destination-readback-buffer.md'});
+const inputs=[];for(const f of r.currentInputs)inputs.push({path:f.path,bytes:(await stat(f.path)).size,sha256:await hash(f.path)});
+
+if(inputs.length!==174||new Set(inputs.map(f=>f.path)).size!==174)throw Error('Input inventory');
+for(const f of inputs)if(await hash(join(stage,f.path))!==f.sha256)throw Error('Stage '+f.path);
+const builtAssets=await Promise.all(built.map(async f=>({path:'dist/'+f.path,bytes:f.bytes,sha256:await hash('dist/'+f.path)})));
+const proposal={...r,provisional:true,checkpoint:'Reusable destination readback candidates awaiting current browser gates',currentInputs:inputs,currentInputCount:inputs.length,builtAssets,offlineCandidate:outputs.find(p=>p.variant==='portable'),externalRuntimeCandidate:outputs.find(p=>p.variant==='external'),currentBrowserGates:{edge:{status:'pending'},chrome:{status:'pending'}},releaseStatus:'NOT READY'};
+await writeFile('release-evidence/readback-buffer-browser-proposal-2026-10-16.json',JSON.stringify(proposal,null,2)+'\n',{flag:'wx'});
+await writeFile('release-evidence/readback-buffer-package-validation-2026-10-16.json',JSON.stringify({outputs,oldRemoved,compiledArchive:archive,builtAssets,scope:'Actual package lifecycle substitutes native cmd exit0 for browser dispatch; no GUI/default-handler proof.'},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({inputs:inputs.length,outputs:outputs.map(p=>({variant:p.variant,path:p.path,files:p.files})),builtAssets,oldRemoved}));

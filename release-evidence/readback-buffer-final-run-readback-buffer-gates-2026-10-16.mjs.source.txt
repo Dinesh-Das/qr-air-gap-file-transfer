@@ -1,0 +1,10 @@
+import {readFile,open,writeFile} from 'node:fs/promises';
+import {spawn} from 'node:child_process';
+import {join,resolve} from 'node:path';
+const stage=JSON.parse(await readFile('release-evidence/release-gate-latest.json')).freshInstall.stage;
+const prefix=process.argv[2]??'readback-buffer';if(!['readback-buffer','readback-buffer-final'].includes(prefix))throw Error('Run prefix');
+for(const [name,args]of [['type',[join(stage,'node_modules/typescript/bin/tsc'),'-b','--pretty','false']],['unit',[join(stage,'node_modules/vitest/vitest.mjs'),'run']],['build',[join(stage,'node_modules/vite/bin/vite.js'),'build']]]){
+const log=await open('release-evidence/'+prefix+'-'+name+'-2026-10-16.log','wx');let code;
+try{code=await new Promise((done,reject)=>{const child=spawn(resolve('artifacts/qrft-2026-10-16-pairing-recovery-portable/runtime/node.exe'),args,{cwd:stage,windowsHide:true,stdio:['ignore',log.fd,log.fd]});child.once('error',reject);child.once('close',done);});}finally{await log.close();}
+await writeFile('release-evidence/'+prefix+'-'+name+'-exit-2026-10-16.txt',String(code)+'\n',{flag:'wx'});console.log(JSON.stringify({name,code}));if(code!==0)throw Error('Gate '+name);
+}
