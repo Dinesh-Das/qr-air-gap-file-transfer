@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-16T02:34:33.797Z",
+  "finishedAt": "2026-10-16T02:34:37.816Z",
+  "node": "v24.22.0",
+  "npm": "11.6.2",
+  "command": [
+    "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-16-pairing-recovery-portable\\runtime\\node.exe",
+    "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+    "audit",
+    "signatures",
+    "--ignore-scripts",
+    "--no-fund",
+    "--no-update-notifier",
+    "--registry=https://registry.npmjs.org"
+  ],
+  "cwd": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+  "exitCode": 0,
+  "inputsUnchanged": true,
+  "inputCount": 173,
+  "lockfileSha256": "1941b668b0e20e0d3ac46b4ec10637626b65325bd97eb2ef2605635fa0ac8fa5",
+  "installedLockSha256": "c493bdfa6182acd129295958e6ccceb7d4ff5940722b62647cabd8d8312d3b79",
+  "verifiedRegistrySignatures": 145,
+  "verifiedAttestations": 61,
+  "scope": "npm registry signature/attestation verification for packages discovered in existing fresh-stage installation. Verifies registry metadata, not installed file bytes; absent attestations do not imply malicious packages. No installs or remediation. All physical/resource gates remain open."
+}
