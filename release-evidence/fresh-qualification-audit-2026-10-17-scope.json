@@ -1,0 +1,38 @@
+{
+  "mode": "audit",
+  "args": [
+    "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+    "--cache",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-fresh-current-2026-10-17-Oo61W0\\npm-cache",
+    "audit",
+    "--json"
+  ],
+  "exitCode": 0,
+  "stage": "C:/Users/dines/AppData/Local/Temp/qrft-fresh-current-2026-10-17-Oo61W0",
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable\\runtime\\node.exe",
+  "node": "v24.22.0",
+  "npm": "11.6.2",
+  "registry": "https://registry.npmjs.org/",
+  "ignoreScripts": "false",
+  "cache": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-fresh-current-2026-10-17-Oo61W0\\npm-cache",
+  "temp": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-fresh-current-2026-10-17-Oo61W0\\temp",
+  "before": {
+    "time": "2026-10-17T03:19:53.292Z",
+    "freeDiskBytes": {
+      "C:/": 16752889856,
+      "D:/": 2569326592
+    }
+  },
+  "after": {
+    "time": "2026-10-17T03:19:55.473Z",
+    "freeDiskBytes": {
+      "C:/": 16688066560,
+      "D:/": 2569326592
+    }
+  },
+  "inputsUnchanged": 175,
+  "protectedBuiltAssetsUnchanged": 5,
+  "protectedEvidenceUnchanged": 949,
+  "freshBuildMatchesCandidate": null,
+  "scope": "New C source stage and private npm cache; no reused node_modules or prebuilt dist. Local Windows qualification only, not a clean OS or hosted CI. Existing browser reserve failure and physical gaps remain historical/open."
+}
