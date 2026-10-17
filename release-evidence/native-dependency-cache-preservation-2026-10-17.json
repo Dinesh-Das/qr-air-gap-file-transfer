@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-17T10:36:24.330Z",
+  "source": "D:\\MyProjects\\QR Air-Gap File Transfer\\node_modules\\@rolldown\\binding-win32-x64-msvc",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/native-dependency-cache-2026-10-17-vpIEiU",
+  "target": "C:\\Users\\dines\\QRFT-qualification-evidence\\native-dependency-cache-2026-10-17-vpIEiU\\active-package",
+  "preserved": "C:\\Users\\dines\\QRFT-qualification-evidence\\native-dependency-cache-2026-10-17-vpIEiU\\preserved-original-package",
+  "files": [
+    {
+      "path": "package.json",
+      "bytes": 782,
+      "sha256": "bb8d8d5c240d23ab36472622f3279e5c5ab9b62eb897a932a5eb3d885ac8a01e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 108,
+      "sha256": "327b514303b86e589a6d6bb831928bb9720678fb72648f81c8c2cdcb2f7a856f"
+    },
+    {
+      "path": "rolldown-binding.win32-x64-msvc.node",
+      "bytes": 20772352,
+      "sha256": "9c33d7eb37b134d108f003fa899bf0c13b89a4e5a926b98863b5d7075c61db4a"
+    }
+  ],
+  "junction": true,
+  "nativeLoad": {
+    "node": "v24.22.0",
+    "loaded": true
+  },
+  "before": {
+    "C:/": 6509649920,
+    "D:/": 2560675840
+  },
+  "after": {
+    "C:/": 6466768896,
+    "D:/": 2581454848
+  },
+  "sealedFilesUnchanged": 2238,
+  "scope": "Three generated workspace dependency files preserved twice on C; original D package path retained through a native directory junction and native load verified. No payload/profile/source/test/evidence moved or deleted, no compression or resource-threshold change."
+}
