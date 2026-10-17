@@ -1,0 +1,359 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/portable-browser-gates-review-2026-10-15.json",
+      "bytes": 143062,
+      "sha256": "f1ead230a1bbe1030992406609bd376ae43c14cf947cd02824765be9b69cc256"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 143062,
+      "sha256": "f1ead230a1bbe1030992406609bd376ae43c14cf947cd02824765be9b69cc256"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 666,
+      "sha256": "3c720e02ed781e57e06cda6051fe82909fb4c4b1c523d8d57319656f875f7fe4"
+    },
+    {
+      "path": "release-evidence/release-gate-before-portable-browser-gates-2026-10-15.json",
+      "bytes": 127381,
+      "sha256": "4e11ddc8c1e9c418a9aae82f362996382e5c3f3a63c0658956d6c410c77795ea"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15.log",
+      "bytes": 11798,
+      "sha256": "c9f8205eda38608869232ab7bd73e8e569bb2b5983c8fa3d1f040019c5ad6275"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15-started.json",
+      "bytes": 464,
+      "sha256": "fdb9ecc3cdc5c0c8a6bb47245c80df72f8796fb0c6122c4e403acbd7537ebace"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15-observations.json",
+      "bytes": 7593,
+      "sha256": "35a7191b493c1279cd3b22366ba6d1c5a43849bb27130afee8a5747bd2152c35"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15.config.mjs",
+      "bytes": 728,
+      "sha256": "8600f10d94465c30122f2a55b70dc3fe028c67f7b4ef71b8f6bfbba3d92182e4"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15-server.mjs",
+      "bytes": 501,
+      "sha256": "0e47be225ee0757d949a9b16c7a5d3e8493c8171651b228491549af2a03cc05f"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15.log",
+      "bytes": 11799,
+      "sha256": "d0a8300e0f62a0fe56567d22ecdd395a2da56e17ffb7a28389d959d3526e414b"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15-started.json",
+      "bytes": 465,
+      "sha256": "0be43b5029dfcdd0050980ae20d838c92f772474f679d0154276e2f53b4ad6a4"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15-observations.json",
+      "bytes": 7615,
+      "sha256": "3015de1bb92db219ecb588ef76ae0a623e54e77edda5e9d94adc5850b394580e"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15.config.mjs",
+      "bytes": 730,
+      "sha256": "3124e1da57c143dbe28fe422794f45c7f01e07b881fe248cfc2f482194137a5d"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15-server.mjs",
+      "bytes": 501,
+      "sha256": "0e47be225ee0757d949a9b16c7a5d3e8493c8171651b228491549af2a03cc05f"
+    },
+    {
+      "path": "release-evidence/external-runtime-cwd-probe-2026-10-15.json",
+      "bytes": 1014,
+      "sha256": "98a316a53267aae229ee32300c54a3a7700c4e1f9c9cec5393a16fbf7fa9b66e"
+    },
+    {
+      "path": "release-evidence/external-runtime-pinned-path-prototype-2026-10-15.json",
+      "bytes": 828,
+      "sha256": "e38d3b24a391916874be53e7ba1a684480340c3d5fa2f4336a96084c48b7b38b"
+    },
+    {
+      "path": "release-evidence/gitignore-before-current-reconciliation-2026-10-15.source.txt",
+      "bytes": 97,
+      "sha256": "bacd164322f31f6bc68354e54b1903899063d507da0673b1a3af30db1922eced"
+    },
+    {
+      "path": "release-evidence/historical-host-snapshot-recovery-2026-10-15.json",
+      "bytes": 705,
+      "sha256": "9d37e4b41a51d0430abfe11157364cd4ab1c9434af6ec5a64ff512537eba4d01"
+    },
+    {
+      "path": "release-evidence/legacy-status-helper-before-guard-2026-10-15.source.txt",
+      "bytes": 906,
+      "sha256": "5a854136094b012b7134ce4b8fc6a284099b1f0049a93bb3e51100561e786ffb"
+    },
+    {
+      "path": "release-evidence/legacy-status-overwrite-guard-2026-10-15.json",
+      "bytes": 314,
+      "sha256": "e007234733587bfd9f9e208d72a500c6799cb936e7725d3040dbb98c2b860b0e"
+    },
+    {
+      "path": "release-evidence/legacy-status-overwrite-guard-2026-10-15.log",
+      "bytes": 670,
+      "sha256": "049bc2416a76e464adaeefe4ff26f42ad2287c26d7b43300d9b0c8548dc83150"
+    },
+    {
+      "path": "release-evidence/owned-c-dependencies-1-before-2026-10-15.json",
+      "bytes": 1274562,
+      "sha256": "1e1d2c78ec778618c2eca02c802b0cd0c95926bc6428fdf132906d0beed64c62"
+    },
+    {
+      "path": "release-evidence/owned-c-dependencies-1-compression-2026-10-15.log",
+      "bytes": 34759,
+      "sha256": "09f72465e93c15a91bd07824766688f09c23ee00aa11cde5b3b3f6a962401b16"
+    },
+    {
+      "path": "release-evidence/owned-c-dependencies-partial-audit-2026-10-15.json",
+      "bytes": 413,
+      "sha256": "d10720a1bc60827333d3e712da6666fd9002434b4bab2ddb90cd336b656e7841"
+    },
+    {
+      "path": "release-evidence/owned-c-large-dependencies-preservation-2026-10-15.json",
+      "bytes": 20,
+      "sha256": "6c1db664439054b14cf5baade95beb5c1b194266ecf60003a2aab24c85fd8359"
+    },
+    {
+      "path": "release-evidence/owned-c-profile-live-processes-2026-10-15.json",
+      "bytes": 2342,
+      "sha256": "b79b2c7d62c7c4fd6ed86bff995cdef0026621ed5c9a7608a1ff563c28170ecf"
+    },
+    {
+      "path": "release-evidence/owned-c-profile-orphan-teardown-2026-10-15.json",
+      "bytes": 401,
+      "sha256": "f3dc23542b15a48d5f6e251449db0337754ec6d3e66e35fed6a97677ea0e8d0c"
+    },
+    {
+      "path": "release-evidence/owned-c-results-1-compression-2026-10-15.log",
+      "bytes": 215542,
+      "sha256": "66bfd8c41912f806aa61111825b7b45246b3f69703abcb77b6d8647da49abbaf"
+    },
+    {
+      "path": "release-evidence/owned-c-results-1-preservation-2026-10-15.json",
+      "bytes": 1256599,
+      "sha256": "15abf589996b8d18f1f78d4a1b8398f8d2d9cb29bfa4ebf2ef3c835fe162f85b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-10-before-2026-10-15.json",
+      "bytes": 1209670,
+      "sha256": "5e5193181e85002cc63fc93bdd8c7cddd83dd96b18c2c49f8b1ff106b2c23abb"
+    },
+    {
+      "path": "release-evidence/owned-c-results-10-compression-2026-10-15.log",
+      "bytes": 204053,
+      "sha256": "8e12a362c6c0e4951ab725752de657f4c372f38f4ec73270d4290ee0da530a56"
+    },
+    {
+      "path": "release-evidence/owned-c-results-10-preservation-2026-10-15.json",
+      "bytes": 1210031,
+      "sha256": "518577598ff84d0a38333d61846b199a43ea79748c619ec1464253fe3764d2af"
+    },
+    {
+      "path": "release-evidence/owned-c-results-2-compression-2026-10-15.log",
+      "bytes": 228262,
+      "sha256": "30188a14f66ac87c60a7a4187aa698cff2ca07b81d4da7f0938440930960c7ab"
+    },
+    {
+      "path": "release-evidence/owned-c-results-2-preservation-2026-10-15.json",
+      "bytes": 1268618,
+      "sha256": "2261386c0812cdf98bb7043cc8375cf6e228d32aca2599ba369d569dfb182d5e"
+    },
+    {
+      "path": "release-evidence/owned-c-results-3-compression-2026-10-15.log",
+      "bytes": 251022,
+      "sha256": "6b21a72f80774e7cc515b90e59d93d1e48f50ff51b53091154519c16607590df"
+    },
+    {
+      "path": "release-evidence/owned-c-results-3-preservation-2026-10-15.json",
+      "bytes": 1267224,
+      "sha256": "b1ef9dcc3b7dc43b99f483f2ddc29cec0def7b95448fbf85c1f98ea99aab1e7a"
+    },
+    {
+      "path": "release-evidence/owned-c-results-4-compression-2026-10-15.log",
+      "bytes": 220471,
+      "sha256": "c025398e9465a58eec3d1b50371cd5528ea5fb60679f873fc35c15039432218b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-4-preservation-2026-10-15.json",
+      "bytes": 1259288,
+      "sha256": "55a40f1c6b37821ef066220885970b908133364a3f9577afdcb055529f0890fa"
+    },
+    {
+      "path": "release-evidence/owned-c-results-5-compression-2026-10-15.log",
+      "bytes": 236686,
+      "sha256": "4c73be245d35c26de433911a8525808f658a68e8abfcaa7cd5d1c54321112e75"
+    },
+    {
+      "path": "release-evidence/owned-c-results-5-preservation-2026-10-15.json",
+      "bytes": 1274127,
+      "sha256": "92052d13a9e12d6237eacaca890a8674dedd51422bd94c4715f35e6b6f9b2d19"
+    },
+    {
+      "path": "release-evidence/owned-c-results-6-before-2026-10-15.json",
+      "bytes": 1266221,
+      "sha256": "5f8a8121ac95e26fefb1d95b0c8977fc502426b9e9751dad42cc35c3536758ed"
+    },
+    {
+      "path": "release-evidence/owned-c-results-6-compression-2026-10-15.log",
+      "bytes": 228623,
+      "sha256": "d68f89c323e910ef1a937eb6a54ec0494383527152f4637d124ed6d2cccdb42d"
+    },
+    {
+      "path": "release-evidence/owned-c-results-6-preservation-2026-10-15.json",
+      "bytes": 1266582,
+      "sha256": "286d40095e7b596aa11a6b58afc24d84bfdf104312019cd1942eb943e85e94fc"
+    },
+    {
+      "path": "release-evidence/owned-c-results-7-before-2026-10-15.json",
+      "bytes": 1269870,
+      "sha256": "b76f2e202a3d4cc94c30eb036f0729ffc87419bd8fcd66595550ab16ffc4fe1b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-7-compression-2026-10-15.log",
+      "bytes": 235580,
+      "sha256": "247e3cd95cc5ded7fb0963ddbf817de23e0715c2e99680b5f5d1e90512d5eb42"
+    },
+    {
+      "path": "release-evidence/owned-c-results-7-preservation-2026-10-15.json",
+      "bytes": 1270231,
+      "sha256": "72fa1728489b73d823d21eea13fec1a005ea0ab312d4697afa24f284ffd35dab"
+    },
+    {
+      "path": "release-evidence/owned-c-results-8-before-2026-10-15.json",
+      "bytes": 1209682,
+      "sha256": "a066e942df155050c43e2f37841aba01ca334ba48ab86b037fbb37b763af476b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-8-compression-2026-10-15.log",
+      "bytes": 205873,
+      "sha256": "16c2503ed2ad9362d004c80f97361f824ec648c7f25a06d55d3edf07cfc255b1"
+    },
+    {
+      "path": "release-evidence/owned-c-results-8-preservation-2026-10-15.json",
+      "bytes": 1210043,
+      "sha256": "34cbb007ea1d93ad942c9088232c963a3f947ab2fb9ba515f82442d67abe220c"
+    },
+    {
+      "path": "release-evidence/owned-c-results-9-before-2026-10-15.json",
+      "bytes": 1196599,
+      "sha256": "f39ebc424e689c4bf9056f87fdbe4efc09bfb5fc139eba373f1157588133b109"
+    },
+    {
+      "path": "release-evidence/owned-c-results-9-compression-2026-10-15.log",
+      "bytes": 209817,
+      "sha256": "cc1487652474017354f2ca012e202ee9d63b58090d14ad3bb0ccb3b615192966"
+    },
+    {
+      "path": "release-evidence/owned-c-results-9-preservation-2026-10-15.json",
+      "bytes": 1196960,
+      "sha256": "4172c7c73cafddaa6d604bc80a075ee05fcd74c18182d90e304ac38fa3e7b03b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-preservation-2026-10-15.json",
+      "bytes": 2370,
+      "sha256": "28106022197d5ceaca7e202698eaef711e6d554b6db8fa3515032a678f3e4d2b"
+    },
+    {
+      "path": "release-evidence/owned-c-stage-logical-capacity-2026-10-15.json",
+      "bytes": 19109,
+      "sha256": "7755d0cc34f676384a9332a228c5056618d5db8cc2e760dd261fe944bd023f8b"
+    },
+    {
+      "path": "release-evidence/peer-policy-chrome-post-partial-compression-inventory-2026-10-15.json",
+      "bytes": 1205254,
+      "sha256": "b034e7bccecc45a91d7ae2575664482f922b5a160ff9eb7f9c360cb891789809"
+    },
+    {
+      "path": "release-evidence/peer-policy-preserved-chrome-capacity-2026-10-15.log",
+      "bytes": 133009,
+      "sha256": "763945013c213256f7705254d2a27afeac9976251d137264f81b6965d35f2ba2"
+    },
+    {
+      "path": "release-evidence/portable-browser-current-preflight-2026-10-15.log",
+      "bytes": 664,
+      "sha256": "dbd648af6266edc6002922576cf614f1d028a3eff07993d0f5c671148632cebb"
+    },
+    {
+      "path": "release-evidence/portable-browser-current-preflight-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/portable-browser-source-drift-refusal-2026-10-15.log",
+      "bytes": 546,
+      "sha256": "b69805fa9304ce7b1df06047f41ed39f2779b1b5f1e026cf0e5d424ef7b2b163"
+    },
+    {
+      "path": "release-evidence/portable-candidate-runtime-preservation-2026-10-15.json",
+      "bytes": 762,
+      "sha256": "2892ca5daeea9710367ed5e8256b1ce2af34a9c34bda4cf0a7fc86c60796d78f"
+    },
+    {
+      "path": "release-evidence/portable-current-input-drift-2026-10-15.json",
+      "bytes": 425,
+      "sha256": "c67df8abcf540abba1b8f3204779aade9c8b788ccc4d3d96005ad8f24b29f8f1"
+    },
+    {
+      "path": "release-evidence/portable-current-manifest-proposal-2026-10-15.json",
+      "bytes": 127382,
+      "sha256": "757ba0f164da6947cba539e0b71755d2fc6971d9576427d4e1dcec86d042a983"
+    },
+    {
+      "path": "release-evidence/portable-host-resource-cross-api-2026-10-15.json",
+      "bytes": 3488,
+      "sha256": "d0163e8283290a08f7cd992de5ac0df18a357363a0103c95cfbdedbdcfb8382b"
+    },
+    {
+      "path": "release-evidence/portable-preflight-status-from-legacy-helper-2026-10-15.json",
+      "bytes": 1241,
+      "sha256": "33ce37884a3cff32bed4c786c4e270a0a8065a7b96d12242092f0a15c9185af0"
+    },
+    {
+      "path": "release-evidence/portable-preserved-evidence-drift-2026-10-15.json",
+      "bytes": 64,
+      "sha256": "816a95d7f59126db6a086b450148cff3d83253723ed64f5109518a050453ba86"
+    },
+    {
+      "path": "release-evidence/portable-resource-preflight-audit-2026-10-15.json",
+      "bytes": 714,
+      "sha256": "f9a632175841403e4fbb7354746c0e578f723c271dc666a0fdd787bcc8d927d7"
+    },
+    {
+      "path": ".tmp/qualify-portable-browser-2026-10-15.mjs",
+      "bytes": 4530,
+      "sha256": "f4cedd8382e6a3336d4a1d3f229bae44d849f0c70554e3e33ce12a7e5d81e994"
+    },
+    {
+      "path": ".tmp/peer-policy-status-2026-10-14.mjs",
+      "bytes": 922,
+      "sha256": "6d3931b834649c650d2cd665ff320c124be7dc74c2f78feb169cc16e173d1356"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 364,
+      "sha256": "595cbfebd3b1922ab49ce7fb0959ee61d48d09b43a64dc8c8d57aa34f7d369db"
+    }
+  ]
+}
