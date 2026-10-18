@@ -1,0 +1,202 @@
+{
+  "recordedAt": "2026-10-15T19:01:45.275Z",
+  "node": "v24.22.0",
+  "platform": "win32",
+  "roots": [
+    {
+      "root": "D:/MyProjects/qrft-unicode-controls-2026-10-16-NqJ4BD",
+      "results": [
+        {
+          "first": "case",
+          "second": "CASE",
+          "secondCreateError": {
+            "code": "EEXIST",
+            "message": "EEXIST: file already exists, mkdir 'D:\\MyProjects\\qrft-unicode-controls-2026-10-16-NqJ4BD\\0\\CASE'"
+          },
+          "nativeNames": [
+            "case"
+          ]
+        },
+        {
+          "first": "σ",
+          "second": "Σ",
+          "secondCreateError": {
+            "code": "EEXIST",
+            "message": "EEXIST: file already exists, mkdir 'D:\\MyProjects\\qrft-unicode-controls-2026-10-16-NqJ4BD\\1\\Σ'"
+          },
+          "nativeNames": [
+            "σ"
+          ]
+        },
+        {
+          "first": "μ",
+          "second": "Μ",
+          "secondCreateError": {
+            "code": "EEXIST",
+            "message": "EEXIST: file already exists, mkdir 'D:\\MyProjects\\qrft-unicode-controls-2026-10-16-NqJ4BD\\2\\Μ'"
+          },
+          "nativeNames": [
+            "μ"
+          ]
+        },
+        {
+          "first": "σ",
+          "second": "ς",
+          "secondCreateError": null,
+          "nativeNames": [
+            "σ",
+            "ς"
+          ]
+        },
+        {
+          "first": "i",
+          "second": "ı",
+          "secondCreateError": null,
+          "nativeNames": [
+            "i",
+            "ı"
+          ]
+        },
+        {
+          "first": "s",
+          "second": "ſ",
+          "secondCreateError": null,
+          "nativeNames": [
+            "s",
+            "ſ"
+          ]
+        },
+        {
+          "first": "μ",
+          "second": "µ",
+          "secondCreateError": null,
+          "nativeNames": [
+            "µ",
+            "μ"
+          ]
+        },
+        {
+          "first": "ss",
+          "second": "ß",
+          "secondCreateError": null,
+          "nativeNames": [
+            "ss",
+            "ß"
+          ]
+        },
+        {
+          "first": "ff",
+          "second": "ﬀ",
+          "secondCreateError": null,
+          "nativeNames": [
+            "ff",
+            "ﬀ"
+          ]
+        }
+      ],
+      "caseSensitivityQuery": {
+        "status": 0,
+        "stdout": "Case sensitive attribute on directory D:\\MyProjects\\qrft-unicode-controls-2026-10-16-NqJ4BD is disabled.\r\n",
+        "stderr": ""
+      }
+    },
+    {
+      "root": "C:/Users/dines/AppData/Local/Temp/qrft-unicode-controls-2026-10-16-FcQ6eY",
+      "results": [
+        {
+          "first": "case",
+          "second": "CASE",
+          "secondCreateError": {
+            "code": "EEXIST",
+            "message": "EEXIST: file already exists, mkdir 'C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-unicode-controls-2026-10-16-FcQ6eY\\0\\CASE'"
+          },
+          "nativeNames": [
+            "case"
+          ]
+        },
+        {
+          "first": "σ",
+          "second": "Σ",
+          "secondCreateError": {
+            "code": "EEXIST",
+            "message": "EEXIST: file already exists, mkdir 'C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-unicode-controls-2026-10-16-FcQ6eY\\1\\Σ'"
+          },
+          "nativeNames": [
+            "σ"
+          ]
+        },
+        {
+          "first": "μ",
+          "second": "Μ",
+          "secondCreateError": {
+            "code": "EEXIST",
+            "message": "EEXIST: file already exists, mkdir 'C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-unicode-controls-2026-10-16-FcQ6eY\\2\\Μ'"
+          },
+          "nativeNames": [
+            "μ"
+          ]
+        },
+        {
+          "first": "σ",
+          "second": "ς",
+          "secondCreateError": null,
+          "nativeNames": [
+            "σ",
+            "ς"
+          ]
+        },
+        {
+          "first": "i",
+          "second": "ı",
+          "secondCreateError": null,
+          "nativeNames": [
+            "i",
+            "ı"
+          ]
+        },
+        {
+          "first": "s",
+          "second": "ſ",
+          "secondCreateError": null,
+          "nativeNames": [
+            "s",
+            "ſ"
+          ]
+        },
+        {
+          "first": "μ",
+          "second": "µ",
+          "secondCreateError": null,
+          "nativeNames": [
+            "µ",
+            "μ"
+          ]
+        },
+        {
+          "first": "ss",
+          "second": "ß",
+          "secondCreateError": null,
+          "nativeNames": [
+            "ss",
+            "ß"
+          ]
+        },
+        {
+          "first": "ff",
+          "second": "ﬀ",
+          "secondCreateError": null,
+          "nativeNames": [
+            "ff",
+            "ﬀ"
+          ]
+        }
+      ],
+      "caseSensitivityQuery": {
+        "status": 0,
+        "stdout": "Case sensitive attribute on directory C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-unicode-controls-2026-10-16-FcQ6eY is disabled.\r\n",
+        "stderr": ""
+      }
+    }
+  ],
+  "scope": "Current C/D directory controls only. Native directory enumeration retained; no file payload/device/overwrite/deletion. Other Windows hosts/volumes remain unverified."
+}
