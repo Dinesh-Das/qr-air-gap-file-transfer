@@ -1,0 +1,3387 @@
+{
+  "recordedAt": "2026-10-15T17:49:12.302Z",
+  "localDate": "2026-10-15",
+  "releaseStatus": "NOT READY",
+  "productionCodeChanged": false,
+  "problem": "External-runtime bundle requires preinstalled Node; conditional L805 portable runtime is now feasible locally.",
+  "fix": "Explicit offline --runtime-dir/--runtime-sha256; hash before executable probe; full license input and metadata inventoried. Relative Windows runtime preferred, external fallback only when bundled executable absent.",
+  "lifecycle": "Discard phase blocks navigation/duplicate action. Failed removal preserves retry. Generation checks around close/deletion/reset prevent stale completion from changing a newer state; reset also checks generation after close.",
+  "regression": "6 native cmd fixture cases +10 builder cases. Native initial corrected baseline4failed/2passed; builder initial absent-module import failed collection (not individual RED); parser inherited-key review1failed/9passed thenfixed. Final447units49passed.",
+  "localCheck": {
+    "unitTests": 447,
+    "testFiles": 49,
+    "typecheck": 0,
+    "build": 0,
+    "node": "24.22.0",
+    "scope": "Workspace dependencies, unchanged lock; current sources mirrored into existing fresh dependency stage. No new npm install claim."
+  },
+  "browsers": {
+    "edge": {
+      "status": "passed",
+      "cases": 88,
+      "exitCode": 0,
+      "log": "release-evidence/portable-runtime-full-edge-2026-10-15.log",
+      "node": "24.22.0",
+      "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+      "samples": 42,
+      "sampledMinimumFreeDiskBytes": {
+        "C:/": 2599714816,
+        "D:/": 2779852800
+      },
+      "sampledReserveBreach": false,
+      "resourceScope": "10-second samples only; not continuous reserve, browser RSS/heap/GC or 50–100GB acceptance."
+    },
+    "chrome": {
+      "status": "passed",
+      "cases": 88,
+      "exitCode": 0,
+      "log": "release-evidence/portable-runtime-full-chrome-2026-10-15.log",
+      "node": "24.22.0",
+      "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+      "samples": 42,
+      "sampledMinimumFreeDiskBytes": {
+        "C:/": 12097105920,
+        "D:/": 4444516352
+      },
+      "sampledReserveBreach": false,
+      "resourceScope": "10-second samples only; not continuous reserve, browser RSS/heap/GC or 50–100GB acceptance."
+    }
+  },
+  "packageSmoke": {
+    "recordedAt": "2026-10-15T03:43:44.050Z",
+    "outputs": [
+      {
+        "variant": "external",
+        "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime",
+        "files": 19,
+        "existingOutputRefused": true,
+        "physicalTemplateBlank": true,
+        "execution": {
+          "node": "v24.22.0",
+          "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+          "path": "C:\\WINDOWS\\System32",
+          "handoff": "injected HTTP-byte observer; no native browser open",
+          "cleanStop": true
+        },
+        "manifestBeforeAfterIdentical": true
+      },
+      {
+        "variant": "portable",
+        "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+        "files": 22,
+        "existingOutputRefused": true,
+        "physicalTemplateBlank": true,
+        "execution": {
+          "node": "v24.22.0",
+          "execPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime\\node.exe",
+          "path": "C:\\WINDOWS\\System32",
+          "handoff": "injected HTTP-byte observer; no native browser open",
+          "cleanStop": true
+        },
+        "manifestBeforeAfterIdentical": true
+      }
+    ],
+    "nativeCmd": "Six real cmd tests use a launch-script fixture; packaged lifecycle observer injected. Actual default browser opening not exercised.",
+    "runtimeCompatibility": "Full unit/type/build under Node 24.22.0; full browser gates under this runtime still pending."
+  },
+  "validationEnvironment": {
+    "dependencyScope": "Current159-input stage, normal fresh npm ci with unchanged lock,396 unit/type/build/package smoke and full installed Edge/Chrome gates. No hosted CI evidence.",
+    "temporaryFiles": {
+      "priorTMP": "C:\\Users\\dines\\AppData\\Local\\Temp",
+      "reason": "C below reserve; task-owned browser temporary files on D",
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\corrupt-discard-browser-temp-2026-10-14",
+      "priorTEMP": "C:\\Users\\dines\\AppData\\Local\\Temp"
+    },
+    "capacity": "DuringChrome observedD2013573120bytes (<2147483648reserve by133910528bytes);C2217984000. No continuousreserve/resourceacceptance. Subsequentcapacitysnapshot retained separately; recoverydoesnoteraseobservedbelowreserve.",
+    "performance": "Edge fullrerun7.4m/Chrome5.3m are suitewalltimes underhostconditions,notmatched transferthroughput orresource acceptance."
+  },
+  "review": {
+    "correctness": "Explicit opt-in preserves external packaging. Tests confirm quoting/runtime preference/exitcode/missing and broken paths; parser rejects inherited object keys. Both generated manifests include correct variant instructions and blank physical records.",
+    "security": "Runtime executable is trusted build-time input. Pin compared before execution; full provided license markers and recorded hash are integrity/completeness hints, not publisher authentication or legal provenance verification. No automatic download/install.",
+    "limitations": "Windows x64 Node24 only. Actual cmd tests use launch-script fixture; actual package lifecycle injects browser observer. Unsupported binary architecture/version guards inspected but no separate real incompatible executable tested. C below reserve; no resource acceptance. Full new-runtime browser/native default-handler/cleanOS/physical scope open."
+  },
+  "currentInputs": [
+    {
+      "path": ".github/workflows/release-check.yml",
+      "bytes": 2025,
+      "sha256": "00ca460575683224ab10cd7f23e143dcc30a45b29c0319bce9feaaf1fbeb55a2"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 364,
+      "sha256": "595cbfebd3b1922ab49ce7fb0959ee61d48d09b43a64dc8c8d57aa34f7d369db"
+    },
+    {
+      "path": "BENCHMARKS.md",
+      "bytes": 37838,
+      "sha256": "e6fb430f1d7aa15588bd68c35f00db6ade7b4850adceba62940dcf2e500da5ec"
+    },
+    {
+      "path": "PHYSICAL-TEST-RECORD.md",
+      "bytes": 4276,
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 26455,
+      "sha256": "850251e0f7fdbfba853e1f996f277420ecdae9c0d52a82492b99469f57ef47d5"
+    },
+    {
+      "path": "RELEASE-CHECKLIST.md",
+      "bytes": 87067,
+      "sha256": "e6091c3ea316fc36c55e0a61ee776142bb4a4c0abe6baf0bfadf4781744c545c"
+    },
+    {
+      "path": "RELEASE-HARDENING.md",
+      "bytes": 129429,
+      "sha256": "93ed1289e0da7bdca0058acdc02f73ded89a194f953c0e293f5980fe3a845ce5"
+    },
+    {
+      "path": "SPEC-cancel-payload.md",
+      "bytes": 1382,
+      "sha256": "223c5a8958b17b346f51895bdac5534c7b71dce1d2ed4884c50d656116fbec3c"
+    },
+    {
+      "path": "SPEC-cleanup-retry.md",
+      "bytes": 1376,
+      "sha256": "304df0cbaba1f6e475b3853ec2094cd27cb6f610419b7de037742c77f0f58f45"
+    },
+    {
+      "path": "SPEC-control-fuzz.md",
+      "bytes": 1252,
+      "sha256": "8ca8e0f96d892069151e05ae188654719534651dbfc33c6b55975d8fe8845950"
+    },
+    {
+      "path": "SPEC-corrupt-copy-discard.md",
+      "bytes": 1398,
+      "sha256": "3eaa04b4cf45fdf5ba077056957ff7e3943bcc6c0a745f4051081ef17750370f"
+    },
+    {
+      "path": "SPEC-destination-readback.md",
+      "bytes": 2153,
+      "sha256": "d405f66aac03e2b08b30834237b89b8dd109906204775ab48072f73762b40917"
+    },
+    {
+      "path": "SPEC-discovery-adversarial.md",
+      "bytes": 2444,
+      "sha256": "93c0dc89be230388e347c815ef1f57ecd56521fc23043ef151fc9cce3dd2a1f8"
+    },
+    {
+      "path": "SPEC-exact-stream-boundaries.md",
+      "bytes": 1340,
+      "sha256": "ae08746b7f2f5ab770c4b7d2abe905bf4586c70c52829cd2766bb7ea7577b2c1"
+    },
+    {
+      "path": "SPEC-journal-prefix-recovery.md",
+      "bytes": 1958,
+      "sha256": "797df62459f653f6b82c53041f93aac66921ac452c23ca78a14c239b689c27c7"
+    },
+    {
+      "path": "SPEC-manifest-block-boundary.md",
+      "bytes": 885,
+      "sha256": "9989ca4bd16b32a94704297266203a40e4707223d54d47ba17a3ce94bacc4340"
+    },
+    {
+      "path": "SPEC-message-limit-recovery.md",
+      "bytes": 1182,
+      "sha256": "aa647d8492c8fd589b51776f33756aa998b033af8bd1ecd6e9c14439ca5b94a3"
+    },
+    {
+      "path": "SPEC-pairing-preparation.md",
+      "bytes": 4222,
+      "sha256": "c2613a50af8a8f2718bd88ce1b3e3538ce7c66855eb0e0e773d9b7cce8dbea9f"
+    },
+    {
+      "path": "SPEC-peer-candidate-policy.md",
+      "bytes": 1780,
+      "sha256": "f8abf73929079d03903e0a5defb05371a1db83045c297c8310e90341e314db7f"
+    },
+    {
+      "path": "SPEC-playwright-crash-response.md",
+      "bytes": 2035,
+      "sha256": "75af874f1b8200d3a737c68f139d9488b1d3366f51189c8fd0b10ee3b188fb06"
+    },
+    {
+      "path": "SPEC-portable-windows-runtime.md",
+      "bytes": 2548,
+      "sha256": "dde71d62eb278a8570ca40f00e1ff9ba92cc7ab0bd9c9a0f65fe0ec00e6e524a"
+    },
+    {
+      "path": "SPEC-receipt-file-bounds.md",
+      "bytes": 2111,
+      "sha256": "5c9b33b0dfc79d2cb3756e63ddb29f6b33dbddebbde920de49d3674c0f4029c6"
+    },
+    {
+      "path": "SPEC-resume-percent-matrix.md",
+      "bytes": 1202,
+      "sha256": "8e8116305621aacbcf5761e79a98654d71be52f8405c73f5f133f27bb47cc149"
+    },
+    {
+      "path": "SPEC-room-collision.md",
+      "bytes": 918,
+      "sha256": "c2e2226187de871870039a984517f405b12cdf28241ce191e146feaebf26f83f"
+    },
+    {
+      "path": "SPEC-signal-adversarial.md",
+      "bytes": 1367,
+      "sha256": "f930be58a07d113aa6056105226f918eefbe27aa75f4cc071ea5e823ff56ae19"
+    },
+    {
+      "path": "SPEC-terminal-control-callbacks.md",
+      "bytes": 1132,
+      "sha256": "0dfa7183615d777cc2a7c0f0d40a3815b049b9f73da462b357c9a7d942c48510"
+    },
+    {
+      "path": "SPEC-verification-stream-cleanup.md",
+      "bytes": 4232,
+      "sha256": "2503d9c4a000ace93025ea360dfb460c9c0034ff75adb0ac05871def0a83e083"
+    },
+    {
+      "path": "SPEC-verify-abort.md",
+      "bytes": 1185,
+      "sha256": "bdf37f4ee092f08c7b9e7a5d38193f2d6e67ebe0cf578b1fdaaa053081522684"
+    },
+    {
+      "path": "Start AirGap QR.cmd",
+      "bytes": 600,
+      "sha256": "44e9909a60fd5145134c27859ed0a04b5ee03defd9d6793eda14fbc88367be36"
+    },
+    {
+      "path": "TRANSFER_PROCESS.md",
+      "bytes": 15924,
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f"
+    },
+    {
+      "path": "e2e/browser-channel.ts",
+      "bytes": 293,
+      "sha256": "3fb3e73de33be4999f105f7540f503358483e039c7b115fef842e56ba0fe1ef6"
+    },
+    {
+      "path": "e2e/navigation.spec.ts",
+      "bytes": 4380,
+      "sha256": "2f96693e554160b55f1d75863c50dc2432a2433edcd716cf6dc8066621e8ad95"
+    },
+    {
+      "path": "e2e/pairing-preparation.spec.ts",
+      "bytes": 15475,
+      "sha256": "8bf63a00f2de1cde18adc61a648ab1dea6c963253038ada68d5a2dfea96c9bc6"
+    },
+    {
+      "path": "e2e/pairing.spec.ts",
+      "bytes": 127216,
+      "sha256": "339a9fd9df3110c48412121ccfdde6d8a5b100eb9f0d15845df03cc88f968785"
+    },
+    {
+      "path": "e2e/peer-candidate-policy.spec.ts",
+      "bytes": 3629,
+      "sha256": "eb1e02ca726fc4647ee040c2fd9b49651bf346a16574372836c20d2a97cd5e28"
+    },
+    {
+      "path": "e2e/preparation-privacy.spec.ts",
+      "bytes": 6406,
+      "sha256": "4ed4bf5e5cedb9f1721ea8d87c78e75f3cdcb2132fa86daa75dcf8eba996b12e"
+    },
+    {
+      "path": "index.html",
+      "bytes": 805,
+      "sha256": "3b7b5e875082dc67de12a3985f466aa88e20c02d9ef7427de7cc54b6dd5e2e6b"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 80049,
+      "sha256": "1941b668b0e20e0d3ac46b4ec10637626b65325bd97eb2ef2605635fa0ac8fa5"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1438,
+      "sha256": "e7cd4b05e001d3cf460f1c2c2421e37f464a42d9c1ec939f3f0ec24e2a7a7574"
+    },
+    {
+      "path": "playwright.config.ts",
+      "bytes": 480,
+      "sha256": "8308263834c0867ce012ea47286afcba5edbf5df26acce4019a29b73c01aab84"
+    },
+    {
+      "path": "release-evidence/physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "scripts/benchmark-pattern.mjs",
+      "bytes": 1266,
+      "sha256": "c123dbc053a01b317d8619e96500e774549f4d14a41afbd98725d2551017087a"
+    },
+    {
+      "path": "scripts/benchmark-receiver.mjs",
+      "bytes": 17638,
+      "sha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431"
+    },
+    {
+      "path": "scripts/benchmark-result.mjs",
+      "bytes": 572,
+      "sha256": "2c73f114ccb427576aa55008b08c3ace9108405fb36d0fa3310f6a9f07bc44c7"
+    },
+    {
+      "path": "scripts/benchmark-webrtc-page.mjs",
+      "bytes": 22028,
+      "sha256": "2c52adeedaa92a378f8cfd44cc461e615d77b1d45cf6385fbf064916a1bd17cb"
+    },
+    {
+      "path": "scripts/benchmark-webrtc.mjs",
+      "bytes": 20403,
+      "sha256": "ffd283e8e93f788c70099a193074c0b9cdf0b1d9ced041a1458d78819b22edcc"
+    },
+    {
+      "path": "scripts/browser-process-memory.mjs",
+      "bytes": 1359,
+      "sha256": "8fb651a94d4c5902c5ac806ea6e342b78a36520988ad3e685fc49c6a81e86f36"
+    },
+    {
+      "path": "scripts/browser-process-memory.ps1",
+      "bytes": 1316,
+      "sha256": "86395d780f2498229cdef346b2d19ac41a1fc7f2a9b3a633165a1e9893bb3d03"
+    },
+    {
+      "path": "scripts/compare-trees.mjs",
+      "bytes": 6930,
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "scripts/create-fixture.mjs",
+      "bytes": 3194,
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "scripts/diagnose-storage-context.mjs",
+      "bytes": 7313,
+      "sha256": "a5d74a5f2930258112115c6f3e5e285ea4a513ce740246e009ff47b34a381b19"
+    },
+    {
+      "path": "scripts/lan-signaling.mjs",
+      "bytes": 3591,
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "scripts/launch.mjs",
+      "bytes": 6621,
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "scripts/local-http-security.mjs",
+      "bytes": 2387,
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "scripts/package-offline.mjs",
+      "bytes": 4616,
+      "sha256": "3a73722d522459c70ad817be7706026c9ecde1083358911377134b8e8527e17e"
+    },
+    {
+      "path": "scripts/rendezvous.mjs",
+      "bytes": 32051,
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "bytes": 6784,
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "scripts/smoke-offline.mjs",
+      "bytes": 4709,
+      "sha256": "7c5ae229ff2f333dc5499ff14b5a49926165093c537f0678bd8f5314a28154cd"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "bytes": 1897,
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "scripts/windows-runtime.mjs",
+      "bytes": 2590,
+      "sha256": "b094f2dcc9cde3552c7b95f517c984b4f509bb52658d29de2ee9546ef639a767"
+    },
+    {
+      "path": "src/App.tsx",
+      "bytes": 7103,
+      "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
+    },
+    {
+      "path": "src/components/ConnectionDiagnostics.tsx",
+      "bytes": 2016,
+      "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+    },
+    {
+      "path": "src/components/LargeReceiver.tsx",
+      "bytes": 31110,
+      "sha256": "a5d95a2e4842b77336d8ef7df161e5b46267b5ef052940bacb35e48ea62b1935"
+    },
+    {
+      "path": "src/components/LargeSender.tsx",
+      "bytes": 23597,
+      "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+    },
+    {
+      "path": "src/components/PairingReadiness.tsx",
+      "bytes": 1304,
+      "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
+    },
+    {
+      "path": "src/components/Receiver.tsx",
+      "bytes": 63142,
+      "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+    },
+    {
+      "path": "src/components/Sender.tsx",
+      "bytes": 45016,
+      "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+    },
+    {
+      "path": "src/components/StorageReadiness.tsx",
+      "bytes": 1722,
+      "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
+    },
+    {
+      "path": "src/components/TransferMetrics.tsx",
+      "bytes": 1803,
+      "sha256": "4677d22a36c655156236fa1357e72a3cccdd9208a4ce2544e3e3dba1339d25b1"
+    },
+    {
+      "path": "src/components/TransferProblem.tsx",
+      "bytes": 470,
+      "sha256": "656eb3a36342bb4f1d5f5c6783aa177bfbc45355e19253885f9bf0cbced6dcd8"
+    },
+    {
+      "path": "src/components/TransferWakeLock.tsx",
+      "bytes": 952,
+      "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+    },
+    {
+      "path": "src/components/VerifyDevice.tsx",
+      "bytes": 1114,
+      "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "bytes": 30643,
+      "sha256": "81424fea165b16a9f89177617bcaef671ac1b80961e6400ab41320476ce29b0b"
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "bytes": 32542,
+      "sha256": "e0f44f8541b9305b0ebbab1e8a529322c8863d68fd31af5833810a29d8f9e6c8"
+    },
+    {
+      "path": "src/components/WebRtcSignalQr.tsx",
+      "bytes": 5473,
+      "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+    },
+    {
+      "path": "src/lib/archive.ts",
+      "bytes": 56594,
+      "sha256": "ec7b22a082a6e658d24ceaae7977b65ec233ebc2cef54e1862a5d5c019435b40"
+    },
+    {
+      "path": "src/lib/block-store-worker-protocol.ts",
+      "bytes": 852,
+      "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+    },
+    {
+      "path": "src/lib/block-store.ts",
+      "bytes": 58493,
+      "sha256": "cb316af4cd79e4a2505eb9dd1a4755e097fe9935b99d3e160d3e2fc20b3109cc"
+    },
+    {
+      "path": "src/lib/block-store.worker.ts",
+      "bytes": 5407,
+      "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+    },
+    {
+      "path": "src/lib/connection-path.ts",
+      "bytes": 963,
+      "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+    },
+    {
+      "path": "src/lib/connection.ts",
+      "bytes": 15246,
+      "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+    },
+    {
+      "path": "src/lib/format.ts",
+      "bytes": 2483,
+      "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+    },
+    {
+      "path": "src/lib/large-connection.ts",
+      "bytes": 10234,
+      "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+    },
+    {
+      "path": "src/lib/large-destination.ts",
+      "bytes": 28987,
+      "sha256": "9026236beb6e1924886e77e7a224321ff85f2dba02dff769f965791d4e2d774d"
+    },
+    {
+      "path": "src/lib/large-receiver-resume.ts",
+      "bytes": 7339,
+      "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+    },
+    {
+      "path": "src/lib/large-receiver.ts",
+      "bytes": 10616,
+      "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+    },
+    {
+      "path": "src/lib/large-sender-playback.ts",
+      "bytes": 1035,
+      "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+    },
+    {
+      "path": "src/lib/large-sender-resume.ts",
+      "bytes": 12742,
+      "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+    },
+    {
+      "path": "src/lib/large-transfer.ts",
+      "bytes": 23725,
+      "sha256": "425ebe8393e5087b1a700791b4201c2701cba6aee39f39755e84e2718fc7c6ce"
+    },
+    {
+      "path": "src/lib/optical-schedule.ts",
+      "bytes": 6916,
+      "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+    },
+    {
+      "path": "src/lib/protocol.ts",
+      "bytes": 29628,
+      "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+    },
+    {
+      "path": "src/lib/resume.ts",
+      "bytes": 13268,
+      "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+    },
+    {
+      "path": "src/lib/screen-wake-lock.ts",
+      "bytes": 2151,
+      "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+    },
+    {
+      "path": "src/lib/selected-files.ts",
+      "bytes": 3486,
+      "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+    },
+    {
+      "path": "src/lib/sender-resume.ts",
+      "bytes": 6653,
+      "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+    },
+    {
+      "path": "src/lib/stream-protocol.ts",
+      "bytes": 32102,
+      "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+    },
+    {
+      "path": "src/lib/transfer-problem.ts",
+      "bytes": 6079,
+      "sha256": "fe539d75660d16e14f376f42c68a358089d4d1b7961a96b8242b98038a82e89e"
+    },
+    {
+      "path": "src/lib/transfer-rate.ts",
+      "bytes": 885,
+      "sha256": "6fb0d18190c2f640f3f1bebb2661f98ad13a88d0abbefff575a4d67b5b993071"
+    },
+    {
+      "path": "src/lib/transfer.ts",
+      "bytes": 2769,
+      "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+    },
+    {
+      "path": "src/lib/use-pairing-readiness.ts",
+      "bytes": 1147,
+      "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
+    },
+    {
+      "path": "src/lib/use-transfer-rate.ts",
+      "bytes": 1967,
+      "sha256": "8ddb5042d0ab91350190f428f2a91d104e3dd85a75f736cd1a59c82ea89ec2c0"
+    },
+    {
+      "path": "src/lib/webrtc-authorization.ts",
+      "bytes": 1870,
+      "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+    },
+    {
+      "path": "src/lib/webrtc-control-flow.ts",
+      "bytes": 2790,
+      "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+    },
+    {
+      "path": "src/lib/webrtc-peer-health.ts",
+      "bytes": 1572,
+      "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+    },
+    {
+      "path": "src/lib/webrtc-protocol.ts",
+      "bytes": 13559,
+      "sha256": "06c7ae26d9dd7f396e9585d17257516ee85b50eab290b9e8993bca3f7ff65cc1"
+    },
+    {
+      "path": "src/lib/webrtc-receive-queue.ts",
+      "bytes": 5419,
+      "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+    },
+    {
+      "path": "src/lib/webrtc-rendezvous.ts",
+      "bytes": 8272,
+      "sha256": "f02bc05fb6c37f52edb3b36a4fd08a1aad3ca1e3e5ae417af02ed4f7205dfa8d"
+    },
+    {
+      "path": "src/lib/webrtc-sender-resume.ts",
+      "bytes": 7456,
+      "sha256": "1a6920253bfe88279ae301c5cf631400afeb03d885eb73303f07c2b7dd594167"
+    },
+    {
+      "path": "src/lib/webrtc-signaling.ts",
+      "bytes": 11957,
+      "sha256": "fe7d9e75ea14fa526e3e8ceb8445c8d631c9cfe5bc10001c1f651223a7b41421"
+    },
+    {
+      "path": "src/lib/webrtc-transfer.ts",
+      "bytes": 13732,
+      "sha256": "a448c7c48c8544371b529c2fa756dd9955aeb8b5e8432192ec408e4c55a3077c"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 232,
+      "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 34597,
+      "sha256": "c5f1051b0fa98de99ac70978df61f98b67bd3f214b6ae27a428de57e2e4fbb11"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "bytes": 2945,
+      "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+    },
+    {
+      "path": "tests/archive.test.ts",
+      "bytes": 25174,
+      "sha256": "3a4b985b93544997d93c6bc60f0fcc480a921ad4339b249e82efd0bde1ef9fd4"
+    },
+    {
+      "path": "tests/benchmark-pattern.test.mjs",
+      "bytes": 1650,
+      "sha256": "16cfb00e0fa5a3507e1b7b43aad69854e405a651a2845876e1e159ca716690df"
+    },
+    {
+      "path": "tests/benchmark-result.test.mjs",
+      "bytes": 1260,
+      "sha256": "ff46795d8d91c4924234d45b42c6a7cd737f0255c63e9761edf278e77f918b0b"
+    },
+    {
+      "path": "tests/block-store-opfs.test.ts",
+      "bytes": 27717,
+      "sha256": "968d3e71265f54b6fbbc027904a2236cde25f509d2fdac93172b382dbda4125b"
+    },
+    {
+      "path": "tests/block-store.test.ts",
+      "bytes": 11893,
+      "sha256": "966697a32212a4ea377e4a1d1d408aebc9b725c128afe918050f704df80d1eca"
+    },
+    {
+      "path": "tests/browser-process-memory.test.mjs",
+      "bytes": 980,
+      "sha256": "bb8f3233aeb3b9043893af10810be10eaa47165a3743f434abc2d6c8961ecb2c"
+    },
+    {
+      "path": "tests/compare-trees.test.mjs",
+      "bytes": 5626,
+      "sha256": "5f588899b3a15176fe6d3220629da60968e5fd2168d96fdc9145c193cc6ffd1a"
+    },
+    {
+      "path": "tests/connection-path.test.ts",
+      "bytes": 1254,
+      "sha256": "9488e8c1e827ad458049d9f308a15c4a63d304d810f72016a4b85c0556502a15"
+    },
+    {
+      "path": "tests/connection.test.ts",
+      "bytes": 5945,
+      "sha256": "24b3d1f8ef6ada5e2c0835764fc67b58571b40906cd7354612d091c7d7544fa8"
+    },
+    {
+      "path": "tests/discovery-adversarial.test.mjs",
+      "bytes": 10243,
+      "sha256": "f1e25210b3ac1e5d5c6cf3a149c4f4c60ba46c0d7b8bad8c480423b2fa2cbbb1"
+    },
+    {
+      "path": "tests/e2e.test.ts",
+      "bytes": 4110,
+      "sha256": "a4fefb116dc82cb0c9e3beffd611aaa856a530e84358ab942431e845321e07c6"
+    },
+    {
+      "path": "tests/fixture-safety.test.mjs",
+      "bytes": 2682,
+      "sha256": "5e002887ca15685b4a27e296576f56648e884de7e289e5a17f1becf118794629"
+    },
+    {
+      "path": "tests/format.test.ts",
+      "bytes": 1088,
+      "sha256": "b7421fe9575abc5f1607129aeb224fd9e23c8ab2bc951716930c3bd4ba567e34"
+    },
+    {
+      "path": "tests/free-signal-port.mjs",
+      "bytes": 1134,
+      "sha256": "99d03ec2fd940bbe935a66f414175be1bca11557322f845e151b67037fa5e5bb"
+    },
+    {
+      "path": "tests/lan-signaling.test.mjs",
+      "bytes": 12023,
+      "sha256": "ce715c1df7868c2470878543c6f2334ec7e51d83f73c72ec62bb0bd48a743c62"
+    },
+    {
+      "path": "tests/large-connection.test.ts",
+      "bytes": 3526,
+      "sha256": "5089f24b7741cac1807027bd1e4d0e5d56f400b02d361ba4ee866f098ef6f7f0"
+    },
+    {
+      "path": "tests/large-destination.test.ts",
+      "bytes": 40429,
+      "sha256": "3d3367617f96c61f5692ae7f75877bd275b093e80bef0faf275eaae4dd66b627"
+    },
+    {
+      "path": "tests/large-receiver-resume.test.ts",
+      "bytes": 2760,
+      "sha256": "eff92f97a2da8bfe7369222349f619ef5a84b82c16ca0b8d626326ab6f34333b"
+    },
+    {
+      "path": "tests/large-receiver.test.ts",
+      "bytes": 9384,
+      "sha256": "6a50503e24c568f162dd556f19ebc68b264fa8b3a1aaf80f09820660727cf499"
+    },
+    {
+      "path": "tests/large-sender-playback.test.ts",
+      "bytes": 1232,
+      "sha256": "b23b02e57520c60403e634fa731c9b3f759795ee8e10369844156bbf77f72b91"
+    },
+    {
+      "path": "tests/large-sender-resume.test.ts",
+      "bytes": 3488,
+      "sha256": "f1a0f63edb8b26dc924f7b4bf6911285c6b43c9964e089a134f2b011c8193d28"
+    },
+    {
+      "path": "tests/large-transfer.test.ts",
+      "bytes": 7405,
+      "sha256": "ec155bcb60282d2d6988dab962cb6ec55455915225a81c4ebda6f74d367a6c8e"
+    },
+    {
+      "path": "tests/launcher.test.mjs",
+      "bytes": 8560,
+      "sha256": "b54964f03794527fb43dee3123a2d01ca53545f88b8f404346070b96ca024e9e"
+    },
+    {
+      "path": "tests/local-http-security.test.mjs",
+      "bytes": 6882,
+      "sha256": "542973958a9ca8ccbc764d82558b09c0ee5121694a6cd25d50dae915bfb5cb5a"
+    },
+    {
+      "path": "tests/offline-release.test.mjs",
+      "bytes": 1281,
+      "sha256": "ff2b63605a3b63d5cf157ba2512c8adf347727780680e2d4d47c0fe049088910"
+    },
+    {
+      "path": "tests/optical-schedule.test.ts",
+      "bytes": 5705,
+      "sha256": "2c047500793ad6d261d9e8091dd98f7541b80361c95c84eaeb615d1da3ea1260"
+    },
+    {
+      "path": "tests/protocol.test.ts",
+      "bytes": 13736,
+      "sha256": "d19f0818c1c40758304b3bbe845276bcdff29968f0e582db396cec3e3f012332"
+    },
+    {
+      "path": "tests/remote-sdp-policy.test.ts",
+      "bytes": 1694,
+      "sha256": "f9ba6740bcd14c83a3bc48aee6566a60dc9513cb94439ab50f69c7cda7aead9a"
+    },
+    {
+      "path": "tests/rendezvous-collision.test.mjs",
+      "bytes": 2820,
+      "sha256": "a0ef45661ad7df380e022c453fcdbc831065b8506224f35819c983aee7224a25"
+    },
+    {
+      "path": "tests/rendezvous-ports.test.mjs",
+      "bytes": 10630,
+      "sha256": "a4d99c219e6909a42199fce21ed066cee003f08d6ca0877747fda0a909b67c60"
+    },
+    {
+      "path": "tests/rendezvous-runtime.test.mjs",
+      "bytes": 12104,
+      "sha256": "82651b0895374cbba4aebd629914da4f8cb167ae516f0dd6e8f97757a3fbae13"
+    },
+    {
+      "path": "tests/resume.test.ts",
+      "bytes": 3265,
+      "sha256": "557f1a72a764bb32a189530f24be5840e2501a71fae8fc84859ed36435527bfc"
+    },
+    {
+      "path": "tests/screen-wake-lock.test.ts",
+      "bytes": 3294,
+      "sha256": "72b1ae1f805d8a0e0a990f6fb37eda23d33aa9174889b8daf881508bb0c735d3"
+    },
+    {
+      "path": "tests/selected-files.test.ts",
+      "bytes": 3765,
+      "sha256": "936c5f5f28a344dfcc5738619ca7e07b1f64428b047894964fbc1b07c1e843f1"
+    },
+    {
+      "path": "tests/stream-protocol.test.ts",
+      "bytes": 11161,
+      "sha256": "f07f41b0cdf94e1938145c09df71b12a1dfab321a463296a397065943223f18d"
+    },
+    {
+      "path": "tests/transfer-problem.test.ts",
+      "bytes": 6129,
+      "sha256": "ac0a32276a185fe9159bfd061553147ba42482f1283233c5e2c53696c57c74b5"
+    },
+    {
+      "path": "tests/transfer-rate.test.ts",
+      "bytes": 1635,
+      "sha256": "4f4fa107c71481a3615369483bdb0eeb57b2a351b6b91ec620651f395f65ecdb"
+    },
+    {
+      "path": "tests/webrtc-authorization.test.ts",
+      "bytes": 2972,
+      "sha256": "7f4520b43dfd2e14bef0f769d765f50a1d12012eb646311443071755a73d98bb"
+    },
+    {
+      "path": "tests/webrtc-control-flow.test.ts",
+      "bytes": 2386,
+      "sha256": "f8e23789b38980514d74a5f22195af281a38cfde499fed00b570e5aa31a2f0e2"
+    },
+    {
+      "path": "tests/webrtc-native-codec.test.ts",
+      "bytes": 3019,
+      "sha256": "b310aa3903d080d4668d2ed00d5b3d62814be021fb077f75f19646c860c10ea4"
+    },
+    {
+      "path": "tests/webrtc-peer-health.test.ts",
+      "bytes": 2359,
+      "sha256": "780945cb703f9cff2de548ea46a62f69b7a32d305445ff902472bf15c4f4adf3"
+    },
+    {
+      "path": "tests/webrtc-protocol.test.ts",
+      "bytes": 6546,
+      "sha256": "57ff07d72bb28efc67356256de2ee02c493f678fc28e4121bc2b836c64c0a04c"
+    },
+    {
+      "path": "tests/webrtc-receive-queue.test.ts",
+      "bytes": 5001,
+      "sha256": "4f1ac82ad50877d8d75f2b0c3170e1a02ef6211babbaec4a7459e1e2b11fe8e2"
+    },
+    {
+      "path": "tests/webrtc-rendezvous.test.ts",
+      "bytes": 3008,
+      "sha256": "22d7ec5c8ea5894544572ad715c9c8b6239deec4392375d3e615bea3d7db9cca"
+    },
+    {
+      "path": "tests/webrtc-sender-resume.test.ts",
+      "bytes": 3130,
+      "sha256": "32264a7e82c9135e7b9b8a1f16b67be352ed8c94c75bfb12d2dadb8cde282c34"
+    },
+    {
+      "path": "tests/webrtc-signal-adversarial.test.ts",
+      "bytes": 4948,
+      "sha256": "f31afe197cf787ffc5dfad46e41e5afd6c035af138766b2a68986a61477a9020"
+    },
+    {
+      "path": "tests/webrtc-signaling.test.ts",
+      "bytes": 3262,
+      "sha256": "1623940be999ac1eac62e69e3c40e05787b35535d5298d240bbb8d137b1c63b4"
+    },
+    {
+      "path": "tests/webrtc-transfer.test.ts",
+      "bytes": 30467,
+      "sha256": "6db830494f47098ee423d1c5f5d763211d6d96b0b3ec76a4b329feac2377fc8d"
+    },
+    {
+      "path": "tests/windows-launcher.test.mjs",
+      "bytes": 3526,
+      "sha256": "29e0bf3df97a89085401cd63984253f847933dbd3ace616255993c93acaf155f"
+    },
+    {
+      "path": "tests/windows-runtime.test.mjs",
+      "bytes": 2305,
+      "sha256": "ef3ca82ee91f452a5e302edbc994ca4bb381d79ac9910f91dc7f4c33c39a7cfc"
+    },
+    {
+      "path": "tsconfig.app.json",
+      "bytes": 594,
+      "sha256": "24907a4972f29dd4b587b25d21bcab062cefa186f4cb4d75e813bf316deb7bef"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 119,
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
+    },
+    {
+      "path": "tsconfig.node.json",
+      "bytes": 354,
+      "sha256": "f003d918a886cdc7dcf5b2ba843bdfc5e59c6db0d6b4d2667a53b55d0198f94a"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 1529,
+      "sha256": "16d87b897a1106974dfc4d04c50d0008b94acda1fe4af6f1ebeab8f7878ea64b"
+    }
+  ],
+  "currentInputCount": 167,
+  "changedInputs": [
+    {
+      "path": ".gitignore",
+      "bytes": 364,
+      "sha256": "595cbfebd3b1922ab49ce7fb0959ee61d48d09b43a64dc8c8d57aa34f7d369db"
+    }
+  ],
+  "builtAssets": [
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-BAvLvA70.js",
+      "bytes": 555442,
+      "sha256": "e9edb004df0de79dbfa19aebb8631d6f7c2ee12b96091b9d6c1751949b30a9e6"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "64e19784a05849a6de772662caa641d4e14e808857fa3f67569daadb4ddd8b2b"
+    }
+  ],
+  "offlineCandidate": {
+    "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+    "verifiedFiles": 22,
+    "verifiedDirectCopies": 20,
+    "generatedFiles": [
+      "START-HERE.txt",
+      "runtime/ORIGIN.json"
+    ],
+    "qualification": "Local candidate; full new-runtime browser/native-default-handler/physical gates pending."
+  },
+  "physicalAcceptance": {
+    "cases": 42,
+    "notRun": 42,
+    "releaseReady": false,
+    "laptopsAvailable": false
+  },
+  "remaining": [
+    "All 42 physical cases and nontechnical usability remain unrun.",
+    "Performance/resources/historical 5 GiB memory, native private-window behavior and hosted final-revision CI remain unproved.",
+    "Original Edge asset buffer failure remains unresolved.",
+    "Detailed proof for all individual testing/chaos/resource/final-adversarial obligations is incomplete; 19 high-risk sections now have partial evidence maps, not completion.",
+    "First current Chrome gate replacement-page assertion after deliberate renderer crash remains unexplained despite isolated repeats and full rerun.",
+    "Current-source isolated fresh dependency install/check/package smoke and installed Edge/Chrome full gates now passed. Bundled Chromium installation and hosted final-revision CI remain unproved.",
+    "Both-corrupt checkpoints/truncated payload now have tested explicit discard path; exhaustive corruption, legacy suffix salvage, permission/device failures and physical/resource/concurrency proof remain incomplete.",
+    "Selected8MiB native prefetched-stream Stop/reconnect nowproved inEdge/Chrome. ArbitraryI/Otiming/power/permissions/large-transfer/resource acceptance and original memory concern remain unresolved.",
+    "Current ledger343entries without mappings; discovery10 assessments include explicit physical missingproof,notacceptance. All mapped claims remain partial.",
+    "Discovery review explicitly confirms physicalWi-Fi/Ethernet/multi-interface/virtual/VPN acceptance missing; synthetic subnet and loopback TCP/UDP proof remains narrow.",
+    "Explicit incomingcandidateguard unit/nativefocused/fullEdge/Chromecurrentcompatibility passed; mDNS/otherSDProuting/privacy/resource/physicalproof stillincomplete.",
+    "Currentfull88Edge rerun/88Chrome passed;firstEdge87/1pagecreationtimeout/isolatedpass retained,rootcauseunresolved. Resourcefloor observedbelowreserve;physical/hostedCI/fullscopeacceptance incomplete."
+  ],
+  "artifactPreservation": "Completed prefix Chrome/first message-limit Chrome/current discard Edge artifacts NTFS compressed after no matching live browser; every path/size/SHA preserved. No evidence deleted, no running profile compressed.",
+  "priorEvidence": "portable-runtime-implementation-review-2026-10-15.json",
+  "evidence": [
+    {
+      "path": "release-evidence/corrupt-discard-browser-chrome-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-chrome-2026-10-14.log",
+      "bytes": 10889,
+      "sha256": "e4aac33ea5fd9576d822ed7862dc041459842d8da83084c71f010f61818e82b3"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-edge-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-edge-2026-10-14.log",
+      "bytes": 10890,
+      "sha256": "ddebebeaeca869a555a956d57b2c87216de681aa0725fda5d80c34700f98b771"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-final-focused-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-final-focused-2026-10-14.log",
+      "bytes": 656,
+      "sha256": "300c8ffa889dac7f1b6804d49071efbfc9645918988bc207a03a876a96af53ae"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-green-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-green-2026-10-14.log",
+      "bytes": 655,
+      "sha256": "0df5bda67ae2ff2d2dccc33b30f60e4168f5ad6a27f03718533aa62bea4bf8c2"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-red-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-browser-red-2026-10-14.log",
+      "bytes": 5173,
+      "sha256": "3e7eaeb08355c58192bb7b3637c6bced0fac1f118f663faf3b6db19c42f8cc58"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-2026-10-14.log",
+      "bytes": 1445,
+      "sha256": "3b4516fac2887b363188389c8c7b317bd060dce2f981e1b15fcc6f214bf0977c"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-final-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-final-2026-10-14.log",
+      "bytes": 1445,
+      "sha256": "12ef7d4b6968c1658bd9d423a6286cf2b5c2db243b9d92e7541e6fdfa7bc00f1"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-final-label-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-final-label-2026-10-14.log",
+      "bytes": 1445,
+      "sha256": "c8a5264069dc4ae73d29ea8b533efc67dd29f69eaf584649719d668a35ed4850"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-first-types-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "df4e26a04a444901b95afef44e4a96cfae34690fff2ad2c66389c70079cdff2b"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-check-first-types-2026-10-14.log",
+      "bytes": 511,
+      "sha256": "31e3d88816f512c6a435fdfb67994b319d863a49fcce38878c77d212dd3407cf"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-compact-discard-edge-2026-10-14.log",
+      "bytes": 207746,
+      "sha256": "f3f59a6fb8137902b6845d7877107a1919c2e3cbbb94df51b1ce6c74bd5075a9"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-compact-first-message-chrome-2026-10-14.log",
+      "bytes": 174991,
+      "sha256": "50b48a6c83d858fa8631ea2c16c592bd698a95c1a4084ee8d2c7413c6d942378"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-compact-prefix-chrome-2026-10-14.log",
+      "bytes": 179892,
+      "sha256": "53890764d2201097fb8c2a7f3437c5aa608e57122abbaf2e4661939545c5b96e"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-diff-check-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-diff-check-2026-10-14.log",
+      "bytes": 3753,
+      "sha256": "30e275ec4b749b122594dc5f36ab32c68b662c01975c7560f8d77487db4541f3"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-package-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-package-2026-10-14.log",
+      "bytes": 116,
+      "sha256": "4743f256f57b9eb8477ad3b1f6ce7f4c4f9bdb68862d0607496e53c2206da054"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-package-smoke-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-package-smoke-2026-10-14.log",
+      "bytes": 616,
+      "sha256": "921a3d5e7c586d6481640ccb6d97f921b5fbda5755b1b2ceffc7a608152d81f5"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-preserved-discard-edge-2026-10-14.json",
+      "bytes": 1250907,
+      "sha256": "ce28e6efbf9801088af0c018f55656fa97795184382b8b00dfc04d109ef4dc34"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-preserved-first-message-chrome-2026-10-14.json",
+      "bytes": 1063327,
+      "sha256": "4b212fe5e01ec649cabeb37f7813f9a036d77364210293b277c6cec65bd2500b"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-preserved-prefix-chrome-2026-10-14.json",
+      "bytes": 1204777,
+      "sha256": "8e27ff4ca4d4cf29ed5ed2195d0e4c5491a267ae0d1c14b632fa05dd0fa3887e"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-temp-root-2026-10-14.json",
+      "bytes": 295,
+      "sha256": "1f844578f8573f88280033bafbe7d2833289c489ee42f0503a8c85ba0a20cb71"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-unit-green-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-unit-green-2026-10-14.log",
+      "bytes": 245,
+      "sha256": "26de195c1e82104db90cae570ac286e0c457696a8b89408b18667930c4dec8df"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-unit-red-2026-10-14-exit.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/corrupt-discard-unit-red-2026-10-14.log",
+      "bytes": 2768,
+      "sha256": "d01f18984ea0721582aeb2870de76361aa77a177f5530c69e792b914809c2f18"
+    },
+    {
+      "path": "test-results-corrupt-discard-red/pairing-unusable-receive-c-bf635-eceived-damage-checkpoints-/trace.zip",
+      "bytes": 5652631,
+      "sha256": "d300bf7ce51f21cc2df1fcb023027f8454bd1140627b0d0da62b0e3216d5eea5"
+    },
+    {
+      "path": "test-results-corrupt-discard-red/pairing-unusable-receive-c-e59d9-re-received-damage-payload-/trace.zip",
+      "bytes": 5304564,
+      "sha256": "b105b2216040998e241076c5a20c9cb9a31ac57a16c06587d7f707a65b3b3908"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-signal-adversarial-2026-10-14.json",
+      "bytes": 313293,
+      "sha256": "33d5151d0104e53d615e107220afaecd6db6423901c8595bef860ad227a5142a"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-corrupt-discard-2026-10-14.json",
+      "bytes": 312658,
+      "sha256": "f4381c83ea0a63f82cb37d47d2004c7a05d29ecfe8fa28c15c65cd0e7c5c40a3"
+    },
+    {
+      "path": "release-evidence/fresh-current-source-snapshot-2026-10-14.json",
+      "bytes": 21980,
+      "sha256": "3fc789cb64a173f505b61e16a6992644f50ba3dc1bf4c15d4762ccb713513134"
+    },
+    {
+      "path": "release-evidence/fresh-current-capacity-before-2026-10-14.json",
+      "bytes": 111,
+      "sha256": "1af3e21b293fbb3f114840b75d8bdaa9488b85e46aa009f45826222311712afc"
+    },
+    {
+      "path": "release-evidence/fresh-current-capacity-after-2026-10-14.json",
+      "bytes": 111,
+      "sha256": "a646db6ce4b5c25039dc843c09a09be6f9c9c907ce7a5f8703bd1560f48d4d84"
+    },
+    {
+      "path": "release-evidence/fresh-current-npm-version-2026-10-14.txt",
+      "bytes": 8,
+      "sha256": "94535e5dbefda0740ed46d66e241ff07352ff67862278126039b180cdabb6023"
+    },
+    {
+      "path": "release-evidence/fresh-current-install-2026-10-14.txt",
+      "bytes": 369,
+      "sha256": "3ce46b7640fe6f67048e9d0773bc3902be65b63b378798b56ffe4c93adabb444"
+    },
+    {
+      "path": "release-evidence/fresh-current-install-exit-code-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/fresh-current-check-2026-10-14.txt",
+      "bytes": 1460,
+      "sha256": "85b36fd1384cebdde1eba1ecbd7307db597104b0e46b315b4a2be2a9c2dc6dd2"
+    },
+    {
+      "path": "release-evidence/fresh-current-check-exit-code-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/fresh-current-package-smoke-2026-10-14.txt",
+      "bytes": 616,
+      "sha256": "5eac2d05152663eddf09a78b7cd3b219ab38125fd907b194a47451e08aeb2f52"
+    },
+    {
+      "path": "release-evidence/fresh-current-package-smoke-exit-code-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-focused-2026-10-14.log",
+      "bytes": 330,
+      "sha256": "373659daf895fd3e11a72f8f155ffe7c6f05371df395d18c2983607b5a86c5e2"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-negative-2026-10-14.log",
+      "bytes": 1257,
+      "sha256": "fdb86fc7f0895ce31ce37db7917a0049efcf67445450f15dd8eddd39520a23b3"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-negative-2026-10-14.json",
+      "bytes": 353,
+      "sha256": "aaa2bc5ff8418e7d7c50f354f24e7dd87c03e87d7b8a62c038e6397c9d63497f"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "8dc1da6ed1479f66893fb018f6ccfc9484cd249e89858bb40178558274fed29e"
+    },
+    {
+      "path": "release-evidence/signal-adversarial-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-discovery-adversarial-2026-10-14.json",
+      "bytes": 313517,
+      "sha256": "27bfbdfe582f50d3204101b8770fc2287f2a1c6ccf24fbfeb55ee69e6073341b"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-focused-2026-10-14.log",
+      "bytes": 323,
+      "sha256": "d5b53470fa893188bf0925abcea7f593ed41a4be5321bb0130b5be460ab61d78"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-negative-2026-10-14.log",
+      "bytes": 1484,
+      "sha256": "43f1a17b4c366490446fca4d9a7402544fed9bdcbaec2e6e9ccf47c2c46cda4b"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-negative-2026-10-14.json",
+      "bytes": 367,
+      "sha256": "4616a9134393b49874c96ef658d169f6505fa1fa3e0d1330f8b9955ad5acf516"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-focused-final-2026-10-14.log",
+      "bytes": 335,
+      "sha256": "3770e5e8303c3dbd5f9b311a540f6b3294f4594a8e5366b785ef0f18277605bd"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-focused-final-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "259976c9410cbc351e4b686724e4c0478b43e817819eceee7b76eb2a77a82eac"
+    },
+    {
+      "path": "release-evidence/discovery-adversarial-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-native-stream-2026-10-14.json",
+      "bytes": 314342,
+      "sha256": "89792d35d44a0ce92bd5a71bf91118aa2b2a7814a43fdb0f9932b15c13d84984"
+    },
+    {
+      "path": "release-evidence/discovery-stale-focused-2026-10-14.log",
+      "bytes": 324,
+      "sha256": "2c1939b10d8aded59f5481253ba6436ab1df7b19d8e04773c1e64494251b64c7"
+    },
+    {
+      "path": "release-evidence/discovery-stale-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/discovery-stale-negative-2026-10-14.log",
+      "bytes": 1682,
+      "sha256": "c97405fbcb4a1111ce1d5fc5bb24bde4e5591dfd193fcd4485eb3c30099cfe8d"
+    },
+    {
+      "path": "release-evidence/discovery-stale-negative-2026-10-14.json",
+      "bytes": 368,
+      "sha256": "ec72c63dc07c83830e0da6bc43d8da19365c651d446720be0692d019c6075e9c"
+    },
+    {
+      "path": "release-evidence/discovery-stale-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "ea453a6086f5d8144b0c1f31783ceeebd33bd9c7d968c96d577e717782d543ec"
+    },
+    {
+      "path": "release-evidence/discovery-stale-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/discovery-stale-check-final-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "50f43c18f7d129b0e06d0baf4683f69c800907667d5848aeb1c17e6d9eaf5ca1"
+    },
+    {
+      "path": "release-evidence/discovery-stale-check-final-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "172d72b073a535c672f585c6ba1008baa6ec431e29eb66d3c0668371bff40bef"
+    },
+    {
+      "path": "release-evidence/verification-stream-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-focused-2026-10-14.log",
+      "bytes": 322,
+      "sha256": "6b2fdb19822b25c232d42c8532369f910acd1a26f716debad1c231bbe677f347"
+    },
+    {
+      "path": "release-evidence/verification-stream-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-focused-final-2026-10-14.log",
+      "bytes": 323,
+      "sha256": "9d37a0c2e69643beb9900def52d6f96d8410d00514358385ddfd22e057a5f338"
+    },
+    {
+      "path": "release-evidence/verification-stream-focused-final-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-lifetime-probe-2026-10-14.json",
+      "bytes": 660,
+      "sha256": "bc0f083f7251657ecf1e08039a58c6d545193c9cd64e159535503a47977ba3d4"
+    },
+    {
+      "path": "release-evidence/verification-stream-lifetime-probe-2026-10-14.log",
+      "bytes": 1490,
+      "sha256": "efe1fe24425b7d7c49e5c939d6395d6faacf452688f6a3d5a45b74ba5cfd2299"
+    },
+    {
+      "path": "release-evidence/verification-stream-lifetime-probe-source-2026-10-14.txt",
+      "bytes": 3594,
+      "sha256": "36945b72e12c4c2a91dbbd86a02a92a5e03f780817f236dc4457f819ee713596"
+    },
+    {
+      "path": "release-evidence/verification-stream-package-2026-10-14.log",
+      "bytes": 115,
+      "sha256": "15aebbd47f01496d5cd026f8fd8ac8647d5453c0c7ed24927c90da8fb8d5fc0c"
+    },
+    {
+      "path": "release-evidence/verification-stream-package-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-red-2026-10-14.log",
+      "bytes": 355,
+      "sha256": "cf68bba307c3e47e74a9f6b913e87d4fc3d7da3f092f172b13f1c236d268a8d3"
+    },
+    {
+      "path": "release-evidence/verification-stream-red-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-smoke-2026-10-14.log",
+      "bytes": 616,
+      "sha256": "3914b10207636b550876418c1a3d179ce723f2306d7a84eb0c8c468499a969e1"
+    },
+    {
+      "path": "release-evidence/verification-stream-smoke-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-workspace-build-2026-10-14.log",
+      "bytes": 981,
+      "sha256": "b2fe84e477a5b04759c21f5c8383e7ed6ba74f9cc1cf97e1250c913f4d7fc4dd"
+    },
+    {
+      "path": "release-evidence/verification-stream-workspace-build-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-browser-edge-2026-10-14.log",
+      "bytes": 10890,
+      "sha256": "c7ec1b38b9caa22cd36d906488e3da4a01d715793788db7540c3bbd4e2acd0e0"
+    },
+    {
+      "path": "release-evidence/verification-stream-browser-edge-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-prior-chrome-2026-10-14.json",
+      "bytes": 1204908,
+      "sha256": "c619599a174ae626d80bf6817bd14509132059588ffad9bf27b293cacd855f7b"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-prior-chrome-2026-10-14.log",
+      "bytes": 180804,
+      "sha256": "e7a69b99190e692832601dc9464b7e4999ebc545d53e54708f265e9fbeb0f676"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-current-edge-2026-10-14.json",
+      "bytes": 1270961,
+      "sha256": "e9d5de045f22835b004eb8d0691f43e75efa11a5c966c4fa774ddfb1ea92d6b7"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-current-edge-2026-10-14.log",
+      "bytes": 229517,
+      "sha256": "54bfc0475006e1427493a006b4768a9dd966e664744847c8796d8f46549b141f"
+    },
+    {
+      "path": "release-evidence/verification-stream-browser-chrome-2026-10-14.log",
+      "bytes": 10892,
+      "sha256": "8b400b8e4e7156807da70c547969e4bf1a71c33181bf0be7dd18a55e4ed85cb8"
+    },
+    {
+      "path": "release-evidence/verification-stream-browser-chrome-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/native-stream-old-config-2026-10-14.json",
+      "bytes": 1000,
+      "sha256": "b28529e2f9c2dd2ea400870b228d988c867c6f042b708286ef0b021c8aaae928"
+    },
+    {
+      "path": "release-evidence/native-stream-old-2026-10-14.log",
+      "bytes": 2561,
+      "sha256": "fad1e7b476efcbc51fb428a20938dabba6160301d1e95e1bd5883ced86385318"
+    },
+    {
+      "path": "release-evidence/native-stream-old-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/native-stream-edge-2026-10-14.log",
+      "bytes": 542,
+      "sha256": "86021ea13cae86ff87174ede34fc72611939e46835fc54a2026188e4010800c4"
+    },
+    {
+      "path": "release-evidence/native-stream-edge-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/native-stream-chrome-2026-10-14.log",
+      "bytes": 542,
+      "sha256": "536d12a09f9c4c96c4e50f7245f4c4dd6c60dd0060cef31167e771742fa14620"
+    },
+    {
+      "path": "release-evidence/native-stream-chrome-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-native-stream-old\\pairing-Stop-cancels-prefe-1526c--and-resumes-without-resend\\trace.zip",
+      "bytes": 11022698,
+      "sha256": "a0d8e68715971081474ef62703d9afed3e45bd7e6ed7df2321ad25afd7d9cd5f"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-pairing-transfer-map-2026-10-14.json",
+      "bytes": 314831,
+      "sha256": "9840350cb40cf55a17d49a8435cfa3ac67eb2fe22269209aadc9d32f9d74b896"
+    },
+    {
+      "path": "release-evidence/ledger-link-audit-2026-10-14.json",
+      "bytes": 419510,
+      "sha256": "58848060d9855c2adecb252ba6c62e2fd18426333eb439bb57a94927cc37b8ae"
+    },
+    {
+      "path": "release-evidence/pairing-transfer-obligation-review-2026-10-14.json",
+      "bytes": 12720,
+      "sha256": "6f4c16c26142b3438531e7053491c46f5e5991ccba709643d209ee3db2ac78b5"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-exact-boundary-2026-10-14.json",
+      "bytes": 322533,
+      "sha256": "e1859f58daf8ee16c9bc52516c176048abb75258d9c8b40ce28a9bb2222ef00d"
+    },
+    {
+      "path": "release-evidence/exact-stream-boundary-focused-2026-10-14.log",
+      "bytes": 375,
+      "sha256": "2ce3a2539e9f73747dd325f92cce5abd94736db6831745bf6f5bb8d5f81acac2"
+    },
+    {
+      "path": "release-evidence/exact-stream-boundary-focused-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/exact-stream-boundary-check-2026-10-14.log",
+      "bytes": 1459,
+      "sha256": "91062837f22663e5a29de8775c40f8f40e8cf074843bca2fc20d7b71a178b190"
+    },
+    {
+      "path": "release-evidence/exact-stream-boundary-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/webrtc-transfer-before-boundary-2026-10-14.source.txt",
+      "bytes": 23938,
+      "sha256": "52945f113f1db75120814cb4d6a3f3a844c29764bd8eeada05421b5f753352cf"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-discovery-scope-2026-10-14.json",
+      "bytes": 324210,
+      "sha256": "e1f119d7dd227b4a497dbb177567fcb9ad4ba95880a05c34c66540e3a46aa5aa"
+    },
+    {
+      "path": "release-evidence/discovery-obligation-scope-review-2026-10-14.json",
+      "bytes": 4450,
+      "sha256": "060114d9568114dc81f602827ef4e83ff72370fe12b647348e85041ffcc4c547"
+    },
+    {
+      "path": "release-evidence/rendezvous-runtime-before-discovery-label-2026-10-14.source.txt",
+      "bytes": 12087,
+      "sha256": "55343bc6e4b08d66c0b57ca14b78e77885c2629acda4f7b9fe955a34795355f1"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-pending-verification-2026-10-15.json",
+      "bytes": 327372,
+      "sha256": "d57a0b67f931aeab624599d218a7bb58f69b49b9183a147d70c18176d1dd8bc6"
+    },
+    {
+      "path": "release-evidence/discovery-host-adapter-snapshot-2026-10-14.json",
+      "bytes": 3067,
+      "sha256": "f5dd9ab58ecdb8defa53e64d8fe7d59554b5c42a7177994e1ed2c83c16c7fcc1"
+    },
+    {
+      "path": "release-evidence/discovery-host-routing-snapshot-2026-10-14.json",
+      "bytes": 1100,
+      "sha256": "7c6454d33b1582bd9e5c49df5c28c2c47d7a6aedb5e753addb22519da3506ea2"
+    },
+    {
+      "path": "release-evidence/discovery-synthetic-label-check-2026-10-14.log",
+      "bytes": 361,
+      "sha256": "e8913537993a63756330a5a7cce7f969aa74318a398794aeaa568dc95825b150"
+    },
+    {
+      "path": "release-evidence/discovery-synthetic-label-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/remote-sdp-boundary-probe-source-2026-10-14.txt",
+      "bytes": 3014,
+      "sha256": "5c9b53deaac6718ed6ffeb5f05c2a0d8f83e314136c0958ec5162894e5a1ff96"
+    },
+    {
+      "path": "release-evidence/remote-sdp-boundary-probe-generated-source-2026-10-14.txt",
+      "bytes": 3586,
+      "sha256": "959c165b63022fc02d9b4161e24adc09fe1d49dba38b37a0c810e20c1a345913"
+    },
+    {
+      "path": "release-evidence/remote-sdp-boundary-probe-2026-10-14.log",
+      "bytes": 818,
+      "sha256": "5220f1092bd9659f1f8c2dd04dc83c3dd99945965d13fb4c8a396c3b41b7505a"
+    },
+    {
+      "path": "release-evidence/remote-sdp-boundary-probe-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/remote-sdp-generated-2026-10-14.log",
+      "bytes": 818,
+      "sha256": "1786e874bcc184e6676aaef5769348502b9a2855a91d66e6223ef925c5aa2f65"
+    },
+    {
+      "path": "release-evidence/remote-sdp-generated-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/remote-sdp-handoff-finding-2026-10-14.json",
+      "bytes": 2540,
+      "sha256": "f10ba49e06a9ccb542bfa95d3e62fa717fbda2c9d64f9f1d0c98910d82ea13bd"
+    },
+    {
+      "path": "release-evidence/peer-candidate-unit-green-2026-10-14.log",
+      "bytes": 353,
+      "sha256": "9617fa741242bf4b0472ae9c5a0d1ccfb2a3d62e334269dff4a28d47e0a73400"
+    },
+    {
+      "path": "release-evidence/peer-candidate-unit-green-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-candidate-unit-red-2026-10-14.log",
+      "bytes": 3018,
+      "sha256": "d67af9cb63d5e6e4884df7d97a533de58c29158f17cada226f7ca21443de52b1"
+    },
+    {
+      "path": "release-evidence/peer-candidate-unit-red-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/peer-policy-check-2026-10-14.log",
+      "bytes": 1457,
+      "sha256": "d6ebac59092468b1f4c8f1c015e6e8704205e29b315bdfc1d3338083383084aa"
+    },
+    {
+      "path": "release-evidence/peer-policy-check-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-native-green-2026-10-14.log",
+      "bytes": 785,
+      "sha256": "dd6ce4cfff30ace53973cf33a84808efc41862790eadfa9e1ddc32d224026974"
+    },
+    {
+      "path": "release-evidence/peer-policy-native-green-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-native-red-2026-10-14.log",
+      "bytes": 4860,
+      "sha256": "69605efeec0a2982b9e9484ecbea419784b4d438b43ffd8f994057e60f445a97"
+    },
+    {
+      "path": "release-evidence/peer-policy-native-red-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/peer-policy-package-2026-10-14.log",
+      "bytes": 112,
+      "sha256": "59a2add1cd6cc230450fc3b5dd835129ad2290c43c870f2388a303745c622c75"
+    },
+    {
+      "path": "release-evidence/peer-policy-package-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-smoke-2026-10-14.log",
+      "bytes": 616,
+      "sha256": "bb313c8aacffc818b1c4d3c5d7305f2990a8a93d9b9aa47e18c52dc58fd04b39"
+    },
+    {
+      "path": "release-evidence/peer-policy-smoke-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-workspace-build-2026-10-14.log",
+      "bytes": 981,
+      "sha256": "cf20e7501b06f92ba88f21213506546c18d9ac86cc42315455bef649f5fade36"
+    },
+    {
+      "path": "release-evidence/peer-policy-workspace-build-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-current-chrome-2026-10-14.json",
+      "bytes": 1204399,
+      "sha256": "ed089577e1873bfb59cb3588034115ea8f19706fc1a66d424b673e1e374170c7"
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-current-chrome-2026-10-14.log",
+      "bytes": 190403,
+      "sha256": "fff52ab980532b9186cb5eca62d8132f57d91775ea145b2e50146c117b0ef5b9"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-peer-policy-red\\peer-candidate-policy-reje-15428-ative-SDP-processing-sender\\trace.zip",
+      "bytes": 794744,
+      "sha256": "27e10627159c103c3c89c18da789c56af386082a08dad0934f9433e86cf6c60f"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-peer-policy-red\\peer-candidate-policy-reje-cf148-ive-SDP-processing-receiver\\trace.zip",
+      "bytes": 204642,
+      "sha256": "0b50adc692a818acf25d39871a047c3abc7a315a472b0c3460a5daf4fd287afc"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-edge-2026-10-14.log",
+      "bytes": 12609,
+      "sha256": "881febc8c39c1c443d9f5811b6bc072dd07321b3d8605d8f1df558c2ac3629a9"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-edge-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/peer-policy-reload-retry-2026-10-14.log",
+      "bytes": 536,
+      "sha256": "cea3706131cb968784e1290385091206939ea5b566c8e56586c6845d33a38e45"
+    },
+    {
+      "path": "release-evidence/peer-policy-reload-retry-exit-2026-10-14.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-host-status-2026-10-14.json",
+      "bytes": 1241,
+      "sha256": "4a287d0dd29be97891a5110d8208312e54a2409b0e1ba33453d2318aae277f7e"
+    },
+    {
+      "path": "release-evidence/peer-policy-host-owned-artifact-sizes-2026-10-14.json",
+      "bytes": 512,
+      "sha256": "b3ee28f6a498c6d91d0d0fac2000563d636e94ee4ad0e8f75fee356bd5f2235d"
+    },
+    {
+      "path": "release-evidence/peer-policy-first-edge-trace-observation-2026-10-14.json",
+      "bytes": 12275,
+      "sha256": "11b16652f3786f46fc3d363c7bed5e99802dd1dd087137daf8a998319309fded"
+    },
+    {
+      "path": "release-evidence/peer-policy-pagefile-observation-2026-10-14.json",
+      "bytes": 110,
+      "sha256": "50687db0a475dbf922c6fa354c29da525827363e4f95a1277c6a13cf09831f3c"
+    },
+    {
+      "path": "release-evidence/peer-policy-commit-observation-2026-10-14.json",
+      "bytes": 136,
+      "sha256": "6736931020424b2f5350a4b3612682aac57561cf4193b398a1618c27c7d47486"
+    },
+    {
+      "path": "release-evidence/peer-policy-shell-startup-failure-2026-10-14.json",
+      "bytes": 650,
+      "sha256": "f49550b24e3eb746d72efc5c503e5ce41c97ca80c65e3d68fac277718fab8c56"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-peer-policy-full-edge\\pairing-sender-and-receive-160b9-locks-after-source-recovery\\trace.zip",
+      "bytes": 26165,
+      "sha256": "6019908cb16b838f91f940bf46ee402b1664ed674639260ec7d1d2659ee6571b"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-edge-rerun-2026-10-15.log",
+      "bytes": 11394,
+      "sha256": "314d9d19552f1f5ce99f34f82d8467cbd5168b704f7c451dbc669bb9ae54c084"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-edge-rerun-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-preserved-edge-rerun-2026-10-15.json",
+      "bytes": 1280708,
+      "sha256": "d438774650e2dc9f869310cac7e9e2d515d20232df1ffbbef19869b3b0e74843"
+    },
+    {
+      "path": "release-evidence/peer-policy-preserved-edge-rerun-2026-10-15.log",
+      "bytes": 240900,
+      "sha256": "8c5c6c4cc03773fdb9169688547ad68ffe3523419d21bd135b51039b0c51c6de"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-chrome-2026-10-15.log",
+      "bytes": 11244,
+      "sha256": "77011a8e7832f7a922032f6569e8f262fbd19e037693f158521d0980ec202a9e"
+    },
+    {
+      "path": "release-evidence/peer-policy-full-chrome-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/peer-policy-during-chrome-reserve-observation-2026-10-15.json",
+      "bytes": 607,
+      "sha256": "81cad7acf492e2d671ec03b4b966fb0c08f8cb90eb65eab2e7b52831bec711f7"
+    },
+    {
+      "path": "release-evidence/peer-policy-post-chrome-capacity-2026-10-15.json",
+      "bytes": 111,
+      "sha256": "89c6e2e5039b5f5962805ec6d3fc9ca9a7f858277082c10d95adb3b65074a1e5"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-boundaries-focused-2026-10-15.log",
+      "bytes": 372,
+      "sha256": "05884edc8c39d894b58074f67b265537037aebf2a5cc83da6626cb66324546c4"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-boundaries-focused-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-negative-open-after-abort-2026-10-15.log",
+      "bytes": 1283,
+      "sha256": "677b9cbcf55d6ce34fd38b42c12e9720753ed02799b91a18460eb932a9135df2"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-negative-cleanup-masks-primary-2026-10-15.log",
+      "bytes": 3166,
+      "sha256": "34f659dc88b930ab233ce9cfcd2d258e219aeba35f0ac458d9e944e945d7b49d"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-negative-controls-2026-10-15.json",
+      "bytes": 458,
+      "sha256": "0d9da5509c3aa516d994dc42d833e1de6524d0aa23b3f9f7deff8643bb5db0b7"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-boundaries-check-2026-10-15.log",
+      "bytes": 1456,
+      "sha256": "8470277703d82e462b6bf645dc8e485f49c1ebc8de2e6f38d7eb18007b37c705"
+    },
+    {
+      "path": "release-evidence/verification-cleanup-boundaries-check-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/webrtc-transfer-before-cleanup-boundaries-2026-10-15.source.txt",
+      "bytes": 27301,
+      "sha256": "40c9e6bc8a446b3a512c64c23fc0879d999ec80b36d884ef42ce92ebf71953a9"
+    },
+    {
+      "path": "release-evidence/pending-verify-chrome-final-2026-10-15.log",
+      "bytes": 787,
+      "sha256": "8a9f2a902ba4f728a565e364ff8959af4a9d8d028557c07d512976af12cb58b1"
+    },
+    {
+      "path": "release-evidence/pending-verify-chrome-final-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pending-verify-edge-final-2026-10-15.log",
+      "bytes": 787,
+      "sha256": "3218e78c2bd5d61606bbbb215ab3865ab77ebe74a804fcdc69ecf3aa5fceb9b2"
+    },
+    {
+      "path": "release-evidence/pending-verify-edge-final-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pending-verify-no-cancel-build-2026-10-15.log",
+      "bytes": 896,
+      "sha256": "ae942f5d31b351712a762ddeacaa40215ae10b7eb684f49ad55fe2ef2992b575"
+    },
+    {
+      "path": "release-evidence/pending-verify-no-cancel-control-2026-10-15.json",
+      "bytes": 388,
+      "sha256": "6c99fd042d93ff7b7df288de7eb330d128f22cd8576c2cf8725aa3718a13130d"
+    },
+    {
+      "path": "release-evidence/pending-verify-no-cancel-native-2026-10-15.log",
+      "bytes": 2885,
+      "sha256": "5c6f56cd431e2ffafe8f41769813a3f4974574efd1731e224d042ca113dd1d81"
+    },
+    {
+      "path": "release-evidence/pending-verify-old-config-2026-10-15.json",
+      "bytes": 800,
+      "sha256": "1570a04a22c0ab257323de97ac3f28aab87e8b23980239e45cfc88dfddc1abd0"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-old-2026-10-15.log",
+      "bytes": 2761,
+      "sha256": "9249da15e727b9988dfdd52dff3a95d9ad2871b60bc1305d20f6ad7b8bf1f303"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-old-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-old-phasewait-2026-10-15.log",
+      "bytes": 2703,
+      "sha256": "3031fc9350aa8958b11dcc38e64d91dd14fa1f3d36fb9bc73caf280b03f64208"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-old-phasewait-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-probe-2026-10-15.log",
+      "bytes": 532,
+      "sha256": "62a3a31f9366e8ac35dc15700ff10789cee90bde673ee59fad7944a62c819c19"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-probe-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-probe-longer-phase-source-2026-10-15.txt",
+      "bytes": 10757,
+      "sha256": "21cc73ef8502dfb7338f0ca3f6f63a8e22195655201079c865d5b5d5c45920c7"
+    },
+    {
+      "path": "release-evidence/pending-verify-read-probe-source-2026-10-15.txt",
+      "bytes": 10736,
+      "sha256": "8653901025ad757b8f0ca94ef459f10b90dcae75e60af155e599cd2c63f32038"
+    },
+    {
+      "path": "release-evidence/pending-verify-restored-build-2026-10-15.log",
+      "bytes": 896,
+      "sha256": "55e75984b8d794336ccd1a75120a3bb6eb80171177ca8633c4aab4a83b05916a"
+    },
+    {
+      "path": "release-evidence/pending-verify-strengthened-edge-2026-10-15.log",
+      "bytes": 3152,
+      "sha256": "cd86a1e6e1f53599a8477085d57a7f7a0ecceac635c6388b830560c8e2ac22f9"
+    },
+    {
+      "path": "release-evidence/pending-verify-strengthened-edge-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/pairing-before-pending-verify-strengthening-2026-10-15.source.txt",
+      "bytes": 126711,
+      "sha256": "50cb452ea25e530a258f7349c85f248050c983fe1b5566db5109511baf9e1f9e"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-portable-feasibility-2026-10-15.json",
+      "bytes": 327663,
+      "sha256": "1fa106ee0f67fef44716ac7c743d7c9e488dcc4bcb34419eeb6603166190fd00"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-read-old\\pending-verify-read-probe--d1e64-ter-Stop-8-MiB-native-probe\\trace.zip",
+      "bytes": 8762517,
+      "sha256": "37077769484e5229f3a40f78b3cf6ecbdcdea0e39b1e0a64a6c62227d26ce189"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-read-old-phasewait\\pending-verify-read-probe--d1e64-ter-Stop-8-MiB-native-probe\\trace.zip",
+      "bytes": 9661688,
+      "sha256": "42055ff10c5584fd09f989c0095b3180443bff1e91818250311491bedacd2deb"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-strengthened-edge\\pairing-Stop-during-verifi-65c63-ts-no-further-reads-stream-\\trace.zip",
+      "bytes": 10209999,
+      "sha256": "c0dd6c1c454ced9b4a8a34724ea0ff187cf86bd6ae29ce9697d87e2d56ff89b5"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-no-cancel\\pairing-Stop-during-verifi-65c63-ts-no-further-reads-stream-\\trace.zip",
+      "bytes": 10005261,
+      "sha256": "f3cfdd220dcff487e272f23599ccb16f8537e194bfbe86bff98b5456482b40b7"
+    },
+    {
+      "path": "release-evidence/portable-runtime-feasibility-2026-10-15.json",
+      "bytes": 1578,
+      "sha256": "e92bcd5320334211a9f70a317e40b4049c297f1252c6d7ec8f1567183df036af"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-before-portable-implementation-2026-10-15.json",
+      "bytes": 328078,
+      "sha256": "9110266ab43f5f55807b3b81936dd81b670a1267a390cc27af4feef03bd715fa"
+    },
+    {
+      "path": ".tmp/probe-portable-runtime-2026-10-15.mjs",
+      "bytes": 5002,
+      "sha256": "064c8c60711e321d0a42c75ed9656a0849f78c1882443fd093af70340b92fc8b"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\SHASUMS256.txt",
+      "bytes": 3171,
+      "sha256": "8912ada1431af8390bb3e30328d30bca701b59c7a6d5396b491293515c092c46"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\probe.mjs",
+      "bytes": 1209,
+      "sha256": "0d54988ee99e94b70e483825e0cb12274f9d6222d3b006f80d4bcc341a2572e4"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\probe.log",
+      "bytes": 239,
+      "sha256": "cf5d5e1d50dd7e81dcf2375180e192335eb4f34d7f0e17169584de5ccebd9d11"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\CHECKSUMS.json",
+      "bytes": 3407,
+      "sha256": "21b28725ab8316614064988c82ebb117d8d40363ea81ca322afc13f3ce8972c6"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\PHYSICAL-TEST-RECORD.md",
+      "bytes": 4276,
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\README.md",
+      "bytes": 25511,
+      "sha256": "b8c4a74d50dda0bec73c88a37726d9a702ca30ceb0fbb639e77c2db1f9de7e1b"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\START-HERE.txt",
+      "bytes": 1360,
+      "sha256": "6abeb255a1b0db045a1fb0817e775b9f4b07fbde8c75d266065bb1efd60b16cb"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\Start AirGap QR.cmd",
+      "bytes": 489,
+      "sha256": "34b42ce80ed30d01144488adf31eaebe6b87a0479f0b4d170e96f1883c6612e6"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\TRANSFER_PROCESS.md",
+      "bytes": 15924,
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\assets\\block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\assets\\index-BAvLvA70.js",
+      "bytes": 555442,
+      "sha256": "e9edb004df0de79dbfa19aebb8631d6f7c2ee12b96091b9d6c1751949b30a9e6"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\assets\\index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\assets\\qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\dist\\index.html",
+      "bytes": 903,
+      "sha256": "64e19784a05849a6de772662caa641d4e14e808857fa3f67569daadb4ddd8b2b"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\LICENSE",
+      "bytes": 157609,
+      "sha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+      "bytes": 93882184,
+      "sha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\compare-trees.mjs",
+      "bytes": 6930,
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\create-fixture.mjs",
+      "bytes": 3194,
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\lan-signaling.mjs",
+      "bytes": 3591,
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\launch.mjs",
+      "bytes": 6621,
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\local-http-security.mjs",
+      "bytes": 2387,
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\rendezvous.mjs",
+      "bytes": 32051,
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\serve.mjs",
+      "bytes": 6784,
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\scripts\\verify-release.mjs",
+      "bytes": 1897,
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\templates\\physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "release-evidence/package-external-runtime-2026-10-15.log",
+      "bytes": 116,
+      "sha256": "45bd5803dc79b02e176ec86255b6145a3c03b432cebcdd83ca65d2070e383761"
+    },
+    {
+      "path": "release-evidence/package-external-runtime-exit-2026-10-15.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "release-evidence/package-portable-runtime-2026-10-15.log",
+      "bytes": 116,
+      "sha256": "f8fe893c7e66d0136b8eb8acdf195fcc61305c584dc6e5b1a02eba4a8c90e1df"
+    },
+    {
+      "path": "release-evidence/package-portable-runtime-exit-2026-10-15.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "release-evidence/peer-policy-preserved-failed-edge-2026-10-15.json",
+      "bytes": 1253512,
+      "sha256": "3a2f0b98eb89add9a2050db1e296ae9a6b461e31ed059e0fa838a03ae12f788b"
+    },
+    {
+      "path": "release-evidence/peer-policy-preserved-failed-edge-2026-10-15.log",
+      "bytes": 224282,
+      "sha256": "8f0d06a03623cf2fc6585c6910282e48ed772cb8474f942ddd321792141850f4"
+    },
+    {
+      "path": "release-evidence/portable-package-validation-2026-10-15.json",
+      "bytes": 1544,
+      "sha256": "1ef2d690916e69f887aebc1944ad1dbd5ad8035fba2d4a7e6998e6eb2001e432"
+    },
+    {
+      "path": "release-evidence/portable-runtime-build-2026-10-15.log",
+      "bytes": 896,
+      "sha256": "9acf4e3a2c161bf42825e219a2b5579d08fe9a1ae83f774184e3677f4ccb0c32"
+    },
+    {
+      "path": "release-evidence/portable-runtime-build-exit-2026-10-15.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "release-evidence/portable-runtime-final-unit-2026-10-15.log",
+      "bytes": 230,
+      "sha256": "9193cd4b6091695c65fe5227762eeae2fcbf6c166ee22389517e3a076d07be59"
+    },
+    {
+      "path": "release-evidence/portable-runtime-final-unit-exit-2026-10-15.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "release-evidence/portable-runtime-preserved-2026-10-15.json",
+      "bytes": 593,
+      "sha256": "08b256905965ab48038ad24b2d36d1e1ebdbcf4ff12391f95b05d08874c801ce"
+    },
+    {
+      "path": "release-evidence/portable-runtime-type-2026-10-15.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "release-evidence/portable-runtime-type-exit-2026-10-15.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "release-evidence/portable-runtime-unit-2026-10-15.log",
+      "bytes": 230,
+      "sha256": "ddd027134dc35359033b60e902e3d4889f255b995a1764e1f27901f5045240e5"
+    },
+    {
+      "path": "release-evidence/portable-runtime-unit-exit-2026-10-15.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "release-evidence/windows-launcher-before-portable-2026-10-15.source.txt",
+      "bytes": 489,
+      "sha256": "34b42ce80ed30d01144488adf31eaebe6b87a0479f0b4d170e96f1883c6612e6"
+    },
+    {
+      "path": "release-evidence/windows-launcher-green-2026-10-15.log",
+      "bytes": 230,
+      "sha256": "f823cfe6b2cc913f23af1457393f21add4f28b28a00ec7e52428d48aa8a5000d"
+    },
+    {
+      "path": "release-evidence/windows-launcher-green-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/windows-launcher-red-2026-10-15.log",
+      "bytes": 4099,
+      "sha256": "1f192398459947278f25878d3d42ab91c9ff4747b545432ffdac96f554072734"
+    },
+    {
+      "path": "release-evidence/windows-launcher-red-corrected-2026-10-15.log",
+      "bytes": 3710,
+      "sha256": "471cbe305026430a108c9389af2f9dfe9953f17f93a121b2bda3a6fed83cf114"
+    },
+    {
+      "path": "release-evidence/windows-launcher-red-corrected-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/windows-launcher-red-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/windows-runtime-green-2026-10-15.log",
+      "bytes": 229,
+      "sha256": "594b6118e1cc96d14e1df2943a73b79356bcd1cf92a613fc24c25706eaf40f14"
+    },
+    {
+      "path": "release-evidence/windows-runtime-green-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "release-evidence/windows-runtime-parser-review-red-2026-10-15.log",
+      "bytes": 1108,
+      "sha256": "34d1b195d1dfe47efc47ff92f9ae6f55c421a723e99ef2f83858e28a739984f1"
+    },
+    {
+      "path": "release-evidence/windows-runtime-parser-review-red-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/windows-runtime-red-2026-10-15.log",
+      "bytes": 912,
+      "sha256": "c033a98492f26ef1d75553e4f7b797ab37847763db568d5a7b2c5ea5517d7002"
+    },
+    {
+      "path": "release-evidence/windows-runtime-red-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/portable-before-README-md-2026-10-15.source.txt",
+      "bytes": 25511,
+      "sha256": "b8c4a74d50dda0bec73c88a37726d9a702ca30ceb0fbb639e77c2db1f9de7e1b"
+    },
+    {
+      "path": "release-evidence/portable-before-RELEASE-CHECKLIST-md-2026-10-15.source.txt",
+      "bytes": 85323,
+      "sha256": "75fe88f449b395f7bee0f01788f8bd66c50333f60391e1e44751e3f4806c9cf9"
+    },
+    {
+      "path": "release-evidence/portable-before-RELEASE-HARDENING-md-2026-10-15.source.txt",
+      "bytes": 127685,
+      "sha256": "2d4bbf2a4d39a4cef133641eab8ca2d5ae91db56da77810a23e1295b2fced56f"
+    },
+    {
+      "path": "release-evidence/portable-before-Start-AirGap-QR-cmd-2026-10-15.source.txt",
+      "bytes": 489,
+      "sha256": "34b42ce80ed30d01144488adf31eaebe6b87a0479f0b4d170e96f1883c6612e6"
+    },
+    {
+      "path": "release-evidence/portable-before-scripts-package-offline-mjs-2026-10-15.source.txt",
+      "bytes": 3424,
+      "sha256": "3cb5aefd1bd5cef202e15b00697a8682358be37547f843285be0e26580adb5ab"
+    },
+    {
+      "path": "release-evidence/acceptance-obligations-2026-10-14.json",
+      "bytes": 328496,
+      "sha256": "f87cdfe6ba68986f1b3fc5de91bf0b090901e963712ac3e5b7b1b0198573da79"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\CHECKSUMS.json",
+      "bytes": 3165,
+      "sha256": "9e4e492d75140ea17b640b73b303a77df440ad5f0c4134a5e77b1c929aaeec0b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\PHYSICAL-TEST-RECORD.md",
+      "bytes": 4276,
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\README.md",
+      "bytes": 26455,
+      "sha256": "850251e0f7fdbfba853e1f996f277420ecdae9c0d52a82492b99469f57ef47d5"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\START-HERE.txt",
+      "bytes": 1360,
+      "sha256": "6abeb255a1b0db045a1fb0817e775b9f4b07fbde8c75d266065bb1efd60b16cb"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\Start AirGap QR.cmd",
+      "bytes": 600,
+      "sha256": "44e9909a60fd5145134c27859ed0a04b5ee03defd9d6793eda14fbc88367be36"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\TRANSFER_PROCESS.md",
+      "bytes": 15924,
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\dist\\assets\\block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\dist\\assets\\index-BAvLvA70.js",
+      "bytes": 555442,
+      "sha256": "e9edb004df0de79dbfa19aebb8631d6f7c2ee12b96091b9d6c1751949b30a9e6"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\dist\\assets\\index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\dist\\assets\\qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\dist\\index.html",
+      "bytes": 903,
+      "sha256": "64e19784a05849a6de772662caa641d4e14e808857fa3f67569daadb4ddd8b2b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\scripts\\compare-trees.mjs",
+      "bytes": 6930,
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\scripts\\create-fixture.mjs",
+      "bytes": 3194,
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\scripts\\lan-signaling.mjs",
+      "bytes": 3591,
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\scripts\\launch.mjs",
+      "bytes": 6621,
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\scripts\\local-http-security.mjs",
+      "bytes": 2387,
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\scripts\\rendezvous.mjs",
+      "bytes": 32051,
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\scripts\\serve.mjs",
+      "bytes": 6784,
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\scripts\\verify-release.mjs",
+      "bytes": 1897,
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime\\templates\\physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\CHECKSUMS.json",
+      "bytes": 3625,
+      "sha256": "e45ab735fd21ae6f165c6d315ecd42a0d9d9f98f8d20fd43d73f48f8d0c61dc9"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\PHYSICAL-TEST-RECORD.md",
+      "bytes": 4276,
+      "sha256": "5f6a61d943ea8909d736d696622ba8bac6db145adf56912d9a5680d7650384e1"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\README.md",
+      "bytes": 26455,
+      "sha256": "850251e0f7fdbfba853e1f996f277420ecdae9c0d52a82492b99469f57ef47d5"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\START-HERE.txt",
+      "bytes": 1428,
+      "sha256": "657f3724c01e15c3fda8124eb9edefad7505e1ab1f44ae94393086abc56e8a43"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\Start AirGap QR.cmd",
+      "bytes": 600,
+      "sha256": "44e9909a60fd5145134c27859ed0a04b5ee03defd9d6793eda14fbc88367be36"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\TRANSFER_PROCESS.md",
+      "bytes": 15924,
+      "sha256": "ff3834ea07d9924448daad11ea9c61035c8a9a2417b3ff9b6ebad9159dcbaf4f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\dist\\assets\\block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\dist\\assets\\index-BAvLvA70.js",
+      "bytes": 555442,
+      "sha256": "e9edb004df0de79dbfa19aebb8631d6f7c2ee12b96091b9d6c1751949b30a9e6"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\dist\\assets\\index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\dist\\assets\\qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\dist\\index.html",
+      "bytes": 903,
+      "sha256": "64e19784a05849a6de772662caa641d4e14e808857fa3f67569daadb4ddd8b2b"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime\\LICENSE",
+      "bytes": 157609,
+      "sha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime\\ORIGIN.json",
+      "bytes": 423,
+      "sha256": "41faf3757cfa4792def93e9fdf43296d5e9b39b4b5ed7199a89b2fc6494488fb"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\runtime\\node.exe",
+      "bytes": 93882184,
+      "sha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\scripts\\compare-trees.mjs",
+      "bytes": 6930,
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\scripts\\create-fixture.mjs",
+      "bytes": 3194,
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\scripts\\lan-signaling.mjs",
+      "bytes": 3591,
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\scripts\\launch.mjs",
+      "bytes": 6621,
+      "sha256": "f24bf9c5810352b984af01df83d8f61ba6731b8a632dde82033cfb26c7970d71"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\scripts\\local-http-security.mjs",
+      "bytes": 2387,
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\scripts\\rendezvous.mjs",
+      "bytes": 32051,
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\scripts\\serve.mjs",
+      "bytes": 6784,
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\scripts\\verify-release.mjs",
+      "bytes": 1897,
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime\\templates\\physical-test-record.json",
+      "bytes": 13994,
+      "sha256": "415cf01ceef90bbffb610f614e5c94c95e44a86d8b48d37312b3ec6554ad4120"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15.log",
+      "bytes": 11798,
+      "sha256": "c9f8205eda38608869232ab7bd73e8e569bb2b5983c8fa3d1f040019c5ad6275"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15-started.json",
+      "bytes": 464,
+      "sha256": "fdb9ecc3cdc5c0c8a6bb47245c80df72f8796fb0c6122c4e403acbd7537ebace"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15-observations.json",
+      "bytes": 7593,
+      "sha256": "35a7191b493c1279cd3b22366ba6d1c5a43849bb27130afee8a5747bd2152c35"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15.config.mjs",
+      "bytes": 728,
+      "sha256": "8600f10d94465c30122f2a55b70dc3fe028c67f7b4ef71b8f6bfbba3d92182e4"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-edge-2026-10-15-server.mjs",
+      "bytes": 501,
+      "sha256": "0e47be225ee0757d949a9b16c7a5d3e8493c8171651b228491549af2a03cc05f"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15.log",
+      "bytes": 11799,
+      "sha256": "d0a8300e0f62a0fe56567d22ecdd395a2da56e17ffb7a28389d959d3526e414b"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15-started.json",
+      "bytes": 465,
+      "sha256": "0be43b5029dfcdd0050980ae20d838c92f772474f679d0154276e2f53b4ad6a4"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15-observations.json",
+      "bytes": 7615,
+      "sha256": "3015de1bb92db219ecb588ef76ae0a623e54e77edda5e9d94adc5850b394580e"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15.config.mjs",
+      "bytes": 730,
+      "sha256": "3124e1da57c143dbe28fe422794f45c7f01e07b881fe248cfc2f482194137a5d"
+    },
+    {
+      "path": "release-evidence/portable-runtime-full-chrome-2026-10-15-server.mjs",
+      "bytes": 501,
+      "sha256": "0e47be225ee0757d949a9b16c7a5d3e8493c8171651b228491549af2a03cc05f"
+    },
+    {
+      "path": "release-evidence/external-runtime-cwd-probe-2026-10-15.json",
+      "bytes": 1014,
+      "sha256": "98a316a53267aae229ee32300c54a3a7700c4e1f9c9cec5393a16fbf7fa9b66e"
+    },
+    {
+      "path": "release-evidence/external-runtime-pinned-path-prototype-2026-10-15.json",
+      "bytes": 828,
+      "sha256": "e38d3b24a391916874be53e7ba1a684480340c3d5fa2f4336a96084c48b7b38b"
+    },
+    {
+      "path": "release-evidence/gitignore-before-current-reconciliation-2026-10-15.source.txt",
+      "bytes": 97,
+      "sha256": "bacd164322f31f6bc68354e54b1903899063d507da0673b1a3af30db1922eced"
+    },
+    {
+      "path": "release-evidence/historical-host-snapshot-recovery-2026-10-15.json",
+      "bytes": 705,
+      "sha256": "9d37e4b41a51d0430abfe11157364cd4ab1c9434af6ec5a64ff512537eba4d01"
+    },
+    {
+      "path": "release-evidence/legacy-status-helper-before-guard-2026-10-15.source.txt",
+      "bytes": 906,
+      "sha256": "5a854136094b012b7134ce4b8fc6a284099b1f0049a93bb3e51100561e786ffb"
+    },
+    {
+      "path": "release-evidence/legacy-status-overwrite-guard-2026-10-15.json",
+      "bytes": 314,
+      "sha256": "e007234733587bfd9f9e208d72a500c6799cb936e7725d3040dbb98c2b860b0e"
+    },
+    {
+      "path": "release-evidence/legacy-status-overwrite-guard-2026-10-15.log",
+      "bytes": 670,
+      "sha256": "049bc2416a76e464adaeefe4ff26f42ad2287c26d7b43300d9b0c8548dc83150"
+    },
+    {
+      "path": "release-evidence/owned-c-dependencies-1-before-2026-10-15.json",
+      "bytes": 1274562,
+      "sha256": "1e1d2c78ec778618c2eca02c802b0cd0c95926bc6428fdf132906d0beed64c62"
+    },
+    {
+      "path": "release-evidence/owned-c-dependencies-1-compression-2026-10-15.log",
+      "bytes": 34759,
+      "sha256": "09f72465e93c15a91bd07824766688f09c23ee00aa11cde5b3b3f6a962401b16"
+    },
+    {
+      "path": "release-evidence/owned-c-dependencies-partial-audit-2026-10-15.json",
+      "bytes": 413,
+      "sha256": "d10720a1bc60827333d3e712da6666fd9002434b4bab2ddb90cd336b656e7841"
+    },
+    {
+      "path": "release-evidence/owned-c-large-dependencies-preservation-2026-10-15.json",
+      "bytes": 20,
+      "sha256": "6c1db664439054b14cf5baade95beb5c1b194266ecf60003a2aab24c85fd8359"
+    },
+    {
+      "path": "release-evidence/owned-c-profile-live-processes-2026-10-15.json",
+      "bytes": 2342,
+      "sha256": "b79b2c7d62c7c4fd6ed86bff995cdef0026621ed5c9a7608a1ff563c28170ecf"
+    },
+    {
+      "path": "release-evidence/owned-c-profile-orphan-teardown-2026-10-15.json",
+      "bytes": 401,
+      "sha256": "f3dc23542b15a48d5f6e251449db0337754ec6d3e66e35fed6a97677ea0e8d0c"
+    },
+    {
+      "path": "release-evidence/owned-c-results-1-compression-2026-10-15.log",
+      "bytes": 215542,
+      "sha256": "66bfd8c41912f806aa61111825b7b45246b3f69703abcb77b6d8647da49abbaf"
+    },
+    {
+      "path": "release-evidence/owned-c-results-1-preservation-2026-10-15.json",
+      "bytes": 1256599,
+      "sha256": "15abf589996b8d18f1f78d4a1b8398f8d2d9cb29bfa4ebf2ef3c835fe162f85b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-10-before-2026-10-15.json",
+      "bytes": 1209670,
+      "sha256": "5e5193181e85002cc63fc93bdd8c7cddd83dd96b18c2c49f8b1ff106b2c23abb"
+    },
+    {
+      "path": "release-evidence/owned-c-results-10-compression-2026-10-15.log",
+      "bytes": 204053,
+      "sha256": "8e12a362c6c0e4951ab725752de657f4c372f38f4ec73270d4290ee0da530a56"
+    },
+    {
+      "path": "release-evidence/owned-c-results-10-preservation-2026-10-15.json",
+      "bytes": 1210031,
+      "sha256": "518577598ff84d0a38333d61846b199a43ea79748c619ec1464253fe3764d2af"
+    },
+    {
+      "path": "release-evidence/owned-c-results-2-compression-2026-10-15.log",
+      "bytes": 228262,
+      "sha256": "30188a14f66ac87c60a7a4187aa698cff2ca07b81d4da7f0938440930960c7ab"
+    },
+    {
+      "path": "release-evidence/owned-c-results-2-preservation-2026-10-15.json",
+      "bytes": 1268618,
+      "sha256": "2261386c0812cdf98bb7043cc8375cf6e228d32aca2599ba369d569dfb182d5e"
+    },
+    {
+      "path": "release-evidence/owned-c-results-3-compression-2026-10-15.log",
+      "bytes": 251022,
+      "sha256": "6b21a72f80774e7cc515b90e59d93d1e48f50ff51b53091154519c16607590df"
+    },
+    {
+      "path": "release-evidence/owned-c-results-3-preservation-2026-10-15.json",
+      "bytes": 1267224,
+      "sha256": "b1ef9dcc3b7dc43b99f483f2ddc29cec0def7b95448fbf85c1f98ea99aab1e7a"
+    },
+    {
+      "path": "release-evidence/owned-c-results-4-compression-2026-10-15.log",
+      "bytes": 220471,
+      "sha256": "c025398e9465a58eec3d1b50371cd5528ea5fb60679f873fc35c15039432218b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-4-preservation-2026-10-15.json",
+      "bytes": 1259288,
+      "sha256": "55a40f1c6b37821ef066220885970b908133364a3f9577afdcb055529f0890fa"
+    },
+    {
+      "path": "release-evidence/owned-c-results-5-compression-2026-10-15.log",
+      "bytes": 236686,
+      "sha256": "4c73be245d35c26de433911a8525808f658a68e8abfcaa7cd5d1c54321112e75"
+    },
+    {
+      "path": "release-evidence/owned-c-results-5-preservation-2026-10-15.json",
+      "bytes": 1274127,
+      "sha256": "92052d13a9e12d6237eacaca890a8674dedd51422bd94c4715f35e6b6f9b2d19"
+    },
+    {
+      "path": "release-evidence/owned-c-results-6-before-2026-10-15.json",
+      "bytes": 1266221,
+      "sha256": "5f8a8121ac95e26fefb1d95b0c8977fc502426b9e9751dad42cc35c3536758ed"
+    },
+    {
+      "path": "release-evidence/owned-c-results-6-compression-2026-10-15.log",
+      "bytes": 228623,
+      "sha256": "d68f89c323e910ef1a937eb6a54ec0494383527152f4637d124ed6d2cccdb42d"
+    },
+    {
+      "path": "release-evidence/owned-c-results-6-preservation-2026-10-15.json",
+      "bytes": 1266582,
+      "sha256": "286d40095e7b596aa11a6b58afc24d84bfdf104312019cd1942eb943e85e94fc"
+    },
+    {
+      "path": "release-evidence/owned-c-results-7-before-2026-10-15.json",
+      "bytes": 1269870,
+      "sha256": "b76f2e202a3d4cc94c30eb036f0729ffc87419bd8fcd66595550ab16ffc4fe1b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-7-compression-2026-10-15.log",
+      "bytes": 235580,
+      "sha256": "247e3cd95cc5ded7fb0963ddbf817de23e0715c2e99680b5f5d1e90512d5eb42"
+    },
+    {
+      "path": "release-evidence/owned-c-results-7-preservation-2026-10-15.json",
+      "bytes": 1270231,
+      "sha256": "72fa1728489b73d823d21eea13fec1a005ea0ab312d4697afa24f284ffd35dab"
+    },
+    {
+      "path": "release-evidence/owned-c-results-8-before-2026-10-15.json",
+      "bytes": 1209682,
+      "sha256": "a066e942df155050c43e2f37841aba01ca334ba48ab86b037fbb37b763af476b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-8-compression-2026-10-15.log",
+      "bytes": 205873,
+      "sha256": "16c2503ed2ad9362d004c80f97361f824ec648c7f25a06d55d3edf07cfc255b1"
+    },
+    {
+      "path": "release-evidence/owned-c-results-8-preservation-2026-10-15.json",
+      "bytes": 1210043,
+      "sha256": "34cbb007ea1d93ad942c9088232c963a3f947ab2fb9ba515f82442d67abe220c"
+    },
+    {
+      "path": "release-evidence/owned-c-results-9-before-2026-10-15.json",
+      "bytes": 1196599,
+      "sha256": "f39ebc424e689c4bf9056f87fdbe4efc09bfb5fc139eba373f1157588133b109"
+    },
+    {
+      "path": "release-evidence/owned-c-results-9-compression-2026-10-15.log",
+      "bytes": 209817,
+      "sha256": "cc1487652474017354f2ca012e202ee9d63b58090d14ad3bb0ccb3b615192966"
+    },
+    {
+      "path": "release-evidence/owned-c-results-9-preservation-2026-10-15.json",
+      "bytes": 1196960,
+      "sha256": "4172c7c73cafddaa6d604bc80a075ee05fcd74c18182d90e304ac38fa3e7b03b"
+    },
+    {
+      "path": "release-evidence/owned-c-results-preservation-2026-10-15.json",
+      "bytes": 2370,
+      "sha256": "28106022197d5ceaca7e202698eaef711e6d554b6db8fa3515032a678f3e4d2b"
+    },
+    {
+      "path": "release-evidence/owned-c-stage-logical-capacity-2026-10-15.json",
+      "bytes": 19109,
+      "sha256": "7755d0cc34f676384a9332a228c5056618d5db8cc2e760dd261fe944bd023f8b"
+    },
+    {
+      "path": "release-evidence/peer-policy-chrome-post-partial-compression-inventory-2026-10-15.json",
+      "bytes": 1205254,
+      "sha256": "b034e7bccecc45a91d7ae2575664482f922b5a160ff9eb7f9c360cb891789809"
+    },
+    {
+      "path": "release-evidence/peer-policy-preserved-chrome-capacity-2026-10-15.log",
+      "bytes": 133009,
+      "sha256": "763945013c213256f7705254d2a27afeac9976251d137264f81b6965d35f2ba2"
+    },
+    {
+      "path": "release-evidence/portable-browser-current-preflight-2026-10-15.log",
+      "bytes": 664,
+      "sha256": "dbd648af6266edc6002922576cf614f1d028a3eff07993d0f5c671148632cebb"
+    },
+    {
+      "path": "release-evidence/portable-browser-current-preflight-exit-2026-10-15.txt",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "release-evidence/portable-browser-source-drift-refusal-2026-10-15.log",
+      "bytes": 546,
+      "sha256": "b69805fa9304ce7b1df06047f41ed39f2779b1b5f1e026cf0e5d424ef7b2b163"
+    },
+    {
+      "path": "release-evidence/portable-candidate-runtime-preservation-2026-10-15.json",
+      "bytes": 762,
+      "sha256": "2892ca5daeea9710367ed5e8256b1ce2af34a9c34bda4cf0a7fc86c60796d78f"
+    },
+    {
+      "path": "release-evidence/portable-current-input-drift-2026-10-15.json",
+      "bytes": 425,
+      "sha256": "c67df8abcf540abba1b8f3204779aade9c8b788ccc4d3d96005ad8f24b29f8f1"
+    },
+    {
+      "path": "release-evidence/portable-current-manifest-proposal-2026-10-15.json",
+      "bytes": 127382,
+      "sha256": "757ba0f164da6947cba539e0b71755d2fc6971d9576427d4e1dcec86d042a983"
+    },
+    {
+      "path": "release-evidence/portable-host-resource-cross-api-2026-10-15.json",
+      "bytes": 3488,
+      "sha256": "d0163e8283290a08f7cd992de5ac0df18a357363a0103c95cfbdedbdcfb8382b"
+    },
+    {
+      "path": "release-evidence/portable-preflight-status-from-legacy-helper-2026-10-15.json",
+      "bytes": 1241,
+      "sha256": "33ce37884a3cff32bed4c786c4e270a0a8065a7b96d12242092f0a15c9185af0"
+    },
+    {
+      "path": "release-evidence/portable-preserved-evidence-drift-2026-10-15.json",
+      "bytes": 64,
+      "sha256": "816a95d7f59126db6a086b450148cff3d83253723ed64f5109518a050453ba86"
+    },
+    {
+      "path": "release-evidence/portable-resource-preflight-audit-2026-10-15.json",
+      "bytes": 714,
+      "sha256": "f9a632175841403e4fbb7354746c0e578f723c271dc666a0fdd787bcc8d927d7"
+    },
+    {
+      "path": ".tmp/qualify-portable-browser-2026-10-15.mjs",
+      "bytes": 4530,
+      "sha256": "f4cedd8382e6a3336d4a1d3f229bae44d849f0c70554e3e33ce12a7e5d81e994"
+    },
+    {
+      "path": ".tmp/peer-policy-status-2026-10-14.mjs",
+      "bytes": 922,
+      "sha256": "6d3931b834649c650d2cd665ff320c124be7dc74c2f78feb169cc16e173d1356"
+    }
+  ],
+  "redTraces": [
+    "test-results-corrupt-discard-red/pairing-unusable-receive-c-bf635-eceived-damage-checkpoints-/trace.zip",
+    "test-results-corrupt-discard-red/pairing-unusable-receive-c-e59d9-re-received-damage-payload-/trace.zip"
+  ],
+  "checkpoint": "Portable Node 24.22 full Edge and Chrome gates passed",
+  "freshInstall": {
+    "recordedAt": "2026-10-14T13:40:36.970Z",
+    "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+    "sourceInputs": 154,
+    "dependenciesAbsentBeforeInstall": true,
+    "node": "v24.12.0",
+    "npm": "10.5.2",
+    "commands": [
+      "npm ci",
+      "npm run check",
+      "node scripts/smoke-offline.mjs"
+    ],
+    "exits": {
+      "install": 0,
+      "check": 0,
+      "package-smoke": 0
+    },
+    "reportedVulnerabilities": 0,
+    "unitTests": 373,
+    "testFiles": 44,
+    "buildAssets": [
+      {
+        "path": "assets/block-store.worker-DVHZPZQe.js",
+        "bytes": 2402,
+        "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+      },
+      {
+        "path": "assets/index-BuqvxVOg.js",
+        "bytes": 554626,
+        "sha256": "d3b8a601e5cd757541784c4aa0d73ed17b4f8c4a0c34a7ed9f983d0dcd65e0ef"
+      },
+      {
+        "path": "assets/index-C5foWVjs.css",
+        "bytes": 26260,
+        "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+      },
+      {
+        "path": "assets/qr-scanner-worker.min-CJaXo3yu.js",
+        "bytes": 43951,
+        "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+      },
+      {
+        "path": "index.html",
+        "bytes": 903,
+        "sha256": "96aefc987377e136214b466582132fa4e4a84aab19702ae5ea5ef1cfd0843819"
+      }
+    ],
+    "assetsByteIdenticalToCandidateBuild": true,
+    "packageSmoke": {
+      "ranAt": "2026-10-14T13:39:29.203Z",
+      "node": "v24.12.0",
+      "packagedFiles": 19,
+      "physicalTemplateCases": 42,
+      "fetchedAssets": 5,
+      "isolatedDirectoryOutsideRepository": true,
+      "pathWithSpaces": true,
+      "arbitraryWorkingDirectory": true,
+      "existingDestinationRefused": true,
+      "checksumVerification": "Verified 19 release files. This checks copy integrity, not publisher authenticity.",
+      "launch": "AirGap QR is running at http://127.0.0.1:38358\nChoose Send or Receive to check the local connection service.\nPress Ctrl+C to stop.",
+      "launcherStartedAndStopped": true,
+      "browserHandoff": "injected observer; native Windows browser opening not tested"
+    },
+    "temporaryDirectory": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\temp",
+    "npmCache": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\npm-cache",
+    "capacityBefore": [
+      {
+        "Name": "C",
+        "Free": 1017581568
+      },
+      {
+        "Name": "D",
+        "Free": 3204927488
+      }
+    ],
+    "capacityAfter": [
+      {
+        "Name": "C",
+        "Free": 1042485248
+      },
+      {
+        "Name": "D",
+        "Free": 2996436992
+      }
+    ],
+    "requirementMapping": {
+      "id": "L1036",
+      "text": "* clean fresh-install build",
+      "scope": "Current source, isolated normal npm ci with new empty cache, local Windows typecheck/unit/build/package smoke. Hosted CI and native installation acceptance remain unproved."
+    },
+    "limitations": "No browser gate rerun from this fresh stage; prior same-source Edge/Chrome evidence remains separate. No hosted run, browser installation, native Windows opener, physical/network/large-transfer/resource proof. C remains below 2 GiB; before/after readings do not prove continuous reserve.",
+    "preparationFailure": "First staging attempt rejected its own mixed-slash containment check before copying inputs. Corrected path normalization; empty task-owned stage D:/MyProjects/qrft-fresh-current-2026-10-14-NYRIBQ retained. No application failure.",
+    "retention": "Fresh source/dependencies/cache/logs/build retained. Existing smoke script removed its temporary bundle in its normal finally cleanup; this is not retained browser-profile or benchmark evidence."
+  },
+  "signalParser": {
+    "focusedTests": 19,
+    "invalidTotalCounts": 512,
+    "totalRange": "257–768",
+    "checksumBitChanges": 32,
+    "decompressedTestBytes": "2 MiB SDP in CRC-valid compressed JSON",
+    "cases": "Index bounds; duplicate/conflict retention; invalid UTF-8/JSON/decoded fields; envelope kind/session mismatch; explicit reset recovery;128 KiB ASCII SDP boundary.",
+    "negativeControl": {
+      "recordedAt": "2026-10-14T13:44:46.453Z",
+      "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+      "mutation": "Remove only total > MAX_SIGNAL_FRAMES guard",
+      "exitCode": 1,
+      "expectedFailures": 1,
+      "originalRestoredSha256": "7b69af782ffc6f4b3d05fabbb2e3a51c8dbe10cbee94e947eef149d11c24bd33",
+      "productionWorkspaceUntouched": true
+    },
+    "defectsReproduced": 0,
+    "productionChange": "None; tests demonstrate existing guards.",
+    "limitations": "Enumeration and targeted cases, not random/coverage-guided exhaustive fuzz. No measurement of heap/CPU/decompressor callback allocation, physical camera/native QR, UDP/path parser or all security acceptance. Synthetic SDP boundary tests the bundle codec, not browser SDP acceptance."
+  },
+  "extendedFreshStage": {
+    "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+    "currentInputsVerified": 163,
+    "dependencies": "Same fresh npm ci dependencies; updated only discovery test/spec, unchanged package/lock/production sources.",
+    "checkExit": 0,
+    "assetsByteIdentical": 5,
+    "browserGates": "Currentfull88Edge rerun and88Chrome passed. InitialEdge87/1pagecreationtimeout andisolatedpass retained;rootcause unresolved.",
+    "packageSmoke": "Current production package smoke passed.",
+    "unitTests": 431
+  },
+  "udpDiscovery": {
+    "tests": 3,
+    "actualTransport": "Native Node UDP loopback, read-only per-packet arrival observer; production handlers and OS delivery intact.",
+    "malformedPackets": 24,
+    "boundary": "Authentic1201-byte request ignored/unclaimed;1200-byte request paired and same-identity replay stable, other request ID did not replace claim.",
+    "recovery": "Real TCP offer/answer accepted after malformed packets, pending maps empty. 120 real wrong-proof discovery attempts reach registry;121st valid request blocked; valid request allowed after controlled60000ms clock advance.",
+    "negativeControl": {
+      "recordedAt": "2026-10-14T13:50:14.673Z",
+      "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+      "mutation": "Remove only buffer.byteLength > MAX_UDP_BYTES input guard",
+      "exitCode": 1,
+      "expectedFailures": 1,
+      "originalRestoredSha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc",
+      "productionWorkspaceUntouched": true
+    },
+    "defectsReproduced": 0,
+    "limitations": "Targeted corpus, not exhaustive/random/coverage-guided fuzz or hostile flood/resource limits. Controlled clock not real sleep/OS expiry. No physical adapter broadcast/Wi-Fi/firewall/pending reply spoofing/loss/reordering proof. No-response evidence limited to test observation window.",
+    "staleReply": "Real HTTP join aborted during real UDP discovery; pending state drained. Late advertisement ignored after cancellation and while a new request pending. Current advertisement started exactly one real TCP offer request and one local join. Every sent advertisement arrival observed.",
+    "requestBindingNegativeControl": {
+      "recordedAt": "2026-10-14T13:56:15.722Z",
+      "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+      "mutation": "Ignore reply request ID and select first pending discovery",
+      "exitCode": 1,
+      "expectedFailures": 1,
+      "originalRestoredSha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc",
+      "productionWorkspaceUntouched": true
+    },
+    "requestBindingLimit": "Only obsolete request-ID isolation demonstrated. Matching-current-ID malicious advertisements and LAN denial of service are not prevented by this test; peer authentication/file gating remains separate."
+  },
+  "validationSequence": "Initial shell script-generation command failed PowerShell parsing before stage copy; one check of previous stage ran394 tests and is retained separately. Replaced generation command with saved script, copied current test/spec, ran expected negative control/restored source, final check395/46 passed. No overlapping source mutation with an active gate.",
+  "limitations": "Queued4MiB cleanup now demonstrated in Node and selected nativeOPFS Edge/Chrome8MiB Stop/reconnect scenario. Indefiniteleak/GC/heappeak/historical728MBcausality and arbitraryI/Otiming/resource/physical proof remain open.",
+  "reproduction": {
+    "recordedAt": "2026-10-14T14:01:00.250Z",
+    "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+    "productionSource": "src/lib/webrtc-transfer.ts",
+    "sourceSha256": "448e32d7b5a322a79120681aead9e4d8e249743ca7f568645ba4bed6fa0f076b",
+    "exitCode": 1,
+    "afterAbortDone": false,
+    "retainedChunkBytes": 4194304,
+    "backend": "MemoryBlockStore with real WHATWG ReadableStream,8MiB fixture; unchanged production verification4MiB chunks",
+    "limitations": "No browser/nativeOPFS/peakmemory/5GiBcausality/resourceacceptance proof. Probe cancels/drains its reader and deletes only its in-process fixture in finally.",
+    "workspaceUnchanged": true
+  },
+  "historicalBrowserGates": {
+    "source": "discovery-scope-review-2026-10-14.json",
+    "results": [
+      {
+        "channel": "edge",
+        "passed": 85,
+        "duration": "7.0m",
+        "exitCode": 0,
+        "sourceInputsVerified": 159,
+        "dependencies": "Fresh npm ci stage with unchanged lock; subsequent source/test updates hash-matched before and after gate.",
+        "suiteSnapshotReport": "verification-stream-browser-review-2026-10-14.json",
+        "productionSourcesStillCurrent": true,
+        "scope": "Full85-case suite before newtest/spec addition. Focused newnativecase reported separately."
+      },
+      {
+        "channel": "chrome",
+        "passed": 85,
+        "duration": "6.8m",
+        "exitCode": 0,
+        "sourceInputsVerified": 159,
+        "dependencies": "Same fresh npm ci stage/lock, current source hashes verified before and after both gates.",
+        "suiteSnapshotReport": "verification-stream-browser-review-2026-10-14.json",
+        "productionSourcesStillCurrent": true,
+        "scope": "Full85-case suite before newtest/spec addition. Focused newnativecase reported separately."
+      }
+    ],
+    "currentProductionRevisionCovered": false
+  },
+  "currentBrowserGates": {
+    "edge": {
+      "status": "passed",
+      "cases": 88,
+      "exitCode": 0,
+      "log": "release-evidence/portable-runtime-full-edge-2026-10-15.log",
+      "node": "24.22.0",
+      "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+      "samples": 42,
+      "sampledMinimumFreeDiskBytes": {
+        "C:/": 2599714816,
+        "D:/": 2779852800
+      },
+      "sampledReserveBreach": false,
+      "resourceScope": "10-second samples only; not continuous reserve, browser RSS/heap/GC or 50–100GB acceptance."
+    },
+    "chrome": {
+      "status": "passed",
+      "cases": 88,
+      "exitCode": 0,
+      "log": "release-evidence/portable-runtime-full-chrome-2026-10-15.log",
+      "node": "24.22.0",
+      "candidate": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-portable-runtime",
+      "samples": 42,
+      "sampledMinimumFreeDiskBytes": {
+        "C:/": 12097105920,
+        "D:/": 4444516352
+      },
+      "sampledReserveBreach": false,
+      "resourceScope": "10-second samples only; not continuous reserve, browser RSS/heap/GC or 50–100GB acceptance."
+    }
+  },
+  "previousOfflineCandidate": {
+    "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-14-peer-policy",
+    "verifiedFiles": 19,
+    "verifiedDirectCopies": 18,
+    "generatedFile": "START-HERE.txt"
+  },
+  "preservedArtifacts": [
+    {
+      "path": "release-evidence/verification-stream-preserved-prior-chrome-2026-10-14.json",
+      "root": "D:\\MyProjects\\QR Air-Gap File Transfer\\test-results-corrupt-discard-chrome",
+      "files": 5030,
+      "byteIdentical": true
+    },
+    {
+      "path": "release-evidence/verification-stream-preserved-current-edge-2026-10-14.json",
+      "root": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-stream-cleanup-edge",
+      "files": 5313,
+      "byteIdentical": true
+    }
+  ],
+  "preservationCheckNote": "Initial priorChrome helper process check matched its own command and used improperly escaped Windows path; independent native GetFullPath checks before and after observed zero matching processes. Helper corrected to resolved path/exclude its own PID before currentEdge compression. Both roots independently re-inventoried byte-identical. No files deleted or moved; no running profile compressed.",
+  "nativeStream": {
+    "runs": [
+      {
+        "channel": "edge-previous-bundle",
+        "cases": 1,
+        "exitCode": 1,
+        "expectedResult": "failure at queued-stream EOF assertion"
+      },
+      {
+        "channel": "edge",
+        "cases": 1,
+        "exitCode": 0,
+        "expectedResult": "pass"
+      },
+      {
+        "channel": "chrome",
+        "cases": 1,
+        "exitCode": 0,
+        "expectedResult": "pass"
+      }
+    ],
+    "fixtureBytes": 8388608,
+    "verificationChunkBytes": 4194304,
+    "nativeRed": "Verified unchanged previous19-file corrupt-discard bundle served on distinct free ports. Current native test observed donefalse/queued4194304bytes afterStop; expected assertion failure/trace preserved. No runtime source/build mutation.",
+    "nativeGreen": "Fixed bundle Edge/Chrome actualOPFS/RTC, heldfirst4MiBreader result, Stop/release/reset,capturedstreamEOF,durableblocks retained,reconnectzerowirebytes,8388608-byte destination SHA matches independent NodeBuffer filled37.",
+    "sourceIsolation": "Only test/spec changed. Existing current production/package assets unchanged. Previous full85-case gates plus focused newcase per browser; not a full86-case run.",
+    "limitations": "Injected picker/signalingroutes and heldreader timing. Strongstreamreference deliberately retained to observequeue. Not indefiniteleak/GC/heappeak/728MBcausality/allinflightI/Otiming/power/permissions/nativeOSpicker/physicalnetwork/50–100GB acceptance.",
+    "oldTrace": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-native-stream-old\\pairing-Stop-cancels-prefe-1526c--and-resumes-without-resend\\trace.zip"
+  },
+  "focusedNativeBrowsers": [
+    {
+      "channel": "edge",
+      "passed": 2,
+      "exitCode": 0,
+      "scope": "Safe explicit-public candidate guard/typed advice only."
+    }
+  ],
+  "documentationAudit": {
+    "changed": [
+      "RELEASE-CHECKLIST.md",
+      "RELEASE-HARDENING.md"
+    ],
+    "issue": "Both release documents still labeled373-test corrupt-discard checkpoint latest and denied fresh-install evidence despite newer completed checkpoints.",
+    "correction": "Latest section now396units/full85Edge85Chrome plus focusednativecase separately, current19candidate, freshdependencyinstall, explicit remaininglimits; previous sections preserved historical.",
+    "packageScope": "These two documents are not bundled. All19candidate files and5production assets unchanged; no new package/test run needed for this documentation-only correction."
+  },
+  "ledgerAudit": {
+    "path": "release-evidence/pairing-transfer-obligation-review-2026-10-14.json",
+    "entries": 838,
+    "withoutMappedEvidence": 343,
+    "mappedReferences": 581,
+    "missingReferences": 0,
+    "completedByThisAudit": 0,
+    "limitation": "Includes explicit missing-proof assessments. Inventory counts are not completion counts.",
+    "historicalLinkAudit": "release-evidence/ledger-link-audit-2026-10-14.json"
+  },
+  "individualTestReview": {
+    "path": "release-evidence/pairing-transfer-obligation-review-2026-10-14.json",
+    "mapped": 15,
+    "completionClaims": 0,
+    "old85CaseFileReconstructionVerified": true
+  },
+  "exactBoundary": {
+    "cases": 6,
+    "fileByteCases": [
+      0,
+      1,
+      61440,
+      61441
+    ],
+    "encodedStreamByteCases": [
+      61440,
+      61441
+    ],
+    "packetSize": 61440,
+    "proves": "Actual prepared encoded total calibrated toboundary; exactpacketindex/length/noemptytail,durablebyte/blockcounts,completion,fullstreamhash,treefile/path/emptydir,everybytevsindependentpattern.",
+    "backend": "Fake data channel/MemoryBlockStore and real sender/receivequeue/verifier; no production defect reproduced.",
+    "limitations": "No exact-boundary nativeOPFS/RTC/physical,empty-root-only,exhaustivemetadatawidth or resource proof. Focused6pass/22skipped selector; full402pass0skipped gate is authoritative.",
+    "existingTestsPreserved": {
+      "path": "release-evidence/webrtc-transfer-before-boundary-2026-10-14.source.txt",
+      "sha256": "52945f113f1db75120814cb4d6a3f3a844c29764bd8eeada05421b5f753352cf",
+      "reconstructedByRemovingOnlyNewMatrix": true
+    }
+  },
+  "discoveryReview": {
+    "path": "release-evidence/discovery-obligation-scope-review-2026-10-14.json",
+    "entriesReviewed": 10,
+    "physicalOrVpnProofMissing": 5,
+    "completionClaims": 0,
+    "actualPacketsSentForHostSnapshot": 0
+  },
+  "remoteSdpFinding": {
+    "path": "release-evidence/remote-sdp-handoff-finding-2026-10-14.json",
+    "observations": 4,
+    "nativeDelegations": 0,
+    "fixApplied": true,
+    "exploitOrLeakProved": false,
+    "currentNativeHandoffCallsForRejectedInputs": 0
+  },
+  "peerPolicy": {
+    "unitCases": 22,
+    "formatterCasesAdded": 3,
+    "nativeRed": "Two safe prior-bundle roles failed expected0handoff assertion; hookneverdelegatedpublicSDP.",
+    "nativeGreen": "Two current Edge roles prove0handoffs/0delegations and correct trusted advice.",
+    "unitRedScope": "9 positive assertions failed because API absent;13 negative cases passed through TypeError while expected constructor was undefined. Not22 meaningful guard failures. Current API/errorclass defined and all22 cases pass with typed rejection.",
+    "limits": "Matches existing outgoing privatehost/mDNS policy, not complete SDPgrammar or mDNSresolution/other routingdirective privacy proof. No actualpublicICEtraffic/fileleak shown; originalinternetindependence requirement notreinterpreted aszeropackets."
+  },
+  "gateInputScope": "Both full suites ran frozen167-input proposal and existing22-file portable candidate, with packaged Node24.22 exe asserted by server wrapper. Only .gitignore metadata changed since447-unit check; app/test/runtime files and5assets unchanged. Current/staged sources verified before and after.",
+  "firstCurrentEdgeGate": {
+    "exitCode": 1,
+    "passed": 87,
+    "failed": 1,
+    "timeoutMs": 45000,
+    "failedCase": "sender and receiver reload resume only missing blocks after source recovery",
+    "traceBoundary": "Second BrowserContext.newPage pending before any app navigation. Fixture init script/page startup may be involved; product candidate guard had not executed in this case.",
+    "isolatedRetry": {
+      "exitCode": 0,
+      "passed": 1,
+      "duration": "15.4s"
+    },
+    "rootCause": "Unresolved. Separate PowerShell startup OOM and transient disk/memory readings do not establish causality.",
+    "trace": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-peer-policy-full-edge\\pairing-sender-and-receive-160b9-locks-after-source-recovery\\trace.zip"
+  },
+  "hostObservations": {
+    "separateShellStartupOOM": true,
+    "firstNodeSnapshot": "12GBfreeRAM,C2.49GBfree,D0.70GBfree afterfailedgate; laterPowerShell D2.85GBfree/C2.49GBfree,commit~30.06GB/36.2GB.",
+    "ownedArtifactLogicalBytes": "FailedEdge directory250407435bytes; ownedtemporarydirectory4159306bytes atinspection. These counts do not attribute entirehostfree-spacechange.",
+    "limitations": "Snapshots from different APIs/times, no continuous floor or causal attribution. Do not label failed gate an environmental pass or change product code based on page-creation stall."
+  },
+  "currentEdgeArtifactPreservation": {
+    "path": "release-evidence/peer-policy-preserved-edge-rerun-2026-10-15.json",
+    "files": 5342,
+    "byteIdentical": true,
+    "deletedOrMovedFiles": 0
+  },
+  "cleanupBoundaryTests": {
+    "cases": 4,
+    "fixture": "Complete one-byte-file virtual stream in MemoryBlockStore; actual WHATWG readers, injected cancellation rejection.",
+    "proves": "Already-canceled request opens no stream; primary abort/progress/read error object preserved despite secondary reader.cancel rejection. Reader.releaseLock called once, durable receipts retained/no delete, normal verification succeeds in three fault cases.",
+    "negativeControls": [
+      {
+        "name": "open-after-abort",
+        "exitCode": 1,
+        "expectedFailures": 1
+      },
+      {
+        "name": "cleanup-masks-primary",
+        "exitCode": 1,
+        "expectedFailures": 3
+      }
+    ],
+    "stageSourceRestoreVerified": true,
+    "priorTestsPreserved": {
+      "path": "release-evidence/webrtc-transfer-before-cleanup-boundaries-2026-10-15.source.txt",
+      "sha256": "40c9e6bc8a446b3a512c64c23fc0879d999ec80b36d884ef42ce92ebf71953a9",
+      "reconstruction": "Removed only the added suite; restored preexisting mixed line endings in the unchanged suffix."
+    },
+    "limitations": "Model/injected API errors, not native OS cancellation failure, power/disk fault or resource acceptance. No production defect reproduced; existing implementation satisfied new cases."
+  },
+  "browserEvidenceScope": "Current portable-runtime qualification: Edge88 andChrome88. Native actual default-browser opening/fresh OS and physical cases remain unrun. Launch script is not exercised by the full browser runner; separate six nativecmd fixture tests remain the boot routing evidence.",
+  "pendingVerification": {
+    "currentBehavior": "No remaining extra-read defect reproduced:current8MiBpendingRPCcase1beforeStop/1after;footer120KB2before/2after. Edge2/Chrome2focusedcasespassed;reconnectzeroresendandsavedSHAverified.",
+    "negativeControls": "Oldprecleanupbundle1to2 andisolatedcurrentbuildremovingonlyreader.cancel1to2;stage source/restored5assets matchedcanonical. No production patch needed.",
+    "setupFailures": "Firstoldbundleprobe andfirststrengthenedcurrentEdge misseddefault5s readiness waitbeforeheldread. Retainedas setup failures,notcounter-basedRED. Largerfixturephasewait15s,totaldeadline45sunchanged,allStop/read/noSave/noComplete/resume/hashassertionsretained.",
+    "limitations": "ReadRPC heldbeforephysicaldispatch,notarbitrarykernelIO;chosen8MiB/120KBtimings,notexhaustive/nativephysical/resourceproof. Oldfull88gatesprecedefixturestrengthening;newfocused2eachseparate,nofull88rerunclaim.",
+    "diagnosticRetained": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\pending-verify-read-probe.source.txt",
+    "historicalFixtureSource": "release-evidence/pairing-before-pending-verify-strengthening-2026-10-15.source.txt",
+    "failedTraces": [
+      "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-read-old\\pending-verify-read-probe--d1e64-ter-Stop-8-MiB-native-probe\\trace.zip",
+      "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-read-old-phasewait\\pending-verify-read-probe--d1e64-ter-Stop-8-MiB-native-probe\\trace.zip",
+      "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-strengthened-edge\\pairing-Stop-during-verifi-65c63-ts-no-further-reads-stream-\\trace.zip",
+      "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\test-results-pending-verify-no-cancel\\pairing-Stop-during-verifi-65c63-ts-no-further-reads-stream-\\trace.zip"
+    ]
+  },
+  "portableRuntime": {
+    "recordedAt": "2026-10-15T03:36:19.911Z",
+    "stage": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15",
+    "bundle": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces",
+    "version": "24.22.0",
+    "sources": {
+      "checksums": "https://nodejs.org/download/release/v24.22.0/SHASUMS256.txt",
+      "binary": "https://nodejs.org/download/release/v24.22.0/win-x64/node.exe",
+      "license": "https://raw.githubusercontent.com/nodejs/node/v24.22.0/LICENSE"
+    },
+    "officialBinarySha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c",
+    "runtimeBytes": 93882184,
+    "files": 21,
+    "nodeAbsentFromPath": true,
+    "probe": {
+      "node": "v24.22.0",
+      "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+      "path": "C:\\WINDOWS\\System32",
+      "handoff": "injected HTTP-byte observer; no native browser open",
+      "cleanStop": true
+    },
+    "productionCodeChanged": false,
+    "releaseCandidateUnchanged": 19,
+    "scope": "Windows x64 local prototype only. Existing cmd launcher and packager unchanged. Not a release candidate: START-HERE still describes original external-runtime requirement. No default-browser, fresh OS, ARM64, firewall, physical laptop or full-suite runtime compatibility proof.",
+    "next": "Integrate explicit verified runtime input and complete notices into optional packaging; prefer relative runtime in cmd, test missing/corrupt/incompatible runtime and cleared PATH through actual cmd; qualify current runtime with full required gates before shipping."
+  },
+  "applicationTransferCodeChanged": false,
+  "externalRuntimeCandidate": {
+    "variant": "external",
+    "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\qrft-2026-10-15-external-runtime",
+    "files": 19,
+    "existingOutputRefused": true,
+    "physicalTemplateBlank": true,
+    "execution": {
+      "node": "v24.22.0",
+      "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+      "path": "C:\\WINDOWS\\System32",
+      "handoff": "injected HTTP-byte observer; no native browser open",
+      "cleanStop": true
+    },
+    "manifestBeforeAfterIdentical": true
+  },
+  "historicalPrePortableBrowserGates": {
+    "edge": {
+      "status": "passed-on-rerun",
+      "cases": 88,
+      "exitCode": 0,
+      "log": "release-evidence/peer-policy-full-edge-rerun-2026-10-15.log"
+    },
+    "chrome": {
+      "status": "passed",
+      "cases": 88,
+      "exitCode": 0,
+      "log": "release-evidence/peer-policy-full-chrome-2026-10-15.log"
+    }
+  },
+  "resourcePreservation": {
+    "cResultRoots": 10,
+    "cResultFiles": 52192,
+    "cBeforeAfterShaMatch": true,
+    "partialDependencyFiles": 7299,
+    "partialDependencyShaMatch": true,
+    "dChromeAttempt": "Timed out with no saved-before inventory; post-only baseline explicitly not full byte-identity proof.",
+    "historicalHelpersStopped": 2,
+    "protectedBenchmarkRootsTouched": 0,
+    "filesDeletedOrMoved": 0,
+    "hostScope": "Transient C space increases/drops remain unexplained; cross-API snapshots corroborated lowspace. User reported freeing3GB then preflight met2GiB+400MiB perdrive; sampled gate statistics above do not close resource acceptance."
+  },
+  "evidenceIntegrityIncident": {
+    "snapshot": "release-evidence/peer-policy-host-status-2026-10-14.json",
+    "resolution": "Accidental legacy-helper overwrite recovered from own original tool output with exact priorSHA/byte length. New observation retained separately. Helper nowwx immutable-write guarded and EEXIST refusal tested.",
+    "proof": "release-evidence/historical-host-snapshot-recovery-2026-10-15.json"
+  },
+  "openVerifiedDefects": [
+    {
+      "name": "External Node fallback can be shadowed by an unrelated working-directory node.exe",
+      "reproduction": "release-evidence/external-runtime-cwd-probe-2026-10-15.json",
+      "prototype": "release-evidence/external-runtime-pinned-path-prototype-2026-10-15.json",
+      "status": "Reproduced216exit despite validPATH Node; isolated FOR PATH pin prototype passes. Product fix pending; no source changed during gates."
+    }
+  ]
+}
