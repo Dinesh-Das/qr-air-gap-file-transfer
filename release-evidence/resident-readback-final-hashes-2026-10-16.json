@@ -1,0 +1,85 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/resident-readback-review-2026-10-16.md",
+      "bytes": 3408,
+      "sha256": "3d268be79efd0ed1b4bb6a52e473263bf156bfd7ee91f654db2a3a9745f6cb42"
+    },
+    {
+      "path": "release-evidence/resident-memory-probe-2026-10-16.json",
+      "bytes": 2813,
+      "sha256": "91c01fe3f8a2275d3904e44879493fe0fc6bc3b41fb4344d192add75b287de6d"
+    },
+    {
+      "path": "release-evidence/resident-readback-5gib-2026-10-16.json",
+      "bytes": 284013,
+      "sha256": "db6baa0aae0e670870990f816b0d3d3331ab49f9a74b06ae1922fe3922bf2b81"
+    },
+    {
+      "path": "release-evidence/resident-readback-5gib-2026-10-16.log",
+      "bytes": 110,
+      "sha256": "2fa44dedc80fa5e368f605250e4243b0b739a8d0ffd400df98a994731cc607ac"
+    },
+    {
+      "path": "release-evidence/resident-readback-5gib-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/resident-readback-independent-verification-2026-10-16.json",
+      "bytes": 38740,
+      "sha256": "5259c5e20b1e03209e7005446e86dd220c1a241583d004187c4f0864691c9ee6"
+    },
+    {
+      "path": "release-evidence/resident-memory-observer-2026-10-16.mjs.source.txt",
+      "bytes": 3106,
+      "sha256": "aad88575932d01132b5198c5b8fe0e5a45c42a54589927209ffb9e7fb448a8e9"
+    },
+    {
+      "path": "release-evidence/resident-readback-runner-2026-10-16.mjs.source.txt",
+      "bytes": 5780,
+      "sha256": "b3379d4ddda4383795cc051564fa5168884501a6b421d32796dbabde67e4d526"
+    },
+    {
+      "path": "release-evidence/readback-buffer-final-hashes-2026-10-16.json",
+      "bytes": 22533,
+      "sha256": "f268c1a9d4c697530c140747227034e4e5d260ac36f539486dc53f63a69286dd"
+    },
+    {
+      "path": ".tmp/resident-memory-observer-2026-10-16.mjs",
+      "bytes": 3106,
+      "sha256": "aad88575932d01132b5198c5b8fe0e5a45c42a54589927209ffb9e7fb448a8e9"
+    },
+    {
+      "path": ".tmp/probe-resident-memory-2026-10-16.mjs",
+      "bytes": 1889,
+      "sha256": "060094153fd095fc294f960c3700b0a8b6756ed167bee6e6454a306b722deaff"
+    },
+    {
+      "path": ".tmp/prepare-resident-readback-2026-10-16.mjs",
+      "bytes": 3208,
+      "sha256": "40c2e8e3cb281c117dc8a0f49f94ada39ee8a1b91985981a652ab56c6e6d6a53"
+    },
+    {
+      "path": ".tmp/resident-readback-runner-2026-10-16.mjs",
+      "bytes": 5780,
+      "sha256": "b3379d4ddda4383795cc051564fa5168884501a6b421d32796dbabde67e4d526"
+    },
+    {
+      "path": ".tmp/run-resident-readback-2026-10-16.mjs",
+      "bytes": 907,
+      "sha256": "793ac69958572823b0cd150375a67491a0708c49f420518c3661fc82bf5c31a8"
+    },
+    {
+      "path": ".tmp/verify-resident-readback-2026-10-16.mjs",
+      "bytes": 7814,
+      "sha256": "aa1537f42ae02b080b10f686937c3a6558957004c4f7e42805c429c1bf177841"
+    },
+    {
+      "path": ".tmp/index-resident-readback-2026-10-16.mjs",
+      "bytes": 2421,
+      "sha256": "5ec6f3b2d90ac813f9bee18e5ec4cdfc733f76ea94b68848a95466bd08e6f191"
+    }
+  ],
+  "scope": "Additional Chrome readback measurement; canonical app checkpoint and old failed report unchanged. No broader release acceptance."
+}
