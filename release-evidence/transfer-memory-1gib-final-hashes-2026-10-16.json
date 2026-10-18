@@ -1,0 +1,75 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/transfer-memory-1gib-review-2026-10-16.md",
+      "bytes": 4229,
+      "sha256": "214bb4a0329895cc97dc0ab28151ba8f97b09ce095df981684cfc57b1353587c"
+    },
+    {
+      "path": "release-evidence/transfer-memory-1gib-2026-10-16.json",
+      "bytes": 225748,
+      "sha256": "cd3a919b019a605a2655fd21f12b3bc1db121010a1953818a4b2389dd4d34c04"
+    },
+    {
+      "path": "release-evidence/transfer-memory-1gib-2026-10-16.log",
+      "bytes": 1528,
+      "sha256": "262a77bf9e2030320f3c28540e43ecb42dbffa46361013b563fbdb4374cfed85"
+    },
+    {
+      "path": "release-evidence/transfer-memory-1gib-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/transfer-memory-1gib-2026-10-16-resources.json",
+      "bytes": 3043,
+      "sha256": "080f7acd97ff6a37de4dd620cad21dc51aa1189aad7557c0eeb0027b6d8775a4"
+    },
+    {
+      "path": "release-evidence/transfer-memory-1gib-independent-verification-2026-10-16.json",
+      "bytes": 94909,
+      "sha256": "f641eb3203d7eb61690392f6142cecd603ead4c7d6419e6f610b43628634c6ec"
+    },
+    {
+      "path": "release-evidence/transfer-memory-1gib-2026-10-16-runner.source.txt",
+      "bytes": 21420,
+      "sha256": "22117063aa822684678c16f4170aed9f8477cae1c671abfac1188645b918b5a7"
+    },
+    {
+      "path": "release-evidence/readback-buffer-final-hashes-2026-10-16.json",
+      "bytes": 22533,
+      "sha256": "f268c1a9d4c697530c140747227034e4e5d260ac36f539486dc53f63a69286dd"
+    },
+    {
+      "path": "release-evidence/resident-readback-final-hashes-2026-10-16.json",
+      "bytes": 3171,
+      "sha256": "2183965b3df6852707d762fa004bff4be922e8c3e284dc170cf6854acc703254"
+    },
+    {
+      "path": ".tmp/prepare-transfer-memory-1gib-2026-10-16.mjs",
+      "bytes": 3755,
+      "sha256": "cbe8ef04fc815ab1031a060500c11ef48d90dccbcf069f6bab017c6a40cbcb7a"
+    },
+    {
+      "path": ".tmp/transfer-memory-1gib-2026-10-16.mjs",
+      "bytes": 21420,
+      "sha256": "22117063aa822684678c16f4170aed9f8477cae1c671abfac1188645b918b5a7"
+    },
+    {
+      "path": ".tmp/run-transfer-memory-1gib-2026-10-16.mjs",
+      "bytes": 1917,
+      "sha256": "244d7a28a363511672a655bcd276e6d9a4f49f512a08cc23d6861e94ae60d14b"
+    },
+    {
+      "path": ".tmp/verify-transfer-memory-1gib-2026-10-16.mjs",
+      "bytes": 10563,
+      "sha256": "795c9e0902aa46e4da4632074c8a9d7707f72e9e5961a8e874f8610009fd4cc5"
+    },
+    {
+      "path": ".tmp/index-transfer-memory-1gib-2026-10-16.mjs",
+      "bytes": 2326,
+      "sha256": "cea9bf1ebcbb63f3098521fcb3bce993a745c2bd5e6a48dcc60dbe8a9299a925"
+    }
+  ],
+  "scope": "One actual local WebRTC/OPFS1GiB pipeline diagnostic. No application changes or broader release acceptance; canonical checkpoint unchanged."
+}

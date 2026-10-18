@@ -1,0 +1,20 @@
+{
+  "startedAt": "2026-10-17T04:17:56.741Z",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/transfer-memory-matched-1gib-2026-10-17-Bqp4fV",
+  "profiles": "C:\\Users\\dines\\QRFT-qualification-evidence\\transfer-memory-matched-1gib-2026-10-17-Bqp4fV\\profiles",
+  "temp": "C:\\Users\\dines\\QRFT-qualification-evidence\\transfer-memory-matched-1gib-2026-10-17-Bqp4fV\\temp",
+  "output": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\transfer-memory-matched-1gib-2026-10-17.json",
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable\\runtime\\node.exe",
+  "stage": "C:/Users/dines/AppData/Local/Temp/qrft-fresh-current-2026-10-17-Oo61W0",
+  "requiredC": 3640655872,
+  "requiredD": 2566914048,
+  "before": {
+    "at": "2026-10-17T04:17:56.738Z",
+    "disks": {
+      "C:/": 4715782144,
+      "D:/": 2568933376
+    },
+    "freeRam": 14001631232
+  },
+  "trialDeadlineMs": 600000
+}
