@@ -1,0 +1,1912 @@
+{
+  "schema": "qrft-webrtc-benchmark-v1",
+  "startedAt": "2026-10-17T11:32:14.726Z",
+  "node": "v24.22.0",
+  "scope": "Two separate temporary normal Chromium processes on one Windows host; synthetic source slices and OPFS destination. Direct harness SDP exchange, not application pairing, human authorization, physical LAN, source disk or native destination validation.",
+  "profile": true,
+  "nativeHashes": true,
+  "saveTree": true,
+  "processMemory": true,
+  "corruptBlock": null,
+  "sizesMiB": [
+    100
+  ],
+  "fileCount": 1,
+  "modes": [
+    "transfer"
+  ],
+  "repeats": 1,
+  "rawBaseline": "Same ordered channel, 60 KiB payload plus 44 bytes, 96-block window, 8/2 MiB buffering thresholds and production 64-block/75 ms receive queue; pattern check and batched ACKs, no hashing/source reads/OPFS durability.",
+  "fixtureGeneration": "256-byte periodic pattern expanded with bounded typed-array copies; same bytes as the original file-index/offset formula. Destination audit uses the independent per-byte formula.",
+  "inputs": [
+    {
+      "path": "package-lock.json",
+      "sha256": "1941b668b0e20e0d3ac46b4ec10637626b65325bd97eb2ef2605635fa0ac8fa5"
+    },
+    {
+      "path": "package.json",
+      "sha256": "e7cd4b05e001d3cf460f1c2c2421e37f464a42d9c1ec939f3f0ec24e2a7a7574"
+    },
+    {
+      "path": "scripts/benchmark-pattern.mjs",
+      "sha256": "c123dbc053a01b317d8619e96500e774549f4d14a41afbd98725d2551017087a"
+    },
+    {
+      "path": "scripts/benchmark-receiver.mjs",
+      "sha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431"
+    },
+    {
+      "path": "scripts/benchmark-result.mjs",
+      "sha256": "2c73f114ccb427576aa55008b08c3ace9108405fb36d0fa3310f6a9f07bc44c7"
+    },
+    {
+      "path": "scripts/benchmark-webrtc-page.mjs",
+      "sha256": "2c52adeedaa92a378f8cfd44cc461e615d77b1d45cf6385fbf064916a1bd17cb"
+    },
+    {
+      "path": "scripts/benchmark-webrtc.mjs",
+      "sha256": "ffd283e8e93f788c70099a193074c0b9cdf0b1d9ced041a1458d78819b22edcc"
+    },
+    {
+      "path": "scripts/browser-process-memory.mjs",
+      "sha256": "8fb651a94d4c5902c5ac806ea6e342b78a36520988ad3e685fc49c6a81e86f36"
+    },
+    {
+      "path": "scripts/browser-process-memory.ps1",
+      "sha256": "8feb65389385722b4d7f59d80e3a8d7ff3b05232ad2e1d7033f4e97c6fd8a456"
+    },
+    {
+      "path": "scripts/compare-trees.mjs",
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
+    },
+    {
+      "path": "scripts/create-fixture.mjs",
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
+    },
+    {
+      "path": "scripts/diagnose-storage-context.mjs",
+      "sha256": "a5d74a5f2930258112115c6f3e5e285ea4a513ce740246e009ff47b34a381b19"
+    },
+    {
+      "path": "scripts/lan-signaling.mjs",
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
+    },
+    {
+      "path": "scripts/launch.mjs",
+      "sha256": "194e1351a6c31be44f17af1dc4686939d180c62f206e21d9dc82121ba09358c3"
+    },
+    {
+      "path": "scripts/local-http-security.mjs",
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
+    },
+    {
+      "path": "scripts/package-offline.mjs",
+      "sha256": "3a73722d522459c70ad817be7706026c9ecde1083358911377134b8e8527e17e"
+    },
+    {
+      "path": "scripts/rendezvous.mjs",
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+    },
+    {
+      "path": "scripts/smoke-offline.mjs",
+      "sha256": "7c5ae229ff2f333dc5499ff14b5a49926165093c537f0678bd8f5314a28154cd"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
+    },
+    {
+      "path": "scripts/windows-runtime.mjs",
+      "sha256": "b094f2dcc9cde3552c7b95f517c984b4f509bb52658d29de2ee9546ef639a767"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
+    },
+    {
+      "path": "src/components/ConnectionDiagnostics.tsx",
+      "sha256": "074c1e620774d4e2e30671b8836c90234fa2b4f5db4c9fb81c300584bbdc0c61"
+    },
+    {
+      "path": "src/components/LargeReceiver.tsx",
+      "sha256": "a5d95a2e4842b77336d8ef7df161e5b46267b5ef052940bacb35e48ea62b1935"
+    },
+    {
+      "path": "src/components/LargeSender.tsx",
+      "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+    },
+    {
+      "path": "src/components/PairingReadiness.tsx",
+      "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
+    },
+    {
+      "path": "src/components/Receiver.tsx",
+      "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
+    },
+    {
+      "path": "src/components/Sender.tsx",
+      "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
+    },
+    {
+      "path": "src/components/StorageReadiness.tsx",
+      "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
+    },
+    {
+      "path": "src/components/TransferMetrics.tsx",
+      "sha256": "4677d22a36c655156236fa1357e72a3cccdd9208a4ce2544e3e3dba1339d25b1"
+    },
+    {
+      "path": "src/components/TransferProblem.tsx",
+      "sha256": "656eb3a36342bb4f1d5f5c6783aa177bfbc45355e19253885f9bf0cbced6dcd8"
+    },
+    {
+      "path": "src/components/TransferWakeLock.tsx",
+      "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
+    },
+    {
+      "path": "src/components/VerifyDevice.tsx",
+      "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "sha256": "93cf8e726780e232ba93a859f0cad1e8034454de7dd150396aa2098ad6d2817b"
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "sha256": "e0f44f8541b9305b0ebbab1e8a529322c8863d68fd31af5833810a29d8f9e6c8"
+    },
+    {
+      "path": "src/components/WebRtcSignalQr.tsx",
+      "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
+    },
+    {
+      "path": "src/lib/archive.ts",
+      "sha256": "c241a0a91b2c59c17f8604dca57675645d8ce20abbe43882eaf72399d40bcde6"
+    },
+    {
+      "path": "src/lib/block-store-worker-protocol.ts",
+      "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
+    },
+    {
+      "path": "src/lib/block-store.ts",
+      "sha256": "cb316af4cd79e4a2505eb9dd1a4755e097fe9935b99d3e160d3e2fc20b3109cc"
+    },
+    {
+      "path": "src/lib/block-store.worker.ts",
+      "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
+    },
+    {
+      "path": "src/lib/connection-path.ts",
+      "sha256": "edea4fc03fcd22647276cec367eca1051d43905f4b2e245b42ddaada6a69021b"
+    },
+    {
+      "path": "src/lib/connection.ts",
+      "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
+    },
+    {
+      "path": "src/lib/format.ts",
+      "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
+    },
+    {
+      "path": "src/lib/large-connection.ts",
+      "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
+    },
+    {
+      "path": "src/lib/large-destination.ts",
+      "sha256": "96954feae06afe0e08a179c42bdddd334dc54cd7843d02ff2595f7a242e3e578"
+    },
+    {
+      "path": "src/lib/large-receiver-resume.ts",
+      "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
+    },
+    {
+      "path": "src/lib/large-receiver.ts",
+      "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
+    },
+    {
+      "path": "src/lib/large-sender-playback.ts",
+      "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
+    },
+    {
+      "path": "src/lib/large-sender-resume.ts",
+      "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+    },
+    {
+      "path": "src/lib/large-transfer.ts",
+      "sha256": "4f6609cbc25c5be328f8d44dcb0f36e16f235025121804704e0ce397228c2aa2"
+    },
+    {
+      "path": "src/lib/optical-schedule.ts",
+      "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
+    },
+    {
+      "path": "src/lib/protocol.ts",
+      "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
+    },
+    {
+      "path": "src/lib/resume.ts",
+      "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+    },
+    {
+      "path": "src/lib/screen-wake-lock.ts",
+      "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
+    },
+    {
+      "path": "src/lib/selected-files.ts",
+      "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
+    },
+    {
+      "path": "src/lib/sender-resume.ts",
+      "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+    },
+    {
+      "path": "src/lib/stream-protocol.ts",
+      "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
+    },
+    {
+      "path": "src/lib/transfer-problem.ts",
+      "sha256": "fe539d75660d16e14f376f42c68a358089d4d1b7961a96b8242b98038a82e89e"
+    },
+    {
+      "path": "src/lib/transfer-rate.ts",
+      "sha256": "6fb0d18190c2f640f3f1bebb2661f98ad13a88d0abbefff575a4d67b5b993071"
+    },
+    {
+      "path": "src/lib/transfer.ts",
+      "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
+    },
+    {
+      "path": "src/lib/use-pairing-readiness.ts",
+      "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
+    },
+    {
+      "path": "src/lib/use-transfer-rate.ts",
+      "sha256": "8ddb5042d0ab91350190f428f2a91d104e3dd85a75f736cd1a59c82ea89ec2c0"
+    },
+    {
+      "path": "src/lib/webrtc-authorization.ts",
+      "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+    },
+    {
+      "path": "src/lib/webrtc-control-flow.ts",
+      "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
+    },
+    {
+      "path": "src/lib/webrtc-peer-health.ts",
+      "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
+    },
+    {
+      "path": "src/lib/webrtc-protocol.ts",
+      "sha256": "06c7ae26d9dd7f396e9585d17257516ee85b50eab290b9e8993bca3f7ff65cc1"
+    },
+    {
+      "path": "src/lib/webrtc-receive-queue.ts",
+      "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+    },
+    {
+      "path": "src/lib/webrtc-rendezvous.ts",
+      "sha256": "ecec62e9cf730bfb8cb210be6ebcc08a93a39ca10c69f7aee1602e2e18a46c39"
+    },
+    {
+      "path": "src/lib/webrtc-sender-resume.ts",
+      "sha256": "1a6920253bfe88279ae301c5cf631400afeb03d885eb73303f07c2b7dd594167"
+    },
+    {
+      "path": "src/lib/webrtc-signaling.ts",
+      "sha256": "fe7d9e75ea14fa526e3e8ceb8445c8d631c9cfe5bc10001c1f651223a7b41421"
+    },
+    {
+      "path": "src/lib/webrtc-transfer.ts",
+      "sha256": "2ffb0e756e82c879cd4dd4dc0edb1ea1199f0f904118d8d8973a6aa3128ff2f1"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "c5f1051b0fa98de99ac70978df61f98b67bd3f214b6ae27a428de57e2e4fbb11"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
+    }
+  ],
+  "results": [
+    {
+      "mib": 100,
+      "repetition": 1,
+      "mode": "transfer",
+      "profile": true,
+      "nativeHashes": true,
+      "saveTree": true,
+      "startedAt": "2026-10-17T11:32:14.793Z",
+      "verified": true,
+      "profiles": [
+        {
+          "role": "sender",
+          "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-transfer-context-100mib-2026-10-17-9LvO3q\\profiles\\p-0b2r1a"
+        },
+        {
+          "role": "receiver",
+          "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-transfer-context-100mib-2026-10-17-9LvO3q\\profiles\\p-QzXCCj"
+        }
+      ],
+      "streamBytes": 104857851,
+      "blockSize": 61440,
+      "dataHeaderBytes": 44,
+      "sender": {
+        "manifest": {
+          "v": 1,
+          "type": "manifest",
+          "transferId": "b4a99ea429c4b9e6fe9d1887b029226b",
+          "manifestId": "3bcecea2759e21bc4d74475f770d711442b2eb3764774b514937f2eb8ec97416",
+          "rootName": "webrtc-benchmark",
+          "totalBytes": 104857851,
+          "blockSize": 61440,
+          "streamSha256": "d9f8d44b51d365a8ecba011fc8e040a91c80f6772406400c3b483018052e0052"
+        },
+        "role": "sender",
+        "mode": "transfer",
+        "verified": true,
+        "scanMs": 0.7000000476837158,
+        "prepareMs": 2672.9000000953674,
+        "transferMs": 2237.4000000953674,
+        "confirmedMs": 6619.400000095367,
+        "elapsedMs": 10873.900000095367,
+        "binaryMessages": 1707,
+        "binaryBytes": 104932959,
+        "receivedBytes": 0,
+        "controls": {
+          "sender-complete": {
+            "messages": 1,
+            "bytes": 26
+          }
+        },
+        "operations": {
+          "scan.collectLargeDirectory": {
+            "calls": 1,
+            "ms": 0.5,
+            "bytes": 0
+          },
+          "prepare.syntheticSlice": {
+            "calls": 25,
+            "ms": 40.799999713897705,
+            "bytes": 104857600
+          },
+          "prepare.blobRead": {
+            "calls": 25,
+            "ms": 164.89999985694885,
+            "bytes": 104857600
+          },
+          "prepare.prepareLargeSource": {
+            "calls": 1,
+            "ms": 2672.9000000953674,
+            "bytes": 0
+          },
+          "transfer.syntheticSlice": {
+            "calls": 1707,
+            "ms": 377.10000491142273,
+            "bytes": 104857600
+          },
+          "transfer.blobRead": {
+            "calls": 1707,
+            "ms": 466.49999618530273,
+            "bytes": 104857600
+          },
+          "transfer.readPreparedLargeRange": {
+            "calls": 1707,
+            "ms": 894.6999986171722,
+            "bytes": 0
+          },
+          "transfer.encodeOfflineDataBlock": {
+            "calls": 1707,
+            "ms": 1267.000001192093,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 1708,
+            "ms": 14.099999904632568,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 328404,
+        "peakJsHeapBytes": 62188914,
+        "heapByPhase": {
+          "setup": {
+            "peakBytes": 3995224,
+            "lastBytes": 3995224,
+            "samples": 1
+          },
+          "prepare": {
+            "peakBytes": 62188914,
+            "lastBytes": 37002822,
+            "samples": 24
+          },
+          "connect": {
+            "peakBytes": 41276839,
+            "lastBytes": 41276839,
+            "samples": 10
+          },
+          "transfer": {
+            "peakBytes": 54853213,
+            "lastBytes": 10859222,
+            "samples": 67
+          }
+        },
+        "nativeDigestAvailable": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": null,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 5.34604,
+          "mainThreadScriptSeconds": 0.004953,
+          "observedProcessCpuSeconds": 10.417517000000002,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        },
+        "postRunHeap": {
+          "beforeCollection": {
+            "usedSize": 2487868,
+            "totalSize": 5181440,
+            "embedderHeapUsedSize": 837608,
+            "backingStorageSize": 8503155
+          },
+          "afterCollection": {
+            "usedSize": 2150360,
+            "totalSize": 2822144,
+            "embedderHeapUsedSize": 366936,
+            "backingStorageSize": 1451703
+          },
+          "note": "Forced collection is diagnostic, outside the timed run. Does not include all browser/native memory."
+        },
+        "postRunProcessMemory": {
+          "beforeCollection": {
+            "sampleStartedAtMs": 1792236747132,
+            "missingReasons": [],
+            "processes": [
+              {
+                "privateBytes": 47034368,
+                "workingSetBytes": 144302080,
+                "id": 11064
+              },
+              {
+                "privateBytes": 15106048,
+                "workingSetBytes": 33669120,
+                "id": 24740
+              },
+              {
+                "privateBytes": 44417024,
+                "workingSetBytes": 101064704,
+                "id": 34516
+              },
+              {
+                "privateBytes": 17432576,
+                "workingSetBytes": 47947776,
+                "id": 35556
+              },
+              {
+                "privateBytes": 43057152,
+                "workingSetBytes": 87359488,
+                "id": 24544
+              },
+              {
+                "privateBytes": 148660224,
+                "workingSetBytes": 186699776,
+                "id": 19308
+              },
+              {
+                "privateBytes": 14303232,
+                "workingSetBytes": 45146112,
+                "id": 35548
+              },
+              {
+                "privateBytes": 8220672,
+                "workingSetBytes": 19955712,
+                "id": 31792
+              }
+            ],
+            "sampleFinishedAtMs": 1792236747195,
+            "missingIds": []
+          },
+          "afterCollection": {
+            "sampleStartedAtMs": 1792236747203,
+            "missingReasons": [],
+            "processes": [
+              {
+                "privateBytes": 45400064,
+                "workingSetBytes": 142757888,
+                "id": 11064
+              },
+              {
+                "privateBytes": 15106048,
+                "workingSetBytes": 33669120,
+                "id": 24740
+              },
+              {
+                "privateBytes": 34369536,
+                "workingSetBytes": 92553216,
+                "id": 34516
+              },
+              {
+                "privateBytes": 17432576,
+                "workingSetBytes": 47947776,
+                "id": 35556
+              },
+              {
+                "privateBytes": 43057152,
+                "workingSetBytes": 87359488,
+                "id": 24544
+              },
+              {
+                "privateBytes": 148660224,
+                "workingSetBytes": 186699776,
+                "id": 19308
+              },
+              {
+                "privateBytes": 14303232,
+                "workingSetBytes": 45146112,
+                "id": 35548
+              },
+              {
+                "privateBytes": 8220672,
+                "workingSetBytes": 19955712,
+                "id": 31792
+              }
+            ],
+            "sampleFinishedAtMs": 1792236747266,
+            "missingIds": []
+          },
+          "note": "Diagnostic snapshots after timed work. Main-page collection does not force collection in every worker or release every native allocation."
+        }
+      },
+      "receiver": {
+        "manifest": {
+          "v": 1,
+          "type": "manifest",
+          "transferId": "b4a99ea429c4b9e6fe9d1887b029226b",
+          "manifestId": "3bcecea2759e21bc4d74475f770d711442b2eb3764774b514937f2eb8ec97416",
+          "rootName": "webrtc-benchmark",
+          "totalBytes": 104857851,
+          "blockSize": 61440,
+          "streamSha256": "d9f8d44b51d365a8ecba011fc8e040a91c80f6772406400c3b483018052e0052"
+        },
+        "role": "receiver",
+        "mode": "transfer",
+        "verified": true,
+        "transferMs": 2233.0999999046326,
+        "elapsedMs": 7484,
+        "streamVerified": true,
+        "streamVerifyMs": 1296.0999999046326,
+        "destinationSaveMs": 2798.5,
+        "destinationAuditMs": 284.39999985694885,
+        "destinationFilesWritten": 1,
+        "destinationCheckedBytes": 104857600,
+        "destinationVerified": true,
+        "binaryMessages": 1707,
+        "binaryBytes": 104932959,
+        "receivedBytes": 104857851,
+        "ackIndices": 1707,
+        "controls": {
+          "ack": {
+            "messages": 28,
+            "bytes": 8153
+          },
+          "receiver-complete": {
+            "messages": 1,
+            "bytes": 28
+          }
+        },
+        "operations": {
+          "worker.setup.open": {
+            "calls": 1,
+            "ms": 17.700000047683716,
+            "bytes": 0
+          },
+          "receive.decodeOfflineDataBlockAsync": {
+            "calls": 1707,
+            "ms": 4493.299983501434,
+            "bytes": 0
+          },
+          "worker.receive.write-payload": {
+            "calls": 1707,
+            "ms": 191.29999995231628,
+            "bytes": 104857851
+          },
+          "worker.receive.flush-payload": {
+            "calls": 28,
+            "ms": 85.09999942779541,
+            "bytes": 0
+          },
+          "worker.receive.append-journal": {
+            "calls": 28,
+            "ms": 17.59999990463257,
+            "bytes": 7500
+          },
+          "receive.storeWriteBlocks": {
+            "calls": 28,
+            "ms": 358.1000006198883,
+            "bytes": 0
+          },
+          "receive.acceptBatch": {
+            "calls": 28,
+            "ms": 500.5000009536743,
+            "bytes": 0
+          },
+          "channel.send": {
+            "calls": 29,
+            "ms": 0,
+            "bytes": 0
+          },
+          "worker.verify.read-payload": {
+            "calls": 26,
+            "ms": 48.00000023841858,
+            "bytes": 104857851
+          },
+          "worker.destination.read-payload": {
+            "calls": 27,
+            "ms": 39.80000019073486,
+            "bytes": 104857851
+          },
+          "destination.verifyCompleteDestination": {
+            "calls": 1,
+            "ms": 1282.2000000476837,
+            "bytes": 0
+          },
+          "destination.writeLargeTreeToDirectory": {
+            "calls": 1,
+            "ms": 2798.4000000953674,
+            "bytes": 0
+          }
+        },
+        "peakChannelBufferedBytes": 346,
+        "peakJsHeapBytes": 105175833,
+        "heapByPhase": {
+          "setup": {
+            "peakBytes": 4245796,
+            "lastBytes": 4245796,
+            "samples": 2
+          },
+          "receive": {
+            "peakBytes": 63323455,
+            "lastBytes": 62435151,
+            "samples": 51
+          },
+          "verify": {
+            "peakBytes": 91590489,
+            "lastBytes": 24427589,
+            "samples": 13
+          },
+          "destination": {
+            "peakBytes": 91643543,
+            "lastBytes": 20658669,
+            "samples": 28
+          },
+          "audit": {
+            "peakBytes": 105175833,
+            "lastBytes": 32965683,
+            "samples": 29
+          }
+        },
+        "workerProfilerBeforeConsumers": true,
+        "nativeDigestAvailable": true,
+        "maxMessageSize": 262144,
+        "selectedPath": {
+          "protocol": "UDP",
+          "roundTripMs": 0
+        },
+        "peakReceiveQueueBytes": 5718012,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+        "cpu": {
+          "mainThreadTaskSeconds": 5.156662,
+          "mainThreadScriptSeconds": 0.028887,
+          "observedProcessCpuSeconds": 10.404966000000002,
+          "exitedProcessCount": 0,
+          "note": "CPU sums observed browser processes across their threads; CPU from processes that exited between snapshots is unavailable. Timing excludes launch/module import and includes preparation, transfer and verification."
+        },
+        "postRunHeap": {
+          "beforeCollection": {
+            "usedSize": 2539464,
+            "totalSize": 4919296,
+            "embedderHeapUsedSize": 688800,
+            "backingStorageSize": 30550995
+          },
+          "afterCollection": {
+            "usedSize": 2363632,
+            "totalSize": 3084288,
+            "embedderHeapUsedSize": 379824,
+            "backingStorageSize": 5382871
+          },
+          "note": "Forced collection is diagnostic, outside the timed run. Does not include all browser/native memory."
+        },
+        "postRunProcessMemory": {
+          "beforeCollection": {
+            "sampleStartedAtMs": 1792236747269,
+            "missingReasons": [],
+            "processes": [
+              {
+                "privateBytes": 46428160,
+                "workingSetBytes": 146100224,
+                "id": 4672
+              },
+              {
+                "privateBytes": 15126528,
+                "workingSetBytes": 33652736,
+                "id": 26680
+              },
+              {
+                "privateBytes": 117592064,
+                "workingSetBytes": 174084096,
+                "id": 29524
+              },
+              {
+                "privateBytes": 18456576,
+                "workingSetBytes": 48062464,
+                "id": 29324
+              },
+              {
+                "privateBytes": 43401216,
+                "workingSetBytes": 87724032,
+                "id": 36628
+              },
+              {
+                "privateBytes": 148103168,
+                "workingSetBytes": 185716736,
+                "id": 13296
+              },
+              {
+                "privateBytes": 14544896,
+                "workingSetBytes": 45142016,
+                "id": 16608
+              },
+              {
+                "privateBytes": 8196096,
+                "workingSetBytes": 19898368,
+                "id": 6932
+              }
+            ],
+            "sampleFinishedAtMs": 1792236747329,
+            "missingIds": []
+          },
+          "afterCollection": {
+            "sampleStartedAtMs": 1792236747338,
+            "missingReasons": [],
+            "processes": [
+              {
+                "privateBytes": 46428160,
+                "workingSetBytes": 146108416,
+                "id": 4672
+              },
+              {
+                "privateBytes": 15126528,
+                "workingSetBytes": 33652736,
+                "id": 26680
+              },
+              {
+                "privateBytes": 88313856,
+                "workingSetBytes": 145596416,
+                "id": 29524
+              },
+              {
+                "privateBytes": 18456576,
+                "workingSetBytes": 48062464,
+                "id": 29324
+              },
+              {
+                "privateBytes": 43401216,
+                "workingSetBytes": 87724032,
+                "id": 36628
+              },
+              {
+                "privateBytes": 148103168,
+                "workingSetBytes": 185716736,
+                "id": 13296
+              },
+              {
+                "privateBytes": 14544896,
+                "workingSetBytes": 45142016,
+                "id": 16608
+              },
+              {
+                "privateBytes": 8196096,
+                "workingSetBytes": 19898368,
+                "id": 6932
+              }
+            ],
+            "sampleFinishedAtMs": 1792236747401,
+            "missingIds": []
+          },
+          "note": "Diagnostic snapshots after timed work. Main-page collection does not force collection in every worker or release every native allocation."
+        }
+      },
+      "processMemory": {
+        "delayBetweenSamplesMs": 2000,
+        "samples": 5,
+        "maxObserverMs": 724.6778999999999,
+        "samplesWithMissingProcesses": 1,
+        "errors": [],
+        "roles": {
+          "receiver": {
+            "samples": 5,
+            "peakPrivateBytes": 517746688,
+            "peakWorkingSetBytes": 835473408,
+            "phases": {
+              "setup": {
+                "samples": 2,
+                "peakPrivateBytes": 281325568,
+                "peakWorkingSetBytes": 582279168,
+                "lastProcessCount": 8
+              },
+              "receive": {
+                "samples": 1,
+                "peakPrivateBytes": 463331328,
+                "peakWorkingSetBytes": 754831360,
+                "lastProcessCount": 8
+              },
+              "verify": {
+                "samples": 1,
+                "peakPrivateBytes": 490729472,
+                "peakWorkingSetBytes": 808689664,
+                "lastProcessCount": 8
+              },
+              "destination": {
+                "samples": 1,
+                "peakPrivateBytes": 517746688,
+                "peakWorkingSetBytes": 835473408,
+                "lastProcessCount": 8
+              }
+            },
+            "peakPrivatePhase": "destination",
+            "peakWorkingSetPhase": "destination"
+          },
+          "sender": {
+            "samples": 5,
+            "peakPrivateBytes": 453574656,
+            "peakWorkingSetBytes": 739729408,
+            "phases": {
+              "setup->prepare": {
+                "samples": 1,
+                "peakPrivateBytes": 304480256,
+                "peakWorkingSetBytes": 604835840,
+                "lastProcessCount": 8
+              },
+              "prepare": {
+                "samples": 1,
+                "peakPrivateBytes": 453574656,
+                "peakWorkingSetBytes": 739729408,
+                "lastProcessCount": 8
+              },
+              "transfer": {
+                "samples": 3,
+                "peakPrivateBytes": 412246016,
+                "peakWorkingSetBytes": 724406272,
+                "lastProcessCount": 8
+              }
+            },
+            "peakPrivatePhase": "prepare",
+            "peakWorkingSetPhase": "prepare"
+          }
+        },
+        "note": "Opt-in observer overhead affects timings. Windows private bytes and working sets are summed only for IDs reported by each isolated browser. Working-set sums can double-count shared pages. Phase transitions are labeled separately; periodic sampling can miss peaks and newly created processes.",
+        "rawSamples": [
+          {
+            "role": "receiver",
+            "at": "2026-10-17T11:32:16.424Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 4672,
+                "cpuTime": 0.750658
+              },
+              {
+                "type": "renderer",
+                "id": 26680,
+                "cpuTime": 0.071308
+              },
+              {
+                "type": "renderer",
+                "id": 29524,
+                "cpuTime": 0.131904
+              },
+              {
+                "type": "renderer",
+                "id": 29324,
+                "cpuTime": 0.052665
+              },
+              {
+                "type": "renderer",
+                "id": 36628,
+                "cpuTime": 0.54545
+              },
+              {
+                "type": "GPU",
+                "id": 13296,
+                "cpuTime": 0.409463
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 16608,
+                "cpuTime": 0.250585
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 6932,
+                "cpuTime": 0.031037
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236736290,
+              "missingReasons": [],
+              "processes": [
+                {
+                  "privateBytes": 38998016,
+                  "workingSetBytes": 128851968,
+                  "id": 4672
+                },
+                {
+                  "privateBytes": 15425536,
+                  "workingSetBytes": 33804288,
+                  "id": 26680
+                },
+                {
+                  "privateBytes": 28831744,
+                  "workingSetBytes": 74948608,
+                  "id": 29524
+                },
+                {
+                  "privateBytes": 18894848,
+                  "workingSetBytes": 48365568,
+                  "id": 29324
+                },
+                {
+                  "privateBytes": 44855296,
+                  "workingSetBytes": 88932352,
+                  "id": 36628
+                },
+                {
+                  "privateBytes": 106364928,
+                  "workingSetBytes": 129175552,
+                  "id": 13296
+                },
+                {
+                  "privateBytes": 13332480,
+                  "workingSetBytes": 43347968,
+                  "id": 16608
+                },
+                {
+                  "privateBytes": 8192000,
+                  "workingSetBytes": 19828736,
+                  "id": 6932
+                }
+              ],
+              "sampleFinishedAtMs": 1792236736400,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T11:32:16.427Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 11064,
+                "cpuTime": 0.76247
+              },
+              {
+                "type": "renderer",
+                "id": 24740,
+                "cpuTime": 0.110808
+              },
+              {
+                "type": "renderer",
+                "id": 34516,
+                "cpuTime": 0.135476
+              },
+              {
+                "type": "renderer",
+                "id": 35556,
+                "cpuTime": 0.063181
+              },
+              {
+                "type": "renderer",
+                "id": 24544,
+                "cpuTime": 0.616955
+              },
+              {
+                "type": "GPU",
+                "id": 19308,
+                "cpuTime": 0.416696
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 35548,
+                "cpuTime": 0.253729
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 31792,
+                "cpuTime": 0.030871
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236736290,
+              "missingReasons": [],
+              "processes": [
+                {
+                  "privateBytes": 38862848,
+                  "workingSetBytes": 128389120,
+                  "id": 11064
+                },
+                {
+                  "privateBytes": 15421440,
+                  "workingSetBytes": 33837056,
+                  "id": 24740
+                },
+                {
+                  "privateBytes": 32342016,
+                  "workingSetBytes": 78458880,
+                  "id": 34516
+                },
+                {
+                  "privateBytes": 17866752,
+                  "workingSetBytes": 48263168,
+                  "id": 35556
+                },
+                {
+                  "privateBytes": 44560384,
+                  "workingSetBytes": 88608768,
+                  "id": 24544
+                },
+                {
+                  "privateBytes": 134000640,
+                  "workingSetBytes": 164114432,
+                  "id": 19308
+                },
+                {
+                  "privateBytes": 13209600,
+                  "workingSetBytes": 43278336,
+                  "id": 35548
+                },
+                {
+                  "privateBytes": 8216576,
+                  "workingSetBytes": 19886080,
+                  "id": 31792
+                }
+              ],
+              "sampleFinishedAtMs": 1792236736404,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T11:32:19.052Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 4672,
+                "cpuTime": 1.448763
+              },
+              {
+                "type": "renderer",
+                "id": 26680,
+                "cpuTime": 0.071829
+              },
+              {
+                "type": "renderer",
+                "id": 29524,
+                "cpuTime": 0.134406
+              },
+              {
+                "type": "renderer",
+                "id": 29324,
+                "cpuTime": 0.054189
+              },
+              {
+                "type": "renderer",
+                "id": 36628,
+                "cpuTime": 0.546927
+              },
+              {
+                "type": "GPU",
+                "id": 13296,
+                "cpuTime": 0.41184
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 16608,
+                "cpuTime": 0.263649
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 6932,
+                "cpuTime": 0.031215
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236738979,
+              "missingReasons": [],
+              "processes": [
+                {
+                  "privateBytes": 45547520,
+                  "workingSetBytes": 142778368,
+                  "id": 4672
+                },
+                {
+                  "privateBytes": 15425536,
+                  "workingSetBytes": 33923072,
+                  "id": 26680
+                },
+                {
+                  "privateBytes": 29155328,
+                  "workingSetBytes": 75427840,
+                  "id": 29524
+                },
+                {
+                  "privateBytes": 18898944,
+                  "workingSetBytes": 48480256,
+                  "id": 29324
+                },
+                {
+                  "privateBytes": 44859392,
+                  "workingSetBytes": 89030656,
+                  "id": 36628
+                },
+                {
+                  "privateBytes": 105762816,
+                  "workingSetBytes": 129060864,
+                  "id": 13296
+                },
+                {
+                  "privateBytes": 13479936,
+                  "workingSetBytes": 43683840,
+                  "id": 16608
+                },
+                {
+                  "privateBytes": 8196096,
+                  "workingSetBytes": 19894272,
+                  "id": 6932
+                }
+              ],
+              "sampleFinishedAtMs": 1792236739050,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T11:32:19.090Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 11064,
+                "cpuTime": 0.866696
+              },
+              {
+                "type": "renderer",
+                "id": 24740,
+                "cpuTime": 0.111199
+              },
+              {
+                "type": "renderer",
+                "id": 34516,
+                "cpuTime": 2.151888
+              },
+              {
+                "type": "renderer",
+                "id": 35556,
+                "cpuTime": 0.063848
+              },
+              {
+                "type": "renderer",
+                "id": 24544,
+                "cpuTime": 0.617266
+              },
+              {
+                "type": "GPU",
+                "id": 19308,
+                "cpuTime": 0.973392
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 35548,
+                "cpuTime": 0.25564
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 31792,
+                "cpuTime": 0.031008
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236738997,
+              "missingReasons": [],
+              "processes": [
+                {
+                  "privateBytes": 60010496,
+                  "workingSetBytes": 149671936,
+                  "id": 11064
+                },
+                {
+                  "privateBytes": 15421440,
+                  "workingSetBytes": 33918976,
+                  "id": 24740
+                },
+                {
+                  "privateBytes": 82710528,
+                  "workingSetBytes": 134045696,
+                  "id": 34516
+                },
+                {
+                  "privateBytes": 17870848,
+                  "workingSetBytes": 48308224,
+                  "id": 35556
+                },
+                {
+                  "privateBytes": 44560384,
+                  "workingSetBytes": 88666112,
+                  "id": 24544
+                },
+                {
+                  "privateBytes": 211423232,
+                  "workingSetBytes": 221618176,
+                  "id": 19308
+                },
+                {
+                  "privateBytes": 13357056,
+                  "workingSetBytes": 43548672,
+                  "id": 35548
+                },
+                {
+                  "privateBytes": 8220672,
+                  "workingSetBytes": 19951616,
+                  "id": 31792
+                }
+              ],
+              "sampleFinishedAtMs": 1792236739089,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T11:32:21.205Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 11064,
+                "cpuTime": 1.048343
+              },
+              {
+                "type": "renderer",
+                "id": 24740,
+                "cpuTime": 0.111268
+              },
+              {
+                "type": "renderer",
+                "id": 34516,
+                "cpuTime": 3.866939
+              },
+              {
+                "type": "renderer",
+                "id": 35556,
+                "cpuTime": 0.064245
+              },
+              {
+                "type": "renderer",
+                "id": 24544,
+                "cpuTime": 0.617975
+              },
+              {
+                "type": "GPU",
+                "id": 19308,
+                "cpuTime": 0.975031
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 35548,
+                "cpuTime": 0.813487
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 31792,
+                "cpuTime": 0.031008
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236741127,
+              "missingReasons": [],
+              "processes": [
+                {
+                  "privateBytes": 46718976,
+                  "workingSetBytes": 136421376,
+                  "id": 11064
+                },
+                {
+                  "privateBytes": 15421440,
+                  "workingSetBytes": 33931264,
+                  "id": 24740
+                },
+                {
+                  "privateBytes": 79368192,
+                  "workingSetBytes": 133636096,
+                  "id": 34516
+                },
+                {
+                  "privateBytes": 17870848,
+                  "workingSetBytes": 48320512,
+                  "id": 35556
+                },
+                {
+                  "privateBytes": 44560384,
+                  "workingSetBytes": 88682496,
+                  "id": 24544
+                },
+                {
+                  "privateBytes": 186204160,
+                  "workingSetBytes": 219303936,
+                  "id": 19308
+                },
+                {
+                  "privateBytes": 13881344,
+                  "workingSetBytes": 44158976,
+                  "id": 35548
+                },
+                {
+                  "privateBytes": 8220672,
+                  "workingSetBytes": 19951616,
+                  "id": 31792
+                }
+              ],
+              "sampleFinishedAtMs": 1792236741205,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T11:32:21.214Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 4672,
+                "cpuTime": 1.540713
+              },
+              {
+                "type": "renderer",
+                "id": 26680,
+                "cpuTime": 0.07188
+              },
+              {
+                "type": "renderer",
+                "id": 29524,
+                "cpuTime": 0.767034
+              },
+              {
+                "type": "renderer",
+                "id": 29324,
+                "cpuTime": 0.054379
+              },
+              {
+                "type": "renderer",
+                "id": 36628,
+                "cpuTime": 0.547354
+              },
+              {
+                "type": "GPU",
+                "id": 13296,
+                "cpuTime": 0.953593
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 16608,
+                "cpuTime": 0.829022
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 6932,
+                "cpuTime": 0.031215
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236741127,
+              "missingReasons": [],
+              "processes": [
+                {
+                  "privateBytes": 45977600,
+                  "workingSetBytes": 145387520,
+                  "id": 4672
+                },
+                {
+                  "privateBytes": 15425536,
+                  "workingSetBytes": 33935360,
+                  "id": 26680
+                },
+                {
+                  "privateBytes": 100347904,
+                  "workingSetBytes": 155217920,
+                  "id": 29524
+                },
+                {
+                  "privateBytes": 18898944,
+                  "workingSetBytes": 48492544,
+                  "id": 29324
+                },
+                {
+                  "privateBytes": 44859392,
+                  "workingSetBytes": 89047040,
+                  "id": 36628
+                },
+                {
+                  "privateBytes": 215134208,
+                  "workingSetBytes": 218001408,
+                  "id": 13296
+                },
+                {
+                  "privateBytes": 14491648,
+                  "workingSetBytes": 44855296,
+                  "id": 16608
+                },
+                {
+                  "privateBytes": 8196096,
+                  "workingSetBytes": 19894272,
+                  "id": 6932
+                }
+              ],
+              "sampleFinishedAtMs": 1792236741213,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T11:32:23.303Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 11064,
+                "cpuTime": 1.410176
+              },
+              {
+                "type": "renderer",
+                "id": 24740,
+                "cpuTime": 0.111268
+              },
+              {
+                "type": "renderer",
+                "id": 34516,
+                "cpuTime": 6.58085
+              },
+              {
+                "type": "renderer",
+                "id": 35556,
+                "cpuTime": 0.064245
+              },
+              {
+                "type": "renderer",
+                "id": 24544,
+                "cpuTime": 0.618035
+              },
+              {
+                "type": "GPU",
+                "id": 19308,
+                "cpuTime": 0.975031
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 35548,
+                "cpuTime": 2.21531
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 31792,
+                "cpuTime": 0.031008
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236743230,
+              "missingReasons": [],
+              "processes": [
+                {
+                  "privateBytes": 40198144,
+                  "workingSetBytes": 130293760,
+                  "id": 11064
+                },
+                {
+                  "privateBytes": 15421440,
+                  "workingSetBytes": 33931264,
+                  "id": 24740
+                },
+                {
+                  "privateBytes": 48295936,
+                  "workingSetBytes": 104202240,
+                  "id": 34516
+                },
+                {
+                  "privateBytes": 17870848,
+                  "workingSetBytes": 48320512,
+                  "id": 35556
+                },
+                {
+                  "privateBytes": 44560384,
+                  "workingSetBytes": 88682496,
+                  "id": 24544
+                },
+                {
+                  "privateBytes": 162123776,
+                  "workingSetBytes": 199860224,
+                  "id": 19308
+                },
+                {
+                  "privateBytes": 14196736,
+                  "workingSetBytes": 44318720,
+                  "id": 35548
+                },
+                {
+                  "privateBytes": 8220672,
+                  "workingSetBytes": 19951616,
+                  "id": 31792
+                }
+              ],
+              "sampleFinishedAtMs": 1792236743303,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T11:32:23.329Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 4672,
+                "cpuTime": 1.594652
+              },
+              {
+                "type": "renderer",
+                "id": 26680,
+                "cpuTime": 0.07188
+              },
+              {
+                "type": "renderer",
+                "id": 29524,
+                "cpuTime": 2.828528
+              },
+              {
+                "type": "renderer",
+                "id": 29324,
+                "cpuTime": 0.054379
+              },
+              {
+                "type": "renderer",
+                "id": 36628,
+                "cpuTime": 0.547644
+              },
+              {
+                "type": "GPU",
+                "id": 13296,
+                "cpuTime": 0.954041
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 16608,
+                "cpuTime": 2.227465
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 6932,
+                "cpuTime": 0.031215
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236743250,
+              "missingReasons": [],
+              "processes": [
+                {
+                  "privateBytes": 45977600,
+                  "workingSetBytes": 145461248,
+                  "id": 4672
+                },
+                {
+                  "privateBytes": 15425536,
+                  "workingSetBytes": 33935360,
+                  "id": 26680
+                },
+                {
+                  "privateBytes": 155250688,
+                  "workingSetBytes": 211075072,
+                  "id": 29524
+                },
+                {
+                  "privateBytes": 18898944,
+                  "workingSetBytes": 48492544,
+                  "id": 29324
+                },
+                {
+                  "privateBytes": 44859392,
+                  "workingSetBytes": 89051136,
+                  "id": 36628
+                },
+                {
+                  "privateBytes": 187879424,
+                  "workingSetBytes": 215982080,
+                  "id": 13296
+                },
+                {
+                  "privateBytes": 14241792,
+                  "workingSetBytes": 44797952,
+                  "id": 16608
+                },
+                {
+                  "privateBytes": 8196096,
+                  "workingSetBytes": 19894272,
+                  "id": 6932
+                }
+              ],
+              "sampleFinishedAtMs": 1792236743329,
+              "missingIds": []
+            }
+          },
+          {
+            "role": "sender",
+            "at": "2026-10-17T11:32:25.496Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 11064,
+                "cpuTime": 1.935277
+              },
+              {
+                "type": "renderer",
+                "id": 24740,
+                "cpuTime": 0.111791
+              },
+              {
+                "type": "renderer",
+                "id": 34516,
+                "cpuTime": 6.586815
+              },
+              {
+                "type": "renderer",
+                "id": 35556,
+                "cpuTime": 0.065005
+              },
+              {
+                "type": "renderer",
+                "id": 24544,
+                "cpuTime": 0.619332
+              },
+              {
+                "type": "GPU",
+                "id": 19308,
+                "cpuTime": 0.975639
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 35548,
+                "cpuTime": 2.227902
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 31792,
+                "cpuTime": 0.031162
+              },
+              {
+                "type": "chrome.mojom.ProcessorMetrics",
+                "id": 3504,
+                "cpuTime": 0.032916
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236745375,
+              "missingReasons": [
+                {
+                  "message": "Cannot find a process with the process identifier 3504.",
+                  "exceptionType": "Microsoft.PowerShell.Commands.ProcessCommandException",
+                  "category": "ObjectNotFound",
+                  "id": 3504,
+                  "errorId": "NoProcessFoundForGivenId,Microsoft.PowerShell.Commands.GetProcessCommand"
+                }
+              ],
+              "processes": [
+                {
+                  "privateBytes": 45084672,
+                  "workingSetBytes": 141021184,
+                  "id": 11064
+                },
+                {
+                  "privateBytes": 15106048,
+                  "workingSetBytes": 33669120,
+                  "id": 24740
+                },
+                {
+                  "privateBytes": 44396544,
+                  "workingSetBytes": 100552704,
+                  "id": 34516
+                },
+                {
+                  "privateBytes": 17432576,
+                  "workingSetBytes": 47947776,
+                  "id": 35556
+                },
+                {
+                  "privateBytes": 43057152,
+                  "workingSetBytes": 87359488,
+                  "id": 24544
+                },
+                {
+                  "privateBytes": 148660224,
+                  "workingSetBytes": 186699776,
+                  "id": 19308
+                },
+                {
+                  "privateBytes": 14385152,
+                  "workingSetBytes": 44793856,
+                  "id": 35548
+                },
+                {
+                  "privateBytes": 8220672,
+                  "workingSetBytes": 19955712,
+                  "id": 31792
+                }
+              ],
+              "sampleFinishedAtMs": 1792236745495,
+              "missingIds": [
+                3504
+              ]
+            },
+            "followupRequestedAt": "2026-10-17T11:32:25.496Z",
+            "processInfoAfter": [
+              {
+                "type": "browser",
+                "id": 11064,
+                "cpuTime": 2.108188
+              },
+              {
+                "type": "renderer",
+                "id": 24740,
+                "cpuTime": 0.111981
+              },
+              {
+                "type": "renderer",
+                "id": 34516,
+                "cpuTime": 6.587252
+              },
+              {
+                "type": "renderer",
+                "id": 35556,
+                "cpuTime": 0.065227
+              },
+              {
+                "type": "renderer",
+                "id": 24544,
+                "cpuTime": 0.619532
+              },
+              {
+                "type": "GPU",
+                "id": 19308,
+                "cpuTime": 0.975639
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 35548,
+                "cpuTime": 2.238593
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 31792,
+                "cpuTime": 0.031162
+              }
+            ]
+          },
+          {
+            "role": "receiver",
+            "at": "2026-10-17T11:32:25.502Z",
+            "processInfo": [
+              {
+                "type": "browser",
+                "id": 4672,
+                "cpuTime": 1.910651
+              },
+              {
+                "type": "renderer",
+                "id": 26680,
+                "cpuTime": 0.07188
+              },
+              {
+                "type": "renderer",
+                "id": 29524,
+                "cpuTime": 4.903317
+              },
+              {
+                "type": "renderer",
+                "id": 29324,
+                "cpuTime": 0.054379
+              },
+              {
+                "type": "renderer",
+                "id": 36628,
+                "cpuTime": 0.547702
+              },
+              {
+                "type": "GPU",
+                "id": 13296,
+                "cpuTime": 0.954041
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 16608,
+                "cpuTime": 2.234363
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 6932,
+                "cpuTime": 0.031215
+              }
+            ],
+            "result": {
+              "sampleStartedAtMs": 1792236745405,
+              "missingReasons": [],
+              "processes": [
+                {
+                  "privateBytes": 46206976,
+                  "workingSetBytes": 145731584,
+                  "id": 4672
+                },
+                {
+                  "privateBytes": 15425536,
+                  "workingSetBytes": 33935360,
+                  "id": 26680
+                },
+                {
+                  "privateBytes": 186028032,
+                  "workingSetBytes": 241557504,
+                  "id": 29524
+                },
+                {
+                  "privateBytes": 18898944,
+                  "workingSetBytes": 48492544,
+                  "id": 29324
+                },
+                {
+                  "privateBytes": 44859392,
+                  "workingSetBytes": 89051136,
+                  "id": 36628
+                },
+                {
+                  "privateBytes": 183586816,
+                  "workingSetBytes": 211714048,
+                  "id": 13296
+                },
+                {
+                  "privateBytes": 14544896,
+                  "workingSetBytes": 45096960,
+                  "id": 16608
+                },
+                {
+                  "privateBytes": 8196096,
+                  "workingSetBytes": 19894272,
+                  "id": 6932
+                }
+              ],
+              "sampleFinishedAtMs": 1792236745502,
+              "missingIds": []
+            }
+          }
+        ],
+        "valid": false
+      },
+      "accountingValidated": true,
+      "transferMBps": 46.86593858743654,
+      "browserErrors": [],
+      "cleanupErrors": [],
+      "completedAt": "2026-10-17T11:32:28.147Z",
+      "passed": false
+    }
+  ],
+  "releaseReady": false,
+  "inputsUnchanged": true,
+  "finishedAt": "2026-10-17T11:32:28.152Z"
+}

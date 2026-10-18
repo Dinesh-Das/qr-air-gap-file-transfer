@@ -1,0 +1,55 @@
+{
+  "verifiedAt": "2026-10-17T11:40:37.279Z",
+  "attempts": 1,
+  "applicationChanged": false,
+  "canonicalChanged": false,
+  "ledgerChanged": false,
+  "inputs": 177,
+  "assets": 5,
+  "priorIndexedPathsUnchanged": 2384,
+  "rawDiagnosticExitCode": 1,
+  "measurementPassed": false,
+  "dataIndependentlyVerified": true,
+  "fileBytes": 104857600,
+  "streamBytes": 104857851,
+  "streamSha256": "d9f8d44b51d365a8ecba011fc8e040a91c80f6772406400c3b483018052e0052",
+  "fileSha256": "7264223ed5715d75a4c68cdefcaa9cba076581db6e1099eea16fc568e2d45cdb",
+  "completeTimedNativeSamples": 9,
+  "missingObservation": {
+    "role": "sender",
+    "at": "2026-10-17T11:32:25.496Z",
+    "nativeStartedAtMs": 1792236745375,
+    "nativeFinishedAtMs": 1792236745495,
+    "advertised": {
+      "type": "chrome.mojom.ProcessorMetrics",
+      "id": 3504,
+      "cpuTime": 0.032916
+    },
+    "reason": {
+      "message": "Cannot find a process with the process identifier 3504.",
+      "exceptionType": "Microsoft.PowerShell.Commands.ProcessCommandException",
+      "category": "ObjectNotFound",
+      "id": 3504,
+      "errorId": "NoProcessFoundForGivenId,Microsoft.PowerShell.Commands.GetProcessCommand"
+    },
+    "followupRequestedAt": "2026-10-17T11:32:25.496Z",
+    "presentInFollowingCdpInventory": false
+  },
+  "observedMechanism": "In this run, a CDP-advertised auxiliary PID was not found by the subsequent Windows lookup and was absent from the following CDP inventory. This establishes a concrete enumeration/observation disagreement consistent with process-lifetime change; it is not an access-denied result.",
+  "priorCases": "Earlier missing ProcessorMetrics and on-device-model IDs have no retained native error record, so their exact causes remain unproven and their failures remain failures.",
+  "validity": "Missing ID kept in missingIds and raw measurement failed. No zero counter, process exclusion, retry or browser-feature disable was used. Diagnostic following-inventory call does not supply the missing memory counter.",
+  "performance": "Additional query occurs only after a gap; this is a single diagnostic trial, not a benchmark comparison or performance acceptance.",
+  "profileInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-transfer-context-100mib-2026-10-17-9LvO3q\\INDEPENDENT-PROFILE-INVENTORY.json",
+    "bytes": 92234,
+    "sha256": "a0d7650b860eb55a231c9df1b43246e1dd4e9402504cd9886a85d2e6d941bae3"
+  },
+  "resourceSampleMinima": {
+    "C:/": 2876645376,
+    "D:/": 2581585920
+  },
+  "sampledReserveMet": true,
+  "ownedWorkers": [],
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY"
+}
