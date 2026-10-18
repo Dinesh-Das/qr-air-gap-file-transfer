@@ -1,0 +1,161 @@
+{
+  "recordedAt": "2026-10-17T10:42:46.807Z",
+  "measurementPassed": false,
+  "currentCheckpoint": "Cancellation between cached source files",
+  "currentInputsUnchanged": 176,
+  "assetsUnchanged": 5,
+  "sealedPriorPathsUnchanged": 2238,
+  "dataIndependentlyVerified": true,
+  "rawExitCode": 1,
+  "processMemoryObservationComplete": false,
+  "incompleteTimedNativeSamples": [
+    {
+      "role": "receiver",
+      "at": "2026-10-17T10:40:35.037Z",
+      "reportedIds": [
+        4732,
+        14940,
+        15348,
+        19076,
+        24228,
+        27848,
+        27920,
+        30260,
+        32720
+      ],
+      "returnedIds": [
+        4732,
+        14940,
+        15348,
+        19076,
+        24228,
+        27920,
+        30260,
+        32720
+      ],
+      "missingIds": [
+        27848
+      ]
+    }
+  ],
+  "observerErrors": [],
+  "sampledReserveMet": true,
+  "resourceSampleMinima": {
+    "C:/": 4259061760,
+    "D:/": 2580807680
+  },
+  "fileBytes": 1073741824,
+  "streamBytes": 1073742076,
+  "streamSha256": "5f15350390d11755d282d54e8e8e38ecca7ee1c7f24fc516a81194a18989cabb",
+  "fileSha256": "6441071fd1c81ce3e306231df36cb0cfb0d4a09424a5fdae02a61b91b155d3bd",
+  "binaryMessages": 17477,
+  "durableAckIndices": 17477,
+  "payloadIntervalMBps": 19.17978807852384,
+  "sourcePrepareMs": 52449.700000047684,
+  "payloadIntervalMs": 55983,
+  "streamVerifyMs": 27325.200000047684,
+  "destinationSaveMs": 58488.200000047684,
+  "diagnosticAuditMs": 6633.200000047684,
+  "completeTimedNativeSamples": 177,
+  "phaseMemory": {
+    "receiver": {
+      "samples": 89,
+      "peakPrivateBytes": 547622912,
+      "peakWorkingSetBytes": 885235712,
+      "phases": {
+        "setup": {
+          "samples": 24,
+          "peakPrivateBytes": 361312256,
+          "peakWorkingSetBytes": 663490560,
+          "lastProcessCount": 8
+        },
+        "receive": {
+          "samples": 25,
+          "peakPrivateBytes": 463269888,
+          "peakWorkingSetBytes": 794804224,
+          "lastProcessCount": 8
+        },
+        "verify": {
+          "samples": 12,
+          "peakPrivateBytes": 547622912,
+          "peakWorkingSetBytes": 885235712,
+          "lastProcessCount": 8
+        },
+        "destination": {
+          "samples": 25,
+          "peakPrivateBytes": 411279360,
+          "peakWorkingSetBytes": 757469184,
+          "lastProcessCount": 8
+        },
+        "audit": {
+          "samples": 3,
+          "peakPrivateBytes": 458227712,
+          "peakWorkingSetBytes": 799604736,
+          "lastProcessCount": 8
+        }
+      },
+      "peakPrivatePhase": "verify",
+      "peakWorkingSetPhase": "verify"
+    },
+    "sender": {
+      "samples": 89,
+      "peakPrivateBytes": 518201344,
+      "peakWorkingSetBytes": 801894400,
+      "phases": {
+        "setup->prepare": {
+          "samples": 1,
+          "peakPrivateBytes": 307806208,
+          "peakWorkingSetBytes": 606220288,
+          "lastProcessCount": 8
+        },
+        "prepare": {
+          "samples": 22,
+          "peakPrivateBytes": 518201344,
+          "peakWorkingSetBytes": 801894400,
+          "lastProcessCount": 8
+        },
+        "connect": {
+          "samples": 1,
+          "peakPrivateBytes": 407871488,
+          "peakWorkingSetBytes": 733503488,
+          "lastProcessCount": 8
+        },
+        "transfer": {
+          "samples": 65,
+          "peakPrivateBytes": 421335040,
+          "peakWorkingSetBytes": 750956544,
+          "lastProcessCount": 8
+        }
+      },
+      "peakPrivatePhase": "prepare",
+      "peakWorkingSetPhase": "prepare"
+    }
+  },
+  "pageHeapPeaks": {
+    "sender": 87412994,
+    "receiver": 224030143
+  },
+  "profileInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\transfer-save-memory-current-1gib-2026-10-17-62W8Du\\INDEPENDENT-PROFILE-INVENTORY.json",
+    "bytes": 92606,
+    "sha256": "bd978728871374b67635be4dda641a21b2aeec7fe77cc82f80858b6a0ec75494"
+  },
+  "profiles": [
+    {
+      "role": "sender",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\transfer-save-memory-current-1gib-2026-10-17-62W8Du\\profiles\\p-lByBXP",
+      "version": "155.0.8059.80",
+      "files": 232
+    },
+    {
+      "role": "receiver",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\transfer-save-memory-current-1gib-2026-10-17-62W8Du\\profiles\\p-c34e85",
+      "version": "155.0.8059.80",
+      "files": 250
+    }
+  ],
+  "ownedWorkers": [],
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY",
+  "scope": "Current176-input production modules under dev-server diagnostic timing/preservation transforms, not portable app UI execution. Two normal-profile headless Chrome processes on one host, synthetic source, direct SDP and injected OPFS destination. All received/saved fixture bytes and stream/file hashes independently checked;256-byte pattern does not distinguish all wrong source offsets. No actual source disk/picker, physical LAN,50–100GB, target-device throughput/resource or general performance acceptance. No timed forced GC. Diagnostic audit allocation is separate from production verification/save."
+}

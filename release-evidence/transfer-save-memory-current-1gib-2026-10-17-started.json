@@ -1,0 +1,20 @@
+{
+  "startedAt": "2026-10-17T10:37:31.914Z",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/transfer-save-memory-current-1gib-2026-10-17-62W8Du",
+  "profiles": "C:\\Users\\dines\\QRFT-qualification-evidence\\transfer-save-memory-current-1gib-2026-10-17-62W8Du\\profiles",
+  "temp": "C:\\Users\\dines\\QRFT-qualification-evidence\\transfer-save-memory-current-1gib-2026-10-17-62W8Du\\temp",
+  "output": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\transfer-save-memory-current-1gib-2026-10-17.json",
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\portable\\runtime\\node.exe",
+  "stage": "C:/Users/dines/AppData/Local/Temp/qrft-fresh-current-2026-10-17-Oo61W0",
+  "requiredC": 4714397696,
+  "requiredD": 2566914048,
+  "before": {
+    "at": "2026-10-17T10:37:31.911Z",
+    "disks": {
+      "C:/": 6459113472,
+      "D:/": 2581348352
+    },
+    "freeRam": 13589422080
+  },
+  "trialDeadlineMs": 600000
+}

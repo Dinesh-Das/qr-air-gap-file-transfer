@@ -1,0 +1,9 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\transfer-save-memory-5gib-2026-10-17-V9ec3y\\RAW-EVIDENCE.json",
+  "bytes": 2680387,
+  "sha256": "6b9652781b4b23bd628482c6c3c80795b319db159768ca7d60da112db4f212a9",
+  "originalOutputPath": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\transfer-save-memory-5gib-2026-10-17.json",
+  "recordedAt": "2026-10-17T04:14:49.693Z",
+  "scope": "Unchanged full raw measurement retained outside Temp. This file is a checksum-verified location reference, not a passing result or a replacement for the raw contents."
+}

@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-17T10:42:46.806Z",
+  "missingDetails": [
+    {
+      "role": "receiver",
+      "at": "2026-10-17T10:40:35.037Z",
+      "missing": [
+        {
+          "type": "on_device_model.mojom.OnDeviceModelService",
+          "id": 27848,
+          "cpuTime": 0.96549
+        }
+      ],
+      "previous": {
+        "at": "2026-10-17T10:40:32.720Z",
+        "ids": [
+          15348,
+          30260,
+          32720,
+          27920,
+          14940,
+          19076,
+          24228,
+          4732
+        ]
+      },
+      "next": {
+        "at": "2026-10-17T10:40:37.399Z",
+        "ids": [
+          15348,
+          30260,
+          32720,
+          27920,
+          14940,
+          19076,
+          24228,
+          4732
+        ]
+      }
+    }
+  ],
+  "measurementRemainsFailed": true,
+  "interpretation": "CDP advertised a process that the Windows sampler could not return. Neighboring inventories give context, but do not distinguish exit/churn from access or observation failure. No process is retroactively excluded and no missing observation is promoted to complete."
+}
