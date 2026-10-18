@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-16T17:49:30.133Z",
+  "classification": "no progress",
+  "consecutiveGoalTurnsWithoutRequirementAdvancement": 2,
+  "releaseStatus": "NOT READY",
+  "goalStatus": "active",
+  "currentCheckpoint": "Sender cancellation before source reads",
+  "indexEntriesReverified": 171,
+  "freeDiskBytes": {
+    "C:/": 2648727552,
+    "D:/": 2564096000
+  },
+  "browserPreflightBytesPerDrive": 2566914048,
+  "browserPreflightAvailable": false,
+  "chromeReserveQualification": false,
+  "physicalCasesNotRun": 42,
+  "physicalRepetitions": 0,
+  "ownedQualificationJobsObserved": [],
+  "browserToolObservation": {
+    "apps": [],
+    "surfaces": [
+      "iab",
+      "mcpapps"
+    ],
+    "nativeBrowserObservable": false
+  },
+  "sameBlocker": true,
+  "reason": "Required physical/native/resource acceptance cannot be performed with the available devices, observation tools and headroom. No new physical evidence or live qualification job was found. The previous reviewed subset established no new reproducible application defect. Further smaller model checks would not close the outstanding acceptance requirements.",
+  "changes": {
+    "application": false,
+    "canonical": false,
+    "ledger": false,
+    "profilesDeletedCompressedOrMoved": false
+  },
+  "scope": "No tests or browser/server jobs started; read-only state and evidence revalidation. Laptops were last reported unavailable by the user; no new availability answer is inferred."
+}

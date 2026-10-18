@@ -1,0 +1,161 @@
+{
+  "recordedAt": "2026-10-16T17:48:39.406Z",
+  "releaseStatus": "NOT READY",
+  "applicationChanged": false,
+  "canonicalChanged": false,
+  "ledgerChanged": false,
+  "currentInputsVerified": 175,
+  "compiledAssetsVerified": 5,
+  "canonicalEvidenceVerified": 949,
+  "priorFinalIndexVerified": 133,
+  "cancellationSupplementIndexVerified": 34,
+  "physicalNotRun": 42,
+  "resources": {
+    "freeDiskBytes": {
+      "C:/": 2649083904,
+      "D:/": 2564673536
+    },
+    "freeRamBytes": 14333075456,
+    "browserPreflightBytesPerDrive": 2566914048,
+    "browserPreflightAvailable": false,
+    "existingChromeReserveQualification": false
+  },
+  "nativeHost": {
+    "httpProgId": "MSEdgeHTM",
+    "browserProcessCounts": [
+      {
+        "Name": "msedge.exe",
+        "Count": 22
+      }
+    ]
+  },
+  "toolObservation": {
+    "source": "cua.getState() observed in this goal turn; not a native GUI screenshot",
+    "apps": [],
+    "browsers": [
+      {
+        "name": "Codex In-app Browser",
+        "type": "iab",
+        "tabs": []
+      },
+      {
+        "name": "Codex MCP Apps",
+        "type": "mcpapps",
+        "tabs": []
+      }
+    ],
+    "nativeDefaultBrowserObservable": false,
+    "nativeComputerControlAvailable": false
+  },
+  "review": {
+    "scope": "Inspected bounded data/control decode, current sender/receiver cancellation, static asset containment/HTTP handling, local candidate checks and benchmark preservation/cost before choosing further work.",
+    "inspected": [
+      {
+        "path": "scripts/serve.mjs",
+        "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+      },
+      {
+        "path": "scripts/benchmark-webrtc.mjs",
+        "sha256": "ffd283e8e93f788c70099a193074c0b9cdf0b1d9ced041a1458d78819b22edcc"
+      },
+      {
+        "path": "scripts/benchmark-receiver.mjs",
+        "sha256": "839499ea2dc3e7c82015de91df85e89a90e1cfbe5992795e658defb1eb144431"
+      },
+      {
+        "path": "src/lib/webrtc-protocol.ts",
+        "sha256": "06c7ae26d9dd7f396e9585d17257516ee85b50eab290b9e8993bca3f7ff65cc1"
+      },
+      {
+        "path": "src/lib/webrtc-transfer.ts",
+        "sha256": "f8c7ad5a851112279b0d13bf362f518e5ec5f848753eb7e3eca0b17dfc206b4b"
+      },
+      {
+        "path": "src/lib/webrtc-receive-queue.ts",
+        "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+      },
+      {
+        "path": "src/lib/webrtc-signaling.ts",
+        "sha256": "fe7d9e75ea14fa526e3e8ceb8445c8d631c9cfe5bc10001c1f651223a7b41421"
+      },
+      {
+        "path": "src/lib/webrtc-rendezvous.ts",
+        "sha256": "ecec62e9cf730bfb8cb210be6ebcc08a93a39ca10c69f7aee1602e2e18a46c39"
+      },
+      {
+        "path": "README.md",
+        "sha256": "850251e0f7fdbfba853e1f996f277420ecdae9c0d52a82492b99469f57ef47d5"
+      },
+      {
+        "path": "release-evidence/original-release-requirements.txt",
+        "sha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077"
+      }
+    ],
+    "newVerifiedDefects": [],
+    "limitation": "No new defect was established in this reviewed subset. This is not proof that all code is correct or every original obligation has been audited to completion. Existing benchmark evidence was found; no duplicate workload or new application patch was justified."
+  },
+  "acceptanceGaps": [
+    {
+      "requirements": [
+        "L1054",
+        "L1056",
+        "L1058",
+        "L1062",
+        "L1063",
+        "L1064",
+        "L1068",
+        "L1069",
+        "L1070",
+        "L1071",
+        "L1072",
+        "L1073",
+        "L1085"
+      ],
+      "needed": "Execute the existing two-laptop network/size/interruption matrix and independently verify final bytes.",
+      "condition": "User previously reported both laptops unavailable; all42cases remain not-run. No repeated availability question."
+    },
+    {
+      "requirements": [
+        "L994",
+        "L1005",
+        "L1007",
+        "L1013",
+        "L1024"
+      ],
+      "needed": "Reproducible current-revision performance/resource qualification with sufficient disk space, complete process observations and suitable large fixtures.",
+      "condition": "Previous Chrome reserve failure remains failed. Earlier memory diagnostics keep their predecessor/observer limitations. Another small model check cannot establish target-device scaling."
+    },
+    {
+      "requirements": [
+        "L1035",
+        "L1036",
+        "L1044",
+        "L1048",
+        "L1050"
+      ],
+      "needed": "Clean/final-revision complete functional qualification and hosted CI evidence under the authorized workflow.",
+      "condition": "Existing local functional results are530unit54files/type/build and92eachbrowser; current stage is reused, clean OS and hosted finalCI are unproved. No push or CI dispatch was authorized."
+    },
+    {
+      "requirements": [
+        "L1091",
+        "L1093",
+        "L1254"
+      ],
+      "needed": "Observe actual native launch/pickers and a nontechnical user completing the intended two-laptop workflow.",
+      "condition": "HTTP default handler is captured in nativeHost; available CUA surfaces contain only in-app and MCP-app browsers. No native Edge rendering/picker observation is possible through those surfaces."
+    }
+  ],
+  "noProgressAudit": {
+    "consecutiveGoalTurnsWithoutRequirementAdvancement": 1,
+    "previousGoalTurn": "progress: six cancellation probes and two negative controls independently verified",
+    "thisGoalTurn": "Current-state review and capability checks; no application change, required gate completed, or acceptance promotion.",
+    "status": "active",
+    "reason": "Required end-to-end acceptance remains incomplete; no new reproducible defect or useful additional model workload was identified. Do not substitute narrower probes for missing physical/native/resource evidence."
+  },
+  "ledger": {
+    "entries": 838,
+    "withoutMappedEvidence": 328,
+    "references": 613
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/release-continuation-capability-audit-2026-10-16.json",
+      "bytes": 5939,
+      "sha256": "dd78469bd39343533d1b8e7e0d7605f8f43b88a3b4045e42f210ba017218a556"
+    },
+    {
+      "path": ".tmp/audit-release-continuation-capabilities-2026-10-16.mjs",
+      "bytes": 8044,
+      "sha256": "dc90bf41da7c658273cd48b790d0bf20c8f9ae3c1d7b75a8c59c3aaefaf5681d"
+    },
+    {
+      "path": "release-evidence/sender-read-cancel-final-hashes-2026-10-16.json",
+      "bytes": 26960,
+      "sha256": "b10fb7b39b629bbbd4c8de7580d71b6cf77e47112b548a9dba506855addd6b08"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-final-hashes-2026-10-16.json",
+      "bytes": 7603,
+      "sha256": "789a5bbcac4e0a8a82bb7549fe3568b9eef845c5c7dfccd4031fbb6a1fc5fc66"
+    }
+  ]
+}
