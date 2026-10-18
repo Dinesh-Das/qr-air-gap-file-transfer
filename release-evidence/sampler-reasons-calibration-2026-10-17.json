@@ -1,0 +1,146 @@
+{
+  "recordedAt": "2026-10-17T11:10:45.081Z",
+  "passed": true,
+  "failure": null,
+  "rows": [
+    {
+      "mode": "baseline",
+      "boundary": "both-live",
+      "sample": {
+        "sampleStartedAtMs": 1792235443459,
+        "processes": [
+          {
+            "privateBytes": 88432640,
+            "workingSetBytes": 105078784,
+            "id": 35008
+          },
+          {
+            "privateBytes": 19845120,
+            "workingSetBytes": 37756928,
+            "id": 38300
+          }
+        ],
+        "sampleFinishedAtMs": 1792235443506,
+        "missingIds": []
+      }
+    },
+    {
+      "mode": "detailed",
+      "boundary": "both-live",
+      "sample": {
+        "sampleStartedAtMs": 1792235443576,
+        "missingReasons": [],
+        "processes": [
+          {
+            "privateBytes": 88432640,
+            "workingSetBytes": 105078784,
+            "id": 35008
+          },
+          {
+            "privateBytes": 19845120,
+            "workingSetBytes": 37756928,
+            "id": 38300
+          }
+        ],
+        "sampleFinishedAtMs": 1792235443630,
+        "missingIds": []
+      }
+    },
+    {
+      "mode": "baseline",
+      "boundary": "one-exited-before-native-query",
+      "sample": {
+        "sampleStartedAtMs": 1792235443661,
+        "processes": [
+          {
+            "privateBytes": 88432640,
+            "workingSetBytes": 105078784,
+            "id": 35008
+          }
+        ],
+        "sampleFinishedAtMs": 1792235443672,
+        "missingIds": [
+          38300
+        ]
+      }
+    },
+    {
+      "mode": "detailed",
+      "boundary": "one-exited-before-native-query",
+      "sample": {
+        "sampleStartedAtMs": 1792235443673,
+        "missingReasons": [
+          {
+            "message": "Cannot find a process with the process identifier 38300.",
+            "exceptionType": "Microsoft.PowerShell.Commands.ProcessCommandException",
+            "category": "ObjectNotFound",
+            "id": 38300,
+            "errorId": "NoProcessFoundForGivenId,Microsoft.PowerShell.Commands.GetProcessCommand"
+          }
+        ],
+        "processes": [
+          {
+            "privateBytes": 88432640,
+            "workingSetBytes": 105078784,
+            "id": 35008
+          }
+        ],
+        "sampleFinishedAtMs": 1792235443700,
+        "missingIds": [
+          38300
+        ]
+      }
+    },
+    {
+      "mode": "detailed",
+      "boundary": "next-request-clears-old-errors",
+      "sample": {
+        "sampleStartedAtMs": 1792235443701,
+        "missingReasons": [],
+        "processes": [
+          {
+            "privateBytes": 88432640,
+            "workingSetBytes": 105078784,
+            "id": 35008
+          }
+        ],
+        "sampleFinishedAtMs": 1792235443709,
+        "missingIds": []
+      }
+    }
+  ],
+  "cleanup": [
+    {
+      "pid": 38300,
+      "code": 0,
+      "signal": null,
+      "stderr": ""
+    },
+    {
+      "pid": 35008,
+      "code": 0,
+      "signal": null,
+      "stderr": ""
+    },
+    {
+      "observerPid": 6940,
+      "code": 0,
+      "signal": null
+    },
+    {
+      "observerPid": 2660,
+      "code": 0,
+      "signal": null
+    }
+  ],
+  "applicationChanged": false,
+  "productionSamplerChanged": false,
+  "strictMissingPidContractChanged": false,
+  "priorSealedPathsUnchanged": 2346,
+  "diagnosticScript": {
+    "path": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\browser-process-memory-with-reasons-2026-10-17.ps1",
+    "bytes": 2600,
+    "sha256": "8feb65389385722b4d7f59d80e3a8d7ff3b05232ad2e1d7033f4e97c6fd8a456"
+  },
+  "scope": "Controlled native Windows process-lifetime calibration only. Demonstrates missing-PID reporting when an explicitly known child exits before the native query, plus bounded error reasons and reset/validation behavior. It does not prove why earlier Chrome auxiliary processes were missing, validate actual transfer memory peaks, or change any prior failed measurement. All requested missing IDs remain missing."
+}
