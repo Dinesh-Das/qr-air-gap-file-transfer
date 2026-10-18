@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-10-15T18:17:56.248Z",
+  "inputs": 167,
+  "assets": 5,
+  "evidence": 463,
+  "indexedFiles": 25,
+  "profileFiles": 1167,
+  "profileBytes": 1692460613,
+  "unit": 449,
+  "edge": 88,
+  "chrome": 88,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY"
+}

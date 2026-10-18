@@ -1,0 +1,130 @@
+{
+  "recordedAt": "2026-10-15T18:17:07.766Z",
+  "files": [
+    {
+      "path": "release-evidence/save-memory-gate-review-2026-10-15.json",
+      "bytes": 204318,
+      "sha256": "b0df182ffccaf6ed3cc476d82d71818911dce6c6617efac8d418d9e0722b0c5a"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.json",
+      "bytes": 204318,
+      "sha256": "b0df182ffccaf6ed3cc476d82d71818911dce6c6617efac8d418d9e0722b0c5a"
+    },
+    {
+      "path": "release-evidence/release-gate-latest.txt",
+      "bytes": 565,
+      "sha256": "d5428e4eff152674185f6a1e51d9e6d137cc00b130fae4b8a944dd01e403d41d"
+    },
+    {
+      "path": "release-evidence/path-pinned-launcher-hashes-2026-10-15.json",
+      "bytes": 17326,
+      "sha256": "f37be9d084b9709450d3d34a2e5a053c918461e7401cd473e229c84a4f818272"
+    },
+    {
+      "path": "release-evidence/path-pinned-launcher-review-2026-10-15.json",
+      "bytes": 160255,
+      "sha256": "6024c4bfc50e6bef202a389d8ba7a5bb641f3fa30e1e27155b6df3ad828bf97d"
+    },
+    {
+      "path": "release-evidence/release-gate-before-save-phase-diagnostic-2026-10-15.json",
+      "bytes": 160255,
+      "sha256": "6024c4bfc50e6bef202a389d8ba7a5bb641f3fa30e1e27155b6df3ad828bf97d"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-256MiB-2026-10-15-v3-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-256MiB-2026-10-15-v3-resources.json",
+      "bytes": 1254,
+      "sha256": "c0b2ebac95de2e0e65176b7b0901fcbc4345f722c8ddad94814e53943de385d3"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-256MiB-2026-10-15-v3-runner.mjs",
+      "bytes": 23832,
+      "sha256": "8f0c642d52a71040ad104a99ffa6c5bde9641b0a5772a86be9db6e8e68415c93"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-256MiB-2026-10-15-v3.json",
+      "bytes": 43375,
+      "sha256": "6481096e57a727eb15337527b939d81800bf060979c9c9b8b93493a047411f50"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-256MiB-2026-10-15-v3.log",
+      "bytes": 678,
+      "sha256": "48e7e55a0ce99f4723e82612655844e5137c6e2976df530874439a75c20fd931"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15-exit.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15-preflight.json",
+      "bytes": 27627,
+      "sha256": "5e4f3cb97aa13c0e81a5baf0a82ee43fef164e69ca4d939f6e0c6438cfbd6dc5"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15-resources.json",
+      "bytes": 3198,
+      "sha256": "585d2bede8130191dfee46321da5f3ccf640e6fa667d973092b8f64138346979"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15-runner.mjs",
+      "bytes": 21584,
+      "sha256": "2ed3a332e92595cf4c7a3a5a854fd0a55729b1f08b0b6741454e70bf5bd6825f"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15-v2-exit.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15-v2-resources.json",
+      "bytes": 1902,
+      "sha256": "98004655fba31631fa38d345bf310dd574142b7d183b3c309e7193e2b21ed4be"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15-v2-runner.mjs",
+      "bytes": 22101,
+      "sha256": "da78f99e8774b1d2cd03bf26ed34058500a4e9331ea12ed23f3615136a7bb075"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15-v2.json",
+      "bytes": 33483,
+      "sha256": "40477ff1ba870a60f9aadb01dde57624dc6b511d066558769332a850b3665084"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15-v2.log",
+      "bytes": 991,
+      "sha256": "20faeac332491a3acb14faa7c0bcf91bb7f4efdf0a428a3809ec4a8e13b20788"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15.json",
+      "bytes": 11909,
+      "sha256": "0a97892c95007748585ab28bf127df353e5a644d1dccce5efa6f9fc56e483115"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-chrome-512MiB-2026-10-15.log",
+      "bytes": 1910,
+      "sha256": "22650f53f894c57f10abfeee3c670f83ea1a6d531e60ef9b73a485a08628b3e5"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-failed-browser-teardown-2026-10-15.json",
+      "bytes": 44,
+      "sha256": "48c05f0b6663eb07e2b7fa30e467b264830b2338e6c8ecce4660df5834be4a15"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-preserved-profiles-2026-10-15.json",
+      "bytes": 224115,
+      "sha256": "1ab7d54d6e19018693f495ad0e28ab8d8ce0bba29d64248d5f37320da46c8936"
+    },
+    {
+      "path": "release-evidence/save-phase-diagnostic-review-2026-10-15.json",
+      "bytes": 37174,
+      "sha256": "7e0e7ad6684e53ae4c18e8df42159ef5627f1cb3781cab708eb50dda2d7a3a1f"
+    }
+  ]
+}
