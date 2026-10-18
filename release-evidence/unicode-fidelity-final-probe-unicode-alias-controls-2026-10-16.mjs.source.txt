@@ -1,0 +1,16 @@
+import {mkdtemp,mkdir,readdir,writeFile} from 'node:fs/promises';
+import {join} from 'node:path';
+import {spawnSync} from 'node:child_process';
+const roots=[];
+for(const prefix of ['D:/MyProjects/qrft-unicode-controls-2026-10-16-','C:/Users/dines/AppData/Local/Temp/qrft-unicode-controls-2026-10-16-']){
+ const root=await mkdtemp(prefix);const results=[];
+ for(const [first,second] of [['case','CASE'],['σ','Σ'],['μ','Μ'],['σ','ς'],['i','ı'],['s','ſ'],['μ','µ'],['ss','ß'],['ff','ﬀ']]){
+  const parent=join(root,String(results.length));await mkdir(parent);await mkdir(join(parent,first));let error=null;
+  try{await mkdir(join(parent,second));}catch(e){error={code:e.code,message:e.message};}
+  results.push({first,second,secondCreateError:error,nativeNames:await readdir(parent)});
+ }
+ const query=spawnSync(join(process.env.SystemRoot,'System32/fsutil.exe'),['file','queryCaseSensitiveInfo',root],{encoding:'utf8',windowsHide:true,timeout:5000});
+ roots.push({root,results,caseSensitivityQuery:{status:query.status,stdout:query.stdout,stderr:query.stderr,error:query.error?.message}});
+}
+const report={recordedAt:new Date().toISOString(),node:process.version,platform:process.platform,roots,scope:'Current C/D directory controls only. Native directory enumeration retained; no file payload/device/overwrite/deletion. Other Windows hosts/volumes remain unverified.'};
+await writeFile('release-evidence/unicode-alias-controls-2026-10-16.json',JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(report));

@@ -1,0 +1,11 @@
+import {mkdtemp,mkdir,readdir,writeFile} from 'node:fs/promises';
+import {join} from 'node:path';
+const root=await mkdtemp('D:/MyProjects/qrft-unicode-directory-probe-2026-10-16-');
+const results=[];
+for(const [first,second] of [['σ','ς'],['i','ı'],['s','ſ'],['μ','µ'],['ss','ß'],['ff','ﬀ'],['k','K'],['ß','ẞ']]){
+ const parent=join(root,String(results.length));await mkdir(parent);await mkdir(join(parent,first));
+ let error=null;try{await mkdir(join(parent,second));}catch(e){error={code:e.code,message:e.message};}
+ results.push({first,second,lowercaseAliases:first.normalize('NFC').toLowerCase()===second.normalize('NFC').toLowerCase(),secondCreateError:error,nativeNames:await readdir(parent)});
+}
+const report={recordedAt:new Date().toISOString(),node:process.version,root,scope:'Harmless directory creation only on current D volume; no files, device names, data overwrite or cleanup. Does not establish other OS/filesystem Unicode tables.',results};
+await writeFile('release-evidence/unicode-directory-alias-probe-2026-10-16.json',JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(report));

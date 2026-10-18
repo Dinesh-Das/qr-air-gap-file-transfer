@@ -1,0 +1,88 @@
+{
+  "recordedAt": "2026-10-16T01:19:56.577Z",
+  "releaseStatus": "NOT READY",
+  "productionCodeChanged": false,
+  "hypothesis": "Simple NFC/lowercase alias detection might miss final sigma/dotless i/long s/micro sign collisions on Windows; broader uppercase-then-lowercase folding was considered.",
+  "finding": "Hypothesis contradicted by native probes on this host. Both case-insensitive C and D directories preserve all six suspected pairs distinctly, while three ordinary ASCII/Greek case controls collide. No broader folding was added.",
+  "native": {
+    "initialProbe": "release-evidence/unicode-directory-alias-probe-2026-10-16.json",
+    "controlledProbe": "release-evidence/unicode-alias-controls-2026-10-16.json",
+    "roots": [
+      "D:/MyProjects/qrft-unicode-controls-2026-10-16-NqJ4BD",
+      "C:/Users/dines/AppData/Local/Temp/qrft-unicode-controls-2026-10-16-FcQ6eY"
+    ],
+    "scope": "Current C/D directory controls only. Native directory enumeration retained; no file payload/device/overwrite/deletion. Other Windows hosts/volumes remain unverified."
+  },
+  "tests": {
+    "newCases": 9,
+    "distinctPairs": [
+      [
+        "σ",
+        "ς"
+      ],
+      [
+        "i",
+        "ı"
+      ],
+      [
+        "s",
+        "ſ"
+      ],
+      [
+        "μ",
+        "µ"
+      ],
+      [
+        "ss",
+        "ß"
+      ],
+      [
+        "ff",
+        "ﬀ"
+      ]
+    ],
+    "nativeAliasControls": [
+      [
+        "case",
+        "CASE"
+      ],
+      [
+        "σ",
+        "Σ"
+      ],
+      [
+        "μ",
+        "Μ"
+      ]
+    ],
+    "behavior": "Archive create/extract preserves two different byte payloads under exact original names. Selected handles prepare a large virtual stream whose metadata and payload reads preserve both names and exact bytes. Native alias controls reject before preparation.",
+    "mutation": "Isolated archive module copy changes NFC/lowercase aliases to uppercase-then-lowercase expansion; six legal-name tests fail and three alias controls pass. Mutant excluded from normal tests by validation-only location, no production mutation.",
+    "validation": {
+      "focused": 9,
+      "unitTests": 501,
+      "testFiles": 53,
+      "typecheck": 0,
+      "build": 0,
+      "node": "24.22.0",
+      "builtAssetsIdentical": 5,
+      "dependencies": "Existing fresh stage/unchanged lock; no new npmci.",
+      "browserScope": "Prior88Edge/88Chrome gates retain current app/server/runtime/build byte scope; test-only addition, no browser rerun. Native/default-handler/CMD limitations retained."
+    }
+  },
+  "limitations": [
+    "Only one Windows host/two local directories; directory behavior does not exhaust filesystem/volume/OS Unicode tables or native picker/file-write semantics.",
+    "Existing portable guard can be stricter than these local directories for NFC/lowercase-equivalent names. No attempt to loosen portable-name policy.",
+    "No data payload was written by native directory probes; no device file opened, data overwrite, cleanup, or preserved-data deletion.",
+    "The negative-control algorithm is a deliberately bad uppercase-expansion candidate, not a claim about every Unicode case-fold algorithm.",
+    "All42physicalcases,GUI/nativepickers,cleanOS/CI/50–100GB resources and historical5GiB memory remain open."
+  ],
+  "ledger": {
+    "entries": 838,
+    "changed": [
+      "L1211"
+    ],
+    "withoutMappedEvidence": 332,
+    "mappedReferences": 609,
+    "completedByThisAudit": 0
+  }
+}

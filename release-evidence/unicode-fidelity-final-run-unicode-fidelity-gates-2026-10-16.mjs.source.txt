@@ -1,0 +1,21 @@
+import {readFile,writeFile,mkdir,open} from 'node:fs/promises';
+import {spawn} from 'node:child_process';
+import {join,resolve} from 'node:path';
+const r=JSON.parse(await readFile('release-evidence/release-gate-latest.json'));const stage=r.freshInstall.stage;
+const runtime=resolve('artifacts/qrft-2026-10-16-device-names-portable/runtime/node.exe');
+const folder=join(stage,'validation/unicode-fidelity-mutant-2026-10-16');await mkdir(folder);
+const archive=await readFile('src/lib/archive.ts','utf8');if(!archive.includes('.normalize("NFC").toLowerCase()'))throw Error('Mutation target');
+const mutated=archive.replaceAll('.normalize("NFC").toLowerCase()','.normalize("NFC").toUpperCase().toLowerCase()');
+await writeFile(join(folder,'archive-fullfold-mutant.ts'),mutated,{flag:'wx'});
+const test=await readFile('tests/unicode-path-fidelity.test.ts','utf8');
+const mutantTest=test.replaceAll('"../src/','"../../src/').replace('"../../src/lib/archive"','"./archive-fullfold-mutant"');
+await writeFile(join(folder,'unicode-mutant.test.ts'),mutantTest,{flag:'wx'});
+await writeFile('release-evidence/unicode-fidelity-fullfold-mutant-2026-10-16.source.txt',mutated,{flag:'wx'});
+const config=join(folder,'config.mjs');await writeFile(config,'export default '+JSON.stringify({root:stage,test:{include:['validation/unicode-fidelity-mutant-2026-10-16/unicode-mutant.test.ts'],environment:'node'}})+';\n',{flag:'wx'});
+const cli=join(stage,'node_modules/vitest/vitest.mjs');
+for(const [name,args,expected] of [['fullfold-mutant',[cli,'run','--config',config],1],['type',[join(stage,'node_modules/typescript/bin/tsc'),'-b','--pretty','false'],0],['unit',[cli,'run'],0],['build',[join(stage,'node_modules/vite/bin/vite.js'),'build'],0]]){
+ const path='release-evidence/unicode-fidelity-'+name+'-2026-10-16.log';const log=await open(path,'wx');let code;
+ try{code=await new Promise((done,reject)=>{const c=spawn(runtime,args,{cwd:stage,env:{...process.env,TEMP:join(stage,'validation/temp'),TMP:join(stage,'validation/temp')},windowsHide:true,stdio:['ignore',log.fd,log.fd]});c.once('error',reject);c.once('close',done);});}finally{await log.close();}
+ await writeFile('release-evidence/unicode-fidelity-'+name+'-exit-2026-10-16.txt',String(code)+'\n',{flag:'wx'});console.log(JSON.stringify({name,code,expected}));if(code!==expected)throw Error('Gate mismatch '+name);
+ if(name==='fullfold-mutant'&&!/6 failed\s*\|\s*3 passed/.test(await readFile(path,'utf8')))throw Error('Mutation failed for unexpected reason');
+}

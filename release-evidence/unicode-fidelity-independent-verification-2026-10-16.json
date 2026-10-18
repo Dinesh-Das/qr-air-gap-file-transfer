@@ -1,0 +1,18 @@
+{
+  "verifiedAt": "2026-10-16T01:20:49.898Z",
+  "inputs": 171,
+  "assets": 5,
+  "evidence": 604,
+  "indexedFiles": 31,
+  "unit": 501,
+  "testFiles": 53,
+  "nativeControlledDirectories": 18,
+  "scopedLedgerChanges": [
+    "L1211"
+  ],
+  "ledgerReferences": 609,
+  "unmapped": 332,
+  "physicalNotRun": 42,
+  "productionChanged": false,
+  "releaseStatus": "NOT READY"
+}
