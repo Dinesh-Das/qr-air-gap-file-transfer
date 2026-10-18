@@ -1,0 +1,117 @@
+{
+  "at": "2026-10-16T16:34:04.520Z",
+  "observerPid": 8768,
+  "samples": [
+    {
+      "method": "spawn-per-sample",
+      "elapsedMs": 428.42510000000004,
+      "result": {
+        "sampleStartedAtMs": 1792168443519,
+        "processes": [
+          {
+            "privateBytes": 56147968,
+            "workingSetBytes": 42254336,
+            "id": 36480
+          }
+        ],
+        "sampleFinishedAtMs": 1792168443650,
+        "missingIds": []
+      }
+    },
+    {
+      "method": "spawn-per-sample",
+      "elapsedMs": 304.11710000000005,
+      "result": {
+        "sampleStartedAtMs": 1792168443921,
+        "processes": [
+          {
+            "privateBytes": 56774656,
+            "workingSetBytes": 42721280,
+            "id": 36480
+          }
+        ],
+        "sampleFinishedAtMs": 1792168443956,
+        "missingIds": []
+      }
+    },
+    {
+      "method": "spawn-per-sample",
+      "elapsedMs": 313.5414999999999,
+      "result": {
+        "sampleStartedAtMs": 1792168444237,
+        "processes": [
+          {
+            "privateBytes": 56774656,
+            "workingSetBytes": 42819584,
+            "id": 36480
+          }
+        ],
+        "sampleFinishedAtMs": 1792168444271,
+        "missingIds": []
+      }
+    },
+    {
+      "method": "resident",
+      "elapsedMs": 105.26109999999994,
+      "result": {
+        "sampleStartedAtMs": 1792168444383,
+        "processes": [
+          {
+            "privateBytes": 56774656,
+            "workingSetBytes": 42921984,
+            "id": 36480
+          }
+        ],
+        "sampleFinishedAtMs": 1792168444425,
+        "missingIds": []
+      }
+    },
+    {
+      "method": "resident",
+      "elapsedMs": 7.78670000000011,
+      "result": {
+        "sampleStartedAtMs": 1792168444448,
+        "processes": [
+          {
+            "privateBytes": 56774656,
+            "workingSetBytes": 42946560,
+            "id": 36480
+          }
+        ],
+        "sampleFinishedAtMs": 1792168444455,
+        "missingIds": []
+      }
+    },
+    {
+      "method": "resident",
+      "elapsedMs": 6.242899999999963,
+      "result": {
+        "sampleStartedAtMs": 1792168444456,
+        "processes": [
+          {
+            "privateBytes": 56774656,
+            "workingSetBytes": 42950656,
+            "id": 36480
+          }
+        ],
+        "sampleFinishedAtMs": 1792168444461,
+        "missingIds": []
+      }
+    }
+  ],
+  "missing": {
+    "sampleStartedAtMs": 1792168444462,
+    "processes": [],
+    "sampleFinishedAtMs": 1792168444466,
+    "missingIds": [
+      2147483647
+    ]
+  },
+  "invalidRequestsRejected": 4,
+  "healthyAfterRejections": true,
+  "closure": {
+    "code": 0,
+    "signal": null
+  },
+  "scope": "Native diagnostic sampler contract and latency probe; same counters and missing-PID failure semantics. No application changes."
+}
