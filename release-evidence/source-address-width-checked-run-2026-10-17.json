@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-17T04:59:41.481Z",
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\portable\\runtime\\node.exe",
+  "stage": "C:/Users/dines/AppData/Local/Temp/qrft-fresh-current-2026-10-17-Oo61W0",
+  "before": {
+    "C:/": 2847318016,
+    "D:/": 2565222400
+  },
+  "results": [
+    {
+      "mode": "current",
+      "code": 0,
+      "config": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-fresh-current-2026-10-17-Oo61W0\\validation\\source-address-width-checked-2026-10-17\\current.config.mjs",
+      "modulePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-fresh-current-2026-10-17-Oo61W0\\src\\lib\\large-transfer.ts"
+    },
+    {
+      "mode": "mutant-slice-uint32",
+      "code": 1,
+      "config": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-fresh-current-2026-10-17-Oo61W0\\validation\\source-address-width-checked-2026-10-17\\mutant-slice-uint32.config.mjs",
+      "modulePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-fresh-current-2026-10-17-Oo61W0\\validation\\source-address-width-checked-2026-10-17\\mutant-slice-uint32.ts"
+    },
+    {
+      "mode": "mutant-adapter-uint32",
+      "code": 1,
+      "config": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-fresh-current-2026-10-17-Oo61W0\\validation\\source-address-width-checked-2026-10-17\\mutant-adapter-uint32.config.mjs",
+      "modulePath": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-fresh-current-2026-10-17-Oo61W0\\validation\\source-address-width-checked-2026-10-17\\mutant-adapter-uint32.ts"
+    }
+  ],
+  "sealedCheckpointFilesUnchanged": 2203,
+  "currentInputsUnchanged": 176,
+  "assetsUnchanged": 5,
+  "scope": "Bounded fabricated File-like snapshots, selected address arithmetic and metadata checks only. No actual50/100GiB allocation, native source File/disk, full prepare/hash/transfer, performance, memory scaling or physical acceptance. Isolated mutation modules never replace production files."
+}

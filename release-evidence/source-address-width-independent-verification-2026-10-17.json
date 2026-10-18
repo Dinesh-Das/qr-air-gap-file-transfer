@@ -1,0 +1,40 @@
+{
+  "verifiedAt": "2026-10-17T05:01:18.816Z",
+  "applicationChanged": false,
+  "canonicalCheckpointChanged": false,
+  "canonicalCheckpoint": "release-evidence/file-boundary-cancel-final-hashes-2026-10-17.json",
+  "sealedFilesUnchanged": 2203,
+  "currentInputsUnchanged": 176,
+  "assetsUnchanged": 5,
+  "currentCoreUnitTests": 536,
+  "isolatedModelCases": 52,
+  "outcomes": {
+    "current": {
+      "failed": 0,
+      "passed": 52
+    },
+    "mutant-slice-uint32": {
+      "failed": 16,
+      "passed": 36
+    },
+    "mutant-adapter-uint32": {
+      "failed": 12,
+      "passed": 40
+    }
+  },
+  "modelCoverage": [
+    "Selected 64-byte payload ranges at0,256bytes, either side of2^31/2^32, a zero-length middle file, cross-file boundaries, high second-file offsets,49GiB and payload/trailer boundaries in50/100GiB models.",
+    "Production readPreparedLargeRange and QRF3 adapter; footer/metadata parsed at exact modeled payload ends; EOF zero-read and overrun guards.",
+    "Four invalid number offsets and virtual size aboveNumber.MAX_SAFE_INTEGER rejected before modeled snapshot I/O.",
+    "Eight-byte file-tagged block ordinals distinguish256-byte repetition and32-bit wrapping at selected addresses."
+  ],
+  "fixtureCorrection": "Initial52-case fixture had48passes and4test assertion failures because invalid QRF3 offsets throw synchronously. Only those four shared assertions changed from rejects to a synchronous throw expectation; all original logs/source and both mutation trials retained. No production defect or code fix inferred.",
+  "review": {
+    "correctness": "Current actual production module is selected through an explicit isolated Vitest alias. Both copied mutations differ by exactly one truncation expression plus a relative import relocation; production/stage176inputs and prior2203sealed paths remain exact.",
+    "oracle": "Source slices extract individual bytes from file-tagged64-bit words; expected bytes use linear global-coordinate file lookup and DataView whole-word encoding. The explicit fixture-discrimination test and two negative controls establish sensitivity to the targeted wrapping errors.",
+    "scope": "Manually constructed PreparedLargeSource with fabricated File-like snapshots and placeholder SHA fields. No actual50/100GiB data allocation, native source file, scan/hash, whole-file digest/integrity, complete transfer, RTC/network, OPFS, destination I/O, native browser/picker, process-memory/CPU/throughput or physical validation is established."
+  },
+  "physicalNotRun": 42,
+  "ledgerChanged": false,
+  "releaseStatus": "NOT READY"
+}

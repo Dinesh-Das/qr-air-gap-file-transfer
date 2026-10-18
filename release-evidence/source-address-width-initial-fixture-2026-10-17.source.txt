@@ -1,0 +1,88 @@
+import {describe,it,expect} from 'vitest';
+import {createQrf3LargeSource,createLargeTreeReader,encodeLargeTreeMetadata,readLargeTreeManifest,readPreparedLargeRange,LARGE_TREE_FOOTER_BYTES,type PreparedLargeSource} from 'qrft-address-probe-reader';
+
+const GiB=1024n**3n;
+function model(total:bigint){
+  const sizes=[4n*GiB+33n,0n,total-(4n*GiB+33n)];
+  const calls:Array<{file:number,start:number,end:number}>=[];
+  let cursor=0n;
+  const files=sizes.map((size,file)=>{
+    const path=['a.bin','empty.bin','z.bin'][file],offset=cursor;cursor+=size;
+    return {path,offset,size:Number(size),lastModified:7,sha256Hex:'0'.repeat(64),handle:{} as FileSystemFileHandle,
+      snapshot:{slice(start:number,end:number){
+        calls.push({file,start,end});
+        if(!Number.isSafeInteger(start)||!Number.isSafeInteger(end)||start<0||end<start||BigInt(end)>size)throw Error('Model slice outside file');
+        const bytes=new Uint8Array(end-start);
+        for(let i=0;i<bytes.length;i++){
+          const position=BigInt(start+i),word=(BigInt(file+1)<<56n)|(position/8n);
+          bytes[i]=Number((word>>((position%8n)*8n))&255n);
+        }
+        return new Blob([bytes]);
+      }} as unknown as File};
+  });
+  const metadataBytes=encodeLargeTreeMetadata({rootName:'address-model',directories:[],files});
+  const trailerBytes=new Uint8Array(metadataBytes.length+LARGE_TREE_FOOTER_BYTES);trailerBytes.set(metadataBytes);
+  new DataView(trailerBytes.buffer).setBigUint64(metadataBytes.length,BigInt(metadataBytes.length),true);
+  trailerBytes.set(new TextEncoder().encode('QRF3END1'),metadataBytes.length+8);
+  const source:PreparedLargeSource={rootName:'address-model',rootHandle:{} as FileSystemDirectoryHandle,files,directories:[],totalFileBytes:total,totalStreamBytes:total+BigInt(trailerBytes.length),metadataBytes,trailerBytes,metadataSha256:new Uint8Array(32),streamSha256:new Uint8Array(32)};
+  // Independent oracle: linear global-coordinate lookup and whole-word encoding.
+  // Production uses binary file lookup; the slice model extracts one byte at a time.
+  function expected(offset:bigint,length:number){
+    const bytes=new Uint8Array(length);
+    for(let i=0;i<length;i++){
+      const global=offset+BigInt(i);
+      if(global>=total){bytes[i]=trailerBytes[Number(global-total)];continue;}
+      let base=0n,file=-1,relative=0n;
+      for(let f=0;f<sizes.length;f++){if(global<base+sizes[f]){file=f;relative=global-base;break;}base+=sizes[f];}
+      if(file<0)throw Error('Oracle has no file');
+      const word=new Uint8Array(8);new DataView(word.buffer).setBigUint64(0,(BigInt(file+1)<<56n)+(relative/8n),true);
+      bytes[i]=word[Number(relative%8n)];
+    }
+    return bytes;
+  }
+  return {source,calls,expected};
+}
+
+describe('bounded source address-width models (not physical large transfers)',()=>{
+  for(const gib of [50n,100n]){
+    const total=gib*GiB;
+    const offsets=[0n,256n,2n**31n-17n,2n**31n+9n,4n*GiB-17n,4n*GiB+9n,4n*GiB+25n,4n*GiB+33n,8n*GiB+20n,49n*GiB+19n,total-23n];
+    for(const adapter of [false,true])it.each(offsets)(`${gib}GiB model, QRF3 adapter ${adapter}, offset %s`,async offset=>{
+      const {source,calls,expected}=model(total),length=64;
+      const actual=adapter?await createQrf3LargeSource(source).read(Number(offset),length):await readPreparedLargeRange(source,offset,length);
+      expect(actual).toEqual(expected(offset,length));
+      expect(calls.length).toBeGreaterThan(0);
+      expect(calls.every(c=>c.end-c.start<=length)).toBe(true);
+      // At a cross-file read the empty middle file must not be opened.
+      expect(calls.some(c=>c.file===1)).toBe(false);
+    });
+    it(`reads metadata/footer at the exact ${gib}GiB payload boundary`,async()=>{
+      const {source,calls}=model(total),reader=createLargeTreeReader(source),manifest=await readLargeTreeManifest(reader);
+      expect(manifest.totalFileBytes).toBe(total);
+      expect(manifest.files.map(f=>({path:f.path,offset:f.offset,size:f.size}))).toEqual([
+        {path:'a.bin',offset:0n,size:4n*GiB+33n},{path:'empty.bin',offset:4n*GiB+33n,size:0n},{path:'z.bin',offset:4n*GiB+33n,size:total-4n*GiB-33n},
+      ]);
+      expect(calls).toEqual([]); // Metadata-only access must not read payload snapshots.
+      const end=source.totalStreamBytes;
+      expect(await readPreparedLargeRange(source,end,0)).toEqual(new Uint8Array());
+      await expect(readPreparedLargeRange(source,end,1)).rejects.toThrow(/beyond/);
+      expect(calls).toEqual([]);
+    });
+  }
+  it('fixture distinguishes 256-byte and 32-bit wrapped addresses',()=>{
+    const {expected}=model(100n*GiB);
+    expect(expected(0n,64)).not.toEqual(expected(256n,64));
+    expect(expected(0n,64)).not.toEqual(expected(4n*GiB,64));
+    expect(expected(4n*GiB+33n,64)).not.toEqual(expected(8n*GiB+33n,64));
+  });
+  it.each([-1,0.5,Number.MAX_SAFE_INTEGER+1,Number.POSITIVE_INFINITY])('rejects inexact QRF3 source offset %s before I/O',async offset=>{
+    const {source,calls}=model(100n*GiB);
+    await expect(createQrf3LargeSource(source).read(offset,64)).rejects.toThrow(/safe integer/);
+    expect(calls).toEqual([]);
+  });
+  it('rejects a virtual source beyond the exact QRF3 integer limit',()=>{
+    const {source,calls}=model(100n*GiB);
+    expect(()=>createQrf3LargeSource({...source,totalStreamBytes:BigInt(Number.MAX_SAFE_INTEGER)+1n})).toThrow(/exact browser integer range/);
+    expect(calls).toEqual([]);
+  });
+});
