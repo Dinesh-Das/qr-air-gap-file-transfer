@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-16T17:17:53.548Z",
+  "before": {
+    "time": "2026-10-16T17:17:53.547Z",
+    "freeDiskBytes": {
+      "C:/": 3088842752,
+      "D:/": 2637516800
+    },
+    "freeRamBytes": 14894460928
+  },
+  "candidate": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable",
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable\\runtime\\node.exe",
+  "channel": "msedge",
+  "browserRoot": "C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-final-gate-edge-22xfsP"
+}

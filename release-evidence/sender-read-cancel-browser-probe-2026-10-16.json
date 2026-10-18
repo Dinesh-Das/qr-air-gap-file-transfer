@@ -1,0 +1,26 @@
+{
+  "startedAt": "2026-10-16T16:58:22.168Z",
+  "scope": "Current sender API with actual browser File/slice/arrayBuffer/AbortController and controlled channel, no app UI/native picker/real WebRTC/LAN proof. Full native RTC regression suites are separate.",
+  "trials": [
+    {
+      "channel": "chrome",
+      "profilePreserved": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-chrome-9dy7sp",
+      "pageErrors": [],
+      "browser": "155.0.8059.80",
+      "error": "page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:5173/validation/sender-read-cancel-browser-page-2026-10-16.mjs\n    at D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\sender-read-cancel-browser-probe-2026-10-16.mjs:8:538",
+      "passed": false,
+      "closed": true
+    },
+    {
+      "channel": "msedge",
+      "profilePreserved": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-msedge-lalb2U",
+      "pageErrors": [],
+      "browser": "154.0.4258.53",
+      "error": "page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:5173/validation/sender-read-cancel-browser-page-2026-10-16.mjs\n    at D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\sender-read-cancel-browser-probe-2026-10-16.mjs:8:538",
+      "passed": false,
+      "closed": true
+    }
+  ],
+  "serverClosed": true,
+  "passed": false
+}

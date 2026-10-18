@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-16T22:36:00.3525829+05:30",
+  "cpu": {
+    "PercentProcessorTime": 32
+  },
+  "disk": {
+    "PercentDiskTime": 0,
+    "CurrentDiskQueueLength": 0,
+    "DiskBytesPersec": 536483
+  },
+  "memory": {
+    "FreePhysicalMemory": 13356548
+  },
+  "freeBytes": [
+    {
+      "Name": "C",
+      "Free": 3177996288
+    },
+    {
+      "Name": "D",
+      "Free": 2644148224
+    }
+  ]
+}

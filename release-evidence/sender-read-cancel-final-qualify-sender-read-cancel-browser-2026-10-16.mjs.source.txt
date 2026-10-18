@@ -1,0 +1,50 @@
+import { readFile, writeFile, mkdir, mkdtemp, open, statfs } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { spawn } from 'node:child_process';
+import { freemem } from 'node:os';
+import { join, resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { verifyRelease } from '../scripts/verify-release.mjs';
+const channel=process.argv[2];
+if(!['msedge','chrome'].includes(channel))throw Error('Select msedge or chrome');
+const name=channel==='msedge'?'edge':'chrome';
+const report=JSON.parse(await readFile(process.argv[3]??'release-evidence/release-gate-latest.json'));
+const stage=report.freshInstall.stage;
+const candidate=report.offlineCandidate.path;
+const runtime=join(candidate,'runtime/node.exe');
+const hash=async p=>createHash('sha256').update(await readFile(p)).digest('hex');
+if(await verifyRelease(candidate)!==22)throw Error('Candidate changed');
+for(const f of report.currentInputs)if(await hash(f.path)!==f.sha256||await hash(join(stage,f.path))!==f.sha256)throw Error('Source mismatch '+f.path);
+const snapshots=[];
+async function snapshot(){const disks={};for(const drive of ['C:/','D:/']){const fs=await statfs(drive);disks[drive]=fs.bavail*fs.bsize;}return {time:new Date().toISOString(),freeDiskBytes:disks,freeRamBytes:freemem()};}
+const before=await snapshot();
+// Reserve plus staging margin. A preflight is not continuous resource acceptance.
+const floor=2*1024**3+400*1024**2;
+if(Object.values(before.freeDiskBytes).some(bytes=>bytes<floor)||before.freeRamBytes<4*1024**3)throw Error('Insufficient preflight headroom '+JSON.stringify(before));
+const run='sender-read-cancel-full-'+name+'-2026-10-16';
+const browserRoot=await mkdtemp('C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-gate-'+name+'-');
+await mkdir(join(browserRoot,'temp'));
+const marker=join(stage,'validation',run+'-started.json');
+await writeFile(marker,JSON.stringify({startedAt:new Date().toISOString(),before,candidate,runtime,channel,browserRoot},null,2)+'\n',{flag:'wx'});
+const output=join(browserRoot,'results');
+await mkdir(output); // Playwright may clear this new owned empty directory only.
+const wrapper=join(stage,'validation',run+'-server.mjs');
+await writeFile(wrapper,`import {resolve} from 'node:path';\nif(resolve(process.execPath).toLowerCase()!==${JSON.stringify(resolve(runtime).toLowerCase())}||process.versions.node!=='24.22.0')throw Error('Wrong server runtime');\nconsole.log('QRFT portable server runtime '+JSON.stringify({execPath:process.execPath,node:process.version}));\nawait import(${JSON.stringify(pathToFileURL(join(candidate,'scripts/serve.mjs')).href)});\n`,{flag:'wx'});
+// Existing persistent-context and manual-address cases use these fixed ports.
+// Playwright must refuse an occupied server rather than reuse another app.
+const port=4178,signalPort=4179;
+const config={testDir:join(stage,'e2e'),timeout:45000,workers:1,use:{channel,baseURL:`http://127.0.0.1:${port}`,trace:'retain-on-failure'},webServer:{command:`node "${wrapper}"`,cwd:stage,env:{QRFT_PORT:String(port),QRFT_SIGNAL_PORT:String(signalPort)},url:`http://127.0.0.1:${port}`,reuseExistingServer:false,stdout:'pipe',stderr:'pipe'}};
+const configPath=join(stage,'validation',run+'.config.mjs');
+await writeFile(configPath,"import {defineConfig} from '@playwright/test';\nexport default defineConfig("+JSON.stringify(config,null,2)+");\n",{flag:'wx'});
+const env={...process.env};for(const key of Object.keys(env))if(key.toLowerCase()==='path')delete env[key];
+env.PATH=join(candidate,'runtime')+';'+process.env.PATH;
+env.TEMP=join(browserRoot,'temp');env.TMP=env.TEMP;env.QRFT_TEST_BROWSER_CHANNEL=channel;
+const log=await open(join(stage,'validation',run+'.log'),'wx');
+snapshots.push(before);
+const timer=setInterval(()=>{void snapshot().then(s=>snapshots.push(s));},10000);
+let code;
+try{code=await new Promise((done,reject)=>{const child=spawn(runtime,[join(stage,'node_modules/@playwright/test/cli.js'),'test','--config',configPath,'--output',output],{cwd:stage,env,windowsHide:true,stdio:['ignore',log.fd,log.fd]});child.once('error',reject);child.once('close',done);});}
+finally{clearInterval(timer);await log.close();snapshots.push(await snapshot());await writeFile(join(stage,'validation',run+'-observations.json'),JSON.stringify({snapshots,reserveBytes:2*1024**3,limitation:'10-second sampled disk/RAM observations only; no continuous floor, browser RSS/heap/GC or throughput proof.'},null,2)+'\n',{flag:'wx'});}
+await writeFile(join(stage,'validation',run+'-exit.txt'),String(code)+'\n',{flag:'wx'});
+console.log(JSON.stringify({channel,exitCode:code,log:join(stage,'validation',run+'.log'),output}));
+process.exitCode=code??1;

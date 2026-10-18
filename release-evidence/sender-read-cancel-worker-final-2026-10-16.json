@@ -1,0 +1,32 @@
+{
+  "recordedAt": "2026-10-16T17:38:03.300Z",
+  "roots": [
+    "C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-final-gate-edge-22xfsP",
+    "C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-final-gate-chrome-7UNLOK",
+    "D:/MyProjects/qrft-sender-read-cancel-chrome-results-2026-10-16-vx5zOB",
+    "C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-gate-edge-spxWmF",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-chrome-9dy7sp",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-msedge-lalb2U",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-chrome-QKUXtb",
+    "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-msedge-B4eiV6",
+    "C:/Users/dines/AppData/Local/Temp/qrft-sender-cancel-readiness-control-wVaUFM",
+    "C:/Users/dines/AppData/Local/Temp/qrft-sender-cancel-readiness-mutant-PfIOdW"
+  ],
+  "ownedWorkers": [],
+  "normalizedPathMatching": true,
+  "rebound": [
+    {
+      "port": 4178,
+      "host": "127.0.0.1",
+      "tcp": true,
+      "udp": false
+    },
+    {
+      "port": 4179,
+      "host": "0.0.0.0",
+      "tcp": true,
+      "udp": true
+    }
+  ],
+  "note": "Both C and D profile/result roots checked. No processes terminated or preserved datasets/profiles removed/compressed/moved."
+}

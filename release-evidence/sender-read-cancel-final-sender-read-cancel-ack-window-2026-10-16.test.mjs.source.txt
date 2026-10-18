@@ -1,0 +1,13 @@
+import {it,expect,vi} from 'vitest';
+import {prepareLargeSource} from '../src/lib/large-transfer.ts';
+import {createOfflineTransferManifest,OFFLINE_BLOCK_BYTES} from '../src/lib/webrtc-protocol.ts';
+import {OfflineSourceSender} from '../src/lib/webrtc-transfer.ts';
+it('starts no extra source read when ACK resolves a full window immediately before Stop',async()=>{
+ const bytes=new Uint8Array(OFFLINE_BLOCK_BYTES*132+17).fill(37),file=new File([bytes],'source.bin',{lastModified:7});
+ const source=await prepareLargeSource({rootName:'ack-window',rootHandle:{kind:'directory',name:'ack-window'},directories:[],totalFileBytes:BigInt(bytes.length),files:[{path:file.name,size:file.size,lastModified:7,handle:{kind:'file',name:file.name,async getFile(){return file;}}}]});
+ const manifest=await createOfflineTransferManifest(source),reads=vi.spyOn(source.files[0].snapshot,'slice');let reached;
+ const full=new Promise(done=>{reached=done;});
+ class Channel extends EventTarget{readyState='open';bufferedAmount=0;bufferedAmountLowThreshold=0;packets=[];controls=[];send(value){if(typeof value==='string')this.controls.push(value);else{this.packets.push(value);if(this.packets.length===96)reached();}}}
+ const channel=new Channel(),sender=new OfflineSourceSender(channel,source,manifest),controller=new AbortController(),reason=new Error('Stop after ACK wakeup');const task=sender.run(controller.signal);const outcome=task.then(()=>null,e=>e);
+ try{await full;expect(reads).toHaveBeenCalledTimes(96);sender.acknowledge([0]);controller.abort(reason);expect(await outcome).toBe(reason);expect(reads).toHaveBeenCalledTimes(96);expect(channel.packets).toHaveLength(96);expect(channel.controls).toEqual([]);expect(sender.isPayloadComplete).toBe(false);}finally{sender.dispose();reads.mockRestore();}
+});

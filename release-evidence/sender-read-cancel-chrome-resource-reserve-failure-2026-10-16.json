@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-10-16T17:37:14.078Z",
+  "reserveBytes": 2147483648,
+  "observedAtPassedCase": 80,
+  "manualFreeDiskBytes": {
+    "C:/": 2124877824,
+    "D:/": 2568650752
+  },
+  "nowFreeDiskBytes": {
+    "C:/": 2102476800,
+    "D:/": 2568650752
+  },
+  "resourceReserveQualification": false,
+  "functionalSuiteMayContinue": true,
+  "scope": "C dipped below unchanged2GiB reserve during final Chrome. Preflight2GiB+400MiB passed; no guard threshold lowered. Full functional suite result is separate from resource qualification. Protected data/profiles were not deleted, compressed or moved."
+}

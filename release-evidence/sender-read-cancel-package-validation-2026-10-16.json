@@ -1,0 +1,106 @@
+{
+  "outputs": [
+    {
+      "variant": "external",
+      "path": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\external",
+      "files": 19,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "D:\\MyProjects\\qrft-portable-runtime-probe-2026-10-15\\bundle with spaces\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:44012\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 44012,
+        "signalPort": 40442,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    },
+    {
+      "variant": "portable",
+      "path": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable",
+      "files": 22,
+      "execution": {
+        "node": "v24.22.0",
+        "execPath": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable\\runtime\\node.exe",
+        "cwd": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "path": "D:/MyProjects/qrft-browser-shell-probe-2026-10-15-KtZRiP",
+        "comSpec": "D:\\MyProjects\\qrft-browser-shell-probe-2026-10-15-KtZRiP\\cmd.exe",
+        "calls": [
+          {
+            "executable": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/s",
+              "/c",
+              "start \"\" \"http://127.0.0.1:40578\""
+            ],
+            "windowsHide": true,
+            "windowsVerbatimArguments": true
+          }
+        ],
+        "servedBytes": true,
+        "health": true,
+        "cleanStop": true,
+        "httpPort": 40578,
+        "signalPort": 44234,
+        "httpRebind": true,
+        "signalTcpUdpRebind": true,
+        "scope": "Packaged real runtime/default opener function; browser command intercepted and replaced with native system cmd exit0. No UI/browser dispatch/rendering proof."
+      }
+    }
+  ],
+  "oldRemoved": [
+    {
+      "path": "dist/assets/index-THovGGUw.js",
+      "archive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\sender-read-cancel-dist-before-2026-10-16\\dist\\assets\\index-THovGGUw.js",
+      "sha256": "bfffe64bfea859a69906e94dc0368b4b3ec538dd4e5be4bde7f0a8c1baf146a2"
+    }
+  ],
+  "compiledArchive": "D:\\MyProjects\\QR Air-Gap File Transfer\\.tmp\\sender-read-cancel-dist-before-2026-10-16",
+  "builtAssets": [
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-BQkzPN2R.js",
+      "bytes": 556482,
+      "sha256": "76cfa706b4fd8fdc89537ba30366c50b71b0124f5fecb1d0aa61dea6828f684f"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "23a9be59959f2447fc9941620c6a5159342cd8abfc37deb2a1ec5fe073f1a4f2"
+    }
+  ],
+  "scope": "Actual package lifecycle substitutes native cmd exit0 for browser dispatch; no GUI/default-handler proof."
+}

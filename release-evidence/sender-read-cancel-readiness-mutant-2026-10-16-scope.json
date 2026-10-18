@@ -1,0 +1,11 @@
+{
+  "mode": "mutant",
+  "root": "C:/Users/dines/AppData/Local/Temp/qrft-sender-cancel-readiness-mutant-PfIOdW",
+  "server": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\sender-read-cancel-readiness-mutant-2026-10-16-server.mjs",
+  "config": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\sender-read-cancel-readiness-mutant-2026-10-16.config.mjs",
+  "test": "Stop cancels prefetched native OPFS verification bytes and resumes without resend",
+  "sameOverallTimeoutMs": 45000,
+  "sameVerificationAssertionTimeoutMs": 5000,
+  "sameFixtureBytes": 8388608,
+  "scope": "Native Edge/RTC/OPFS test on isolated dev-server source; only mutant omits verification stream cancellation. No source files changed by mutation."
+}

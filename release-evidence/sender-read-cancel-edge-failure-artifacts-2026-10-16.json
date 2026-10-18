@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-16T17:34:10.954Z",
+  "originalRunExit": 1,
+  "originalPassed": 91,
+  "originalFailed": 1,
+  "observation": "Pre-cleanup trace screenshot shows 65.9percent/5.3MiB of8MiB payload, before verification starts. Later Transfer verified text in cleanup-era error context does not establish readiness during failed assertion.",
+  "correction": "Wait sender-complete before unchanged verification assertion; exact source delta verified separately. Same8MiB/45s test/5s assertion. Negative reader.cancel mutation still fails with4MiB queued.",
+  "files": [
+    {
+      "path": "C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-gate-edge-spxWmF/results/pairing-Stop-cancels-prefe-1526c--and-resumes-without-resend/trace.zip",
+      "bytes": 8412400,
+      "sha256": "9d1306f4462072cce146f0ebb9eb29bf61e0322ed330e6330a2abfef62618a34"
+    },
+    {
+      "path": "C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-gate-edge-spxWmF/results/pairing-Stop-cancels-prefe-1526c--and-resumes-without-resend/error-context.md",
+      "bytes": 19954,
+      "sha256": "55191f73d65b661ec47d0f7ea9c917543c1b97608e04cd2008da556dca056a12"
+    },
+    {
+      "path": "release-evidence/sender-read-cancel-edge-failure-before-cleanup-2026-10-16.jpeg",
+      "bytes": 31766,
+      "sha256": "c87c1a362c45b11da16f96a17d8ae9b6bfab3a7c9801bae796f58166cb4f1360"
+    }
+  ]
+}

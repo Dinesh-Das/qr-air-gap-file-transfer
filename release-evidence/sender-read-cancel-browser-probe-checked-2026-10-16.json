@@ -1,0 +1,136 @@
+{
+  "startedAt": "2026-10-16T16:58:52.853Z",
+  "scope": "Current sender API with actual browser File/slice/arrayBuffer/AbortController and controlled channel, no app UI/native picker/real WebRTC/LAN proof. Full native RTC regression suites are separate.",
+  "trials": [
+    {
+      "channel": "chrome",
+      "profilePreserved": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-chrome-QKUXtb",
+      "pageErrors": [],
+      "browser": "155.0.8059.80",
+      "results": [
+        {
+          "mode": "already aborted",
+          "reads": 0,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 0,
+          "error": "Controlled stop",
+          "passed": true
+        },
+        {
+          "mode": "abort after start",
+          "reads": 0,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 1,
+          "error": "Controlled stop",
+          "passed": true
+        },
+        {
+          "mode": "fail after start",
+          "reads": 0,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 1,
+          "error": "Controlled stop",
+          "passed": true
+        },
+        {
+          "mode": "dispose after start",
+          "reads": 0,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 1,
+          "error": "Transfer stopped.",
+          "passed": true
+        },
+        {
+          "mode": "in-flight",
+          "reads": 1,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 1,
+          "error": "Controlled stop",
+          "passed": true
+        },
+        {
+          "mode": "healthy",
+          "reads": 1,
+          "sends": 2,
+          "payloadComplete": true,
+          "progressUpdates": 2,
+          "error": null,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "closed": true
+    },
+    {
+      "channel": "msedge",
+      "profilePreserved": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-msedge-B4eiV6",
+      "pageErrors": [],
+      "browser": "154.0.4258.53",
+      "results": [
+        {
+          "mode": "already aborted",
+          "reads": 0,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 0,
+          "error": "Controlled stop",
+          "passed": true
+        },
+        {
+          "mode": "abort after start",
+          "reads": 0,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 1,
+          "error": "Controlled stop",
+          "passed": true
+        },
+        {
+          "mode": "fail after start",
+          "reads": 0,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 1,
+          "error": "Controlled stop",
+          "passed": true
+        },
+        {
+          "mode": "dispose after start",
+          "reads": 0,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 1,
+          "error": "Transfer stopped.",
+          "passed": true
+        },
+        {
+          "mode": "in-flight",
+          "reads": 1,
+          "sends": 0,
+          "payloadComplete": false,
+          "progressUpdates": 1,
+          "error": "Controlled stop",
+          "passed": true
+        },
+        {
+          "mode": "healthy",
+          "reads": 1,
+          "sends": 2,
+          "payloadComplete": true,
+          "progressUpdates": 2,
+          "error": null,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "closed": true
+    }
+  ],
+  "serverClosed": true,
+  "passed": true
+}

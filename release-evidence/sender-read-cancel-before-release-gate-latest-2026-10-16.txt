@@ -1,0 +1,5 @@
+NOT READY
+Reusable large-file BYOB destination verification fixes measured per-slice allocation pressure.525unit54/type/build pass; rebuiltportable22/external19 verify with scoped lifecycle;92Edge/92Chrome browser cases pass.
+Production5GiB native File readback validates exact data in both browsers through read-only handle adapters, page peaks~11MiB. Chrome process observer remains incomplete and diagnosticexit1/overallfalse is retained. No full-transfer/resource/size-scaling/historical-root-cause acceptance claim.
+All42physicalcases,GUI/nativepickers,cleanOS/hostedCI/50–100GB acceptance remain open.
+See readback-buffer-gate-review-2026-10-16.json.

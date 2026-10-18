@@ -1,0 +1,34 @@
+{
+  "verifiedAt": "2026-10-16T17:37:54.979Z",
+  "inputs": 175,
+  "assets": 5,
+  "evidence": 949,
+  "indexedFiles": 113,
+  "unitTests": 530,
+  "testFiles": 54,
+  "edge": 92,
+  "chrome": 92,
+  "chromePartition": {
+    "c": 85,
+    "d": 7
+  },
+  "chromeResourceReserveQualification": false,
+  "resourceThresholdBytes": 2147483648,
+  "oldTransferTestsPreserved": 32,
+  "newRegressionCases": 5,
+  "e2eChangeOnlyReadinessFence": true,
+  "negativeControlStillFails": true,
+  "initialEdgeFailurePreserved": true,
+  "initialBrowserProbeFailurePreserved": true,
+  "portable": 22,
+  "external": 19,
+  "ledgerEntries": 838,
+  "scopedLedgerChanges": [
+    "L856"
+  ],
+  "ledgerReferences": 613,
+  "ledgerFragmentReferencesResolved": 446,
+  "withoutMappedEvidence": 328,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY"
+}

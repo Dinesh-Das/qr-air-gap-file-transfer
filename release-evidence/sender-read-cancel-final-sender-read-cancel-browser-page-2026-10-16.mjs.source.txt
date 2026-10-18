@@ -1,0 +1,19 @@
+import {prepareLargeSource} from '../src/lib/large-transfer.ts';
+import {createOfflineTransferManifest,decodeOfflineDataBlockAsync} from '../src/lib/webrtc-protocol.ts';
+import {OfflineSourceSender} from '../src/lib/webrtc-transfer.ts';
+export async function run(){const results=[];
+for(const mode of ['already aborted','abort after start','fail after start','dispose after start','in-flight','healthy']){
+ const bytes=Uint8Array.from({length:4096},(_,i)=>i*37&255),file=new File([bytes],'source.bin',{lastModified:7});
+ const source=await prepareLargeSource({rootName:'browser-stop-fixture',rootHandle:{kind:'directory',name:'browser-stop-fixture'},directories:[],totalFileBytes:BigInt(bytes.length),files:[{path:file.name,size:file.size,lastModified:7,handle:{kind:'file',name:file.name,async getFile(){return file;}}}]});
+ const manifest=await createOfflineTransferManifest(source),controller=new AbortController(),reason=new Error('Controlled stop'),sent=[],progress=[];let reads=0,entered,release;
+ const started=new Promise(done=>{entered=done;}),gate=new Promise(done=>{release=done;}),snapshot=source.files[0].snapshot,nativeSlice=snapshot.slice.bind(snapshot);
+ Object.defineProperty(snapshot,'slice',{value(...args){reads++;const blob=nativeSlice(...args);if(mode==='in-flight'){const nativeRead=blob.arrayBuffer.bind(blob);Object.defineProperty(blob,'arrayBuffer',{value:async()=>{const pending=nativeRead();entered();await gate;return pending;}});}return blob;}});
+ let sender;class Channel extends EventTarget{readyState='open';bufferedAmount=0;bufferedAmountLowThreshold=0;send(value){sent.push(value);if(value instanceof ArrayBuffer)sender.acknowledge([new DataView(value).getUint32(4,true)]);}}
+ sender=new OfflineSourceSender(new Channel(),source,manifest);if(mode==='already aborted')controller.abort(reason);
+ const task=sender.run(controller.signal,p=>progress.push(p)),outcome=task.then(()=>null,error=>error);
+ if(mode==='abort after start')controller.abort(reason);if(mode==='fail after start')sender.fail(reason);if(mode==='dispose after start')sender.dispose();if(mode==='in-flight'){await started;controller.abort(reason);release();}
+ const error=await outcome;
+ if(mode==='healthy'){if(error||!sender.isPayloadComplete||reads!==1||sent.length!==2||typeof sent[1]!=='string'||JSON.parse(sent[1]).type!=='sender-complete')throw Error('Healthy transfer regression');const block=await decodeOfflineDataBlockAsync(sent[0]);for(let i=0;i<bytes.length;i++)if(block.payload[i]!==bytes[i])throw Error('Healthy bytes differ');const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',block.payload)),b=>b.toString(16).padStart(2,'0')).join('');if(hash!==manifest.streamSha256)throw Error('Healthy stream hash differs');}
+ else{if(!error||sent.length||sender.isPayloadComplete||reads!==(mode==='in-flight'?1:0))throw Error('Stopped sender performed new work: '+JSON.stringify({mode,reads,sends:sent.length,error:String(error)}));if(mode==='dispose after start'){if(error.message!=='Transfer stopped.')throw Error('Wrong disposal error');}else if(error!==reason)throw Error('Cancellation reason changed');if(mode==='already aborted'&&progress.length)throw Error('Aborted run reported progress');}
+ results.push({mode,reads,sends:sent.length,payloadComplete:sender.isPayloadComplete,progressUpdates:progress.length,error:error?.message??null,passed:true});sender.dispose();release();
+}return results;}
