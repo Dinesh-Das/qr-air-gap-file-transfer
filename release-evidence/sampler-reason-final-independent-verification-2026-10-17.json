@@ -1,0 +1,34 @@
+{
+  "verifiedAt": "2026-10-17T11:28:13.760Z",
+  "checkpoint": "Windows sampler failure context",
+  "inputs": 177,
+  "unitTests": 537,
+  "testFiles": 54,
+  "focusedTests": 3,
+  "redFailed": 2,
+  "redControlPassed": 1,
+  "assetsUnchanged": 5,
+  "packagesUnchanged": {
+    "portable": 22,
+    "external": 19
+  },
+  "browserQualification": "Inherited unchanged bundle; no new browser run.",
+  "priorIndexedPathsVerifiedThroughArchives": 2346,
+  "oldSourceInputsPreserved": 176,
+  "oldNativeTestAssertionsPreserved": true,
+  "calibrationRows": 5,
+  "chromeLifecycleSamples": 54,
+  "chromeLifecycleGaps": 0,
+  "actualChromeGapCauseEstablished": false,
+  "probeInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-chrome-lifecycle-2026-10-17-t5hPCb\\ARTIFACTS-INDEX.json",
+    "bytes": 35947,
+    "sha256": "09b5a80b103063f081b39951814d4fdf8a52e1738b271baaa664af5caddc9170"
+  },
+  "ownedWorkers": [],
+  "priorMemoryFailuresRemainFailed": true,
+  "physicalNotRun": 42,
+  "ledgerChanged": false,
+  "postQualificationProseOnly": true,
+  "releaseStatus": "NOT READY"
+}

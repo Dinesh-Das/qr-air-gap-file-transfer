@@ -1,0 +1,69 @@
+{
+  "recordedAt": "2026-10-17T11:25:06.113Z",
+  "developmentDiagnosticsChanged": true,
+  "clientOrServerRuntimeChanged": false,
+  "regression": {
+    "red": "2failed1passed against archived old Windows sampler",
+    "green": "3focused native/validation tests pass",
+    "unitTests": 537,
+    "testFiles": 54,
+    "typecheck": 0,
+    "build": 0
+  },
+  "calibration": "Controlled native Windows live/exited processes, duplicate IDs, per-request reset and invalid inputs. Exited child remains missing with bounded ObjectNotFound error context; no counters invented.",
+  "actualChromeProbe": "54startup/idle samples without a gap. Did not reproduce or explain the earlier transfer measurements; not a transfer-memory test.",
+  "review": {
+    "correctness": "All missing requested IDs remain in missingIds. Optional reasons are captured only on a failed lookup; a new request clears them. Live counters, timestamps, limits and fatal refresh errors are unchanged.",
+    "readability": "Localized missing-lookup branch with four explicit string bounds. No logging framework or fallback counter values.",
+    "architecture": "Development-only PowerShell observer; existing JS bridge passes through additive JSON fields. No app imports, packaged runtime dependencies, source-reading, framing, hashing, authorization, ACK or resume changes.",
+    "security": "PID data remains validated stdin rather than PowerShell interpolation. Only bounded native error category/identifier/type/message are returned; no invocation source or command-line dump.",
+    "performance": "No extra native lookup, retry, GC, timeout or process exclusion. Added bounded error collection has no established performance acceptance; earlier timing variance remains unresolved."
+  },
+  "archives": [
+    {
+      "originalPath": "scripts/browser-process-memory.ps1",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-reason-source-before-2026-10-17-eM7GTY\\scripts\\browser-process-memory.ps1",
+      "bytes": 1316,
+      "sha256": "86395d780f2498229cdef346b2d19ac41a1fc7f2a9b3a633165a1e9893bb3d03"
+    },
+    {
+      "originalPath": "tests/browser-process-memory.test.mjs",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-reason-source-before-2026-10-17-eM7GTY\\tests\\browser-process-memory.test.mjs",
+      "bytes": 980,
+      "sha256": "bb8f3233aeb3b9043893af10810be10eaa47165a3743f434abc2d6c8961ecb2c"
+    },
+    {
+      "originalPath": "RELEASE-CHECKLIST.md",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-reason-source-before-2026-10-17-eM7GTY\\RELEASE-CHECKLIST.md",
+      "bytes": 100700,
+      "sha256": "be93c5f78dd935297c1807297e6b922a6e8659848afa49ad425038819aefb6ce"
+    },
+    {
+      "originalPath": "RELEASE-HARDENING.md",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-reason-source-before-2026-10-17-eM7GTY\\RELEASE-HARDENING.md",
+      "bytes": 143062,
+      "sha256": "a31db62f8a59dce7b114635f2fc536e6d40facdcbc329e80fd2d383468e0d828"
+    },
+    {
+      "originalPath": "release-evidence/release-gate-latest.json",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-reason-source-before-2026-10-17-eM7GTY\\release-evidence\\release-gate-latest.json",
+      "bytes": 443294,
+      "sha256": "1614860f757ad008261eda9927df4a37fa569c1d6841a2ce96fca3cc670b795b"
+    },
+    {
+      "originalPath": "release-evidence/release-gate-latest.txt",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\sampler-reason-source-before-2026-10-17-eM7GTY\\release-evidence\\release-gate-latest.txt",
+      "bytes": 2574,
+      "sha256": "f275591e14146544300832d7881e8146959f549b73752a31513cd5e82d064d8e"
+    }
+  ],
+  "priorCheckpointIndex": "release-evidence/single-file-current-baseline-closure-hashes-2026-10-17.json",
+  "priorIndexedFilesPreserved": 2346,
+  "previousFailures": "Current1GiB and100MiBChrome memory gaps stay failed and unexplained. Optional error fields do not change the strict missing-PID validity rule.",
+  "limitations": [
+    "Existing92-case browser results belong to byte-identical client/runtime bundles and their original runs; no new full browser run is claimed.",
+    "Native process/calibration tests do not prove target-device memory peaks or explain past missing IDs.",
+    "Physical42cases, native GUI/pickers, cleanOS, hostedfinalCI and full performance/resource/50–100GB acceptance remain open."
+  ],
+  "releaseStatus": "NOT READY"
+}
