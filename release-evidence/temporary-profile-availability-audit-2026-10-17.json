@@ -1,0 +1,205 @@
+{
+  "recordedAt": "2026-10-17T03:23:39.976Z",
+  "scope": "Selected older measurement/profile references rechecked after C free space increased; not an exhaustive filesystem audit. JSON/log hashes do not prove continued retention of external profile payloads.",
+  "results": [
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-save-only-5gib-2026-10-16-6RKwHR",
+      "references": [
+        {
+          "source": "release-evidence/save-only-5gib-chrome-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-save-only-5gib-2026-10-16-6RKwHR\\Default\\File System\\000\\t\\00\\00000003",
+      "references": [
+        {
+          "source": "release-evidence/production-readback-5gib-2026-10-16.json",
+          "key": "source"
+        },
+        {
+          "source": "release-evidence/readback-buffer-comparison-2026-10-16.json",
+          "key": "source"
+        },
+        {
+          "source": "release-evidence/resident-readback-5gib-2026-10-16.json",
+          "key": "source"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-production-readback-chrome-2026-10-16-RJPFAP",
+      "references": [
+        {
+          "source": "release-evidence/production-readback-5gib-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-production-readback-msedge-2026-10-16-T5vHNl",
+      "references": [
+        {
+          "source": "release-evidence/production-readback-5gib-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-slice-2026-10-16-iN6P1F",
+      "references": [
+        {
+          "source": "release-evidence/readback-buffer-comparison-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-readback-byob-2026-10-16-E69Mxf",
+      "references": [
+        {
+          "source": "release-evidence/readback-buffer-comparison-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-resident-readback-chrome-2026-10-16-JMTZAt",
+      "references": [
+        {
+          "source": "release-evidence/resident-readback-5gib-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-transfer-memory-1gib-nJkV52",
+      "references": [
+        {
+          "source": "release-evidence/transfer-memory-1gib-2026-10-16.json",
+          "key": "path"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-transfer-memory-1gib-ouBnQ3",
+      "references": [
+        {
+          "source": "release-evidence/transfer-memory-1gib-2026-10-16.json",
+          "key": "path"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-native-destination-2026-10-16-ksTBcP",
+      "references": [
+        {
+          "source": "release-evidence/native-destination-2026-10-16.json",
+          "key": "root"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-chrome-9dy7sp",
+      "references": [
+        {
+          "source": "release-evidence/sender-read-cancel-browser-probe-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-msedge-lalb2U",
+      "references": [
+        {
+          "source": "release-evidence/sender-read-cancel-browser-probe-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-chrome-QKUXtb",
+      "references": [
+        {
+          "source": "release-evidence/sender-read-cancel-browser-probe-checked-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-sender-cancel-api-msedge-B4eiV6",
+      "references": [
+        {
+          "source": "release-evidence/sender-read-cancel-browser-probe-checked-2026-10-16.json",
+          "key": "profilePreserved"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-gate-edge-spxWmF",
+      "references": [
+        {
+          "source": "release-evidence/sender-read-cancel-full-edge-2026-10-16-started.json",
+          "key": "browserRoot"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-final-gate-edge-22xfsP",
+      "references": [
+        {
+          "source": "release-evidence/sender-read-cancel-final-full-edge-2026-10-16-started.json",
+          "key": "browserRoot"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    },
+    {
+      "path": "C:/Users/dines/AppData/Local/Temp/qrft-sender-read-cancel-final-gate-chrome-7UNLOK",
+      "references": [
+        {
+          "source": "release-evidence/sender-read-cancel-final-full-chrome-2026-10-16-started.json",
+          "key": "browserRoot"
+        }
+      ],
+      "exists": false,
+      "errorCode": "ENOENT"
+    }
+  ],
+  "missing": 17,
+  "present": 0,
+  "attribution": "No cause assigned. These missing paths were observed after resume. This session moved only exact generated D node_modules/.vite cache roots into a newly owned C archive, with every cache byte verified; it did not remove these older C profiles or payloads.",
+  "effect": "Older reports retain historical observations but their missing raw profiles/payloads cannot currently be rehashed or reused. Do not claim current reproducibility or retention from intact report JSON alone. New Chrome/fresh-install records are separate."
+}
