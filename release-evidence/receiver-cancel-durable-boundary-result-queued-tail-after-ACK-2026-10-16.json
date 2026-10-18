@@ -1,0 +1,15 @@
+{
+  "mode": "queued tail after ACK",
+  "durableBlocksAtReopen": 2,
+  "lateAcks": 0,
+  "writesBeforeReopen": 1,
+  "retransmittedIndices": [
+    2,
+    3,
+    4
+  ],
+  "totalBlocks": 5,
+  "exactBytes": true,
+  "nodeSha256": true,
+  "scope": "production queue/receiver/sender with memory repository; no native OPFS, disk fault, network or physical proof"
+}

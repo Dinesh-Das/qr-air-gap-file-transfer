@@ -1,0 +1,28 @@
+{
+  "mode": "current-checked",
+  "exitCode": 0,
+  "before": {
+    "time": "2026-10-16T17:41:53.129Z",
+    "freeDiskBytes": {
+      "C:/": 2651488256,
+      "D:/": 2565943296
+    }
+  },
+  "after": {
+    "time": "2026-10-16T17:41:58.479Z",
+    "freeDiskBytes": {
+      "C:/": 2651488256,
+      "D:/": 2565931008
+    }
+  },
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\sender-read-cancel-2026-10-16-TpI4Ez\\portable\\runtime\\node.exe",
+  "stage": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP",
+  "testPath": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\receiver-cancel-durable-boundary-current-checked-2026-10-16.test.ts",
+  "configPath": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\receiver-cancel-durable-boundary-current-checked-2026-10-16.config.mjs",
+  "results": "D:\\MyProjects\\qrft-fresh-current-2026-10-14-haEoDP\\validation\\receiver-cancel-durable-boundary-current-checked-2026-10-16-results",
+  "applicationInputsUnchanged": 175,
+  "compiledAssetsUnchanged": 5,
+  "canonicalEvidenceUnchanged": 949,
+  "previousFinalIndexUnchanged": 133,
+  "scope": "Isolated Node/Vitest diagnostic. Production queue/receiver/sender with memory repository; mutations are transient Vite transforms only. No native disk, OPFS, OS interruption or physical network qualification. Browser resource failure remains failed."
+}

@@ -1,0 +1,175 @@
+{
+  "files": [
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-2026-10-16-scope.json",
+      "bytes": 1205,
+      "sha256": "63692c7bbda1066d3a94129d92b2990b804e2cf433adfa003bb81f0cefe3d322"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-2026-10-16.config.mjs.source.txt",
+      "bytes": 238,
+      "sha256": "9336c08e44644bb7765d05e8b63351fa3b6d06deaee1d7084b01d6e75c0aca35"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-2026-10-16.log",
+      "bytes": 1659,
+      "sha256": "df4374cf171ce7a5cfb8357bdec50234b97d7c2aa948aca1d50d37c78e1a88ac"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-2026-10-16.test.ts.source.txt",
+      "bytes": 6488,
+      "sha256": "c5a65b807c0903dd8e79269237bdcb4e28f1cd54c824be26602eaac525aaad0e"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-checked-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-checked-2026-10-16-scope.json",
+      "bytes": 1379,
+      "sha256": "058e5ca840b47ecd3ef5e797f301acc1790f96a58b4da994c3ba7bb4d44b4ecd"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-checked-2026-10-16.config.mjs.source.txt",
+      "bytes": 246,
+      "sha256": "0bd15a213be7eaaead006856293c4dabe03b507b5d0ca01675c99f5704c6f685"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-checked-2026-10-16.log",
+      "bytes": 235,
+      "sha256": "b580c1318b90660f3b512e0fe9b2078043fe60742dd2786fab7302b63aefab68"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-current-checked-2026-10-16.test.ts.source.txt",
+      "bytes": 6796,
+      "sha256": "29143b8438fc483675322ebf1ae15b8acd5a2388d565c1ba314c6d79cbc098cc"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-early-stop-mutant-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-early-stop-mutant-2026-10-16-scope.json",
+      "bytes": 1387,
+      "sha256": "b47282c44bf060e7424da1e256148d3ddf0c77051f44707c5074ee7b4afc9ba4"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-early-stop-mutant-2026-10-16.config.mjs.source.txt",
+      "bytes": 601,
+      "sha256": "97a517142c00a665c1c2e875b42bc13a8bdc6a335d3ffa7b45e0e921d79e4e25"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-early-stop-mutant-2026-10-16.log",
+      "bytes": 2163,
+      "sha256": "74558c5673174e382880db88f93ff48a9c2a31b3cc4e19fd4ea54c740d355945"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-early-stop-mutant-2026-10-16.test.ts.source.txt",
+      "bytes": 6796,
+      "sha256": "29143b8438fc483675322ebf1ae15b8acd5a2388d565c1ba314c6d79cbc098cc"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-independent-verification-2026-10-16.json",
+      "bytes": 4099,
+      "sha256": "1b755a5db244066dce7ed7e0c0c55c5b1fb6f1f1a1b3b833411696b236f9890f"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-late-ack-mutant-2026-10-16-exit.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-late-ack-mutant-2026-10-16-scope.json",
+      "bytes": 1379,
+      "sha256": "3216cff4cde8132bf2796e3de6b28729e566a69acda006954f59e037e970dc54"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-late-ack-mutant-2026-10-16.config.mjs.source.txt",
+      "bytes": 621,
+      "sha256": "8d2995fe0ad60179abdb19f6a23e5c94e1a400ee91ecb18ecfe6d5a9de2a9490"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-late-ack-mutant-2026-10-16.log",
+      "bytes": 1531,
+      "sha256": "dd08dd46261931595d88f5ff01c8b73078fda75c0892b59e5623fcc0b53a37fd"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-late-ack-mutant-2026-10-16.test.ts.source.txt",
+      "bytes": 6796,
+      "sha256": "29143b8438fc483675322ebf1ae15b8acd5a2388d565c1ba314c6d79cbc098cc"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-result-after-durable-write-2026-10-16.json",
+      "bytes": 359,
+      "sha256": "48bd854d282b68025239b00d0bb3c49b485771310e5f1c46c3c737d7a0980791"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-result-before-drain-2026-10-16.json",
+      "bytes": 359,
+      "sha256": "64aa6c7c2bb4933f6ab34f6a8ffffcfe56e22bcc457febe92bcf9cee02b0edda"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-result-before-write-2026-10-16.json",
+      "bytes": 352,
+      "sha256": "100c03a530e5822c9dcf56d12ce1f3b8d69d273519ca670d2febf1883ad6e1ef"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-result-queued-tail-after-ACK-2026-10-16.json",
+      "bytes": 354,
+      "sha256": "60d12674c13d1ce09af62a954285c0af314e834f91ce2f5a55ef6f9df801d1a2"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-result-reply-lost-after-durable-write-2026-10-16.json",
+      "bytes": 370,
+      "sha256": "f22907b8c42a4c1d641dea7560ed534048c7d60dd74c3fd474a64b7c1cd58911"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-result-write-fails-2026-10-16.json",
+      "bytes": 358,
+      "sha256": "568d56515bf9c1d9518a2f391674a8467efe6a045251f1b920aa7e0ed4d990d1"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-review-2026-10-16.md",
+      "bytes": 3541,
+      "sha256": "5d0b2ab829adc6c2f10d58e88f5b6f904522c461f7572457ae442f71213b3a91"
+    },
+    {
+      "path": "release-evidence/receiver-cancel-durable-boundary-worker-final-2026-10-16.json",
+      "bytes": 392,
+      "sha256": "01da0a9cfc1bb8761bb34f6f2b434a13f79293f822d9c03b5ecf4a4a739951af"
+    },
+    {
+      "path": ".tmp/close-receiver-cancel-durable-boundary-2026-10-16.mjs",
+      "bytes": 4890,
+      "sha256": "00e34f10b2c9e2fca6e57a12d679f0b773bde561ac73cf98f59ce69939844f90"
+    },
+    {
+      "path": ".tmp/receiver-cancel-durable-boundary-2026-10-16.test.ts",
+      "bytes": 6796,
+      "sha256": "29143b8438fc483675322ebf1ae15b8acd5a2388d565c1ba314c6d79cbc098cc"
+    },
+    {
+      "path": ".tmp/run-receiver-cancel-durable-boundary-2026-10-16.mjs",
+      "bytes": 3904,
+      "sha256": "671d397d3486816eb76fc4773ae2f2d6bd7bf93e9188a3391051cf57c0244a3a"
+    },
+    {
+      "path": ".tmp/verify-receiver-cancel-durable-boundary-2026-10-16.mjs",
+      "bytes": 5846,
+      "sha256": "36dd01e220beed66b6a99e628a0c6bbd230e818cb04f8f8c225ec1b5a737b50f"
+    },
+    {
+      "path": "release-evidence/sender-read-cancel-final-hashes-2026-10-16.json",
+      "bytes": 26960,
+      "sha256": "b10fb7b39b629bbbd4c8de7580d71b6cf77e47112b548a9dba506855addd6b08"
+    }
+  ],
+  "scope": "Additional six-case memory-store cancellation/reopen proof with two negative controls. Canonical175/5/949/previous133index and ledger unchanged; no release acceptance promotion."
+}

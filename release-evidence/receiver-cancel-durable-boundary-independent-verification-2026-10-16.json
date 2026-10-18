@@ -1,0 +1,131 @@
+{
+  "verifiedAt": "2026-10-16T17:43:11.508Z",
+  "applicationChanged": false,
+  "currentInputsUnchanged": 175,
+  "compiledAssetsUnchanged": 5,
+  "canonicalEvidenceUnchanged": 949,
+  "priorFinalIndexUnchanged": 133,
+  "checkedCases": 6,
+  "cases": [
+    {
+      "mode": "before drain",
+      "durableBlocksAtReopen": 0,
+      "lateAcks": 0,
+      "writesBeforeReopen": 0,
+      "retransmittedIndices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "totalBlocks": 5,
+      "exactBytes": true,
+      "nodeSha256": true,
+      "scope": "production queue/receiver/sender with memory repository; no native OPFS, disk fault, network or physical proof"
+    },
+    {
+      "mode": "before write",
+      "durableBlocksAtReopen": 1,
+      "lateAcks": 0,
+      "writesBeforeReopen": 1,
+      "retransmittedIndices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "totalBlocks": 5,
+      "exactBytes": true,
+      "nodeSha256": true,
+      "scope": "production queue/receiver/sender with memory repository; no native OPFS, disk fault, network or physical proof"
+    },
+    {
+      "mode": "after durable write",
+      "durableBlocksAtReopen": 1,
+      "lateAcks": 0,
+      "writesBeforeReopen": 1,
+      "retransmittedIndices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "totalBlocks": 5,
+      "exactBytes": true,
+      "nodeSha256": true,
+      "scope": "production queue/receiver/sender with memory repository; no native OPFS, disk fault, network or physical proof"
+    },
+    {
+      "mode": "write fails",
+      "durableBlocksAtReopen": 0,
+      "lateAcks": 0,
+      "writesBeforeReopen": 1,
+      "retransmittedIndices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "totalBlocks": 5,
+      "exactBytes": true,
+      "nodeSha256": true,
+      "scope": "production queue/receiver/sender with memory repository; no native OPFS, disk fault, network or physical proof"
+    },
+    {
+      "mode": "reply lost after durable write",
+      "durableBlocksAtReopen": 1,
+      "lateAcks": 0,
+      "writesBeforeReopen": 1,
+      "retransmittedIndices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "totalBlocks": 5,
+      "exactBytes": true,
+      "nodeSha256": true,
+      "scope": "production queue/receiver/sender with memory repository; no native OPFS, disk fault, network or physical proof"
+    },
+    {
+      "mode": "queued tail after ACK",
+      "durableBlocksAtReopen": 2,
+      "lateAcks": 0,
+      "writesBeforeReopen": 1,
+      "retransmittedIndices": [
+        2,
+        3,
+        4
+      ],
+      "totalBlocks": 5,
+      "exactBytes": true,
+      "nodeSha256": true,
+      "scope": "production queue/receiver/sender with memory repository; no native OPFS, disk fault, network or physical proof"
+    }
+  ],
+  "negativeControls": {
+    "lateAck": {
+      "failed": 2,
+      "passed": 4,
+      "expectedFailure": "No ACK may escape after Stop"
+    },
+    "earlyStop": {
+      "failed": 4,
+      "passed": 2,
+      "expectedFailure": "Stop must drain its already-started storage operation"
+    }
+  },
+  "fixtureCorrection": "Initial2fail/4pass run incorrectly expected generic closed instead of primary write/reply error; unchanged production queue correctly preserves the primary error. Initial test/config/log retained, corrected fixture checks exact error identity.",
+  "acceptance": {
+    "candidateRequirement": "L857 receiver cancelled",
+    "ledgerChanged": false,
+    "requirementsCompleted": 0,
+    "physicalRequirement": "L1085 unchanged",
+    "physicalNotRun": 42,
+    "resourceQualification": false,
+    "releaseStatus": "NOT READY"
+  },
+  "scope": "Production queue/receiver/sender with deterministic held writeBlocks calls and memory repository reopen. Stop suppresses late ACK, drains active storage work and drops queued tail; resume trusts actual committed receipts and transfers exactly missing blocks, then verifies original bytes and independent Node SHA-256. No native OPFS/OS flush/disk faults/power loss/RTC/physical network/cancellation latency or large-scale resource qualification."
+}

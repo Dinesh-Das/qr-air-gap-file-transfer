@@ -1,0 +1,1 @@
+import {defineConfig} from 'vitest/config';export default defineConfig({test:{include:["D:/MyProjects/qrft-fresh-current-2026-10-14-haEoDP/validation/receiver-cancel-durable-boundary-current-checked-2026-10-16.test.ts"],fileParallelism:false}});

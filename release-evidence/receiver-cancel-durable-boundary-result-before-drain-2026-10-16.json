@@ -1,0 +1,17 @@
+{
+  "mode": "before drain",
+  "durableBlocksAtReopen": 0,
+  "lateAcks": 0,
+  "writesBeforeReopen": 0,
+  "retransmittedIndices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "totalBlocks": 5,
+  "exactBytes": true,
+  "nodeSha256": true,
+  "scope": "production queue/receiver/sender with memory repository; no native OPFS, disk fault, network or physical proof"
+}

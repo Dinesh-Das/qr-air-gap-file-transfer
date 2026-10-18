@@ -1,0 +1,69 @@
+import {createHash} from "node:crypto";
+import {expect, it, vi} from "vitest";
+import {MemoryBlockStoreRepository} from "../src/lib/block-store";
+import {prepareLargeSource,readPreparedLargeRange,readLargeTreeManifest} from "../src/lib/large-transfer";
+import {createOfflineTransferManifest,encodeOfflineDataBlock,decodeOfflineControl,OFFLINE_BLOCK_BYTES} from "../src/lib/webrtc-protocol";
+import {OfflineDestinationReceiver,OfflineSourceSender} from "../src/lib/webrtc-transfer";
+import {DurableReceiveQueue} from "../src/lib/webrtc-receive-queue";
+
+function deferred(){let resolve!:()=>void;const promise=new Promise<void>(done=>{resolve=done;});return {promise,resolve};}
+const modes=["before drain","before write","after durable write","write fails","reply lost after durable write","queued tail after ACK"] as const;
+it.each(modes)("receiver Stop reconciles actual durable receipts: %s",async mode=>{
+  const fileBytes=Uint8Array.from({length:OFFLINE_BLOCK_BYTES*4+777},(_,i)=>(i*37+11)&255);
+  const file=new File([fileBytes],"source.bin",{lastModified:7});
+  const source=await prepareLargeSource({rootName:"receiver-stop-fixture",rootHandle:{kind:"directory",name:"receiver-stop-fixture"} as FileSystemDirectoryHandle,files:[{path:file.name,size:file.size,lastModified:7,handle:{kind:"file",name:file.name,getFile:async()=>file} as FileSystemFileHandle}],directories:[],totalFileBytes:BigInt(file.size)});
+  const manifest=await createOfflineTransferManifest(source),repository=new MemoryBlockStoreRepository(),options={backend:"memory" as const,memoryRepository:repository};
+  const initial=await OfflineDestinationReceiver.open(manifest,options),entered=deferred(),release=deferred(),firstAck=deferred();
+  const failure=new Error("Controlled durable-write/reply failure"),acks:number[][]=[],errors:Error[]=[];
+  const expectedDurable=mode==="queued tail after ACK"?2:mode==="after durable write"||mode==="before write"||mode==="reply lost after durable write"?1:0;
+  let writes=0,stopRequested=false,lateAcks=0;
+  const originalWrite=initial.store.writeBlocks.bind(initial.store);
+  const spy=vi.spyOn(initial.store,"writeBlocks").mockImplementation(async blocks=>{
+    writes++;
+    if(mode==="queued tail after ACK"||mode==="before drain")return originalWrite(blocks);
+    if(mode==="after durable write"||mode==="reply lost after durable write")await originalWrite(blocks);
+    entered.resolve();await release.promise;
+    if(mode==="write fails"||mode==="reply lost after durable write")throw failure;
+    if(mode==="before write")await originalWrite(blocks);
+  });
+  const queue=new DurableReceiveQueue(initial,{batchBlocks:mode==="queued tail after ACK"?2:1,onCommitted:indices=>{acks.push(indices);if(stopRequested)lateAcks++;firstAck.resolve();},onError:error=>errors.push(error)});
+  const frame=async(index:number)=>encodeOfflineDataBlock(index,await readPreparedLargeRange(source,BigInt(index*manifest.blockSize),Math.min(manifest.blockSize,manifest.totalBytes-index*manifest.blockSize))).buffer as ArrayBuffer;
+  let reopened:OfflineDestinationReceiver|undefined,resumeQueue:DurableReceiveQueue|undefined,sender:OfflineSourceSender|undefined;
+  try{
+    const frames=await Promise.all([0,1,2].map(frame));
+    queue.enqueue(frames[0]);
+    if(mode==="queued tail after ACK"){queue.enqueue(frames[1]);await firstAck.promise;queue.enqueue(frames[2]);}
+    else if(mode!=="before drain"){await entered.promise;queue.enqueue(frames[1]);queue.enqueue(frames[2]);}
+    stopRequested=true;let stopSettled=false;const stopped=queue.stop().then(()=>{stopSettled=true;});
+    if(mode!=="before drain"&&mode!=="queued tail after ACK"){
+      await Promise.resolve();expect(stopSettled,"Stop must drain its already-started storage operation").toBe(false);
+      expect(initial.store.progress().receivedBlocks).toBe(mode==="after durable write"||mode==="reply lost after durable write"?1:0);
+    }
+    release.resolve();await stopped;
+    expect(lateAcks,"No ACK may escape after Stop").toBe(0);
+    expect(acks).toEqual(mode==="queued tail after ACK"?[[0,1]]:[]);
+    expect(errors).toEqual(mode==="write fails"||mode==="reply lost after durable write"?[failure]:[]);
+    expect(writes).toBe(mode==="before drain"?0:1);expect(queue.bufferedBytes).toBe(0);
+    await expect(queue.finish()).rejects.toThrow(/closed/);
+    expect(initial.store.progress().receivedBlocks).toBe(expectedDurable);
+    spy.mockRestore();await initial.store.close();
+    reopened=await OfflineDestinationReceiver.open(manifest,options);
+    expect(reopened.resumeRanges()).toEqual(expectedDurable?[[0,expectedDurable]]:[]);
+    const sent:number[]=[],controls:string[]=[];
+    class Channel extends EventTarget{
+      readyState="open";bufferedAmount=0;bufferedAmountLowThreshold=0;
+      send(value:ArrayBuffer|string){if(typeof value==="string"){controls.push(value);return;}sent.push(new DataView(value).getUint32(4,true));resumeQueue!.enqueue(value);}
+    }
+    sender=new OfflineSourceSender(new Channel() as unknown as RTCDataChannel,source,manifest);
+    sender.applyResumeRanges(reopened.resumeRanges());
+    resumeQueue=new DurableReceiveQueue(reopened,{onCommitted:indices=>sender!.acknowledge(indices),onError:error=>sender!.fail(error)});
+    await sender.run(new AbortController().signal);await resumeQueue.finish();
+    expect(sent).toEqual(Array.from({length:reopened.store.totalBlocks-expectedDurable},(_,i)=>i+expectedDurable));
+    expect(controls.map(decodeOfflineControl)).toEqual([{type:"sender-complete"}]);
+    const reader=await reopened.verify(new AbortController().signal),tree=await readLargeTreeManifest(reader);
+    expect(tree.files.map(f=>f.path)).toEqual([file.name]);expect(tree.files[0].size).toBe(BigInt(fileBytes.length));
+    const restored=await reader.read(tree.files[0].offset,fileBytes.length);expect(restored).toEqual(fileBytes);
+    expect(createHash("sha256").update(restored).digest("hex")).toBe(createHash("sha256").update(fileBytes).digest("hex"));
+    console.info(JSON.stringify({mode,durableBlocksAtReopen:expectedDurable,lateAcks,writesBeforeReopen:writes,retransmittedIndices:sent,totalBlocks:reopened.store.totalBlocks,exactBytes:true,nodeSha256:true,scope:"production queue/receiver/sender with memory repository; no native OPFS, disk fault, network or physical proof"}));
+  }finally{release.resolve();await queue.stop();spy.mockRestore();sender?.dispose();await resumeQueue?.stop();await reopened?.store.close();await initial.store.close();}
+});

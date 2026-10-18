@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-10-16T17:44:04.753Z",
+  "ownedNodeWorkers": [],
+  "ownClosureProcessExcluded": true,
+  "browserJobsStarted": 0,
+  "processesTerminated": 0,
+  "protectedDataDeletedCompressedOrMoved": false,
+  "scope": "Node-only diagnostic workers checked by unique command-line prefix. Prior browser/port closure remains predecessor evidence; no new browser or server was started."
+}
