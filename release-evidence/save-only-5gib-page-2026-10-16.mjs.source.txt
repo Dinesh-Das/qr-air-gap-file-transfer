@@ -1,0 +1,35 @@
+import {writeLargeTreeToDirectory} from '../src/lib/large-destination.ts';
+import {encodeLargeTreeMetadata,parseLargeTreeMetadata} from '../src/lib/large-transfer.ts';
+import {createBenchmarkPatternReader} from '../scripts/benchmark-pattern.mjs';
+import {sha256} from '@noble/hashes/sha2.js';
+const CHUNK=4*1024*1024;
+const hex=bytes=>Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+const state=globalThis.__saveOnlyState={phase:'setup',writtenBytes:0,auditedBytes:0,heapByPhase:{},sourceReads:0,maximumRead:0};
+const signal=new AbortController();globalThis.__stopSaveOnly=reason=>signal.abort(new Error(reason));
+const heap=()=>{const bytes=performance.memory?.usedJSHeapSize;if(Number.isFinite(bytes)){const row=state.heapByPhase[state.phase]??={peakBytes:0,samples:0};row.peakBytes=Math.max(row.peakBytes,bytes);row.lastBytes=bytes;row.samples++;}};
+globalThis.__saveOnlyPhase=async phase=>{heap();state.phase=phase;heap();await globalThis.__saveOnlyBoundary(phase);};
+const timer=setInterval(heap,50);
+export function observation(){return structuredClone(state);}
+export async function run({bytes,sha256Hex}){
+ const began=performance.now();
+ try{
+  const metadata=encodeLargeTreeMetadata({rootName:'save-fixture-5GiB',directories:['empty'],files:[{path:'large.bin',size:bytes,lastModified:7,sha256Hex}]});
+  const manifest=parseLargeTreeMetadata(metadata);
+  const root=await navigator.storage.getDirectory();
+  const reader={size:BigInt(bytes),async read(offset,length){signal.signal.throwIfAborted();const start=Number(offset);if(!Number.isSafeInteger(start)||start<0||length>CHUNK||start+length>bytes)throw Error('Invalid diagnostic read');const data=new Uint8Array(length);let filled=0;while(filled<length){const absolute=start+filled,index=Math.floor(absolute/CHUNK),within=absolute%CHUNK,take=Math.min(length-filled,CHUNK-within);data.set(createBenchmarkPatternReader(index)(within,take),filled);filled+=take;}state.sourceReads++;state.maximumRead=Math.max(state.maximumRead,length);return data;}};
+  await globalThis.__saveOnlyPhase('write');const saveStart=performance.now();
+  const report=await writeLargeTreeToDirectory(manifest,reader,{transferId:new Uint8Array(16).fill(71),streamSha256:Uint8Array.from(sha256Hex.match(/../g),b=>parseInt(b,16))},root,{signal:signal.signal,onProgress(p){if(p.phase==='write')state.writtenBytes=Number(p.bytesComplete);}});
+  state.saveMs=performance.now()-saveStart;state.destinationReport=Object.fromEntries(Object.entries(report).map(([k,v])=>[k,typeof v==='bigint'?v.toString():v]));
+  await globalThis.__saveOnlyPhase('audit');const auditStart=performance.now();
+  const folder=await root.getDirectoryHandle('save-fixture-5GiB'),names=[];for await(const [name,h]of folder.entries())names.push([name,h.kind]);names.sort();
+  if(JSON.stringify(names)!==JSON.stringify([['empty','directory'],['large.bin','file']]))throw Error('Unexpected destination entries');
+  const empty=await folder.getDirectoryHandle('empty');for await(const _ of empty.entries())throw Error('Expected empty folder');
+  const file=await(await folder.getFileHandle('large.bin')).getFile();if(file.size!==bytes)throw Error('Saved file size mismatch');
+  const hasher=sha256.create();
+  for(let offset=0;offset<bytes;offset+=CHUNK){signal.signal.throwIfAborted();const value=new Uint8Array(await file.slice(offset,Math.min(bytes,offset+CHUNK)).arrayBuffer());if(value.length!==Math.min(CHUNK,bytes-offset))throw Error('Truncated audit');hasher.update(value);state.auditedBytes+=value.length;}
+  state.auditSha256=hex(hasher.digest());if(state.auditSha256!==sha256Hex)throw Error('Independent expected hash mismatch');
+  state.auditMs=performance.now()-auditStart;await globalThis.__saveOnlyPhase('audit-end');
+  state.elapsedMs=performance.now()-began;state.verified=true;return observation();
+ }catch(error){state.error=String(error?.stack??error);throw error;}
+ finally{heap();clearInterval(timer);}
+}

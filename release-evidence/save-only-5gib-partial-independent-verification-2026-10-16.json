@@ -1,0 +1,101 @@
+{
+  "verifiedAt": "2026-10-16T02:50:48.980Z",
+  "diagnosticExitCode": 1,
+  "diagnosticPassed": false,
+  "dataVerified": true,
+  "observerValid": false,
+  "missingSampleCount": 1,
+  "missingProcessId": 12884,
+  "missingIdAbsentFromImmediateAfterSnapshot": true,
+  "note": "The absent process is observed to have left the CDP list; its type and final memory were not captured. Overall diagnostic failure is retained. A later process-identity shell capture failed because Set-Content has no NoClobber parameter and captured no live identities. The intended pass-only verifier was not run.",
+  "bytes": 5368709120,
+  "sha256": "3700ad81cc9460ac75c00b82fef2687fedd294df92b6c7ca7a724b89022acf3f",
+  "browser": "155.0.8059.80",
+  "profilePreserved": "C:\\Users\\dines\\AppData\\Local\\Temp\\qrft-save-only-5gib-2026-10-16-6RKwHR",
+  "profileFilesIndependentlyHashed": 228,
+  "profileBytesIndependentlyHashed": 5387716248,
+  "pageHeapByPhase": {
+    "setup": {
+      "peakBytes": 3879197,
+      "samples": 9,
+      "lastBytes": 3879197
+    },
+    "write": {
+      "peakBytes": 112195976,
+      "samples": 1352,
+      "lastBytes": 36686264
+    },
+    "readback": {
+      "peakBytes": 598889072,
+      "samples": 1328,
+      "lastBytes": 170986768
+    },
+    "post-save": {
+      "peakBytes": 171008828,
+      "samples": 10,
+      "lastBytes": 171008828
+    },
+    "audit": {
+      "peakBytes": 645040087,
+      "samples": 1323,
+      "lastBytes": 519197707
+    },
+    "audit-end": {
+      "peakBytes": 519204163,
+      "samples": 9,
+      "lastBytes": 519204163
+    }
+  },
+  "phaseMemory": {
+    "setup": {
+      "validSamples": 1,
+      "sampledPrivatePeakBytes": 275120128,
+      "sampledMainBackingPeakBytes": 925834
+    },
+    "write": {
+      "validSamples": 72,
+      "sampledPrivatePeakBytes": 342048768,
+      "sampledMainBackingPeakBytes": 80619136
+    },
+    "readback": {
+      "validSamples": 66,
+      "sampledPrivatePeakBytes": 855302144,
+      "sampledMainBackingPeakBytes": 516825472
+    },
+    "post-save": {
+      "validSamples": 1,
+      "sampledPrivatePeakBytes": 424976384,
+      "sampledMainBackingPeakBytes": 168698240
+    },
+    "audit": {
+      "validSamples": 66,
+      "sampledPrivatePeakBytes": 830246912,
+      "sampledMainBackingPeakBytes": 579739807
+    },
+    "audit-end": {
+      "validSamples": 2,
+      "sampledPrivatePeakBytes": 775487488,
+      "sampledMainBackingPeakBytes": 516825247
+    }
+  },
+  "postRunHeapBeforeGc": {
+    "usedSize": 2421744,
+    "totalSize": 3940352,
+    "embedderHeapUsedSize": 771328,
+    "backingStorageSize": 516825247
+  },
+  "postRunHeapAfterGc": {
+    "usedSize": 2151396,
+    "totalSize": 2891776,
+    "embedderHeapUsedSize": 464376,
+    "backingStorageSize": 925301
+  },
+  "saveIncludingReadbackMs": 139445.20000004768,
+  "pageAuditMs": 65874.90000009537,
+  "inputs": 173,
+  "assets": 5,
+  "sourceAndStageUnchanged": true,
+  "releaseStatus": "NOT READY",
+  "scope": "5 GiB save phase only: generated random-access source and constructed metadata/binding; production destination code, real Chrome OPFS destination. No received OPFS source copy, WebRTC, pairing, native picker, two-laptop, 50-100GB, full-transfer or historical-root-cause acceptance.",
+  "interpretation": "Data integrity confirmed; high transient allocation remains unresolved. Post-trial collection releases most backing storage, but is not a production solution or proof of bounded memory across sizes."
+}

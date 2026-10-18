@@ -1,0 +1,63 @@
+import {readFile,writeFile,mkdtemp,readdir,stat,statfs,copyFile} from 'node:fs/promises';
+import {createReadStream} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {join,resolve} from 'node:path';
+import {tmpdir,freemem} from 'node:os';
+import {chromium} from '@playwright/test';
+import {createServer} from 'vite';
+import {readWindowsProcessMemory} from '../scripts/browser-process-memory.mjs';
+const root=process.env.QRFT_SOURCE_ROOT;if(!root)throw Error('Source root required');
+const evidence=join(root,'release-evidence'),name='save-only-5gib-chrome-2026-10-16',output=join(evidence,name+'.json');
+const bytes=5*1024**3,CHUNK=4*1024**2,RESERVE=2*1024**3,MARGIN=400*1024**2;
+const hash=async p=>{const h=createHash('sha256');for await(const b of createReadStream(p))h.update(b);return h.digest('hex');};
+const gate=JSON.parse(await readFile(join(evidence,'release-gate-latest.json'))),stage=gate.freshInstall.stage;
+async function verify(){for(const f of [...gate.currentInputs,...gate.builtAssets])if(await hash(join(root,f.path))!==f.sha256||await hash(join(stage,f.path))!==f.sha256)throw Error('Input drift '+f.path);}
+await verify();const resources=[];
+async function resource(){const disks={};for(const d of ['C:/','D:/']){const s=await statfs(d);disks[d]=s.bavail*s.bsize;}const sample={at:new Date().toISOString(),disks,freeRam:freemem()};resources.push(sample);return sample;}
+const before=await resource();if(before.disks['C:/']<bytes+RESERVE+MARGIN||before.disks['D:/']<RESERVE+MARGIN||before.freeRam<4*1024**3)throw Error('Insufficient one-copy diagnostic headroom');
+// Independent Node/OpenSSL expected hash; no stored source and no 5-GiB buffer.
+const expected=createHash('sha256');for(let index=0;index<bytes/CHUNK;index++){const data=Buffer.allocUnsafe(CHUNK);for(let p=0;p<256;p++)data[p]=(index>>>((p%4)*8))^(p*31);let filled=256;while(filled<CHUNK){const take=Math.min(filled,CHUNK-filled);data.copy(data,filled,0,take);filled+=take;}expected.update(data);}
+const expectedSha256=expected.digest('hex');
+const profile=await mkdtemp(join(tmpdir(),'qrft-save-only-5gib-2026-10-16-'));
+const record={startedAt:new Date().toISOString(),bytes,expectedSha256,profilePreserved:profile,resources,scope:'5 GiB save phase only: generated random-access source and constructed metadata/binding; production destination code, real Chrome OPFS destination. No received OPFS source copy, WebRTC, pairing, native picker, two-laptop, 50-100GB, full-transfer or historical-root-cause acceptance.',sourceInputs:gate.currentInputs,builtAssets:gate.builtAssets,memorySamples:[],boundarySnapshots:[],pageErrors:[],observerErrors:[],sourceTransforms:[]};
+await writeFile(output,JSON.stringify(record,null,2)+'\n',{flag:'wx'});
+let server,context,page,cdp,browserCdp,timer,busy=false,stopping=false,queue=Promise.resolve();
+async function snapshot(label){
+ const beforeState=await page.evaluate(()=>({phase:globalThis.__saveOnlyState.phase,writtenBytes:globalThis.__saveOnlyState.writtenBytes,auditedBytes:globalThis.__saveOnlyState.auditedBytes}));
+ const ids=(await browserCdp.send('SystemInfo.getProcessInfo')).processInfo.map(p=>p.id);
+ const native=await readWindowsProcessMemory(ids),heap=await cdp.send('Runtime.getHeapUsage');
+ const afterIds=(await browserCdp.send('SystemInfo.getProcessInfo')).processInfo.map(p=>p.id);
+ const afterState=await page.evaluate(()=>({phase:globalThis.__saveOnlyState.phase,writtenBytes:globalThis.__saveOnlyState.writtenBytes,auditedBytes:globalThis.__saveOnlyState.auditedBytes}));
+ const sample={at:new Date().toISOString(),label,beforeState,afterState,ids,afterIds,native,heap,privateBytes:native.processes.reduce((s,p)=>s+p.privateBytes,0),workingSetBytes:native.processes.reduce((s,p)=>s+p.workingSetBytes,0)};
+ record.memorySamples.push(sample);if(label!=='interval')record.boundarySnapshots.push(sample);if(record.memorySamples.length%10===0)await writeFile(output,JSON.stringify(record,null,2)+'\n');return sample;
+}
+function observe(label){const pending=queue.then(()=>snapshot(label));queue=pending.catch(()=>{});return pending;}
+try{
+ server=await createServer({configFile:false,root:stage,server:{host:'127.0.0.1',port:0,watch:null},optimizeDeps:{noDiscovery:true,include:['@noble/hashes/sha2.js','fflate']},plugins:[{name:'save-only-boundaries',enforce:'pre',transform(code,id){if(!id.replaceAll('\\','/').endsWith('/src/lib/large-destination.ts'))return;const prefix='async function verifyCompleteDestination(';if(code.split(prefix).length!==2)throw Error('Boundary instrumentation mismatch');const patched=code.replace(prefix,'async function diagnosticOriginal_verifyCompleteDestination(')+'\nasync function verifyCompleteDestination(...args: Parameters<typeof diagnosticOriginal_verifyCompleteDestination>) { await (globalThis as any).__saveOnlyPhase("readback"); try { return await diagnosticOriginal_verifyCompleteDestination(...args); } finally { await (globalThis as any).__saveOnlyPhase("post-save"); } }\n';record.sourceTransforms.push({path:'src/lib/large-destination.ts',sourceSha256:createHash('sha256').update(code).digest('hex'),transformedSha256:createHash('sha256').update(patched).digest('hex'),scope:'Private final verification wrapper adds awaited phase boundaries; original implementation unchanged.'});return {code:patched,map:null};},configureServer(s){s.middlewares.use((req,res,next)=>{if(req.url!=='/save-only-5gib'){next();return;}res.setHeader('Content-Type','text/html');res.end('<!doctype html><title>Save-only diagnostic</title><script type="module">import "/validation/save-only-5gib-page-2026-10-16.mjs";</script>');});}}]});
+ if(server.config.server.watch!==null)throw Error('Diagnostic watching must stay disabled');await server.listen();
+ context=await chromium.launchPersistentContext(profile,{channel:'chrome',headless:true,args:['--enable-precise-memory-info']});
+ page=await context.newPage();page.setDefaultTimeout(30*60*1000);page.on('pageerror',e=>record.pageErrors.push(String(e.stack??e)));
+ await page.exposeFunction('__saveOnlyBoundary',async label=>{await observe(label);});
+ await page.goto(server.resolvedUrls.local[0]+'save-only-5gib');await page.waitForFunction(()=>!!globalThis.__saveOnlyState);
+ cdp=await context.newCDPSession(page);browserCdp=await context.browser().newBrowserCDPSession();record.browserVersion=await context.browser().version();await cdp.send('Performance.enable');
+ await observe('baseline');record.beforeCpu=(await cdp.send('Performance.getMetrics')).metrics;
+ timer=setInterval(()=>{if(busy||stopping)return;busy=true;void(async()=>{try{const s=await resource();if(s.disks['C:/']<RESERVE||s.disks['D:/']<RESERVE||s.freeRam<2*1024**3){record.resourceAbort=s;await page.evaluate(()=>globalThis.__stopSaveOnly('Resource reserve breached'));}await observe('interval');}catch(e){record.observerErrors.push(String(e.stack??e));}finally{busy=false;}})();},1000);
+ let deadline;
+ try{record.result=await Promise.race([page.evaluate(async({bytes,sha256Hex})=>(await import('/validation/save-only-5gib-page-2026-10-16.mjs')).run({bytes,sha256Hex}),{bytes,sha256Hex:expectedSha256}),new Promise((_,reject)=>{deadline=setTimeout(()=>reject(Error('Save-only diagnostic exceeded 30 minutes')),30*60*1000);})]);}finally{clearTimeout(deadline);}
+ stopping=true;clearInterval(timer);while(busy)await new Promise(done=>setTimeout(done,50));await queue;
+ record.afterCpu=(await cdp.send('Performance.getMetrics')).metrics;record.postRunHeapBeforeGc=await cdp.send('Runtime.getHeapUsage');await cdp.send('HeapProfiler.collectGarbage');record.postRunHeapAfterGc=await cdp.send('Runtime.getHeapUsage');await observe('post-run-gc');
+}catch(e){record.error=String(e.stack??e);if(page)try{record.partialState=await page.evaluate(()=>globalThis.__saveOnlyState);}catch{}}
+finally{
+ stopping=true;clearInterval(timer);while(busy)await new Promise(done=>setTimeout(done,50));await queue;
+ try{await context?.close();record.browserClosed=true;}catch(e){record.closeError=String(e);}
+ try{await server?.close();record.serverClosed=true;}catch(e){record.serverCloseError=String(e);}
+ await resource();await verify();record.inputsUnchanged=true;
+ // Hash the closed profile without deleting stores or retaining payload buffers.
+ record.profileInventory=[];async function walk(dir,prefix=''){for(const e of await readdir(dir,{withFileTypes:true})){const path=prefix?prefix+'/'+e.name:e.name;if(e.isSymbolicLink())throw Error('Profile symlink refused');if(e.isDirectory())await walk(join(dir,e.name),path);else if(e.isFile())record.profileInventory.push({path,bytes:(await stat(join(dir,e.name))).size,sha256:await hash(join(dir,e.name))});}}
+ if(record.browserClosed)await walk(profile);
+ record.payloadFiles=record.profileInventory.filter(f=>f.bytes===bytes);record.nativePayloadVerified=record.payloadFiles.length===1&&record.payloadFiles[0].sha256===expectedSha256;
+ record.observerValid=!record.observerErrors.length&&record.memorySamples.length>0&&record.memorySamples.every(s=>s.native.missingIds.length===0)&&['write','readback','post-save','audit','audit-end'].every(p=>record.boundarySnapshots.some(s=>s.label===p));
+ record.passed=!record.error&&!record.closeError&&!record.serverCloseError&&!record.pageErrors.length&&!record.resourceAbort&&record.result?.verified===true&&record.nativePayloadVerified&&record.observerValid;
+ record.finishedAt=new Date().toISOString();await writeFile(output,JSON.stringify(record,null,2)+'\n');
+ console.log(JSON.stringify({passed:record.passed,error:record.error,observerValid:record.observerValid,samples:record.memorySamples.length,nativePayloadVerified:record.nativePayloadVerified,profile,bytes}));if(!record.passed)process.exitCode=1;
+}
