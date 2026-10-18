@@ -1,0 +1,31 @@
+{
+  "preparedAt": "2026-10-17T10:55:46.377Z",
+  "cases": [
+    {
+      "name": "single-file-current-10mib-chrome-2026-10-17",
+      "mib": 10,
+      "browser": "chrome",
+      "channel": "chrome"
+    },
+    {
+      "name": "single-file-current-10mib-edge-2026-10-17",
+      "mib": 10,
+      "browser": "edge",
+      "channel": "msedge"
+    },
+    {
+      "name": "single-file-current-100mib-edge-2026-10-17",
+      "mib": 100,
+      "browser": "edge",
+      "channel": "msedge"
+    },
+    {
+      "name": "single-file-current-100mib-chrome-2026-10-17",
+      "mib": 100,
+      "browser": "chrome",
+      "channel": "chrome"
+    }
+  ],
+  "priorSealedPaths": 2292,
+  "scope": "One trial per cell, sequential with independent verification between trials. Order is not a randomized/counterbalanced repeated performance experiment. Short trials may not have native samples in every phase; no unobserved phase peak is established."
+}

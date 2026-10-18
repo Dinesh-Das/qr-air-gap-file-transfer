@@ -1,0 +1,165 @@
+{
+  "verifiedAt": "2026-10-17T10:56:39.364Z",
+  "applicationChanged": false,
+  "inputs": 176,
+  "assets": 5,
+  "canonicalMetadataEvidenceUnchanged": 1990,
+  "rawDiagnosticExitCode": 0,
+  "rawDiagnosticPassed": true,
+  "dataIndependentlyVerified": true,
+  "fileBytes": 10485760,
+  "streamBytes": 10486010,
+  "streamSha256": "039e62ee939a3cd5af94ab841491f68de6bc4a9dc07b64f6c5cc9748d8fd4700",
+  "fileSha256": "50a082ea7b8c57f55a0bb597dd5f28be9736cf2a54f2223d5506b3ee8cbeba77",
+  "binaryMessages": 171,
+  "binaryBytes": 10493534,
+  "durableAckIndices": 171,
+  "savedFilesVerified": 1,
+  "receiverStreamVerifyMs": 127.60000014305115,
+  "destinationSaveMs": 292.90000009536743,
+  "diagnosticAuditMs": 34.39999985694885,
+  "payloadIntervalMBps": 3.720686229035353,
+  "processMemoryObservationComplete": true,
+  "completeTimedNativeSamples": 6,
+  "incompleteTimedNativeSamples": [],
+  "observerErrors": [],
+  "phaseMemory": {
+    "receiver": {
+      "samples": 3,
+      "peakPrivateBytes": 442011648,
+      "peakWorkingSetBytes": 756105216,
+      "phases": {
+        "setup": {
+          "samples": 1,
+          "peakPrivateBytes": 273543168,
+          "peakWorkingSetBytes": 566247424,
+          "lastProcessCount": 8
+        },
+        "receive": {
+          "samples": 1,
+          "peakPrivateBytes": 422105088,
+          "peakWorkingSetBytes": 712781824,
+          "lastProcessCount": 8
+        },
+        "destination": {
+          "samples": 1,
+          "peakPrivateBytes": 442011648,
+          "peakWorkingSetBytes": 756105216,
+          "lastProcessCount": 8
+        }
+      },
+      "peakPrivatePhase": "destination",
+      "peakWorkingSetPhase": "destination"
+    },
+    "sender": {
+      "samples": 3,
+      "peakPrivateBytes": 487952384,
+      "peakWorkingSetBytes": 775110656,
+      "phases": {
+        "setup->prepare": {
+          "samples": 1,
+          "peakPrivateBytes": 310796288,
+          "peakWorkingSetBytes": 610734080,
+          "lastProcessCount": 8
+        },
+        "transfer": {
+          "samples": 2,
+          "peakPrivateBytes": 487952384,
+          "peakWorkingSetBytes": 775110656,
+          "lastProcessCount": 8
+        }
+      },
+      "peakPrivatePhase": "transfer",
+      "peakWorkingSetPhase": "transfer"
+    }
+  },
+  "pageHeapPeaks": {
+    "sender": 62954506,
+    "receiver": 55305273
+  },
+  "heapByPhase": {
+    "sender": {
+      "setup": {
+        "peakBytes": 3998208,
+        "lastBytes": 3998208,
+        "samples": 1
+      },
+      "prepare": {
+        "peakBytes": 23020598,
+        "lastBytes": 23020598,
+        "samples": 2
+      },
+      "connect": {
+        "peakBytes": 25202432,
+        "lastBytes": 25202432,
+        "samples": 9
+      },
+      "transfer": {
+        "peakBytes": 62954506,
+        "lastBytes": 62954506,
+        "samples": 34
+      }
+    },
+    "receiver": {
+      "setup": {
+        "peakBytes": 4203744,
+        "lastBytes": 4203744,
+        "samples": 2
+      },
+      "receive": {
+        "peakBytes": 36479675,
+        "lastBytes": 36479675,
+        "samples": 38
+      },
+      "verify": {
+        "peakBytes": 44683553,
+        "lastBytes": 44683553,
+        "samples": 1
+      },
+      "destination": {
+        "peakBytes": 55305273,
+        "lastBytes": 32474120,
+        "samples": 3
+      },
+      "audit": {
+        "peakBytes": 43019696,
+        "lastBytes": 43019696,
+        "samples": 4
+      }
+    }
+  },
+  "profileInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\single-file-current-10mib-chrome-2026-10-17-f4xdir\\INDEPENDENT-PROFILE-INVENTORY.json",
+    "bytes": 92026,
+    "sha256": "2320d19fc8c7216a343a11eb0d0a0f613abc602e4820ed65d7966c4c3cb57cc3"
+  },
+  "persistentProfileRoots": [
+    {
+      "role": "sender",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\single-file-current-10mib-chrome-2026-10-17-f4xdir\\profiles\\p-xsV9on",
+      "version": "155.0.8059.80",
+      "files": 231
+    },
+    {
+      "role": "receiver",
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\single-file-current-10mib-chrome-2026-10-17-f4xdir\\profiles\\p-ZlO0eB",
+      "version": "155.0.8059.80",
+      "files": 248
+    }
+  ],
+  "resourceSampleMinima": {
+    "C:/": 3668254720,
+    "D:/": 2577334272
+  },
+  "sampledReserveMet": true,
+  "physicalNotRun": 42,
+  "releaseStatus": "NOT READY",
+  "limitations": [
+    "One current10MiB synthetic-source, same-host native WebRTC/OPFS transfer and injected OPFS destination, not UI pairing/native source disk/native destination picker/physical LAN/50–100GB acceptance.",
+    "Fixture file bytes repeat every256bytes. Full expected bytes and a nonperiodic virtual-tree footer prove this fixture roundtrip; they do not discriminate every wrong source-file offset separated by multiples of256. Do not claim general large-source addressing proof from this pattern alone.",
+    "Harness audit phase still uses its existing slice/arrayBuffer byte loop. Its allocation pressure is diagnostic; global/phase peaks must not be attributed wholesale to production destination verification.",
+    "Periodic process/disk observations miss possible inter-sample peaks. Any incomplete timed process sample keeps memory observation failed; independent byte proof does not promote that failure to a pass.",
+    "Forced collection occurs only after timed work. No forced-GC production strategy or regression threshold changed.",
+    "Older missing temporary profiles were not restored or substituted. This is a new timestamped measurement; new profiles and both large copies are retained in persistentC."
+  ]
+}

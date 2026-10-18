@@ -1,0 +1,20 @@
+{
+  "startedAt": "2026-10-17T10:55:47.038Z",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/single-file-current-10mib-chrome-2026-10-17-f4xdir",
+  "profiles": "C:\\Users\\dines\\QRFT-qualification-evidence\\single-file-current-10mib-chrome-2026-10-17-f4xdir\\profiles",
+  "temp": "C:\\Users\\dines\\QRFT-qualification-evidence\\single-file-current-10mib-chrome-2026-10-17-f4xdir\\temp",
+  "output": "D:\\MyProjects\\QR Air-Gap File Transfer\\release-evidence\\single-file-current-10mib-chrome-2026-10-17.json",
+  "runtime": "C:\\Users\\dines\\QRFT-release-candidates\\file-boundary-cancel-2026-10-17-QadMTV\\portable\\runtime\\node.exe",
+  "stage": "C:/Users/dines/AppData/Local/Temp/qrft-fresh-current-2026-10-17-Oo61W0",
+  "requiredC": 2587885568,
+  "requiredD": 2566914048,
+  "before": {
+    "at": "2026-10-17T10:55:47.036Z",
+    "disks": {
+      "C:/": 3734630400,
+      "D:/": 2577387520
+    },
+    "freeRam": 14471659520
+  },
+  "trialDeadlineMs": 600000
+}

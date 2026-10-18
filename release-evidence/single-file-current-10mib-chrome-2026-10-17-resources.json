@@ -1,0 +1,30 @@
+{
+  "snapshots": [
+    {
+      "at": "2026-10-17T10:55:47.036Z",
+      "disks": {
+        "C:/": 3734630400,
+        "D:/": 2577387520
+      },
+      "freeRam": 14471659520
+    },
+    {
+      "at": "2026-10-17T10:55:52.040Z",
+      "disks": {
+        "C:/": 3680059392,
+        "D:/": 2577371136
+      },
+      "freeRam": 13144813568
+    },
+    {
+      "at": "2026-10-17T10:55:55.012Z",
+      "disks": {
+        "C:/": 3668254720,
+        "D:/": 2577334272
+      },
+      "freeRam": 14177775616
+    }
+  ],
+  "reserveBytes": 2147483648,
+  "scope": "5-second disk/RAM samples. Two10MiBpayload copies plus profile overhead retained on persistentC. Periodic samples do not guarantee continuous minima."
+}
