@@ -1,0 +1,88 @@
+{
+  "recordedAt": "2026-10-15T19:01:05.348Z",
+  "node": "v24.22.0",
+  "root": "D:/MyProjects/qrft-unicode-directory-probe-2026-10-16-qf4KNK",
+  "scope": "Harmless directory creation only on current D volume; no files, device names, data overwrite or cleanup. Does not establish other OS/filesystem Unicode tables.",
+  "results": [
+    {
+      "first": "σ",
+      "second": "ς",
+      "lowercaseAliases": false,
+      "secondCreateError": null,
+      "nativeNames": [
+        "σ",
+        "ς"
+      ]
+    },
+    {
+      "first": "i",
+      "second": "ı",
+      "lowercaseAliases": false,
+      "secondCreateError": null,
+      "nativeNames": [
+        "i",
+        "ı"
+      ]
+    },
+    {
+      "first": "s",
+      "second": "ſ",
+      "lowercaseAliases": false,
+      "secondCreateError": null,
+      "nativeNames": [
+        "s",
+        "ſ"
+      ]
+    },
+    {
+      "first": "μ",
+      "second": "µ",
+      "lowercaseAliases": false,
+      "secondCreateError": null,
+      "nativeNames": [
+        "µ",
+        "μ"
+      ]
+    },
+    {
+      "first": "ss",
+      "second": "ß",
+      "lowercaseAliases": false,
+      "secondCreateError": null,
+      "nativeNames": [
+        "ss",
+        "ß"
+      ]
+    },
+    {
+      "first": "ff",
+      "second": "ﬀ",
+      "lowercaseAliases": false,
+      "secondCreateError": null,
+      "nativeNames": [
+        "ff",
+        "ﬀ"
+      ]
+    },
+    {
+      "first": "k",
+      "second": "K",
+      "lowercaseAliases": true,
+      "secondCreateError": null,
+      "nativeNames": [
+        "k",
+        "K"
+      ]
+    },
+    {
+      "first": "ß",
+      "second": "ẞ",
+      "lowercaseAliases": true,
+      "secondCreateError": null,
+      "nativeNames": [
+        "ß",
+        "ẞ"
+      ]
+    }
+  ]
+}
