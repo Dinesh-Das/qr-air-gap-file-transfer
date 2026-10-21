@@ -194,7 +194,7 @@
       }
     ]
   },
-  "currentReviewPending": 303,
+  "currentReviewPending": 301,
   "activeTransferTransitionEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
@@ -220,6 +220,35 @@
       {
         "scope": "Both browsers disable opposite-role and Home buttons during the held payload; clicking disabled buttons leaves original role active and transfer completes on release. Controlled browser injection, not all UI/input or physical conditions.",
         "id": "L928"
+      }
+    ]
+  },
+  "rapidPairingEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/rapid-pairing-browser-2026-10-22-wLlcZT/REVIEW.json",
+    "bytes": 4477,
+    "sha256": "880848d4d8fb4c503d1973f0a88935b399bf92d1cfe54fae32cbbc1b20b7aa73",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/rapid-pairing-browser-2026-10-22-wLlcZT/CLOSURE-HASHES.json",
+      "bytes": 274126,
+      "sha256": "aaca203c5f0a97da8ee3247adcd24066026efc3f547ad50129fb51fc224662d9"
+    },
+    "positiveChromePassed": 6,
+    "positiveEdgePassed": 6,
+    "negativePrepareExit": 1,
+    "negativeConnectExit": 1,
+    "typecheckExit": 0,
+    "applicationCodeChanged": false,
+    "releaseReady": false,
+    "scope": "Six focused cases per channel pass with the new repeated prepare/connect case and default-helper regressions. Three same-turn clicks invoke one held health check, one room/join after release, fresh human confirmations and a hash-correct120000B save. Removing each phase guard in separate copied bundles causes three health invocations. Mock pickers/controlled race; no physical Wi-Fi/native picker or new full95-case run.",
+    "requirements": [
+      {
+        "scope": "Triple same-turn Connect clicks during held health check start one invocation and one join; release leads to human confirmation and hash-verified save. Copied-bundle connect-guard removal produces three invocations. Finite controlled browser scope.",
+        "id": "L930"
+      },
+      {
+        "scope": "Triple same-turn Get pairing code clicks during held health check start one invocation and one room; release leads to human confirmation and hash-verified save. Copied-bundle preparation-guard removal produces three invocations. Finite controlled browser scope.",
+        "id": "L931"
       }
     ]
   }

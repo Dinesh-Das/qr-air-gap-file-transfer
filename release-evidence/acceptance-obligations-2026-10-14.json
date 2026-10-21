@@ -7753,7 +7753,8 @@
       "status": "partial-reviewed-browser-save-transition",
       "evidence": [
         "release-evidence/save-transition-browser-2026-10-22.json",
-        "release-evidence/active-transfer-browser-2026-10-22.json"
+        "release-evidence/active-transfer-browser-2026-10-22.json",
+        "release-evidence/rapid-pairing-browser-2026-10-22.json"
       ],
       "reviewScope": "Partial state-transition coverage: navigation while destination picker is held and overlapping save admission. Other requested transitions remain separate."
     },
@@ -7813,8 +7814,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "UX state machine",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-rapid-pairing-browser",
+      "evidence": [
+        "release-evidence/rapid-pairing-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Triple same-turn Connect clicks during held health check start one invocation and one join; release leads to human confirmation and hash-verified save. Copied-bundle connect-guard removal produces three invocations. Finite controlled browser scope."
     },
     {
       "id": "L931",
@@ -7823,8 +7827,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "UX state machine",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-rapid-pairing-browser",
+      "evidence": [
+        "release-evidence/rapid-pairing-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Triple same-turn Get pairing code clicks during held health check start one invocation and one room; release leads to human confirmation and hash-verified save. Copied-bundle preparation-guard removal produces three invocations. Finite controlled browser scope."
     },
     {
       "id": "L932",
@@ -10196,5 +10203,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-21T19:25:25.8196727Z"
+  "updatedAt": "2026-10-21T19:31:26.1699535Z"
 }
