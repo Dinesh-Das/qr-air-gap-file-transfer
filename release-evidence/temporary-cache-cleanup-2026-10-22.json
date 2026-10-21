@@ -1,0 +1,79 @@
+{
+  "recordedUtc": "2026-10-21T19:06:41.5148576Z",
+  "clientDate": "2026-10-22",
+  "checkpoint": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22",
+  "previousHead": "ec915cf8d50ae08562242fac68450bc7b70141df",
+  "previousHeadVerifiedOnRemote": true,
+  "userRequest": "save the previous state and clean up the temporary files that you have created",
+  "scope": "Generated browser HTTP, code, GPU, shader and shared-dictionary caches in owned qualification profiles and workspace .tmp profiles",
+  "removedDirectories": 1098.0,
+  "removedFiles": 7055.0,
+  "logicalBytesRemoved": 1939336462.0,
+  "freeAfter": [
+    {
+      "DeviceID": "C:",
+      "FreeSpace": 5522489344
+    },
+    {
+      "DeviceID": "D:",
+      "FreeSpace": 263282688
+    }
+  ],
+  "manifests": [
+    {
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22\\CACHE-RETIREMENT-BEFORE-v3.json",
+      "bytes": 2031780,
+      "sha256": "4d6554d11d5eebefb1c31241efdfff10d4e3ad1097bbe2e93a6e4c6dc8b5003b"
+    },
+    {
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22\\CACHE-RETIREMENT-BEFORE-v4.json",
+      "bytes": 109717,
+      "sha256": "0269ef4d5f9a761350350472e68d672df335ce35fc3433cb1935bfff7130ad94"
+    },
+    {
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22\\CACHE-RETIREMENT-BEFORE.json",
+      "bytes": 509634,
+      "sha256": "1d636ce0990064118014c46732bf141de58eb0a1c39e35b1faab39a529ccbc49"
+    },
+    {
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22\\CHECKPOINT-HASHES.json",
+      "bytes": 2903,
+      "sha256": "4fb6ea24a2be39fdd85f3a182b019ae58ef069f4c67700aef565a804f9bacebc"
+    },
+    {
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22\\CLEANUP-RESULT-v3.json",
+      "bytes": 507,
+      "sha256": "820c08b976cf9739a13872134d141204cf49a1507079ad716656123230ff81f3"
+    },
+    {
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22\\CLEANUP-RESULT-v4.json",
+      "bytes": 504,
+      "sha256": "ee114f2e7cbf901706308cc224eb550c895c9e1462ccee5aa96afe07d2636743"
+    },
+    {
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22\\CLEANUP-RESULT.json",
+      "bytes": 506,
+      "sha256": "47b2e0748c7c491d7c17dd84e20523874629d7b562b4cbd176ff73836de51eb8"
+    },
+    {
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22\\PROTECTED-ASSETS-CHECK.json",
+      "bytes": 1038,
+      "sha256": "0958c3a1e1b29f1a078f23044e11529a07719500e7d80b58709dc257147658b8"
+    },
+    {
+      "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-checkpoint-2026-10-22\\STATE-BEFORE.json",
+      "bytes": 715,
+      "sha256": "f32792719f56c3a772938cdbc6ada0f7825572f6f988c8891fc64f1a4789a602"
+    }
+  ],
+  "guardedAttempt": "V2 stopped before deletion because its candidates included D: outside its allowed C: root; V3 and V4 applied separate explicit roots.",
+  "availability": "Cache files listed in the before manifests were intentionally retired. Historical inventories retain their original contents but no longer imply complete raw-profile availability. Test reports, closure manifests, source fixtures, OPFS transfer data and saved payloads were preserved.",
+  "verification": {
+    "qualifiedAssetsUnchanged": 5,
+    "applicationCodeChanged": false,
+    "remainingRemovedTargets": 0,
+    "testsRerun": false
+  },
+  "releaseReady": false,
+  "remaining": "Real two-laptop Wi-Fi testing and remaining release gates are still incomplete. Cleanup itself does not qualify a new transfer."
+}

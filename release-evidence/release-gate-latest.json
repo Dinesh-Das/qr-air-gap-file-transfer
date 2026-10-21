@@ -127,5 +127,10 @@
     "reviewed": 15,
     "markedComplete": 0,
     "remainingReviewPending": 313
+  },
+  "temporaryCacheCleanup": {
+    "record": "release-evidence/temporary-cache-cleanup-2026-10-22.json",
+    "logicalBytesRemoved": 1939336462.0,
+    "availability": "Cache files listed in the before manifests were intentionally retired. Historical inventories retain their original contents but no longer imply complete raw-profile availability. Test reports, closure manifests, source fixtures, OPFS transfer data and saved payloads were preserved."
   }
 }
