@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-21T18:40:31.020Z",
+  "recordedAt": "2026-10-21T18:56:00.543Z",
   "clientDate": "2026-10-22",
   "status": "Current source recovery fix passes full browser suites and local package qualification; broader release gates remain open",
   "releaseReady": false,
@@ -107,5 +107,25 @@
     "CleanOS and hostedfinalCI",
     "Original838line release-obligation audit and unmapped requirements",
     "Earlier missingTemphelper/overwrittensmoke availability gaps are not repaired"
-  ]
+  ],
+  "currentLargeTransferPreflight": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-obligation-review-2026-10-22-o3CpHq/ASSESSMENT-v2.md",
+    "bytes": 683,
+    "sha256": "00ddc933ba599f4243c4e831084e48e9e70ad520ad8039e6138e3c6f452928e3",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-obligation-review-2026-10-22-o3CpHq/CLOSURE-HASHES-v2.json",
+      "bytes": 3596,
+      "sha256": "26be03d013ce9f7e5099b8c8d583950d792e0deeea1248e168cbbbf9ca87101c"
+    },
+    "releaseReady": false,
+    "scope": "1GiBnativeUIcase blocked before execution;15original-obligation mappings reviewed without broad completion claims."
+  },
+  "obligationReview": {
+    "path": "release-evidence/current-checkpoint-obligation-review-2026-10-22.json",
+    "sha256": "43711ce1c807e060f5dcee6125cfffa95af4598afec82b052f0269dd6cb67e38",
+    "reviewed": 15,
+    "markedComplete": 0,
+    "remainingReviewPending": 313
+  }
 }

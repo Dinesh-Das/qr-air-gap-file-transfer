@@ -5,3 +5,5 @@ All 539 unit tests, type checking and build passed. The current bundle passed al
 The repository dist now matches the qualified five assets. The old dist and earlier incomplete Chrome run remain preserved. No application source changed during this qualification.
 
 All 42 physical cases remain unrun. Actual OS pickers and Windows GUI launch, clean OS and hosted CI checks, current-bundle large-file/resource/memory qualification, and the full original requirement audit remain open. Prior 5 GiB transfer results retain their older bundle scope. See source-origin-browser-package-qualification-2026-10-22.json.
+
+The new 1 GiB UI transfer case did not start: disk preflight failed before any browser/store. Its unchanged budget is 4,714,397,696 bytes (about 4.39 GiB). Fifteen previously pending requirement lines now have scoped current evidence or explicit missing-proof verdicts; none was marked complete, and 313 still await review. See current-checkpoint-obligation-review-2026-10-22.json.

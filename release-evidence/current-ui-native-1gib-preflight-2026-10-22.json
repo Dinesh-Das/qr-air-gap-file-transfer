@@ -1,0 +1,13 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/current-obligation-review-2026-10-22-o3CpHq/ASSESSMENT-v2.md",
+  "bytes": 683,
+  "sha256": "00ddc933ba599f4243c4e831084e48e9e70ad520ad8039e6138e3c6f452928e3",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-obligation-review-2026-10-22-o3CpHq/CLOSURE-HASHES-v2.json",
+    "bytes": 3596,
+    "sha256": "26be03d013ce9f7e5099b8c8d583950d792e0deeea1248e168cbbbf9ca87101c"
+  },
+  "releaseReady": false,
+  "scope": "1GiBnativeUIcase blocked before execution;15original-obligation mappings reviewed without broad completion claims."
+}
