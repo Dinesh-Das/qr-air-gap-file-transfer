@@ -1,0 +1,224 @@
+{
+  "recordedAt": "2026-10-21T19:14:08.334Z",
+  "clientDate": "2026-10-22",
+  "source": "release-evidence/original-release-requirements.txt",
+  "sourceSha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077",
+  "ledgerBeforeSha256": "10521dfc5d4b8bd29f3ff9fcff4fdf1676be381f3b16ff490e1d10a9c1154416",
+  "archive": "C:/Users/dines/QRFT-qualification-evidence/transport-requirement-review-2026-10-22-rgsVth",
+  "unitReport": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/UNIT-FULL.json",
+    "bytes": 181796,
+    "sha256": "624be60d63db8a5577f697d475f7a4f4a06dc2e8475ec1c25fe2695d55e582bf",
+    "passed": 539,
+    "failed": 0
+  },
+  "inputs": [
+    {
+      "path": "tests/block-store.test.ts",
+      "bytes": 11893,
+      "sha256": "966697a32212a4ea377e4a1d1d408aebc9b725c128afe918050f704df80d1eca"
+    },
+    {
+      "path": "tests/webrtc-protocol.test.ts",
+      "bytes": 6546,
+      "sha256": "57ff07d72bb28efc67356256de2ee02c493f678fc28e4121bc2b836c64c0a04c"
+    },
+    {
+      "path": "tests/webrtc-transfer.test.ts",
+      "bytes": 36696,
+      "sha256": "ba5a44c27751254c55c1e51da4643103c7a50727655fdf4b60cbdfd6647292c5"
+    },
+    {
+      "path": "src/lib/webrtc-receive-queue.ts",
+      "bytes": 5419,
+      "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
+    },
+    {
+      "path": "src/lib/webrtc-transfer.ts",
+      "bytes": 14125,
+      "sha256": "2ffb0e756e82c879cd4dd4dc0edb1ea1199f0f904118d8d8973a6aa3128ff2f1"
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "bytes": 31158,
+      "sha256": "93cf8e726780e232ba93a859f0cad1e8034454de7dd150396aa2098ad6d2817b"
+    }
+  ],
+  "entries": [
+    {
+      "id": "L879",
+      "tests": [
+        "multi-gigabyte sparse layouts",
+        "accepts an identity-valid supported 107374182400-byte manifest"
+      ],
+      "scope": "Representation evidence only: memory-backed 5 GiB+3 sparse layout writes only its final 3-byte block; the 100 GiB wire manifest allocates no transfer. Neither is an actual 5/100 GiB transfer or native-memory acceptance proof.",
+      "text": "* multi-GB representation;",
+      "complete": false,
+      "status": "partial-reviewed-transport-evidence",
+      "unitTests": [
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/block-store.test.ts",
+          "fullName": "block store supports multi-gigabyte sparse layouts without allocating totalBytes",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-protocol.test.ts",
+          "fullName": "WebRTC transfer protocol accepts an identity-valid supported 107374182400-byte manifest without allocating a transfer",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "id": "L884",
+      "tests": [
+        "rejects a corrupted batch without marking any of that group durable",
+        "rejects every single-bit mutation"
+      ],
+      "scope": "Small memory-backed receiver preserves only previously durable block 0 after corruption in a later batch; reopen still trusts only block 0. Sync and native-digest wire decoders reject all 1128 single-bit mutations of one 141-byte encoded packet. Finite controlled fault evidence, not every possible corruption or physical transport proof.",
+      "text": "* corrupted block;",
+      "complete": false,
+      "status": "partial-reviewed-transport-evidence",
+      "unitTests": [
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-transfer.test.ts",
+          "fullName": "offline WebRTC transfer rejects a corrupted batch without marking any of that group durable",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-protocol.test.ts",
+          "fullName": "WebRTC transfer protocol rejects every single-bit mutation in a complete wire packet with both hash paths",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "id": "L887",
+      "tests": [
+        "rejects repeated resume pages and acknowledgements for unsent blocks",
+        "rejects seeded malformed required control fields",
+        "enforces exact ACK, resume",
+        "duplicate acknowledgments cannot extend"
+      ],
+      "scope": "Unit coverage rejects unsent-block receipts, malformed fields and ACK-count wire overflow; duplicate/empty ACKs cannot prolong missing-receipt timeout. Fake channel/clock scope, not a physical hostile-peer run. ACK messages contain indices arrays; message count is not acknowledged-block count.",
+      "text": "* invalid ACK;",
+      "complete": false,
+      "status": "partial-reviewed-transport-evidence",
+      "unitTests": [
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-transfer.test.ts",
+          "fullName": "offline WebRTC transfer rejects repeated resume pages and acknowledgements for unsent blocks",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-protocol.test.ts",
+          "fullName": "WebRTC transfer protocol rejects seeded malformed required control fields without accepting a partial message",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-protocol.test.ts",
+          "fullName": "WebRTC transfer protocol enforces exact ACK, resume, human-text and JSON wire limits",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-transfer.test.ts",
+          "fullName": "offline WebRTC transfer duplicate acknowledgments cannot extend the wait for missing receipts",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "id": "L888",
+      "tests": [
+        "suspends the deadline while paused",
+        "aborts promptly while transmission is paused",
+        "does not lose a failure that arrives before a paused sender"
+      ],
+      "scope": "Fake-channel unit cases cover paused timeout suspension, cancellation and pre-wait failure. Not real Wi-Fi pause/resume, browser sleep/wake, throughput or UI latency acceptance.",
+      "text": "* paused sender;",
+      "complete": false,
+      "status": "partial-reviewed-transport-evidence",
+      "unitTests": [
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-transfer.test.ts",
+          "fullName": "offline WebRTC transfer times out a silent open channel, suspends the deadline while paused, and cleans up",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-transfer.test.ts",
+          "fullName": "offline WebRTC transfer aborts promptly while transmission is paused",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-transfer.test.ts",
+          "fullName": "offline WebRTC transfer does not lose a failure that arrives before a paused sender starts waiting",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "id": "L912",
+      "tests": [
+        "rejects a corrupted batch without marking any of that group durable",
+        "discards a complete corrupt stream so reconnect retransmits and verifies",
+        "rejects every single-bit mutation"
+      ],
+      "scope": "Finite wire mutations and injected stored-stream corruption reject/clear poisoned receipt state and allow a clean memory-backed retry. Separate current browser OPFS corruption evidence exists in the prior review; this unit mapping does not broaden it.",
+      "text": "* payload corruption;",
+      "complete": false,
+      "status": "partial-reviewed-transport-evidence",
+      "unitTests": [
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-transfer.test.ts",
+          "fullName": "offline WebRTC transfer rejects a corrupted batch without marking any of that group durable",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-transfer.test.ts",
+          "fullName": "offline WebRTC transfer discards a complete corrupt stream so reconnect retransmits and verifies",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-protocol.test.ts",
+          "fullName": "WebRTC transfer protocol rejects every single-bit mutation in a complete wire packet with both hash paths",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "id": "L950",
+      "tests": [
+        "rejects an identity-valid 15728640000001-byte manifest",
+        "rejects an identity-valid 9007199254740991-byte manifest",
+        "accepts an identity-valid supported 15728640000000-byte manifest"
+      ],
+      "scope": "Wire parser/encoder accept the durable block-map cap and reject cap+1 and MAX_SAFE_INTEGER, without allocating payload storage. This proves representation bounds for these cases, not filesystem/quota capacity or completion of maximum-size transfers.",
+      "text": "* transfer sizes.",
+      "complete": false,
+      "status": "partial-reviewed-transport-evidence",
+      "unitTests": [
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-protocol.test.ts",
+          "fullName": "WebRTC transfer protocol rejects an identity-valid 15728640000001-byte manifest above the durable block-map limit at the wire boundary",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-protocol.test.ts",
+          "fullName": "WebRTC transfer protocol rejects an identity-valid 9007199254740991-byte manifest above the durable block-map limit at the wire boundary",
+          "status": "passed"
+        },
+        {
+          "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-protocol.test.ts",
+          "fullName": "WebRTC transfer protocol accepts an identity-valid supported 15728640000000-byte manifest without allocating a transfer",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "reviewed": 6,
+  "markedComplete": 0,
+  "remainingReviewPending": 307,
+  "testsRerun": false,
+  "applicationChanged": false,
+  "releaseReady": false,
+  "remaining": "Physical two-laptop testing and full large-file, throughput, native-memory and original requirement acceptance remain open. Unit mappings must retain the stated injection and allocation scopes."
+}

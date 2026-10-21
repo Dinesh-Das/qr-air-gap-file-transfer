@@ -7330,8 +7330,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Transfer",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-transport-evidence",
+      "evidence": [
+        "release-evidence/transport-requirement-review-2026-10-22.json#L879"
+      ],
+      "reviewScope": "Representation evidence only: memory-backed 5 GiB+3 sparse layout writes only its final 3-byte block; the 100 GiB wire manifest allocates no transfer. Neither is an actual 5/100 GiB transfer or native-memory acceptance proof."
     },
     {
       "id": "L880",
@@ -7395,8 +7398,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Transfer",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-transport-evidence",
+      "evidence": [
+        "release-evidence/transport-requirement-review-2026-10-22.json#L884"
+      ],
+      "reviewScope": "Small memory-backed receiver preserves only previously durable block 0 after corruption in a later batch; reopen still trusts only block 0. Sync and native-digest wire decoders reject all 1128 single-bit mutations of one 141-byte encoded packet. Finite controlled fault evidence, not every possible corruption or physical transport proof."
     },
     {
       "id": "L885",
@@ -7431,8 +7437,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Transfer",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-transport-evidence",
+      "evidence": [
+        "release-evidence/transport-requirement-review-2026-10-22.json#L887"
+      ],
+      "reviewScope": "Unit coverage rejects unsent-block receipts, malformed fields and ACK-count wire overflow; duplicate/empty ACKs cannot prolong missing-receipt timeout. Fake channel/clock scope, not a physical hostile-peer run. ACK messages contain indices arrays; message count is not acknowledged-block count."
     },
     {
       "id": "L888",
@@ -7441,8 +7450,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Transfer",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-transport-evidence",
+      "evidence": [
+        "release-evidence/transport-requirement-review-2026-10-22.json#L888"
+      ],
+      "reviewScope": "Fake-channel unit cases cover paused timeout suspension, cancellation and pre-wait failure. Not real Wi-Fi pause/resume, browser sleep/wake, throughput or UI latency acceptance."
     },
     {
       "id": "L889",
@@ -7644,8 +7656,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Corruption",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-transport-evidence",
+      "evidence": [
+        "release-evidence/transport-requirement-review-2026-10-22.json#L912"
+      ],
+      "reviewScope": "Finite wire mutations and injected stored-stream corruption reject/clear poisoned receipt state and allow a clean memory-backed retry. Separate current browser OPFS corruption evidence exists in the prior review; this unit mapping does not broaden it."
     },
     {
       "id": "L913",
@@ -7985,8 +8000,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Security",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-transport-evidence",
+      "evidence": [
+        "release-evidence/transport-requirement-review-2026-10-22.json#L950"
+      ],
+      "reviewScope": "Wire parser/encoder accept the durable block-map cap and reject cap+1 and MAX_SAFE_INTEGER, without allocating payload storage. This proves representation bounds for these cases, not filesystem/quota capacity or completion of maximum-size transfers."
     },
     {
       "id": "L952",
@@ -10165,5 +10183,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. It is not a completed requirement-by-requirement audit. Only exact percentage-model assertions and missing physical evidence are annotated in this checkpoint; review-pending items are not claimed achieved. Use original line IDs for subsequent evidence mapping without shrinking scope.",
-  "updatedAt": "2026-10-21T18:54:26.392Z"
+  "updatedAt": "2026-10-21T19:14:08.333Z"
 }

@@ -155,5 +155,12 @@
     "nativeComplete": true,
     "releaseReady": false,
     "scope": "Current production UI 1 GiB same-host transfer/save has independent byte and hash evidence; raw harness failed its incorrect per-message ACK count assertion. Mock pickers, deliberate cleanup denial, no physical Wi-Fi or full resource matrix qualification."
+  },
+  "transportObligationReview": {
+    "record": "release-evidence/transport-requirement-review-2026-10-22.json",
+    "reviewed": 6,
+    "markedComplete": 0,
+    "remainingReviewPending": 307,
+    "scope": "Finite unit coverage linked to original obligations; sparse layouts and manifest-only size tests are not actual large transfers."
   }
 }
