@@ -3,7 +3,7 @@ import { test, expect, chromium, type Page, type BrowserContext } from "@playwri
 import { createHash } from "node:crypto";
 import { formatBytes } from "../src/lib/format";
 
-async function setupPair(context: BrowserContext, alteredOffer = false, fileBytes = 120_000, realRuntime = false, manual = false, durableSource = false, selectFiles = false, dropSource = false, manyFiles = false, reuseSource = false) {
+async function setupPair(context: BrowserContext, alteredOffer = false, fileBytes = 120_000, realRuntime = false, manual = false, durableSource = false, selectFiles = false, dropSource = false, manyFiles = false, reuseSource = false, rapidPairingActions = false) {
   let offer: { sessionId: string; sdp: string };
   let answer: { sessionId: string; sdp: string } | undefined;
   if (!realRuntime) await context.route("**/api/rendezvous/**", async (route) => {
@@ -116,7 +116,8 @@ async function setupPair(context: BrowserContext, alteredOffer = false, fileByte
     document.querySelector("#sender-workspace .workspace")!.dispatchEvent(new DragEvent("drop", { bubbles: true, cancelable: true, dataTransfer: data }));
   });
   else await sender.getByRole("button", { name: selectFiles ? "Choose files" : "Choose folder", exact: true }).click();
-  await sender.getByRole("button", { name: "Get pairing code" }).click();
+  if (rapidPairingActions) await clickPairingRepeatedly(sender, "Get pairing code");
+  else await sender.getByRole("button", { name: "Get pairing code" }).click();
   await expect(sender.locator(".pairing-code-large")).toHaveText(/\d{3} \d{3}/);
   const pairingCode = (await sender.locator(".pairing-code-large").textContent())!.replace(/\s/g, "");
   await receiver.getByRole("textbox", { name: "Six-digit pairing code" }).fill(pairingCode);
@@ -125,9 +126,37 @@ async function setupPair(context: BrowserContext, alteredOffer = false, fileByte
     await receiver.getByText("Troubleshoot connection", { exact: true }).click();
     await receiver.getByRole("textbox", { name: "Sender address", exact: true }).fill("127.0.0.1:4179");
   }
-  await receiver.getByRole("button", { name: "Connect to sender" }).click();
+  if (rapidPairingActions) await clickPairingRepeatedly(receiver, "Connect to sender");
+  else await receiver.getByRole("button", { name: "Connect to sender" }).click();
   for (const page of [sender, receiver]) await expect(page.getByRole("button", { name: "Codes match", exact: true })).toBeEnabled();
   return { sender, receiver, errors };
+}
+
+async function clickPairingRepeatedly(page: Page, name: "Get pairing code" | "Connect to sender") {
+  await page.evaluate(() => {
+    const state = window as unknown as { pairingHealthCalls: number; pairingRoomCalls: number; pairingJoinCalls: number; releasePairingCheck: () => void };
+    state.pairingHealthCalls = 0; state.pairingRoomCalls = 0; state.pairingJoinCalls = 0;
+    const gate = new Promise<void>((resolve) => { state.releasePairingCheck = resolve; });
+    const fetch = window.fetch.bind(window);
+    window.fetch = async (input, init) => {
+      const path = new URL(input instanceof Request ? input.url : String(input), location.href).pathname;
+      if (path.endsWith("/api/rendezvous/health")) { state.pairingHealthCalls++; await gate; }
+      if (path.endsWith("/api/rendezvous/rooms") && init?.method === "POST") state.pairingRoomCalls++;
+      if (path.endsWith("/api/rendezvous/join")) state.pairingJoinCalls++;
+      return fetch(input, init);
+    };
+  });
+  await page.getByRole("button", { name, exact: true }).evaluate((button) => {
+    if (!(button instanceof HTMLButtonElement)) throw new Error("Expected the pairing action button.");
+    button.click(); button.click(); button.click();
+  });
+  await expect.poll(() => page.evaluate(() => (window as unknown as { pairingHealthCalls: number }).pairingHealthCalls)).toBe(1);
+  const held = await page.evaluate(() => {
+    const state = window as unknown as { pairingRoomCalls: number; pairingJoinCalls: number; sentBytes: number };
+    return { rooms: state.pairingRoomCalls, joins: state.pairingJoinCalls, bytes: state.sentBytes };
+  });
+  expect(held).toEqual({ rooms: 0, joins: 0, bytes: 0 });
+  await page.evaluate(() => (window as unknown as { releasePairingCheck: () => void }).releasePairingCheck());
 }
 
 async function controls(page: Page) {
@@ -655,6 +684,31 @@ test("mixed dropped items transfer and a busy sender ignores another drop", asyn
     expect(saved).toEqual({ loose: "loose", size: 120_000, hash: createHash("sha256").update(Buffer.alloc(120_000, 37)).digest("hex") });
     expect(errors).toEqual([]);
   } finally { await context.close(); }
+});
+
+test("rapid prepare and connect clicks create one pairing attempt and preserve verified output", async ({ context }) => {
+  const { sender, receiver, errors } = await setupPair(context, false, 120_000, false, false, false, false, false, false, false, true);
+  for (const [page, rooms, joins] of [[sender, 1, 0], [receiver, 0, 1]] as const) {
+    const calls = await page.evaluate(() => {
+      const state = window as unknown as { pairingHealthCalls: number; pairingRoomCalls: number; pairingJoinCalls: number; sentBytes: number };
+      return { health: state.pairingHealthCalls, rooms: state.pairingRoomCalls, joins: state.pairingJoinCalls, bytes: state.sentBytes };
+    });
+    expect(calls).toEqual({ health: 1, rooms, joins, bytes: 0 });
+  }
+  for (const page of [sender, receiver]) await page.getByRole("button", { name: "Codes match", exact: true }).click();
+  await expect(receiver.getByRole("button", { name: "Choose destination and save", exact: true })).toBeVisible();
+  await receiver.evaluate(() => {
+    window.showDirectoryPicker = async () => (await navigator.storage.getDirectory()).getDirectoryHandle("rapid-pairing-output", { create: true });
+  });
+  await receiver.getByRole("button", { name: "Choose destination and save", exact: true }).click();
+  await expect(receiver.getByRole("heading", { name: "Transfer complete", exact: true })).toBeVisible();
+  const result = await receiver.evaluate(async () => {
+    const output = await (await navigator.storage.getDirectory()).getDirectoryHandle("rapid-pairing-output");
+    const file = await (await (await output.getDirectoryHandle("browser-fixture")).getFileHandle("test.bin")).getFile();
+    return { size: file.size, sha256: Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", await file.arrayBuffer())), byte => byte.toString(16).padStart(2, "0")).join("") };
+  });
+  expect(result).toEqual({ size: 120_000, sha256: createHash("sha256").update(Buffer.alloc(120_000, 37)).digest("hex") });
+  expect(errors).toEqual([]);
 });
 
 test("an active payload transfer blocks source replacement and navigation, then completes unchanged", async ({ context }) => {
