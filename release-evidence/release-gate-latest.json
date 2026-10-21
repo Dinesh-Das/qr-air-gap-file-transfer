@@ -194,7 +194,7 @@
       }
     ]
   },
-  "currentReviewPending": 301,
+  "currentReviewPending": 297,
   "activeTransferTransitionEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
@@ -249,6 +249,42 @@
       {
         "scope": "Triple same-turn Get pairing code clicks during held health check start one invocation and one room; release leads to human confirmation and hash-verified save. Copied-bundle preparation-guard removal produces three invocations. Finite controlled browser scope.",
         "id": "L931"
+      }
+    ]
+  },
+  "destinationWriteFaultEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/destination-write-fault-browser-2026-10-22-NgyoTG/REVIEW.json",
+    "bytes": 4375,
+    "sha256": "77a821801cb745db7e64c7479b77261f855566fc8a472e85ec7da2565acf428a",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/destination-write-fault-browser-2026-10-22-NgyoTG/CLOSURE-HASHES.json",
+      "bytes": 211822,
+      "sha256": "63d950478439cd161d371f4e4667bd180be9ce42ba527ae741e0cca35ae85305"
+    },
+    "positiveChromePassed": 8,
+    "positiveEdgePassed": 8,
+    "negativeControlExit": 1,
+    "typecheckExit": 0,
+    "applicationCodeChanged": false,
+    "releaseReady": false,
+    "scope": "Two injected destination write faults after native writes prove abort/uncommitted journal/retained verified store and same-destination hash-correct retry with unchanged sender bytes/reads. Eight focused cases per browser also cover existing corrupted-stream and delayed-error defenses. Copied-bundle retry-phase mutation removes save action and fails. Not actual disk exhaustion/OS permission revocation, physical Wi-Fi or new full97-case execution.",
+    "requirements": [
+      {
+        "scope": "Injected quota/permission errors interrupt reconstruction after one native payload write; payload aborts, receipt remains uncommitted, and same-destination retry verifies120000B without retransmission. Finite one-file browser case, not general crash/power-loss or all reconstruction boundaries.",
+        "id": "L904"
+      },
+      {
+        "scope": "Rerun existing OPFS payload-corruption case reaches full received-byte count but fails stream verification, emits no safe completion/save, discards poisoned storage and retransmits cleanly. Controlled120000B corruption, not universal fault proof.",
+        "id": "L916"
+      },
+      {
+        "scope": "Native OPFS writer succeeds once, then injected DOM write error drives abort, actionable retry and correct saved destination. No actual OS I/O fault or native filesystem picker qualification.",
+        "id": "L972"
+      },
+      {
+        "scope": "Injected QuotaExceededError after native destination write preserves verified cache and uncommitted destination journal; retry succeeds without sender read/network growth. Existing receive-worker quota case also passes. No actual disk-full/quota exhaustion acceptance.",
+        "id": "L973"
       }
     ]
   }

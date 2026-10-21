@@ -7613,8 +7613,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Durable resume",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-destination-write-fault-browser",
+      "evidence": [
+        "release-evidence/destination-write-fault-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Injected quota/permission errors interrupt reconstruction after one native payload write; payload aborts, receipt remains uncommitted, and same-destination retry verifies120000B without retransmission. Finite one-file browser case, not general crash/power-loss or all reconstruction boundaries."
     },
     {
       "id": "L906",
@@ -7707,8 +7710,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Corruption",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-destination-write-fault-browser",
+      "evidence": [
+        "release-evidence/destination-write-fault-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Rerun existing OPFS payload-corruption case reaches full received-byte count but fails stream verification, emits no safe completion/save, discards poisoned storage and retransmits cleanly. Controlled120000B corruption, not universal fault proof."
     },
     {
       "id": "L917",
@@ -8178,8 +8184,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-destination-write-fault-browser",
+      "evidence": [
+        "release-evidence/destination-write-fault-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Native OPFS writer succeeds once, then injected DOM write error drives abort, actionable retry and correct saved destination. No actual OS I/O fault or native filesystem picker qualification."
     },
     {
       "id": "L973",
@@ -8188,8 +8197,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-destination-write-fault-browser",
+      "evidence": [
+        "release-evidence/destination-write-fault-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Injected QuotaExceededError after native destination write preserves verified cache and uncommitted destination journal; retry succeeds without sender read/network growth. Existing receive-worker quota case also passes. No actual disk-full/quota exhaustion acceptance."
     },
     {
       "id": "L974",
@@ -10203,5 +10215,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-21T19:31:26.1699535Z"
+  "updatedAt": "2026-10-21T19:37:38.4332748Z"
 }
