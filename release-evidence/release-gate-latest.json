@@ -132,5 +132,28 @@
     "record": "release-evidence/temporary-cache-cleanup-2026-10-22.json",
     "logicalBytesRemoved": 1939336462.0,
     "availability": "Cache files listed in the before manifests were intentionally retired. Historical inventories retain their original contents but no longer imply complete raw-profile availability. Test reports, closure manifests, source fixtures, OPFS transfer data and saved payloads were preserved."
+  },
+  "currentLargeUiTransferEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/REVIEW.json",
+    "bytes": 3128,
+    "sha256": "09cbb914ae52a144d99d811e424f10764fe831874ad718832abd04edfa975fd9",
+    "assessment": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/ASSESSMENT.md",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/CLOSURE-HASHES.json",
+      "bytes": 122487,
+      "sha256": "59d9d1a008a6c0e69f0dc09c9e9b91537aadbc062083f9e3933ba42875c0034d"
+    },
+    "independent": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/INDEPENDENT-BYTE-VERIFICATION.json",
+      "bytes": 1317,
+      "sha256": "76edbf37532158b9526814a59dbb08fef6de5dcbe102bd74c92761024462d396"
+    },
+    "rawHarnessExit": 1,
+    "independentVerifierExit": 0,
+    "byteComparisonPassed": true,
+    "nativeComplete": true,
+    "releaseReady": false,
+    "scope": "Current production UI 1 GiB same-host transfer/save has independent byte and hash evidence; raw harness failed its incorrect per-message ACK count assertion. Mock pickers, deliberate cleanup denial, no physical Wi-Fi or full resource matrix qualification."
   }
 }
