@@ -1,0 +1,28 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
+  "bytes": 2954,
+  "sha256": "212e6defdfdfb18e85ba84a61e0d9f4beca3d8a41e414c3486ce2dcae23cff59",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/CLOSURE-HASHES.json",
+    "bytes": 197122,
+    "sha256": "7250a8d2d83225bb38ed5485c51c856c07055a89915c8a5492b43dbeddae1cdc"
+  },
+  "positiveChromeExit": 0,
+  "positiveEdgeExit": 0,
+  "negativeControlExit": 1,
+  "typecheckExit": 0,
+  "applicationCodeChanged": false,
+  "releaseReady": false,
+  "scope": "Real120000B RTC/OPFS transfer held after first binary frame using controlled bufferedAmount backpressure. Opposite-role/Home clicks preserve role, source controls absent and dropped replacement acquires no handle; release saves original hash-correct file. Removing the outer drop guard in a copied bundle admits one unwanted handle. Mock pickers/rendezvous, no physical network/native picker/throughput or full94-case suite claim.",
+  "requirements": [
+    {
+      "scope": "During an actual started payload, source pickers are absent, dropped replacement acquires no handles, original selection remains, and released transfer saves hash-correct output. This finite browser case does not cover every OS/source change.",
+      "id": "L927"
+    },
+    {
+      "scope": "Both browsers disable opposite-role and Home buttons during the held payload; clicking disabled buttons leaves original role active and transfer completes on release. Controlled browser injection, not all UI/input or physical conditions.",
+      "id": "L928"
+    }
+  ]
+}

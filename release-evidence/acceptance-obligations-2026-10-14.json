@@ -7752,7 +7752,8 @@
       "kind": "prose",
       "status": "partial-reviewed-browser-save-transition",
       "evidence": [
-        "release-evidence/save-transition-browser-2026-10-22.json"
+        "release-evidence/save-transition-browser-2026-10-22.json",
+        "release-evidence/active-transfer-browser-2026-10-22.json"
       ],
       "reviewScope": "Partial state-transition coverage: navigation while destination picker is held and overlapping save admission. Other requested transitions remain separate."
     },
@@ -7773,8 +7774,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "UX state machine",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-active-transfer-browser",
+      "evidence": [
+        "release-evidence/active-transfer-browser-2026-10-22.json"
+      ],
+      "reviewScope": "During an actual started payload, source pickers are absent, dropped replacement acquires no handles, original selection remains, and released transfer saves hash-correct output. This finite browser case does not cover every OS/source change."
     },
     {
       "id": "L928",
@@ -7783,8 +7787,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "UX state machine",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-active-transfer-browser",
+      "evidence": [
+        "release-evidence/active-transfer-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Both browsers disable opposite-role and Home buttons during the held payload; clicking disabled buttons leaves original role active and transfer completes on release. Controlled browser injection, not all UI/input or physical conditions."
     },
     {
       "id": "L929",
@@ -10189,5 +10196,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-21T19:21:07.9235294Z"
+  "updatedAt": "2026-10-21T19:25:25.8196727Z"
 }
