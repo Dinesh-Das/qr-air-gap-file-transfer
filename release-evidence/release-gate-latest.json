@@ -1,8 +1,24 @@
 {
-  "recordedAt": "2026-10-21T01:48:39.485Z",
-  "status": "Local source recovery fix verified; fullbrowser qualification stopped by disk reserve",
+  "recordedAt": "2026-10-21T18:40:31.020Z",
+  "clientDate": "2026-10-22",
+  "status": "Current source recovery fix passes full browser suites and local package qualification; broader release gates remain open",
   "releaseReady": false,
   "evidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/REVIEW.json",
+    "bytes": 72519,
+    "sha256": "1fdc3544a0ca0f242be23c5e48220aa0ee2693ae422208ce270e9910d2d76617",
+    "assessment": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/ASSESSMENT.md",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/CLOSURE-HASHES.json",
+      "bytes": 3610177,
+      "sha256": "6ff79e4e82a2b8a7040b88a047454d4cefca0aec6133dfcf602283bced0f2d58"
+    },
+    "releaseReady": false,
+    "scope": "Current source recovery fix passes full browser suites and local package qualification; broader release gates remain open"
+  },
+  "previousCheckpoint": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/CANONICAL-BEFORE-release-gate-latest.json",
+  "sourceFixEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/REVIEW.json",
     "bytes": 33448,
@@ -16,29 +32,7 @@
     "releaseReady": false,
     "scope": "Local recovery-advice fix verified; full candidate qualification pending"
   },
-  "lastFullCheckpoint": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/CANONICAL-BEFORE-release-gate-latest.json",
-  "qualification": {
-    "typecheck": 0,
-    "unitPassed": 539,
-    "build": 0,
-    "nativeRegression": 3,
-    "focusedChromePrivacy": 3,
-    "fullChrome": "incomplete: diskguardstop aftercase66started; no terminalreport",
-    "fullEdge": "notrun: insufficientdiskheadroom",
-    "packages": "notbuilt: insufficientdiskheadroom"
-  },
-  "currentInputs": 177,
-  "newAssetsStage": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/dist",
-  "rootDistIsPriorVersion": true,
-  "physicalNotRun": 42,
-  "notes": [
-    "Full92caseChrome and92caseEdge suites against new bundle",
-    "New portable/external package qualification and launcher smoke",
-    "Current-bundle broader resource/transfer evidence as required; prior full5GiB tests keep original bundle scope",
-    "ActualOSpicker/GUI/cleanOS/hostedCI/physical42cases and full original release requirements",
-    "Memory qualification failures and historical evidence availability gaps remain open"
-  ],
-  "browserAttempt": {
+  "priorIncompleteBrowserAttempt": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-uckovr/REVIEW.json",
     "bytes": 4723,
@@ -51,5 +45,67 @@
     },
     "releaseReady": false,
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
-  }
+  },
+  "qualification": {
+    "typecheck": 0,
+    "unitPassed": 539,
+    "build": 0,
+    "nativeRegression": 3,
+    "focusedChromePrivacy": 3,
+    "fullChrome": {
+      "passed": 92,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "fullEdge": {
+      "passed": 92,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "packages": {
+      "externalFiles": 19,
+      "portableFiles": 22,
+      "injectedBrowserHandoff": true,
+      "nativeWindowsGUI": false
+    }
+  },
+  "currentInputs": 177,
+  "currentAssets": [
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-DAulWLpQ.js",
+      "bytes": 556611,
+      "sha256": "b6822cb3400c5f41e149c8ead3030aa58c0a1410e833611c33399b8e3bf77071"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "89fb4499c3c71dbd9d38b9ab9a2d14e968b0baf04915a484795c912e014faa0d"
+    }
+  ],
+  "rootDistIsPriorVersion": false,
+  "rootDistBackup": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\dist-before-source-origin-2026-10-22-z1ZtWJ\\dist",
+  "physicalNotRun": 42,
+  "notes": [
+    "Real two-laptop42casephysicalqualification and ordinary-userworkflow",
+    "Current-bundle large-transfer/resource matrix, including incomplete native memory observations; previous5GiBfulltransfer proof retains priorbundle scope",
+    "NativeWindowsdefault-browser/GUIlaunch and realOSpicker/permission coverage",
+    "CleanOS and hostedfinalCI",
+    "Original838line release-obligation audit and unmapped requirements",
+    "Earlier missingTemphelper/overwrittensmoke availability gaps are not repaired"
+  ]
 }

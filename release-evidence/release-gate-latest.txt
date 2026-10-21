@@ -1,5 +1,7 @@
 Source failure recovery advice — NOT READY
 
-539unit/type/build and3native/3focusedChromeprivacy casespassed. FullChrome suite collected92cases and reachedstartof66, then stoppedbecauseCsampledfree fellbelow2GiBreserve. No terminalreport: no passedcasecountclaimed. FullChrome incomplete; Edge/newpackagesnotrun pendingdiskheadroom.
+All 539 unit tests, type checking and build passed. The current bundle passed all 92 Chrome and 92 Edge cases with no failures, skips or retries. New external (19-file) and portable (22-file) packages passed checksum, HTTP asset and launcher start/stop checks. Browser opening used an injected observer; native Windows GUI launch was not tested.
 
-Current newbundle stagedC; Drootdist and oldpackagesremainpriorversion. Existingfull92/5GiB evidence retainspriorbundle scope. All42physicalcases remainnotrun; memoryqualification/GUI/OSpicker/cleanOS/hostedCI/broadresourcegatesremainopen. See source-origin-full-chrome-disk-stop-2026-10-21.json.
+The repository dist now matches the qualified five assets. The old dist and earlier incomplete Chrome run remain preserved. No application source changed during this qualification.
+
+All 42 physical cases remain unrun. Actual OS pickers and Windows GUI launch, clean OS and hosted CI checks, current-bundle large-file/resource/memory qualification, and the full original requirement audit remain open. Prior 5 GiB transfer results retain their older bundle scope. See source-origin-browser-package-qualification-2026-10-22.json.

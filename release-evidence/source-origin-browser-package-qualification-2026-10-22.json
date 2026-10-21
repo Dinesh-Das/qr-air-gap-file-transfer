@@ -1,0 +1,14 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/REVIEW.json",
+  "bytes": 72519,
+  "sha256": "1fdc3544a0ca0f242be23c5e48220aa0ee2693ae422208ce270e9910d2d76617",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/CLOSURE-HASHES.json",
+    "bytes": 3610177,
+    "sha256": "6ff79e4e82a2b8a7040b88a047454d4cefca0aec6133dfcf602283bced0f2d58"
+  },
+  "releaseReady": false,
+  "scope": "Current source recovery fix passes full browser suites and local package qualification; broader release gates remain open"
+}
