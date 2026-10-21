@@ -657,6 +657,55 @@ test("mixed dropped items transfer and a busy sender ignores another drop", asyn
   } finally { await context.close(); }
 });
 
+test("repeated save clicks open one picker and block navigation until the verified save finishes", async ({ context }) => {
+  const { sender, receiver, errors } = await setupPair(context);
+  for (const page of [sender, receiver]) await page.getByRole("button", { name: "Codes match", exact: true }).click();
+  const save = receiver.getByRole("button", { name: "Choose destination and save", exact: true });
+  await expect(save).toBeVisible();
+  await receiver.evaluate(() => {
+    const state = window as unknown as { savePickerCalls: number; destinationWrites: number; releaseSavePicker: () => void };
+    state.savePickerCalls = 0;
+    state.destinationWrites = 0;
+    let release!: () => void;
+    const gate = new Promise<void>((resolve) => { release = resolve; });
+    state.releaseSavePicker = release;
+    window.showDirectoryPicker = async () => {
+      state.savePickerCalls++;
+      await gate;
+      return (await navigator.storage.getDirectory()).getDirectoryHandle("single-save-output", { create: true });
+    };
+    const createWritable = FileSystemFileHandle.prototype.createWritable;
+    FileSystemFileHandle.prototype.createWritable = function(options) {
+      if (this.name === "test.bin") state.destinationWrites++;
+      return Reflect.apply(createWritable, this, [options]);
+    };
+  });
+  // Same-turn clicks exercise the synchronous guard before React removes the button.
+  await save.evaluate((button) => {
+    if (!(button instanceof HTMLButtonElement)) throw new Error("Expected the destination save button.");
+    button.click(); button.click(); button.click();
+  });
+  await expect.poll(() => receiver.evaluate(() => (window as unknown as { savePickerCalls: number }).savePickerCalls)).toBe(1);
+  await expect(receiver.getByRole("button", { name: "Send", exact: true })).toBeDisabled();
+  await expect(receiver.getByRole("button", { name: "Home", exact: true })).toBeDisabled();
+  expect(await receiver.evaluate(() => (window as unknown as { destinationWrites: number }).destinationWrites)).toBe(0);
+  await receiver.evaluate(() => (window as unknown as { releaseSavePicker: () => void }).releaseSavePicker());
+  await expect(receiver.getByRole("heading", { name: "Transfer complete", exact: true })).toBeVisible();
+  await expect(receiver.getByRole("button", { name: "Send", exact: true })).toBeEnabled();
+  await expect(receiver.getByRole("button", { name: "Home", exact: true })).toBeEnabled();
+  const result = await receiver.evaluate(async () => {
+    const state = window as unknown as { savePickerCalls: number; destinationWrites: number };
+    const destination = await (await navigator.storage.getDirectory()).getDirectoryHandle("single-save-output");
+    const tree = await destination.getDirectoryHandle("browser-fixture");
+    const file = await (await tree.getFileHandle("test.bin")).getFile();
+    const digest = await crypto.subtle.digest("SHA-256", await file.arrayBuffer());
+    return { pickerCalls: state.savePickerCalls, writes: state.destinationWrites, size: file.size,
+      sha256: Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, "0")).join("") };
+  });
+  expect(result).toEqual({ pickerCalls: 1, writes: 1, size: 120_000, sha256: createHash("sha256").update(Buffer.alloc(120_000, 37)).digest("hex") });
+  expect(errors).toEqual([]);
+});
+
 test("selected files transfer preserves names, bytes and empty files", async () => {
   const context = await chromium.launchPersistentContext(test.info().outputPath("profile"), { channel: browserChannel, baseURL: "http://127.0.0.1:4178" });
   try {
