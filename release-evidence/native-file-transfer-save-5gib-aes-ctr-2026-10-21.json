@@ -1,0 +1,15 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-5gib-aes-ctr-2026-10-21-Gnb91Q/evidence/REVIEW.json",
+  "bytes": 11002,
+  "sha256": "f6b38782a42b24b94e353a4119449239dfbaf8d0c8825cbec13d00f281aadaf8",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-5gib-aes-ctr-2026-10-21-Gnb91Q",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-5gib-aes-ctr-2026-10-21-Gnb91Q/evidence/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-5gib-aes-ctr-2026-10-21-Gnb91Q/evidence/CLOSURE-HASHES.json",
+    "bytes": 647333,
+    "sha256": "25b736573959edf621b91fb0f107363980d3b2d8e74d8469da41ea56593bdc64"
+  },
+  "releaseReady": false,
+  "scope": "Current native5GiB nonperiodic fixture, high-offset controls and full samehost RTC/save. No physical qualification; prior historical availability gaps remain."
+}

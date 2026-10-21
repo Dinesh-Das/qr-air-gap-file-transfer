@@ -1,0 +1,15 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/native-source-preparation-retry-5gib-2026-10-21-4p4Erq/evidence/REVIEW.json",
+  "bytes": 4542,
+  "sha256": "a7ab4205a5df934254dc2e63fc311572d654b5e92051666790b40b10bf4ba7b9",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/native-source-preparation-retry-5gib-2026-10-21-4p4Erq",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/native-source-preparation-retry-5gib-2026-10-21-4p4Erq/evidence/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/native-source-preparation-retry-5gib-2026-10-21-4p4Erq/evidence/CLOSURE-HASHES.json",
+    "bytes": 653646,
+    "sha256": "1765592472aad28e3979d597b13a5ce0e2f5c1b9ff5b3023a1eb26410defd884"
+  },
+  "releaseReady": false,
+  "scope": "Real native5GiB file through current production source-preparation UI. Samebrowser/twotabs, mocked signaling/picker adapter and actual RTC/control messages. A real4MiBread completes internally then its result delivery is held for pendingretry. Source-only behavior; final manifest captured/dropped after both approvals, no receiver data/save/resume test. No actualOSpicker, savedpermissions/reload, physicalnetwork or unassisteduser qualification."
+}

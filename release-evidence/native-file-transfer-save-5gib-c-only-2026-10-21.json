@@ -1,0 +1,15 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-5gib-c-only-2026-10-21-GAby44/evidence/REVIEW.json",
+  "bytes": 6893,
+  "sha256": "7fd9488e433623ccce4a136fa927b694bf324de06af648370f3246edf457d3a5",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-5gib-c-only-2026-10-21-GAby44",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-5gib-c-only-2026-10-21-GAby44/evidence/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/native-file-transfer-save-5gib-c-only-2026-10-21-GAby44/evidence/CLOSURE-HASHES.json",
+    "bytes": 638264,
+    "sha256": "3a0caa4d2a6cc0d9fdb75ddc7230d4e7d915ea87806faf16bf8e1a452422193d"
+  },
+  "releaseReady": false,
+  "scope": "Current5GiB native-source samehost RTC/save; full byte/hash proof. No physical qualification; historical availability gaps explicit."
+}
