@@ -8210,8 +8210,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-native-runtime-restart-browser",
+      "evidence": [
+        "release-evidence/runtime-restart-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Deterministic established-transfer runtime restart: native child termination and replacement PID recorded, valid same-origin POST health probes confirm down/up, ongoing real RTC completes without new room/join and saves hash-correct120000B. Same-machine controlled case, not all restart timing or real two-laptop recovery."
     },
     {
       "id": "L975",
@@ -10215,5 +10218,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-21T19:37:38.4332748Z"
+  "updatedAt": "2026-10-21T19:46:25.4203357Z"
 }

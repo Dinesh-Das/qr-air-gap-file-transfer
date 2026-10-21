@@ -194,7 +194,7 @@
       }
     ]
   },
-  "currentReviewPending": 297,
+  "currentReviewPending": 296,
   "activeTransferTransitionEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
@@ -287,5 +287,28 @@
         "id": "L973"
       }
     ]
+  },
+  "runtimeRestartEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/runtime-restart-browser-v2-2026-10-22-RK7Okr/REVIEW.json",
+    "bytes": 4439,
+    "sha256": "8990a1efb3d5cfc14286149c214a0a97b80ba84b6aa35f5ffcf3a63a1ad5ea69",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/runtime-restart-browser-v2-2026-10-22-RK7Okr/CLOSURE-HASHES.json",
+      "bytes": 201540,
+      "sha256": "7791240c11ced84096692e6156aba1636cb172ce4ff55d49c9325c3cadffa34b"
+    },
+    "positiveChromeExit": 0,
+    "positiveEdgeExit": 0,
+    "typecheckExit": 0,
+    "priorProbeAttemptExit": 1,
+    "applicationCodeChanged": false,
+    "releaseReady": false,
+    "scope": "One established120000B same-machine real RTC transfer per browser survives actual owned HTTP/pairing process SIGKILL and different-PID restart on same ports. Health down/up and unchanged one room/join are asserted; saved hash matches. Initial GET-health probe failed before application pages and remains preserved. Mock source/destination pickers and controlled payload hold; no physical Wi-Fi, pre-pairing restart, browser crash or full98-case acceptance.",
+    "requirement": {
+      "id": "L974",
+      "scope": "Deterministic established-transfer runtime restart: native child termination and replacement PID recorded, valid same-origin POST health probes confirm down/up, ongoing real RTC completes without new room/join and saves hash-correct120000B. Same-machine controlled case, not all restart timing or real two-laptop recovery.",
+      "complete": false
+    }
   }
 }
