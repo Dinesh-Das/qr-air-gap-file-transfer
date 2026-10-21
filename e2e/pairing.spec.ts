@@ -657,6 +657,67 @@ test("mixed dropped items transfer and a busy sender ignores another drop", asyn
   } finally { await context.close(); }
 });
 
+test("an active payload transfer blocks source replacement and navigation, then completes unchanged", async ({ context }) => {
+  const { sender, receiver, errors } = await setupPair(context);
+  await sender.evaluate(() => {
+    const state = window as unknown as { payloadHeld: boolean; releasePayload: () => void };
+    const send = RTCDataChannel.prototype.send;
+    let held = false;
+    RTCDataChannel.prototype.send = function(data) {
+      const result = Reflect.apply(send, this, [data]);
+      if (typeof data !== "string" && !held) {
+        held = true;
+        state.payloadHeld = true;
+        Object.defineProperty(this, "bufferedAmount", { configurable: true, get: () => state.payloadHeld ? 8 * 1024 * 1024 : 0 });
+        state.releasePayload = () => { state.payloadHeld = false; this.dispatchEvent(new Event("bufferedamountlow")); };
+      }
+      return result;
+    };
+  });
+  for (const page of [sender, receiver]) await page.getByRole("button", { name: "Codes match", exact: true }).click();
+  await expect.poll(() => sender.evaluate(() => (window as unknown as { payloadHeld: boolean }).payloadHeld)).toBe(true);
+  await expect(sender.getByText("Sending directly", { exact: true })).toBeVisible();
+  await expect(receiver.getByText("Receiving to disk", { exact: true })).toBeVisible();
+  const before = await sender.evaluate(() => (window as unknown as { sentBytes: number }).sentBytes);
+  expect(before).toBeGreaterThan(0);
+  expect(before).toBeLessThan(120_000);
+  for (const [page, otherRole, currentRole] of [[sender, "Receive", "Send"], [receiver, "Send", "Receive"]] as const) {
+    const other = page.getByRole("button", { name: otherRole, exact: true });
+    const home = page.getByRole("button", { name: "Home", exact: true });
+    await expect(other).toBeDisabled();
+    await expect(home).toBeDisabled();
+    await other.evaluate((button) => { if (button instanceof HTMLButtonElement) button.click(); });
+    await home.evaluate((button) => { if (button instanceof HTMLButtonElement) button.click(); });
+    await expect(page.getByRole("button", { name: currentRole, exact: true })).toHaveAttribute("aria-pressed", "true");
+  }
+  await expect(sender.getByRole("button", { name: "Choose files", exact: true })).toHaveCount(0);
+  await expect(sender.getByRole("button", { name: "Choose folder", exact: true })).toHaveCount(0);
+  const acquired = await sender.evaluate(() => {
+    let calls = 0;
+    DataTransferItem.prototype.getAsFileSystemHandle = async () => { calls++; throw new Error("Active transfer must not acquire another source"); };
+    const data = new DataTransfer(); data.items.add(new File([], "replacement.txt"));
+    document.querySelector("#sender-workspace .workspace")!.dispatchEvent(new DragEvent("drop", { bubbles: true, cancelable: true, dataTransfer: data }));
+    return calls;
+  });
+  expect(acquired).toBe(0);
+  expect(await sender.evaluate(() => (window as unknown as { sentBytes: number }).sentBytes)).toBe(before);
+  await expect(sender.locator(".folder-identity")).toContainText("browser-fixture");
+  await sender.evaluate(() => (window as unknown as { releasePayload: () => void }).releasePayload());
+  await expect(receiver.getByRole("button", { name: "Choose destination and save", exact: true })).toBeVisible();
+  await receiver.evaluate(() => {
+    window.showDirectoryPicker = async () => (await navigator.storage.getDirectory()).getDirectoryHandle("active-transfer-output", { create: true });
+  });
+  await receiver.getByRole("button", { name: "Choose destination and save", exact: true }).click();
+  await expect(receiver.getByRole("heading", { name: "Transfer complete", exact: true })).toBeVisible();
+  const result = await receiver.evaluate(async () => {
+    const output = await (await navigator.storage.getDirectory()).getDirectoryHandle("active-transfer-output");
+    const file = await (await (await output.getDirectoryHandle("browser-fixture")).getFileHandle("test.bin")).getFile();
+    return { size: file.size, sha256: Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", await file.arrayBuffer())), byte => byte.toString(16).padStart(2, "0")).join("") };
+  });
+  expect(result).toEqual({ size: 120_000, sha256: createHash("sha256").update(Buffer.alloc(120_000, 37)).digest("hex") });
+  expect(errors).toEqual([]);
+});
+
 test("repeated save clicks open one picker and block navigation until the verified save finishes", async ({ context }) => {
   const { sender, receiver, errors } = await setupPair(context);
   for (const page of [sender, receiver]) await page.getByRole("button", { name: "Codes match", exact: true }).click();
