@@ -1,0 +1,14 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/full-source-preparation-scaling-2026-10-21-eCCLQr/REVIEW.json",
+  "bytes": 3285,
+  "sha256": "ece665088ab8ef3d7c1a5b5e4fa210a34f8dcb382fc9603f6799d24aad4c6899",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/full-source-preparation-scaling-2026-10-21-eCCLQr/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/full-source-preparation-scaling-2026-10-21-eCCLQr/CLOSURE-HASHES.json",
+    "bytes": 57301,
+    "sha256": "b30084ecb81b1ab9309b050df260a869e3d85493c2364a082fd4336944bba8b7"
+  },
+  "releaseReady": false,
+  "scope": "Diagnostic isolated minified prepareLargeSource bundle from current staged source/dependencies, identical bundle to128MiBminificationcomparison. One actual native5GiBFile, one sourcepreparation,1msCPUprofiler absent, perread and128MiBcallback timing only. No UIapp/picker/signaling/RTC/receive/save. Originalsource and fullstream independentlySHAverified; no additional large diskcopy. A single instrumentedtrial with uncontrolledCPU/thermal/storage state, not performance/memory/physicalWiFiqualification."
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/production-preparation-prefix-profile-2026-10-21-EEoo9G/REVIEW.json",
+  "bytes": 3157,
+  "sha256": "da39cffcbedf6c33c6df02854ffc582c2a981a919cccc24a445bcc8129af9267",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/production-preparation-prefix-profile-2026-10-21-EEoo9G/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/production-preparation-prefix-profile-2026-10-21-EEoo9G/CLOSURE-HASHES.json",
+    "bytes": 49820,
+    "sha256": "1226e3042a297ab54490a6069bdb8a917f980a6dade081c3868f67ff0bb35c80"
+  },
+  "releaseReady": false,
+  "scope": "Diagnostic only: exact production assets, headlessChrome currentbrowser, three sequential source-preparation trials. Native disk5GiBFile input creates a File backed by its128MiBBlob prefix; mock directory picker/signaling, no peer/transfer/save. CDP1msCPUprofiler and perread timing perturb execution. Timing does not qualify memory, physicalWiFi or throughput. No comparison with development build; unchanged bytes/mtime checked but full sourceSHA not rehashed by this diagnostic."
+}

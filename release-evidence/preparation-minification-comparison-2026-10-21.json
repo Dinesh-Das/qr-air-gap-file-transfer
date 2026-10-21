@@ -1,0 +1,14 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/preparation-minification-comparison-2026-10-21-3q8cxw/REVIEW.json",
+  "bytes": 2703,
+  "sha256": "3a1c80ed4280cd2a6046bc99649060bda93780c5ecb297a8963303baf06c8f2f",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/preparation-minification-comparison-2026-10-21-3q8cxw/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/preparation-minification-comparison-2026-10-21-3q8cxw/CLOSURE-HASHES.json",
+    "bytes": 46555,
+    "sha256": "092cd5a889afab7f7f7b1dc59b324194fdf706b5dbc55d0e5db5b352b4fc28e4"
+  },
+  "releaseReady": false,
+  "scope": "Diagnostic library bundles built from exact current staged source/dependencies with Vite configFile:false; same target/mode/entry and minify false vs oxc. These are not full production app bundles nor development-server modules. Eight counterbalanced sequential trials of128MiBnativeFile-backedBlob prefix, same page/input/chunks/callback. Node independently verifies every result fileSHA/streamSHA/canonicalmetadata. No warmups, CPUprofiler, transfer, signaling, OPFS, save, realOSpicker or physicalnetwork. First invocation of eachvariant can be cold; storage/thermal/CPUstate not controlled. No memory or releaseperformance qualification. Full5GiBsource size/mtime checked, only prefixhashed. Existing app/current assets not changed."
+}
