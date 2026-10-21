@@ -8,6 +8,19 @@ import { PeerCandidatePolicyError } from "../src/lib/webrtc-signaling";
 const receiving = { role: "receiver", phase: "receiving" } as const;
 
 describe("transfer recovery advice", () => {
+  it("directs a local preparation read failure to a new source selection", () => {
+    const problem = describeTransferProblem(new DOMException("native read failed", "NotReadableError"), { role: "sender", phase: "preparing" });
+    expect(problem.message).toContain("These files could not be prepared.");
+    expect(problem.message).toContain("choose them again as a new transfer");
+    expect(problem.details).toContain("NotReadableError");
+  });
+
+  it("does not infer local preparation failure from an untrusted peer error", () => {
+    const error = Object.assign(new Error("source read failed"), { name: "NotReadableError" });
+    const problem = describeTransferProblem(error, { role: "sender", phase: "verify-device" });
+    expect(problem.message).toContain("Device verification failed");
+    expect(problem.message).not.toContain("These files could not be prepared");
+  });
   it.each(["sender", "receiver"] as const)("gives trusted candidate-policy advice to %s", role => {
     const advice = describeTransferProblem(new PeerCandidatePolicyError("private-host-only policy"), { role, phase: "pairing" });
     expect(advice.message).toContain("current app on both devices");

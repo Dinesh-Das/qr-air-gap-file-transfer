@@ -88,6 +88,9 @@ for (const confirmation of ["neither", "sender only", "receiver only"] as const)
   if (confirmation === "receiver only") await receiver.getByRole("button", { name: "Codes match", exact: true }).click();
   await sender.evaluate(() => (window as unknown as PrivacyState).releaseSource());
   await expect(sender.getByRole("button", { name: "Retry connection", exact: true })).toBeVisible();
+  // Preparation may fail while the connection is waiting for device approval.
+  await expect(sender.getByRole("alert")).toContainText("These files could not be prepared.");
+  await expect(sender.getByRole("alert")).not.toContainText("Device verification failed");
   await sender.locator(".transfer-error-details summary").click();
   await expect(sender.locator(".transfer-error-details pre")).toContainText(secretName);
   await expect(receiver.getByRole("button", { name: "Reconnect and resume", exact: true })).toBeVisible();

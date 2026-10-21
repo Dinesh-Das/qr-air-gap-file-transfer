@@ -24,6 +24,9 @@ physical timing acceptance or change the integrity format.
 - New transfer and component disposal cancel preparation. Late progress,
   completion, failure, or persistence from a discarded source cannot affect a new
   transfer. A source preparation failure closes the current connection safely.
+- Describe local preparation failures using their preparation context even when
+  the connection is waiting for device approval. Advise a new source selection;
+  keep the detailed local cause private before both devices confirm.
 - Display preparation progress alongside pairing/verification. After both consent,
   clearly show that file checking continues; the receiver waits for the manifest.
 - Reload recovery still validates every persisted file before trusting it. This

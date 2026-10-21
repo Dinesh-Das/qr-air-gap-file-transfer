@@ -1,0 +1,14 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/native-source-mutation-privacy-2026-10-21-K6ioY4/REVIEW.json",
+  "bytes": 3844,
+  "sha256": "84143897437a15334de7a43d193a8c105e5438aef970b261ccd9a14319976abd",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/native-source-mutation-privacy-2026-10-21-K6ioY4/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/native-source-mutation-privacy-2026-10-21-K6ioY4/CLOSURE-HASHES.json",
+    "bytes": 62377,
+    "sha256": "3f5bf25b5536cbe0afb06d48ca29b892875f895127b439cf8958d8717feb8d47"
+  },
+  "releaseReady": false,
+  "scope": "Current exact productionassets, actualChrome/native8MiB diskFile with readresult held afterfirst4MiB. Node overwrites/fsyncs secondhalf and changesmtime of newownedfixture only. Independentnative64Bprobe confirms realNotReadableError before releasingapp readresult; appsecond4MiBread naturallyfails. Threeneither/senderonly/receiveronlyapproval cases onactualWebRTCpeers withmockedsignaling/picker. No injectedreadexception, no payload/save/OSpicker/physicalnetwork/memoryqualification; newmutatedfixtures/screenshots/profiles retained."
+}

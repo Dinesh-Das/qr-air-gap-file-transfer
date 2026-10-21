@@ -1,0 +1,14 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/REVIEW.json",
+  "bytes": 33448,
+  "sha256": "66e82c292335f6013f45d75d4ef2e806e5785b696f7af7c2140e0ba0632d293f",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/CLOSURE-HASHES.json",
+    "bytes": 485551,
+    "sha256": "a7acfb8bf30c82a15a2c7ed944523937a304110de6e34f6840ef7434057fad67"
+  },
+  "releaseReady": false,
+  "scope": "Local recovery-advice fix verified; full candidate qualification pending"
+}

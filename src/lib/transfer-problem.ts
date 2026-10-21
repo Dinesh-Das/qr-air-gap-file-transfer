@@ -69,7 +69,7 @@ export function describeTransferProblem(value: unknown, context: TransferProblem
   } else if (phase === "verify-device") {
     message = "Device verification failed. Reconnect and compare the codes on both laptops before transferring files.";
   } else if (["idle", "selected", "scanning"].includes(phase) || role === "sender" && phase === "preparing") {
-    message = "These files could not be prepared. Check that they are still available and allow file access, then retry.";
+    message = "These files could not be prepared. Check that they are still available, then choose them again as a new transfer.";
   } else if (phase === "checking") {
     message = "The local connection service is unavailable. Reopen the app using its launcher, then retry.";
   } else if (phase === "pairing" || role === "receiver" && phase === "preparing") {

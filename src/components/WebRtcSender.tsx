@@ -156,10 +156,10 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean) 
     return () => { cancelled = true; };
   }, []);
 
-  const fail = useCallback((caught: unknown) => {
+  const fail = useCallback((caught: unknown, failurePhase?: Phase) => {
     if (caught instanceof DOMException && caught.name === "AbortError") return;
     const error = caught instanceof Error ? caught : new Error(String(caught));
-    const problem = describeTransferProblem(error, { role: "sender", phase: phaseRef.current });
+    const problem = describeTransferProblem(error, { role: "sender", phase: failurePhase ?? phaseRef.current });
     setError(problem.message);
     setErrorDetails(problem.details);
     setConnected(false); setConnectionInterrupted(false);
@@ -264,7 +264,7 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean) 
       sourceAbortRef.current = null;
       setHashProgress(null);
       setSourcePreparing(false);
-      fail(caught);
+      fail(caught, "preparing");
     });
   }, [fail, maybeAuthorize, selection]);
 
