@@ -686,6 +686,73 @@ test("mixed dropped items transfer and a busy sender ignores another drop", asyn
   } finally { await context.close(); }
 });
 
+for (const failureName of ["QuotaExceededError", "NotAllowedError"] as const) test(`destination ${failureName} after a native write preserves verified data and retries without resend`, async ({ context }) => {
+  const { sender, receiver, errors } = await setupPair(context);
+  for (const page of [sender, receiver]) await page.getByRole("button", { name: "Codes match", exact: true }).click();
+  const save = receiver.getByRole("button", { name: "Choose destination and save", exact: true });
+  await expect(save).toBeVisible();
+  const sourceBefore = await sender.evaluate(() => {
+    const state = window as unknown as { sentBytes: number; sourceReads: number };
+    return { bytes: state.sentBytes, reads: state.sourceReads };
+  });
+  await receiver.evaluate((failureName) => {
+    const state = window as unknown as { nativeWrites: number; payloadAborts: number; payloadCloses: number };
+    state.nativeWrites = 0; state.payloadAborts = 0; state.payloadCloses = 0;
+    window.showDirectoryPicker = async () => (await navigator.storage.getDirectory()).getDirectoryHandle("write-fault-output", { create: true });
+    const createWritable = FileSystemFileHandle.prototype.createWritable;
+    let failed = false;
+    FileSystemFileHandle.prototype.createWritable = async function(options) {
+      const writer: FileSystemWritableFileStream = await Reflect.apply(createWritable, this, [options]);
+      if (this.name !== "test.bin") return writer;
+      const write = writer.write.bind(writer), abort = writer.abort.bind(writer), close = writer.close.bind(writer);
+      writer.write = async (data) => {
+        await write(data); state.nativeWrites++;
+        if (!failed) { failed = true; throw new DOMException("Injected destination write failure", failureName); }
+      };
+      writer.abort = async (reason) => { await abort(reason); state.payloadAborts++; };
+      writer.close = async () => { await close(); state.payloadCloses++; };
+      return writer;
+    };
+  }, failureName);
+  await save.click();
+  await expect(save).toBeVisible();
+  await expect(receiver.getByRole("heading", { name: "Transfer complete", exact: true })).toHaveCount(0);
+  await expect(receiver.locator(".transfer-problem")).toContainText("Files remain verified in temporary storage.");
+  await expect(receiver.locator(".transfer-problem")).toContainText(failureName === "QuotaExceededError" ? "The destination does not have enough space." : "Writing to the destination was not allowed.");
+  const interrupted = await receiver.evaluate(async () => {
+    const state = window as unknown as { nativeWrites: number; payloadAborts: number; payloadCloses: number };
+    const root = await navigator.storage.getDirectory();
+    const destination = await (await root.getDirectoryHandle("write-fault-output")).getDirectoryHandle("browser-fixture");
+    const marker = JSON.parse(await (await (await destination.getFileHandle(".airgap-qr-v3.partial.json")).getFile()).text());
+    const stores = await root.getDirectoryHandle("qr-air-gap-block-store-v1");
+    const retained: number[] = [];
+    for await (const [, handle] of stores.entries()) if (handle.kind === "directory") retained.push((await (await handle.getFileHandle("payload.bin")).getFile()).size);
+    return { writes: state.nativeWrites, aborts: state.payloadAborts, closes: state.payloadCloses,
+      uncommitted: Array.from(atob(marker.completed)).every(char => char.charCodeAt(0) === 0), retained };
+  });
+  expect(interrupted).toMatchObject({ writes: 1, aborts: 1, closes: 0, uncommitted: true });
+  expect(interrupted.retained).toHaveLength(1);
+  expect(interrupted.retained[0]).toBeGreaterThan(120_000);
+  await save.click();
+  await expect(receiver.getByRole("heading", { name: "Transfer complete", exact: true })).toBeVisible();
+  const result = await receiver.evaluate(async () => {
+    const state = window as unknown as { nativeWrites: number; payloadAborts: number; payloadCloses: number };
+    const root = await navigator.storage.getDirectory();
+    const destination = await (await root.getDirectoryHandle("write-fault-output")).getDirectoryHandle("browser-fixture");
+    const file = await (await destination.getFileHandle("test.bin")).getFile();
+    let stores = 0;
+    for await (const [, handle] of (await root.getDirectoryHandle("qr-air-gap-block-store-v1")).entries()) if (handle.kind === "directory") stores++;
+    return { writes: state.nativeWrites, aborts: state.payloadAborts, closes: state.payloadCloses, stores, size: file.size,
+      sha256: Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", await file.arrayBuffer())), byte => byte.toString(16).padStart(2, "0")).join("") };
+  });
+  expect(result).toEqual({ writes: 2, aborts: 1, closes: 1, stores: 0, size: 120_000, sha256: createHash("sha256").update(Buffer.alloc(120_000, 37)).digest("hex") });
+  expect(await sender.evaluate(() => {
+    const state = window as unknown as { sentBytes: number; sourceReads: number };
+    return { bytes: state.sentBytes, reads: state.sourceReads };
+  })).toEqual(sourceBefore);
+  expect(errors).toEqual([]);
+});
+
 test("rapid prepare and connect clicks create one pairing attempt and preserve verified output", async ({ context }) => {
   const { sender, receiver, errors } = await setupPair(context, false, 120_000, false, false, false, false, false, false, false, true);
   for (const [page, rooms, joins] of [[sender, 1, 0], [receiver, 0, 1]] as const) {
