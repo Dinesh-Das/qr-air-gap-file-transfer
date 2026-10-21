@@ -1,0 +1,14 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-uckovr/REVIEW.json",
+  "bytes": 4723,
+  "sha256": "1940e5f2ec89f09f75d2afacf35bd84c79b99191e2b27a24ea0f3f3015a8332e",
+  "assessment": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-uckovr/ASSESSMENT.md",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-uckovr/CLOSURE-HASHES.json",
+    "bytes": 4688115,
+    "sha256": "6e8b8de7eb976b6a2ee122b3f4fad29d75fc00719523cb17139bfe5b380471b2"
+  },
+  "releaseReady": false,
+  "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
+}

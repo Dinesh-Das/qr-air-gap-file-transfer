@@ -1,9 +1,5 @@
-Windows observer failure context — NOT READY
+Source failure recovery advice — NOT READY
 
-The development-only memory observer now records bounded Windows error details for missing PIDs. Missing IDs, counters and failure criteria are unchanged. Focused regressions: two fail on the old observer, then all three pass. Typecheck, 537 unit tests in 54 files, and build pass on Node 24.22.
+539unit/type/build and3native/3focusedChromeprivacy casespassed. FullChrome suite collected92cases and reachedstartof66, then stoppedbecauseCsampledfree fellbelow2GiBreserve. No terminalreport: no passedcasecountclaimed. FullChrome incomplete; Edge/newpackagesnotrun pendingdiskheadroom.
 
-Current source: 177 inputs. All five client assets and both 22/19-file packages are byte-identical. Their existing 92-case Edge and Chrome runs retain their original bundle and execution scope; no new browser run is claimed for this unpackaged diagnostic change.
-
-A native live/exited-process calibration passed. A 54-sample Chrome startup/idle probe did not reproduce the earlier transfer gaps. Both the current-code 1 GiB and 100 MiB Chrome memory diagnostics remain failed and unexplained. Successful byte verification does not qualify incomplete memory data.
-
-All 42 physical cases remain not run. Native GUI/pickers, clean OS, hosted final CI and broad resource/throughput/50–100 GB acceptance remain open. No application/client/server runtime behavior changed.
+Current newbundle stagedC; Drootdist and oldpackagesremainpriorversion. Existingfull92/5GiB evidence retainspriorbundle scope. All42physicalcases remainnotrun; memoryqualification/GUI/OSpicker/cleanOS/hostedCI/broadresourcegatesremainopen. See source-origin-full-chrome-disk-stop-2026-10-21.json.
