@@ -188,8 +188,11 @@
       "section": "",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L7"
+      ],
+      "scope": "Programmatic FileList/handle adapters exercise individual, multiple, mixed folder and empty-file paths; real picker and current multi-GiB acceptance remain open."
     },
     {
       "id": "L8",
@@ -208,8 +211,11 @@
       "section": "",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "not-proven-current-large-resource-matrix",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L9"
+      ],
+      "scope": "NOT PROVEN: 10/50/100GB bounded-memory acceptance is not supplied by small browser cases or the blocked1GiBcase. Previous missing-PID samples remain failed."
     },
     {
       "id": "L10",
@@ -238,8 +244,11 @@
       "section": "",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L12"
+      ],
+      "scope": "Injected OPFS write corruption fails finalSHA, emits no receiver-complete/save action, discards poisoned storage, retries without trusted resume ranges, and saves independently checked120000B. This is a local finite fault case, not universal or physical proof."
     },
     {
       "id": "L13",
@@ -308,8 +317,11 @@
       "section": "",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L19"
+      ],
+      "scope": "A1200small-file tree stops at600files, validates a600/1200journal, repairs one changed savedfile and verifies recovery. Multi-GiB/no-freeze/general-overhead and hardware performance remain unproven."
     },
     {
       "id": "L20",
@@ -318,8 +330,11 @@
       "section": "",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L20"
+      ],
+      "scope": "Current source failure advice is preparation-specific and local details remain private. Expired-code and quota advice are tested too; all possible errors and normal-person usability are not proved."
     },
     {
       "id": "L22",
@@ -858,8 +873,11 @@
       "section": "PRODUCT GOAL",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L102"
+      ],
+      "scope": "Primary recovery advice and separate technical details are asserted for targeted failures. Ordinary users on two physical laptops remain untested."
     },
     {
       "id": "L104",
@@ -7387,8 +7405,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Transfer",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L885"
+      ],
+      "scope": "The in-memory store accepts block2then0then1 and yields exact ordered bytes10B in bounded chunks. The application creates an ordered SCTP channel. This is not proof of unordered WebRTC delivery or native OPFS reordering."
     },
     {
       "id": "L886",
@@ -7691,8 +7712,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Corruption",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L919"
+      ],
+      "scope": "The actual browser OPFS case completes receipts after an injected payload mutation, rejects finalSHA, removes poisoned state, then saves correctbytes on retry. Physical/power-loss and large-file variants remain separate."
     },
     {
       "id": "L921",
@@ -9099,8 +9123,11 @@
       "section": "IMPORTANT IMPLEMENTATION PRINCIPLES",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L1111"
+      ],
+      "scope": "Local durable-prefix/reload recovery reuses receipted bytes while incomplete/corrupt bytes are retransmitted. Physical interruption and very-large-file coverage remain open."
     },
     {
       "id": "L1113",
@@ -9109,8 +9136,11 @@
       "section": "IMPORTANT IMPLEMENTATION PRINCIPLES",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L1113"
+      ],
+      "scope": "Pending/completed local preparation retention is asserted by unchanged reads/snapshots and fresh consent. No100GBtransfer was executed, so the stated size remains unproven."
     },
     {
       "id": "L1115",
@@ -9119,8 +9149,11 @@
       "section": "IMPORTANT IMPLEMENTATION PRINCIPLES",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L1115"
+      ],
+      "scope": "Connection-only retry preserves preparation; human authorization remains required. Persisted nativeOSpicker permission/reload and100GB behavior remain unproven."
     },
     {
       "id": "L1117",
@@ -9129,8 +9162,11 @@
       "section": "IMPORTANT IMPLEMENTATION PRINCIPLES",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L1117"
+      ],
+      "scope": "Real localRTC transcript mismatch/explicit rejection/pre-consent payload are rejected. Physical device identity, human comparison and network topology remain outside this finite test."
     },
     {
       "id": "L1119",
@@ -9139,8 +9175,11 @@
       "section": "IMPORTANT IMPLEMENTATION PRINCIPLES",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L1119"
+      ],
+      "scope": "The tested failed UI can show100.0% raw byte progress but labels the attempt Transferstopped/notverified and omits safe/verified completion labels. This does not prove ordinary users cannot misinterpret the percentage; manual usability remains open."
     },
     {
       "id": "L1121",
@@ -9149,8 +9188,11 @@
       "section": "IMPORTANT IMPLEMENTATION PRINCIPLES",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L1121"
+      ],
+      "scope": "Destination function awaits exact-tree/fileSHA readback before removing the ownership marker and returning; receiver sets saved after that promise. Failed/cancelled verification remains rejected with marker/data retained in model tests. NativeOSdestination and physical interruptions remain open."
     },
     {
       "id": "L1123",
@@ -9309,8 +9351,11 @@
       "section": "PRIORITY ORDER FOR THE NEXT 2 DAYS",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/current-checkpoint-obligation-review-2026-10-22.json#L1146"
+      ],
+      "scope": "Individual/multiple FileList support is tested without a temporary folder using browser adapters. Actual native file-dialog interaction is not qualified."
     },
     {
       "id": "L1147",
@@ -10120,5 +10165,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. It is not a completed requirement-by-requirement audit. Only exact percentage-model assertions and missing physical evidence are annotated in this checkpoint; review-pending items are not claimed achieved. Use original line IDs for subsequent evidence mapping without shrinking scope.",
-  "updatedAt": "2026-10-17T04:55:17.616Z"
+  "updatedAt": "2026-10-21T18:54:26.392Z"
 }

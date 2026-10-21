@@ -1,0 +1,351 @@
+{
+  "recordedAt": "2026-10-21T18:54:26.377Z",
+  "clientDate": "2026-10-22",
+  "source": "release-evidence/original-release-requirements.txt",
+  "sourceSha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077",
+  "ledgerBeforeSha256": "4d4a6de17d7b2ec7b8b5937803c3a2a2e7a3f428cde92389b3230290c1dde3f7",
+  "entries": [
+    {
+      "id": "L7",
+      "text": "* Support single files, multiple files, folders, and very large files.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing.spec.ts",
+          "title": "selected files transfer preserves names, bytes and empty files"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "mixed dropped items transfer and a busy sender ignores another drop"
+        }
+      ],
+      "unitTests": [],
+      "scope": "Programmatic FileList/handle adapters exercise individual, multiple, mixed folder and empty-file paths; real picker and current multi-GiB acceptance remain open."
+    },
+    {
+      "id": "L9",
+      "text": "* Keep memory usage bounded even for 10 GB, 50 GB, 100 GB+ transfers.",
+      "status": "not-proven-current-large-resource-matrix",
+      "complete": false,
+      "browserTests": [],
+      "unitTests": [],
+      "scope": "NOT PROVEN: 10/50/100GB bounded-memory acceptance is not supplied by small browser cases or the blocked1GiBcase. Previous missing-PID samples remain failed."
+    },
+    {
+      "id": "L12",
+      "text": "* Verify transferred data using cryptographic hashes so corrupted files can never be reported as successfully transferred.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing.spec.ts",
+          "title": "failed final verification never labels the recorded bytes as safe and retry replaces corrupt storage"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "sender rejects premature success before human verification"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "premature success after authorization still cannot finish a transfer"
+        }
+      ],
+      "unitTests": [],
+      "scope": "Injected OPFS write corruption fails finalSHA, emits no receiver-complete/save action, discards poisoned storage, retries without trusted resume ranges, and saves independently checked120000B. This is a local finite fault case, not universal or physical proof."
+    },
+    {
+      "id": "L19",
+      "text": "* Handle thousands of files and multi-gigabyte transfers without freezes, crashes, corrupted state, or excessive disk/network overhead.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing.spec.ts",
+          "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: false)"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: true)"
+        }
+      ],
+      "unitTests": [],
+      "scope": "A1200small-file tree stops at600files, validates a600/1200journal, repairs one changed savedfile and verifies recovery. Multi-GiB/no-freeze/general-overhead and hardware performance remain unproven."
+    },
+    {
+      "id": "L20",
+      "text": "* Provide clear recovery actions whenever something goes wrong.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "preparation-privacy.spec.ts",
+          "title": "source failure keeps private filenames local with neither confirmed"
+        },
+        {
+          "file": "preparation-privacy.spec.ts",
+          "title": "source failure keeps private filenames local with sender only confirmed"
+        },
+        {
+          "file": "preparation-privacy.spec.ts",
+          "title": "source failure keeps private filenames local with receiver only confirmed"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "pairing failure 404 shows recovery advice before technical details"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "storage worker quota errors show space recovery advice without acknowledging unwritten data"
+        }
+      ],
+      "unitTests": [],
+      "scope": "Current source failure advice is preparation-specific and local details remain private. Expired-code and quota advice are tested too; all possible errors and normal-person usability are not proved."
+    },
+    {
+      "id": "L102",
+      "text": "The product must hide complexity unless something goes wrong, in which case diagnostics must clearly explain what the user can do.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "preparation-privacy.spec.ts",
+          "title": "source failure keeps private filenames local with neither confirmed"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "pairing failure 503 shows recovery advice before technical details"
+        }
+      ],
+      "unitTests": [],
+      "scope": "Primary recovery advice and separate technical details are asserted for targeted failures. Ordinary users on two physical laptops remain untested."
+    },
+    {
+      "id": "L885",
+      "text": "* out-of-order data if supported;",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [],
+      "unitTests": [
+        "block store writes random offsets and streams the completed payload with bounded chunks"
+      ],
+      "scope": "The in-memory store accepts block2then0then1 and yields exact ordered bytes10B in bounded chunks. The application creates an ordered SCTP channel. This is not proof of unordered WebRTC delivery or native OPFS reordering."
+    },
+    {
+      "id": "L919",
+      "text": "The “complete but SHA invalid” store MUST recover correctly.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing.spec.ts",
+          "title": "failed final verification never labels the recorded bytes as safe and retry replaces corrupt storage"
+        }
+      ],
+      "unitTests": [],
+      "scope": "The actual browser OPFS case completes receipts after an injected payload mutation, rejects finalSHA, removes poisoned state, then saves correctbytes on retry. Physical/power-loss and large-file variants remain separate."
+    },
+    {
+      "id": "L1111",
+      "text": "Do not delete partially received valid data unnecessarily.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing.spec.ts",
+          "title": "journal failure at commit 1 resumes only durable blocks after refresh"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "sender and receiver reload resume only missing blocks after source recovery"
+        }
+      ],
+      "unitTests": [
+        "block store reopens durable receipt state without retaining a second archive copy"
+      ],
+      "scope": "Local durable-prefix/reload recovery reuses receipted bytes while incomplete/corrupt bytes are retransmitted. Physical interruption and very-large-file coverage remain open."
+    },
+    {
+      "id": "L1113",
+      "text": "Do not restart a 100 GB transfer because pairing failed.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing-preparation.spec.ts",
+          "title": "connection retry preserves the pending source read and requires fresh consent"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "pairing retry retains the prepared source without rehashing or reselecting"
+        }
+      ],
+      "unitTests": [],
+      "scope": "Pending/completed local preparation retention is asserted by unchanged reads/snapshots and fresh consent. No100GBtransfer was executed, so the stated size remains unproven."
+    },
+    {
+      "id": "L1115",
+      "text": "Do not make the user repeat expensive hashing without a security/integrity reason.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing-preparation.spec.ts",
+          "title": "connection retry preserves the pending source read and requires fresh consent"
+        },
+        {
+          "file": "pairing-preparation.spec.ts",
+          "title": "completed source hashing still requires the other human confirmation before sending"
+        }
+      ],
+      "unitTests": [],
+      "scope": "Connection-only retry preserves preparation; human authorization remains required. Persisted nativeOSpicker permission/reload and100GB behavior remain unproven."
+    },
+    {
+      "id": "L1117",
+      "text": "Do not claim a device is verified unless it actually is.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing.spec.ts",
+          "title": "altered signaling produces different verification codes and cannot authorize"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "rejecting the device sends no file data"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "receiver rejects payload before human verification"
+        }
+      ],
+      "unitTests": [],
+      "scope": "Real localRTC transcript mismatch/explicit rejection/pre-consent payload are rejected. Physical device identity, human comparison and network topology remain outside this finite test."
+    },
+    {
+      "id": "L1119",
+      "text": "Do not display “100% complete” before authoritative verification succeeds.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing.spec.ts",
+          "title": "failed final verification never labels the recorded bytes as safe and retry replaces corrupt storage"
+        },
+        {
+          "file": "pairing.spec.ts",
+          "title": "transfer metrics retain byte totals and elapsed time through pause and verification"
+        }
+      ],
+      "unitTests": [],
+      "scope": "The tested failed UI can show100.0% raw byte progress but labels the attempt Transferstopped/notverified and omits safe/verified completion labels. This does not prove ordinary users cannot misinterpret the percentage; manual usability remains open."
+    },
+    {
+      "id": "L1121",
+      "text": "Do not call something “saved” until destination verification succeeds.",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing.spec.ts",
+          "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: false)"
+        }
+      ],
+      "unitTests": [
+        "large destination reconstruction drains pending verification reads before returning after read failure",
+        "large destination reconstruction drains pending verification reads before returning after cancellation"
+      ],
+      "scope": "Destination function awaits exact-tree/fileSHA readback before removing the ownership marker and returning; receiver sets saved after that promise. Failed/cancelled verification remains rejected with marker/data retained in model tests. NativeOSdestination and physical interruptions remain open."
+    },
+    {
+      "id": "L1146",
+      "text": "* individual file support;",
+      "status": "partial-reviewed-current-checkpoint-evidence",
+      "complete": false,
+      "browserTests": [
+        {
+          "file": "pairing.spec.ts",
+          "title": "selected files transfer preserves names, bytes and empty files"
+        }
+      ],
+      "unitTests": [],
+      "scope": "Individual/multiple FileList support is tested without a temporary folder using browser adapters. Actual native file-dialog interaction is not qualified."
+    }
+  ],
+  "fullRequirementCount": 838,
+  "itemsReviewed": 15,
+  "itemsMarkedComplete": 0,
+  "browserEvidence": [
+    {
+      "channel": "chrome",
+      "report": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-BkrcBX/REPORT.json",
+      "reportSha256": "647559f6557a19d9aa04515aa5b02654fd72fbfca92290ad891ed4139ee05bd9"
+    },
+    {
+      "channel": "msedge",
+      "report": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-msedge-2026-10-21-eoMw4d/REPORT.json",
+      "reportSha256": "be8ba5a7e93dfb0970584e1d6947b0fae7a45293a44bb4327925fe28bd24111f"
+    }
+  ],
+  "unitEvidence": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/UNIT-FULL.json",
+    "sha256": "624be60d63db8a5577f697d475f7a4f4a06dc2e8475ec1c25fe2695d55e582bf",
+    "passed": 539
+  },
+  "sourceProof": [
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "sha256": "dc3583c0641706b9b98b18d865611f3b75fbebc2eedfe3e654174243904d813b",
+      "checkedAnchors": [
+        "fail(caught, \"preparing\")",
+        "createDataChannel(\"airgap-file-v1\", { ordered: true })"
+      ]
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "sha256": "93cf8e726780e232ba93a859f0cad1e8034454de7dd150396aa2098ad6d2817b",
+      "checkedAnchors": [
+        "const reader = await receiver.verify",
+        "type: \"receiver-complete\"",
+        "const result = await writeLargeTreeToDirectory",
+        "setPhase(\"saved\")"
+      ]
+    },
+    {
+      "path": "src/lib/large-destination.ts",
+      "sha256": "96954feae06afe0e08a179c42bdddd334dc54cd7843d02ff2595f7a242e3e578",
+      "checkedAnchors": [
+        "await verifyCompleteDestination(root, plan, chunkBytes, options);",
+        "await root.removeEntry(LARGE_DESTINATION_MARKER);"
+      ]
+    },
+    {
+      "path": "tests/block-store.test.ts",
+      "sha256": "966697a32212a4ea377e4a1d1d408aebc9b725c128afe918050f704df80d1eca",
+      "checkedAnchors": [
+        "await store.writeBlock(2, Uint8Array.of(8, 9))",
+        "index: 0",
+        "index: 1"
+      ]
+    },
+    {
+      "path": "e2e/pairing.spec.ts",
+      "sha256": "b65fe5634f62603f165dbc8d133d7792f17cf6e6f6a4370f3b119b90739417e2",
+      "checkedAnchors": [
+        "new Uint8Array(message.bytes)[0] ^= 1",
+        "not.toContain(\"receiver-complete\")",
+        "not.toContain(\"resume-ranges\")",
+        "fileCount: 1200",
+        "completed: 600",
+        "\"100.0%\""
+      ]
+    }
+  ],
+  "preflight": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-obligation-review-2026-10-22-o3CpHq/PREFLIGHT.json",
+    "sha256": "377a7a25685c409a037184b40fd35bf1ded1f9996ea7e9879109fdc859aaa85b"
+  },
+  "releaseReady": false,
+  "scope": "Maps15previouslypending source lines to individually inspected current-test/code evidence or explicit absence. Does not shrink the original838line scope, infer physical/large-resource acceptance from92+92browser tests, or relabel earlier failed memory measurements. No new test execution is claimed."
+}
