@@ -1,6 +1,9 @@
 import { browserChannel } from "./browser-channel";
 import { test, expect, chromium, type Page, type BrowserContext } from "@playwright/test";
 import { createHash } from "node:crypto";
+import { spawn } from "node:child_process";
+import { fileURLToPath } from "node:url";
+import { freeSignalPort } from "../tests/free-signal-port.mjs";
 import { formatBytes } from "../src/lib/format";
 
 async function setupPair(context: BrowserContext, alteredOffer = false, fileBytes = 120_000, realRuntime = false, manual = false, durableSource = false, selectFiles = false, dropSource = false, manyFiles = false, reuseSource = false, rapidPairingActions = false) {
@@ -684,6 +687,109 @@ test("mixed dropped items transfer and a busy sender ignores another drop", asyn
     expect(saved).toEqual({ loose: "loose", size: 120_000, hash: createHash("sha256").update(Buffer.alloc(120_000, 37)).digest("hex") });
     expect(errors).toEqual([]);
   } finally { await context.close(); }
+});
+
+test("an established transfer survives runtime process termination and restart without pairing again", async ({ browser }) => {
+  const port = await freeSignalPort();
+  let signalPort = await freeSignalPort();
+  while (signalPort === port) signalPort = await freeSignalPort();
+  const url = `http://127.0.0.1:${port}`;
+  async function healthy() {
+    const response = await fetch(`${url}/api/rendezvous/health`, {
+      method: "POST", headers: { Origin: url, "Content-Type": "application/json" }, body: "{}", signal: AbortSignal.timeout(1000),
+    });
+    return response.ok && (await response.json()).ready === true;
+  }
+  type OwnedRuntime = { child: ReturnType<typeof spawn>; output: string; closed: Promise<{ code: number | null; signal: NodeJS.Signals | null }> };
+  const runtimes: OwnedRuntime[] = [];
+  function launchRuntime(): OwnedRuntime {
+    const child = spawn(process.execPath, [fileURLToPath(new URL("../scripts/serve.mjs", import.meta.url))], {
+      env: { ...process.env, QRFT_PORT: String(port), QRFT_SIGNAL_PORT: String(signalPort) },
+      windowsHide: true, stdio: ["ignore", "pipe", "pipe", "ipc"],
+    });
+    const record = { child, output: "", closed: new Promise<{ code: number | null; signal: NodeJS.Signals | null }>(resolve => child.once("close", (code, signal) => resolve({ code, signal }))) };
+    runtimes.push(record);
+    child.stdout!.on("data", data => { record.output += String(data); });
+    child.stderr!.on("data", data => { record.output += String(data); });
+    child.on("error", error => { record.output += String(error); });
+    return record;
+  }
+  async function ready(record: OwnedRuntime) {
+    await expect.poll(async () => {
+      if (record.child.exitCode !== null || record.child.signalCode !== null) throw new Error(`Runtime stopped: ${record.output}`);
+      try { return await healthy(); }
+      catch { return false; }
+    }).toBe(true);
+  }
+  async function stop(record: OwnedRuntime, crash = false) {
+    if (record.child.pid && record.child.exitCode === null && record.child.signalCode === null) {
+      if (crash) record.child.kill("SIGKILL");
+      else if (record.child.connected) record.child.send({ type: "qrft-runtime-stop" });
+      else record.child.kill();
+      const timer = setTimeout(() => record.child.kill("SIGKILL"), 5000);
+      try { return await record.closed; } finally { clearTimeout(timer); }
+    }
+    return record.closed;
+  }
+  const context = await browser.newContext({ baseURL: url });
+  try {
+    const first = launchRuntime();
+    await ready(first);
+    let rooms = 0, joins = 0;
+    context.on("request", request => {
+      const path = new URL(request.url()).pathname;
+      if (request.method() === "POST" && path === "/api/rendezvous/rooms") rooms++;
+      if (request.method() === "POST" && path === "/api/rendezvous/join") joins++;
+    });
+    const { sender, receiver, errors } = await setupPair(context, false, 120_000, true);
+    await sender.evaluate(() => {
+      const state = window as unknown as { runtimePayloadHeld: boolean; releaseRuntimePayload: () => void };
+      const send = RTCDataChannel.prototype.send;
+      let held = false;
+      RTCDataChannel.prototype.send = function(data) {
+        const result = Reflect.apply(send, this, [data]);
+        if (typeof data !== "string" && !held) {
+          held = true; state.runtimePayloadHeld = true;
+          Object.defineProperty(this, "bufferedAmount", { configurable: true, get: () => state.runtimePayloadHeld ? 8 * 1024 * 1024 : 0 });
+          state.releaseRuntimePayload = () => { state.runtimePayloadHeld = false; this.dispatchEvent(new Event("bufferedamountlow")); };
+        }
+        return result;
+      };
+    });
+    for (const page of [sender, receiver]) await page.getByRole("button", { name: "Codes match", exact: true }).click();
+    await expect.poll(() => sender.evaluate(() => (window as unknown as { runtimePayloadHeld: boolean }).runtimePayloadHeld)).toBe(true);
+    await expect(receiver.getByText("Receiving to disk", { exact: true })).toBeVisible();
+    expect({ rooms, joins }).toEqual({ rooms: 1, joins: 1 });
+    expect(first.child.pid).not.toBe(process.pid);
+    await stop(first, true);
+    await expect.poll(async () => {
+      try { return await healthy(); }
+      catch { return false; }
+    }).toBe(false);
+    await expect(sender.getByText("Sending directly", { exact: true })).toBeVisible();
+    const replacement = launchRuntime();
+    await ready(replacement);
+    expect(replacement.child.pid).not.toBe(first.child.pid);
+    await sender.evaluate(() => (window as unknown as { releaseRuntimePayload: () => void }).releaseRuntimePayload());
+    await expect(receiver.getByRole("button", { name: "Choose destination and save", exact: true })).toBeVisible();
+    await receiver.evaluate(() => { window.showDirectoryPicker = async () => (await navigator.storage.getDirectory()).getDirectoryHandle("runtime-restart-output", { create: true }); });
+    await receiver.getByRole("button", { name: "Choose destination and save", exact: true }).click();
+    await expect(receiver.getByRole("heading", { name: "Transfer complete", exact: true })).toBeVisible();
+    const result = await receiver.evaluate(async () => {
+      const output = await (await navigator.storage.getDirectory()).getDirectoryHandle("runtime-restart-output");
+      const file = await (await (await output.getDirectoryHandle("browser-fixture")).getFileHandle("test.bin")).getFile();
+      return { size: file.size, sha256: Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", await file.arrayBuffer())), byte => byte.toString(16).padStart(2, "0")).join("") };
+    });
+    expect(result).toEqual({ size: 120_000, sha256: createHash("sha256").update(Buffer.alloc(120_000, 37)).digest("hex") });
+    expect({ rooms, joins }).toEqual({ rooms: 1, joins: 1 });
+    expect(errors).toEqual([]);
+  } finally {
+    try { await context.close(); }
+    finally {
+      for (const runtime of runtimes) await stop(runtime);
+      await test.info().attach("owned-runtime-processes", { contentType: "application/json", body: Buffer.from(JSON.stringify(await Promise.all(runtimes.map(async runtime => ({ pid: runtime.child.pid, output: runtime.output, terminal: await runtime.closed }))), null, 2)) });
+    }
+  }
 });
 
 for (const failureName of ["QuotaExceededError", "NotAllowedError"] as const) test(`destination ${failureName} after a native write preserves verified data and retries without resend`, async ({ context }) => {
