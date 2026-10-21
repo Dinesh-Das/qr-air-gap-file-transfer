@@ -162,5 +162,37 @@
     "markedComplete": 0,
     "remainingReviewPending": 307,
     "scope": "Finite unit coverage linked to original obligations; sparse layouts and manifest-only size tests are not actual large transfers."
-  }
+  },
+  "saveTransitionEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/save-transition-browser-2026-10-22-6CH3Mr/REVIEW.json",
+    "bytes": 4088,
+    "sha256": "8de99dbe0065110c1e0fe7d46d6da5eda92e3b6480208f4e7234ba719a90b27c",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/save-transition-browser-2026-10-22-6CH3Mr/CLOSURE-HASHES.json",
+      "bytes": 384423,
+      "sha256": "2b57f4e9ce9979a5d601cdc03d516ee69d03fde3191e838484dfce7f35f6edc5"
+    },
+    "test": "repeated save clicks open one picker and block navigation until the verified save finishes",
+    "positiveChromeExit": 0,
+    "positiveEdgeExit": 0,
+    "negativeControlExit": 1,
+    "typecheckExit": 0,
+    "applicationCodeChanged": false,
+    "releaseReady": false,
+    "scope": "One new120000B controlled browser case passes separately in Chrome and Edge; removing the synchronous save guard in a copied bundle causes three picker calls. Real RTC/OPFS with injected picker and rendezvous adapters; no new full93-case suite, native OS picker or physical Wi-Fi acceptance.",
+    "requirements": [
+      {
+        "complete": false,
+        "scope": "Partial state-transition coverage: navigation while destination picker is held and overlapping save admission. Other requested transitions remain separate.",
+        "id": "L923"
+      },
+      {
+        "complete": false,
+        "scope": "Three same-turn save clicks admit one picker and one destination payload write, followed by independently hashed120000B output. Mutation control admits three pickers. Scoped browser coverage, not universal/native-picker proof.",
+        "id": "L929"
+      }
+    ]
+  },
+  "currentReviewPending": 305
 }

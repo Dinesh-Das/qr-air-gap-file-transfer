@@ -7750,8 +7750,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "UX state machine",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-browser-save-transition",
+      "evidence": [
+        "release-evidence/save-transition-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Partial state-transition coverage: navigation while destination picker is held and overlapping save admission. Other requested transitions remain separate."
     },
     {
       "id": "L925",
@@ -7790,8 +7793,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "UX state machine",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-browser-save-transition",
+      "evidence": [
+        "release-evidence/save-transition-browser-2026-10-22.json"
+      ],
+      "reviewScope": "Three same-turn save clicks admit one picker and one destination payload write, followed by independently hashed120000B output. Mutation control admits three pickers. Scoped browser coverage, not universal/native-picker proof."
     },
     {
       "id": "L930",
@@ -10182,6 +10188,6 @@
       "evidence": []
     }
   ],
-  "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. It is not a completed requirement-by-requirement audit. Only exact percentage-model assertions and missing physical evidence are annotated in this checkpoint; review-pending items are not claimed achieved. Use original line IDs for subsequent evidence mapping without shrinking scope.",
-  "updatedAt": "2026-10-21T19:14:08.333Z"
+  "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
+  "updatedAt": "2026-10-21T19:21:07.9235294Z"
 }
