@@ -7343,8 +7343,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Transfer",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/recovery-requirement-review-2026-10-22.json#L880"
+      ],
+      "reviewScope": "1200 tiny files:120 empty and1080 of257B, nested/empty directories. At600/1200 journal receipts, one prior saved file is overwritten; retry reuses valid files and repairs that file plus the remaining600, checks all hashes/path sets. Includes renderer and browser termination variants. Not multiple-thousands or multi-GiB throughput/native-memory acceptance."
     },
     {
       "id": "L881",
@@ -7463,8 +7466,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Transfer",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/recovery-requirement-review-2026-10-22.json#L889"
+      ],
+      "reviewScope": "12MiB controlled browser fixture reloads the sender or terminates/reopens the shared browser, restores source handles, requires fresh consent and checks missing-only payload byte count and saved hash. Same-machine mocked rendezvous, not physical sender disconnection/Wi-Fi/sleep-wake coverage."
     },
     {
       "id": "L890",
@@ -7473,8 +7479,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Transfer",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/recovery-requirement-review-2026-10-22.json#L890"
+      ],
+      "reviewScope": "Real CDP renderer termination or owned native browser process termination at held receipt append; persistent profile reopens, only trusted ACK indices resume, final12MiB saved hash matches. Not every crash boundary or physical receiver/network failure."
     },
     {
       "id": "L892",
@@ -7587,8 +7596,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Durable resume",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/recovery-requirement-review-2026-10-22.json#L902"
+      ],
+      "reviewScope": "Worker append-journal intercepted after payload flush at first/second commit; error or renderer crash prevents that receipt becoming durable. Resume ranges equal previous durable ACKs and transmitted bytes equal missing blocks plus headers. Basic failure cases verify receive completion; source-reload/crash variants additionally save and hash12MiB."
     },
     {
       "id": "L903",
@@ -7686,8 +7698,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Corruption",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/recovery-requirement-review-2026-10-22.json#L914"
+      ],
+      "reviewScope": "Real OPFS worker flush followed by injected truncation yields receipt-retention error and no ACK/receiver-complete. Separate fake-worker unit test appends a truncated tail to8B layout and recovers exactly the prior4B receipt. Finite corruption patterns, not general torn-sector/power-loss proof."
     },
     {
       "id": "L915",
@@ -7723,8 +7738,11 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Corruption",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/recovery-requirement-review-2026-10-22.json#L917"
+      ],
+      "reviewScope": "After600 destination receipts, deliberately overwrite journaled file-000001.bin with257 bytes of255. Retry rewrites it and remaining600 files, preserves valid first599 receipts, and compares all1200 hashes/directory paths. Finite controlled corruption, not continuous external mutation or full filesystem matrix."
     },
     {
       "id": "L919",
@@ -8223,8 +8241,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/recovery-requirement-review-2026-10-22.json#L975"
+      ],
+      "reviewScope": "Hold8MiB stream or120000B footer read, Stop and drain pending read, assert no extra reads/completion, then retry without binary resend and verify saved hash. Native-prefetch8MiB case checks queued stream bytes canceled. Source-read unit case also drains one started read without sending. Not actual device-I/O cancellation or all concurrent timing."
     },
     {
       "id": "L976",
@@ -8233,8 +8254,11 @@
       "section": "CHAOS TESTING",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "evidence": [
+        "release-evidence/recovery-requirement-review-2026-10-22.json#L976"
+      ],
+      "reviewScope": "Receiver refresh and combined sender/receiver reload restore trusted durable receipts/source handles, require fresh human confirmation and send exact missing byte count. Combined reload variant saves12MiB and checks hash; basic receiver-only variants stop at verified receive. No native OS picker/physical restart acceptance."
     },
     {
       "id": "L978",
@@ -10218,5 +10242,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-21T19:46:25.4203357Z"
+  "updatedAt": "2026-10-21T19:50:21.977Z"
 }

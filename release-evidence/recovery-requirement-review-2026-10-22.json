@@ -1,0 +1,511 @@
+{
+  "at": "2026-10-21T19:50:21.977Z",
+  "root": "C:/Users/dines/QRFT-qualification-evidence/recovery-requirement-review-2026-10-22-Tf0PoZ",
+  "source": "release-evidence/original-release-requirements.txt",
+  "sourceSha256": "280831efd8383e81e15c135e49c0d645c308aefdf2e2c4245cc8aa757b62b077",
+  "ledgerBeforeSha256": "7e3b80f310a1cc3e018cc5b28f965e31c6bee21149406796b5380f63c89b8c8d",
+  "entries": [
+    {
+      "id": "L880",
+      "titles": [
+        "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: false)",
+        "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: true)",
+        "browser process termination during destination save preserves verified files"
+      ],
+      "scope": "1200 tiny files:120 empty and1080 of257B, nested/empty directories. At600/1200 journal receipts, one prior saved file is overwritten; retry reuses valid files and repairs that file plus the remaining600, checks all hashes/path sets. Includes renderer and browser termination variants. Not multiple-thousands or multi-GiB throughput/native-memory acceptance.",
+      "complete": false,
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "browserEvidence": [
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-BkrcBX/REPORT.json",
+          "sha256": "647559f6557a19d9aa04515aa5b02654fd72fbfca92290ad891ed4139ee05bd9",
+          "tests": [
+            {
+              "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: false)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: true)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "browser process termination during destination save preserves verified files",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        },
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-msedge-2026-10-21-eoMw4d/REPORT.json",
+          "sha256": "be8ba5a7e93dfb0970584e1d6947b0fae7a45293a44bb4327925fe28bd24111f",
+          "tests": [
+            {
+              "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: false)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: true)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "browser process termination during destination save preserves verified files",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L889",
+      "titles": [
+        "sender and receiver reload resume only missing blocks after source recovery",
+        "browser process termination during receive resumes exact durable blocks"
+      ],
+      "scope": "12MiB controlled browser fixture reloads the sender or terminates/reopens the shared browser, restores source handles, requires fresh consent and checks missing-only payload byte count and saved hash. Same-machine mocked rendezvous, not physical sender disconnection/Wi-Fi/sleep-wake coverage.",
+      "complete": false,
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "browserEvidence": [
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-BkrcBX/REPORT.json",
+          "sha256": "647559f6557a19d9aa04515aa5b02654fd72fbfca92290ad891ed4139ee05bd9",
+          "tests": [
+            {
+              "title": "sender and receiver reload resume only missing blocks after source recovery",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "browser process termination during receive resumes exact durable blocks",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        },
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-msedge-2026-10-21-eoMw4d/REPORT.json",
+          "sha256": "be8ba5a7e93dfb0970584e1d6947b0fae7a45293a44bb4327925fe28bd24111f",
+          "tests": [
+            {
+              "title": "sender and receiver reload resume only missing blocks after source recovery",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "browser process termination during receive resumes exact durable blocks",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L890",
+      "titles": [
+        "receiver renderer crash during receipt commit recovers durable blocks and exact output",
+        "browser process termination during receive resumes exact durable blocks"
+      ],
+      "scope": "Real CDP renderer termination or owned native browser process termination at held receipt append; persistent profile reopens, only trusted ACK indices resume, final12MiB saved hash matches. Not every crash boundary or physical receiver/network failure.",
+      "complete": false,
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "browserEvidence": [
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-BkrcBX/REPORT.json",
+          "sha256": "647559f6557a19d9aa04515aa5b02654fd72fbfca92290ad891ed4139ee05bd9",
+          "tests": [
+            {
+              "title": "receiver renderer crash during receipt commit recovers durable blocks and exact output",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "browser process termination during receive resumes exact durable blocks",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        },
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-msedge-2026-10-21-eoMw4d/REPORT.json",
+          "sha256": "be8ba5a7e93dfb0970584e1d6947b0fae7a45293a44bb4327925fe28bd24111f",
+          "tests": [
+            {
+              "title": "receiver renderer crash during receipt commit recovers durable blocks and exact output",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "browser process termination during receive resumes exact durable blocks",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L902",
+      "titles": [
+        "journal failure at commit 1 resumes only durable blocks after refresh",
+        "journal failure at commit 2 resumes only durable blocks after refresh",
+        "receiver renderer crash during receipt commit recovers durable blocks and exact output"
+      ],
+      "scope": "Worker append-journal intercepted after payload flush at first/second commit; error or renderer crash prevents that receipt becoming durable. Resume ranges equal previous durable ACKs and transmitted bytes equal missing blocks plus headers. Basic failure cases verify receive completion; source-reload/crash variants additionally save and hash12MiB.",
+      "complete": false,
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "browserEvidence": [
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-BkrcBX/REPORT.json",
+          "sha256": "647559f6557a19d9aa04515aa5b02654fd72fbfca92290ad891ed4139ee05bd9",
+          "tests": [
+            {
+              "title": "journal failure at commit 1 resumes only durable blocks after refresh",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "journal failure at commit 2 resumes only durable blocks after refresh",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "receiver renderer crash during receipt commit recovers durable blocks and exact output",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        },
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-msedge-2026-10-21-eoMw4d/REPORT.json",
+          "sha256": "be8ba5a7e93dfb0970584e1d6947b0fae7a45293a44bb4327925fe28bd24111f",
+          "tests": [
+            {
+              "title": "journal failure at commit 1 resumes only durable blocks after refresh",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "journal failure at commit 2 resumes only durable blocks after refresh",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "receiver renderer crash during receipt commit recovers durable blocks and exact output",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L914",
+      "titles": [
+        "a journal truncated after flush is never acknowledged"
+      ],
+      "scope": "Real OPFS worker flush followed by injected truncation yields receipt-retention error and no ACK/receiver-complete. Separate fake-worker unit test appends a truncated tail to8B layout and recovers exactly the prior4B receipt. Finite corruption patterns, not general torn-sector/power-loss proof.",
+      "complete": false,
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "browserEvidence": [
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-BkrcBX/REPORT.json",
+          "sha256": "647559f6557a19d9aa04515aa5b02654fd72fbfca92290ad891ed4139ee05bd9",
+          "tests": [
+            {
+              "title": "a journal truncated after flush is never acknowledged",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        },
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-msedge-2026-10-21-eoMw4d/REPORT.json",
+          "sha256": "be8ba5a7e93dfb0970584e1d6947b0fae7a45293a44bb4327925fe28bd24111f",
+          "tests": [
+            {
+              "title": "a journal truncated after flush is never acknowledged",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L917",
+      "titles": [
+        "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: false)",
+        "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: true)",
+        "browser process termination during destination save preserves verified files"
+      ],
+      "scope": "After600 destination receipts, deliberately overwrite journaled file-000001.bin with257 bytes of255. Retry rewrites it and remaining600 files, preserves valid first599 receipts, and compares all1200 hashes/directory paths. Finite controlled corruption, not continuous external mutation or full filesystem matrix.",
+      "complete": false,
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "browserEvidence": [
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-BkrcBX/REPORT.json",
+          "sha256": "647559f6557a19d9aa04515aa5b02654fd72fbfca92290ad891ed4139ee05bd9",
+          "tests": [
+            {
+              "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: false)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: true)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "browser process termination during destination save preserves verified files",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        },
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-msedge-2026-10-21-eoMw4d/REPORT.json",
+          "sha256": "be8ba5a7e93dfb0970584e1d6947b0fae7a45293a44bb4327925fe28bd24111f",
+          "tests": [
+            {
+              "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: false)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "interrupted many-file destination save reuses verified files and repairs changed files (renderer crash: true)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "browser process termination during destination save preserves verified files",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L975",
+      "titles": [
+        "Stop during verification starts no further reads (stream)",
+        "Stop during verification starts no further reads (footer)",
+        "Stop cancels prefetched native OPFS verification bytes and resumes without resend"
+      ],
+      "scope": "Hold8MiB stream or120000B footer read, Stop and drain pending read, assert no extra reads/completion, then retry without binary resend and verify saved hash. Native-prefetch8MiB case checks queued stream bytes canceled. Source-read unit case also drains one started read without sending. Not actual device-I/O cancellation or all concurrent timing.",
+      "complete": false,
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "browserEvidence": [
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-BkrcBX/REPORT.json",
+          "sha256": "647559f6557a19d9aa04515aa5b02654fd72fbfca92290ad891ed4139ee05bd9",
+          "tests": [
+            {
+              "title": "Stop during verification starts no further reads (stream)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "Stop during verification starts no further reads (footer)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "Stop cancels prefetched native OPFS verification bytes and resumes without resend",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        },
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-msedge-2026-10-21-eoMw4d/REPORT.json",
+          "sha256": "be8ba5a7e93dfb0970584e1d6947b0fae7a45293a44bb4327925fe28bd24111f",
+          "tests": [
+            {
+              "title": "Stop during verification starts no further reads (stream)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "Stop during verification starts no further reads (footer)",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "Stop cancels prefetched native OPFS verification bytes and resumes without resend",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L976",
+      "titles": [
+        "journal failure at commit 1 resumes only durable blocks after refresh",
+        "journal failure at commit 2 resumes only durable blocks after refresh",
+        "sender and receiver reload resume only missing blocks after source recovery"
+      ],
+      "scope": "Receiver refresh and combined sender/receiver reload restore trusted durable receipts/source handles, require fresh human confirmation and send exact missing byte count. Combined reload variant saves12MiB and checks hash; basic receiver-only variants stop at verified receive. No native OS picker/physical restart acceptance.",
+      "complete": false,
+      "status": "partial-reviewed-recovery-checkpoint-evidence",
+      "browserEvidence": [
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-chrome-2026-10-21-BkrcBX/REPORT.json",
+          "sha256": "647559f6557a19d9aa04515aa5b02654fd72fbfca92290ad891ed4139ee05bd9",
+          "tests": [
+            {
+              "title": "journal failure at commit 1 resumes only durable blocks after refresh",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "journal failure at commit 2 resumes only durable blocks after refresh",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "sender and receiver reload resume only missing blocks after source recovery",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        },
+        {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-full-msedge-2026-10-21-eoMw4d/REPORT.json",
+          "sha256": "be8ba5a7e93dfb0970584e1d6947b0fae7a45293a44bb4327925fe28bd24111f",
+          "tests": [
+            {
+              "title": "journal failure at commit 1 resumes only durable blocks after refresh",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "journal failure at commit 2 resumes only durable blocks after refresh",
+              "status": "passed",
+              "attempts": 1
+            },
+            {
+              "title": "sender and receiver reload resume only missing blocks after source recovery",
+              "status": "passed",
+              "attempts": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "compared": [
+    {
+      "selector": "a journal truncated after flush",
+      "callSha256": "89a98e17b237d08cd811a12b4b4cf8f0d5d11b0441e5a9cd6f6760a7bd80d904",
+      "matrixContainerSha256": "89a98e17b237d08cd811a12b4b4cf8f0d5d11b0441e5a9cd6f6760a7bd80d904",
+      "unchanged": true
+    },
+    {
+      "selector": "journal failure at commit",
+      "callSha256": "48465324af0ff0fd70c219ff7a7d3a519ec4ad3859ab5878a37bef8678d7d6ac",
+      "matrixContainerSha256": "6cffd200cc7b993e7f19c3c567abd50feffd423d7f4244a93fef7447e0b8a9c6",
+      "unchanged": true
+    },
+    {
+      "selector": "sender and receiver reload resume",
+      "callSha256": "50c47292d91ebf9e1f8f8cdaf56f800748a078ad8aeb492cbab9658a4819fdd1",
+      "matrixContainerSha256": "50c47292d91ebf9e1f8f8cdaf56f800748a078ad8aeb492cbab9658a4819fdd1",
+      "unchanged": true
+    },
+    {
+      "selector": "receiver renderer crash during receipt commit",
+      "callSha256": "43e3e956c65e82aed67601e274a51964df098bf42d76b5953f47ee28f96759cc",
+      "matrixContainerSha256": "43e3e956c65e82aed67601e274a51964df098bf42d76b5953f47ee28f96759cc",
+      "unchanged": true
+    },
+    {
+      "selector": "browser process termination during receive",
+      "callSha256": "ec59490915d0e894f7aa04405d4cbf8f4169ccfccce582e613192443a0656be1",
+      "matrixContainerSha256": "ec59490915d0e894f7aa04405d4cbf8f4169ccfccce582e613192443a0656be1",
+      "unchanged": true
+    },
+    {
+      "selector": "interrupted many-file destination save",
+      "callSha256": "462fcc10f9ec125bcc61814f8b3e051919ac9828687750d0e256ad33d4d056db",
+      "matrixContainerSha256": "f356644f236b945ab9df8540b5b11e55fa26942496b1d62de9e7faa1a889f132",
+      "unchanged": true
+    },
+    {
+      "selector": "browser process termination during destination save",
+      "callSha256": "535e7c4bc39cc94a2b2f320a9603a7b8f44ff5152f6d59886d68b74b9874ade9",
+      "matrixContainerSha256": "535e7c4bc39cc94a2b2f320a9603a7b8f44ff5152f6d59886d68b74b9874ade9",
+      "unchanged": true
+    },
+    {
+      "selector": "Stop during verification starts no further reads",
+      "callSha256": "0a866e13dbe10d447fd4c4a1a95dc6065035bdbaff9b4548d3ebdec46d4638f9",
+      "matrixContainerSha256": "224deb22a4339c8d1c4c2e4e032ec8f413b79ed78acf5c287727455ac1967a9c",
+      "unchanged": true
+    },
+    {
+      "selector": "Stop cancels prefetched native OPFS",
+      "callSha256": "ad518313c280d510a4f34410642cef42d924d29b0d734f5a5b7d1f6e87742cdd",
+      "matrixContainerSha256": "ad518313c280d510a4f34410642cef42d924d29b0d734f5a5b7d1f6e87742cdd",
+      "unchanged": true
+    }
+  ],
+  "helpers": [
+    {
+      "name": "exerciseJournalResume",
+      "sha256": "e0c4eea5811d4533c9ab472d8b7fd8300179ffbd9b38e12048451f0587998224",
+      "unchanged": true
+    },
+    {
+      "name": "exerciseDestinationRecovery",
+      "sha256": "d67cd3ca2cb8960ac6830146ffebbf95d90e75c45c7fe338df3a4e476b4f516a",
+      "unchanged": true
+    },
+    {
+      "name": "waitForManyFilePreparation",
+      "sha256": "ccf8081ccb89650a2dbc3849e2c10534750b66bb0087b62c98137361663a3526",
+      "unchanged": true
+    }
+  ],
+  "defaultSetupComparison": {
+    "scope": "Only the new opt-in parameter and its two true-branch calls are removed for comparison; the false/default helper path equals the recorded baseline exactly.",
+    "baselineSha256": "57f683a28c00e7ae308efb6587ea1b45328d3d4bfdc04ab6ae36d6c2819a4eef",
+    "matched": true
+  },
+  "baselineInputDifferences": [
+    "e2e/pairing.spec.ts"
+  ],
+  "newTestDeclaration": "tests/free-signal-port.d.mts is test-only and absent from original177-input baseline.",
+  "unitEvidence": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/UNIT-FULL.json",
+    "sha256": "624be60d63db8a5577f697d475f7a4f4a06dc2e8475ec1c25fe2695d55e582bf",
+    "passed": 539,
+    "tests": [
+      {
+        "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/block-store-opfs.test.ts",
+        "fullName": "OPFS block-store lifecycle recovers only durable receipts before a truncated record tail",
+        "status": "passed"
+      },
+      {
+        "file": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/stage/tests/webrtc-transfer.test.ts",
+        "fullName": "offline WebRTC transfer drains an already-started source read without sending after cancellation",
+        "status": "passed"
+      }
+    ]
+  },
+  "checkpointScope": "Reuses recorded92/92 full browser runs after matching exact callback/matrix/helper source against current tests and verifying all original177 inputs except the intentionally expanded e2e file. New opt-in helper path is separately tested elsewhere. This is not a new full98-case run. Earlier raw-profile cache retirement remains explicit; only relevant report/source hashes are verified here, not complete availability of old inventories.",
+  "reviewed": 8,
+  "markedComplete": 0,
+  "remainingReviewPending": 288,
+  "testsRerun": false,
+  "applicationChanged": false,
+  "releaseReady": false
+}

@@ -194,7 +194,7 @@
       }
     ]
   },
-  "currentReviewPending": 296,
+  "currentReviewPending": 288,
   "activeTransferTransitionEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
@@ -310,5 +310,21 @@
       "scope": "Deterministic established-transfer runtime restart: native child termination and replacement PID recorded, valid same-origin POST health probes confirm down/up, ongoing real RTC completes without new room/join and saves hash-correct120000B. Same-machine controlled case, not all restart timing or real two-laptop recovery.",
       "complete": false
     }
+  },
+  "recoveryObligationReview": {
+    "record": "release-evidence/recovery-requirement-review-2026-10-22.json",
+    "reviewed": 8,
+    "markedComplete": 0,
+    "remainingReviewPending": 288,
+    "unchangedCallbacks": 9,
+    "unchangedHelpers": 3,
+    "qualifiedAssetsVerified": 5,
+    "testsRerun": false,
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/recovery-requirement-review-2026-10-22-Tf0PoZ/CLOSURE-HASHES.json",
+      "bytes": 1717,
+      "sha256": "7da750a8b7a154233f86835a5c9c2e3b7a5ba3e9be5fc5562db252298b5a5ac0"
+    },
+    "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   }
 }
