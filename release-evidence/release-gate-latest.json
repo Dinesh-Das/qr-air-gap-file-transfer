@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-21T18:56:00.543Z",
   "clientDate": "2026-10-22",
-  "status": "Current source recovery fix passes full browser suites and local package qualification; broader release gates remain open",
+  "status": "Hosted Windows code gate passes at source checkpoint4e5d022; physical and remaining release requirements are open",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -104,7 +104,7 @@
     "Real two-laptop42casephysicalqualification and ordinary-userworkflow",
     "Current-bundle large-transfer/resource matrix, including incomplete native memory observations; previous5GiBfulltransfer proof retains priorbundle scope",
     "NativeWindowsdefault-browser/GUIlaunch and realOSpicker/permission coverage",
-    "CleanOS and hostedfinalCI",
+    "Manual clean-OS/native GUI workflows; hosted automated Windows code gate now separately verified",
     "Original838line release-obligation audit and unmapped requirements",
     "Earlier missingTemphelper/overwrittensmoke availability gaps are not repaired"
   ],
@@ -194,7 +194,7 @@
       }
     ]
   },
-  "currentReviewPending": 288,
+  "currentReviewPending": 279,
   "activeTransferTransitionEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
@@ -326,5 +326,29 @@
       "sha256": "7da750a8b7a154233f86835a5c9c2e3b7a5ba3e9be5fc5562db252298b5a5ac0"
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
+  },
+  "updatedAt": "2026-10-21T20:02:12.8969359Z",
+  "currentInputsScope": "177 is the original local qualified input snapshot count. Current test file expanded and tests/free-signal-port.d.mts was added; the hosted4e5d022 checkpoint covers those tests/declaration. Application source and qualified five assets unchanged.",
+  "hostedCodeGate": {
+    "record": "release-evidence/hosted-release-gate-2026-10-22.json",
+    "sourceCommit": "4e5d0224b393c3ba0136b0396132709481e22971",
+    "runId": 39664602470,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39664602470",
+    "node": "v24.22.0",
+    "unitPassed": 539,
+    "unitFiles": 54,
+    "browserPassed": 98,
+    "browserScope": "Workflow-installed Playwright bundled Chromium/Chrome for Testing156.0.8078.4; not local Chrome/Edge channel98-case runs.",
+    "externalPackageFiles": 19,
+    "nativeWindowsBrowserOpeningTested": false,
+    "reviewed": 9,
+    "markedComplete": 7,
+    "remainingReviewPending": 279,
+    "releaseReady": false,
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39664602470-2026-10-22-N5zMPi/CLOSURE-HASHES.json",
+      "bytes": 8463,
+      "sha256": "9645cca1307e48bd7b211150b8f8a84af17be15a966989458091a09e83d5d083"
+    }
   }
 }

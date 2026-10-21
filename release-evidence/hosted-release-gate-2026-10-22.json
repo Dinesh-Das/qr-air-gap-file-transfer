@@ -1,0 +1,147 @@
+{
+  "at": "2026-10-21T20:00:07.817Z",
+  "clientDate": "2026-10-22",
+  "runId": 39664602470,
+  "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39664602470",
+  "sourceCommit": "4e5d0224b393c3ba0136b0396132709481e22971",
+  "documentCheckpointHead": "3b2725ded219337fd742462a2d76d88ca643c8ab",
+  "metadataOnlyDifferencePaths": [
+    "release-evidence/acceptance-obligations-2026-10-14.json",
+    "release-evidence/recovery-requirement-review-2026-10-22.json",
+    "release-evidence/release-gate-latest.json",
+    "release-evidence/release-gate-latest.txt"
+  ],
+  "sourceCodeEquivalent": true,
+  "root": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39664602470-2026-10-22-N5zMPi",
+  "priorHostedCheckpoint": {
+    "root": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39663343026-2026-10-22-UIHhHI",
+    "sourceCommit": "60ecbeb8873ac58e387117886aa84079ed7be416",
+    "node": "v24.21.0",
+    "browserPassed": 97,
+    "scope": "Earlier supported-Node hosted checkpoint; not the new98-case result."
+  },
+  "node": "v24.22.0",
+  "hostedJob": "windows-latest",
+  "installedBrowser": [
+    "156.0.8078.4",
+    "1248"
+  ],
+  "checks": {
+    "freshNpmCiExit": 0,
+    "typecheckBuildGateExit": 0,
+    "unitFilesPassed": 54,
+    "unitTestsPassed": 539,
+    "browserTestsPassed": 98,
+    "packageFiles": 19,
+    "httpAssets": 5,
+    "launcherStartStop": true,
+    "browserHandoff": "injected observer; native Windows browser opening not tested",
+    "packageScope": "External-runtime package only; no newly executed portable22-file CI qualification."
+  },
+  "artifact": {
+    "id": 12376862432,
+    "name": "release-check-39664602470-1",
+    "sha256": "2bd95e114129918eaba4c04327f380e585582f4bf21e61f073887748777a5b96",
+    "apiDigestVerified": true,
+    "compressedBytes": 3395000,
+    "extraction": "ci-evidence and last-run metadata only; complete test-results remain retained in original ZIP."
+  },
+  "evidenceFiles": [
+    {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39664602470-2026-10-22-N5zMPi/RUN.json",
+      "bytes": 3382,
+      "sha256": "62d8d12681519e6816198f9fcaed8b7bd9fbce0b9c1f267b9b8f97d8d07490ff"
+    },
+    {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39664602470-2026-10-22-N5zMPi/ARTIFACT.json",
+      "bytes": 809,
+      "sha256": "8c58595445bfb03fc393b775baf183449cb6ed4d213866637c572be2e778ee2d"
+    },
+    {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39664602470-2026-10-22-N5zMPi/artifact.zip",
+      "bytes": 3395000,
+      "sha256": "2bd95e114129918eaba4c04327f380e585582f4bf21e61f073887748777a5b96"
+    },
+    {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39664602470-2026-10-22-N5zMPi/ci-evidence/run.json",
+      "bytes": 184,
+      "sha256": "6702382d4c67c0ff1e73eeba1849d307ef8c3d313e05075d5c627e9eb41a7814"
+    },
+    {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39664602470-2026-10-22-N5zMPi/ci-evidence/install.txt",
+      "bytes": 237,
+      "sha256": "8849fffa13a6fd53cb5b18fce68c09b31a79ffe8aef96ba26e28e93ae115c3d2"
+    },
+    {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39664602470-2026-10-22-N5zMPi/ci-evidence/gate.txt",
+      "bytes": 14586,
+      "sha256": "e7081ab79c06ead25cace698b50637605fc7bbcc0a1c0f372f02803e1a99124f"
+    },
+    {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-release-evidence-39664602470-2026-10-22-N5zMPi/ci-evidence/package-smoke.json",
+      "bytes": 668,
+      "sha256": "d83aa35ffa1b1397b5ebeafdbb6a228c6835118f8dc46ce454a5361b15b8d0ea"
+    }
+  ],
+  "entries": [
+    {
+      "id": "L1032",
+      "text": "* `npm run typecheck`",
+      "complete": true,
+      "scope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+    },
+    {
+      "id": "L1033",
+      "text": "* `npm test`",
+      "complete": true,
+      "scope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+    },
+    {
+      "id": "L1034",
+      "text": "* `npm run build`",
+      "complete": true,
+      "scope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+    },
+    {
+      "id": "L1036",
+      "text": "* clean fresh-install build",
+      "complete": true,
+      "scope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+    },
+    {
+      "id": "L1037",
+      "text": "* no TypeScript errors",
+      "complete": true,
+      "scope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+    },
+    {
+      "id": "L1044",
+      "text": "Add CI if missing.",
+      "complete": true,
+      "scope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+    },
+    {
+      "id": "L1048",
+      "text": "`npm ci`",
+      "complete": true,
+      "scope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+    },
+    {
+      "id": "L1035",
+      "text": "* one command that executes the complete release gate",
+      "complete": false,
+      "scope": "Hosted npm run check:release passes its configured code/build/browser/external-package chain. This is not a complete production acceptance gate: physical two-laptop, native GUI/picker and remaining large-transfer/resource requirements are still unproven."
+    },
+    {
+      "id": "L1050",
+      "text": "followed by the complete check command.",
+      "complete": false,
+      "scope": "Hosted npm run check:release passes its configured code/build/browser/external-package chain. This is not a complete production acceptance gate: physical two-laptop, native GUI/picker and remaining large-transfer/resource requirements are still unproven."
+    }
+  ],
+  "reviewed": 9,
+  "markedComplete": 7,
+  "remainingReviewPending": 279,
+  "releaseReady": false,
+  "scope": "A real hosted clean code gate for exact source checkpoint, not a manual clean-OS/native picker/GUI or physical-network qualification. New records in this turn change release metadata only; test/application code equals the hosted source commit. Remaining original requirements retain their scope."
+}
