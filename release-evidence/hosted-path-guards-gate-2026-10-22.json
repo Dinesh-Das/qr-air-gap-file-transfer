@@ -1,0 +1,33 @@
+{
+  "schema": "qrft-hosted-gate-observation-v1",
+  "sourceCommit": "d428490e6db2c2edc6e4e3b9f1ddcf1893959386",
+  "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39806635023",
+  "status": "completed",
+  "conclusion": "success",
+  "runMetadata": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-request-2026-10-22-351a4f2a\\HOSTED-RUN.json",
+    "bytes": 2259,
+    "sha256": "b54c4671b84ff2b7f6a39bea8f4df6c4ba2cf0edbccb5c1a8b98d3f98d3c5a97"
+  },
+  "runLog": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-request-2026-10-22-351a4f2a\\HOSTED-RUN.log",
+    "bytes": 58699,
+    "sha256": "87e01b6761cd1b003d46f1859ff1cc9407d379ea38e46711f307892879c442cd"
+  },
+  "node": "v24.21.0",
+  "unitPassed": 560,
+  "unitFiles": 57,
+  "browserPassed": 101,
+  "browser": "Playwright bundled Chromium on hosted Windows",
+  "externalPackageFiles": 19,
+  "fetchedAssets": 5,
+  "scope": "Counts and success inspected in retained full hosted log and job API; separate uploaded artifact archive not downloaded or digest-verified this turn. Gate runs typecheck, units, build, browser suite, and external-runtime module package smoke. Browser handoff injected.",
+  "notProven": [
+    "real two-laptop Wi-Fi transfer",
+    "current multi-gigabyte native file resource acceptance",
+    "actual Start.cmd/default browser/native picker",
+    "portable package on clean OS",
+    "root cause of earlier intermittent native observer failure"
+  ],
+  "releaseReady": false
+}
