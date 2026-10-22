@@ -1,0 +1,81 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/REVIEW.json",
+  "bytes": 2741,
+  "sha256": "880619b7ab5e638cbe09c3abe7962cb6a2208d80b4d7f0757ed5d928757f199a",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/CLOSURE-HASHES.json",
+    "bytes": 121450,
+    "sha256": "0e34a2d1753266174084f6e56dae0b764f5721b0ea244c9c9c0071b8b5e74cc6"
+  },
+  "raw": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/RAW.json",
+    "bytes": 524552,
+    "sha256": "35c817673c988c2e5f345137618f42ee434fbffd1879b2e61b5731f2dcfb26a5"
+  },
+  "runner": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/RUNNER.source.txt",
+    "bytes": 18504,
+    "sha256": "c7ae0d608a39c85f00ed02a964bae002bd387541ea880d22250238d9dcfb9362"
+  },
+  "sourceCommit": "613175838912a3ff4e780835f4a786d1581211af",
+  "currentAssets": [
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-DozYA_8Y.js",
+      "bytes": 556884,
+      "sha256": "b43a7afeb19940621a2cf280e3256c2385ab86898dc693c7b45ef4f0b7406b23"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "7f1d81d604634b024d2a15528959c3c9e017167440d63652feaa88a5e17e0909"
+    }
+  ],
+  "functionalPassed": true,
+  "nativeComplete": true,
+  "sampledReserveMet": true,
+  "fileBytes": 1073741824,
+  "everyByteCompared": 1073741824,
+  "acknowledgedUniqueIndices": 17477,
+  "ackMessages": 313,
+  "receivedVerifiedMs": 70145,
+  "savedVerifiedMs": 97291,
+  "nativeSamples": 102,
+  "missingSamples": 0,
+  "minSampledFreeBytes": 5170716672,
+  "peakMemory": {
+    "sender": {
+      "samples": 51,
+      "complete": 51,
+      "incomplete": 0,
+      "peakPrivateBytes": 481226752,
+      "peakWorkingSetBytes": 821927936
+    },
+    "receiver": {
+      "samples": 51,
+      "complete": 51,
+      "incomplete": 0,
+      "peakPrivateBytes": 583950336,
+      "peakWorkingSetBytes": 933408768
+    }
+  },
+  "closureFiles": 443,
+  "closureBytes": 2178843364,
+  "releaseReady": false,
+  "scope": "One real native1GiB File through current production UI, production rendezvous, same-host RTC, durable OPFS and injected OPFS save. Both retained copies compared with every source byte; file/stream hashes and metadata/footer independently checked. Two isolated headless Chrome profiles and mocked pickers. All sampled native PIDs measured; no generalized memory-bound or physical Wi-Fi claim. Cleanup deletion deliberately denied to retain evidence; cleanup-required UI inspected. Old harness failure preserved; this fresh runner checks ACK indices rather than message count. No new5GiB/10GiB/50GiB/100GiB case."
+}
