@@ -8359,8 +8359,12 @@
       "section": "PERFORMANCE ACCEPTANCE",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "verified-source-checkpoint",
+      "evidence": [
+        "release-evidence/matched-overhead-2026-10-23.json"
+      ],
+      "complete": true,
+      "scope": "Benchmark harness exists: tracked controller/page/pattern helpers and12 planned verified100MiB raw/transfer/profile-on/off trials with exact byte/ACK/destination accounting, fingerprints, independent outputs and guard records. This satisfies creation of a harness only, not performance acceptance."
     },
     {
       "id": "L990",
@@ -8369,8 +8373,12 @@
       "section": "PERFORMANCE ACCEPTANCE",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-matched-overhead-diagnostic",
+      "evidence": [
+        "release-evidence/matched-overhead-2026-10-23.json"
+      ],
+      "complete": false,
+      "scope": "Rates computed from actual bytes/timers; no target speed invented in this diagnostic. Broad hardware-dependent performance acceptance still open."
     },
     {
       "id": "L992",
@@ -8389,8 +8397,12 @@
       "section": "PERFORMANCE ACCEPTANCE",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-matched-overhead-diagnostic",
+      "evidence": [
+        "release-evidence/matched-overhead-2026-10-23.json"
+      ],
+      "complete": false,
+      "scope": "Measured matched100MiB cases, but large within-block variation prevents a stable overhead-dominance conclusion. Not accepted; native transport/environment contribution needs controlled diagnosis."
     },
     {
       "id": "L996",
@@ -8449,8 +8461,12 @@
       "section": "PERFORMANCE ACCEPTANCE",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-matched-overhead-diagnostic",
+      "evidence": [
+        "release-evidence/matched-overhead-2026-10-23.json"
+      ],
+      "complete": false,
+      "scope": "Profiled cases retain per-block writes and grouped flush/journal/ACK counts; no one-flush-per60KiB pattern in these cases. Broader size/physical throughput acceptance remains open."
     },
     {
       "id": "L1005",
@@ -8459,8 +8475,12 @@
       "section": "PERFORMANCE ACCEPTANCE",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-matched-overhead-diagnostic",
+      "evidence": [
+        "release-evidence/matched-overhead-2026-10-23.json"
+      ],
+      "complete": false,
+      "scope": "Profile-on/off comparison and failed pre-fix attempt retained. Missing browser prevents valid original-harness speed baseline; no before/after production optimization claimed. Comparable production before/after remains open."
     },
     {
       "id": "L1007",
@@ -8469,8 +8489,12 @@
       "section": "PERFORMANCE ACCEPTANCE",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-matched-overhead-diagnostic",
+      "evidence": [
+        "release-evidence/matched-overhead-2026-10-23.json"
+      ],
+      "complete": false,
+      "scope": "Large variance observed without application changes; no fabricated improvement/regression explanation. Controlled baseline and any actual>10% production regression explanation remain open."
     },
     {
       "id": "L1009",
@@ -10348,5 +10372,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-22T15:36:00.232Z"
+  "updatedAt": "2026-10-22T19:34:09.425Z"
 }

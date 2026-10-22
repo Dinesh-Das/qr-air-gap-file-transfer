@@ -1,0 +1,34 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/matched-overhead-review-2026-10-23-zBQOlv/REVIEW.json",
+  "bytes": 16026,
+  "sha256": "fb1ac393bf3dbe849d06cebf5bf13a8a6cf05c79c54247fda837dc865adcdb38",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/matched-overhead-review-2026-10-23-zBQOlv/CLOSURE-HASHES.json",
+    "bytes": 94264,
+    "sha256": "2223b403cd213059570e03e55e4f176416a458d45a042f6a8f4ad8d149725973"
+  },
+  "assessment": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/matched-overhead-review-2026-10-23-zBQOlv/ASSESSMENT.md",
+    "bytes": 4154,
+    "sha256": "60a59bc481992bdf0b452602f628656dfb1a72b493f6278d20d263c11a651fe7"
+  },
+  "ledgerReview": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/matched-overhead-review-2026-10-23-zBQOlv/LEDGER-REVIEW.json",
+    "bytes": 308,
+    "sha256": "9a676cf1b95a71c203ab83ef738239a40b11e216bad6c0e4806d4ca6b79862b4"
+  },
+  "harnessFixCommit": "d54a4877347b901db87722d5c12c799293055cbf",
+  "productSourceCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
+  "verifiedTrials": 12,
+  "stableComparativeBaselineEstablished": false,
+  "performanceAccepted": false,
+  "profiledRawMedianMBps": 12.559601379910752,
+  "profiledTransferMedianMBps": 13.76195645352241,
+  "unprofiledRawMedianMBps": 21.440641230533007,
+  "unprofiledTransferMedianMBps": 48.81877694275538,
+  "closureFiles": 341,
+  "closureLogicalBytes": 298362230,
+  "scope": "100MiB one-file synthetic pattern, fresh separate bundled HeadlessChrome156.0.8078.4 processes, direct harness SDP, same Windows host and OPFS receive/save. Dev imports/profile wrappers, not production UI, source disk, native picker/destination, physical LAN, incompressible data, general native-memory bounds or large-file acceptance. Native memory observer disabled. Only immutable benchmark watcher changed, selecting Vite noop watcher; package runtime list excludes benchmark. Existing installed Chrome/Edge560unit/full101case/product package evidence keeps exact prior scopes. Browser CLI installed required shell/ffmpeg/winldd in a new owned directory using--no-remove; prior browser installations were not removed.",
+  "releaseReady": false
+}

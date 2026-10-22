@@ -4,6 +4,47 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
+## Matched overhead diagnostic, 2026-10-23
+
+Development-only fix `d54a487` disables workspace watching in the immutable
+benchmark server. Installed Vite 8.2.0 selects a noop watcher for `watch: null`;
+the transfer implementation, integrity policies, product assets and shipped
+runtime files are unchanged. The first attempt failed before valid measurement
+because its required browser was absent. Its partial output remains retained.
+Playwright 1.64.0 then installed the required HeadlessChrome 156.0.8078.4 into a
+separate owned directory using `--no-remove`, preserving existing browsers.
+
+Two blocks each ran three planned 100 MiB raw/transfer comparisons, alternating
+mode order. All 12 trials passed byte/frame/ACK accounting; all six transfer
+trials passed stream verification, save and independent destination byte audits.
+The transfer rates below exclude preparation, final verification, save and audit,
+which remain separately recorded. Raw mode checks a constant payload without
+hashing or durability; transfer uses a periodic fixture with those checks enabled.
+
+| Stage timers | Raw MB/s median (range) | Verified transfer MB/s median (range) |
+| --- | --- | --- |
+| On | 12.56 (11.94–12.95) | 13.76 (13.10–16.55) |
+| Off | 21.44 (14.60–25.57) | 48.82 (14.22–51.13) |
+
+Large variation within the unchanged timer-off block prevents attributing the
+difference to profiling, claiming a speedup, or establishing a comparable
+production-regression baseline. Native stderr contains UDP error10035 messages;
+their causal contribution is unproven. A stable overhead-acceptance result is
+**not established**. No fake target speed was substituted.
+
+The profiled transfer trials used 1,707 blocks with 74/69/75 grouped flushes,
+journal appends and ACK messages. Stage wall timers can overlap and are not
+additive CPU costs. Native memory sampling was disabled. Both complete runs kept
+the 2 GiB reserve. This is same-host synthetic/direct-SDP/OPFS evidence, without
+production UI, native source disk/pickers/destination, physical LAN or multi-GB
+acceptance. Disposable trial profiles were removed after verification; prior
+fixtures and evidence were preserved.
+
+The [evidence pointer](release-evidence/matched-overhead-2026-10-23.json) indexes
+the failed attempt, both complete runs, dependency hashes, browser runtime and
+341-file double-hashed closure. L988 verifies harness creation only; the related
+performance requirements remain partial. READY remains false.
+
 ## Current path-guard bundle: native 1 GiB UI trial, 2026-10-23
 
 At source `8911cd6` (application fix `47e34b5`, main asset
