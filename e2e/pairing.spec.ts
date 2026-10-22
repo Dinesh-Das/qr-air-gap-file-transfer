@@ -1645,7 +1645,7 @@ async function exerciseDestinationRecovery(context: BrowserContext, crashDuringS
       pageFits: document.documentElement.scrollWidth <= window.innerWidth };
   });
   expect(layout).toEqual({ textFits: true, panelFits: true, pageFits: true });
-  await receiver.screenshot({ path: "release-evidence/long-save-path-900px.png", fullPage: true });
+  await receiver.screenshot({ path: test.info().outputPath("long-save-path-900px.png"), fullPage: true });
   if (crashDuringSave) {
     if (restartBrowser) {
       const restarted = await restartBrowser();
