@@ -1,8 +1,5 @@
 name: Windows window study
-on:
-  workflow_dispatch:
-  push:
-    branches: [codex/benchmark-window-study]
+on: workflow_call
 permissions:
   contents: read
 jobs:
@@ -28,12 +25,7 @@ jobs:
         run: |
           npm ci 2>&1 | Tee-Object -FilePath ci-evidence/window-study/install.log
           exit $LASTEXITCODE
-      - name: Check source and tests
-        run: |
-          npm run check 2>&1 | Tee-Object -FilePath ci-evidence/window-study/check.log
-          $commandExit = $LASTEXITCODE
-          Set-Content ci-evidence/window-study/check-exit.txt $commandExit
-          exit $commandExit
+      # The caller requires its complete Windows release gate before this job.
       - name: Install required headless browser
         run: |
           npx playwright install --only-shell --no-remove chromium 2>&1 | Tee-Object -FilePath ci-evidence/window-study/browser-install.log

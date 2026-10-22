@@ -50,3 +50,7 @@ jobs:
             test-results/
           if-no-files-found: warn
           retention-days: 14
+  window-study:
+    if: github.ref == 'refs/heads/codex/benchmark-window-study'
+    needs: windows
+    uses: ./.github/workflows/window-study.yml
