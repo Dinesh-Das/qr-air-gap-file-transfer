@@ -1,0 +1,23 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-observer-diagnostic-39795655235-2026-10-22-jdlkoM/REVIEW.json",
+  "bytes": 1469,
+  "sha256": "d19cea373f5fb5ab43caca0382ff7eabb689c8d793de2bc31a7bed171b088297",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/CLOSURE-HASHES.json",
+    "bytes": 3527962,
+    "sha256": "0ffa8c17efd306e188ae4f69665ce44d1bd2e32405a84589492641f81dba09c0"
+  },
+  "priorCheckpoint": {
+    "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-pre-observer-diagnostic-39794502827-2026-10-22-mnYgHj/REVIEW.json",
+    "bytes": 1469,
+    "sha256": "b331aa3e6fe8848cd4f580893ee41b2979374371a5e925bfa4202a56eab11eed"
+  },
+  "sourceCommit": "af70f22793365d1b76e27435907caa08072b540c",
+  "runId": 39795655235,
+  "node": "v24.22.0",
+  "unitPassed": 551,
+  "browserPassed": 101,
+  "externalPackageFiles": 19,
+  "releaseReady": false
+}

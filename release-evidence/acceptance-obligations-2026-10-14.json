@@ -301,8 +301,12 @@
       "section": "",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "release-evidence/current-full-browser-2026-10-22.json"
+      ],
+      "complete": false,
+      "scope": "Both production-runtime pairing modes in installed Chrome and Edge complete payload receive/verification while non-loopback application HTTP is blocked, only loopback assets/API requests are observed, and both peers have empty ICE server lists. Same-host finite browser-page evidence does not prove physically disconnected internet, browser background services, every app path or native destination save."
     },
     {
       "id": "L18",
@@ -8101,8 +8105,12 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Browser E2E",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "verified-source-checkpoint",
+      "evidence": [
+        "release-evidence/current-full-browser-2026-10-22.json"
+      ],
+      "complete": true,
+      "scope": "Minimum controlled browser UI-state/WebRTC-flow test layer exists and all101 configured cases pass in both installed channels on current5Ak production assets. This is a source-specific software-layer gate, not exhaustive UI-state, physical LAN, native-picker or resource acceptance."
     },
     {
       "id": "L958",
@@ -9375,8 +9383,12 @@
       "section": "IMPORTANT IMPLEMENTATION PRINCIPLES",
       "subsection": "",
       "kind": "prose",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "release-evidence/current-full-browser-2026-10-22.json"
+      ],
+      "complete": false,
+      "scope": "Same scoped loopback-only HTTP/empty-ICE checks asL17; real two-laptop internet-disconnected acceptance remains open."
     },
     {
       "id": "L1127",
@@ -10329,5 +10341,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-22T14:17:49.287Z"
+  "updatedAt": "2026-10-22T14:47:35.761Z"
 }

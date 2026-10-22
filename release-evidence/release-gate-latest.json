@@ -1,23 +1,33 @@
 {
-  "recordedAt": "2026-10-22T14:25:50.000Z",
+  "recordedAt": "2026-10-22T14:48:48.198Z",
   "clientDate": "2026-10-22",
-  "status": "Native observer child-error metadata preserved;551 local units pass. Hosted rate-build job failed548/549 units before browser tests; cause unresolved and all release gates remain open.",
+  "status": "Current5Ak bundle passes101 cases each in installed Chrome/Edge; hosted551 units/101 cases/19-file package smoke pass. Physical and remaining release gates stay open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
-    "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/REVIEW.json",
-    "bytes": 72519,
-    "sha256": "1fdc3544a0ca0f242be23c5e48220aa0ee2693ae422208ce270e9910d2d76617",
-    "assessment": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/ASSESSMENT.md",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/REVIEW.json",
+    "bytes": 7979,
+    "sha256": "7893478e3121ac12da1b199f32bb9fff6c74c50f929e222b81535b33960720c4",
     "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/CLOSURE-HASHES.json",
-      "bytes": 3610177,
-      "sha256": "6ff79e4e82a2b8a7040b88a047454d4cefca0aec6133dfcf602283bced0f2d58"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/CLOSURE-HASHES.json",
+      "bytes": 3527962,
+      "sha256": "0ffa8c17efd306e188ae4f69665ce44d1bd2e32405a84589492641f81dba09c0"
     },
-    "releaseReady": false,
-    "scope": "Current source recovery fix passes full browser suites and local package qualification; broader release gates remain open"
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/CURRENT-INPUTS.json",
+      "bytes": 29701,
+      "sha256": "5be88395eb653dbbbdd083b7d42db7b67884eb0c279164bcf09d0b4268644e73"
+    },
+    "sourceCommit": "af70f22793365d1b76e27435907caa08072b540c",
+    "docsCommit": "6b4929e74fda7b0f2b623f84dcb79669ead2a026",
+    "localChromePassed": 101,
+    "localEdgePassed": 101,
+    "hostedUnitPassed": 551,
+    "hostedBrowserPassed": 101,
+    "reviewPending": 270,
+    "releaseReady": false
   },
-  "previousCheckpoint": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/CANONICAL-BEFORE-release-gate-latest.json",
+  "previousCheckpoint": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/CANONICAL-BEFORE.json",
   "sourceFixEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/source-failure-origin-fix-2026-10-21-l3njaf/REVIEW.json",
@@ -47,24 +57,28 @@
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
   },
   "qualification": {
-    "sourceCommit": "94927b0cf152616e67c5066a68f247da67eeaaa2",
+    "sourceCommit": "af70f22793365d1b76e27435907caa08072b540c",
+    "docsCommit": "6b4929e74fda7b0f2b623f84dcb79669ead2a026",
     "localNode": "v24.22.0",
+    "hostedNode": "v24.22.0",
     "typecheck": 0,
     "unitPassed": 551,
     "unitFiles": 57,
     "build": 0,
-    "localChromeMetricCases": 1,
-    "localEdgeMetricCases": 1,
-    "fullHostedCurrentBundle": "Run39793469351 job failed during native observer unit test before build/browser/package; diagnostic change has no hosted result yet.",
-    "localBrowserScope": "One existing metrics case and one receiver verification-cancel case per installed channel, executed separately on the same5Ak bundle. No full101-case qualification.",
+    "localChromeFullCases": 101,
+    "localEdgeFullCases": 101,
+    "localBrowserWorkers": 1,
+    "localBrowserRetries": 0,
+    "sampledCReserveMet": true,
+    "hostedBrowserPassed": 101,
+    "hostedBrowserScope": "Workflow-installed bundled Chromium",
+    "externalPackageFiles": 19,
+    "externalPackageSourceCommit": "af70f22793365d1b76e27435907caa08072b540c",
     "nativeWindowsGUI": false,
-    "externalPackageCurrentBundle": "not-requalified",
     "portablePackageCurrentBundle": "not-requalified",
     "currentBundleNativeLargeMatrix": "not-run",
-    "releaseReady": false,
-    "localChromePairingCancelCases": 1,
-    "localEdgePairingCancelCases": 1,
-    "localUnitSourceCommit": "dc6d3b2f5d17d361626ddc2523920e4788d42048"
+    "observerFailureRootCause": "unresolved; preserved failed run39793469351 and unchanged-observer success39794502827",
+    "releaseReady": false
   },
   "currentInputs": 181,
   "currentAssets": [
@@ -327,17 +341,18 @@
   "updatedAt": "2026-10-22T03:23:43.3668263Z",
   "currentInputsScope": "Current original177-path input set plus tests/free-signal-port.d.mts; exact current bytes captured in hosted candidate-fix CURRENT-INPUTS.json. Application error handling changed; previous native/bundle qualifications remain scoped to their older source snapshots.",
   "hostedCodeGate": {
-    "sourceCommit": "0f7243d8d9bf25a6466081dd85d9eb88e9f56681",
-    "runId": 39793469351,
-    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39793469351",
-    "reportedRunStatus": "in_progress",
-    "jobStatus": "completed",
-    "jobConclusion": "failure",
-    "node": "v24.22.1",
-    "unitPassed": 548,
-    "unitFailed": 1,
-    "browserReached": false,
-    "diagnosticCandidateNotYetQualified": "dc6d3b2f5d17d361626ddc2523920e4788d42048",
+    "sourceCommit": "af70f22793365d1b76e27435907caa08072b540c",
+    "runId": 39795655235,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39795655235",
+    "status": "completed",
+    "conclusion": "success",
+    "node": "v24.22.0",
+    "unitPassed": 551,
+    "unitFiles": 57,
+    "browserPassed": 101,
+    "browserScope": "Workflow-installed bundled Chromium",
+    "externalPackageFiles": 19,
+    "nativeWindowsGUI": false,
     "releaseReady": false
   },
   "previousSourceQualification": {
@@ -713,6 +728,89 @@
     "productionBundleChanged": false,
     "timeoutChanged": false,
     "measurementCriteriaChanged": false,
+    "releaseReady": false
+  },
+  "previousPrimaryEvidenceBeforeCurrentFullBrowser": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/REVIEW.json",
+    "bytes": 72519,
+    "sha256": "1fdc3544a0ca0f242be23c5e48220aa0ee2693ae422208ce270e9910d2d76617",
+    "assessment": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/ASSESSMENT.md",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/source-origin-browser-package-qualification-2026-10-22-WXr9jt/CLOSURE-HASHES.json",
+      "bytes": 3610177,
+      "sha256": "6ff79e4e82a2b8a7040b88a047454d4cefca0aec6133dfcf602283bced0f2d58"
+    },
+    "releaseReady": false,
+    "scope": "Current source recovery fix passes full browser suites and local package qualification; broader release gates remain open"
+  },
+  "currentFullBrowserEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/REVIEW.json",
+    "bytes": 7979,
+    "sha256": "7893478e3121ac12da1b199f32bb9fff6c74c50f929e222b81535b33960720c4",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/CLOSURE-HASHES.json",
+      "bytes": 3527962,
+      "sha256": "0ffa8c17efd306e188ae4f69665ce44d1bd2e32405a84589492641f81dba09c0"
+    },
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/CURRENT-INPUTS.json",
+      "bytes": 29701,
+      "sha256": "5be88395eb653dbbbdd083b7d42db7b67884eb0c279164bcf09d0b4268644e73"
+    },
+    "sourceCommit": "af70f22793365d1b76e27435907caa08072b540c",
+    "docsCommit": "6b4929e74fda7b0f2b623f84dcb79669ead2a026",
+    "localChromePassed": 101,
+    "localEdgePassed": 101,
+    "hostedUnitPassed": 551,
+    "hostedBrowserPassed": 101,
+    "reviewPending": 270,
+    "releaseReady": false
+  },
+  "currentHostedSourceEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-observer-diagnostic-39795655235-2026-10-22-jdlkoM/REVIEW.json",
+    "bytes": 1469,
+    "sha256": "d19cea373f5fb5ab43caca0382ff7eabb689c8d793de2bc31a7bed171b088297",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/CLOSURE-HASHES.json",
+      "bytes": 3527962,
+      "sha256": "0ffa8c17efd306e188ae4f69665ce44d1bd2e32405a84589492641f81dba09c0"
+    },
+    "priorCheckpoint": {
+      "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-pre-observer-diagnostic-39794502827-2026-10-22-mnYgHj/REVIEW.json",
+      "bytes": 1469,
+      "sha256": "b331aa3e6fe8848cd4f580893ee41b2979374371a5e925bfa4202a56eab11eed"
+    },
+    "sourceCommit": "af70f22793365d1b76e27435907caa08072b540c",
+    "runId": 39795655235,
+    "node": "v24.22.0",
+    "unitPassed": 551,
+    "browserPassed": 101,
+    "externalPackageFiles": 19,
+    "releaseReady": false
+  },
+  "previousHostedObserverFailureGate": {
+    "sourceCommit": "0f7243d8d9bf25a6466081dd85d9eb88e9f56681",
+    "runId": 39793469351,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39793469351",
+    "reportedRunStatus": "in_progress",
+    "jobStatus": "completed",
+    "jobConclusion": "failure",
+    "node": "v24.22.1",
+    "unitPassed": 548,
+    "unitFailed": 1,
+    "browserReached": false,
+    "diagnosticCandidateNotYetQualified": "dc6d3b2f5d17d361626ddc2523920e4788d42048",
+    "releaseReady": false
+  },
+  "browserScreenshotPreservation": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/full-browser-screenshot-preservation-2026-10-22-uRvgmT/REVIEW.json",
+    "bytes": 1225,
+    "sha256": "796d6b1115122918ddb4a18517e7f2ddfbac17047c4ed7ea24a8706b0642bcc7",
+    "restoredOriginal": true,
     "releaseReady": false
   }
 }
