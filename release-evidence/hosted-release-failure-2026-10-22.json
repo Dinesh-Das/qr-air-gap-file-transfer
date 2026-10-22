@@ -1,0 +1,12 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-failure-39666914038-2026-10-22-8Isuet/REVIEW.json",
+  "bytes": 1323,
+  "sha256": "daf77de0cbe7e4dbd7c946dbbefbc7febd05fe015c60248c575d661a71f3f197",
+  "closure": {
+    "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/CLOSURE-HASHES.json",
+    "bytes": 10298,
+    "sha256": "0e78e0158ad7de95f936e1da82a07f3902790165c582806439fd00f385dbf7b7"
+  },
+  "releaseReady": false
+}

@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-21T18:56:00.543Z",
   "clientDate": "2026-10-22",
-  "status": "Hosted Windows code gate passes at source checkpoint4e5d022; physical and remaining release requirements are open",
+  "status": "Local-candidate recovery advice fixed;542 unit and100 hosted browser cases pass. Physical and remaining release requirements stay open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -47,29 +47,22 @@
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
   },
   "qualification": {
+    "sourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+    "localNode": "v24.22.0",
+    "hostedNode": "v24.21.0",
     "typecheck": 0,
-    "unitPassed": 539,
+    "unitPassed": 542,
+    "unitFiles": 54,
     "build": 0,
-    "nativeRegression": 3,
-    "focusedChromePrivacy": 3,
-    "fullChrome": {
-      "passed": 92,
-      "skipped": 0,
-      "flaky": 0
-    },
-    "fullEdge": {
-      "passed": 92,
-      "skipped": 0,
-      "flaky": 0
-    },
-    "packages": {
-      "externalFiles": 19,
-      "portableFiles": 22,
-      "injectedBrowserHandoff": true,
-      "nativeWindowsGUI": false
-    }
+    "hostedBrowserPassed": 100,
+    "hostedBrowserScope": "Workflow-installed bundled Chromium; no local new-bundle Chrome/Edge run because C reserve is below2GiB.",
+    "externalPackageFiles": 19,
+    "nativeWindowsGUI": false,
+    "portablePackageCurrentBundle": "not-requalified",
+    "currentBundleNativeLargeMatrix": "not-run",
+    "releaseReady": false
   },
-  "currentInputs": 177,
+  "currentInputs": 178,
   "currentAssets": [
     {
       "path": "dist/assets/block-store.worker-DVHZPZQe.js",
@@ -82,9 +75,9 @@
       "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
     },
     {
-      "path": "dist/assets/index-DAulWLpQ.js",
-      "bytes": 556611,
-      "sha256": "b6822cb3400c5f41e149c8ead3030aa58c0a1410e833611c33399b8e3bf77071"
+      "path": "dist/assets/index-DozYA_8Y.js",
+      "bytes": 556884,
+      "sha256": "b43a7afeb19940621a2cf280e3256c2385ab86898dc693c7b45ef4f0b7406b23"
     },
     {
       "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
@@ -94,7 +87,7 @@
     {
       "path": "dist/index.html",
       "bytes": 903,
-      "sha256": "89fb4499c3c71dbd9d38b9ab9a2d14e968b0baf04915a484795c912e014faa0d"
+      "sha256": "7f1d81d604634b024d2a15528959c3c9e017167440d63652feaa88a5e17e0909"
     }
   ],
   "rootDistIsPriorVersion": false,
@@ -327,9 +320,43 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-21T20:02:12.8969359Z",
-  "currentInputsScope": "177 is the original local qualified input snapshot count. Current test file expanded and tests/free-signal-port.d.mts was added; the hosted4e5d022 checkpoint covers those tests/declaration. Application source and qualified five assets unchanged.",
+  "updatedAt": "2026-10-22T03:23:43.3668263Z",
+  "currentInputsScope": "Current original177-path input set plus tests/free-signal-port.d.mts; exact current bytes captured in hosted candidate-fix CURRENT-INPUTS.json. Application error handling changed; previous native/bundle qualifications remain scoped to their older source snapshots.",
   "hostedCodeGate": {
+    "record": "release-evidence/local-candidate-recovery-hosted-2026-10-22.json",
+    "sourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+    "runId": 39713813101,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39713813101",
+    "node": "v24.21.0",
+    "unitPassed": 542,
+    "browserPassed": 100,
+    "externalPackageFiles": 19,
+    "releaseReady": false
+  },
+  "previousSourceQualification": {
+    "typecheck": 0,
+    "unitPassed": 539,
+    "build": 0,
+    "nativeRegression": 3,
+    "focusedChromePrivacy": 3,
+    "fullChrome": {
+      "passed": 92,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "fullEdge": {
+      "passed": 92,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "packages": {
+      "externalFiles": 19,
+      "portableFiles": 22,
+      "injectedBrowserHandoff": true,
+      "nativeWindowsGUI": false
+    }
+  },
+  "previousHostedCodeGate": {
     "record": "release-evidence/hosted-release-gate-2026-10-22.json",
     "sourceCommit": "4e5d0224b393c3ba0136b0396132709481e22971",
     "runId": 39664602470,
@@ -350,5 +377,64 @@
       "bytes": 8463,
       "sha256": "9645cca1307e48bd7b211150b8f8a84af17be15a966989458091a09e83d5d083"
     }
-  }
+  },
+  "currentInputIndex": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-candidate-fix-39713813101-2026-10-22-cJMIGY/CURRENT-INPUTS.json",
+  "localCandidateRecoveryEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/REVIEW-LOCAL.json",
+    "bytes": 3961,
+    "sha256": "81606bf7f313689fc3b1ad8c17caf00e96e072d739a62d5028f517c1db49639d",
+    "closure": {
+      "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/CLOSURE-HASHES.json",
+      "bytes": 10298,
+      "sha256": "0e78e0158ad7de95f936e1da82a07f3902790165c582806439fd00f385dbf7b7"
+    },
+    "releaseReady": false
+  },
+  "localCandidateHostedEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-candidate-fix-39713813101-2026-10-22-cJMIGY/REVIEW.json",
+    "bytes": 3131,
+    "sha256": "27d92df52f93ebb41cefc371385f5c60ec0b34d05feeac761342e241f919dfe9",
+    "closure": {
+      "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-candidate-fix-39713813101-2026-10-22-cJMIGY/CLOSURE-HASHES.json",
+      "bytes": 3903,
+      "sha256": "12d5a67143bdc35e40c9e1cb8599f1bc8db4a3c4d44c00dee03231858dff9fcc"
+    },
+    "sourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39713813101",
+    "node": "v24.21.0",
+    "unitPassed": 542,
+    "browserPassed": 100,
+    "releaseReady": false
+  },
+  "priorHostedFailure": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-failure-39666914038-2026-10-22-8Isuet/REVIEW.json",
+    "bytes": 1323,
+    "sha256": "daf77de0cbe7e4dbd7c946dbbefbc7febd05fe015c60248c575d661a71f3f197",
+    "closure": {
+      "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/CLOSURE-HASHES.json",
+      "bytes": 10298,
+      "sha256": "0e78e0158ad7de95f936e1da82a07f3902790165c582806439fd00f385dbf7b7"
+    },
+    "releaseReady": false
+  },
+  "periodicCompressionAttempt": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/periodic-fixture-compression-2026-10-22-8de560e5/REVIEW-PARTIAL.json",
+    "bytes": 2385,
+    "sha256": "d9023d70bef67fb2cebd4a4bce1bb491360084cd2f435b98cc9b90c96d6fa0de",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/periodic-fixture-compression-2026-10-22-8de560e5/CLOSURE-HASHES.json",
+      "bytes": 2216,
+      "sha256": "8ce2da37dee1784c48897dc74db04d910768ac89a2b3eb15318f4bf8e1f6858a"
+    },
+    "scope": "One closed periodic5GiB fixture now has NTFS compression. Its path, size, SHA256 and last-write time match before. No receive/saved copy compressed, moved or deleted. Previous performance records remain historical pre-compression evidence. No new5GiB transfer started and no reserve waiver.",
+    "driveHeadroomImproved": false,
+    "releaseReady": false
+  },
+  "candidateAvailabilityRootCauseUnresolved": true,
+  "candidateFixPriorDistBackup": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/dist-before",
+  "priorEvidenceSourceScope": "Earlier source-origin/full Chrome/Edge/native1GiB/5GiB/package evidence is historical after this error-handling change. None is relabeled as a native large-transfer/current portable qualification of index-DozYA_8Y.js."
 }

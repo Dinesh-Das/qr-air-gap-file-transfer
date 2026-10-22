@@ -1,0 +1,17 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-candidate-fix-39713813101-2026-10-22-cJMIGY/REVIEW.json",
+  "bytes": 3131,
+  "sha256": "27d92df52f93ebb41cefc371385f5c60ec0b34d05feeac761342e241f919dfe9",
+  "closure": {
+    "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-candidate-fix-39713813101-2026-10-22-cJMIGY/CLOSURE-HASHES.json",
+    "bytes": 3903,
+    "sha256": "12d5a67143bdc35e40c9e1cb8599f1bc8db4a3c4d44c00dee03231858dff9fcc"
+  },
+  "sourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+  "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39713813101",
+  "node": "v24.21.0",
+  "unitPassed": 542,
+  "browserPassed": 100,
+  "releaseReady": false
+}

@@ -8620,10 +8620,13 @@
       "kind": "list-item",
       "status": "verified-hosted-source-checkpoint",
       "evidence": [
-        "release-evidence/hosted-release-gate-2026-10-22.json#L1032"
+        "release-evidence/hosted-release-gate-2026-10-22.json#L1032",
+        "release-evidence/local-candidate-recovery-hosted-2026-10-22.json"
       ],
       "complete": true,
-      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance.",
+      "latestVerifiedCodeGateSourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+      "latestVerifiedCodeGateNode": "v24.21.0"
     },
     {
       "id": "L1033",
@@ -8634,10 +8637,13 @@
       "kind": "list-item",
       "status": "verified-hosted-source-checkpoint",
       "evidence": [
-        "release-evidence/hosted-release-gate-2026-10-22.json#L1033"
+        "release-evidence/hosted-release-gate-2026-10-22.json#L1033",
+        "release-evidence/local-candidate-recovery-hosted-2026-10-22.json"
       ],
       "complete": true,
-      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance.",
+      "latestVerifiedCodeGateSourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+      "latestVerifiedCodeGateNode": "v24.21.0"
     },
     {
       "id": "L1034",
@@ -8648,10 +8654,13 @@
       "kind": "list-item",
       "status": "verified-hosted-source-checkpoint",
       "evidence": [
-        "release-evidence/hosted-release-gate-2026-10-22.json#L1034"
+        "release-evidence/hosted-release-gate-2026-10-22.json#L1034",
+        "release-evidence/local-candidate-recovery-hosted-2026-10-22.json"
       ],
       "complete": true,
-      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance.",
+      "latestVerifiedCodeGateSourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+      "latestVerifiedCodeGateNode": "v24.21.0"
     },
     {
       "id": "L1035",
@@ -8662,10 +8671,13 @@
       "kind": "list-item",
       "status": "partial-reviewed-hosted-code-gate",
       "evidence": [
-        "release-evidence/hosted-release-gate-2026-10-22.json#L1035"
+        "release-evidence/hosted-release-gate-2026-10-22.json#L1035",
+        "release-evidence/local-candidate-recovery-hosted-2026-10-22.json"
       ],
       "complete": false,
-      "reviewScope": "Hosted npm run check:release passes its configured code/build/browser/external-package chain. This is not a complete production acceptance gate: physical two-laptop, native GUI/picker and remaining large-transfer/resource requirements are still unproven."
+      "reviewScope": "Hosted npm run check:release passes its configured code/build/browser/external-package chain. This is not a complete production acceptance gate: physical two-laptop, native GUI/picker and remaining large-transfer/resource requirements are still unproven.",
+      "latestVerifiedCodeGateSourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+      "latestVerifiedCodeGateNode": "v24.21.0"
     },
     {
       "id": "L1036",
@@ -8676,10 +8688,13 @@
       "kind": "list-item",
       "status": "verified-hosted-source-checkpoint",
       "evidence": [
-        "release-evidence/hosted-release-gate-2026-10-22.json#L1036"
+        "release-evidence/hosted-release-gate-2026-10-22.json#L1036",
+        "release-evidence/local-candidate-recovery-hosted-2026-10-22.json"
       ],
       "complete": true,
-      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance.",
+      "latestVerifiedCodeGateSourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+      "latestVerifiedCodeGateNode": "v24.21.0"
     },
     {
       "id": "L1037",
@@ -8690,10 +8705,13 @@
       "kind": "list-item",
       "status": "verified-hosted-source-checkpoint",
       "evidence": [
-        "release-evidence/hosted-release-gate-2026-10-22.json#L1037"
+        "release-evidence/hosted-release-gate-2026-10-22.json#L1037",
+        "release-evidence/local-candidate-recovery-hosted-2026-10-22.json"
       ],
       "complete": true,
-      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance.",
+      "latestVerifiedCodeGateSourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+      "latestVerifiedCodeGateNode": "v24.21.0"
     },
     {
       "id": "L1038",
@@ -8754,10 +8772,13 @@
       "kind": "prose",
       "status": "verified-hosted-source-checkpoint",
       "evidence": [
-        "release-evidence/hosted-release-gate-2026-10-22.json#L1044"
+        "release-evidence/hosted-release-gate-2026-10-22.json#L1044",
+        "release-evidence/local-candidate-recovery-hosted-2026-10-22.json"
       ],
       "complete": true,
-      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance.",
+      "latestVerifiedCodeGateSourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+      "latestVerifiedCodeGateNode": "v24.21.0"
     },
     {
       "id": "L1046",
@@ -8778,10 +8799,13 @@
       "kind": "named-command-or-identifier",
       "status": "verified-hosted-source-checkpoint",
       "evidence": [
-        "release-evidence/hosted-release-gate-2026-10-22.json#L1048"
+        "release-evidence/hosted-release-gate-2026-10-22.json#L1048",
+        "release-evidence/local-candidate-recovery-hosted-2026-10-22.json"
       ],
       "complete": true,
-      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance."
+      "reviewScope": "Verified at source commit 4e5d0224b393c3ba0136b0396132709481e22971: fresh hosted Windows checkout/npm ci, Node24.22.0, successful typecheck,539 unit tests, build,98 bundled-Chromium browser cases and19-file external package smoke. This entry concerns the explicit command/build/CI configuration; it does not grant physical or overall release acceptance.",
+      "latestVerifiedCodeGateSourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+      "latestVerifiedCodeGateNode": "v24.21.0"
     },
     {
       "id": "L1050",
@@ -8792,10 +8816,13 @@
       "kind": "prose",
       "status": "partial-reviewed-hosted-code-gate",
       "evidence": [
-        "release-evidence/hosted-release-gate-2026-10-22.json#L1050"
+        "release-evidence/hosted-release-gate-2026-10-22.json#L1050",
+        "release-evidence/local-candidate-recovery-hosted-2026-10-22.json"
       ],
       "complete": false,
-      "reviewScope": "Hosted npm run check:release passes its configured code/build/browser/external-package chain. This is not a complete production acceptance gate: physical two-laptop, native GUI/picker and remaining large-transfer/resource requirements are still unproven."
+      "reviewScope": "Hosted npm run check:release passes its configured code/build/browser/external-package chain. This is not a complete production acceptance gate: physical two-laptop, native GUI/picker and remaining large-transfer/resource requirements are still unproven.",
+      "latestVerifiedCodeGateSourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+      "latestVerifiedCodeGateNode": "v24.21.0"
     },
     {
       "id": "L1052",
@@ -10278,5 +10305,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-21T20:00:07.812Z"
+  "updatedAt": "2026-10-22T03:23:43.4592043Z"
 }

@@ -1,0 +1,14 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/periodic-fixture-compression-2026-10-22-8de560e5/REVIEW-PARTIAL.json",
+  "bytes": 2385,
+  "sha256": "d9023d70bef67fb2cebd4a4bce1bb491360084cd2f435b98cc9b90c96d6fa0de",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/periodic-fixture-compression-2026-10-22-8de560e5/CLOSURE-HASHES.json",
+    "bytes": 2216,
+    "sha256": "8ce2da37dee1784c48897dc74db04d910768ac89a2b3eb15318f4bf8e1f6858a"
+  },
+  "scope": "One closed periodic5GiB fixture now has NTFS compression. Its path, size, SHA256 and last-write time match before. No receive/saved copy compressed, moved or deleted. Previous performance records remain historical pre-compression evidence. No new5GiB transfer started and no reserve waiver.",
+  "driveHeadroomImproved": false,
+  "releaseReady": false
+}

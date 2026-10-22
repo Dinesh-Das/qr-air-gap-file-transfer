@@ -1,0 +1,12 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/REVIEW-LOCAL.json",
+  "bytes": 3961,
+  "sha256": "81606bf7f313689fc3b1ad8c17caf00e96e072d739a62d5028f517c1db49639d",
+  "closure": {
+    "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/CLOSURE-HASHES.json",
+    "bytes": 10298,
+    "sha256": "0e78e0158ad7de95f936e1da82a07f3902790165c582806439fd00f385dbf7b7"
+  },
+  "releaseReady": false
+}
