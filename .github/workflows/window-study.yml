@@ -1,0 +1,42 @@
+name: Windows window study
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/benchmark-window-study]
+permissions:
+  contents: read
+jobs:
+  study:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Initialize evidence
+        run: |
+          New-Item -ItemType Directory -Path ci-evidence/window-study | Out-Null
+          @{ commit = $env:GITHUB_SHA; runId = $env:GITHUB_RUN_ID; node = (node --version); startedAt = (Get-Date -Format o) } | ConvertTo-Json | Set-Content ci-evidence/window-study/run.json
+      - name: Install dependencies
+        run: |
+          npm ci 2>&1 | Tee-Object -FilePath ci-evidence/window-study/install.log
+          exit $LASTEXITCODE
+      - name: Check source and tests
+        run: |
+          npm run check 2>&1 | Tee-Object -FilePath ci-evidence/window-study/check.log
+          $commandExit = $LASTEXITCODE
+          Set-Content ci-evidence/window-study/check-exit.txt $commandExit
+          exit $commandExit
+      - name: Retain evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: window-study-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-evidence/window-study/
+          if-no-files-found: warn
+          retention-days: 14

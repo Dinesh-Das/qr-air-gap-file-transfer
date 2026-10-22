@@ -4,6 +4,15 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
+The next controlled study compares 64 and 96 in-flight blocks in interleaved
+100 MiB raw/verified trials on a hosted Windows runner. Both keep 60 KiB payloads,
+the original buffering thresholds, 64-block/75-ms receive batching, hashing,
+durable ACKs and destination audits. Each trial gets a fresh server/browser pair;
+the in-memory override and original/transformed source hashes must be recorded.
+Production defaults remain unchanged. This is diagnostic evidence, with no
+automatic speed threshold or physical-LAN acceptance. Local trials remain held
+until disk headroom recovers.
+
 ## Phase and socket-counter diagnostic, 2026-10-23
 
 Code `932c394` adds bounded epoch/monotonic phase markers and allowlisted
