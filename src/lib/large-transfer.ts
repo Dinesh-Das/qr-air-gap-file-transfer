@@ -604,6 +604,10 @@ function validatePortablePath(
   path: string,
   aliases: Map<string, string>,
 ): void {
+  // A valid UTF-8 path cannot contain more UTF-16 units than its byte budget.
+  if (path.length > MAX_PATH_BYTES) {
+    throw new Error(`Path exceeds ${MAX_PATH_BYTES} UTF-8 bytes.`);
+  }
   const canonical = validateArchivePath(path);
   if (canonical !== path) {
     throw new Error(`Tree path is not canonical: ${path}`);

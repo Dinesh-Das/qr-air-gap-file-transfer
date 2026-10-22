@@ -208,6 +208,10 @@ export function validateArchivePath(path: string): string {
  * silently normalized.
  */
 export function validatePortableRootName(rootName: string): string {
+  // Reject oversized input before generic path splitting/Unicode conversion.
+  if (typeof rootName === "string" && rootName.length > MAX_SEGMENT_BYTES) {
+    throw new Error(`Root name exceeds the ${MAX_SEGMENT_BYTES}-byte portability limit.`);
+  }
   const canonical = validateArchivePath(rootName);
   if (canonical !== rootName || canonical.includes("/") || rootName.endsWith("/")) {
     throw new Error("Root name must be one safe folder-name segment.");
