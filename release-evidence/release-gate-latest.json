@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-23",
-  "status": "Current BBe product software gates and prior native1GiB case retain their qualified scopes. Benchmark harness watch fix and12 verified100MiB diagnostic trials add partial performance evidence; high timing variance prevents speed/overhead acceptance. Physical/native GUI and remaining resource/throughput/final adversarial gates stay open.",
+  "status": "BBe product gate scopes remain unchanged. Dev benchmark diagnostics now correlate payload phases and socket counters: one verified100MiB raw/transfer pair and563units pass. Transport/backpressure hypothesis is measurable; timing/performance acceptance and physical/native GUI/remaining large-resource gates remain open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -335,8 +335,8 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-22T19:37:52.1195203Z",
-  "currentInputsScope": "Source-specific181-path full-browser snapshot remains atad96179; all inputs/40PNGs stayed unchanged during those runs. At d54a487 only dev scripts/benchmark-webrtc.mjs changed to disable workspace watching; product source, assets and packaged runtime unchanged. New benchmark RAW fingerprints cover exact changed helper bytes. Prior source scopes remain intact.",
+  "updatedAt": "2026-10-22T20:02:14.1463579Z",
+  "currentInputsScope": "Full product181-path snapshot remains source-specific atad96179. Dev-only benchmark watcher/phase/counter/test changes atd54a487/932c394 are separately fingerprinted; product src/assets and packaged runtime unchanged. New563-unit gate includes diagnostic helper tests; earlier560-unit/full101 installed-browser and hosted gates retain exact source scopes.",
   "hostedCodeGate": {
     "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39835162561",
     "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
@@ -1325,6 +1325,44 @@
     "closureFiles": 341,
     "closureLogicalBytes": 298362230,
     "scope": "100MiB one-file synthetic pattern, fresh separate bundled HeadlessChrome156.0.8078.4 processes, direct harness SDP, same Windows host and OPFS receive/save. Dev imports/profile wrappers, not production UI, source disk, native picker/destination, physical LAN, incompressible data, general native-memory bounds or large-file acceptance. Native memory observer disabled. Only immutable benchmark watcher changed, selecting Vite noop watcher; package runtime list excludes benchmark. Existing installed Chrome/Edge560unit/full101case/product package evidence keeps exact prior scopes. Browser CLI installed required shell/ffmpeg/winldd in a new owned directory using--no-remove; prior browser installations were not removed.",
+    "releaseReady": false
+  },
+  "benchmarkTransportDiagnosticsEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/benchmark-warning-timing-2026-10-23-bB5jO6/REVIEW-FINAL.json",
+    "bytes": 8237,
+    "sha256": "2382a89430a43104ecd21dbca95cbbc9e34d69f591b61374172b42f094ecb634",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/benchmark-warning-timing-2026-10-23-bB5jO6/CLOSURE-HASHES.json",
+      "bytes": 7668,
+      "sha256": "fef7019b08b73f29c72322bc5c6559889c8e26f81e4e0e63753af54d6fd95d91"
+    },
+    "assessment": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/benchmark-warning-timing-2026-10-23-bB5jO6/ASSESSMENT.md",
+      "bytes": 3926,
+      "sha256": "9aff16ae1b741f80b59080bab74056dd7d6d1f74d5b01e1694a8a3ba6d584740"
+    },
+    "oldWarningAnalysis": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/benchmark-warning-timing-2026-10-23-bB5jO6/ANALYSIS.json",
+      "bytes": 10716,
+      "sha256": "12284cb49b7414f6d1aaa45ff1844db521971d66827d68940488f7a7ffce63d0"
+    },
+    "codeCommit": "932c39420baedd7642e44bd4d5853ea0acef4577",
+    "unitPassed": 563,
+    "unitFiles": 58,
+    "typecheck": 0,
+    "diagnosticPairPassed": true,
+    "oldWarningsBeforeClose": 3582,
+    "rawSenderSocketDiscards": 334,
+    "rawWarningsDuringPayload": 321,
+    "transferSenderSocketDiscards": 0,
+    "transferWarningsDuringPayload": 0,
+    "parentDiskSamples": 17,
+    "minFreeBytes": 2820333568,
+    "closureFiles": 31,
+    "closureLogicalBytes": 365281,
+    "performanceAccepted": false,
+    "scope": "One100MiB raw/transfer pair validates phase markers and allowlisted post-work counters; no timing acceptance or memory-bound proof. Prior3582warnings all preceded browser-close markers; earlier records cannot identify exact payload phase. New raw selected-route reports334socket-send discards and321 native warnings during payload; these counters/log counts are distinct. Verified pair0discards/0warnings. This supports transport/backpressure investigation, not a universal cause or an app speedup. Counter definitions from W3C2025 WebRTC stats; socket errors can have multiple causes. Missing counters remain absent, addresses/labels omitted. Production app, product assets and shipped runtime unchanged. No extra getStats call added; existing post-result snapshot reused. Phase history bounded24events per endpoint, no per-message storage. A failed ad-hoc PowerShell inspection coerced ISOdates to DateTime and printed invalid zero counts; discarded and replaced by this raw-JSON Node analysis. Initial reviewer outbound totals used receiver incoming counts; corrected by role. A provisional hardcoded334 log-count phrase was corrected to actual321. All prior inspection/reviewer attempts retained; no browser rerun.",
     "releaseReady": false
   }
 }
