@@ -2008,6 +2008,43 @@ test("sender rejects premature success before human verification", async ({ cont
   expect(errors).toEqual([]);
 });
 
+test("receiver can stop device verification and pair again without sending unapproved files", async ({ context }) => {
+  const { sender, receiver, errors } = await setupPair(context);
+  await sender.getByRole("button", { name: "Codes match", exact: true }).click();
+  await receiver.getByRole("button", { name: "Stop and reconnect", exact: true }).click();
+  await expect(receiver.getByRole("textbox", { name: "Six-digit pairing code" })).toHaveValue("");
+  expect(await receiver.evaluate(() => {
+    const state = window as unknown as { testPeer: RTCPeerConnection; testChannel: RTCDataChannel };
+    return { peer: state.testPeer.connectionState, channel: state.testChannel.readyState };
+  })).toEqual({ peer: "closed", channel: "closed" });
+  await expect(sender.getByRole("button", { name: "Retry connection", exact: true })).toBeVisible();
+  expect(await controls(sender)).not.toContain("manifest");
+  expect(await sender.evaluate(() => (window as unknown as { sentBytes: number }).sentBytes)).toBe(0);
+
+  await sender.getByRole("button", { name: "Retry connection", exact: true }).click();
+  await expect(sender.locator(".pairing-code-large")).toHaveText("123 456");
+  await receiver.getByRole("textbox", { name: "Six-digit pairing code" }).fill("123456");
+  await receiver.getByRole("button", { name: "Connect to sender", exact: true }).click();
+  for (const page of [sender, receiver]) await expect(page.getByRole("button", { name: "Codes match", exact: true })).toBeEnabled();
+  await receiver.getByRole("button", { name: "Codes match", exact: true }).click();
+  expect(await controls(sender)).not.toContain("manifest");
+  expect(await sender.evaluate(() => (window as unknown as { sentBytes: number }).sentBytes)).toBe(0);
+  await sender.getByRole("button", { name: "Codes match", exact: true }).click();
+  await expect(receiver.getByRole("button", { name: "Choose destination and save", exact: true })).toBeVisible();
+  await receiver.evaluate(() => {
+    window.showDirectoryPicker = async () => (await navigator.storage.getDirectory()).getDirectoryHandle("cancelled-pairing-output", { create: true });
+  });
+  await receiver.getByRole("button", { name: "Choose destination and save", exact: true }).click();
+  await expect(receiver.getByRole("heading", { name: "Transfer complete", exact: true })).toBeVisible();
+  const saved = await receiver.evaluate(async () => {
+    const root = await (await navigator.storage.getDirectory()).getDirectoryHandle("cancelled-pairing-output");
+    const file = await (await (await root.getDirectoryHandle("browser-fixture")).getFileHandle("test.bin")).getFile();
+    return { size: file.size, sha256: Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", await file.arrayBuffer())), byte => byte.toString(16).padStart(2, "0")).join("") };
+  });
+  expect(saved).toEqual({ size: 120_000, sha256: createHash("sha256").update(Buffer.alloc(120_000, 37)).digest("hex") });
+  expect(errors).toEqual([]);
+});
+
 test("rejecting the device sends no file data", async ({ context }) => {
   const { sender, receiver, errors } = await setupPair(context);
   await receiver.getByRole("button", { name: "Codes do not match" }).click();
