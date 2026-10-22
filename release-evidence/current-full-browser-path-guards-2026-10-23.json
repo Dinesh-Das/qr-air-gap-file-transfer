@@ -1,0 +1,93 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/REVIEW.json",
+  "bytes": 4914,
+  "sha256": "a078d7034957a6cb5372bf851e304104d8dc0efd3e3cc03cd529d45b73ea542d",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CLOSURE-HASHES.json",
+    "bytes": 3627989,
+    "sha256": "cb1a596960eeb007b16f3fdf61fc3851fc7bfb058afe2858d2e9c06c86a31f51"
+  },
+  "assessment": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/ASSESSMENT.md",
+    "bytes": 2905,
+    "sha256": "1c9c214a6c4099e1a4a301f2be320059cd31a6c6d5da5c2a4a5c78592a5fe9bc"
+  },
+  "currentInputs": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CURRENT-INPUTS.json",
+    "bytes": 29524,
+    "sha256": "b5893b07e1263f8a41518df32fa4c0436bd67624d1f84ef27145fee10d9ceb29"
+  },
+  "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
+  "applicationFixCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
+  "currentAssets": [
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "4598f8df3f389039d0699ff741953af07bd2d68dc30eb38648a3b6042a360a4b"
+    },
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-BBeDJSZZ.js",
+      "bytes": 557138,
+      "sha256": "2064311973bab625ab4776535f75d81460d46844d4e6cd783df7da9b533ba82c"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    }
+  ],
+  "localChromeCases": 101,
+  "localEdgeCases": 101,
+  "workers": 1,
+  "retries": 0,
+  "skips": 0,
+  "flakes": 0,
+  "trackedPngsUnchanged": 40,
+  "requestAudits": 4,
+  "chromeDiskSamples": 458,
+  "chromeMinFreeBytes": 3712462848,
+  "edgeDiskSamples": 447,
+  "edgeMinFreeBytes": 3391070208,
+  "parentDiskSamples": 898,
+  "parentMinFreeBytes": 3391070208,
+  "hosted": {
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39835162561",
+    "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
+    "status": "completed",
+    "conclusion": "success",
+    "node": "v24.21.0",
+    "unitPassed": 560,
+    "unitFiles": 57,
+    "browserPassed": 101,
+    "browser": "Bundled Chromium on hosted Windows",
+    "externalPackageFiles": 19,
+    "fetchedAssets": 5,
+    "runMetadata": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/HOSTED-RUN.json",
+      "bytes": 2259,
+      "sha256": "b97192d2dc1118d7e52fa4c9043ff97b14300b4ed5c6d22fd7059b65bd5e0568"
+    },
+    "runLog": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/HOSTED-RUN.log",
+      "bytes": 62548,
+      "sha256": "a29f62f05f0732cef4274df3d18009ef540c60f50736e8f5ff2c4e9068e4cb1b"
+    },
+    "artifactArchiveDownloaded": false,
+    "scope": "Full retained log/job API inspected. Fresh install/typecheck/units/build/browser/external-runtime module smoke; browser handoff injected. Separate uploaded artifact archive not downloaded or digest-verified; physical template count is not a physical test result."
+  },
+  "closureFiles": 10426,
+  "closureLogicalBytes": 500467182,
+  "scope": "All101 existing cases in each installed headless Chrome/Edge on one host, one worker, retries0, unchanged assertions/deadlines. Fresh C outputs; reused installed dependencies, no fresh npm ci. Four bounded production-runtime cases block nonlocal application HTTP and assert empty ICE lists. This does not prove all browser/OS background traffic, internet-disconnected physical laptops, actual native pickers/permissions, ordinary-user cleanOS launch, full multi-GB/native-memory/throughput acceptance, or final adversarial review. Previous source-specific failures and native observer/candidate-availability causes remain open. No new ledger completion claimed.",
+  "releaseReady": false
+}
