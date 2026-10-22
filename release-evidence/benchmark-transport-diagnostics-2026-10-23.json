@@ -1,0 +1,38 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/benchmark-warning-timing-2026-10-23-bB5jO6/REVIEW-FINAL.json",
+  "bytes": 8237,
+  "sha256": "2382a89430a43104ecd21dbca95cbbc9e34d69f591b61374172b42f094ecb634",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/benchmark-warning-timing-2026-10-23-bB5jO6/CLOSURE-HASHES.json",
+    "bytes": 7668,
+    "sha256": "fef7019b08b73f29c72322bc5c6559889c8e26f81e4e0e63753af54d6fd95d91"
+  },
+  "assessment": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/benchmark-warning-timing-2026-10-23-bB5jO6/ASSESSMENT.md",
+    "bytes": 3926,
+    "sha256": "9aff16ae1b741f80b59080bab74056dd7d6d1f74d5b01e1694a8a3ba6d584740"
+  },
+  "oldWarningAnalysis": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/benchmark-warning-timing-2026-10-23-bB5jO6/ANALYSIS.json",
+    "bytes": 10716,
+    "sha256": "12284cb49b7414f6d1aaa45ff1844db521971d66827d68940488f7a7ffce63d0"
+  },
+  "codeCommit": "932c39420baedd7642e44bd4d5853ea0acef4577",
+  "unitPassed": 563,
+  "unitFiles": 58,
+  "typecheck": 0,
+  "diagnosticPairPassed": true,
+  "oldWarningsBeforeClose": 3582,
+  "rawSenderSocketDiscards": 334,
+  "rawWarningsDuringPayload": 321,
+  "transferSenderSocketDiscards": 0,
+  "transferWarningsDuringPayload": 0,
+  "parentDiskSamples": 17,
+  "minFreeBytes": 2820333568,
+  "closureFiles": 31,
+  "closureLogicalBytes": 365281,
+  "performanceAccepted": false,
+  "scope": "One100MiB raw/transfer pair validates phase markers and allowlisted post-work counters; no timing acceptance or memory-bound proof. Prior3582warnings all preceded browser-close markers; earlier records cannot identify exact payload phase. New raw selected-route reports334socket-send discards and321 native warnings during payload; these counters/log counts are distinct. Verified pair0discards/0warnings. This supports transport/backpressure investigation, not a universal cause or an app speedup. Counter definitions from W3C2025 WebRTC stats; socket errors can have multiple causes. Missing counters remain absent, addresses/labels omitted. Production app, product assets and shipped runtime unchanged. No extra getStats call added; existing post-result snapshot reused. Phase history bounded24events per endpoint, no per-message storage. A failed ad-hoc PowerShell inspection coerced ISOdates to DateTime and printed invalid zero counts; discarded and replaced by this raw-JSON Node analysis. Initial reviewer outbound totals used receiver incoming counts; corrected by role. A provisional hardcoded334 log-count phrase was corrected to actual321. All prior inspection/reviewer attempts retained; no browser rerun.",
+  "releaseReady": false
+}

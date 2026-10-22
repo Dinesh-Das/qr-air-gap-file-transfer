@@ -4,6 +4,36 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
+## Phase and socket-counter diagnostic, 2026-10-23
+
+Code `932c394` adds bounded epoch/monotonic phase markers and allowlisted
+transport/candidate-pair/data-channel counters, using the existing post-result
+stats request. Unsupported counters remain absent, not fabricated zero;
+addresses, credentials and channel labels are omitted. Product code/assets and
+packaged runtime are unchanged. Typecheck and 563 units in 58 files pass.
+
+All 3,582 prior logged UDP warnings occurred before browser close markers.
+Older records lack exact payload epochs, so they cannot attribute every warning
+to payload work. One new 100 MiB raw/verified pair passed the unchanged integrity
+and accounting checks, validating the new markers and native counter totals:
+
+| Mode | MB/s, single case | Sender socket-send discards | Logged warnings during payload |
+| --- | ---: | ---: | ---: |
+| Raw | 25.68 | 334 | 321 |
+| Verified transfer | 51.10 | 0 | 0 |
+
+Counter and log counts are distinct. The [W3C counter definition](https://www.w3.org/TR/2025/CRD-webrtc-stats-20250925/#dom-rtcicecandidatepairstats-packetsdiscardedonsend)
+identifies socket errors, not a particular buffer/memory cause. This pair supports
+a controlled backpressure experiment; it does not establish the cause of all
+earlier variance, a speedup, or performance acceptance. No product tuning was
+made. The parent guard held the 2 GiB reserve; native memory sampling was off.
+
+The [evidence pointer](release-evidence/benchmark-transport-diagnostics-2026-10-23.json)
+retains the old-log correlation, fresh raw records, phase/counter checks, RED/GREEN
+and full-unit logs, reviewer corrections and 31-file double-hashed closure.
+Synthetic/direct-SDP/OPFS/headless scope remains; physical/native-picker/large-file
+acceptance and READY remain open. No requirement completion was added.
+
 ## Matched overhead diagnostic, 2026-10-23
 
 Development-only fix `d54a487` disables workspace watching in the immutable
