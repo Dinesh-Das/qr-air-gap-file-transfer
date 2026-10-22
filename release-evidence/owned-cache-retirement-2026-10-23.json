@@ -1,0 +1,39 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/REVIEW.json",
+  "bytes": 4160,
+  "sha256": "a0f98dbc47a8b819d87218e2be3b9c1d947186f2d85728804e0b6a89b5931123",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/CLOSURE-HASHES.json",
+    "bytes": 4066,
+    "sha256": "c1c63f62de51f1956af984f03047a6f57a2d497058b2a03560a8a88e210cf551"
+  },
+  "inventory": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/DISCOVERY.json",
+    "bytes": 384440,
+    "sha256": "0ddb24f99d46929f2fe13cfcbf4f12f65d1be99b2096590f0d552410bbd30efb"
+  },
+  "retainedVerification": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/RETAINED-VERIFICATION.json",
+    "bytes": 2074,
+    "sha256": "1f4c6e676ff54a6eb7d52a9ec57295fcb14bdfc94365325b4a3e14001f22a9b2"
+  },
+  "assessment": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/ASSESSMENT.md",
+    "bytes": 2808,
+    "sha256": "40b2dee9c45978b99d68de5faa9bbae30a4de0da245e1fa1760bf1b1b1a3945f"
+  },
+  "sourceCommit": "10948bcc859002bcde4a67077e6ebb3b0c012465",
+  "removedCacheDirectories": 180,
+  "removedCacheFiles": 1017,
+  "logicalBytesRemoved": 275037064,
+  "trackedFilesUnchanged": 1837,
+  "retainedFilesVerified": 10745,
+  "retainedBytesVerified": 6763417978,
+  "originalManifestsUnchanged": 4,
+  "closureFiles": 16,
+  "closureLogicalBytes": 868379,
+  "availability": "Exactly1017 inventoried disposable cache files intentionally removed in4evidence roots. Older closure manifests remain unchanged historical inventories; this explicit retirement overlay supersedes any all-paths-still-present interpretation. All other indexed files in those roots rehashed and unchanged. Data, reports, helpers and fixture payloads preserved.",
+  "localTrialsHeld": true,
+  "releaseReady": false
+}
