@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-23",
-  "status": "Current BBe bundle: full installed Chrome101/Edge101 and hosted560units/101bundledChromium/external-package gate passed atad96179. Prior current-bundle native1GiB single Chrome case remains separately qualified. Physical/native GUI and remaining resource/throughput/final adversarial gates remain open.",
+  "status": "Current BBe product software gates and prior native1GiB case retain their qualified scopes. Benchmark harness watch fix and12 verified100MiB diagnostic trials add partial performance evidence; high timing variance prevents speed/overhead acceptance. Physical/native GUI and remaining resource/throughput/final adversarial gates stay open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -202,7 +202,7 @@
       }
     ]
   },
-  "currentReviewPending": 279,
+  "currentReviewPending": 263,
   "activeTransferTransitionEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
@@ -335,8 +335,8 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-22T19:13:35.0015088Z",
-  "currentInputsScope": "181-path source-specific input snapshots retained. Full local installed-browser trial capturesad96179 before documentation updates; all181 input hashes and40 tracked PNG hashes unchanged through both runs. src/scripts/e2e/package inputs are unchanged from47e34b5; older bundle qualifications keep their original scopes.",
+  "updatedAt": "2026-10-22T19:37:52.1195203Z",
+  "currentInputsScope": "Source-specific181-path full-browser snapshot remains atad96179; all inputs/40PNGs stayed unchanged during those runs. At d54a487 only dev scripts/benchmark-webrtc.mjs changed to disable workspace watching; product source, assets and packaged runtime unchanged. New benchmark RAW fingerprints cover exact changed helper bytes. Prior source scopes remain intact.",
   "hostedCodeGate": {
     "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39835162561",
     "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
@@ -1292,5 +1292,39 @@
     "bytes": 29523,
     "sha256": "647465215c4644e39d7d8ffadbeb6a621e8f13cb7a11322f80fba086a52633be"
   },
-  "previousCurrentInputIndexBeforeCurrentFullPathGuardBrowser": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-candidate-fix-39713813101-2026-10-22-cJMIGY/CURRENT-INPUTS.json"
+  "previousCurrentInputIndexBeforeCurrentFullPathGuardBrowser": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-candidate-fix-39713813101-2026-10-22-cJMIGY/CURRENT-INPUTS.json",
+  "matchedOverheadDiagnosticEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/matched-overhead-review-2026-10-23-zBQOlv/REVIEW.json",
+    "bytes": 16026,
+    "sha256": "fb1ac393bf3dbe849d06cebf5bf13a8a6cf05c79c54247fda837dc865adcdb38",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/matched-overhead-review-2026-10-23-zBQOlv/CLOSURE-HASHES.json",
+      "bytes": 94264,
+      "sha256": "2223b403cd213059570e03e55e4f176416a458d45a042f6a8f4ad8d149725973"
+    },
+    "assessment": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/matched-overhead-review-2026-10-23-zBQOlv/ASSESSMENT.md",
+      "bytes": 4154,
+      "sha256": "60a59bc481992bdf0b452602f628656dfb1a72b493f6278d20d263c11a651fe7"
+    },
+    "ledgerReview": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/matched-overhead-review-2026-10-23-zBQOlv/LEDGER-REVIEW.json",
+      "bytes": 308,
+      "sha256": "9a676cf1b95a71c203ab83ef738239a40b11e216bad6c0e4806d4ca6b79862b4"
+    },
+    "harnessFixCommit": "d54a4877347b901db87722d5c12c799293055cbf",
+    "productSourceCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
+    "verifiedTrials": 12,
+    "stableComparativeBaselineEstablished": false,
+    "performanceAccepted": false,
+    "profiledRawMedianMBps": 12.559601379910752,
+    "profiledTransferMedianMBps": 13.76195645352241,
+    "unprofiledRawMedianMBps": 21.440641230533007,
+    "unprofiledTransferMedianMBps": 48.81877694275538,
+    "closureFiles": 341,
+    "closureLogicalBytes": 298362230,
+    "scope": "100MiB one-file synthetic pattern, fresh separate bundled HeadlessChrome156.0.8078.4 processes, direct harness SDP, same Windows host and OPFS receive/save. Dev imports/profile wrappers, not production UI, source disk, native picker/destination, physical LAN, incompressible data, general native-memory bounds or large-file acceptance. Native memory observer disabled. Only immutable benchmark watcher changed, selecting Vite noop watcher; package runtime list excludes benchmark. Existing installed Chrome/Edge560unit/full101case/product package evidence keeps exact prior scopes. Browser CLI installed required shell/ffmpeg/winldd in a new owned directory using--no-remove; prior browser installations were not removed.",
+    "releaseReady": false
+  }
 }
