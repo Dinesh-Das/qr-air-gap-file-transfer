@@ -38,7 +38,7 @@ function init(options, role) {
   if (state) throw new Error("Each benchmark page may run only one trial.");
   state = { ...options, role, operations: {}, controls: {}, heapByPhase: {}, binaryMessages: 0, binaryBytes: 0,
     peakChannelBufferedBytes: 0, peakJsHeapBytes: null, phase: "setup", receivedBytes: 0,
-    controller: new AbortController(), startedAt: performance.now(), verified: false, finished: false, timeline: [] };
+    controller: new AbortController(), startedAt: performance.now(), verified: false, finished: false, timeline: [], maxInFlightBlocks: options.maxInFlightBlocks ?? 96 };
   markEvent("setup");
   state.rawAcknowledged = 0;
   state.rawNextIndex = 0;
@@ -342,8 +342,8 @@ export async function transmit() {
       let index = 0;
       for (let sent = 0; sent < state.bytes;) {
         state.controller.signal.throwIfAborted();
-        while (index - state.rawAcknowledged >= 96) {
-          await waitChannelEvent("message", () => index - state.rawAcknowledged < 96);
+        while (index - state.rawAcknowledged >= state.maxInFlightBlocks) {
+          await waitChannelEvent("message", () => index - state.rawAcknowledged < state.maxInFlightBlocks);
         }
         if (state.channel.bufferedAmount >= 8 * 1024 * 1024) {
           await waitChannelEvent("bufferedamountlow", () => state.channel.bufferedAmount <= 2 * 1024 * 1024);

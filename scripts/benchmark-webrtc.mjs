@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 import { createServer } from "vite";
 import { readWindowsProcessMemory } from "./browser-process-memory.mjs";
+import { benchmarkWindowSource, readBenchmarkWindow } from "./benchmark-window.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const positiveList = (value, allowed) => {
@@ -22,6 +23,7 @@ const fileCount = fileCounts[0];
 const modes = (process.env.QRFT_WEBRTC_MODES ?? "raw,transfer").split(",");
 if (modes.length > 2 || new Set(modes).size !== modes.length || modes.some((mode) => !["raw", "transfer"].includes(mode))) throw new Error("Invalid benchmark modes.");
 const profile = process.env.QRFT_WEBRTC_PROFILE !== "0";
+const maxInFlightBlocks = readBenchmarkWindow(process.env.QRFT_WEBRTC_IN_FLIGHT_BLOCKS);
 const nativeHashes = process.env.QRFT_WEBRTC_NATIVE_HASHES !== "0";
 const saveTree = process.env.QRFT_WEBRTC_SAVE_TREE === "1";
 const processMemory = process.env.QRFT_WEBRTC_PROCESS_MEMORY === "1";
@@ -30,6 +32,18 @@ const corruptBlock = process.env.QRFT_WEBRTC_CORRUPT_BLOCK === undefined ? null 
 if (corruptBlock !== null && (!Number.isSafeInteger(corruptBlock) || corruptBlock < 0)) throw new Error("Invalid injected block index.");
 const timeoutMs = 30 * 60 * 1000;
 const output = resolve(process.env.QRFT_WEBRTC_OUTPUT ?? ".tmp/webrtc-benchmark.json");
+let senderWindowTransform;
+const windowPlugin = {
+  name: "benchmark-window-override", enforce: "pre",
+  transform(code, id) {
+    if (!id.replaceAll("\\", "/").endsWith("/src/lib/webrtc-transfer.ts")) return;
+    const transformed = benchmarkWindowSource(code, maxInFlightBlocks);
+    senderWindowTransform = { blocks: maxInFlightBlocks,
+      originalSha256: createHash("sha256").update(code).digest("hex"),
+      transformedSha256: createHash("sha256").update(transformed).digest("hex") };
+    return { code: transformed, map: null };
+  },
+};
 
 // Timed wrappers are confined to this dev server. Production modules on disk
 // and the release bundle are unchanged. Record original hashes in every run.
@@ -166,8 +180,8 @@ function observeProcessMemory(endpoints) {
 
 const evidence = { schema: "qrft-webrtc-benchmark-v1", startedAt: new Date().toISOString(), node: process.version,
   scope: "Two separate temporary normal Chromium processes on one Windows host; synthetic source slices and OPFS destination. Direct harness SDP exchange, not application pairing, human authorization, physical LAN, source disk or native destination validation.",
-  profile, nativeHashes, saveTree, processMemory, corruptBlock, sizesMiB: sizes, fileCount, modes, repeats: repeats[0],
-  rawBaseline: "Same ordered channel, 60 KiB payload plus 44 bytes, 96-block window, 8/2 MiB buffering thresholds and production 64-block/75 ms receive queue; pattern check and batched ACKs, no hashing/source reads/OPFS durability.",
+  profile, nativeHashes, saveTree, processMemory, corruptBlock, maxInFlightBlocks, sizesMiB: sizes, fileCount, modes, repeats: repeats[0],
+  rawBaseline: `Same ordered channel, 60 KiB payload plus 44 bytes, ${maxInFlightBlocks}-block window, 8/2 MiB buffering thresholds and production 64-block/75 ms receive queue; pattern check and batched ACKs, no hashing/source reads/OPFS durability.`,
   fixtureGeneration: "256-byte periodic pattern expanded with bounded typed-array copies; same bytes as the original file-index/offset formula. Destination audit uses the independent per-byte formula.",
   inputs: await fingerprints(), results: [], releaseReady: false };
 const persist = async () => {
@@ -175,7 +189,7 @@ const persist = async () => {
   await writeFile(output, JSON.stringify(evidence, null, 2) + "\n");
 };
 // configFile:false avoids LAN discovery, app hooks and unrelated development UI.
-const server = await createServer({ root, configFile: false, plugins: [profilingPlugin], appType: "custom",
+const server = await createServer({ root, configFile: false, plugins: [windowPlugin, profilingPlugin], appType: "custom",
   // This immutable probe must not watch retained profiles/artifacts in the workspace.
   server: { host: "127.0.0.1", port: 0, open: false, hmr: false, watch: null } });
 server.middlewares.use((request, response, next) => {
@@ -190,7 +204,7 @@ try {
     // Alternate mode order across repetitions to make order visible and reduce systematic bias.
     for (const mode of repetition % 2 ? modes : modes.toReversed()) {
       const endpoints = [], errors = [];
-      const record = { mib, repetition, mode, profile, nativeHashes, saveTree: mode === "transfer" && saveTree,
+      const record = { mib, repetition, mode, profile, nativeHashes, maxInFlightBlocks, saveTree: mode === "transfer" && saveTree,
         startedAt: new Date().toISOString(), verified: false };
       evidence.results.push(record);
       let deadline, memoryObserver;
@@ -215,8 +229,10 @@ try {
           endpoint.before = await metrics(endpoint);
         }
         const [sender, receiver] = endpoints;
+        if (!senderWindowTransform) throw new Error("Benchmark sender window transform was not observed.");
+        record.senderWindowTransform = { ...senderWindowTransform };
         if (processMemory) memoryObserver = observeProcessMemory(endpoints);
-        const options = { mode, bytes: mib * 1024 * 1024, layout: layout(mib * 1024 * 1024), profile, nativeHashes, saveTree, timeoutMs, corruptBlock };
+        const options = { mode, bytes: mib * 1024 * 1024, layout: layout(mib * 1024 * 1024), profile, nativeHashes, saveTree, timeoutMs, corruptBlock, maxInFlightBlocks };
         const execute = async () => {
           const prepared = await call(sender.page, "setupSender", options);
           record.streamBytes = prepared.manifest?.totalBytes ?? options.bytes;

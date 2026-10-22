@@ -9,6 +9,9 @@ jobs:
   study:
     runs-on: windows-latest
     timeout-minutes: 20
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/qrft-window-study-browsers
+      QRFT_WINDOW_STUDY_OUTPUT: ${{ runner.temp }}/qrft-window-study
     defaults:
       run:
         shell: pwsh
@@ -32,11 +35,23 @@ jobs:
           $commandExit = $LASTEXITCODE
           Set-Content ci-evidence/window-study/check-exit.txt $commandExit
           exit $commandExit
+      - name: Install required headless browser
+        run: |
+          npx playwright install --only-shell --no-remove chromium 2>&1 | Tee-Object -FilePath ci-evidence/window-study/browser-install.log
+          exit $LASTEXITCODE
+      - name: Run interleaved diagnostic cases
+        run: |
+          node scripts/run-benchmark-window-study.mjs 2>&1 | Tee-Object -FilePath ci-evidence/window-study/study.log
+          $commandExit = $LASTEXITCODE
+          Set-Content ci-evidence/window-study/study-exit.txt $commandExit
+          exit $commandExit
       - name: Retain evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: window-study-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ci-evidence/window-study/
+          path: |
+            ci-evidence/window-study/
+            ${{ runner.temp }}/qrft-window-study/
           if-no-files-found: warn
           retention-days: 14
