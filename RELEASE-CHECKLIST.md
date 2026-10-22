@@ -1,11 +1,17 @@
 # Release evidence and remaining work
 
-Status: **NOT READY**. Updated 2026-10-17. This inventory organizes the retained
+Status: **NOT READY**. Current evidence is indexed in
+[release-gate-latest.txt](release-evidence/release-gate-latest.txt) and its
+[machine-readable record](release-evidence/release-gate-latest.json).
+The dated checkpoints below are historical; their test counts, bundles and
+measurements apply only to the source versions they describe.
+
+This inventory organizes the retained
 release requirements; it does not replace or narrow the original goal.
 "Local evidence" is deliberately not equivalent to physical release acceptance.
 The user last reported that both Windows laptops were unavailable.
 
-## Latest checkpoint: Windows observer failure context — NOT READY
+## Historical checkpoint (2026-10-17): Windows observer failure context — NOT READY
 
 The development-only Windows process-memory observer now adds bounded error context for missing PIDs: category, error identifier, exception type and message. Missing IDs remain missing; no counters, retries, process exclusions or validity thresholds changed. This improves future diagnosis and does not alter transfer behavior.
 

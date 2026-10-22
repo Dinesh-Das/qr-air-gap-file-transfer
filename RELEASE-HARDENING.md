@@ -1,6 +1,12 @@
 # Release hardening evidence
 
-## Latest checkpoint: Windows observer failure context — NOT READY
+Current status and source-specific evidence are indexed in
+[release-gate-latest.txt](release-evidence/release-gate-latest.txt) and its
+[machine-readable record](release-evidence/release-gate-latest.json).
+The checkpoints below retain their historical source, bundle and test scope;
+their counts are not current release qualification. The release is **NOT READY**.
+
+## Historical checkpoint (2026-10-17): Windows observer failure context — NOT READY
 
 The development-only Windows process-memory observer now adds bounded error context for missing PIDs: category, error identifier, exception type and message. Missing IDs remain missing; no counters, retries, process exclusions or validity thresholds changed. This improves future diagnosis and does not alter transfer behavior.
 
