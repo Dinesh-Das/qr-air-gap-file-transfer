@@ -8024,8 +8024,12 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Security",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "release-evidence/large-tree-hard-limits-2026-10-22.json"
+      ],
+      "complete": false,
+      "scope": "QRF3 combined records: exactly99,999 directories plus one empty file accepted; adding one record rejected by encoder, and receiving100,001 records rejected before per-file validation. Not a real100,000-file transfer or complete cross-format file-count qualification."
     },
     {
       "id": "L949",
@@ -8034,8 +8038,12 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Security",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "release-evidence/large-tree-hard-limits-2026-10-22.json"
+      ],
+      "complete": false,
+      "scope": "QRF3 byte boundary:32MiB+1 rejected before TextDecoder/JSON.parse; exactly32MiB valid JSON reaches canonical validation and rejects padding. Does not claim acceptance of a canonical32MiB tree, full metadata attack coverage, memory-scaling or physical transfers."
     },
     {
       "id": "L950",
@@ -10305,5 +10313,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-22T03:23:43.4592043Z"
+  "updatedAt": "2026-10-22T13:53:32.517Z"
 }

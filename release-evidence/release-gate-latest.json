@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-22T13:44:38.668Z",
+  "recordedAt": "2026-10-22T13:53:32.666Z",
   "clientDate": "2026-10-22",
-  "status": "Current1GiB production UI same-host transfer/save independently byte-verified;542 unit and100 hosted browser cases pass. Physical and remaining release requirements stay open.",
+  "status": "545 local unit tests pass with adversarial QRF3 limit coverage; prior100 hosted browser and current1GiB byte proof retained. Physical and remaining release requirements stay open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -51,8 +51,8 @@
     "localNode": "v24.22.0",
     "hostedNode": "v24.21.0",
     "typecheck": 0,
-    "unitPassed": 542,
-    "unitFiles": 54,
+    "unitPassed": 545,
+    "unitFiles": 55,
     "build": 0,
     "hostedBrowserPassed": 100,
     "hostedBrowserScope": "Workflow-installed bundled Chromium100 cases. Local current-bundle Chrome1GiB transfer/save subsequently passed separately; no current full local Chrome/Edge suite claim.",
@@ -60,9 +60,10 @@
     "nativeWindowsGUI": false,
     "portablePackageCurrentBundle": "not-requalified",
     "currentBundleNativeLargeMatrix": "One1GiB same-host Chrome transfer/save case passed; broader matrix not run",
-    "releaseReady": false
+    "releaseReady": false,
+    "localUnitSourceCommit": "810e148fdb045b686e47e829f479ad8e13881898"
   },
-  "currentInputs": 178,
+  "currentInputs": 179,
   "currentAssets": [
     {
       "path": "dist/assets/block-store.worker-DVHZPZQe.js",
@@ -517,5 +518,39 @@
     "closureBytes": 2178843364,
     "releaseReady": false,
     "scope": "One real native1GiB File through current production UI, production rendezvous, same-host RTC, durable OPFS and injected OPFS save. Both retained copies compared with every source byte; file/stream hashes and metadata/footer independently checked. Two isolated headless Chrome profiles and mocked pickers. All sampled native PIDs measured; no generalized memory-bound or physical Wi-Fi claim. Cleanup deletion deliberately denied to retain evidence; cleanup-required UI inspected. Old harness failure preserved; this fresh runner checks ACK indices rather than message count. No new5GiB/10GiB/50GiB/100GiB case."
+  },
+  "largeTreeHardLimitsEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/large-tree-hard-limits-2026-10-22-SQ5Fbl/REVIEW.json",
+    "bytes": 8266,
+    "sha256": "aceda641ea1dc9546f56956ebb3fa0a001c7bfefeff01516f7f4e2ef827f298e",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/large-tree-hard-limits-2026-10-22-SQ5Fbl/CLOSURE-HASHES.json",
+      "bytes": 49455,
+      "sha256": "a71af07bbe5a485809537f1278feb57c47e1a9c046b68307aec83f73cf164522"
+    },
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/large-tree-hard-limits-2026-10-22-SQ5Fbl/CURRENT-INPUTS.json",
+      "bytes": 29210,
+      "sha256": "79a281b5492be8c194b16e3fa7cd3be1c5276b6a2f4fa0e698458346ebf47b5c"
+    },
+    "sourceCommit": "810e148fdb045b686e47e829f479ad8e13881898",
+    "unitPassed": 545,
+    "unitFiles": 55,
+    "newBoundaryTests": 3,
+    "negativeControls": 3,
+    "reviewPending": 277,
+    "mapped": [
+      {
+        "id": "L948",
+        "scope": "QRF3 combined records: exactly99,999 directories plus one empty file accepted; adding one record rejected by encoder, and receiving100,001 records rejected before per-file validation. Not a real100,000-file transfer or complete cross-format file-count qualification."
+      },
+      {
+        "id": "L949",
+        "scope": "QRF3 byte boundary:32MiB+1 rejected before TextDecoder/JSON.parse; exactly32MiB valid JSON reaches canonical validation and rejects padding. Does not claim acceptance of a canonical32MiB tree, full metadata attack coverage, memory-scaling or physical transfers."
+      }
+    ],
+    "productionChanged": false,
+    "releaseReady": false
   }
 }
