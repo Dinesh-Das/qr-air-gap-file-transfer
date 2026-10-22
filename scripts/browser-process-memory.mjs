@@ -12,7 +12,16 @@ export async function readWindowsProcessMemory(processIds) {
   return new Promise((resolve, reject) => {
     const child = execFile("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", script],
       { windowsHide: true, timeout: 10_000, maxBuffer: 64 * 1024 }, (error, stdout, stderr) => {
-        if (error) { reject(new Error(`Process memory observation failed: ${stderr.trim() || error.message}`)); return; }
+        if (error) {
+          const status = [
+            error.code != null ? `code=${error.code}` : "",
+            error.signal ? `signal=${error.signal}` : "",
+            error.killed ? "terminated" : "",
+          ].filter(Boolean).join(", ");
+          const detail = stderr.trim().slice(0, 256);
+          reject(new Error(`Process memory observation failed${status ? ` (${status})` : ""}${detail ? `: ${detail}` : "."}`, { cause: error }));
+          return;
+        }
         try { resolve(JSON.parse(stdout.trim().replace(/^\uFEFF/, ""))); }
         catch (cause) { reject(new Error("Process memory observer returned invalid JSON.", { cause })); }
       });
