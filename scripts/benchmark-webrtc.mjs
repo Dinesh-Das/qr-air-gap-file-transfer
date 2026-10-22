@@ -176,7 +176,8 @@ const persist = async () => {
 };
 // configFile:false avoids LAN discovery, app hooks and unrelated development UI.
 const server = await createServer({ root, configFile: false, plugins: [profilingPlugin], appType: "custom",
-  server: { host: "127.0.0.1", port: 0, open: false, hmr: false } });
+  // This immutable probe must not watch retained profiles/artifacts in the workspace.
+  server: { host: "127.0.0.1", port: 0, open: false, hmr: false, watch: null } });
 server.middlewares.use((request, response, next) => {
   if (request.url !== "/benchmark") return next();
   response.setHeader("Content-Type", "text/html");
