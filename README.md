@@ -118,7 +118,10 @@ a copied sender address with its port can connect directly instead.
 reused from a previous attempt. **Transfer ETA** uses the smoother rate and
 covers payload transfer only; verification and destination saving take additional
 time. Pausing clears both speeds and ETA, and a stalled connection's readings
-decay instead of retaining an old rate. Both screens show transferred / total
+decay instead of retaining an old rate.
+If sampling stops for longer than a speed window, that estimate restarts from
+the next observation; speed and ETA wait for fresh samples instead of averaging
+across the unobserved gap. Both screens show transferred / total
 bytes, remaining bytes and resumed bytes. **Elapsed this attempt** starts when
 transfer progress becomes available, includes pauses and received-data checks,
 and stops after transfer verification or failure. It resets on a new connection

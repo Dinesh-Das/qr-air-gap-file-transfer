@@ -29,6 +29,16 @@ describe("recent transfer rate", () => {
     for (let time = 1500; time <= 6500; time += 500) rate.sample(time, 1000);
     expect(rate.sample(7000, 1000)).toBe(0);
   });
+  it.each([1000, 5000] as const)("restarts the %i ms estimate after a sampling gap exceeds its window", (windowMilliseconds) => {
+    const rate = new TransferRateWindow(windowMilliseconds);
+    rate.sample(0, 0);
+    expect(rate.sample(500, 1000)).toBe(2000);
+    const resumedAt = 500 + windowMilliseconds + 1;
+    // No observation locates these bytes within the advertised recent window.
+    // Establish a new baseline instead of presenting the whole gap's average.
+    expect(rate.sample(resumedAt, 2000)).toBe(0);
+    expect(rate.sample(resumedAt + 500, 3000)).toBe(2000);
+  });
   it("resets safely for a new transfer or clock discontinuity", () => {
     const rate = new TransferRateWindow();
     rate.sample(1000, 5000);

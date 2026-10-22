@@ -5,7 +5,7 @@ export class TransferRateWindow {
   sample(time: number, bytes: number): number {
     const previous = this.samples.at(-1);
     if (!Number.isFinite(time) || !Number.isFinite(bytes) || bytes < 0) { this.samples = []; return 0; }
-    if (previous && (time <= previous.time || bytes < previous.bytes)) this.samples = [];
+    if (previous && (time <= previous.time || bytes < previous.bytes || time - previous.time > this.windowMilliseconds)) this.samples = [];
     this.samples.push({ time, bytes });
     while (this.samples.length > 11 || this.samples.length > 1 && this.samples[1].time <= time - this.windowMilliseconds) this.samples.shift();
     const first = this.samples[0];
