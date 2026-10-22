@@ -3,11 +3,28 @@ import { BlockStoreError } from "../src/lib/block-store";
 import { describeTransferProblem, TransferMessageSizeError, type TransferProblemContext } from "../src/lib/transfer-problem";
 import { RendezvousError } from "../src/lib/webrtc-rendezvous";
 import { SourceChangedError } from "../src/lib/webrtc-sender-resume";
-import { PeerCandidatePolicyError } from "../src/lib/webrtc-signaling";
+import { limitSdpToLocalCandidates, PeerCandidatePolicyError } from "../src/lib/webrtc-signaling";
 
 const receiving = { role: "receiver", phase: "receiving" } as const;
 
 describe("transfer recovery advice", () => {
+  it.each(["sender", "receiver"] as const)("directs a local candidate failure to network/browser recovery for %s", role => {
+    let failure: unknown;
+    try { limitSdpToLocalCandidates("v=0\r\na=candidate:1 1 UDP 1 203.0.113.1 9 typ host\r\n"); }
+    catch (error) { failure = error; }
+    expect(failure).toBeInstanceOf(Error);
+    const problem = describeTransferProblem(failure, { role, phase: role === "sender" ? "checking" : "preparing" });
+    expect(problem.message).toContain("The browser could not find a local network connection.");
+    expect(problem.message).toContain("retry pairing");
+    expect(problem.message).not.toContain("service is unavailable");
+    expect(problem.message).not.toContain("files could not be prepared");
+  });
+
+  it("does not infer a local candidate failure from an untrusted error name or text", () => {
+    const failure = Object.assign(new Error("The browser did not expose a usable private-network connection candidate."), { name: "LocalCandidateUnavailableError" });
+    expect(describeTransferProblem(failure, { role: "sender", phase: "checking" }).message).not.toContain("The browser could not find a local network connection.");
+  });
+
   it("directs a local preparation read failure to a new source selection", () => {
     const problem = describeTransferProblem(new DOMException("native read failed", "NotReadableError"), { role: "sender", phase: "preparing" });
     expect(problem.message).toContain("These files could not be prepared.");

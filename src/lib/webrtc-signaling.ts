@@ -17,6 +17,14 @@ export class PeerCandidatePolicyError extends Error {
   constructor(message: string) { super(message); this.name = "PeerCandidatePolicyError"; }
 }
 
+/** The local browser exposed no usable host candidate; never inferred from peer text. */
+export class LocalCandidateUnavailableError extends Error {
+  constructor() {
+    super("The browser did not expose a usable private-network connection candidate.");
+    this.name = "LocalCandidateUnavailableError";
+  }
+}
+
 /** Validate before native processing; accepted SDP stays exact for SAS binding. */
 export function assertLocalSignalCandidates(sdp: string): void {
   if (typeof sdp !== "string" || sdp.length < 1 || sdp.length > MAX_SDP_CHARS) {
@@ -204,7 +212,7 @@ export function limitSdpToLocalCandidates(sdp: string): string {
     return true;
   });
   if (candidatesSeen === 0 || candidatesKept === 0) {
-    throw new Error("The browser did not expose a usable private-network connection candidate.");
+    throw new LocalCandidateUnavailableError();
   }
   const result = lines.join("\r\n");
   return endedWithNewline && !result.endsWith("\r\n") ? `${result}\r\n` : result;

@@ -11,6 +11,13 @@ host or relay/reflexive candidate. Missing/oversized/malformed candidate details
 fail with a local typed error. Only that trusted error selects policy recovery
 advice; a peer-controlled error name/text cannot select it.
 
+When the local browser exposes no candidate that survives the outgoing policy,
+raise `LocalCandidateUnavailableError`. Recovery asks the user to check the
+shared Wi-Fi/hotspot and retry pairing or restart the browser. It must not blame
+the local connection service or source files after a successful readiness check.
+Only the trusted local error instance selects this advice; peer-supplied names
+and text do not. Candidate filtering and gathering deadlines remain unchanged.
+
 This extends the current local-host-only design. Internet independence in the
 original requirements is not treated as a promise that zero internet packets
 can ever occur. This guard does not validate the whole SDP grammar, resolve

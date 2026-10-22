@@ -1,7 +1,7 @@
 import { BlockStoreError } from "./block-store";
 import { RendezvousError } from "./webrtc-rendezvous";
 import { SourceChangedError } from "./webrtc-sender-resume";
-import { PeerCandidatePolicyError } from "./webrtc-signaling";
+import { LocalCandidateUnavailableError, PeerCandidatePolicyError } from "./webrtc-signaling";
 
 /** A local SCTP capacity check; never constructed from peer error text. */
 export class TransferMessageSizeError extends Error {
@@ -26,7 +26,9 @@ export function describeTransferProblem(value: unknown, context: TransferProblem
   const errorName = value instanceof Error || value instanceof DOMException ? value.name : undefined;
   const { role, phase } = context;
   let message: string;
-  if (value instanceof PeerCandidatePolicyError) {
+  if (value instanceof LocalCandidateUnavailableError) {
+    message = "The browser could not find a local network connection. Connect both laptops to the same Wi-Fi or hotspot, then retry pairing. If this continues, restart the browser.";
+  } else if (value instanceof PeerCandidatePolicyError) {
     message = "The other device supplied unsupported local connection details. Open the current app on both devices, connect to the same local network, and retry pairing.";
   } else if (value instanceof TransferMessageSizeError) {
     message = "This connection cannot carry the transfer. Open both laptops in current Edge or Chrome and reconnect.";
