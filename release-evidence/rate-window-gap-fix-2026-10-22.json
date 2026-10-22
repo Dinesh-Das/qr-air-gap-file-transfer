@@ -1,0 +1,27 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/rate-window-gap-2026-10-22-8c97bb75/REVIEW.json",
+  "bytes": 6376,
+  "sha256": "415d044cba5d32a4197a58065fef2ec42a7df9dd48812e3b217302baa5df9580",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/rate-window-gap-2026-10-22-8c97bb75/CLOSURE-HASHES.json",
+    "bytes": 23128,
+    "sha256": "1defa11ee2f3b5be929d3cc77e83d5ac43a0c4a1f879ed98d2ae1db09224de08"
+  },
+  "currentInputs": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/rate-window-gap-2026-10-22-8c97bb75/CURRENT-INPUTS.json",
+    "bytes": 29380,
+    "sha256": "0587d832cf935f31f1d7d39629d346971826711e7152c10879c6247575aa2f28"
+  },
+  "sourceCommit": "94927b0cf152616e67c5066a68f247da67eeaaa2",
+  "unitPassed": 549,
+  "unitFiles": 56,
+  "localChromeMetricCases": 1,
+  "localEdgeMetricCases": 1,
+  "reviewPending": 274,
+  "mapped": {
+    "id": "L16",
+    "scope": "Fixed stale rate baselines after sampling gaps exceeding the one-second or five-second window. Deterministic tests prove reset and recovery; the existing 12 MiB metrics workflow passes in Chrome and Edge for pause, byte totals, ETA clearing, elapsed time and verification. Actual sleep/wake, physical-network rate accuracy and broader telemetry acceptance remain unverified."
+  },
+  "releaseReady": false
+}

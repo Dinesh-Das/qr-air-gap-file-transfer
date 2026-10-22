@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-22T14:00:13.076Z",
+  "recordedAt": "2026-10-22T14:10:06.232Z",
   "clientDate": "2026-10-22",
-  "status": "547 local unit tests pass with QRF3 metadata and HTTP SDP byte-boundary coverage. Physical and remaining release requirements stay open.",
+  "status": "Rate windows restart after unobserved gaps;549 local unit tests and one metrics case each in Chrome/Edge pass. Physical and remaining release requirements stay open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -47,28 +47,38 @@
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
   },
   "qualification": {
-    "sourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+    "sourceCommit": "94927b0cf152616e67c5066a68f247da67eeaaa2",
     "localNode": "v24.22.0",
-    "hostedNode": "v24.21.0",
     "typecheck": 0,
-    "unitPassed": 547,
+    "unitPassed": 549,
     "unitFiles": 56,
     "build": 0,
-    "hostedBrowserPassed": 100,
-    "hostedBrowserScope": "Workflow-installed bundled Chromium100 cases. Local current-bundle Chrome1GiB transfer/save subsequently passed separately; no current full local Chrome/Edge suite claim.",
-    "externalPackageFiles": 19,
+    "localChromeMetricCases": 1,
+    "localEdgeMetricCases": 1,
+    "fullHostedCurrentBundle": "not-yet-observed",
+    "localBrowserScope": "One existing 12 MiB metrics workflow per channel; no full current-bundle suite qualification.",
     "nativeWindowsGUI": false,
+    "externalPackageCurrentBundle": "not-requalified",
     "portablePackageCurrentBundle": "not-requalified",
-    "currentBundleNativeLargeMatrix": "One1GiB same-host Chrome transfer/save case passed; broader matrix not run",
-    "releaseReady": false,
-    "localUnitSourceCommit": "2ffd777e4e43f21edc72d18303607fd5c9477a4f"
+    "currentBundleNativeLargeMatrix": "not-run",
+    "releaseReady": false
   },
   "currentInputs": 180,
   "currentAssets": [
     {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "ce7392f97f93868fa080a101c7c56a0ddfc6c5b5f0a0a4e1f18465c80eaa935f"
+    },
+    {
       "path": "dist/assets/block-store.worker-DVHZPZQe.js",
       "bytes": 2402,
       "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-5AkHKgIQ.js",
+      "bytes": 556918,
+      "sha256": "c4b79572fbb63a0b687626559e5adae7469a64250a0b7cd4605f6e17c0255e0c"
     },
     {
       "path": "dist/assets/index-C5foWVjs.css",
@@ -76,19 +86,9 @@
       "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
     },
     {
-      "path": "dist/assets/index-DozYA_8Y.js",
-      "bytes": 556884,
-      "sha256": "b43a7afeb19940621a2cf280e3256c2385ab86898dc693c7b45ef4f0b7406b23"
-    },
-    {
       "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
       "bytes": 43951,
       "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
-    },
-    {
-      "path": "dist/index.html",
-      "bytes": 903,
-      "sha256": "7f1d81d604634b024d2a15528959c3c9e017167440d63652feaa88a5e17e0909"
     }
   ],
   "rootDistIsPriorVersion": false,
@@ -324,14 +324,8 @@
   "updatedAt": "2026-10-22T03:23:43.3668263Z",
   "currentInputsScope": "Current original177-path input set plus tests/free-signal-port.d.mts; exact current bytes captured in hosted candidate-fix CURRENT-INPUTS.json. Application error handling changed; previous native/bundle qualifications remain scoped to their older source snapshots.",
   "hostedCodeGate": {
-    "record": "release-evidence/local-candidate-recovery-hosted-2026-10-22.json",
-    "sourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
-    "runId": 39713813101,
-    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39713813101",
-    "node": "v24.21.0",
-    "unitPassed": 542,
-    "browserPassed": 100,
-    "externalPackageFiles": 19,
+    "sourceCommit": "94927b0cf152616e67c5066a68f247da67eeaaa2",
+    "status": "not-yet-observed",
     "releaseReady": false
   },
   "previousSourceQualification": {
@@ -437,7 +431,7 @@
   },
   "candidateAvailabilityRootCauseUnresolved": true,
   "candidateFixPriorDistBackup": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/dist-before",
-  "priorEvidenceSourceScope": "Earlier source-origin/full Chrome/Edge/native1GiB/5GiB/package evidence is historical after this error-handling change. None is relabeled as a native large-transfer/current portable qualification of index-DozYA_8Y.js.",
+  "priorEvidenceSourceScope": "All prior full hosted/local browser, package and native1GiB/5GiB evidence retains its source and bundle scope. In particular the byte-verified1GiB source6131758 used index-DozYA_8Y.js, not this new index-5AkHKgIQ.js build. No older result is relabeled as current-bundle full-suite, large-transfer, package or resource qualification.",
   "currentUiNative1GiBv3Evidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/REVIEW.json",
@@ -586,6 +580,61 @@
         "scope": "Existing real native UDP arrival test rejects authentic 1,201-byte discovery, then accepts exactly 1,200 bytes with a bounded reply. Removing the receive cap in an isolated copy makes that test fail. Finite discovery cases do not establish every advertisement path or physical network resilience."
       }
     ],
+    "releaseReady": false
+  },
+  "previousQualificationBeforeRateFix": {
+    "sourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+    "localNode": "v24.22.0",
+    "hostedNode": "v24.21.0",
+    "typecheck": 0,
+    "unitPassed": 547,
+    "unitFiles": 56,
+    "build": 0,
+    "hostedBrowserPassed": 100,
+    "hostedBrowserScope": "Workflow-installed bundled Chromium100 cases. Local current-bundle Chrome1GiB transfer/save subsequently passed separately; no current full local Chrome/Edge suite claim.",
+    "externalPackageFiles": 19,
+    "nativeWindowsGUI": false,
+    "portablePackageCurrentBundle": "not-requalified",
+    "currentBundleNativeLargeMatrix": "One1GiB same-host Chrome transfer/save case passed; broader matrix not run",
+    "releaseReady": false,
+    "localUnitSourceCommit": "2ffd777e4e43f21edc72d18303607fd5c9477a4f"
+  },
+  "previousHostedCodeGateBeforeRateFix": {
+    "record": "release-evidence/local-candidate-recovery-hosted-2026-10-22.json",
+    "sourceCommit": "857d9b0f0261a53fba118923cc5256fdf15a730b",
+    "runId": 39713813101,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39713813101",
+    "node": "v24.21.0",
+    "unitPassed": 542,
+    "browserPassed": 100,
+    "externalPackageFiles": 19,
+    "releaseReady": false
+  },
+  "rateWindowGapEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/rate-window-gap-2026-10-22-8c97bb75/REVIEW.json",
+    "bytes": 6376,
+    "sha256": "415d044cba5d32a4197a58065fef2ec42a7df9dd48812e3b217302baa5df9580",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/rate-window-gap-2026-10-22-8c97bb75/CLOSURE-HASHES.json",
+      "bytes": 23128,
+      "sha256": "1defa11ee2f3b5be929d3cc77e83d5ac43a0c4a1f879ed98d2ae1db09224de08"
+    },
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/rate-window-gap-2026-10-22-8c97bb75/CURRENT-INPUTS.json",
+      "bytes": 29380,
+      "sha256": "0587d832cf935f31f1d7d39629d346971826711e7152c10879c6247575aa2f28"
+    },
+    "sourceCommit": "94927b0cf152616e67c5066a68f247da67eeaaa2",
+    "unitPassed": 549,
+    "unitFiles": 56,
+    "localChromeMetricCases": 1,
+    "localEdgeMetricCases": 1,
+    "reviewPending": 274,
+    "mapped": {
+      "id": "L16",
+      "scope": "Fixed stale rate baselines after sampling gaps exceeding the one-second or five-second window. Deterministic tests prove reset and recovery; the existing 12 MiB metrics workflow passes in Chrome and Edge for pause, byte totals, ETA clearing, elapsed time and verification. Actual sleep/wake, physical-network rate accuracy and broader telemetry acceptance remain unverified."
+    },
     "releaseReady": false
   }
 }

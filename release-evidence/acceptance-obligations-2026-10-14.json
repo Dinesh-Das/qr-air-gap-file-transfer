@@ -287,8 +287,12 @@
       "section": "",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "release-evidence/rate-window-gap-fix-2026-10-22.json"
+      ],
+      "complete": false,
+      "scope": "Fixed stale rate baselines after sampling gaps exceeding the one-second or five-second window. Deterministic tests prove reset and recovery; the existing 12 MiB metrics workflow passes in Chrome and Edge for pause, byte totals, ETA clearing, elapsed time and verification. Actual sleep/wake, physical-network rate accuracy and broader telemetry acceptance remain unverified."
     },
     {
       "id": "L17",
@@ -10321,5 +10325,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-22T14:00:12.985Z"
+  "updatedAt": "2026-10-22T14:10:05.449Z"
 }
