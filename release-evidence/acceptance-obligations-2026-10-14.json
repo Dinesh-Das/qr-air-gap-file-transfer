@@ -1446,10 +1446,11 @@
       "kind": "list-item",
       "status": "partial",
       "evidence": [
-        "release-evidence/metadata-size-bound-fix-2026-10-22.json"
+        "release-evidence/metadata-size-bound-fix-2026-10-22.json",
+        "release-evidence/metadata-path-bound-fix-2026-10-22.json"
       ],
       "complete": false,
-      "scope": "One computational-amplification boundary reviewed: unsupported untrusted decimal file sizes are rejected before arbitrary-precision conversion. Tests observe zero BigInt calls forMAX_SAFE+1 and1024digits; zero andMAX_SAFE remain exact. Does not prove all CPU/RAM/disk exhaustion paths or a32MiB worst-case timing/resource result."
+      "scope": "One computational-amplification boundary reviewed: unsupported untrusted decimal file sizes are rejected before arbitrary-precision conversion. Tests observe zero BigInt calls forMAX_SAFE+1 and1024digits; zero andMAX_SAFE remain exact. Does not prove all CPU/RAM/disk exhaustion paths or a32MiB worst-case timing/resource result. Oversized QRF3 file/directory paths and shared portable root names now fail a conservative character-count precheck before generic splitting/UTF-8 conversion. Three observed encoding regressions pass after the guard; ASCII and multibyte4096-byte path/255-byte root boundaries and byte+1 rejections remain exact. This is finite field-budget coverage, not worst-case32MiB timing/native RAM or all metadata attack paths."
     },
     {
       "id": "L173",
@@ -8065,10 +8066,11 @@
       "status": "partial",
       "evidence": [
         "release-evidence/large-tree-hard-limits-2026-10-22.json",
-        "release-evidence/metadata-size-bound-fix-2026-10-22.json"
+        "release-evidence/metadata-size-bound-fix-2026-10-22.json",
+        "release-evidence/metadata-path-bound-fix-2026-10-22.json"
       ],
       "complete": false,
-      "scope": "QRF3 byte boundary:32MiB+1 rejected before TextDecoder/JSON.parse; exactly32MiB valid JSON reaches canonical validation and rejects padding. Does not claim acceptance of a canonical32MiB tree, full metadata attack coverage, memory-scaling or physical transfers. In addition to existing metadata entry/byte-boundary evidence, file-size decimal syntax and safe-integer range are now checked before BigInt. Existing accepted numeric range/metadata limits/wire format are unchanged; broad metadata attack/resource coverage remains open."
+      "scope": "QRF3 byte boundary:32MiB+1 rejected before TextDecoder/JSON.parse; exactly32MiB valid JSON reaches canonical validation and rejects padding. Does not claim acceptance of a canonical32MiB tree, full metadata attack coverage, memory-scaling or physical transfers. In addition to existing metadata entry/byte-boundary evidence, file-size decimal syntax and safe-integer range are now checked before BigInt. Existing accepted numeric range/metadata limits/wire format are unchanged; broad metadata attack/resource coverage remains open. Oversized QRF3 file/directory paths and shared portable root names now fail a conservative character-count precheck before generic splitting/UTF-8 conversion. Three observed encoding regressions pass after the guard; ASCII and multibyte4096-byte path/255-byte root boundaries and byte+1 rejections remain exact. This is finite field-budget coverage, not worst-case32MiB timing/native RAM or all metadata attack paths."
     },
     {
       "id": "L950",
@@ -10346,5 +10348,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-22T15:15:38.949Z"
+  "updatedAt": "2026-10-22T15:36:00.232Z"
 }

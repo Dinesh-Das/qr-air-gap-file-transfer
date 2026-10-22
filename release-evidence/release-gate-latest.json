@@ -1,29 +1,28 @@
 {
-  "recordedAt": "2026-10-22T15:15:39.850Z",
+  "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-22",
-  "status": "Untrusted decimal size parsing bounded before BigInt;555 local units, targeted browser cases and current19/22-file package checks pass. Full new-bundle and physical/resource gates remain open.",
+  "status": "Oversized portable paths/root names rejected before generic UTF8 processing;560 local units, targeted browser cases and new19/22-file candidate checks pass. Full current-bundle and physical/resource gates remain open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
-    "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/REVIEW.json",
-    "bytes": 4483,
-    "sha256": "daf78b15edcda5fb40ee3701653395c18102e130a685c5579ec4de29a70848ba",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/REVIEW.json",
+    "bytes": 3897,
+    "sha256": "ffc99cd51685b0f1017d5c80bd7403c0a90b2953ef4947ac319495969d8d60e6",
     "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/CLOSURE-HASHES.json",
-      "bytes": 29490,
-      "sha256": "594e3928195483033c7ced80f265912a866abc9948f073b1cc1a2963f9c2798d"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/CLOSURE-HASHES.json",
+      "bytes": 30254,
+      "sha256": "36f057a83255931e4941509375ffac1cb703fe23383134369c6dc18187855e5e"
     },
     "currentInputs": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/CURRENT-INPUTS.json",
+      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/CURRENT-INPUTS.json",
       "bytes": 29523,
-      "sha256": "de133a1f86965513f8bbadb1b14984bde5c0ad010aebfbad8cf054806e1dbaa4"
+      "sha256": "647465215c4644e39d7d8ffadbeb6a621e8f13cb7a11322f80fba086a52633be"
     },
-    "sourceCommit": "aaece571b81e98e6c85344571374ccd471892426",
-    "unitPassed": 555,
+    "sourceCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
+    "unitPassed": 560,
     "unitFiles": 57,
     "localChromeTargetedCases": 2,
     "localEdgeTargetedCases": 2,
-    "reviewPending": 269,
     "releaseReady": false
   },
   "previousCheckpoint": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/CANONICAL-BEFORE.json",
@@ -56,10 +55,10 @@
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
   },
   "qualification": {
-    "sourceCommit": "aaece571b81e98e6c85344571374ccd471892426",
+    "sourceCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
     "localNode": "v24.22.0",
     "typecheck": 0,
-    "unitPassed": 555,
+    "unitPassed": 560,
     "unitFiles": 57,
     "build": 0,
     "localChromeTargetedCases": 2,
@@ -68,7 +67,7 @@
     "fullHostedCurrentBundle": "not-yet-observed",
     "externalPackageFiles": 19,
     "portablePackageFiles": 22,
-    "packageScope": "Local manifest/HTTP/runtime/launcher-module smoke; injected browser observer.",
+    "packageScope": "Local manifest/HTTP/runtime/launcher-MODULE smoke; injected browser observer.",
     "nativeWindowsGUI": false,
     "currentBundleNativeLargeMatrix": "not-run",
     "releaseReady": false
@@ -78,7 +77,7 @@
     {
       "path": "dist/index.html",
       "bytes": 903,
-      "sha256": "1802a30b7713d661d89b84ceab15cef75787b29e86c6ee5398e62eb65620d1af"
+      "sha256": "4598f8df3f389039d0699ff741953af07bd2d68dc30eb38648a3b6042a360a4b"
     },
     {
       "path": "dist/assets/block-store.worker-DVHZPZQe.js",
@@ -86,14 +85,14 @@
       "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
     },
     {
+      "path": "dist/assets/index-BBeDJSZZ.js",
+      "bytes": 557138,
+      "sha256": "2064311973bab625ab4776535f75d81460d46844d4e6cd783df7da9b533ba82c"
+    },
+    {
       "path": "dist/assets/index-C5foWVjs.css",
       "bytes": 26260,
       "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
-    },
-    {
-      "path": "dist/assets/index-Lfe7KZ2g.js",
-      "bytes": 556962,
-      "sha256": "10b75a68e1c9c07d291bc2ba08bc85d48fd3870e397d3e1caeab9ff580ec0477"
     },
     {
       "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
@@ -334,7 +333,7 @@
   "updatedAt": "2026-10-22T03:23:43.3668263Z",
   "currentInputsScope": "Current original177-path input set plus tests/free-signal-port.d.mts; exact current bytes captured in hosted candidate-fix CURRENT-INPUTS.json. Application error handling changed; previous native/bundle qualifications remain scoped to their older source snapshots.",
   "hostedCodeGate": {
-    "sourceCommit": "aaece571b81e98e6c85344571374ccd471892426",
+    "sourceCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
     "status": "not-yet-observed",
     "releaseReady": false
   },
@@ -772,26 +771,26 @@
   },
   "currentPackageQualificationEvidence": {
     "schema": "qrft-external-evidence-v1",
-    "path": "C:/Users/dines/QRFT-qualification-evidence/current-package-qualification-2026-10-22-Irs8kr/REVIEW.json",
-    "bytes": 6571,
-    "sha256": "430e617d6c2ff05b7b63ebc4a50aae7596040f464a69fdfe44e50ec057923107",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-package-qualification-2026-10-22-AvfyCQ/REVIEW.json",
+    "bytes": 6663,
+    "sha256": "23b806ff93d4c33e01e9189dc32c03ddaa79e724c1dfc9a851f3d03656f0a72f",
     "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/CLOSURE-HASHES.json",
-      "bytes": 29490,
-      "sha256": "594e3928195483033c7ced80f265912a866abc9948f073b1cc1a2963f9c2798d"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/CLOSURE-HASHES.json",
+      "bytes": 30254,
+      "sha256": "36f057a83255931e4941509375ffac1cb703fe23383134369c6dc18187855e5e"
     },
-    "sourceCommit": "aaece571b81e98e6c85344571374ccd471892426",
-    "candidates": "C:/Users/dines/QRFT-release-candidates/current-lfe7-2026-10-22-oplcqj",
+    "sourceCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
+    "candidates": "C:/Users/dines/QRFT-release-candidates/current-path-guards-2026-10-22-SZW5U9",
     "externalFiles": 19,
     "portableFiles": 22,
-    "clientBundle": "index-Lfe7KZ2g.js",
+    "clientBundle": "index-BBeDJSZZ.js",
     "nativeWindowsGUI": false,
     "releaseReady": false
   },
   "currentInputSnapshot": {
-    "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/CURRENT-INPUTS.json",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/CURRENT-INPUTS.json",
     "bytes": 29523,
-    "sha256": "de133a1f86965513f8bbadb1b14984bde5c0ad010aebfbad8cf054806e1dbaa4"
+    "sha256": "647465215c4644e39d7d8ffadbeb6a621e8f13cb7a11322f80fba086a52633be"
   },
   "previousPrimaryEvidenceBeforeMetadataSizeFix": {
     "schema": "qrft-external-evidence-v1",
@@ -945,6 +944,92 @@
     "externalFiles": 19,
     "portableFiles": 22,
     "clientBundle": "index-5AkHKgIQ.js",
+    "nativeWindowsGUI": false,
+    "releaseReady": false
+  },
+  "previousPrimaryEvidenceBeforeMetadataPathFix": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/REVIEW.json",
+    "bytes": 4483,
+    "sha256": "daf78b15edcda5fb40ee3701653395c18102e130a685c5579ec4de29a70848ba",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/CLOSURE-HASHES.json",
+      "bytes": 29490,
+      "sha256": "594e3928195483033c7ced80f265912a866abc9948f073b1cc1a2963f9c2798d"
+    },
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/CURRENT-INPUTS.json",
+      "bytes": 29523,
+      "sha256": "de133a1f86965513f8bbadb1b14984bde5c0ad010aebfbad8cf054806e1dbaa4"
+    },
+    "sourceCommit": "aaece571b81e98e6c85344571374ccd471892426",
+    "unitPassed": 555,
+    "unitFiles": 57,
+    "localChromeTargetedCases": 2,
+    "localEdgeTargetedCases": 2,
+    "reviewPending": 269,
+    "releaseReady": false
+  },
+  "metadataPathBoundEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/REVIEW.json",
+    "bytes": 3897,
+    "sha256": "ffc99cd51685b0f1017d5c80bd7403c0a90b2953ef4947ac319495969d8d60e6",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/CLOSURE-HASHES.json",
+      "bytes": 30254,
+      "sha256": "36f057a83255931e4941509375ffac1cb703fe23383134369c6dc18187855e5e"
+    },
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/CURRENT-INPUTS.json",
+      "bytes": 29523,
+      "sha256": "647465215c4644e39d7d8ffadbeb6a621e8f13cb7a11322f80fba086a52633be"
+    },
+    "sourceCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
+    "unitPassed": 560,
+    "unitFiles": 57,
+    "localChromeTargetedCases": 2,
+    "localEdgeTargetedCases": 2,
+    "releaseReady": false
+  },
+  "previousQualificationBeforeMetadataPathFix": {
+    "sourceCommit": "aaece571b81e98e6c85344571374ccd471892426",
+    "localNode": "v24.22.0",
+    "typecheck": 0,
+    "unitPassed": 555,
+    "unitFiles": 57,
+    "build": 0,
+    "localChromeTargetedCases": 2,
+    "localEdgeTargetedCases": 2,
+    "fullLocalCurrentBundle": "not-run",
+    "fullHostedCurrentBundle": "not-yet-observed",
+    "externalPackageFiles": 19,
+    "portablePackageFiles": 22,
+    "packageScope": "Local manifest/HTTP/runtime/launcher-module smoke; injected browser observer.",
+    "nativeWindowsGUI": false,
+    "currentBundleNativeLargeMatrix": "not-run",
+    "releaseReady": false
+  },
+  "previousHostedCodeGateBeforeMetadataPathFix": {
+    "sourceCommit": "aaece571b81e98e6c85344571374ccd471892426",
+    "status": "not-yet-observed",
+    "releaseReady": false
+  },
+  "previousPackageQualificationBeforeMetadataPathFix": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-package-qualification-2026-10-22-Irs8kr/REVIEW.json",
+    "bytes": 6571,
+    "sha256": "430e617d6c2ff05b7b63ebc4a50aae7596040f464a69fdfe44e50ec057923107",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/CLOSURE-HASHES.json",
+      "bytes": 29490,
+      "sha256": "594e3928195483033c7ced80f265912a866abc9948f073b1cc1a2963f9c2798d"
+    },
+    "sourceCommit": "aaece571b81e98e6c85344571374ccd471892426",
+    "candidates": "C:/Users/dines/QRFT-release-candidates/current-lfe7-2026-10-22-oplcqj",
+    "externalFiles": 19,
+    "portableFiles": 22,
+    "clientBundle": "index-Lfe7KZ2g.js",
     "nativeWindowsGUI": false,
     "releaseReady": false
   }
