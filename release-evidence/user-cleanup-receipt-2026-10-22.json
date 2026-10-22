@@ -1,0 +1,30 @@
+{
+  "schema": "qrft-cleanup-receipt-v1",
+  "sourceCommit": "d428490e6db2c2edc6e4e3b9f1ddcf1893959386",
+  "stateBefore": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-request-2026-10-22-351a4f2a\\STATE-BEFORE.json",
+    "bytes": 447,
+    "sha256": "b668ac456fc69968f3b8768d5c60f9b67941f0fd4f181353c3a6290e0a7630ba"
+  },
+  "trackedHashes": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-request-2026-10-22-351a4f2a\\TRACKED-HASHES-BEFORE.json",
+    "bytes": 313026,
+    "sha256": "61c822bedc3b746891de5f6d81964592e44bfa30703f8533d4bef594459a3942"
+  },
+  "retirementInventory": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-request-2026-10-22-351a4f2a\\cache-pass-2\\CACHE-RETIREMENT-BEFORE.json",
+    "bytes": 550297,
+    "sha256": "798e3056c4661b51af84b79ab4c00f21cbaceb30e55c4eee1b4fad221875b026"
+  },
+  "result": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\cleanup-request-2026-10-22-351a4f2a\\cache-pass-2\\RESULT.json",
+    "bytes": 480,
+    "sha256": "cc07aefdcec3706835f416ca4eae78c7a45ded676b1a1b026170f70db37bd3ef"
+  },
+  "removedCacheDirectories": 282,
+  "removedCacheFiles": 1509,
+  "logicalBytesRemoved": 415978631,
+  "trackedFilesVerified": 1829,
+  "note": "Only disposable caches in owned test browser profiles removed. Previous inventories of these cache paths are historical; reports, fixtures, OPFS and saved payloads remain. No new benchmark started.",
+  "releaseReady": false
+}
