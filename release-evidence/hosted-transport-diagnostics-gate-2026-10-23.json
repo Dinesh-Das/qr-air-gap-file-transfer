@@ -1,0 +1,27 @@
+{
+  "schema": "qrft-hosted-gate-observation-v1",
+  "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39845580887",
+  "sourceCommit": "10948bcc859002bcde4a67077e6ebb3b0c012465",
+  "status": "completed",
+  "conclusion": "success",
+  "node": "v24.21.0",
+  "unitPassed": 563,
+  "unitFiles": 58,
+  "browserPassed": 101,
+  "browser": "Bundled Chromium on hosted Windows",
+  "externalPackageFiles": 19,
+  "fetchedAssets": 5,
+  "runMetadata": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/HOSTED-RUN.json",
+    "bytes": 2259,
+    "sha256": "e76be10baec7223570e1ae8f6c8ae6306a8b00685022e7da48dda57f1ebbb0ce"
+  },
+  "runLog": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/HOSTED-RUN.log",
+    "bytes": 63643,
+    "sha256": "222743d85c5aa2ec91e62e96af6a1fb86f97a332e2bb6f417b1a15dd206a89d5"
+  },
+  "artifactArchiveDownloaded": false,
+  "scope": "Retained full log/job API observed. Fresh install/typecheck/unit/build/browser/package-MODULE smoke, injected handoff. Not actual GUI/OS-picker/portable cleanOS/physical or resource acceptance.",
+  "releaseReady": false
+}
