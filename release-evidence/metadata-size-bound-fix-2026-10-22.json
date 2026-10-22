@@ -1,0 +1,23 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/REVIEW.json",
+  "bytes": 4483,
+  "sha256": "daf78b15edcda5fb40ee3701653395c18102e130a685c5579ec4de29a70848ba",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/CLOSURE-HASHES.json",
+    "bytes": 29490,
+    "sha256": "594e3928195483033c7ced80f265912a866abc9948f073b1cc1a2963f9c2798d"
+  },
+  "currentInputs": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-size-bound-2026-10-22-4c0a8749/CURRENT-INPUTS.json",
+    "bytes": 29523,
+    "sha256": "de133a1f86965513f8bbadb1b14984bde5c0ad010aebfbad8cf054806e1dbaa4"
+  },
+  "sourceCommit": "aaece571b81e98e6c85344571374ccd471892426",
+  "unitPassed": 555,
+  "unitFiles": 57,
+  "localChromeTargetedCases": 2,
+  "localEdgeTargetedCases": 2,
+  "reviewPending": 269,
+  "releaseReady": false
+}

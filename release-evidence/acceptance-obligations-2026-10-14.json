@@ -1444,8 +1444,12 @@
       "section": "FIRST REQUIREMENT: PERFORM A REAL ARCHITECTURAL AUDIT",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "release-evidence/metadata-size-bound-fix-2026-10-22.json"
+      ],
+      "complete": false,
+      "scope": "One computational-amplification boundary reviewed: unsupported untrusted decimal file sizes are rejected before arbitrary-precision conversion. Tests observe zero BigInt calls forMAX_SAFE+1 and1024digits; zero andMAX_SAFE remain exact. Does not prove all CPU/RAM/disk exhaustion paths or a32MiB worst-case timing/resource result."
     },
     {
       "id": "L173",
@@ -8060,10 +8064,11 @@
       "kind": "list-item",
       "status": "partial",
       "evidence": [
-        "release-evidence/large-tree-hard-limits-2026-10-22.json"
+        "release-evidence/large-tree-hard-limits-2026-10-22.json",
+        "release-evidence/metadata-size-bound-fix-2026-10-22.json"
       ],
       "complete": false,
-      "scope": "QRF3 byte boundary:32MiB+1 rejected before TextDecoder/JSON.parse; exactly32MiB valid JSON reaches canonical validation and rejects padding. Does not claim acceptance of a canonical32MiB tree, full metadata attack coverage, memory-scaling or physical transfers."
+      "scope": "QRF3 byte boundary:32MiB+1 rejected before TextDecoder/JSON.parse; exactly32MiB valid JSON reaches canonical validation and rejects padding. Does not claim acceptance of a canonical32MiB tree, full metadata attack coverage, memory-scaling or physical transfers. In addition to existing metadata entry/byte-boundary evidence, file-size decimal syntax and safe-integer range are now checked before BigInt. Existing accepted numeric range/metadata limits/wire format are unchanged; broad metadata attack/resource coverage remains open."
     },
     {
       "id": "L950",
@@ -10341,5 +10346,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-22T14:47:35.761Z"
+  "updatedAt": "2026-10-22T15:15:38.949Z"
 }
