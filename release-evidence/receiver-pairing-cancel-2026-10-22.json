@@ -1,0 +1,27 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/receiver-pairing-cancel-2026-10-22-8dae3709/REVIEW.json",
+  "bytes": 5258,
+  "sha256": "8b2b61697e15067ae1f79f2fc32e32adb86090277bdf77ec6e0032c091b37ae4",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/receiver-pairing-cancel-2026-10-22-8dae3709/CLOSURE-HASHES.json",
+    "bytes": 18892,
+    "sha256": "004449660737fe27615dccc730fdbecc598076e432805da0626fa94cc14654b6"
+  },
+  "currentInputs": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/receiver-pairing-cancel-2026-10-22-8dae3709/CURRENT-INPUTS.json",
+    "bytes": 29380,
+    "sha256": "965d94426362a65e1e88ac99093de556b1da76b188cb08aed3c0c0cf3d4e2de8"
+  },
+  "sourceCommit": "1b717a5eb614ae2fab818db9afec2ca20592f179",
+  "productionChanged": false,
+  "localChromeCases": 1,
+  "localEdgeCases": 1,
+  "negativeControls": 1,
+  "reviewPending": 273,
+  "mapped": {
+    "id": "L857",
+    "scope": "Receiver Stop and reconnect during device verification, after sender-only consent: native peer/channel close, zero file payload or manifest, fresh pairing requires renewed sender consent, and the resulting 120,000-byte save matches SHA256. Chrome and Edge pass; injected no-op native close methods fail the closed-state assertion. This finite stage does not qualify cancellation during discovery, physical network interruption or OS sleep/wake."
+  },
+  "releaseReady": false
+}

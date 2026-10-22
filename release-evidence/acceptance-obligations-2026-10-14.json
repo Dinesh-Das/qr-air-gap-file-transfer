@@ -7096,8 +7096,12 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Pairing",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "release-evidence/receiver-pairing-cancel-2026-10-22.json"
+      ],
+      "complete": false,
+      "scope": "Receiver Stop and reconnect during device verification, after sender-only consent: native peer/channel close, zero file payload or manifest, fresh pairing requires renewed sender consent, and the resulting 120,000-byte save matches SHA256. Chrome and Edge pass; injected no-op native close methods fail the closed-state assertion. This finite stage does not qualify cancellation during discovery, physical network interruption or OS sleep/wake."
     },
     {
       "id": "L859",
@@ -10325,5 +10329,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-22T14:10:05.449Z"
+  "updatedAt": "2026-10-22T14:17:49.287Z"
 }
