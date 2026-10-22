@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-22T14:48:48.198Z",
+  "recordedAt": "2026-10-22T15:02:10.526Z",
   "clientDate": "2026-10-22",
-  "status": "Current5Ak bundle passes101 cases each in installed Chrome/Edge; hosted551 units/101 cases/19-file package smoke pass. Physical and remaining release gates stay open.",
+  "status": "Screenshot output isolated and current19/22-file candidates verified. Prior full101-case/software gates retain exact source scope; physical/resource/nativeGUI gates remain open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -73,12 +73,16 @@
     "hostedBrowserPassed": 101,
     "hostedBrowserScope": "Workflow-installed bundled Chromium",
     "externalPackageFiles": 19,
-    "externalPackageSourceCommit": "af70f22793365d1b76e27435907caa08072b540c",
+    "externalPackageSourceCommit": "c3bca6ef2149d17a91a816301f129a4e16d61aae",
     "nativeWindowsGUI": false,
-    "portablePackageCurrentBundle": "not-requalified",
+    "portablePackageCurrentBundle": "22-file current5Ak candidate passes manifest/HTTP/runtime/launcher-module checks; actualGUI/cleanOS/physical gates open",
     "currentBundleNativeLargeMatrix": "not-run",
     "observerFailureRootCause": "unresolved; preserved failed run39793469351 and unchanged-observer success39794502827",
-    "releaseReady": false
+    "releaseReady": false,
+    "testArtifactSourceCommit": "c3bca6ef2149d17a91a816301f129a4e16d61aae",
+    "testArtifactScope": "Only screenshot outputPath changed after full101-case baseline; affected3cases per channel pass, no assertion/body/deadline change.",
+    "portablePackageSourceCommit": "c3bca6ef2149d17a91a816301f129a4e16d61aae",
+    "externalPackageCurrentBundle": "19-file current5Ak candidate passes local manifest/HTTP/runtime/launcher-module checks"
   },
   "currentInputs": 181,
   "currentAssets": [
@@ -812,5 +816,49 @@
     "sha256": "796d6b1115122918ddb4a18517e7f2ddfbac17047c4ed7ea24a8706b0642bcc7",
     "restoredOriginal": true,
     "releaseReady": false
+  },
+  "screenshotOutputIsolationEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/screenshot-output-isolation-2026-10-22-59a36a08/REVIEW.json",
+    "bytes": 4652,
+    "sha256": "9a83fabe66d814e436664235e5dcf24cbe73e7d18cc357237e683bb2bd86ae44",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/screenshot-output-isolation-2026-10-22-59a36a08/CLOSURE-HASHES.json",
+      "bytes": 2041410,
+      "sha256": "afe9f45c9fd76ad3e6967dde7cf876c3bebc4075a5163b81f636ad2b23900e2b"
+    },
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/screenshot-output-isolation-2026-10-22-59a36a08/CURRENT-INPUTS.json",
+      "bytes": 29672,
+      "sha256": "b39be2f66e2f7511ace5080af546aa06892a00aca0741d5daeaf1c63b7cdc508"
+    },
+    "sourceCommit": "c3bca6ef2149d17a91a816301f129a4e16d61aae",
+    "localChromeAffectedCases": 3,
+    "localEdgeAffectedCases": 3,
+    "productionBundleChanged": false,
+    "releaseReady": false
+  },
+  "currentPackageQualificationEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-package-qualification-2026-10-22-ZzsViZ/REVIEW.json",
+    "bytes": 7247,
+    "sha256": "3fc68409ad1d036e1196caa71c75ee39b254407b93969aaca04a26d4194edeb9",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/screenshot-output-isolation-2026-10-22-59a36a08/CLOSURE-HASHES.json",
+      "bytes": 2041410,
+      "sha256": "afe9f45c9fd76ad3e6967dde7cf876c3bebc4075a5163b81f636ad2b23900e2b"
+    },
+    "sourceCommit": "c3bca6ef2149d17a91a816301f129a4e16d61aae",
+    "candidates": "C:/Users/dines/QRFT-release-candidates/current-5ak-2026-10-22-gakGol",
+    "externalFiles": 19,
+    "portableFiles": 22,
+    "clientBundle": "index-5AkHKgIQ.js",
+    "nativeWindowsGUI": false,
+    "releaseReady": false
+  },
+  "currentInputSnapshot": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/screenshot-output-isolation-2026-10-22-59a36a08/CURRENT-INPUTS.json",
+    "bytes": 29672,
+    "sha256": "b39be2f66e2f7511ace5080af546aa06892a00aca0741d5daeaf1c63b7cdc508"
   }
 }

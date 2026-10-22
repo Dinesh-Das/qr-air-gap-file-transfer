@@ -1,0 +1,18 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/current-package-qualification-2026-10-22-ZzsViZ/REVIEW.json",
+  "bytes": 7247,
+  "sha256": "3fc68409ad1d036e1196caa71c75ee39b254407b93969aaca04a26d4194edeb9",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/screenshot-output-isolation-2026-10-22-59a36a08/CLOSURE-HASHES.json",
+    "bytes": 2041410,
+    "sha256": "afe9f45c9fd76ad3e6967dde7cf876c3bebc4075a5163b81f636ad2b23900e2b"
+  },
+  "sourceCommit": "c3bca6ef2149d17a91a816301f129a4e16d61aae",
+  "candidates": "C:/Users/dines/QRFT-release-candidates/current-5ak-2026-10-22-gakGol",
+  "externalFiles": 19,
+  "portableFiles": 22,
+  "clientBundle": "index-5AkHKgIQ.js",
+  "nativeWindowsGUI": false,
+  "releaseReady": false
+}
