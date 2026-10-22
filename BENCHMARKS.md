@@ -1,7 +1,37 @@
 # Transfer benchmark evidence
 
-Status: performance acceptance is incomplete. These are single-machine synthetic
-measurements, not Wi-Fi/LAN throughput claims.
+Status: performance acceptance is incomplete. Evidence below includes both
+synthetic diagnostics and real disk-backed files on one host. These are not
+Wi-Fi/LAN throughput claims.
+
+## Current path-guard bundle: native 1 GiB UI trial, 2026-10-23
+
+At source `8911cd6` (application fix `47e34b5`, main asset
+`index-BBeDJSZZ.js`), one real disk-backed 1 GiB file passed production UI
+pairing, same-host WebRTC receive, verification, and save. Receive and save
+milestones were 64.242 and 91.774 seconds from pairing. These instrumented
+single-case timings do not establish a speed improvement or physical throughput.
+
+Both the trial and a separate verifier compared every original byte with the
+retained incoming and saved copies. File/stream hashes, actual metadata/footer,
+and all 17,477 unique acknowledged block indices passed. All 94 native memory
+samples covered every reported browser PID, with no missing IDs. Peak summed
+private bytes were 482,496,512 for sender and 532,410,368 for receiver; peak summed
+working sets were 810,815,488 and 880,660,480. Working sets can double-count shared
+pages, and periodic sampling can miss peaks. No general memory bound is proved.
+
+The parent guard's 104 disk readings stayed above the unchanged 2 GiB reserve;
+minimum free C: was 4,603,949,056 bytes. Installed headless Chrome 155.0.8059.85
+and pinned Node 24.22.0 were used. Picker adapters were injected and destination
+save used OPFS. Receive-store deletion was deliberately denied to retain both
+copies; the expected cleanup-required UI appeared. This is not an actual OS
+picker/native destination, Edge, clean-OS, physical Wi-Fi, incompressible-data,
+or multi-size resource qualification. Earlier observer failures stay unresolved.
+
+The [evidence pointer](release-evidence/current-native-1gib-path-guards-2026-10-23.json)
+records review/raw/closure hashes and scopes. All 477 closure files were hashed
+twice after writers stopped. The first harness launch failed before browser
+startup on an incorrect prior-plan path; its logs remain retained separately.
 
 ## Storage context lifecycle diagnostic, 2026-10-14
 

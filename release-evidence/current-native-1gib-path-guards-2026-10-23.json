@@ -1,0 +1,96 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "review": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/REVIEW.json",
+    "bytes": 3617,
+    "sha256": "2bfa903b035854c35260f7a723128a41bb333444864355e6ef31b24ee6d2e90d"
+  },
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/CLOSURE-HASHES.json",
+    "bytes": 134566,
+    "sha256": "873a7809c8de94047d50737c18071c9e80d97349004d102a25e9eeb61d040fae"
+  },
+  "raw": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/RAW.json",
+    "bytes": 505724,
+    "sha256": "c842cf0874dfbcbbee455754b530d278112d7432dc9c7aed4e5b25840a985c4e"
+  },
+  "assessment": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/ASSESSMENT.md",
+    "bytes": 3217,
+    "sha256": "d9c8f302941b88373e0ef1ad599e187fabcf82ee00554388d4b43955d3626ec0"
+  },
+  "sourceCommit": "8911cd6c8fa57f9bb5349da5fd3f7e9ec83a5802",
+  "applicationFixCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
+  "currentAssets": [
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "4598f8df3f389039d0699ff741953af07bd2d68dc30eb38648a3b6042a360a4b"
+    },
+    {
+      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+      "bytes": 2402,
+      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+    },
+    {
+      "path": "dist/assets/index-BBeDJSZZ.js",
+      "bytes": 557138,
+      "sha256": "2064311973bab625ab4776535f75d81460d46844d4e6cd783df7da9b533ba82c"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    }
+  ],
+  "functionalPassed": true,
+  "nativeComplete": true,
+  "sampledReserveMet": true,
+  "fileBytes": 1073741824,
+  "everyByteComparedAgain": 1073741824,
+  "receivedVerifiedMs": 64242,
+  "savedVerifiedMs": 91774,
+  "acknowledgedUniqueIndices": 17477,
+  "ackMessages": 312,
+  "nativeSamples": 94,
+  "missingSamples": 0,
+  "peakMemory": {
+    "sender": {
+      "samples": 47,
+      "peakPrivateBytes": 482496512,
+      "peakWorkingSetBytes": 810815488,
+      "phases": {
+        "startup": 1,
+        "preparing-and-pairing": 13,
+        "receiving": 18,
+        "received-verified": 1,
+        "saving": 13,
+        "saved-with-copy-retained": 1
+      }
+    },
+    "receiver": {
+      "samples": 47,
+      "peakPrivateBytes": 532410368,
+      "peakWorkingSetBytes": 880660480,
+      "phases": {
+        "startup": 1,
+        "preparing-and-pairing": 13,
+        "receiving": 18,
+        "received-verified": 1,
+        "saving": 13,
+        "saved-with-copy-retained": 1
+      }
+    }
+  },
+  "parentMinFreeBytes": 4603949056,
+  "closureFiles": 477,
+  "closureLogicalBytes": 2180981053,
+  "scope": "Single retained real native 1GiB source through exact production UI/assets, real same-host rendezvous and WebRTC, durable OPFS then injected OPFS save. Separate verifier re-read every byte of original/incoming/saved files and parsed actual metadata/footer. Installed headless Chrome, mocked pickers, receive-store deletion intentionally denied to retain copy. Not a synthetic-slice/raw-channel comparison, random-data claim, actual OS picker, physical Wi-Fi, clean OS, multi-size/browser resource matrix, or general memory bound. Periodic working-set sums may double-count shared pages and miss peaks; observer overhead affects elapsed times. Earlier invalid measurements remain invalid.",
+  "releaseReady": false
+}
