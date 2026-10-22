@@ -7,8 +7,14 @@ import { OFFLINE_BLOCK_BYTES, OFFLINE_DATA_HEADER_BYTES, createOfflineTransferMa
 import { waitForIceGatheringComplete, limitSdpToLocalCandidates } from "../src/lib/webrtc-signaling.ts";
 import { connectionPath } from "../src/lib/connection-path.ts";
 import { createBenchmarkPatternReader } from "./benchmark-pattern.mjs";
+import { benchmarkTransportSnapshot } from "./benchmark-transport.mjs";
 
 let state;
+function markEvent(event) {
+  if (state.timeline.length >= 24) throw new Error("Unexpected benchmark phase count.");
+  state.timeline.push({ event, epochMs: Date.now(), monotonicMs: performance.now() });
+}
+function phase(value) { state.phase = value; markEvent(value); }
 const rawValue = 37;
 const metric = (key, ms, bytes = 0) => {
   const item = state.operations[key] ??= { calls: 0, ms: 0, bytes: 0 };
@@ -32,7 +38,8 @@ function init(options, role) {
   if (state) throw new Error("Each benchmark page may run only one trial.");
   state = { ...options, role, operations: {}, controls: {}, heapByPhase: {}, binaryMessages: 0, binaryBytes: 0,
     peakChannelBufferedBytes: 0, peakJsHeapBytes: null, phase: "setup", receivedBytes: 0,
-    controller: new AbortController(), startedAt: performance.now(), verified: false, finished: false };
+    controller: new AbortController(), startedAt: performance.now(), verified: false, finished: false, timeline: [] };
+  markEvent("setup");
   state.rawAcknowledged = 0;
   state.rawNextIndex = 0;
   // Only counters are retained. No per-message, per-block or per-sample history.
@@ -63,6 +70,7 @@ function finish(error) {
   clearInterval(state.heapTimer);
   sampleHeap();
   state.elapsedMs = performance.now() - state.startedAt;
+  markEvent(error ? "failed" : "finished");
   state.resolve();
 }
 
@@ -119,7 +127,7 @@ function bindChannel(channel) {
           finish();
         } else throw new Error(`Unexpected sender control: ${message.type}`);
       } else if (typeof event.data !== "string") {
-        if (state.receiveStartedAt === undefined) state.phase = "receive";
+        if (state.receiveStartedAt === undefined) phase("receive");
         state.receiveStartedAt ??= performance.now();
         state.binaryMessages++;
         state.binaryBytes += event.data.byteLength;
@@ -167,18 +175,18 @@ export async function setupSender(options) {
   init(options, "sender");
   let manifest = null;
   if (state.mode === "transfer") {
-    state.phase = "scan";
+    phase("scan");
     const begin = performance.now();
     const selection = await collectLargeDirectory(fixtureTree(options.layout));
     state.scanMs = performance.now() - begin;
-    state.phase = "prepare";
+    phase("prepare");
     const prepareStart = performance.now();
     state.source = await prepareLargeSource(selection, (value) => report(Number(value.bytesComplete)), state.controller.signal);
     state.prepareMs = performance.now() - prepareStart;
     manifest = await createOfflineTransferManifest(state.source);
   }
   state.manifest = manifest;
-  state.phase = "connect";
+  phase("connect");
   bindChannel(state.peer.createDataChannel("benchmark", { ordered: true }));
   return { manifest, scanMs: state.scanMs, prepareMs: state.prepareMs, blockSize: OFFLINE_BLOCK_BYTES, dataHeaderBytes: OFFLINE_DATA_HEADER_BYTES };
 }
@@ -321,7 +329,7 @@ export async function transmit() {
     const required = OFFLINE_BLOCK_BYTES + OFFLINE_DATA_HEADER_BYTES;
     const max = state.peer.sctp?.maxMessageSize;
     if (max !== undefined && max !== 0 && max < required) throw new Error("SCTP maximum message size is too small.");
-    state.phase = "transfer";
+    phase("transfer");
     state.nextReport = 128 * 1024 * 1024;
     const begin = performance.now();
     if (state.mode === "transfer") {
@@ -353,6 +361,7 @@ export async function transmit() {
       state.channel.send(encodeOfflineControl({ type: "sender-complete" }));
     }
     state.transferMs = performance.now() - begin;
+    markEvent("payload-acked");
     state.payloadComplete = true;
     // Waiting for receiver-complete is separate from sender enqueue/ACK time.
     await state.result;
@@ -362,18 +371,19 @@ export async function transmit() {
 
 async function completeReceiver() {
   await state.queue.finish();
+  markEvent("payload-durable");
   if (state.mode === "raw") {
     if (state.receivedBytes !== state.bytes) throw new Error("Raw transport byte count mismatch.");
     state.transferMs = state.lastCommitAt - state.receiveStartedAt;
   } else {
     state.transferMs = state.lastCommitAt - state.receiveStartedAt;
-    state.phase = "verify";
+    phase("verify");
     const start = performance.now();
     const reader = await state.receiver.verify(state.controller.signal);
     state.streamVerifyMs = performance.now() - start;
     state.streamVerified = true;
     if (state.saveTree) {
-      state.phase = "destination";
+      phase("destination");
       const tree = await readLargeTreeManifest(reader);
       const parent = await (await navigator.storage.getDirectory()).getDirectoryHandle("benchmark-destination", { create: true });
       const fromHex = (text) => Uint8Array.from(text.match(/../g), (pair) => parseInt(pair, 16));
@@ -383,7 +393,7 @@ async function completeReceiver() {
       }, parent, { signal: state.controller.signal });
       state.destinationSaveMs = performance.now() - begin;
       state.destinationFilesWritten = saved.filesWritten;
-      state.phase = "audit";
+      phase("audit");
       const auditStart = performance.now();
       await auditDestination(await parent.getDirectoryHandle("webrtc-benchmark"));
       state.destinationAuditMs = performance.now() - auditStart;
@@ -432,14 +442,20 @@ async function auditDestination(root) {
 
 export async function result() {
   await state.result;
-  const path = await state.peer.getStats().then(connectionPath).catch(() => ({ protocol: "Unavailable", roundTripMs: null }));
+  let path = { protocol: "Unavailable", roundTripMs: null }, transportStats, transportStatsError;
+  try {
+    const report = await state.peer.getStats();
+    path = connectionPath(report);
+    transportStats = benchmarkTransportSnapshot(report);
+  } catch (error) { transportStatsError = errorText(error); }
   const keys = ["role", "mode", "verified", "error", "corruptionInjected", "scanMs", "prepareMs", "transferMs", "confirmedMs", "elapsedMs",
     "streamVerified", "streamVerifyMs", "destinationSaveMs", "destinationAuditMs", "destinationFilesWritten", "destinationCheckedBytes", "destinationVerified",
-    "binaryMessages", "binaryBytes", "receivedBytes", "ackIndices", "controls", "operations", "peakChannelBufferedBytes", "peakJsHeapBytes", "heapByPhase", "workerProfilerBeforeConsumers"];
+    "binaryMessages", "binaryBytes", "receivedBytes", "ackIndices", "controls", "operations", "peakChannelBufferedBytes", "peakJsHeapBytes", "heapByPhase", "workerProfilerBeforeConsumers", "timeline"];
   return { ...Object.fromEntries(keys.filter((key) => state[key] !== undefined).map((key) => [key, state[key]])),
     nativeDigestAvailable: typeof crypto.subtle?.digest === "function",
     maxMessageSize: state.peer.sctp?.maxMessageSize ?? null, selectedPath: path,
-    peakReceiveQueueBytes: state.queue?.peakBufferedBytes ?? null, userAgent: navigator.userAgent };
+    peakReceiveQueueBytes: state.queue?.peakBufferedBytes ?? null, userAgent: navigator.userAgent,
+    ...(transportStats ? { transportStats } : {}), ...(transportStatsError ? { transportStatsError } : {}) };
 }
 
 export function memoryObservation() {
