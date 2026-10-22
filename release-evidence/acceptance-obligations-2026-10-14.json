@@ -7931,8 +7931,12 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Security",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "release-evidence/signaling-byte-limits-2026-10-22.json"
+      ],
+      "complete": false,
+      "scope": "Loopback HTTP offers and answers accept exactly 49,152 UTF-8 bytes and reject 49,153 bytes for ASCII and multibyte strings. Rejected offers allocate no room; rejected answers preserve the join and waiting room, then a valid answer succeeds. Both bodies stay below the separate HTTP body cap. Synthetic SDP byte fixtures do not prove a native WebRTC handshake or all QR/LAN SDP policy."
     },
     {
       "id": "L942",
@@ -7986,8 +7990,12 @@
       "section": "TESTING REQUIREMENTS",
       "subsection": "Security",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "release-evidence/signaling-byte-limits-2026-10-22.json"
+      ],
+      "complete": false,
+      "scope": "Existing real native UDP arrival test rejects authentic 1,201-byte discovery, then accepts exactly 1,200 bytes with a bounded reply. Removing the receive cap in an isolated copy makes that test fail. Finite discovery cases do not establish every advertisement path or physical network resilience."
     },
     {
       "id": "L946",
@@ -10313,5 +10321,5 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-22T13:53:32.517Z"
+  "updatedAt": "2026-10-22T14:00:12.985Z"
 }

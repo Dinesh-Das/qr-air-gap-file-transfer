@@ -1,0 +1,35 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/signaling-byte-limits-2026-10-22-oQpW68/REVIEW.json",
+  "bytes": 8455,
+  "sha256": "40365fe0956f28857e43cbde99f65dd7937806a013816bc90c7d9e5b28cb5d89",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/signaling-byte-limits-2026-10-22-oQpW68/CLOSURE-HASHES.json",
+    "bytes": 14232,
+    "sha256": "16f574c4424b7e829e7541d9649a2f7a6a85e544d95374f3e782eeb8deb52ab4"
+  },
+  "currentInputs": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/signaling-byte-limits-2026-10-22-oQpW68/CURRENT-INPUTS.json",
+    "bytes": 29380,
+    "sha256": "503187252538952f7fb513243fd078ed67479fac567d0f701f82fbcbf27ee4a4"
+  },
+  "sourceCommit": "2ffd777e4e43f21edc72d18303607fd5c9477a4f",
+  "productionChanged": false,
+  "unitPassed": 547,
+  "unitFiles": 56,
+  "newTests": 2,
+  "reusedNativeUdpTests": 1,
+  "negativeControls": 4,
+  "reviewPending": 275,
+  "mapped": [
+    {
+      "id": "L941",
+      "scope": "Loopback HTTP offers and answers accept exactly 49,152 UTF-8 bytes and reject 49,153 bytes for ASCII and multibyte strings. Rejected offers allocate no room; rejected answers preserve the join and waiting room, then a valid answer succeeds. Both bodies stay below the separate HTTP body cap. Synthetic SDP byte fixtures do not prove a native WebRTC handshake or all QR/LAN SDP policy."
+    },
+    {
+      "id": "L945",
+      "scope": "Existing real native UDP arrival test rejects authentic 1,201-byte discovery, then accepts exactly 1,200 bytes with a bounded reply. Removing the receive cap in an isolated copy makes that test fail. Finite discovery cases do not establish every advertisement path or physical network resilience."
+    }
+  ],
+  "releaseReady": false
+}
