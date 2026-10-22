@@ -495,7 +495,9 @@ export function parseLargeTreeMetadata(
       fileKeys.some((key, index) => key !== expectedFileKeys[index]) ||
       typeof rawFile.path !== "string" ||
       typeof rawFile.size !== "string" ||
-      !/^(?:0|[1-9][0-9]*)$/.test(rawFile.size) ||
+      // Bound decimal parsing before constructing an arbitrary-precision value.
+      !/^(?:0|[1-9][0-9]{0,15})$/.test(rawFile.size) ||
+      !Number.isSafeInteger(Number(rawFile.size)) ||
       typeof rawFile.sha256 !== "string" ||
       !/^[0-9a-f]{64}$/.test(rawFile.sha256) ||
       typeof rawFile.lastModified !== "number" ||

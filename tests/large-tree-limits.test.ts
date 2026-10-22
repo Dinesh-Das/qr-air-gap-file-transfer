@@ -7,6 +7,30 @@ import {
 } from "../src/lib/large-transfer";
 
 describe("untrusted large-tree metadata limits", () => {
+  it.each(["9007199254740992", "9".repeat(1024)])("rejects unsupported file-size strings before BigInt conversion %#", (size) => {
+    const bytes = new TextEncoder().encode(JSON.stringify({
+      schema: "airgap-qr-tree", version: 3, rootName: "limit", directories: [],
+      files: [{ path: "file.bin", size, sha256: "0".repeat(64), lastModified: 1 }],
+    }));
+    const convert = vi.spyOn(globalThis, "BigInt");
+    try {
+      expect(() => parseLargeTreeMetadata(bytes)).toThrow();
+      expect(convert).not.toHaveBeenCalled();
+    } finally {
+      convert.mockRestore();
+    }
+  });
+
+  it.each([0, Number.MAX_SAFE_INTEGER])("keeps the supported file-size boundary %i exact", (size) => {
+    const bytes = encodeLargeTreeMetadata({ rootName: "limit", directories: [],
+      files: [{ path: "file.bin", size, sha256Hex: "0".repeat(64), lastModified: 1 }],
+    });
+    const decoded = parseLargeTreeMetadata(bytes);
+    expect(decoded.files[0].size).toBe(BigInt(size));
+    expect(decoded.totalFileBytes).toBe(BigInt(size));
+    expect(decoded.metadataBytes).toEqual(bytes);
+  });
+
   it("accepts exactly 100,000 combined file and directory records", () => {
     expect(MAX_LARGE_TREE_ENTRIES).toBe(100_000);
     const directories = Array.from(
