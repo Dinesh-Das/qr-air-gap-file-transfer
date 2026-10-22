@@ -1,0 +1,23 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "C:/Users/dines/QRFT-qualification-evidence/memory-observer-diagnostics-2026-10-22-506c59dd/REVIEW.json",
+  "bytes": 2340,
+  "sha256": "ef593b96e93253996e2fcd2d3133d41e73395f51edf254db3b748a7c259967e7",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/memory-observer-diagnostics-2026-10-22-506c59dd/CLOSURE-HASHES.json",
+    "bytes": 8791,
+    "sha256": "0770c54f00fa69c1fb5f9a553f3a064ba4c528c774004fa022fab1209786599c"
+  },
+  "currentInputs": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/memory-observer-diagnostics-2026-10-22-506c59dd/CURRENT-INPUTS.json",
+    "bytes": 29559,
+    "sha256": "d3363089360a3efc4694c41799d9790476afacc9fd6a31b2c986f2a156009ddd"
+  },
+  "sourceCommit": "dc6d3b2f5d17d361626ddc2523920e4788d42048",
+  "unitPassed": 551,
+  "unitFiles": 57,
+  "productionBundleChanged": false,
+  "timeoutChanged": false,
+  "measurementCriteriaChanged": false,
+  "releaseReady": false
+}

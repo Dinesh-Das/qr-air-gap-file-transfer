@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-22T14:17:49.393Z",
+  "recordedAt": "2026-10-22T14:25:50.000Z",
   "clientDate": "2026-10-22",
-  "status": "Rate windows restart after unobserved gaps;549 local unit tests and one metrics case each in Chrome/Edge pass. Physical and remaining release requirements stay open.",
+  "status": "Native observer child-error metadata preserved;551 local units pass. Hosted rate-build job failed548/549 units before browser tests; cause unresolved and all release gates remain open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -50,12 +50,12 @@
     "sourceCommit": "94927b0cf152616e67c5066a68f247da67eeaaa2",
     "localNode": "v24.22.0",
     "typecheck": 0,
-    "unitPassed": 549,
-    "unitFiles": 56,
+    "unitPassed": 551,
+    "unitFiles": 57,
     "build": 0,
     "localChromeMetricCases": 1,
     "localEdgeMetricCases": 1,
-    "fullHostedCurrentBundle": "not-yet-observed",
+    "fullHostedCurrentBundle": "Run39793469351 job failed during native observer unit test before build/browser/package; diagnostic change has no hosted result yet.",
     "localBrowserScope": "One existing metrics case and one receiver verification-cancel case per installed channel, executed separately on the same5Ak bundle. No full101-case qualification.",
     "nativeWindowsGUI": false,
     "externalPackageCurrentBundle": "not-requalified",
@@ -63,9 +63,10 @@
     "currentBundleNativeLargeMatrix": "not-run",
     "releaseReady": false,
     "localChromePairingCancelCases": 1,
-    "localEdgePairingCancelCases": 1
+    "localEdgePairingCancelCases": 1,
+    "localUnitSourceCommit": "dc6d3b2f5d17d361626ddc2523920e4788d42048"
   },
-  "currentInputs": 180,
+  "currentInputs": 181,
   "currentAssets": [
     {
       "path": "dist/index.html",
@@ -326,8 +327,17 @@
   "updatedAt": "2026-10-22T03:23:43.3668263Z",
   "currentInputsScope": "Current original177-path input set plus tests/free-signal-port.d.mts; exact current bytes captured in hosted candidate-fix CURRENT-INPUTS.json. Application error handling changed; previous native/bundle qualifications remain scoped to their older source snapshots.",
   "hostedCodeGate": {
-    "sourceCommit": "94927b0cf152616e67c5066a68f247da67eeaaa2",
-    "status": "not-yet-observed",
+    "sourceCommit": "0f7243d8d9bf25a6466081dd85d9eb88e9f56681",
+    "runId": 39793469351,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39793469351",
+    "reportedRunStatus": "in_progress",
+    "jobStatus": "completed",
+    "jobConclusion": "failure",
+    "node": "v24.22.1",
+    "unitPassed": 548,
+    "unitFailed": 1,
+    "browserReached": false,
+    "diagnosticCandidateNotYetQualified": "dc6d3b2f5d17d361626ddc2523920e4788d42048",
     "releaseReady": false
   },
   "previousSourceQualification": {
@@ -664,6 +674,45 @@
       "id": "L857",
       "scope": "Receiver Stop and reconnect during device verification, after sender-only consent: native peer/channel close, zero file payload or manifest, fresh pairing requires renewed sender consent, and the resulting 120,000-byte save matches SHA256. Chrome and Edge pass; injected no-op native close methods fail the closed-state assertion. This finite stage does not qualify cancellation during discovery, physical network interruption or OS sleep/wake."
     },
+    "releaseReady": false
+  },
+  "hostedObserverFailureEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-rate-gap-failure-39793469351-2026-10-22-VO5R9y/REVIEW.json",
+    "bytes": 1344,
+    "sha256": "39922cf3c3b35cf5db1776e73b140cf5908cf428604afd853fa75212bdfcf909",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/memory-observer-diagnostics-2026-10-22-506c59dd/CLOSURE-HASHES.json",
+      "bytes": 8791,
+      "sha256": "0770c54f00fa69c1fb5f9a553f3a064ba4c528c774004fa022fab1209786599c"
+    },
+    "runId": 39793469351,
+    "unitPassed": 548,
+    "unitFailed": 1,
+    "browserReached": false,
+    "releaseReady": false
+  },
+  "memoryObserverDiagnosticsEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/memory-observer-diagnostics-2026-10-22-506c59dd/REVIEW.json",
+    "bytes": 2340,
+    "sha256": "ef593b96e93253996e2fcd2d3133d41e73395f51edf254db3b748a7c259967e7",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/memory-observer-diagnostics-2026-10-22-506c59dd/CLOSURE-HASHES.json",
+      "bytes": 8791,
+      "sha256": "0770c54f00fa69c1fb5f9a553f3a064ba4c528c774004fa022fab1209786599c"
+    },
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/memory-observer-diagnostics-2026-10-22-506c59dd/CURRENT-INPUTS.json",
+      "bytes": 29559,
+      "sha256": "d3363089360a3efc4694c41799d9790476afacc9fd6a31b2c986f2a156009ddd"
+    },
+    "sourceCommit": "dc6d3b2f5d17d361626ddc2523920e4788d42048",
+    "unitPassed": 551,
+    "unitFiles": 57,
+    "productionBundleChanged": false,
+    "timeoutChanged": false,
+    "measurementCriteriaChanged": false,
     "releaseReady": false
   }
 }

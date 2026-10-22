@@ -1,0 +1,16 @@
+{
+  "schema": "qrft-external-evidence-v1",
+  "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/hosted-rate-gap-failure-39793469351-2026-10-22-VO5R9y/REVIEW.json",
+  "bytes": 1344,
+  "sha256": "39922cf3c3b35cf5db1776e73b140cf5908cf428604afd853fa75212bdfcf909",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/memory-observer-diagnostics-2026-10-22-506c59dd/CLOSURE-HASHES.json",
+    "bytes": 8791,
+    "sha256": "0770c54f00fa69c1fb5f9a553f3a064ba4c528c774004fa022fab1209786599c"
+  },
+  "runId": 39793469351,
+  "unitPassed": 548,
+  "unitFailed": 1,
+  "browserReached": false,
+  "releaseReady": false
+}
