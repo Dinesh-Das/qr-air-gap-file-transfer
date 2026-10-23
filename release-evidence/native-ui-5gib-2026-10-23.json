@@ -1,0 +1,175 @@
+{
+  "recordedAt": "2026-10-23T18:24:25.002Z",
+  "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
+  "evidenceRoot": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y",
+  "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39998977543",
+  "prerequisite": {
+    "unitPassed": 593,
+    "unitFiles": 60,
+    "browserPassed": 101,
+    "auditFindings": 0,
+    "passed": true
+  },
+  "artifact": {
+    "id": 12522916743,
+    "bytes": 1199423,
+    "sha256": "bc48ce7c435ed59753a4b1bbf801aceebafe296554feb391de804142fb400263",
+    "safeEntriesValidated": true,
+    "digestMatched": true,
+    "payloadsUploaded": false
+  },
+  "review": {
+    "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
+    "mib": 5120,
+    "functionalPassed": true,
+    "nativeComplete": true,
+    "invalidNativeRows": [],
+    "diskReserveMet": true,
+    "independentlyValid": true,
+    "parentExit": {
+      "code": 0,
+      "signal": null
+    },
+    "metadataValid": true,
+    "maximumObserved": {
+      "sender": {
+        "privateBytes": 335208448,
+        "workingSetBytes": 503128064
+      },
+      "receiver": {
+        "privateBytes": 288636928,
+        "workingSetBytes": 477818880
+      }
+    },
+    "memorySamples": 718,
+    "parentResourceSamples": 1041,
+    "minOutputFree": 141158281216,
+    "minSystemFree": 33160269824,
+    "browserVersions": [
+      {
+        "role": "sender",
+        "version": "156.0.8078.4",
+        "channel": "bundled",
+        "storage": {
+          "estimate": {
+            "quota": 10737418240,
+            "usage": 0,
+            "usageDetails": {}
+          },
+          "persisted": false,
+          "secureContext": true
+        }
+      },
+      {
+        "role": "receiver",
+        "version": "156.0.8078.4",
+        "channel": "bundled",
+        "storage": {
+          "estimate": {
+            "quota": 10737418240,
+            "usage": 0,
+            "usageDetails": {}
+          },
+          "persisted": false,
+          "secureContext": true
+        }
+      }
+    ],
+    "everyByteCompared": 5368709120,
+    "sourceSha256": "059c8416a6df00a6b4bc391b82a8f2962888e083fb4ab4fec261a96954a06b90",
+    "streamSha256": "d049e57492e8b83332c15bcc2b9a4b3cf66045502ab5e57d46ea89811be06209",
+    "blocks": 87382,
+    "milestones": [
+      {
+        "event": "both-devices-confirmed",
+        "elapsedMs": 1571
+      },
+      {
+        "event": "received-and-verified",
+        "elapsedMs": 710354
+      },
+      {
+        "event": "saved-and-verified",
+        "elapsedMs": 932716
+      }
+    ],
+    "payloadsRecheckedLocally": false,
+    "scope": "Independent retained-metadata/asset audit; full payload comparisons were performed on original runner. No physical LAN, continuous peak, throughput or general memory-bound acceptance.",
+    "releaseReady": false
+  },
+  "localStreamRecomputation": "LOCAL-STREAM-RECOMPUTATION.json",
+  "cpuDiagnostic": "SAMPLED-CPU-DIAGNOSTIC.json",
+  "priorFailedRun": {
+    "id": 39996590451,
+    "largeFileAttempted": false,
+    "cause": "CRLF built HTML mismatch; locally reproduced; LF checkout fix retained exact asset check"
+  },
+  "localSmokeCases": 2,
+  "originalRequirementCount": 838,
+  "statusCounts": {
+    "review-pending": 263,
+    "partial-reviewed-current-checkpoint-evidence": 14,
+    "not-proven-current-large-resource-matrix": 1,
+    "partial": 9,
+    "partial-local-evidence-mapped": 425,
+    "partial-individual-local-test-proof-reviewed": 15,
+    "reviewed-discovery-physical-proof-missing": 4,
+    "reviewed-discovery-partial-subnet-model-proof": 2,
+    "reviewed-discovery-live-VPN-proof-missing": 1,
+    "reviewed-discovery-partial-loopback-fallback-proof": 2,
+    "partial-targeted-native-UDP-and-parser-evidence": 2,
+    "reviewed-discovery-partial-native-loopback-packet-proof": 1,
+    "partial-exact-file-and-stream-boundary-model-evidence": 3,
+    "partial-reviewed-transport-evidence": 6,
+    "partial-reviewed-recovery-checkpoint-evidence": 8,
+    "verified-in-memory-model": 6,
+    "partial-targeted-native-Stop-during-verification-evidence": 1,
+    "partial-reviewed-destination-write-fault-browser": 4,
+    "partial-journal-recovery-evidence": 2,
+    "partial-targeted-discard-recovery-evidence": 3,
+    "partial-reviewed-browser-save-transition": 2,
+    "partial-reviewed-active-transfer-browser": 2,
+    "partial-reviewed-rapid-pairing-browser": 2,
+    "partial-WebRTC-parser-evidence": 4,
+    "verified-source-checkpoint": 2,
+    "partial-reviewed-native-runtime-restart-browser": 1,
+    "partial-reviewed-matched-overhead-diagnostic": 5,
+    "partial-local-resource-evidence": 8,
+    "verified-hosted-source-checkpoint": 7,
+    "partial-reviewed-hosted-code-gate": 2,
+    "not-proven-physical-evidence-missing": 31
+  },
+  "allOriginalStatusesUnchanged": true,
+  "scope": "One fresh hosted Windows native disk-file current compiled-UI/real rendezvous/same-host WebRTC/OPFS receive and injected OPFS destination save. All5GiB source/received/saved bytes compared on runner. Every selected process measured on all718 rows. Independent local metadata/assets audit and full public-fixture stream hash recomputation pass. Source/profile payloads not uploaded; hosted received/saved bytes unavailable after VM teardown.",
+  "limitations": [
+    "Injected source/destination pickers, not real OS permission dialogs or filesystem destination.",
+    "Post-save cleanup deliberately denied to retain both copies; screenshot correctly shows cleanup required. Not successful cleanup evidence.",
+    "Periodic memory samples can miss peaks; working sets can count shared pages twice. One size/host/browser does not prove general memory bounds.",
+    "710.354s received-verified and932.716s saved-verified are cumulative instrumented milestones including preparation/verification/pairing work, not pure network throughput.",
+    "No speed acceptance: periodic CPU counter deltas show substantial CPU consumption but do not establish a bottleneck or improvement.",
+    "Real two-laptop Wi-Fi/LAN,42physical cases,nontechnical-user UX,GUI/cleanOS/native permissions,10/50/100GB resource/throughput and final adversarial acceptance remain open."
+  ],
+  "performanceAccepted": false,
+  "resourceMatrixAccepted": false,
+  "releaseReady": false,
+  "closure": {
+    "manifest": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/CLOSURE-HASHES.json",
+    "files": 4378,
+    "totalBytes": 274275674,
+    "manifestBytes": 1142726,
+    "sha256": "d83ea149888616230da94df4e1c891536548a71d460fdb8f364faad00fd45875",
+    "doubleHashed": true
+  },
+  "evidence": {
+    "review": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/REVIEW-FINAL.json",
+    "independentReview": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/HOSTED-INDEPENDENT-REVIEW.json",
+    "localStreamRecomputation": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/LOCAL-STREAM-RECOMPUTATION.json",
+    "context": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/native-ui-39998977543-1/result/CONTEXT.json",
+    "raw": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/native-ui-39998977543-1/result/evidence/RAW.json",
+    "parent": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/native-ui-39998977543-1/result/PARENT.json",
+    "nativeRows": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/native-ui-39998977543-1/result/evidence/native-samples.ndjson",
+    "metadataHashes": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/native-ui-39998977543-1/result/METADATA-HASHES.json",
+    "artifactZip": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/native-ui-39998977543-1.zip",
+    "cpuDiagnostic": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/SAMPLED-CPU-DIAGNOSTIC.json"
+  }
+}
