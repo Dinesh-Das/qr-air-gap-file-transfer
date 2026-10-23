@@ -1,0 +1,84 @@
+name: Paired native prefix hash comparison
+on: workflow_call
+permissions:
+  contents: read
+jobs:
+  paired:
+    runs-on: windows-latest
+    # Two existing30-minute cases plus setup/upload; each case guard is unchanged.
+    timeout-minutes: 70
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: candidate
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: candidate
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: 203c64d502478cb9267fb074485c0698a0bcc20b
+          path: baseline
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: candidate/package-lock.json
+      - name: Set fresh owned comparison paths
+        run: |
+          New-Item -ItemType Directory -Path ../ci-evidence/prefix-pair -Force | Out-Null
+          $pairRoot = node --input-type=module -e "import fs from 'node:fs';import {tmpdir} from 'node:os';import {join} from 'node:path';const v=[...new Set([tmpdir(),process.env.RUNNER_TEMP].filter(Boolean))].map(path=>{const s=fs.statfsSync(path);return {path,free:s.bavail*s.bsize}}).sort((a,b)=>b.free-a.free);fs.writeFileSync('../ci-evidence/prefix-pair/volumes.json',JSON.stringify(v,null,2));console.log(join(v[0].path,'qrft-prefix-'+process.env.GITHUB_RUN_ID+'-'+process.env.GITHUB_RUN_ATTEMPT));"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          "QRFT_PREFIX_OUTPUT=$pairRoot" | Add-Content $env:GITHUB_ENV
+          "PLAYWRIGHT_BROWSERS_PATH=$(Join-Path $env:RUNNER_TEMP 'qrft-prefix-browser')" | Add-Content $env:GITHUB_ENV
+      - name: Install identical locked tools and compile both sources
+        run: |
+          foreach ($tag in @('baseline', 'candidate')) {
+            $stage = Join-Path $env:GITHUB_WORKSPACE $tag
+            $logs = Join-Path $env:GITHUB_WORKSPACE 'ci-evidence/prefix-pair'
+            Push-Location $stage
+            try {
+              npm ci 2>&1 | Tee-Object -FilePath (Join-Path $logs "$tag-install.log")
+              if ($LASTEXITCODE -ne 0) { throw "$tag installation failed" }
+              npm run build 2>&1 | Tee-Object -FilePath (Join-Path $logs "$tag-build.log")
+              if ($LASTEXITCODE -ne 0) { throw "$tag build failed" }
+            } finally { Pop-Location }
+          }
+      - name: Install shared isolated Chromium
+        run: |
+          npx playwright install --only-shell --no-remove chromium 2>&1 | Tee-Object -FilePath ../ci-evidence/prefix-pair/browser.log
+          exit $LASTEXITCODE
+      - name: Run one baseline then one candidate5GiB case on this host
+        run: |
+          node scripts/run-prefix-comparison.mjs ../baseline . 2>&1 | Tee-Object -FilePath ../ci-evidence/prefix-pair/pair.log
+          $pairExit = $LASTEXITCODE
+          Set-Content ../ci-evidence/prefix-pair/exit.txt $pairExit
+          exit $pairExit
+      - name: Collect complete or partial metadata only
+        if: always()
+        run: |
+          if ($env:QRFT_PREFIX_OUTPUT -and (Test-Path -LiteralPath $env:QRFT_PREFIX_OUTPUT)) {
+            $dest = Join-Path $env:GITHUB_WORKSPACE 'ci-evidence/prefix-pair/result'
+            New-Item -ItemType Directory -Path $dest -Force | Out-Null
+            Get-ChildItem -LiteralPath $env:QRFT_PREFIX_OUTPUT -File | Where-Object { $_.Extension -in @('.json', '.log') } | Copy-Item -Destination $dest
+            foreach ($tag in @('baseline', 'candidate')) {
+              $source = Join-Path $env:QRFT_PREFIX_OUTPUT $tag
+              if (Test-Path -LiteralPath $source) {
+                $target = Join-Path $dest $tag
+                New-Item -ItemType Directory -Path $target | Out-Null
+                Get-ChildItem -LiteralPath $source -File | Where-Object { $_.Extension -in @('.json', '.log') } | Copy-Item -Destination $target
+                $evidence = Join-Path $source 'evidence'
+                if (Test-Path -LiteralPath $evidence) { Copy-Item -LiteralPath $evidence -Destination $target -Recurse }
+              }
+            }
+          }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prefix-pair-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-evidence/prefix-pair/
+          retention-days: 14
+          if-no-files-found: warn

@@ -22,7 +22,7 @@ const hash = async (path) => {
   const h = createHash("sha256"); for await (const bytes of createReadStream(path)) h.update(bytes); return h.digest("hex");
 };
 const paths = execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard", "--",
-  "src", "scripts", "tests", "e2e", ".github", "SPEC-native-ui-qualification.md", "release-evidence/original-release-requirements.txt", "release-evidence/acceptance-obligations-2026-10-14.json", "package.json", "package-lock.json", "index.html", ".gitignore", "README.md",
+  "src", "scripts", "tests", "e2e", ".github", "SPEC-native-ui-qualification.md", "SPEC-prefix-hash-comparison.md", "release-evidence/original-release-requirements.txt", "release-evidence/acceptance-obligations-2026-10-14.json", "package.json", "package-lock.json", "index.html", ".gitignore", "README.md",
   ".gitattributes", "vite.config.ts", "playwright.config.ts", "tsconfig.json", "tsconfig.app.json", "tsconfig.node.json"], { cwd: work, encoding: "utf8", windowsHide: true }).trim().split(/\r?\n/);
 const inputs = await Promise.all([...new Set(paths)].sort().map(async path => ({ path, sha256: await hash(join(work, path)) })));
 const builtAssets = [];

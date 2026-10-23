@@ -14,6 +14,11 @@ on:
         type: boolean
         required: true
         default: false
+      prefix_comparison:
+        description: Run one serial baseline and candidate5GiB CPU comparison after the full gate
+        type: boolean
+        required: true
+        default: false
 permissions:
   contents: read
 jobs:
@@ -70,8 +75,12 @@ jobs:
     uses: ./.github/workflows/window-study.yml
 
   native-ui:
-    if: github.event_name == 'workflow_dispatch' && inputs.native_ui
+    if: github.event_name == 'workflow_dispatch' && inputs.native_ui && !inputs.prefix_comparison
     needs: windows
     uses: ./.github/workflows/native-ui-qualification.yml
     with:
       cpu_profile: ${{ inputs.cpu_profile == true }}
+  prefix-comparison:
+    if: github.event_name == 'workflow_dispatch' && inputs.prefix_comparison
+    needs: windows
+    uses: ./.github/workflows/prefix-hash-comparison.yml
