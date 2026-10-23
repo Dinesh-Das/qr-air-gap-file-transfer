@@ -21,7 +21,7 @@ const hash = async (path) => {
 };
 const paths = execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard", "--",
   "src", "scripts", "tests", "e2e", ".github", "SPEC-native-ui-qualification.md", "release-evidence/original-release-requirements.txt", "release-evidence/acceptance-obligations-2026-10-14.json", "package.json", "package-lock.json", "index.html", ".gitignore", "README.md",
-  "vite.config.ts", "playwright.config.ts", "tsconfig.json", "tsconfig.app.json", "tsconfig.node.json"], { cwd: work, encoding: "utf8", windowsHide: true }).trim().split(/\r?\n/);
+  ".gitattributes", "vite.config.ts", "playwright.config.ts", "tsconfig.json", "tsconfig.app.json", "tsconfig.node.json"], { cwd: work, encoding: "utf8", windowsHide: true }).trim().split(/\r?\n/);
 const inputs = await Promise.all([...new Set(paths)].sort().map(async path => ({ path, sha256: await hash(join(work, path)) })));
 const builtAssets = [];
 async function assets(dir, prefix = "dist") {
@@ -35,6 +35,7 @@ async function assets(dir, prefix = "dist") {
 await assets(join(work, "dist"));
 const knownAssets = JSON.parse(await readFile(join(work, "release-evidence/release-gate-latest.json"), "utf8")).currentAssets;
 if (knownAssets.length !== builtAssets.length || builtAssets.some(a => !knownAssets.some(k => k.path === a.path && k.sha256 === a.sha256))) {
+  await writeFile(join(root, "ASSET-MISMATCH.json"), JSON.stringify({ knownAssets, builtAssets, releaseReady: false }, null, 2) + "\n", { flag: "wx" });
   throw new Error("Compiled assets differ from the current qualified bundle.");
 }
 const context = { root, stage: work, sourceCommit: execFileSync("git", ["rev-parse", "HEAD"], { cwd: work, encoding: "utf8", windowsHide: true }).trim(),
