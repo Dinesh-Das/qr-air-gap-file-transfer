@@ -19,6 +19,31 @@ explicit LF checkout rule fixes that input; exact asset validation remains.
 Two local16MiB smoke cases passed, but do not establish multiGB acceptance.
 See release-evidence/native-ui-checkout-2026-10-23.json for the retained failure.
 
+Run39998977543/sourcefcdb233 subsequently passed the complete gate and one
+fresh Windows native5GiB compiled-UI case on Chromium156.0.8078.4. The runner
+compared all5,368,709,120 source/received/saved bytes, verified file/stream hashes
+and all87,382 ACK indices. All718 native process samples were complete. Maximum
+observed summed private bytes were335,208,448 sender/288,636,928 receiver;
+working sets503,128,064/477,818,880. Periodic samples can miss peaks and shared
+working-set pages can be counted twice. One size does not prove general bounds.
+
+The parent1041 disk samples held the2GiB reserve: minimum141,158,281,216 output
+bytes and33,160,269,824 system-C bytes free. Received/save-verified milestones
+were710.354s/932.716s from the common instrumented start, including preparation,
+pairing and verification work; these are not pure network speed measurements.
+Sampled cumulative CPU counters show substantial CPU consumption during source
+preparation, transfer/verification and receiver save; they do not establish a
+root cause or performance acceptance. The exact production rendezvous and RTC
+were used on one host with injected source/destination pickers and an OPFS saved
+copy. Cleanup was deliberately denied to retain both copies for the audit.
+
+Hosted payloads were not uploaded and disappeared with the VM. Retained metadata,
+served assets and the ZIP digest passed independent checks; a local full read of
+the retained public5GiB fixture independently reproduced the hosted stream hash.
+See release-evidence/native-ui-5gib-2026-10-23.json and its4378-file sealed archive.
+Physical Wi-Fi/LAN, native OS permissions/destination,10/50/100GB resource scaling,
+throughput acceptance and final release validation remain open. READY=false.
+
 ## Windows observer diagnosis, 2026-10-23
 
 The earlier hosted process-observer timeout remains unexplained. Seven isolated
