@@ -4,14 +4,45 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
-The next controlled study compares 64 and 96 in-flight blocks in interleaved
-100 MiB raw/verified trials on a hosted Windows runner. Both keep 60 KiB payloads,
-the original buffering thresholds, 64-block/75-ms receive batching, hashing,
-durable ACKs and destination audits. Each trial gets a fresh server/browser pair;
-the in-memory override and original/transformed source hashes must be recorded.
-Production defaults remain unchanged. This is diagnostic evidence, with no
-automatic speed threshold or physical-LAN acceptance. Local trials remain held
-until disk headroom recovers.
+## Hosted 64/96-block study, 2026-10-23
+
+Source `d879aa6`, hosted Windows run39851735983, passed the complete release
+gate (572 units/59 files, typecheck/build, 101 bundled Chromium cases and external
+package module smoke) before running 16 balanced diagnostic cases. Four
+repetitions per window/mode used fresh servers and Chromium pairs, 100 MiB
+synthetic data, unchanged 60 KiB payloads, 8/2 MiB buffering thresholds and
+64-block/75-ms receive batching. Hashing, durable ACKs, stream/destination audits
+and native channel byte accounting passed. Profiling and native memory observers
+were off. The override was in-memory only, with original/transformed hashes;
+production source and its 96-block default remain unchanged.
+
+| Window | Mode | Median MB/s | Range MB/s | Sender socket-send discards, case order |
+| --- | --- | ---: | --- | --- |
+| 64 | Raw | 29.36 | 28.40–30.87 | 3833,37,2349,6296 |
+| 96 | Raw | 27.34 | 27.00–33.67 | 0,2636,4609,0 |
+| 64 | Verified | 18.38 | 18.18–18.52 | 0,0,0,0 |
+| 96 | Verified | 18.61 | 18.43–18.77 | 0,0,0,0 |
+
+Receiver socket-send discards were zero in all16 cases. Reducing the window did
+not demonstrate a verified-flow benefit or eliminate raw send discards. These
+counters do not establish a universal buffer-sizing cause. Keep96; no throughput
+threshold or performance acceptance is claimed. Hosted minimum free space was
+157,023,911,936 bytes across208 guard samples, above the unchanged2 GiB reserve.
+Both artifact archives were downloaded and matched GitHub SHA-256 digests; raw
+records were independently checked and sealed. See
+release-evidence/hosted-window-study-2026-10-23.json for hashes and provenance.
+
+The initial eight helper tests failed assertions as intended before implementation;
+all nine final helper tests passed. A workflow parse failure was corrected. An
+intermediate standalone gate failed three existing observer/fixture tests before
+any benchmark; original logs/deadlines remain, cause unresolved. The final study
+requires the existing full release gate rather than duplicating a partial gate.
+Later success does not diagnose the earlier failures.
+
+This is one hosted same-host Chromium/synthetic-file study, not physical Wi-Fi,
+native disk/picker or general memory evidence. The user reports no additional
+local space; local transfer trials remain held. Two-laptop and multi-gigabyte
+resource/throughput acceptance remain open.
 
 ## Phase and socket-counter diagnostic, 2026-10-23
 

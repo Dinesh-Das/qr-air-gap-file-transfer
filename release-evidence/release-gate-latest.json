@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-23",
-  "status": "Latest hosted gate563units/101bundledChromium/external package passed at10948bc. Owned-cache retirement preserves10745remaining indexed files and unchanged manifests with explicit retired-cache overlay. C remains below2GiBreserve, so local trials held. Physical/native GUI/resource/throughput/final adversarial acceptance remains open.",
+  "status": "Hosted Windows572units/101browser gate and16 interleaved64/96 diagnostic cases passed atd879aa6. Production96default unchanged; no demonstrated64 verified-flow benefit. Local space unavailable; local trials held. Physical/nativeGUI/multiGBresource/throughput/final adversarial acceptance remains open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -67,7 +67,7 @@
     "localChromeTargetedCases": 2,
     "localEdgeTargetedCases": 2,
     "fullLocalCurrentBundle": "passed: installed Chrome101/Edge101; one worker, retries0, skips0, flakes0; unchanged test assertions/deadlines",
-    "fullHostedCurrentBundle": "passed: run39845580887/source10948bc/Node24.21.0/fresh563units58files/build/101bundledChromium/19externalpackage",
+    "fullHostedCurrentBundle": "passed:run39851735983/sourced879aa6/Node24.22.0/fresh572units59files/build/101bundledChromium/external package module smoke",
     "externalPackageFiles": 19,
     "portablePackageFiles": 22,
     "packageScope": "Local manifest/HTTP/runtime/launcher-MODULE smoke; injected browser observer.",
@@ -139,7 +139,7 @@
   },
   "temporaryCacheCleanup": {
     "record": "release-evidence/temporary-cache-cleanup-2026-10-22.json",
-    "logicalBytesRemoved": 1939336462.0,
+    "logicalBytesRemoved": 1939336462,
     "availability": "Cache files listed in the before manifests were intentionally retired. Historical inventories retain their original contents but no longer imply complete raw-profile availability. Test reports, closure manifests, source fixtures, OPFS transfer data and saved payloads were preserved."
   },
   "currentLargeUiTransferEvidence": {
@@ -336,33 +336,56 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-22T20:23:00.2774290Z",
-  "currentInputsScope": "Full product181-path snapshot remains source-specific atad96179. Dev-only benchmark watcher/phase/counter/test changes atd54a487/932c394 are separately fingerprinted; product src/assets and packaged runtime unchanged. New563-unit gate includes diagnostic helper tests; earlier560-unit/full101 installed-browser and hosted gates retain exact source scopes.",
+  "updatedAt": "2026-10-23T02:05:42.046Z",
+  "currentInputsScope": "Full product181-path snapshot remains source-specific atad96179. Dev-only benchmark watcher/phase/counter/test changes atd54a487/932c394 are separately fingerprinted; product src/assets and packaged runtime unchanged. New563-unit gate includes diagnostic helper tests; earlier560-unit/full101 installed-browser and hosted gates retain exact source scopes. Dev-only64/96window study atd879aa6 has16 raw records and unchanged product/defaults;572units59files includes9new window tests. No new physical or native multiGB acceptance.",
   "hostedCodeGate": {
     "schema": "qrft-hosted-gate-observation-v1",
-    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39845580887",
-    "sourceCommit": "10948bcc859002bcde4a67077e6ebb3b0c012465",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39851735983",
+    "sourceCommit": "d879aa6549aaacab4ee304b04811b8c4ebed39e2",
     "status": "completed",
     "conclusion": "success",
-    "node": "v24.21.0",
-    "unitPassed": 563,
-    "unitFiles": 58,
+    "node": "v24.22.0",
+    "unitPassed": 572,
+    "unitFiles": 59,
     "browserPassed": 101,
     "browser": "Bundled Chromium on hosted Windows",
     "externalPackageFiles": 19,
     "fetchedAssets": 5,
     "runMetadata": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/HOSTED-RUN.json",
-      "bytes": 2259,
-      "sha256": "e76be10baec7223570e1ae8f6c8ae6306a8b00685022e7da48dda57f1ebbb0ce"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/FINAL-RUN.json",
+      "bytes": 4326,
+      "sha256": "162abb54af0a10854adfb6de98cddb514048529dc7ceec2b5913cdb253abe05b"
     },
     "runLog": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/HOSTED-RUN.log",
-      "bytes": 63643,
-      "sha256": "222743d85c5aa2ec91e62e96af6a1fb86f97a332e2bb6f417b1a15dd206a89d5"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/FINAL-RUN.log",
+      "bytes": 102767,
+      "sha256": "46962072c92320905bce8cb3739ea3dbe8fdf2e12be1bc872b563ba3f1674511"
     },
-    "artifactArchiveDownloaded": false,
-    "scope": "Retained full log/job API observed. Fresh install/typecheck/unit/build/browser/package-MODULE smoke, injected handoff. Not actual GUI/OS-picker/portable cleanOS/physical or resource acceptance.",
+    "artifacts": [
+      {
+        "id": 12458002113,
+        "name": "window-study-39851735983-1",
+        "digest": "sha256:639aa1c47e6217029ce41b4bf5daa9051b3ff6108bfa86c6690da07be5271c8e",
+        "archive": {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/window-study-39851735983-1.zip",
+          "bytes": 147967,
+          "sha256": "639aa1c47e6217029ce41b4bf5daa9051b3ff6108bfa86c6690da07be5271c8e"
+        },
+        "digestVerified": true
+      },
+      {
+        "id": 12457668121,
+        "name": "release-check-39851735983-1",
+        "digest": "sha256:04859f3d77f3b50fb5b067776a96d7749780fcb07d1154887435b43fba0c08a3",
+        "archive": {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/release-check-39851735983-1.zip",
+          "bytes": 3596136,
+          "sha256": "04859f3d77f3b50fb5b067776a96d7749780fcb07d1154887435b43fba0c08a3"
+        },
+        "digestVerified": true
+      }
+    ],
+    "scope": "Full source type/unit/build/browser and external package launcher-MODULE smoke; injected handoff. No native GUI/physical/general resource acceptance.",
     "releaseReady": false
   },
   "previousSourceQualification": {
@@ -1439,6 +1462,48 @@
     "localTrialsHeld": true,
     "fiveGiBTwoCopyBudgetBytes": 13304332288,
     "requestedStableFreeBytes": 15000000000,
-    "userResponse": "pending; no headroom inferred"
+    "userResponse": "Space is unavailable now"
+  },
+  "previousHostedCodeGateBeforeWindowStudy": {
+    "schema": "qrft-hosted-gate-observation-v1",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39845580887",
+    "sourceCommit": "10948bcc859002bcde4a67077e6ebb3b0c012465",
+    "status": "completed",
+    "conclusion": "success",
+    "node": "v24.21.0",
+    "unitPassed": 563,
+    "unitFiles": 58,
+    "browserPassed": 101,
+    "browser": "Bundled Chromium on hosted Windows",
+    "externalPackageFiles": 19,
+    "fetchedAssets": 5,
+    "runMetadata": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/HOSTED-RUN.json",
+      "bytes": 2259,
+      "sha256": "e76be10baec7223570e1ae8f6c8ae6306a8b00685022e7da48dda57f1ebbb0ce"
+    },
+    "runLog": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/owned-cache-retirement-2026-10-23-ce5d438a/HOSTED-RUN.log",
+      "bytes": 63643,
+      "sha256": "222743d85c5aa2ec91e62e96af6a1fb86f97a332e2bb6f417b1a15dd206a89d5"
+    },
+    "artifactArchiveDownloaded": false,
+    "scope": "Retained full log/job API observed. Fresh install/typecheck/unit/build/browser/package-MODULE smoke, injected handoff. Not actual GUI/OS-picker/portable cleanOS/physical or resource acceptance.",
+    "releaseReady": false
+  },
+  "hostedWindowStudyEvidence": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/REVIEW.json",
+    "bytes": 3126,
+    "sha256": "7ee213228cd71a0b36a8419d60377339d3c690886a3a152a5d20c743452eaed6",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/CLOSURE-HASHES.json",
+      "bytes": 966555,
+      "sha256": "8dc9b61cbdbdb2262ff17789e762b9dede6b0d62df6d6feb6a01cd9dcff2896d"
+    },
+    "receipt": "release-evidence/hosted-window-study-2026-10-23.json",
+    "sourceCommit": "d879aa6549aaacab4ee304b04811b8c4ebed39e2",
+    "diagnosticCases": 16,
+    "performanceAccepted": false,
+    "releaseReady": false
   }
 }
