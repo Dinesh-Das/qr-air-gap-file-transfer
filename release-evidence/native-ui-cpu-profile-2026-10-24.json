@@ -1,0 +1,514 @@
+{
+  "recordedAt": "2026-10-23T19:06:23.480Z",
+  "sourceCommit": "125fb74048894ecb855bfa1c7d09aa3d11e1f124",
+  "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40004630063",
+  "gate": {
+    "unitPassed": 607,
+    "unitFiles": 61,
+    "browserPassed": 101,
+    "auditFindings": 0,
+    "typecheck": 0,
+    "build": 0
+  },
+  "artifact": {
+    "id": 12524882971,
+    "bytes": 1548767,
+    "sha256": "1f57480ade30a3f07b8ed7a9a6f4d066a7332e051d6dee52c7e1e8295049be7d",
+    "digestMatched": true,
+    "safeEntriesValidated": true,
+    "payloadsUploaded": false
+  },
+  "integrityAndResources": {
+    "sourceCommit": "125fb74048894ecb855bfa1c7d09aa3d11e1f124",
+    "mib": 5120,
+    "functionalPassed": true,
+    "nativeComplete": true,
+    "invalidNativeRows": [],
+    "diskReserveMet": true,
+    "independentlyValid": true,
+    "parentExit": {
+      "code": 0,
+      "signal": null
+    },
+    "metadataValid": true,
+    "maximumObserved": {
+      "sender": {
+        "privateBytes": 346050560,
+        "workingSetBytes": 519131136
+      },
+      "receiver": {
+        "privateBytes": 330878976,
+        "workingSetBytes": 487124992
+      }
+    },
+    "memorySamples": 616,
+    "parentResourceSamples": 1009,
+    "minOutputFree": 141156499456,
+    "minSystemFree": 33176219648,
+    "browserVersions": [
+      {
+        "role": "sender",
+        "version": "156.0.8078.4",
+        "channel": "bundled",
+        "storage": {
+          "estimate": {
+            "quota": 10737418240,
+            "usage": 0,
+            "usageDetails": {}
+          },
+          "persisted": false,
+          "secureContext": true
+        }
+      },
+      {
+        "role": "receiver",
+        "version": "156.0.8078.4",
+        "channel": "bundled",
+        "storage": {
+          "estimate": {
+            "quota": 10737418240,
+            "usage": 0,
+            "usageDetails": {}
+          },
+          "persisted": false,
+          "secureContext": true
+        }
+      }
+    ],
+    "everyByteCompared": 5368709120,
+    "sourceSha256": "059c8416a6df00a6b4bc391b82a8f2962888e083fb4ab4fec261a96954a06b90",
+    "streamSha256": "767cdb3f1303195ff6211c546ca2480a5b10c6d24c73dd99cda33856ac5aa678",
+    "blocks": 87382,
+    "milestones": [
+      {
+        "event": "both-devices-confirmed",
+        "elapsedMs": 1491
+      },
+      {
+        "event": "received-and-verified",
+        "elapsedMs": 678127
+      },
+      {
+        "event": "saved-and-verified",
+        "elapsedMs": 885046
+      }
+    ],
+    "payloadsRecheckedLocally": false,
+    "scope": "Independent retained-metadata/asset audit; full payload comparisons were performed on original runner. No physical LAN, continuous peak, throughput or general memory-bound acceptance.",
+    "releaseReady": false
+  },
+  "cpuProfileReview": {
+    "complete": true,
+    "coverageVerified": true,
+    "records": [
+      {
+        "role": "sender",
+        "samples": 80263,
+        "sampledUs": 889969995,
+        "profileDurationUs": 889970656,
+        "captureSpanMs": 890016,
+        "topSelf": [
+          {
+            "functionName": "(idle)",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "selfUs": 503090478,
+            "inclusiveUs": 503090478,
+            "samples": 44991,
+            "selfPercentOfAllSamples": 56.52892578698678,
+            "inclusivePercentOfAllSamples": 56.52892578698678
+          },
+          {
+            "functionName": "process",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 30361,
+            "selfUs": 276692464,
+            "inclusiveUs": 307016788,
+            "samples": 25571,
+            "selfPercentOfAllSamples": 31.09008905406974,
+            "inclusivePercentOfAllSamples": 34.49743134317691
+          },
+          {
+            "functionName": "(program)",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "selfUs": 39572377,
+            "inclusiveUs": 39572377,
+            "samples": 3305,
+            "selfPercentOfAllSamples": 4.44648440085893,
+            "inclusivePercentOfAllSamples": 4.44648440085893
+          },
+          {
+            "functionName": "go",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 27494,
+            "selfUs": 16105428,
+            "inclusiveUs": 16105428,
+            "samples": 1482,
+            "selfPercentOfAllSamples": 1.8096596616158953,
+            "inclusivePercentOfAllSamples": 1.8096596616158953
+          },
+          {
+            "functionName": "b.arrayBuffer",
+            "url": "",
+            "lineNumber": 2,
+            "columnNumber": 123,
+            "selfUs": 10896584,
+            "inclusiveUs": 10896584,
+            "samples": 1003,
+            "selfPercentOfAllSamples": 1.2243765588973592,
+            "inclusivePercentOfAllSamples": 1.2243765588973592
+          },
+          {
+            "functionName": "file.slice",
+            "url": "",
+            "lineNumber": 1,
+            "columnNumber": 115,
+            "selfUs": 7647226,
+            "inclusiveUs": 7647226,
+            "samples": 708,
+            "selfPercentOfAllSamples": 0.8592678453165155,
+            "inclusivePercentOfAllSamples": 0.8592678453165155
+          },
+          {
+            "functionName": "bo",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 27825,
+            "selfUs": 7009715,
+            "inclusiveUs": 7009715,
+            "samples": 647,
+            "selfPercentOfAllSamples": 0.7876349808849454,
+            "inclusivePercentOfAllSamples": 0.7876349808849454
+          }
+        ],
+        "topInclusive": [
+          {
+            "functionName": "(root)",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "selfUs": 0,
+            "inclusiveUs": 889969995,
+            "samples": 0,
+            "selfPercentOfAllSamples": 0,
+            "inclusivePercentOfAllSamples": 100
+          },
+          {
+            "functionName": "(idle)",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "selfUs": 503090478,
+            "inclusiveUs": 503090478,
+            "samples": 44991,
+            "selfPercentOfAllSamples": 56.52892578698678,
+            "inclusivePercentOfAllSamples": 56.52892578698678
+          },
+          {
+            "functionName": "update",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 28106,
+            "selfUs": 817620,
+            "inclusiveUs": 307740432,
+            "samples": 85,
+            "selfPercentOfAllSamples": 0.0918705130053289,
+            "inclusivePercentOfAllSamples": 34.57874239906256
+          },
+          {
+            "functionName": "process",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 30361,
+            "selfUs": 276692464,
+            "inclusiveUs": 307016788,
+            "samples": 25571,
+            "selfPercentOfAllSamples": 31.09008905406974,
+            "inclusivePercentOfAllSamples": 34.49743134317691
+          },
+          {
+            "functionName": "Fl",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 77882,
+            "selfUs": 21286,
+            "inclusiveUs": 179824159,
+            "samples": 2,
+            "selfPercentOfAllSamples": 0.002391766028022102,
+            "inclusivePercentOfAllSamples": 20.20564288799422
+          },
+          {
+            "functionName": "run",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 17,
+            "columnNumber": 14281,
+            "selfUs": 493300,
+            "inclusiveUs": 157096879,
+            "samples": 45,
+            "selfPercentOfAllSamples": 0.055428834991229116,
+            "inclusivePercentOfAllSamples": 17.651929827139845
+          }
+        ]
+      },
+      {
+        "role": "receiver",
+        "samples": 80255,
+        "sampledUs": 889421781,
+        "profileDurationUs": 889422063,
+        "captureSpanMs": 889468,
+        "topSelf": [
+          {
+            "functionName": "(idle)",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "selfUs": 558164486,
+            "inclusiveUs": 558164486,
+            "samples": 49414,
+            "selfPercentOfAllSamples": 62.75588229607343,
+            "inclusivePercentOfAllSamples": 62.75588229607343
+          },
+          {
+            "functionName": "process",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 30361,
+            "selfUs": 242735278,
+            "inclusiveUs": 268794112,
+            "samples": 23019,
+            "selfPercentOfAllSamples": 27.291357507243237,
+            "inclusivePercentOfAllSamples": 30.22121986913653
+          },
+          {
+            "functionName": "(program)",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "selfUs": 27038040,
+            "inclusiveUs": 27038040,
+            "samples": 2213,
+            "selfPercentOfAllSamples": 3.0399570347378306,
+            "inclusivePercentOfAllSamples": 3.0399570347378306
+          },
+          {
+            "functionName": "go",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 27494,
+            "selfUs": 12952614,
+            "inclusiveUs": 12952614,
+            "samples": 1230,
+            "selfPercentOfAllSamples": 1.456296020256783,
+            "inclusivePercentOfAllSamples": 1.456296020256783
+          },
+          {
+            "functionName": "Yf",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 154860,
+            "selfUs": 8071148,
+            "inclusiveUs": 8071148,
+            "samples": 673,
+            "selfPercentOfAllSamples": 0.9074601243658997,
+            "inclusivePercentOfAllSamples": 0.9074601243658997
+          },
+          {
+            "functionName": "yo",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 27790,
+            "selfUs": 6408428,
+            "inclusiveUs": 6408428,
+            "samples": 609,
+            "selfPercentOfAllSamples": 0.7205161979274712,
+            "inclusivePercentOfAllSamples": 0.7205161979274712
+          },
+          {
+            "functionName": "bo",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 27825,
+            "selfUs": 6101374,
+            "inclusiveUs": 6101374,
+            "samples": 579,
+            "selfPercentOfAllSamples": 0.6859933195182231,
+            "inclusivePercentOfAllSamples": 0.6859933195182231
+          }
+        ],
+        "topInclusive": [
+          {
+            "functionName": "(root)",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "selfUs": 0,
+            "inclusiveUs": 889421781,
+            "samples": 0,
+            "selfPercentOfAllSamples": 0,
+            "inclusivePercentOfAllSamples": 100
+          },
+          {
+            "functionName": "(idle)",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "selfUs": 558164486,
+            "inclusiveUs": 558164486,
+            "samples": 49414,
+            "selfPercentOfAllSamples": 62.75588229607343,
+            "inclusivePercentOfAllSamples": 62.75588229607343
+          },
+          {
+            "functionName": "update",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 28106,
+            "selfUs": 647156,
+            "inclusiveUs": 269289849,
+            "samples": 65,
+            "selfPercentOfAllSamples": 0.07276142925939881,
+            "inclusivePercentOfAllSamples": 30.276956867104204
+          },
+          {
+            "functionName": "process",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 30361,
+            "selfUs": 242735278,
+            "inclusiveUs": 268794112,
+            "samples": 23019,
+            "selfPercentOfAllSamples": 27.291357507243237,
+            "inclusivePercentOfAllSamples": 30.22121986913653
+          },
+          {
+            "functionName": "gu",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 15,
+            "columnNumber": 89833,
+            "selfUs": 2374400,
+            "inclusiveUs": 91861437,
+            "samples": 222,
+            "selfPercentOfAllSamples": 0.26695995653832544,
+            "inclusivePercentOfAllSamples": 10.328219857255778
+          },
+          {
+            "functionName": "verify",
+            "url": "http://127.0.0.1:25969/assets/index-DON1UPCZ.js",
+            "lineNumber": 17,
+            "columnNumber": 17982,
+            "selfUs": 34811,
+            "inclusiveUs": 90346074,
+            "samples": 4,
+            "selfPercentOfAllSamples": 0.003913891108092843,
+            "inclusivePercentOfAllSamples": 10.157843660903106
+          }
+        ]
+      }
+    ],
+    "performanceAccepted": false,
+    "releaseReady": false
+  },
+  "extraIndependentChecks": "EXTRA-INDEPENDENT-CHECKS.json",
+  "findings": {
+    "sha256CompressionLocation": {
+      "asset": "index-DON1UPCZ.js",
+      "zeroBasedLine": 15,
+      "column": 30361,
+      "senderWeightedSelfUs": 276692464,
+      "senderPercentAllWeightedSamples": 31.09008905406974,
+      "receiverWeightedSelfUs": 242735278,
+      "receiverPercentAllWeightedSamples": 27.291357507243237
+    },
+    "senderIdlePercentAllWeightedSamples": 56.52892578698678,
+    "receiverIdlePercentAllWeightedSamples": 62.75588229607343,
+    "matchedCompiledCallers": [
+      {
+        "function": "prepareLargeSource",
+        "location": "15:77882",
+        "senderInclusiveUs": 179824159
+      },
+      {
+        "function": "encodeOfflineDataBlock",
+        "location": "15:150116",
+        "senderInclusiveUs": 135520423
+      },
+      {
+        "function": "hashDataBlock",
+        "location": "15:154778",
+        "senderInclusiveUs": 129537411
+      },
+      {
+        "function": "OfflineDestinationReceiver.verify",
+        "location": "17:17982",
+        "receiverInclusiveUs": 90346074
+      },
+      {
+        "function": "writeOneFile",
+        "location": "15:89833",
+        "receiverInclusiveUs": 91861437
+      },
+      {
+        "function": "destinationFileMatches",
+        "location": "15:92120",
+        "receiverInclusiveUs": 90039182
+      }
+    ],
+    "interpretation": "SHA-256 work is a substantial observed page-isolate hotspot. Inclusive weights overlap; do not add them or infer pure CPU utilization/network speed. Exact function identification uses retained compiled excerpts matched to source bodies, not source maps.",
+    "candidateNextExperiment": "Measure eliminating duplicated first-file SHA compression by cloning the already identical prefix state before digest. Preserve every file/stream hash, abort/source checks and bounded memory; use independent hash vectors and matched real5GiB before/after evidence. Not implemented or claimed faster yet."
+  },
+  "scope": "One deliberately CPU-instrumented same-host5GiB native-file compiled production-UI receive/save case; injected pickers/OPFS destination. Native samples/disk/full-byte checks retained. Captures page main isolates only; workers/native stacks/I/O attribution absent. Timing/memory can be perturbed; no physical Wi-Fi/near-maximum speed or general resource scaling acceptance.",
+  "priorUnprofiledQualification": "release-evidence/native-ui-5gib-2026-10-23.json",
+  "originalObligationsUnchanged": true,
+  "performanceAccepted": false,
+  "resourceMatrixAccepted": false,
+  "releaseReady": false,
+  "evidenceRoot": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba",
+  "sourceNameErratum": {
+    "scope": "The immutable sealed REVIEW-FINAL.json used three descriptive aliases where actual source names were intended. This receipt corrects only those labels; raw profile locations, weights and all integrity/resource results are unchanged.",
+    "corrections": [
+      {
+        "sealedLabel": "writeDestinationFile",
+        "sourceName": "writeOneFile",
+        "source": "src/lib/large-destination.ts:317",
+        "compiledLocation": "15:89833"
+      },
+      {
+        "sealedLabel": "savedFileMatches",
+        "sourceName": "destinationFileMatches",
+        "source": "src/lib/large-destination.ts:467",
+        "compiledLocation": "15:92120"
+      },
+      {
+        "sealedLabel": "OfflineSourceReceiver.verify",
+        "sourceName": "OfflineDestinationReceiver.verify",
+        "source": "src/lib/webrtc-transfer.ts:315",
+        "compiledLocation": "17:17982"
+      }
+    ]
+  },
+  "closure": {
+    "manifest": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/CLOSURE-HASHES.json",
+    "files": 954,
+    "totalBytes": 157697069,
+    "manifestBytes": 184347,
+    "sha256": "69acd4229f4994e143b196718b68531d753e19c1fbbba0a0de135f3b28046777",
+    "doubleHashed": true
+  },
+  "evidence": {
+    "raw": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/native-ui-40004630063-1/result/evidence/RAW.json",
+    "context": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/native-ui-40004630063-1/result/CONTEXT.json",
+    "parent": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/native-ui-40004630063-1/result/PARENT.json",
+    "independent": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/HOSTED-INDEPENDENT-REVIEW.json",
+    "cpuReview": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/CPU-PROFILE-REVIEW.json",
+    "senderProfile": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/native-ui-40004630063-1/result/evidence/cpu-sender.cpuprofile",
+    "receiverProfile": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/native-ui-40004630063-1/result/evidence/cpu-receiver.cpuprofile",
+    "senderAttribution": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/HOSTED-SENDER-ATTRIBUTION.json",
+    "receiverAttribution": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/HOSTED-RECEIVER-ATTRIBUTION.json",
+    "extraChecks": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/EXTRA-INDEPENDENT-CHECKS.json"
+  }
+}
