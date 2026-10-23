@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-10-23T19:33:39.166Z",
+  "sourceCommit": "2fc36afe077144c634f65b73239d7f40b767eb33",
+  "sourceGate": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40010505800",
+  "candidateAssets": [
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "ef18c83f9375b83dade1b8e89719b3c4cdbbf67bf341d0306ab4c7b513d1d8b8"
+    },
+    {
+      "path": "dist/assets/block-store.worker-9i0g9xys.js",
+      "bytes": 2415,
+      "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-KefphoDT.js",
+      "bytes": 556960,
+      "sha256": "6b2ca9b333ec43723b7d2d254c7ce679e5bb21cfcfa71fda3f97016c2540de9c"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    }
+  ],
+  "sourceChecks": {
+    "unitPassed": 615,
+    "unitFiles": 62,
+    "browserPassed": 101,
+    "auditFindings": 0,
+    "typecheck": 0,
+    "build": 0
+  },
+  "hashWorkVectors": {
+    "newCases": 8,
+    "initialCostFailures": 6,
+    "emptyControlsPassed": 2,
+    "independentFileAndStreamHashesMatch": true
+  },
+  "baselineCommit": "203c64d502478cb9267fb074485c0698a0bcc20b",
+  "candidateNativeQualification": "Pending paired5GiB run; DON native evidence remains baseline only",
+  "comparisonSpec": "SPEC-prefix-hash-comparison.md",
+  "evidenceRoot": "C:/Users/dines/QRFT-qualification-evidence/first-prefix-hash-2026-10-24-33ea23",
+  "sealed": false,
+  "pairedRun": null,
+  "performanceAccepted": false,
+  "resourceMatrixAccepted": false,
+  "releaseReady": false
+}

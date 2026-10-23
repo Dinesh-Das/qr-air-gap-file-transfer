@@ -4,6 +4,14 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
+The prefix-hash candidate builds as index-KefphoDT.js. Its app source gate passed
+615 unit and101 browser cases with audit0. It removes duplicate incremental SHA
+work for the first nonempty source file while independent file/stream digests
+remain identical. Eight vectors cover SHA/read boundaries and empty files. Native
+candidate5GiB and paired performance evidence are pending. All DON1UPCZ records
+below are preserved baseline evidence. See prefix-hash-candidate-2026-10-24.json
+and SPEC-prefix-hash-comparison.md; READY remains false.
+
 Toolchain security patch `82391c2` rebuilds the app as `index-DON1UPCZ.js`
 and `block-store.worker-9i0g9xys.js`. Vite8.2.4/Vitest4.1.12 audits and full
 browser/package checks pass; no speed or memory improvement is claimed. Earlier
