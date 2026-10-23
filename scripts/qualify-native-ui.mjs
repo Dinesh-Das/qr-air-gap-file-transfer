@@ -9,10 +9,13 @@ import assert from 'node:assert/strict';
 import { resolve, dirname } from 'node:path';
 import { nativeUiPlan, nativeSampleComplete, writeNativeUiFixture } from './native-ui-contract.mjs';
 import { readWindowsProcessMemory } from './browser-process-memory.mjs';
+import { cpuProfilePlan, summarizeCpuProfile } from './native-cpu-profile.mjs';
 const work = fileURLToPath(new URL('../', import.meta.url)), root = resolve(process.env.QRFT_NATIVE_UI_OUTPUT ?? '');
 if (!process.env.QRFT_NATIVE_UI_OUTPUT)
     throw Error('Use the guarded native UI runner.');
 const p = JSON.parse(await readFile(root + '/CONTEXT.json', 'utf8')), plan = nativeUiPlan(process.env.QRFT_NATIVE_UI_MIB), FILE_BYTES = plan.fileBytes, RESERVE = plan.reserveBytes;
+const cpuProfile = cpuProfilePlan(process.env.QRFT_NATIVE_UI_CPU_PROFILE);
+assert.deepEqual(p.cpuProfile, cpuProfile);
 if (p.root !== root.replaceAll('\\', '/') || p.plan.fileBytes !== FILE_BYTES)
     throw Error('Native context mismatch');
 await mkdir(root + '/evidence');
@@ -46,6 +49,7 @@ while (signalPort === port)
 const url = 'http://127.0.0.1:' + port;
 let server, serverClosed, serverOutput = '', sender, receiver, error, phase = 'startup', sampling = false, stopping = false, timer, abortedForDisk = false;
 const contexts = [], endpoints = [], memory = [], resources = [], errors = [], cleanupErrors = [], events = [], browserVersions = [];
+const profilers = [], cpuCaptures = [];
 const progress = await open(root + '/evidence/progress.log', 'wx');
 const note = async (event, extra = {}) => { const row = { at: new Date().toISOString(), event, ...extra }; events.push(row); await progress.write(JSON.stringify(row) + '\n'); console.log(JSON.stringify(row)); };
 const snapshot = page => page.evaluate(() => { const x = window.__nativeUi; return { counts: x.counts, ackIndices: [...x.ackIndices], binaryBytes: x.binaryBytes, binaryFrames: x.binaryFrames, manifest: x.manifest, nativeReadBytes: x.nativeReadBytes, nativeReads: x.nativeReads, maxNativeRead: x.maxNativeRead, snapshots: x.snapshots, pickerCalls: x.pickerCalls, preservationAttempts: x.preservationAttempts, nativeSize: x.file?.size, nativeName: x.file?.name, nativeModified: x.file?.lastModified }; });
@@ -136,6 +140,14 @@ try {
         const page = await context.newPage();
         page.on('pageerror', e => errors.push(role + ': ' + e.message));
         await page.goto(url);
+        if (cpuProfile.enabled) {
+            const client = await context.newCDPSession(page), capture = { role, startedAt: Date.now(), started: false };
+            profilers.push({ client, capture });
+            await client.send('Profiler.enable');
+            await client.send('Profiler.setSamplingInterval', { interval: cpuProfile.intervalMicros });
+            await client.send('Profiler.start');
+            capture.started = true;
+        }
         browserVersions.at(-1).storage = await page.evaluate(async () => {
             try { return { estimate: await navigator.storage.estimate(), persisted: await navigator.storage.persisted(), secureContext: isSecureContext }; }
             catch (error) { return { error: String(error) }; }
@@ -226,6 +238,22 @@ finally {
     clearInterval(timer);
     while (sampling)
         await new Promise(r => setTimeout(r, 20));
+    for (const { client, capture } of profilers) {
+        try {
+            if (!capture.started) throw Error('CPU profiler did not start.');
+            const { profile } = await client.send('Profiler.stop');
+            capture.stoppedAt = Date.now();
+            const path = root + '/evidence/cpu-' + capture.role + '.cpuprofile';
+            await writeFile(path, JSON.stringify(profile) + '\n', { flag: 'wx' });
+            capture.path = path;
+            capture.summary = summarizeCpuProfile(profile);
+            capture.valid = true;
+        } catch (e) { capture.error = String(e); capture.valid = false; }
+        finally {
+            cpuCaptures.push(capture);
+            try { await client.detach(); } catch (e) { cleanupErrors.push(String(e)); }
+        }
+    }
     for (const endpoint of endpoints)
         try {
             await endpoint.cdp.detach();
@@ -329,9 +357,11 @@ const fs1 = await statfs(root);
 resources.push({ at: new Date().toISOString(), phase: 'closed', free: fs1.bavail * fs1.bsize });
 const nativeComplete = memory.length > 0 && memory.every(nativeSampleComplete) && ['sender', 'receiver'].every(role => memory.some(x => x.role === role)), functionalPassed = !error && !!independent?.passed && errors.length === 0 && cleanupErrors.length === 0, record = { at: new Date().toISOString(), recordedUtcDate: new Date().toISOString().slice(0, 10), root, plan, browserVersions, sourceCommit: p.sourceCommit, currentAssets: p.builtAssets, fixture, error, errors, cleanupErrors, functionalPassed, nativeComplete, sampledReserveMet: resources.every(x => x.free >= RESERVE), sourceBefore, sourceAfter, independent, events, memory, resources, serverOutput, releaseReady: false, scope: 'CurrentproductionUI nativeFile→realrendezvous/samehostRTC→durableOPFS→injectedOPFSdestination; byte-for-byteoriginal/payload/saved comparison and independentfile/streamhashes. Two isolated Chromium browsers, strictnativeprocessobserver. Post-save deletion deliberatelydenied toretainreceivecopy; appcorrectlyshowscleanuprequired, notcleanupsuccess. Mocksource/destinationpickers,noactualOSpicker/physicalnetwork/GUI/cleanOS/broadresourcequalification. Functional/memory/disk statuses separated; oldmemoryfailures notrelabeled.' };
 record.performanceAccepted = false;
+record.cpuProfile = { ...cpuProfile, captures: cpuCaptures };
+record.cpuProfileComplete = cpuProfile.enabled ? cpuCaptures.length === 2 && ['sender', 'receiver'].every(role => cpuCaptures.some(c => c.role === role && c.valid)) : null;
 record.resourceMatrixAccepted = false;
 record.smokeOnly = plan.smokeOnly;
 record.payloadRetention = 'Source andbothcopies kept on this runner; workflow artifacts exclude payload/profile binaries. Hosted copies unavailable after VM teardown; deterministic fixture and complete byte/hash audit metadata retained.';
 await writeFile(root + '/evidence/RAW.json', JSON.stringify(record, null, 2) + '\n', { flag: 'wx' });
 console.log(JSON.stringify({ root, functionalPassed, nativeComplete, reserveMet: record.sampledReserveMet, error, errors, cleanupErrors, memorySamples: memory.length }));
-process.exitCode = functionalPassed && nativeComplete && record.sampledReserveMet && errors.length === 0 ? 0 : 1;
+process.exitCode = functionalPassed && nativeComplete && record.sampledReserveMet && errors.length === 0 && (!cpuProfile.enabled || record.cpuProfileComplete) ? 0 : 1;

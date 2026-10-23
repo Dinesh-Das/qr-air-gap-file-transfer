@@ -9,6 +9,11 @@ on:
         type: boolean
         required: true
         default: false
+      cpu_profile:
+        description: Capture page CPU samples during the optional native UI case
+        type: boolean
+        required: true
+        default: false
 permissions:
   contents: read
 jobs:
@@ -68,3 +73,5 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && inputs.native_ui
     needs: windows
     uses: ./.github/workflows/native-ui-qualification.yml
+    with:
+      cpu_profile: ${{ inputs.cpu_profile == true }}

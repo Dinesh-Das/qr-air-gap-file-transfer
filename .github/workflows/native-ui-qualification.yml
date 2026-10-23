@@ -1,5 +1,10 @@
 name: Native Windows UI qualification
-on: workflow_call
+on:
+  workflow_call:
+    inputs:
+      cpu_profile:
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -38,12 +43,13 @@ jobs:
       - name: Run exactly one5GiB native file through the compiled UI
         env:
           QRFT_NATIVE_UI_MIB: '5120'
+          QRFT_NATIVE_UI_CPU_PROFILE: ${{ inputs.cpu_profile && '1' || '0' }}
         run: |
           node scripts/run-native-ui-qualification.mjs 2>&1 | Tee-Object -FilePath ci-evidence/native-ui/native.log
           $nativeExit = $LASTEXITCODE
           Set-Content ci-evidence/native-ui/exit.txt $nativeExit
           if ($nativeExit -ne 0) { exit $nativeExit }
-          node --input-type=module -e "import fs from 'node:fs';import assert from 'node:assert/strict';const r=JSON.parse(fs.readFileSync(process.env.QRFT_NATIVE_UI_OUTPUT+'/evidence/RAW.json'));assert.equal(r.plan.mib,5120);assert.equal(r.smokeOnly,false);assert(r.functionalPassed&&r.nativeComplete&&r.sampledReserveMet);"
+          node --input-type=module -e "import fs from 'node:fs';import assert from 'node:assert/strict';const r=JSON.parse(fs.readFileSync(process.env.QRFT_NATIVE_UI_OUTPUT+'/evidence/RAW.json'));assert.equal(r.plan.mib,5120);assert.equal(r.smokeOnly,false);assert(r.functionalPassed&&r.nativeComplete&&r.sampledReserveMet);assert.equal(r.cpuProfile.enabled,process.env.QRFT_NATIVE_UI_CPU_PROFILE==='1');if(r.cpuProfile.enabled)assert.equal(r.cpuProfileComplete,true);"
           exit $LASTEXITCODE
       - name: Copy complete or partial measurement metadata
         if: always()

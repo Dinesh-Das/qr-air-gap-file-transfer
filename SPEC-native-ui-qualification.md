@@ -53,3 +53,20 @@ This is one hosted/same-host Windows case, not physical LAN/Wi-Fi, actual OS
 picker/permission/clean-OS/ordinary-user launch, 10/50/100 GB+ resource scaling,
 or the final adversarial release pass. READY and general performance/resource
 acceptance remain false. Real two-laptop validation remains mandatory.
+
+The optional `cpu_profile` dispatch input (or `QRFT_NATIVE_UI_CPU_PROFILE=1`
+locally) records a CDP CPU profile of each page main isolate at a10ms sampling
+interval. It is disabled by default. The original5GiB size, integrity/ACK/PID
+checks, reserve and30-minute deadline remain unchanged. A requested profile
+must start, stop and contain valid attributable samples for both pages; raw
+profiles are retained before summary validation, and incomplete capture fails
+the requested diagnostic independently of functional transfer status.
+
+Profiles include idle samples and their original time deltas and source
+locations. They exclude dedicated-worker and native process stacks. Profiling
+can change timing and memory use; this is a deliberate instrumented experiment
+to identify hot functions, not an unprofiled speed/resource acceptance run or a
+replacement for the already retained successful5GiB qualification. No precise
+coverage mode, product-source patch, read cache, hash substitution, packet-window
+change or acceptance relaxation is introduced. Protocol reference:
+https://chromedevtools.github.io/devtools-protocol/tot/Profiler/ .

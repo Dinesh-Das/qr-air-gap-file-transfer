@@ -6,12 +6,14 @@ import { spawn, execFileSync } from "node:child_process";
 import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { nativeUiPlan } from "./native-ui-contract.mjs";
+import { cpuProfilePlan } from "./native-cpu-profile.mjs";
 
 if (process.platform !== "win32") throw new Error("Native UI qualification requires Windows.");
 if (!process.env.QRFT_NATIVE_UI_OUTPUT) throw new Error("Provide a new owned output directory.");
 const root = resolve(process.env.QRFT_NATIVE_UI_OUTPUT).replaceAll("\\", "/");
 const work = fileURLToPath(new URL("../", import.meta.url));
 const plan = nativeUiPlan(process.env.QRFT_NATIVE_UI_MIB);
+const cpuProfile = cpuProfilePlan(process.env.QRFT_NATIVE_UI_CPU_PROFILE);
 const channel = process.env.QRFT_TEST_BROWSER_CHANNEL;
 if (channel !== undefined && !["chrome", "msedge"].includes(channel)) throw new Error("Invalid browser channel.");
 await mkdir(root); // Exclusive creation: do not reuse or overwrite prior evidence.
@@ -40,7 +42,7 @@ if (knownAssets.length !== builtAssets.length || builtAssets.some(a => !knownAss
 }
 const context = { root, stage: work, sourceCommit: execFileSync("git", ["rev-parse", "HEAD"], { cwd: work, encoding: "utf8", windowsHide: true }).trim(),
   worktreeStatus: execFileSync("git", ["status", "--short"], { cwd: work, encoding: "utf8", windowsHide: true }),
-  node: process.version, runtimeSha256: await hash(process.execPath), plan, inputs, builtAssets,
+  node: process.version, runtimeSha256: await hash(process.execPath), plan, cpuProfile, inputs, builtAssets,
   scope: "One same-host Windows compiled-app native-file case, with injected file/folder pickers and OPFS saved copy. No physical LAN, native permissions, GUI or general resource/throughput acceptance." };
 await writeFile(join(root, "CONTEXT.json"), JSON.stringify(context, null, 2) + "\n", { flag: "wx" });
 const resources = [], startedAt = Date.now(), deadline = startedAt + plan.deadlineMs;
@@ -79,7 +81,7 @@ let valid = false;
 try {
   const raw = JSON.parse(await readFile(join(root, "evidence/RAW.json"), "utf8"));
   valid = exit?.code === 0 && !guardError && raw.functionalPassed && raw.nativeComplete && raw.sampledReserveMet &&
-    raw.plan.fileBytes === plan.fileBytes && raw.plan.smokeOnly === plan.smokeOnly;
+    raw.plan.fileBytes === plan.fileBytes && raw.plan.smokeOnly === plan.smokeOnly && (!cpuProfile.enabled || raw.cpuProfileComplete === true);
 } catch { /* Missing/partial child output is retained as a failed attempt. */ }
 const metadataFiles = [];
 async function inventory(dir, prefix = "") {
