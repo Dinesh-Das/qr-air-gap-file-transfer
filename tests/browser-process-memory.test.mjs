@@ -30,4 +30,7 @@ it.runIf(process.platform === "win32")("reports no lookup failures for a success
   expect(result.processes[0].id).toBe(process.pid);
   expect(result.missingIds).toEqual([]);
   expect(result.missingReasons).toEqual([]);
+  expect(result.observerDiagnostic.stages.map(item => item.stage)).toEqual(["entered", "input-parsed", "lookups-finished", "output-ready"]);
+  expect(result.observerDiagnostic.lastStage).toBe("output-ready");
+  expect(result.observerDiagnostic.elapsedMs).toBeGreaterThanOrEqual(0);
 }, 20_000);

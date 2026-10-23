@@ -1,3 +1,4 @@
+[Console]::Error.WriteLine('QRFT_MEMORY_STAGE entered ' + [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds())
 $ErrorActionPreference = 'Stop'
 $memoryProcessIds = [Console]::In.ReadToEnd() | ConvertFrom-Json
 if ($memoryProcessIds.Count -lt 1 -or $memoryProcessIds.Count -gt 64) {
@@ -9,6 +10,7 @@ foreach ($memoryProcessId in $memoryProcessIds) {
         throw 'Invalid process ID list.'
     }
 }
+[Console]::Error.WriteLine('QRFT_MEMORY_STAGE input-parsed ' + [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds())
 $memoryStarted = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()
 $memoryResults = @()
 $memoryMissing = @()
@@ -42,5 +44,7 @@ foreach ($memoryProcessId in ($memoryProcessIds | Select-Object -Unique)) {
             workingSetBytes = $memoryProcess.WorkingSet64 }
     } finally { $memoryProcess.Dispose() }
 }
+[Console]::Error.WriteLine('QRFT_MEMORY_STAGE lookups-finished ' + [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds())
 @{ sampleStartedAtMs = $memoryStarted; sampleFinishedAtMs = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds();
     processes = @($memoryResults); missingIds = @($memoryMissing); missingReasons = @($memoryMissingReasons) } | ConvertTo-Json -Depth 4 -Compress
+[Console]::Error.WriteLine('QRFT_MEMORY_STAGE output-ready ' + [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds())
