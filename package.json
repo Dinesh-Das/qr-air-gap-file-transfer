@@ -16,11 +16,12 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:browser": "playwright test",
-    "check:release": "npm run check && npm run test:browser && node scripts/smoke-offline.mjs",
+    "check:release": "npm run audit:dependencies && npm run check && npm run test:browser && node scripts/smoke-offline.mjs",
     "benchmark:receiver": "node scripts/benchmark-receiver.mjs",
     "benchmark:webrtc": "node scripts/benchmark-webrtc.mjs",
     "typecheck": "tsc -b --pretty false",
-    "check": "npm run typecheck && npm test && npm run build"
+    "check": "npm run typecheck && npm test && npm run build",
+    "audit:dependencies": "npm audit"
   },
   "dependencies": {
     "@digitalbazaar/base45": "^1.0.0",
@@ -40,7 +41,7 @@
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.1.0",
     "typescript": "^5.9.3",
-    "vite": "^8.0.0",
-    "vitest": "^4.1.11"
+    "vite": "8.2.4",
+    "vitest": "4.1.12"
   }
 }

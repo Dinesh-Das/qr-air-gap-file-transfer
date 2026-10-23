@@ -230,7 +230,8 @@ that estimate neither reserves space nor measures the final destination disk.
 ### Automated release checks
 
 On the development/CI machine, run `npm ci`, then
-`npx playwright install chromium`, then `npm run check:release`. This checks
+`npx playwright install chromium`, then `npm run check:release`. This first audits
+the full dependency lockfile (including development tools), then checks
 TypeScript, the unit/integration suites, the production build, and browser
 workflows. Browser tests use real WebRTC and OPFS with controlled local signaling
 and synthetic source selection. They also reconstruct a destination inside OPFS
