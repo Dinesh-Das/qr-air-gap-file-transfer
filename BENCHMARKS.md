@@ -11,6 +11,14 @@ BBeDJSZZ native1GiB and benchmark records below retain their original source and
 toolchain scope. They do not qualify this new compiled bundle for a multiGB
 resource/throughput matrix. See release-evidence/toolchain-security-2026-10-23.json.
 
+The first explicit current-bundle hosted5GiB qualification (run39996590451)
+passed its prerequisite593 unit and101 browser tests, then rejected the build
+before creating the large fixture or opening a browser. Windows checkout CRLF
+conversion changed only the compiled HTML hash in a local reproduction. An
+explicit LF checkout rule fixes that input; exact asset validation remains.
+Two local16MiB smoke cases passed, but do not establish multiGB acceptance.
+See release-evidence/native-ui-checkout-2026-10-23.json for the retained failure.
+
 ## Windows observer diagnosis, 2026-10-23
 
 The earlier hosted process-observer timeout remains unexplained. Seven isolated

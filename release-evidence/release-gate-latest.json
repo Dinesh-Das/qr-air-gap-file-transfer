@@ -1809,6 +1809,11 @@
     "clientBundle": "index-DON1UPCZ.js",
     "status": "not proven",
     "priorEvidence": "previousQualificationBeforeToolchainSecurityPatch",
-    "scope": "Prior native1GiB/memory/save evidence is preserved for the older BBeDJSZZ bundle. No new current-bundle multiGB/RAM/disk/throughput or physical acceptance."
+    "scope": "Prior native1GiB/memory/save evidence is preserved for the older BBeDJSZZ bundle. No new current-bundle multiGB/RAM/disk/throughput or physical acceptance.",
+    "hostedAttempt": {
+      "receipt": "release-evidence/native-ui-checkout-2026-10-23.json",
+      "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39996590451",
+      "status": "Preflight asset rejection; no large transfer attempted"
+    }
   }
 }

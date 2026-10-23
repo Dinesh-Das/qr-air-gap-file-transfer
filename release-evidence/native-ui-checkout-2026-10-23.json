@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-23",
+  "sourceCommit": "f256f896c649d7f68df5791343620cd4c8ea7fd5",
+  "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39996590451",
+  "conclusion": "failure",
+  "prerequisite": {
+    "passed": true,
+    "unitTests": 593,
+    "browserTests": 101
+  },
+  "native5GiB": {
+    "attempted": false,
+    "status": "Rejected before fixture/browser creation because compiled HTML differed"
+  },
+  "diagnosis": {
+    "reproduced": true,
+    "cause": "Windows Git autocrlf converted index.html to CRLF; Vite preserved those newlines",
+    "lf": {
+      "bytes": 903,
+      "sha256": "aa25ab1f47d223db9356d507d4bc18ccd3a0c1d28882043cae1481955b2b61a3"
+    },
+    "crlf": {
+      "bytes": 921,
+      "sha256": "f20a53ebc19f5e2acd86b1d8c1b765f4758a07655266a39faa952684f535d301"
+    },
+    "otherFourAssetHashesUnchanged": true,
+    "fix": "Pin index.html checkout to LF using .gitattributes; retain exact asset rejection and mismatch metadata"
+  },
+  "localSmoke": {
+    "mib": 16,
+    "valid": true,
+    "smokeOnly": true,
+    "notLargeQualification": true,
+    "sourceCommit": "f256f896c649d7f68df5791343620cd4c8ea7fd5"
+  },
+  "verification": {
+    "fixedFreshAutocrlfCheckoutByteIdentical": true,
+    "policyTestsPassed": 15,
+    "review": {
+      "correctness": "Exact byte check retained, deterministic input fixed",
+      "readability": "Single explicit checkout rule and diagnostic receipt",
+      "architecture": "Build metadata only; no app runtime change",
+      "security": "No secrets or uploaded native payloads; exclusive diagnostic creation",
+      "performance": "No transfer hot path changes"
+    }
+  },
+  "evidenceRoot": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y",
+  "releaseReady": false
+}
