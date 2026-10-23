@@ -197,7 +197,7 @@ export async function prepareLargeSource(
   signal?: AbortSignal,
 ): Promise<PreparedLargeSource> {
   validatePortableRootName(selection.rootName);
-  const streamHasher = sha256.create();
+  let streamHasher = sha256.create();
   const preparedFiles: PreparedLargeSourceFile[] = [];
   let offset = 0n;
   let bytesComplete = 0n;
@@ -207,7 +207,10 @@ export async function prepareLargeSource(
     const source = selection.files[fileIndex];
     const snapshot = await source.handle.getFile();
     assertUnchangedFile(source, snapshot);
-    const fileHasher = sha256.create();
+    // While the stream has no file bytes, its state also hashes this file.
+    // Clone before the file digest so the stream state remains extensible.
+    const sharesStreamPrefix = offset === 0n;
+    const fileHasher = sharesStreamPrefix ? streamHasher : sha256.create();
 
     for (let start = 0; start < snapshot.size; start += LARGE_TREE_READ_BYTES) {
       throwIfAborted(signal);
@@ -216,7 +219,7 @@ export async function prepareLargeSource(
         await snapshot.slice(start, end).arrayBuffer(),
       );
       fileHasher.update(chunk);
-      streamHasher.update(chunk);
+      if (!sharesStreamPrefix) streamHasher.update(chunk);
       bytesComplete += BigInt(chunk.length);
       onProgress?.({
         phase: "hash",
@@ -229,6 +232,7 @@ export async function prepareLargeSource(
       await yieldToBrowser();
     }
 
+    if (sharesStreamPrefix) streamHasher = fileHasher.clone();
     preparedFiles.push({
       ...source,
       offset,
