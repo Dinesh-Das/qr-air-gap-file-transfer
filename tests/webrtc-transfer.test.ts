@@ -528,6 +528,52 @@ describe("offline WebRTC transfer", () => {
     sender.dispose();
   });
 
+  it.each(["overlap", "backwards", "outside transfer"] as const)(
+    "preserves earlier resume pages and retransmits every missing byte after rejecting %s",
+    async (kind) => {
+      const source = await prepareLargeSource(selectionWithLargeFile(3));
+      const manifest = await createOfflineTransferManifest(source);
+      const receiver = await OfflineDestinationReceiver.open(manifest, {
+        backend: "memory", memoryRepository: new MemoryBlockStoreRepository(),
+      });
+      const channel = new FakeDataChannel();
+      const sender = new OfflineSourceSender(channel as unknown as RTCDataChannel, source, manifest);
+      const sentIndices: number[] = [];
+      try {
+        // The first two blocks are durable, but only the first resume page has arrived.
+        for (const index of [0, 1]) await receiver.store.writeBlock(index,
+          await readPreparedLargeRange(source, BigInt(index * OFFLINE_BLOCK_BYTES), OFFLINE_BLOCK_BYTES));
+        sender.applyResumeRanges([[0, 1]]);
+        const badTail = kind === "overlap" ? [2, 4]
+          : kind === "backwards" ? [0, 1] : [3, receiver.store.totalBlocks + 1];
+        const malformed = decodeOfflineControl(JSON.stringify({ type: "resume-ranges", ranges: [[1, 3], badTail] }));
+        if (malformed.type !== "resume-ranges") throw new Error("Expected resume page");
+        expect(() => sender.applyResumeRanges(malformed.ranges)).toThrow();
+        // Rejection must not advance the resume cursor or claim block2 from the bad prefix.
+        sender.applyResumeRanges([[1, 2]]);
+        channel.onBinary = async (bytes) => {
+          sentIndices.push(new DataView(bytes).getUint32(4, true));
+          try { sender.acknowledge([await receiver.acceptData(bytes)]); }
+          catch (error) { sender.fail(error instanceof Error ? error : new Error(String(error))); }
+        };
+        const updates: Array<{ resumedBytes: number; completedBytes: number }> = [];
+        await sender.run(new AbortController().signal, progress => updates.push(progress));
+        expect(updates[0]).toMatchObject({ resumedBytes: 2 * OFFLINE_BLOCK_BYTES, completedBytes: 2 * OFFLINE_BLOCK_BYTES });
+        expect(sentIndices).toEqual(Array.from({ length: receiver.store.totalBlocks - 2 }, (_, index) => index + 2));
+        expect(updates.at(-1)?.completedBytes).toBe(manifest.totalBytes);
+        expect(channel.controls.map(decodeOfflineControl)).toEqual([{ type: "sender-complete" }]);
+        const reader = await receiver.verify(new AbortController().signal);
+        const tree = await readLargeTreeManifest(reader);
+        expect(tree.files.map(file => file.path)).toEqual(["large.bin"]);
+        const file = tree.files[0];
+        const bytes = await reader.read(file.offset, Number(file.size));
+        for (let index = 0; index < bytes.length; index++) {
+          if (bytes[index] !== (index * 37 & 255)) throw new Error(`Recovered byte mismatch at ${index}`);
+        }
+      } finally { sender.dispose(); await receiver.store.delete(); }
+    },
+  );
+
   it("aborts promptly while transmission is paused", async () => {
     const source = await prepareLargeSource(selectionWithLargeFile());
     const manifest = await createOfflineTransferManifest(source);
