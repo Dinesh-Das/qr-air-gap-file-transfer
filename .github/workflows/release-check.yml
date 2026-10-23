@@ -1,5 +1,14 @@
 name: Release checks
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      native_ui:
+        description: Run the single guarded5GiB native UI qualification after the full gate
+        type: boolean
+        required: true
+        default: false
 permissions:
   contents: read
 jobs:
@@ -54,3 +63,8 @@ jobs:
     if: github.ref == 'refs/heads/codex/benchmark-window-study'
     needs: windows
     uses: ./.github/workflows/window-study.yml
+
+  native-ui:
+    if: github.event_name == 'workflow_dispatch' && inputs.native_ui
+    needs: windows
+    uses: ./.github/workflows/native-ui-qualification.yml

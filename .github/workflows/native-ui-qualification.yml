@@ -1,0 +1,65 @@
+name: Native Windows UI qualification
+on: workflow_call
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Set isolated paths
+        run: |
+          New-Item -ItemType Directory -Path ci-evidence/native-ui | Out-Null
+          $caseRoot = node --input-type=module -e "import fs from 'node:fs';import {tmpdir} from 'node:os';import {join} from 'node:path';const c=[...new Set([tmpdir(),process.env.RUNNER_TEMP].filter(Boolean))].map(path=>{const s=fs.statfsSync(path);return {path,free:s.bavail*s.bsize}}).sort((a,b)=>b.free-a.free);fs.writeFileSync('ci-evidence/native-ui/available-volumes.json',JSON.stringify(c,null,2));console.log(join(c[0].path,'qrft-native-ui-'+process.env.GITHUB_RUN_ID));"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          "QRFT_NATIVE_UI_OUTPUT=$caseRoot" | Add-Content $env:GITHUB_ENV
+          "PLAYWRIGHT_BROWSERS_PATH=$(Join-Path $env:RUNNER_TEMP 'qrft-native-ui-browser')" | Add-Content $env:GITHUB_ENV
+      - name: Install locked tools and compile the exact app
+        run: |
+          npm ci 2>&1 | Tee-Object -FilePath ci-evidence/native-ui/install.log
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npm run build 2>&1 | Tee-Object -FilePath ci-evidence/native-ui/build.log
+          exit $LASTEXITCODE
+      - name: Install isolated Chromium
+        run: |
+          npx playwright install --only-shell --no-remove chromium 2>&1 | Tee-Object -FilePath ci-evidence/native-ui/browser.log
+          exit $LASTEXITCODE
+      # The caller's complete release gate must succeed before this workflow runs.
+      - name: Run exactly one5GiB native file through the compiled UI
+        env:
+          QRFT_NATIVE_UI_MIB: '5120'
+        run: |
+          node scripts/run-native-ui-qualification.mjs 2>&1 | Tee-Object -FilePath ci-evidence/native-ui/native.log
+          $nativeExit = $LASTEXITCODE
+          Set-Content ci-evidence/native-ui/exit.txt $nativeExit
+          if ($nativeExit -ne 0) { exit $nativeExit }
+          node --input-type=module -e "import fs from 'node:fs';import assert from 'node:assert/strict';const r=JSON.parse(fs.readFileSync(process.env.QRFT_NATIVE_UI_OUTPUT+'/evidence/RAW.json'));assert.equal(r.plan.mib,5120);assert.equal(r.smokeOnly,false);assert(r.functionalPassed&&r.nativeComplete&&r.sampledReserveMet);"
+          exit $LASTEXITCODE
+      - name: Copy complete or partial measurement metadata
+        if: always()
+        run: |
+          if ($env:QRFT_NATIVE_UI_OUTPUT -and (Test-Path -LiteralPath $env:QRFT_NATIVE_UI_OUTPUT)) {
+            New-Item -ItemType Directory -Path ci-evidence/native-ui/result -Force | Out-Null
+            Get-ChildItem -LiteralPath $env:QRFT_NATIVE_UI_OUTPUT -File | Where-Object { $_.Extension -in @('.json', '.log') } | Copy-Item -Destination ci-evidence/native-ui/result
+            $evidence = Join-Path $env:QRFT_NATIVE_UI_OUTPUT 'evidence'
+            if (Test-Path -LiteralPath $evidence) { Copy-Item -LiteralPath $evidence -Destination ci-evidence/native-ui/result -Recurse }
+          }
+      - name: Retain raw measurement metadata and compiled assets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-ui-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-evidence/native-ui/
+          if-no-files-found: warn
+          retention-days: 14
+          # Native source/profile payloads are intentionally not uploaded.
