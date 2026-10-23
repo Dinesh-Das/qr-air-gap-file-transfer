@@ -58,19 +58,19 @@
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
   },
   "qualification": {
-    "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
-    "fullHostedCurrentSource": "Run39998977543 passed full audit0/593units60files/typecheck/build/101bundledChromium/external package smoke, then one guarded native5GiB case.",
-    "unitPassed": 593,
-    "unitFiles": 60,
+    "sourceCommit": "125fb74048894ecb855bfa1c7d09aa3d11e1f124",
+    "fullHostedCurrentSource": "Run40004630063 passed audit0/607units61files/typecheck/build/101bundledChromium/package smoke and one deliberate CPU-profiled native5GiB UI case. Previous unprofiled5GiB qualification retained separately.",
+    "unitPassed": 607,
+    "unitFiles": 61,
     "browserPassed": 101,
     "node": "v24.22.1",
-    "localHarnessTestsPassed": 15,
+    "localHarnessTestsPassed": 29,
     "localFullCheck": {
-      "sourceCommit": "f256f896c649d7f68df5791343620cd4c8ea7fd5",
-      "unitPassed": 593,
-      "unitFiles": 60,
+      "unitPassed": 607,
+      "unitFiles": 61,
       "typecheck": 0,
-      "build": 0
+      "build": 0,
+      "scope": "Recorded during integration worktree; exact final source covered by hosted gate."
     },
     "installedChromeAndEdgePriorCurrentBundleSuites": "Preserved in previousQualificationBeforeNativeUiHarness; source82391c2 had101Chrome/101Edge. Product source/assets remain identical; not a fresh installed-browser suite for the harness commits.",
     "nativeFile5GiB": {
@@ -79,7 +79,7 @@
       "diskReserveMet": true,
       "scope": "One fresh hosted Windows native disk-file current compiled-UI/real rendezvous/same-host WebRTC/OPFS receive and injected OPFS destination save. All5GiB source/received/saved bytes compared on runner. Every selected process measured on all718 rows. Independent local metadata/assets audit and full public-fixture stream hash recomputation pass. Source/profile payloads not uploaded; hosted received/saved bytes unavailable after VM teardown."
     },
-    "currentBundleNativeLargeMatrix": "One same-host5GiB nativeFile productionUI receive/save case passed. General multi-size/browser RAM/disk/throughput matrix remains unproven.",
+    "currentBundleNativeLargeMatrix": "One unprofiled and one CPU-profiled same-host5GiB case passed, same DON bundle. General multi-size/browser RAM/disk/throughput matrix remains unproven.",
     "nativeWindowsGUI": false,
     "performanceAccepted": false,
     "resourceMatrixAccepted": false,
@@ -92,11 +92,11 @@
     },
     {
       "path": ".github/workflows/native-ui-qualification.yml",
-      "sha256": "b6accaf70c18623fd4d37a905d3f07601311433bc0e9a2373d108f4af6875dd4"
+      "sha256": "e359929c72b49373427e0d673e56201dc91c127620aac43c5741a4721758bdad"
     },
     {
       "path": ".github/workflows/release-check.yml",
-      "sha256": "52f9e9cf74c0a5405a446b0a5e2583467bb3b19e0a79b4d77ff7c4051d29ee8f"
+      "sha256": "0fa4c08d4ea83f6f40fdc3227642394276659d8d5aed1dc3e244d341ae932771"
     },
     {
       "path": ".github/workflows/window-study.yml",
@@ -112,7 +112,7 @@
     },
     {
       "path": "SPEC-native-ui-qualification.md",
-      "sha256": "c3f9e6eb55ae0e59915afdcffd54623f1863ac7cf4ede3ee63551a5e9d857144"
+      "sha256": "0f9ef1246836b94315872508bbb515fe6064504f69e9ef5db5c9730b9b8f482e"
     },
     {
       "path": "e2e/browser-channel.ts",
@@ -223,6 +223,10 @@
       "sha256": "8229a5f02a23531a48a7375cc0a4914ccd2c15b57b837dcf0e68f9b2a92010e6"
     },
     {
+      "path": "scripts/native-cpu-profile.mjs",
+      "sha256": "ecf406da6c5a3d83c0fbbbfb10cea76f04bf7690dc1c1eff9bdf2d6ae7364c3a"
+    },
+    {
       "path": "scripts/native-ui-contract.mjs",
       "sha256": "8216aadcf67c6b65150689921c09181d2dfd2c9f6684b910708b43a33e443520"
     },
@@ -232,7 +236,7 @@
     },
     {
       "path": "scripts/qualify-native-ui.mjs",
-      "sha256": "b88bd1f9f446d7a5e920dd3ff7c466396df248f98c8ad6b6d17f99ed83443f5b"
+      "sha256": "d1c8a3e2df64131eab0970310508e882c50b1cf865f18a6e2d477bd02515de0f"
     },
     {
       "path": "scripts/rendezvous.mjs",
@@ -244,7 +248,7 @@
     },
     {
       "path": "scripts/run-native-ui-qualification.mjs",
-      "sha256": "0e5bfad8eb9b1e3de653860152b790fe28b0cae771398e4d7aa91e2b63ea381a"
+      "sha256": "a8439b3a47448941a35afe2a463519117597cdd48cd4b07660b4dfe0f3c071f6"
     },
     {
       "path": "scripts/serve.mjs",
@@ -593,6 +597,10 @@
     {
       "path": "tests/local-http-security.test.mjs",
       "sha256": "542973958a9ca8ccbc764d82558b09c0ee5121694a6cd25d50dae915bfb5cb5a"
+    },
+    {
+      "path": "tests/native-cpu-profile.test.mjs",
+      "sha256": "166cec8bf3c00ad9d512cf2551227beae1e51b51a33071dfe380ba037da96b0a"
     },
     {
       "path": "tests/native-ui-contract.test.mjs",
@@ -974,7 +982,7 @@
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
   "updatedAt": "2026-10-23T16:43:29.356Z",
-  "currentInputsScope": "163 actual input hashes from the exact clean hosted Windows checkout forfcdb233, including scripts/tests/config/original obligations. Checkout line endings can differ from local files; this is the hosted trial input snapshot, not a claim all local bytes match.",
+  "currentInputsScope": "165 actual hashes from clean exact hosted Windows125fb74 checkout for the CPU-profiled native5GiB experiment. Checkout line endings can differ from local; not a claim all local bytes match. Prior unprofiled163-input qualification retained separately.",
   "hostedCodeGate": {
     "schema": "qrft-hosted-gate-observation-v1",
     "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39986201663",
@@ -1048,7 +1056,7 @@
       "sha256": "9645cca1307e48bd7b211150b8f8a84af17be15a966989458091a09e83d5d083"
     }
   },
-  "currentInputIndex": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/native-ui-39998977543-1/result/CONTEXT.json",
+  "currentInputIndex": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/native-ui-40004630063-1/result/CONTEXT.json",
   "localCandidateRecoveryEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/REVIEW-LOCAL.json",
@@ -1372,7 +1380,7 @@
     "nativeWindowsGUI": false,
     "releaseReady": false
   },
-  "currentInputSnapshot": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/native-ui-39998977543-1/result/CONTEXT.json",
+  "currentInputSnapshot": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/native-ui-40004630063-1/result/CONTEXT.json",
   "previousPrimaryEvidenceBeforeMetadataSizeFix": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-2026-10-22-a5768475/REVIEW.json",
@@ -2491,7 +2499,13 @@
       "710.354s received-verified and932.716s saved-verified are cumulative instrumented milestones including preparation/verification/pairing work, not pure network throughput.",
       "No speed acceptance: periodic CPU counter deltas show substantial CPU consumption but do not establish a bottleneck or improvement.",
       "Real two-laptop Wi-Fi/LAN,42physical cases,nontechnical-user UX,GUI/cleanOS/native permissions,10/50/100GB resource/throughput and final adversarial acceptance remain open."
-    ]
+    ],
+    "additionalProfiledCase": {
+      "receipt": "release-evidence/native-ui-cpu-profile-2026-10-24.json",
+      "nativeSamples": 616,
+      "profiled": true,
+      "scope": "One additional deliberately instrumented same-host case; not a throughput or general resource acceptance."
+    }
   },
   "previousQualificationBeforeNativeUiHarness": {
     "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
@@ -2557,11 +2571,58 @@
     "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39998977543"
   },
   "currentHostedSourceGate": {
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39998977543",
-    "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40004630063",
+    "sourceCommit": "125fb74048894ecb855bfa1c7d09aa3d11e1f124",
     "passed": true,
-    "unitTests": 593,
+    "unitTests": 607,
     "browserTests": 101,
     "auditFindings": 0
+  },
+  "previousQualificationBeforeCpuProfileHarness": {
+    "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
+    "fullHostedCurrentSource": "Run39998977543 passed full audit0/593units60files/typecheck/build/101bundledChromium/external package smoke, then one guarded native5GiB case.",
+    "unitPassed": 593,
+    "unitFiles": 60,
+    "browserPassed": 101,
+    "node": "v24.22.1",
+    "localHarnessTestsPassed": 15,
+    "localFullCheck": {
+      "sourceCommit": "f256f896c649d7f68df5791343620cd4c8ea7fd5",
+      "unitPassed": 593,
+      "unitFiles": 60,
+      "typecheck": 0,
+      "build": 0
+    },
+    "installedChromeAndEdgePriorCurrentBundleSuites": "Preserved in previousQualificationBeforeNativeUiHarness; source82391c2 had101Chrome/101Edge. Product source/assets remain identical; not a fresh installed-browser suite for the harness commits.",
+    "nativeFile5GiB": {
+      "functionalPassed": true,
+      "nativeComplete": true,
+      "diskReserveMet": true,
+      "scope": "One fresh hosted Windows native disk-file current compiled-UI/real rendezvous/same-host WebRTC/OPFS receive and injected OPFS destination save. All5GiB source/received/saved bytes compared on runner. Every selected process measured on all718 rows. Independent local metadata/assets audit and full public-fixture stream hash recomputation pass. Source/profile payloads not uploaded; hosted received/saved bytes unavailable after VM teardown."
+    },
+    "currentBundleNativeLargeMatrix": "One same-host5GiB nativeFile productionUI receive/save case passed. General multi-size/browser RAM/disk/throughput matrix remains unproven.",
+    "nativeWindowsGUI": false,
+    "performanceAccepted": false,
+    "resourceMatrixAccepted": false,
+    "releaseReady": false
+  },
+  "previousInputSnapshotBeforeCpuProfileHarness": {
+    "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
+    "snapshot": "C:/Users/dines/QRFT-qualification-evidence/hosted-native-ui-2026-10-23-NdPW6Y/native-ui-39998977543-1/result/CONTEXT.json",
+    "paths": 163
+  },
+  "cpuProfileEvidence": {
+    "receipt": "release-evidence/native-ui-cpu-profile-2026-10-24.json",
+    "root": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba",
+    "closure": {
+      "manifest": "C:/Users/dines/QRFT-qualification-evidence/native-ui-cpu-profile-2026-10-24-5d2dba/CLOSURE-HASHES.json",
+      "files": 954,
+      "totalBytes": 157697069,
+      "manifestBytes": 184347,
+      "sha256": "69acd4229f4994e143b196718b68531d753e19c1fbbba0a0de135f3b28046777",
+      "doubleHashed": true
+    },
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40004630063",
+    "performanceAccepted": false
   }
 }

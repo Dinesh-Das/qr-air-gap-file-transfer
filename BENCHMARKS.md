@@ -44,6 +44,30 @@ See release-evidence/native-ui-5gib-2026-10-23.json and its4378-file sealed arch
 Physical Wi-Fi/LAN, native OS permissions/destination,10/50/100GB resource scaling,
 throughput acceptance and final release validation remain open. READY=false.
 
+Run40004630063/source125fb74 adds an opt-in CPU-profiled5GiB case after
+607 unit/101 browser checks and audit0. All byte/hash/ACK checks passed again;
+616 native rows were complete and both disk reserves held. Main-page profiles
+contain80,263 sender/80,255 receiver samples and cover the full task. Independent
+raw-sample weighting and call-tree aggregation retain idle/program samples.
+SHA-256 compression at compiled0-based15:30361 accounts for31.09% sender and
+27.29% receiver weighted self samples; idle accounts for56.53%/62.76%.
+These are all-sample percentages, not process CPU utilization. Workers/native
+stacks and I/O attribution are absent. Inclusive caller weights overlap.
+
+Matched compiled bodies show substantial hashing in source preparation,
+synchronous sender frame encoding, receiver verification and destination write
+and readback. A candidate next experiment is to avoid hashing the first file's
+identical prefix twice by cloning hash state while preserving every hash and
+source/abort check. No optimization or speedup is claimed yet. The cumulative
+received/save milestones678.127s/885.046s are instrumented observations from a
+different job instance, not an improvement over the unprofiled run. The original
+30-minute case limit,5GiB size, integrity/PID/disk checks and all release gates
+remain unchanged. See release-evidence/native-ui-cpu-profile-2026-10-24.json,
+including its source-name erratum for three descriptive labels in the sealed review.
+The954-file157,697,069-byte archive retains raw profiles and metadata; hosted
+payloads were not uploaded. Physical and broad resource/performance acceptance
+remain open; READY=false.
+
 ## Windows observer diagnosis, 2026-10-23
 
 The earlier hosted process-observer timeout remains unexplained. Seven isolated
