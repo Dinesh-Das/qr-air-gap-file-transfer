@@ -1,0 +1,102 @@
+{
+  "schema": "qrft-observer-stage-diagnostic-v1",
+  "sourceCommit": "a13dad99bf81db5b500db0db24ac8777d7629a23",
+  "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39980670284",
+  "conclusion": "success",
+  "localNode": "v24.12.0",
+  "hostedNode": "v24.22.1",
+  "localLogicalProcessors": 28,
+  "isolatedDiagnostic": {
+    "startupControls": 3,
+    "observerCalls": 7,
+    "observerElapsedRangeMs": [
+      310,
+      466
+    ],
+    "timeoutReproduced": false
+  },
+  "red": {
+    "failed": 2,
+    "passed": 2,
+    "scope": "Expected new metadata assertions; no real observer timeout reproduced."
+  },
+  "finalFocusedPassed": 8,
+  "localSourceGate": {
+    "unitPassed": 575,
+    "unitFiles": 59,
+    "typecheck": 0,
+    "build": 0,
+    "note": "Before final output-ready marker placement; finalfocused8 and exactcommithostedfullgate cover finalscript.",
+    "diskSamples": 54,
+    "minimumFreeBytes": 4145958912
+  },
+  "hostedGate": {
+    "unitPassed": 575,
+    "unitFiles": 59,
+    "browserPassed": 101,
+    "typecheck": 0,
+    "build": 0,
+    "externalPackageFiles": 19,
+    "fetchedAssets": 5,
+    "scope": "HostedWindows bundledChromium/external launcher-MODULE smoke,injected handoff; no actualGUI/picker/physical acceptance.",
+    "artifactArchiveDownloaded": false
+  },
+  "browserProbe": {
+    "mib": 100,
+    "modes": [
+      "raw",
+      "transfer"
+    ],
+    "window": 96,
+    "passed": 2,
+    "processMemoryValid": true,
+    "missingProcessSamples": 0,
+    "pairedPeriodicSamples": {
+      "raw": 4,
+      "transfer": 9
+    },
+    "allPostRunStageSnapshotsPassed": true,
+    "resourceSamples": 42,
+    "minimumFreeBytes": 3924205568,
+    "scope": "One same-host synthetic100MiBraw/verified pair in real isolated Chromium processes. Observer overhead included; no general RAM/large transfer/physical acceptance."
+  },
+  "review": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/REVIEW.json",
+    "bytes": 1667,
+    "sha256": "633801acc9d9952b6819e52b77842ccba3cb3d94c94fcd5b27277a5347aa06be"
+  },
+  "stageReview": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/STAGE-REVIEW.json",
+    "bytes": 5494,
+    "sha256": "0df5e97f97080a22fde54ab231cb91c8a1178bc82e054f039a18a318102954f2"
+  },
+  "browserReview": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/BROWSER-PROBE-REVIEW.json",
+    "bytes": 4236,
+    "sha256": "a52b4dc9bc05f6f3ddd429e9266ed905d92a3e0225d389de8a366090086bc513"
+  },
+  "runMetadata": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/HOSTED-RUN.json",
+    "bytes": 3709,
+    "sha256": "434e2842dbb135c71ca2108ac3d28feb431f37be20bd27a970ba4736800068e5"
+  },
+  "runLog": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/HOSTED-RUN.log",
+    "bytes": 62568,
+    "sha256": "176e57568f4425357b89ef7420cb8a054e4abc560448dee5e255c8873abb07d7"
+  },
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/CLOSURE-HASHES.json",
+    "bytes": 3909,
+    "sha256": "4ffe879a87b8cd3e07011a5e0da3bdff17c63848804326f317ae154018d0299f"
+  },
+  "unchanged": "Product src,96default,all missingPID semantics,10sobserver deadline,64PID/64KiB limits and2GiBreserve.",
+  "productMainSha256": "2064311973bab625ab4776535f75d81460d46844d4e6cd783df7da9b533ba82c",
+  "open": [
+    "Earlier hosted observer timeout remains unexplained; later successes do not fix its cause.",
+    "Older5GiB utilityPID disappearance remains unresolved; no missing PID waiver.",
+    "Large-file resource/throughput/nativeGUI/picker/physical42/final adversarial acceptance remains open."
+  ],
+  "performanceAccepted": false,
+  "releaseReady": false
+}

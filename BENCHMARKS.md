@@ -4,6 +4,36 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
+## Windows observer diagnosis, 2026-10-23
+
+The earlier hosted process-observer timeout remains unexplained. Seven isolated
+local observations (three serial, four concurrent) completed in310–466ms and
+preserved both the live PID and the deliberately missing PID; three startup
+controls also passed. This does not reproduce or fix the earlier timeout.
+
+Development helper `a13dad9` adds four fixed-name stderr stages and bounded
+stage/elapsed metadata on results and native errors. No marker means
+"unobserved", not proof the process never started. The10s deadline, missing-PID
+handling, original child error and script-free bounded summary remain. Two new
+assertions failed before implementation; final focused8 checks pass. Hosted
+run39980670284 at that exact commit passed575 units/59files, typecheck/build,
+101 bundled Chromium cases and external package module smoke on Node24.22.1.
+The product bundle remains byte-identical.
+
+One local100MiB raw/verified pair with real isolated Chromium processes passed
+strict native-memory validity:4/9 paired periodic samples, zero missing selected
+PIDs, unchanged byte/ACK/destination audits, and all post-run snapshots retaining
+the four stages. The guard's42 readings stayed above3,924,205,568 bytes free.
+Observer overhead was included; these rates are not a throughput baseline. See
+release-evidence/observer-stage-diagnostic-2026-10-23.json for raw/provenance
+references and the25-file double-hashed closure.
+
+C: was freshly observed above4GB, allowing these small diagnostics with the
+unchanged2GiB reserve (guarded source-check minimum4,145,958,912 bytes free).
+This does not meet the5GiB two-copy budget. No general native browser-memory matrix,
+multi-gigabyte transfer or physical LAN acceptance is established; earlier missing-utility
+PID and hosted timeout causes remain open.
+
 ## Hosted 64/96-block study, 2026-10-23
 
 Source `d879aa6`, hosted Windows run39851735983, passed the complete release

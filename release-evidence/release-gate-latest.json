@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-23",
-  "status": "Hosted Windows572units/101browser gate and16 interleaved64/96 diagnostic cases passed atd879aa6. Production96default unchanged; no demonstrated64 verified-flow benefit. Local space unavailable; local trials held. Physical/nativeGUI/multiGBresource/throughput/final adversarial acceptance remains open.",
+  "status": "Hosted exactcommita13dad9 gate575units/101browser/externalpackage passed;100MiBraw/verified realbrowser observer pair valid withzero missingselectedPIDs. Bounded observerstage telemetry improves diagnosis; earlier timeout/missingutility causes unresolved. Product unchanged. Native largefile/resource/throughput/GUI/physical/finaladversarial acceptance remains open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -67,7 +67,7 @@
     "localChromeTargetedCases": 2,
     "localEdgeTargetedCases": 2,
     "fullLocalCurrentBundle": "passed: installed Chrome101/Edge101; one worker, retries0, skips0, flakes0; unchanged test assertions/deadlines",
-    "fullHostedCurrentBundle": "passed:run39851735983/sourced879aa6/Node24.22.0/fresh572units59files/build/101bundledChromium/external package module smoke",
+    "fullHostedCurrentBundle": "passed:run39980670284/sourcea13dad9/Node24.22.1/fresh575units59files/build/101bundledChromium/external19files5assets/module smoke",
     "externalPackageFiles": 19,
     "portablePackageFiles": 22,
     "packageScope": "Local manifest/HTTP/runtime/launcher-MODULE smoke; injected browser observer.",
@@ -336,56 +336,33 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-23T02:05:42.046Z",
-  "currentInputsScope": "Full product181-path snapshot remains source-specific atad96179. Dev-only benchmark watcher/phase/counter/test changes atd54a487/932c394 are separately fingerprinted; product src/assets and packaged runtime unchanged. New563-unit gate includes diagnostic helper tests; earlier560-unit/full101 installed-browser and hosted gates retain exact source scopes. Dev-only64/96window study atd879aa6 has16 raw records and unchanged product/defaults;572units59files includes9new window tests. No new physical or native multiGB acceptance.",
+  "updatedAt": "2026-10-23T15:53:46.815Z",
+  "currentInputsScope": "Full product181-path snapshot remains source-specific atad96179. Dev-only benchmark watcher/phase/counter/test changes atd54a487/932c394 are separately fingerprinted; product src/assets and packaged runtime unchanged. New563-unit gate includes diagnostic helper tests; earlier560-unit/full101 installed-browser and hosted gates retain exact source scopes. Dev-only64/96window study atd879aa6 has16 raw records and unchanged product/defaults;572units59files includes9new window tests. No new physical or native multiGB acceptance. Observer-stage devhelper/tests at a13dad9 are separately retained with exactcommit575/101hosted gate and one100MiBrealbrowser native-observer pair; no new broad memory acceptance.",
   "hostedCodeGate": {
     "schema": "qrft-hosted-gate-observation-v1",
-    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39851735983",
-    "sourceCommit": "d879aa6549aaacab4ee304b04811b8c4ebed39e2",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39980670284",
+    "sourceCommit": "a13dad99bf81db5b500db0db24ac8777d7629a23",
     "status": "completed",
     "conclusion": "success",
-    "node": "v24.22.0",
-    "unitPassed": 572,
+    "node": "v24.22.1",
+    "unitPassed": 575,
     "unitFiles": 59,
     "browserPassed": 101,
-    "browser": "Bundled Chromium on hosted Windows",
+    "browser": "Bundled Chromium on hostedWindows",
     "externalPackageFiles": 19,
     "fetchedAssets": 5,
     "runMetadata": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/FINAL-RUN.json",
-      "bytes": 4326,
-      "sha256": "162abb54af0a10854adfb6de98cddb514048529dc7ceec2b5913cdb253abe05b"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/HOSTED-RUN.json",
+      "bytes": 3709,
+      "sha256": "434e2842dbb135c71ca2108ac3d28feb431f37be20bd27a970ba4736800068e5"
     },
     "runLog": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/FINAL-RUN.log",
-      "bytes": 102767,
-      "sha256": "46962072c92320905bce8cb3739ea3dbe8fdf2e12be1bc872b563ba3f1674511"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/HOSTED-RUN.log",
+      "bytes": 62568,
+      "sha256": "176e57568f4425357b89ef7420cb8a054e4abc560448dee5e255c8873abb07d7"
     },
-    "artifacts": [
-      {
-        "id": 12458002113,
-        "name": "window-study-39851735983-1",
-        "digest": "sha256:639aa1c47e6217029ce41b4bf5daa9051b3ff6108bfa86c6690da07be5271c8e",
-        "archive": {
-          "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/window-study-39851735983-1.zip",
-          "bytes": 147967,
-          "sha256": "639aa1c47e6217029ce41b4bf5daa9051b3ff6108bfa86c6690da07be5271c8e"
-        },
-        "digestVerified": true
-      },
-      {
-        "id": 12457668121,
-        "name": "release-check-39851735983-1",
-        "digest": "sha256:04859f3d77f3b50fb5b067776a96d7749780fcb07d1154887435b43fba0c08a3",
-        "archive": {
-          "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/release-check-39851735983-1.zip",
-          "bytes": 3596136,
-          "sha256": "04859f3d77f3b50fb5b067776a96d7749780fcb07d1154887435b43fba0c08a3"
-        },
-        "digestVerified": true
-      }
-    ],
-    "scope": "Full source type/unit/build/browser and external package launcher-MODULE smoke; injected handoff. No native GUI/physical/general resource acceptance.",
+    "artifactArchiveDownloaded": false,
+    "scope": "HostedWindows bundledChromium/external launcher-MODULE smoke,injected handoff; no actualGUI/picker/physical acceptance.",
     "releaseReady": false
   },
   "previousSourceQualification": {
@@ -1456,13 +1433,15 @@
     "releaseReady": false
   },
   "localTrialHeadroom": {
-    "observedUtc": "2026-10-22T20:23:00.1879855Z",
-    "observedCFreeBytes": 1726545920,
+    "observedUtc": "2026-10-23T15:53:46.816Z",
+    "observedCFreeBytes": 4043026432,
     "minimumReserveBytes": 2147483648,
     "localTrialsHeld": true,
     "fiveGiBTwoCopyBudgetBytes": 13304332288,
     "requestedStableFreeBytes": 15000000000,
-    "userResponse": "Space is unavailable now"
+    "userResponse": "Space is unavailable now; later actual disk checks showed enough for small diagnostics only.",
+    "scope": "Large transfer/browser resource matrices held. Small guarded observer/source/browser100MiBdiagnostics passed currentpreflight; no 5GiBtwo-copy headroom.",
+    "smallGuardedDiagnosticsPossible": true
   },
   "previousHostedCodeGateBeforeWindowStudy": {
     "schema": "qrft-hosted-gate-observation-v1",
@@ -1505,5 +1484,87 @@
     "diagnosticCases": 16,
     "performanceAccepted": false,
     "releaseReady": false
+  },
+  "previousHostedCodeGateBeforeObserverStages": {
+    "schema": "qrft-hosted-gate-observation-v1",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39851735983",
+    "sourceCommit": "d879aa6549aaacab4ee304b04811b8c4ebed39e2",
+    "status": "completed",
+    "conclusion": "success",
+    "node": "v24.22.0",
+    "unitPassed": 572,
+    "unitFiles": 59,
+    "browserPassed": 101,
+    "browser": "Bundled Chromium on hosted Windows",
+    "externalPackageFiles": 19,
+    "fetchedAssets": 5,
+    "runMetadata": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/FINAL-RUN.json",
+      "bytes": 4326,
+      "sha256": "162abb54af0a10854adfb6de98cddb514048529dc7ceec2b5913cdb253abe05b"
+    },
+    "runLog": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/FINAL-RUN.log",
+      "bytes": 102767,
+      "sha256": "46962072c92320905bce8cb3739ea3dbe8fdf2e12be1bc872b563ba3f1674511"
+    },
+    "artifacts": [
+      {
+        "id": 12458002113,
+        "name": "window-study-39851735983-1",
+        "digest": "sha256:639aa1c47e6217029ce41b4bf5daa9051b3ff6108bfa86c6690da07be5271c8e",
+        "archive": {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/window-study-39851735983-1.zip",
+          "bytes": 147967,
+          "sha256": "639aa1c47e6217029ce41b4bf5daa9051b3ff6108bfa86c6690da07be5271c8e"
+        },
+        "digestVerified": true
+      },
+      {
+        "id": 12457668121,
+        "name": "release-check-39851735983-1",
+        "digest": "sha256:04859f3d77f3b50fb5b067776a96d7749780fcb07d1154887435b43fba0c08a3",
+        "archive": {
+          "path": "C:/Users/dines/QRFT-qualification-evidence/hosted-window-study-2026-10-23-c4a56a48/release-check-39851735983-1.zip",
+          "bytes": 3596136,
+          "sha256": "04859f3d77f3b50fb5b067776a96d7749780fcb07d1154887435b43fba0c08a3"
+        },
+        "digestVerified": true
+      }
+    ],
+    "scope": "Full source type/unit/build/browser and external package launcher-MODULE smoke; injected handoff. No native GUI/physical/general resource acceptance.",
+    "releaseReady": false
+  },
+  "observerStageDiagnosticEvidence": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/REVIEW.json",
+    "bytes": 1667,
+    "sha256": "633801acc9d9952b6819e52b77842ccba3cb3d94c94fcd5b27277a5347aa06be",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/CLOSURE-HASHES.json",
+      "bytes": 3909,
+      "sha256": "4ffe879a87b8cd3e07011a5e0da3bdff17c63848804326f317ae154018d0299f"
+    },
+    "stageReview": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/STAGE-REVIEW.json",
+      "bytes": 5494,
+      "sha256": "0df5e97f97080a22fde54ab231cb91c8a1178bc82e054f039a18a318102954f2"
+    },
+    "browserReview": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/BROWSER-PROBE-REVIEW.json",
+      "bytes": 4236,
+      "sha256": "a52b4dc9bc05f6f3ddd429e9266ed905d92a3e0225d389de8a366090086bc513"
+    },
+    "receipt": "release-evidence/observer-stage-diagnostic-2026-10-23.json",
+    "sourceCommit": "a13dad99bf81db5b500db0db24ac8777d7629a23",
+    "releaseReady": false
+  },
+  "previousLocalTrialHeadroomBeforeObserverStages": {
+    "observedUtc": "2026-10-22T20:23:00.1879855Z",
+    "observedCFreeBytes": 1726545920,
+    "minimumReserveBytes": 2147483648,
+    "localTrialsHeld": true,
+    "fiveGiBTwoCopyBudgetBytes": 13304332288,
+    "requestedStableFreeBytes": 15000000000,
+    "userResponse": "Space is unavailable now"
   }
 }
