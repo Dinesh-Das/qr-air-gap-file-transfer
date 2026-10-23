@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-23",
-  "status": "Hosted exactcommita13dad9 gate575units/101browser/externalpackage passed;100MiBraw/verified realbrowser observer pair valid withzero missingselectedPIDs. Bounded observerstage telemetry improves diagnosis; earlier timeout/missingutility causes unresolved. Product unchanged. Native largefile/resource/throughput/GUI/physical/finaladversarial acceptance remains open.",
+  "status": "Added behavioral coverage proving atomic rejection of three malformed resume-page families. Deliberate eager-apply mutant failed all three tests; original product source restored byte-exact. Exact-commit hosted gate passed 578 units and 101 browser tests plus package module smoke. Production bundle unchanged. Physical/native GUI/large-file resource and throughput/final adversarial acceptance remain open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
@@ -67,7 +67,7 @@
     "localChromeTargetedCases": 2,
     "localEdgeTargetedCases": 2,
     "fullLocalCurrentBundle": "passed: installed Chrome101/Edge101; one worker, retries0, skips0, flakes0; unchanged test assertions/deadlines",
-    "fullHostedCurrentBundle": "passed:run39980670284/sourcea13dad9/Node24.22.1/fresh575units59files/build/101bundledChromium/external19files5assets/module smoke",
+    "fullHostedCurrentBundle": "Passed run39983536416 at75953fc: Node24.22.1, fresh578units/59files, typecheck/build,101bundledChromium,19external package files/5assets/module smoke.",
     "externalPackageFiles": 19,
     "portablePackageFiles": 22,
     "packageScope": "Local manifest/HTTP/runtime/launcher-MODULE smoke; injected browser observer.",
@@ -336,33 +336,33 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-23T15:53:46.815Z",
-  "currentInputsScope": "Full product181-path snapshot remains source-specific atad96179. Dev-only benchmark watcher/phase/counter/test changes atd54a487/932c394 are separately fingerprinted; product src/assets and packaged runtime unchanged. New563-unit gate includes diagnostic helper tests; earlier560-unit/full101 installed-browser and hosted gates retain exact source scopes. Dev-only64/96window study atd879aa6 has16 raw records and unchanged product/defaults;572units59files includes9new window tests. No new physical or native multiGB acceptance. Observer-stage devhelper/tests at a13dad9 are separately retained with exactcommit575/101hosted gate and one100MiBrealbrowser native-observer pair; no new broad memory acceptance.",
+  "updatedAt": "2026-10-23T16:10:54.621Z",
+  "currentInputsScope": "Full product181-path snapshot remains source-specific atad96179. Dev-only benchmark watcher/phase/counter/test changes atd54a487/932c394 are separately fingerprinted; product src/assets and packaged runtime unchanged. New563-unit gate includes diagnostic helper tests; earlier560-unit/full101 installed-browser and hosted gates retain exact source scopes. Dev-only64/96window study atd879aa6 has16 raw records and unchanged product/defaults;572units59files includes9new window tests. No new physical or native multiGB acceptance. Observer-stage devhelper/tests at a13dad9 are separately retained with exactcommit575/101hosted gate and one100MiBrealbrowser native-observer pair; no new broad memory acceptance. Test-only75953fc adds three resume-page rejection/transfer-byte invariants with mutation sensitivity; product source, assets and runtime remain unchanged. Exact-commit hosted gate578/101 is separately retained.",
   "hostedCodeGate": {
     "schema": "qrft-hosted-gate-observation-v1",
-    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39980670284",
-    "sourceCommit": "a13dad99bf81db5b500db0db24ac8777d7629a23",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39983536416",
+    "sourceCommit": "75953fc4c36f83db9b78dd226bd90264654ccf09",
     "status": "completed",
     "conclusion": "success",
     "node": "v24.22.1",
-    "unitPassed": 575,
+    "unitPassed": 578,
     "unitFiles": 59,
     "browserPassed": 101,
-    "browser": "Bundled Chromium on hostedWindows",
+    "browser": "Bundled Chromium on hosted Windows",
     "externalPackageFiles": 19,
     "fetchedAssets": 5,
     "runMetadata": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/HOSTED-RUN.json",
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/HOSTED-RUN.json",
       "bytes": 3709,
-      "sha256": "434e2842dbb135c71ca2108ac3d28feb431f37be20bd27a970ba4736800068e5"
+      "sha256": "74b16486797f3d4453e893d8c495ace23f65ea0711152a9c052cc5b30378b21d"
     },
     "runLog": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/HOSTED-RUN.log",
-      "bytes": 62568,
-      "sha256": "176e57568f4425357b89ef7420cb8a054e4abc560448dee5e255c8873abb07d7"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/HOSTED-RUN.log",
+      "bytes": 61668,
+      "sha256": "b0cd4d9f99c84b17873a5a2752e24e97cf3e2373a6106dbde36042fe1c6c760e"
     },
     "artifactArchiveDownloaded": false,
-    "scope": "HostedWindows bundledChromium/external launcher-MODULE smoke,injected handoff; no actualGUI/picker/physical acceptance.",
+    "scope": "Fresh source type/unit/build/browser checks and external package launcher-MODULE smoke with injected browser handoff; no native GUI or physical acceptance.",
     "releaseReady": false
   },
   "previousSourceQualification": {
@@ -1566,5 +1566,52 @@
     "fiveGiBTwoCopyBudgetBytes": 13304332288,
     "requestedStableFreeBytes": 15000000000,
     "userResponse": "Space is unavailable now"
+  },
+  "previousHostedCodeGateBeforeResumePageAtomicity": {
+    "schema": "qrft-hosted-gate-observation-v1",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39980670284",
+    "sourceCommit": "a13dad99bf81db5b500db0db24ac8777d7629a23",
+    "status": "completed",
+    "conclusion": "success",
+    "node": "v24.22.1",
+    "unitPassed": 575,
+    "unitFiles": 59,
+    "browserPassed": 101,
+    "browser": "Bundled Chromium on hostedWindows",
+    "externalPackageFiles": 19,
+    "fetchedAssets": 5,
+    "runMetadata": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/HOSTED-RUN.json",
+      "bytes": 3709,
+      "sha256": "434e2842dbb135c71ca2108ac3d28feb431f37be20bd27a970ba4736800068e5"
+    },
+    "runLog": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/observer-stage-diagnostic-2026-10-23-oHchlp/HOSTED-RUN.log",
+      "bytes": 62568,
+      "sha256": "176e57568f4425357b89ef7420cb8a054e4abc560448dee5e255c8873abb07d7"
+    },
+    "artifactArchiveDownloaded": false,
+    "scope": "HostedWindows bundledChromium/external launcher-MODULE smoke,injected handoff; no actualGUI/picker/physical acceptance.",
+    "releaseReady": false
+  },
+  "resumePageAtomicityEvidence": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/REVIEW.json",
+    "bytes": 1883,
+    "sha256": "2ad72326edec1c5fa49b7fea3a41b6cff449a2d6ae4c48180876003477bb6917",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/CLOSURE-HASHES.json",
+      "bytes": 2152,
+      "sha256": "9f5b97d5101665582cc2766c0fba76f5c4a8f3d840ecd20a5916c8a00af476fe"
+    },
+    "assessment": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/ASSESSMENT.md",
+      "bytes": 2822,
+      "sha256": "7fc03f9aeb0c31526b47ad61ffefe731b3a21e92e2567318184362c7fb545683"
+    },
+    "receipt": "release-evidence/resume-page-atomicity-2026-10-23.json",
+    "sourceCommit": "75953fc4c36f83db9b78dd226bd90264654ccf09",
+    "cases": 3,
+    "productionChange": false,
+    "releaseReady": false
   }
 }

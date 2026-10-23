@@ -1,0 +1,103 @@
+{
+  "schema": "qrft-resume-page-atomicity-evidence-v1",
+  "sourceCommit": "75953fc4c36f83db9b78dd226bd90264654ccf09",
+  "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39983536416",
+  "conclusion": "success",
+  "productionChange": false,
+  "currentDefectFound": false,
+  "cases": [
+    "Overlap after a useful range prefix",
+    "Backwards range after a useful prefix",
+    "Out-of-transfer end after a useful prefix"
+  ],
+  "proof": "Each rejected page leaves earlier sender resume state usable. A subsequent legitimate page is accepted, every missing block is transmitted, full stream SHA verifies, virtual-tree metadata parses and every reconstructed file byte matches an independent fixture pattern.",
+  "scope": "Three deterministic in-process sender/codec/memory-receiver cases. Production UI fails the connection on malformed input; this is not a UI continuation, native durability, general fuzzing or physical-network result.",
+  "mutation": {
+    "kind": "Deliberately apply receipt bits before whole-page validation",
+    "failedTests": 3,
+    "originalSourceRestored": true,
+    "originalSha256": "2ffb0e756e82c879cd4dd4dc0edb1ea1199f0f904118d8d8973a6aa3128ff2f1",
+    "log": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/MUTANT.log",
+      "bytes": 2928,
+      "sha256": "2e29185c0feab0ded95e28183092edd1eca336c5c89674cf2bfdba55fd1d2f5d"
+    },
+    "result": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/MUTATION-RESULT.json",
+      "bytes": 362,
+      "sha256": "e142d8187240511ea8ff73f17901a752664dc0ef9f0a74a70d011256f734095e"
+    }
+  },
+  "localGate": {
+    "node": "v24.12.0",
+    "unitPassed": 578,
+    "unitFiles": 59,
+    "typecheck": 0,
+    "build": 0,
+    "diskSamples": 27,
+    "minimumFreeBytes": 3947409408,
+    "reserveBytes": 2147483648,
+    "log": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/CHECK.log",
+      "bytes": 1403,
+      "sha256": "13e0b6ec2c2258874adc41a4851bb66a88ad4bf7c75f1937cf9c117758b62512"
+    },
+    "parent": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/CHECK-RESULT.json",
+      "bytes": 1961,
+      "sha256": "cb6096aaeca69afe7db06930099535a332387b0d64243a48a2273782ead55235"
+    }
+  },
+  "hostedGate": {
+    "node": "v24.22.1",
+    "unitPassed": 578,
+    "unitFiles": 59,
+    "browserPassed": 101,
+    "typecheck": 0,
+    "build": 0,
+    "externalPackageFiles": 19,
+    "fetchedAssets": 5,
+    "browserHandoff": "Injected observer; actual native browser opening not tested",
+    "artifactArchiveDownloaded": false
+  },
+  "review": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/REVIEW.json",
+    "bytes": 1883,
+    "sha256": "2ad72326edec1c5fa49b7fea3a41b6cff449a2d6ae4c48180876003477bb6917"
+  },
+  "assessment": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/ASSESSMENT.md",
+    "bytes": 2822,
+    "sha256": "7fc03f9aeb0c31526b47ad61ffefe731b3a21e92e2567318184362c7fb545683"
+  },
+  "tests": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/TESTS.ts",
+    "bytes": 39717,
+    "sha256": "9f1fe3eb5b11b048746ea322318ca809f6681aec4cccaefc57abf87c40913663"
+  },
+  "runMetadata": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/HOSTED-RUN.json",
+    "bytes": 3709,
+    "sha256": "74b16486797f3d4453e893d8c495ace23f65ea0711152a9c052cc5b30378b21d"
+  },
+  "runLog": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/HOSTED-RUN.log",
+    "bytes": 61668,
+    "sha256": "b0cd4d9f99c84b17873a5a2752e24e97cf3e2373a6106dbde36042fe1c6c760e"
+  },
+  "packageSmoke": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/HOSTED-PACKAGE-SMOKE.json",
+    "bytes": 668,
+    "sha256": "8f2d92e5aff5cbdb2071fa3eb841b577c0172f42a16461ded624264bda6a36c6"
+  },
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/CLOSURE-HASHES.json",
+    "bytes": 2152,
+    "sha256": "9f5b97d5101665582cc2766c0fba76f5c4a8f3d840ecd20a5916c8a00af476fe"
+  },
+  "productMainSha256": "2064311973bab625ab4776535f75d81460d46844d4e6cd783df7da9b533ba82c",
+  "obligationScope": "Adds partial adversarial control-message evidence for L937; all 838 ledger entries and completion states remain unchanged.",
+  "open": "Real two-laptop42-case validation, large-file memory/disk/throughput matrices, native GUI/pickers/permissions/cleanOS and final adversarial release acceptance remain open. Earlier observer failures are not resolved by this test-only change.",
+  "performanceAccepted": false,
+  "releaseReady": false
+}
