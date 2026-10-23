@@ -1,0 +1,185 @@
+{
+  "schema": "qrft-toolchain-security-qualification-v1",
+  "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
+  "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39986201663",
+  "finding": {
+    "affectedPackages": 3,
+    "high": 1,
+    "moderate": 2,
+    "advisories": 8,
+    "scope": "Dev/build/test tooling; no shipped-runtime exploit established."
+  },
+  "remediation": {
+    "vite": "8.2.4",
+    "vitest": "4.1.12",
+    "mocker": "4.1.12",
+    "runtimeDependencyTarballsUnchanged": true,
+    "fullAuditKnownVulnerabilities": 0,
+    "productionOnlyKnownVulnerabilities": 0,
+    "releaseGateAuditsAllDependencies": true
+  },
+  "local": {
+    "node": "v24.12.0",
+    "units": 578,
+    "unitFiles": 59,
+    "typecheck": 0,
+    "build": 0,
+    "browsers": [
+      {
+        "channel": "chrome",
+        "version": "155.0.8059.85",
+        "cases": 101,
+        "workers": 1,
+        "retries": 0,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "resourceSamples": 407,
+        "minimumFreeBytes": 3033792512
+      },
+      {
+        "channel": "msedge",
+        "version": "155.0.4283.62",
+        "cases": 101,
+        "workers": 1,
+        "retries": 0,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "resourceSamples": 495,
+        "minimumFreeBytes": 2705825792
+      }
+    ]
+  },
+  "hosted": {
+    "runId": 39986201663,
+    "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
+    "node": "v24.22.1",
+    "units": 578,
+    "unitFiles": 59,
+    "browserCases": 101,
+    "externalFiles": 19,
+    "assets": 5,
+    "auditKnownVulnerabilities": 0,
+    "scope": "Fresh npmci/full gate/bundledChromium/external package module smoke; injected browser handoff. Artifact ZIP not downloaded."
+  },
+  "builtAssets": [
+    {
+      "path": "dist/assets/block-store.worker-9i0g9xys.js",
+      "bytes": 2415,
+      "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-DON1UPCZ.js",
+      "bytes": 556927,
+      "sha256": "925421636fd7ee1f03e4c5ad6d82892dc9a9e2e0d45e06204f1a7bad6d6091fe"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "aa25ab1f47d223db9356d507d4bc18ccd3a0c1d28882043cae1481955b2b61a3"
+    }
+  ],
+  "selectedInputPathsVerified": 152,
+  "applicationRequestAudits": 4,
+  "packages": {
+    "candidates": "C:/Users/dines/QRFT-release-candidates/patched-tools-2026-10-23-ueX6qD",
+    "externalFiles": 19,
+    "portableFiles": 22,
+    "runtime": "Windows x64 Node24.22.0",
+    "runtimeSha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c",
+    "raw": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/package-qualification-RamTNd/RAW.json",
+      "bytes": 6650,
+      "sha256": "4b5ef9af731ba23ff8daf3a4a4bfe5f4f83b4007f82ca029c9fd31409e076b1a"
+    },
+    "nativeGUI": false,
+    "scope": "Manifest/duplicate-refusal/HTTP exact5assets/launcher MODULE start-stop with injected browser handoff; not actual Start.cmd/defaultbrowser/picker/cleanOS/physical acceptance."
+  },
+  "initialAudit": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/AUDIT.json",
+    "bytes": 5438,
+    "sha256": "c1804ba819251bca3df74ccbefbb78694eddeb26a59957efe0248a7d8197e8ad"
+  },
+  "fullPatchedAudit": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/AFTER-AUDIT.json",
+    "bytes": 364,
+    "sha256": "86cf50b751d41710721db8f06fbbea74d8c536f1d1ad7c4fc752c53f74338fa2"
+  },
+  "productionAudit": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/PRODUCTION-AUDIT.json",
+    "bytes": 364,
+    "sha256": "86cf50b751d41710721db8f06fbbea74d8c536f1d1ad7c4fc752c53f74338fa2"
+  },
+  "advisories": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/ADVISORIES.json",
+    "bytes": 14187,
+    "sha256": "0a7fd38b59369bfc525233da08badb41921ddd537e01ccaea48c4d1ae18338d7"
+  },
+  "installer": {
+    "failedNpm": "10.5.2",
+    "failedLog": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/INSTALL-npm10-debug.log",
+      "bytes": 18664,
+      "sha256": "884692134099894f28b3889ce339bcd2563694abb72ffec4d8f4eac26f155d8c"
+    },
+    "packageFilesUnchangedOnFailure": true,
+    "succeededNpm": "11.6.2",
+    "succeededNode": "24.12.0",
+    "scriptsIgnored": true,
+    "newOrChangedInstallHooks": 0,
+    "globalNpmChanged": false,
+    "scope": "Observed npm10 Arborist failure recovered using already bundled npm11 CLI; no npm10 root-cause fix claimed."
+  },
+  "review": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/REVIEW.json",
+    "bytes": 8892,
+    "sha256": "64ab190d259c9df70af9786afefb37c5ffdd474f9c6859a57d1e3be59a24d605"
+  },
+  "assessment": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/TRIAGE.md",
+    "bytes": 5173,
+    "sha256": "47f40fc51facc41f2bc134d1e4fe93e9d7670c522c240d586172ba786e7842e3"
+  },
+  "currentInputs": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CURRENT-INPUTS.json",
+    "bytes": 21653,
+    "sha256": "d2b66e5ff56eb34d3e613f49d948d45ac2f2057b8ff71602804f213c1edd7fc5"
+  },
+  "runMetadata": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/HOSTED-RUN.json",
+    "bytes": 3709,
+    "sha256": "6897727f0129318ce77c5e202d40ed2a207ebe1b2bf8d9f330c3001ca8538113"
+  },
+  "runLog": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/HOSTED-RUN.log",
+    "bytes": 60816,
+    "sha256": "35393e4a88933dab38f4ff0e8c3e2bcfe263e256f4a93bfe1618c4ddc772b8fd"
+  },
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CLOSURE-HASHES.json",
+    "bytes": 2652355,
+    "sha256": "c3c8b27869905481c76e526b69f85d86ef509b4198e5625046514f5d45051185"
+  },
+  "closureFileCount": 10448,
+  "closureLogicalBytes": 495846631,
+  "limitations": [
+    "New toolchain changes JS/worker output; older BBeDJSZZ native1GiB/largefile/RAM/throughput evidence remains historical and does not qualify DON1UPCZ.",
+    "Installed headless Chrome/Edge on one host, synthetic handle/picker injection and OPFS. No actual OS GUI/picker/permission/cleanOS/two-laptop or general resource/throughput acceptance.",
+    "Earlier native process observer/candidate availability causes remain unresolved.",
+    "152 selected source/test/config paths and all5built assets verified unchanged; this is a different snapshot selection from the older181-path checkpoint, not a narrower acceptance bar."
+  ],
+  "originalRequirementsUnchanged": true,
+  "performanceAccepted": false,
+  "releaseReady": false
+}

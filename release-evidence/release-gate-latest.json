@@ -1,29 +1,29 @@
 {
   "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-23",
-  "status": "Added behavioral coverage proving atomic rejection of three malformed resume-page families. Deliberate eager-apply mutant failed all three tests; original product source restored byte-exact. Exact-commit hosted gate passed 578 units and 101 browser tests plus package module smoke. Production bundle unchanged. Physical/native GUI/large-file resource and throughput/final adversarial acceptance remain open.",
+  "status": "Fixed newly reported development-tool vulnerabilities with Vite8.2.4/Vitest4.1.12 and mandatory full dependency audit in check:release. Full and prod-only audits0; local578units/type/build, installedChrome101/Edge101 and fresh hosted578/101 gate passed. New DON1UPCZ/9i0g9xys bundles and external19/portable22 packages qualified only within recorded browser/module-smoke scope. Prior BBeDJSZZ native1GiB evidence is historical. Physical/nativeGUI/current large-file resource+throughput/final adversarial acceptance remain open.",
   "releaseReady": false,
   "evidence": {
     "schema": "qrft-external-evidence-v1",
-    "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/REVIEW.json",
-    "bytes": 4914,
-    "sha256": "a078d7034957a6cb5372bf851e304104d8dc0efd3e3cc03cd529d45b73ea542d",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/REVIEW.json",
+    "bytes": 8892,
+    "sha256": "64ab190d259c9df70af9786afefb37c5ffdd474f9c6859a57d1e3be59a24d605",
     "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CLOSURE-HASHES.json",
-      "bytes": 3627989,
-      "sha256": "cb1a596960eeb007b16f3fdf61fc3851fc7bfb058afe2858d2e9c06c86a31f51"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CLOSURE-HASHES.json",
+      "bytes": 2652355,
+      "sha256": "c3c8b27869905481c76e526b69f85d86ef509b4198e5625046514f5d45051185"
     },
     "assessment": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/ASSESSMENT.md",
-      "bytes": 2905,
-      "sha256": "1c9c214a6c4099e1a4a301f2be320059cd31a6c6d5da5c2a4a5c78592a5fe9bc"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/TRIAGE.md",
+      "bytes": 5173,
+      "sha256": "47f40fc51facc41f2bc134d1e4fe93e9d7670c522c240d586172ba786e7842e3"
     },
     "currentInputs": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CURRENT-INPUTS.json",
-      "bytes": 29524,
-      "sha256": "b5893b07e1263f8a41518df32fa4c0436bd67624d1f84ef27145fee10d9ceb29"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CURRENT-INPUTS.json",
+      "bytes": 21653,
+      "sha256": "d2b66e5ff56eb34d3e613f49d948d45ac2f2057b8ff71602804f213c1edd7fc5"
     },
-    "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
+    "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
     "localChromeCases": 101,
     "localEdgeCases": 101,
     "releaseReady": false
@@ -58,41 +58,31 @@
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
   },
   "qualification": {
-    "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
-    "localNode": "v24.22.0",
+    "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
+    "localNode": "v24.12.0",
     "typecheck": 0,
-    "unitPassed": 560,
-    "unitFiles": 57,
+    "unitPassed": 578,
+    "unitFiles": 59,
     "build": 0,
-    "localChromeTargetedCases": 2,
-    "localEdgeTargetedCases": 2,
-    "fullLocalCurrentBundle": "passed: installed Chrome101/Edge101; one worker, retries0, skips0, flakes0; unchanged test assertions/deadlines",
-    "fullHostedCurrentBundle": "Passed run39983536416 at75953fc: Node24.22.1, fresh578units/59files, typecheck/build,101bundledChromium,19external package files/5assets/module smoke.",
+    "fullLocalCurrentBundle": "Passed installed headless Chrome101/Edge101;1worker,retries0,skips0,flakes0,unchanged assertions/deadlines.",
+    "localChromeCases": 101,
+    "localChromeVersion": "155.0.8059.85",
+    "localEdgeCases": 101,
+    "localEdgeVersion": "155.0.4283.62",
+    "fullHostedCurrentBundle": "Passed run39986201663/source82391c2/Node24.22.1/freshnpmci/full audit0/578units59files/build/101bundledChromium/external19files5assets/module smoke.",
     "externalPackageFiles": 19,
     "portablePackageFiles": 22,
-    "packageScope": "Local manifest/HTTP/runtime/launcher-MODULE smoke; injected browser observer.",
+    "packageScope": "Manifest/duplicate-refusal/HTTP exact5assets/launcher MODULE start-stop with injected browser handoff; not actual Start.cmd/defaultbrowser/picker/cleanOS/physical acceptance.",
     "nativeWindowsGUI": false,
-    "currentBundleNativeLargeMatrix": "partial: installed Chrome single native1GiB UI/OPFS save case passed at8911cd6; other sizes/browsers, native picker/destination and physical acceptance remain unqualified",
-    "releaseReady": false,
-    "localChromeCases": 101,
-    "localEdgeCases": 101
+    "currentBundleNativeLargeMatrix": "Not proven: earlier native1GiB RAM/transfer/save evidence uses the prior BBeDJSZZ bundle. No qualified current DON1UPCZ multiGB resource/throughput matrix.",
+    "releaseReady": false
   },
-  "currentInputs": 181,
+  "currentInputs": 152,
   "currentAssets": [
     {
-      "path": "dist/index.html",
-      "bytes": 903,
-      "sha256": "4598f8df3f389039d0699ff741953af07bd2d68dc30eb38648a3b6042a360a4b"
-    },
-    {
-      "path": "dist/assets/block-store.worker-DVHZPZQe.js",
-      "bytes": 2402,
-      "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
-    },
-    {
-      "path": "dist/assets/index-BBeDJSZZ.js",
-      "bytes": 557138,
-      "sha256": "2064311973bab625ab4776535f75d81460d46844d4e6cd783df7da9b533ba82c"
+      "path": "dist/assets/block-store.worker-9i0g9xys.js",
+      "bytes": 2415,
+      "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
     },
     {
       "path": "dist/assets/index-C5foWVjs.css",
@@ -100,15 +90,26 @@
       "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
     },
     {
+      "path": "dist/assets/index-DON1UPCZ.js",
+      "bytes": 556927,
+      "sha256": "925421636fd7ee1f03e4c5ad6d82892dc9a9e2e0d45e06204f1a7bad6d6091fe"
+    },
+    {
       "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
       "bytes": 43951,
       "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "aa25ab1f47d223db9356d507d4bc18ccd3a0c1d28882043cae1481955b2b61a3"
     }
   ],
   "rootDistIsPriorVersion": false,
   "rootDistBackup": "D:\\MyProjects\\QR Air-Gap File Transfer\\artifacts\\dist-before-source-origin-2026-10-22-z1ZtWJ\\dist",
   "physicalNotRun": 42,
   "notes": [
+    "Toolchain security checkpoint82391c2 supersedes the active asset/qualification/input aliases. Older notes and named evidence retain their original source-specific scope; no native1GiB/performance acceptance carries to the new compiled bundle.",
     "Real two-laptop42casephysicalqualification and ordinary-userworkflow",
     "Current-bundle large-transfer/resource matrix, including incomplete native memory observations; previous5GiBfulltransfer proof retains priorbundle scope",
     "NativeWindowsdefault-browser/GUIlaunch and realOSpicker/permission coverage",
@@ -118,17 +119,15 @@
     "Local transfer trials held below unchanged2GiB C reserve after owned-cache retirement; stable headroom requested, not assumed."
   ],
   "currentLargeTransferPreflight": {
-    "schema": "qrft-external-evidence-v1",
-    "path": "C:/Users/dines/QRFT-qualification-evidence/current-obligation-review-2026-10-22-o3CpHq/ASSESSMENT-v2.md",
-    "bytes": 683,
-    "sha256": "00ddc933ba599f4243c4e831084e48e9e70ad520ad8039e6138e3c6f452928e3",
-    "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-obligation-review-2026-10-22-o3CpHq/CLOSURE-HASHES-v2.json",
-      "bytes": 3596,
-      "sha256": "26be03d013ce9f7e5099b8c8d583950d792e0deeea1248e168cbbbf9ca87101c"
-    },
-    "releaseReady": false,
-    "scope": "1GiBnativeUIcase blocked before execution;15original-obligation mappings reviewed without broad completion claims."
+    "observedUtc": "2026-10-23T16:43:29.357Z",
+    "observedCFreeBytes": 3391176704,
+    "minimumReserveBytes": 2147483648,
+    "oneGiBTwoCopyBudgetBytes": 4714397696,
+    "fiveGiBTwoCopyBudgetBytes": 13304332288,
+    "attempted": false,
+    "reason": "Local free space does not meet two additional retained copies plus unchanged reserve/margin. No current-bundle large native test attempted.",
+    "userResponse": "Space is unavailable now",
+    "releaseReady": false
   },
   "obligationReview": {
     "path": "release-evidence/current-checkpoint-obligation-review-2026-10-22.json",
@@ -141,29 +140,6 @@
     "record": "release-evidence/temporary-cache-cleanup-2026-10-22.json",
     "logicalBytesRemoved": 1939336462,
     "availability": "Cache files listed in the before manifests were intentionally retired. Historical inventories retain their original contents but no longer imply complete raw-profile availability. Test reports, closure manifests, source fixtures, OPFS transfer data and saved payloads were preserved."
-  },
-  "currentLargeUiTransferEvidence": {
-    "schema": "qrft-external-evidence-v1",
-    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/REVIEW.json",
-    "bytes": 3128,
-    "sha256": "09cbb914ae52a144d99d811e424f10764fe831874ad718832abd04edfa975fd9",
-    "assessment": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/ASSESSMENT.md",
-    "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/CLOSURE-HASHES.json",
-      "bytes": 122487,
-      "sha256": "59d9d1a008a6c0e69f0dc09c9e9b91537aadbc062083f9e3933ba42875c0034d"
-    },
-    "independent": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/INDEPENDENT-BYTE-VERIFICATION.json",
-      "bytes": 1317,
-      "sha256": "76edbf37532158b9526814a59dbb08fef6de5dcbe102bd74c92761024462d396"
-    },
-    "rawHarnessExit": 1,
-    "independentVerifierExit": 0,
-    "byteComparisonPassed": true,
-    "nativeComplete": true,
-    "releaseReady": false,
-    "scope": "Current production UI 1 GiB same-host transfer/save has independent byte and hash evidence; raw harness failed its incorrect per-message ACK count assertion. Mock pickers, deliberate cleanup denial, no physical Wi-Fi or full resource matrix qualification."
   },
   "transportObligationReview": {
     "record": "release-evidence/transport-requirement-review-2026-10-22.json",
@@ -336,15 +312,16 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-23T16:10:54.621Z",
-  "currentInputsScope": "Full product181-path snapshot remains source-specific atad96179. Dev-only benchmark watcher/phase/counter/test changes atd54a487/932c394 are separately fingerprinted; product src/assets and packaged runtime unchanged. New563-unit gate includes diagnostic helper tests; earlier560-unit/full101 installed-browser and hosted gates retain exact source scopes. Dev-only64/96window study atd879aa6 has16 raw records and unchanged product/defaults;572units59files includes9new window tests. No new physical or native multiGB acceptance. Observer-stage devhelper/tests at a13dad9 are separately retained with exactcommit575/101hosted gate and one100MiBrealbrowser native-observer pair; no new broad memory acceptance. Test-only75953fc adds three resume-page rejection/transfer-byte invariants with mutation sensitivity; product source, assets and runtime remain unchanged. Exact-commit hosted gate578/101 is separately retained.",
+  "updatedAt": "2026-10-23T16:43:29.356Z",
+  "currentInputsScope": "152 selected tracked source/test/config paths (src/scripts/tests/e2e/CI/manifests/Vite+Playwright+TS configs/README) were hashed before and after qualification, plus all5actual built assets copied and hashed. This snapshot selection differs from the older181-path checkpoint; all original838 acceptance requirements and test/deadline bars remain unchanged. Toolchain source82391c2 changes production JS/worker output. Earlier BBeDJSZZ/DVHZPZQe native1GiB and performance evidence remains historical and does not qualify DON1UPCZ/9i0g9xys.",
   "hostedCodeGate": {
     "schema": "qrft-hosted-gate-observation-v1",
-    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39983536416",
-    "sourceCommit": "75953fc4c36f83db9b78dd226bd90264654ccf09",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39986201663",
+    "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
     "status": "completed",
     "conclusion": "success",
     "node": "v24.22.1",
+    "auditKnownVulnerabilities": 0,
     "unitPassed": 578,
     "unitFiles": 59,
     "browserPassed": 101,
@@ -352,17 +329,17 @@
     "externalPackageFiles": 19,
     "fetchedAssets": 5,
     "runMetadata": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/HOSTED-RUN.json",
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/HOSTED-RUN.json",
       "bytes": 3709,
-      "sha256": "74b16486797f3d4453e893d8c495ace23f65ea0711152a9c052cc5b30378b21d"
+      "sha256": "6897727f0129318ce77c5e202d40ed2a207ebe1b2bf8d9f330c3001ca8538113"
     },
     "runLog": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/HOSTED-RUN.log",
-      "bytes": 61668,
-      "sha256": "b0cd4d9f99c84b17873a5a2752e24e97cf3e2373a6106dbde36042fe1c6c760e"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/HOSTED-RUN.log",
+      "bytes": 60816,
+      "sha256": "35393e4a88933dab38f4ff0e8c3e2bcfe263e256f4a93bfe1618c4ddc772b8fd"
     },
     "artifactArchiveDownloaded": false,
-    "scope": "Fresh source type/unit/build/browser checks and external package launcher-MODULE smoke with injected browser handoff; no native GUI or physical acceptance.",
+    "scope": "Fresh npmci/full gate/bundledChromium/external package module smoke; injected browser handoff. Artifact ZIP not downloaded.",
     "releaseReady": false
   },
   "previousSourceQualification": {
@@ -410,7 +387,7 @@
       "sha256": "9645cca1307e48bd7b211150b8f8a84af17be15a966989458091a09e83d5d083"
     }
   },
-  "currentInputIndex": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CURRENT-INPUTS.json",
+  "currentInputIndex": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CURRENT-INPUTS.json",
   "localCandidateRecoveryEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/REVIEW-LOCAL.json",
@@ -469,87 +446,6 @@
   "candidateAvailabilityRootCauseUnresolved": true,
   "candidateFixPriorDistBackup": "D:/MyProjects/QR Air-Gap File Transfer/artifacts/local-candidate-recovery-2026-10-22/dist-before",
   "priorEvidenceSourceScope": "Older full installed-browser, package and native1GiB/5GiB evidence retains its exact source/bundle scope. Earlier Doz/5Ak/Lfe results are not BBe qualifications. The new currentUiNative1GiBPathGuardsEvidence separately proves one BBe installed-Chrome native1GiB case at8911cd6; current hosted gate separately proves560units/101bundledChromium/external package atd428490. Neither proves the remaining physical/native GUI/resource matrix.",
-  "currentUiNative1GiBv3Evidence": {
-    "schema": "qrft-external-evidence-v1",
-    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/REVIEW.json",
-    "bytes": 2741,
-    "sha256": "880619b7ab5e638cbe09c3abe7962cb6a2208d80b4d7f0757ed5d928757f199a",
-    "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/CLOSURE-HASHES.json",
-      "bytes": 121450,
-      "sha256": "0e34a2d1753266174084f6e56dae0b764f5721b0ea244c9c9c0071b8b5e74cc6"
-    },
-    "raw": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/RAW.json",
-      "bytes": 524552,
-      "sha256": "35c817673c988c2e5f345137618f42ee434fbffd1879b2e61b5731f2dcfb26a5"
-    },
-    "runner": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/RUNNER.source.txt",
-      "bytes": 18504,
-      "sha256": "c7ae0d608a39c85f00ed02a964bae002bd387541ea880d22250238d9dcfb9362"
-    },
-    "sourceCommit": "613175838912a3ff4e780835f4a786d1581211af",
-    "currentAssets": [
-      {
-        "path": "dist/assets/block-store.worker-DVHZPZQe.js",
-        "bytes": 2402,
-        "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
-      },
-      {
-        "path": "dist/assets/index-C5foWVjs.css",
-        "bytes": 26260,
-        "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
-      },
-      {
-        "path": "dist/assets/index-DozYA_8Y.js",
-        "bytes": 556884,
-        "sha256": "b43a7afeb19940621a2cf280e3256c2385ab86898dc693c7b45ef4f0b7406b23"
-      },
-      {
-        "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
-        "bytes": 43951,
-        "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
-      },
-      {
-        "path": "dist/index.html",
-        "bytes": 903,
-        "sha256": "7f1d81d604634b024d2a15528959c3c9e017167440d63652feaa88a5e17e0909"
-      }
-    ],
-    "functionalPassed": true,
-    "nativeComplete": true,
-    "sampledReserveMet": true,
-    "fileBytes": 1073741824,
-    "everyByteCompared": 1073741824,
-    "acknowledgedUniqueIndices": 17477,
-    "ackMessages": 313,
-    "receivedVerifiedMs": 70145,
-    "savedVerifiedMs": 97291,
-    "nativeSamples": 102,
-    "missingSamples": 0,
-    "minSampledFreeBytes": 5170716672,
-    "peakMemory": {
-      "sender": {
-        "samples": 51,
-        "complete": 51,
-        "incomplete": 0,
-        "peakPrivateBytes": 481226752,
-        "peakWorkingSetBytes": 821927936
-      },
-      "receiver": {
-        "samples": 51,
-        "complete": 51,
-        "incomplete": 0,
-        "peakPrivateBytes": 583950336,
-        "peakWorkingSetBytes": 933408768
-      }
-    },
-    "closureFiles": 443,
-    "closureBytes": 2178843364,
-    "releaseReady": false,
-    "scope": "One real native1GiB File through current production UI, production rendezvous, same-host RTC, durable OPFS and injected OPFS save. Both retained copies compared with every source byte; file/stream hashes and metadata/footer independently checked. Two isolated headless Chrome profiles and mocked pickers. All sampled native PIDs measured; no generalized memory-bound or physical Wi-Fi claim. Cleanup deletion deliberately denied to retain evidence; cleanup-required UI inspected. Old harness failure preserved; this fresh runner checks ACK indices rather than message count. No new5GiB/10GiB/50GiB/100GiB case."
-  },
   "largeTreeHardLimitsEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/large-tree-hard-limits-2026-10-22-SQ5Fbl/REVIEW.json",
@@ -799,26 +695,26 @@
   },
   "currentPackageQualificationEvidence": {
     "schema": "qrft-external-evidence-v1",
-    "path": "C:/Users/dines/QRFT-qualification-evidence/current-package-qualification-2026-10-22-AvfyCQ/REVIEW.json",
-    "bytes": 6663,
-    "sha256": "23b806ff93d4c33e01e9189dc32c03ddaa79e724c1dfc9a851f3d03656f0a72f",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/package-qualification-RamTNd/RAW.json",
+    "bytes": 6650,
+    "sha256": "4b5ef9af731ba23ff8daf3a4a4bfe5f4f83b4007f82ca029c9fd31409e076b1a",
     "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/CLOSURE-HASHES.json",
-      "bytes": 30254,
-      "sha256": "36f057a83255931e4941509375ffac1cb703fe23383134369c6dc18187855e5e"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CLOSURE-HASHES.json",
+      "bytes": 2652355,
+      "sha256": "c3c8b27869905481c76e526b69f85d86ef509b4198e5625046514f5d45051185"
     },
-    "sourceCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
-    "candidates": "C:/Users/dines/QRFT-release-candidates/current-path-guards-2026-10-22-SZW5U9",
+    "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
+    "candidates": "C:/Users/dines/QRFT-release-candidates/patched-tools-2026-10-23-ueX6qD",
     "externalFiles": 19,
     "portableFiles": 22,
-    "clientBundle": "index-BBeDJSZZ.js",
+    "clientBundle": "index-DON1UPCZ.js",
     "nativeWindowsGUI": false,
     "releaseReady": false
   },
   "currentInputSnapshot": {
-    "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CURRENT-INPUTS.json",
-    "bytes": 29524,
-    "sha256": "b5893b07e1263f8a41518df32fa4c0436bd67624d1f84ef27145fee10d9ceb29"
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CURRENT-INPUTS.json",
+    "bytes": 21653,
+    "sha256": "d2b66e5ff56eb34d3e613f49d948d45ac2f2057b8ff71602804f213c1edd7fc5"
   },
   "previousPrimaryEvidenceBeforeMetadataSizeFix": {
     "schema": "qrft-external-evidence-v1",
@@ -1061,107 +957,6 @@
     "nativeWindowsGUI": false,
     "releaseReady": false
   },
-  "currentUiNative1GiBPathGuardsEvidence": {
-    "schema": "qrft-external-evidence-v1",
-    "review": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/REVIEW.json",
-      "bytes": 3617,
-      "sha256": "2bfa903b035854c35260f7a723128a41bb333444864355e6ef31b24ee6d2e90d"
-    },
-    "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/CLOSURE-HASHES.json",
-      "bytes": 134566,
-      "sha256": "873a7809c8de94047d50737c18071c9e80d97349004d102a25e9eeb61d040fae"
-    },
-    "raw": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/RAW.json",
-      "bytes": 505724,
-      "sha256": "c842cf0874dfbcbbee455754b530d278112d7432dc9c7aed4e5b25840a985c4e"
-    },
-    "assessment": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/ASSESSMENT.md",
-      "bytes": 3217,
-      "sha256": "d9c8f302941b88373e0ef1ad599e187fabcf82ee00554388d4b43955d3626ec0"
-    },
-    "sourceCommit": "8911cd6c8fa57f9bb5349da5fd3f7e9ec83a5802",
-    "applicationFixCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
-    "currentAssets": [
-      {
-        "path": "dist/index.html",
-        "bytes": 903,
-        "sha256": "4598f8df3f389039d0699ff741953af07bd2d68dc30eb38648a3b6042a360a4b"
-      },
-      {
-        "path": "dist/assets/block-store.worker-DVHZPZQe.js",
-        "bytes": 2402,
-        "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
-      },
-      {
-        "path": "dist/assets/index-BBeDJSZZ.js",
-        "bytes": 557138,
-        "sha256": "2064311973bab625ab4776535f75d81460d46844d4e6cd783df7da9b533ba82c"
-      },
-      {
-        "path": "dist/assets/index-C5foWVjs.css",
-        "bytes": 26260,
-        "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
-      },
-      {
-        "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
-        "bytes": 43951,
-        "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
-      }
-    ],
-    "functionalPassed": true,
-    "nativeComplete": true,
-    "sampledReserveMet": true,
-    "fileBytes": 1073741824,
-    "everyByteComparedAgain": 1073741824,
-    "receivedVerifiedMs": 64242,
-    "savedVerifiedMs": 91774,
-    "acknowledgedUniqueIndices": 17477,
-    "ackMessages": 312,
-    "nativeSamples": 94,
-    "missingSamples": 0,
-    "peakMemory": {
-      "sender": {
-        "samples": 47,
-        "peakPrivateBytes": 482496512,
-        "peakWorkingSetBytes": 810815488,
-        "phases": {
-          "startup": 1,
-          "preparing-and-pairing": 13,
-          "receiving": 18,
-          "received-verified": 1,
-          "saving": 13,
-          "saved-with-copy-retained": 1
-        }
-      },
-      "receiver": {
-        "samples": 47,
-        "peakPrivateBytes": 532410368,
-        "peakWorkingSetBytes": 880660480,
-        "phases": {
-          "startup": 1,
-          "preparing-and-pairing": 13,
-          "receiving": 18,
-          "received-verified": 1,
-          "saving": 13,
-          "saved-with-copy-retained": 1
-        }
-      }
-    },
-    "parentMinFreeBytes": 4603949056,
-    "closureFiles": 477,
-    "closureLogicalBytes": 2180981053,
-    "scope": "Single retained real native 1GiB source through exact production UI/assets, real same-host rendezvous and WebRTC, durable OPFS then injected OPFS save. Separate verifier re-read every byte of original/incoming/saved files and parsed actual metadata/footer. Installed headless Chrome, mocked pickers, receive-store deletion intentionally denied to retain copy. Not a synthetic-slice/raw-channel comparison, random-data claim, actual OS picker, physical Wi-Fi, clean OS, multi-size/browser resource matrix, or general memory bound. Periodic working-set sums may double-count shared pages and miss peaks; observer overhead affects elapsed times. Earlier invalid measurements remain invalid.",
-    "releaseReady": false
-  },
-  "currentLargeTrialInputSnapshot": {
-    "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/CURRENT-INPUTS.json",
-    "bytes": 29524,
-    "sha256": "efb53796ac17b9652806dd897ad50b45c0dfd911b26bbee6667dd871bdea6f7d"
-  },
   "latestUserCacheCleanupReceipt": {
     "schema": "qrft-cleanup-receipt-v1",
     "sourceCommit": "d428490e6db2c2edc6e4e3b9f1ddcf1893959386",
@@ -1263,31 +1058,6 @@
     "packageScope": "Local manifest/HTTP/runtime/launcher-MODULE smoke; injected browser observer.",
     "nativeWindowsGUI": false,
     "currentBundleNativeLargeMatrix": "partial: installed Chrome single native1GiB UI/OPFS save case passed at8911cd6; other sizes/browsers, native picker/destination and physical acceptance remain unqualified",
-    "releaseReady": false
-  },
-  "currentFullBrowserPathGuardsEvidence": {
-    "schema": "qrft-external-evidence-v1",
-    "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/REVIEW.json",
-    "bytes": 4914,
-    "sha256": "a078d7034957a6cb5372bf851e304104d8dc0efd3e3cc03cd529d45b73ea542d",
-    "closure": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CLOSURE-HASHES.json",
-      "bytes": 3627989,
-      "sha256": "cb1a596960eeb007b16f3fdf61fc3851fc7bfb058afe2858d2e9c06c86a31f51"
-    },
-    "assessment": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/ASSESSMENT.md",
-      "bytes": 2905,
-      "sha256": "1c9c214a6c4099e1a4a301f2be320059cd31a6c6d5da5c2a4a5c78592a5fe9bc"
-    },
-    "currentInputs": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CURRENT-INPUTS.json",
-      "bytes": 29524,
-      "sha256": "b5893b07e1263f8a41518df32fa4c0436bd67624d1f84ef27145fee10d9ceb29"
-    },
-    "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
-    "localChromeCases": 101,
-    "localEdgeCases": 101,
     "releaseReady": false
   },
   "previousCurrentInputSnapshotBeforeCurrentFullPathGuardBrowser": {
@@ -1433,14 +1203,14 @@
     "releaseReady": false
   },
   "localTrialHeadroom": {
-    "observedUtc": "2026-10-23T15:53:46.816Z",
-    "observedCFreeBytes": 4043026432,
+    "observedUtc": "2026-10-23T16:43:29.357Z",
+    "observedCFreeBytes": 3391176704,
     "minimumReserveBytes": 2147483648,
     "localTrialsHeld": true,
     "fiveGiBTwoCopyBudgetBytes": 13304332288,
     "requestedStableFreeBytes": 15000000000,
     "userResponse": "Space is unavailable now; later actual disk checks showed enough for small diagnostics only.",
-    "scope": "Large transfer/browser resource matrices held. Small guarded observer/source/browser100MiBdiagnostics passed currentpreflight; no 5GiBtwo-copy headroom.",
+    "scope": "Full small-file browser/source/package qualification completed with unchanged2GiBreserve; large native resource matrices remain held for insufficient two-copy budget.",
     "smallGuardedDiagnosticsPossible": true
   },
   "previousHostedCodeGateBeforeWindowStudy": {
@@ -1613,5 +1383,432 @@
     "cases": 3,
     "productionChange": false,
     "releaseReady": false
+  },
+  "previousQualificationBeforeToolchainSecurityPatch": {
+    "evidence": {
+      "schema": "qrft-external-evidence-v1",
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/REVIEW.json",
+      "bytes": 4914,
+      "sha256": "a078d7034957a6cb5372bf851e304104d8dc0efd3e3cc03cd529d45b73ea542d",
+      "closure": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CLOSURE-HASHES.json",
+        "bytes": 3627989,
+        "sha256": "cb1a596960eeb007b16f3fdf61fc3851fc7bfb058afe2858d2e9c06c86a31f51"
+      },
+      "assessment": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/ASSESSMENT.md",
+        "bytes": 2905,
+        "sha256": "1c9c214a6c4099e1a4a301f2be320059cd31a6c6d5da5c2a4a5c78592a5fe9bc"
+      },
+      "currentInputs": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CURRENT-INPUTS.json",
+        "bytes": 29524,
+        "sha256": "b5893b07e1263f8a41518df32fa4c0436bd67624d1f84ef27145fee10d9ceb29"
+      },
+      "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
+      "localChromeCases": 101,
+      "localEdgeCases": 101,
+      "releaseReady": false
+    },
+    "qualification": {
+      "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
+      "localNode": "v24.22.0",
+      "typecheck": 0,
+      "unitPassed": 560,
+      "unitFiles": 57,
+      "build": 0,
+      "localChromeTargetedCases": 2,
+      "localEdgeTargetedCases": 2,
+      "fullLocalCurrentBundle": "passed: installed Chrome101/Edge101; one worker, retries0, skips0, flakes0; unchanged test assertions/deadlines",
+      "fullHostedCurrentBundle": "Passed run39983536416 at75953fc: Node24.22.1, fresh578units/59files, typecheck/build,101bundledChromium,19external package files/5assets/module smoke.",
+      "externalPackageFiles": 19,
+      "portablePackageFiles": 22,
+      "packageScope": "Local manifest/HTTP/runtime/launcher-MODULE smoke; injected browser observer.",
+      "nativeWindowsGUI": false,
+      "currentBundleNativeLargeMatrix": "partial: installed Chrome single native1GiB UI/OPFS save case passed at8911cd6; other sizes/browsers, native picker/destination and physical acceptance remain unqualified",
+      "releaseReady": false,
+      "localChromeCases": 101,
+      "localEdgeCases": 101
+    },
+    "currentAssets": [
+      {
+        "path": "dist/index.html",
+        "bytes": 903,
+        "sha256": "4598f8df3f389039d0699ff741953af07bd2d68dc30eb38648a3b6042a360a4b"
+      },
+      {
+        "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+        "bytes": 2402,
+        "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+      },
+      {
+        "path": "dist/assets/index-BBeDJSZZ.js",
+        "bytes": 557138,
+        "sha256": "2064311973bab625ab4776535f75d81460d46844d4e6cd783df7da9b533ba82c"
+      },
+      {
+        "path": "dist/assets/index-C5foWVjs.css",
+        "bytes": 26260,
+        "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+      },
+      {
+        "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+        "bytes": 43951,
+        "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+      }
+    ],
+    "currentInputs": 181,
+    "currentInputSnapshot": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CURRENT-INPUTS.json",
+      "bytes": 29524,
+      "sha256": "b5893b07e1263f8a41518df32fa4c0436bd67624d1f84ef27145fee10d9ceb29"
+    },
+    "currentInputIndex": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CURRENT-INPUTS.json",
+    "currentInputsScope": "Full product181-path snapshot remains source-specific atad96179. Dev-only benchmark watcher/phase/counter/test changes atd54a487/932c394 are separately fingerprinted; product src/assets and packaged runtime unchanged. New563-unit gate includes diagnostic helper tests; earlier560-unit/full101 installed-browser and hosted gates retain exact source scopes. Dev-only64/96window study atd879aa6 has16 raw records and unchanged product/defaults;572units59files includes9new window tests. No new physical or native multiGB acceptance. Observer-stage devhelper/tests at a13dad9 are separately retained with exactcommit575/101hosted gate and one100MiBrealbrowser native-observer pair; no new broad memory acceptance. Test-only75953fc adds three resume-page rejection/transfer-byte invariants with mutation sensitivity; product source, assets and runtime remain unchanged. Exact-commit hosted gate578/101 is separately retained.",
+    "currentLargeTransferPreflight": {
+      "schema": "qrft-external-evidence-v1",
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-obligation-review-2026-10-22-o3CpHq/ASSESSMENT-v2.md",
+      "bytes": 683,
+      "sha256": "00ddc933ba599f4243c4e831084e48e9e70ad520ad8039e6138e3c6f452928e3",
+      "closure": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-obligation-review-2026-10-22-o3CpHq/CLOSURE-HASHES-v2.json",
+        "bytes": 3596,
+        "sha256": "26be03d013ce9f7e5099b8c8d583950d792e0deeea1248e168cbbbf9ca87101c"
+      },
+      "releaseReady": false,
+      "scope": "1GiBnativeUIcase blocked before execution;15original-obligation mappings reviewed without broad completion claims."
+    },
+    "currentLargeUiTransferEvidence": {
+      "schema": "qrft-external-evidence-v1",
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/REVIEW.json",
+      "bytes": 3128,
+      "sha256": "09cbb914ae52a144d99d811e424f10764fe831874ad718832abd04edfa975fd9",
+      "assessment": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/ASSESSMENT.md",
+      "closure": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/CLOSURE-HASHES.json",
+        "bytes": 122487,
+        "sha256": "59d9d1a008a6c0e69f0dc09c9e9b91537aadbc062083f9e3933ba42875c0034d"
+      },
+      "independent": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v2-2026-10-22-X0NIqh/evidence/INDEPENDENT-BYTE-VERIFICATION.json",
+        "bytes": 1317,
+        "sha256": "76edbf37532158b9526814a59dbb08fef6de5dcbe102bd74c92761024462d396"
+      },
+      "rawHarnessExit": 1,
+      "independentVerifierExit": 0,
+      "byteComparisonPassed": true,
+      "nativeComplete": true,
+      "releaseReady": false,
+      "scope": "Current production UI 1 GiB same-host transfer/save has independent byte and hash evidence; raw harness failed its incorrect per-message ACK count assertion. Mock pickers, deliberate cleanup denial, no physical Wi-Fi or full resource matrix qualification."
+    },
+    "currentUiNative1GiBv3Evidence": {
+      "schema": "qrft-external-evidence-v1",
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/REVIEW.json",
+      "bytes": 2741,
+      "sha256": "880619b7ab5e638cbe09c3abe7962cb6a2208d80b4d7f0757ed5d928757f199a",
+      "closure": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/CLOSURE-HASHES.json",
+        "bytes": 121450,
+        "sha256": "0e34a2d1753266174084f6e56dae0b764f5721b0ea244c9c9c0071b8b5e74cc6"
+      },
+      "raw": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/RAW.json",
+        "bytes": 524552,
+        "sha256": "35c817673c988c2e5f345137618f42ee434fbffd1879b2e61b5731f2dcfb26a5"
+      },
+      "runner": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-v3-2026-10-22-9GSwnA/evidence/RUNNER.source.txt",
+        "bytes": 18504,
+        "sha256": "c7ae0d608a39c85f00ed02a964bae002bd387541ea880d22250238d9dcfb9362"
+      },
+      "sourceCommit": "613175838912a3ff4e780835f4a786d1581211af",
+      "currentAssets": [
+        {
+          "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+          "bytes": 2402,
+          "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+        },
+        {
+          "path": "dist/assets/index-C5foWVjs.css",
+          "bytes": 26260,
+          "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+        },
+        {
+          "path": "dist/assets/index-DozYA_8Y.js",
+          "bytes": 556884,
+          "sha256": "b43a7afeb19940621a2cf280e3256c2385ab86898dc693c7b45ef4f0b7406b23"
+        },
+        {
+          "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+          "bytes": 43951,
+          "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+        },
+        {
+          "path": "dist/index.html",
+          "bytes": 903,
+          "sha256": "7f1d81d604634b024d2a15528959c3c9e017167440d63652feaa88a5e17e0909"
+        }
+      ],
+      "functionalPassed": true,
+      "nativeComplete": true,
+      "sampledReserveMet": true,
+      "fileBytes": 1073741824,
+      "everyByteCompared": 1073741824,
+      "acknowledgedUniqueIndices": 17477,
+      "ackMessages": 313,
+      "receivedVerifiedMs": 70145,
+      "savedVerifiedMs": 97291,
+      "nativeSamples": 102,
+      "missingSamples": 0,
+      "minSampledFreeBytes": 5170716672,
+      "peakMemory": {
+        "sender": {
+          "samples": 51,
+          "complete": 51,
+          "incomplete": 0,
+          "peakPrivateBytes": 481226752,
+          "peakWorkingSetBytes": 821927936
+        },
+        "receiver": {
+          "samples": 51,
+          "complete": 51,
+          "incomplete": 0,
+          "peakPrivateBytes": 583950336,
+          "peakWorkingSetBytes": 933408768
+        }
+      },
+      "closureFiles": 443,
+      "closureBytes": 2178843364,
+      "releaseReady": false,
+      "scope": "One real native1GiB File through current production UI, production rendezvous, same-host RTC, durable OPFS and injected OPFS save. Both retained copies compared with every source byte; file/stream hashes and metadata/footer independently checked. Two isolated headless Chrome profiles and mocked pickers. All sampled native PIDs measured; no generalized memory-bound or physical Wi-Fi claim. Cleanup deletion deliberately denied to retain evidence; cleanup-required UI inspected. Old harness failure preserved; this fresh runner checks ACK indices rather than message count. No new5GiB/10GiB/50GiB/100GiB case."
+    },
+    "currentPackageQualificationEvidence": {
+      "schema": "qrft-external-evidence-v1",
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-package-qualification-2026-10-22-AvfyCQ/REVIEW.json",
+      "bytes": 6663,
+      "sha256": "23b806ff93d4c33e01e9189dc32c03ddaa79e724c1dfc9a851f3d03656f0a72f",
+      "closure": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/metadata-path-bound-2026-10-22-945a3029/CLOSURE-HASHES.json",
+        "bytes": 30254,
+        "sha256": "36f057a83255931e4941509375ffac1cb703fe23383134369c6dc18187855e5e"
+      },
+      "sourceCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
+      "candidates": "C:/Users/dines/QRFT-release-candidates/current-path-guards-2026-10-22-SZW5U9",
+      "externalFiles": 19,
+      "portableFiles": 22,
+      "clientBundle": "index-BBeDJSZZ.js",
+      "nativeWindowsGUI": false,
+      "releaseReady": false
+    },
+    "currentUiNative1GiBPathGuardsEvidence": {
+      "schema": "qrft-external-evidence-v1",
+      "review": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/REVIEW.json",
+        "bytes": 3617,
+        "sha256": "2bfa903b035854c35260f7a723128a41bb333444864355e6ef31b24ee6d2e90d"
+      },
+      "closure": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/CLOSURE-HASHES.json",
+        "bytes": 134566,
+        "sha256": "873a7809c8de94047d50737c18071c9e80d97349004d102a25e9eeb61d040fae"
+      },
+      "raw": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/RAW.json",
+        "bytes": 505724,
+        "sha256": "c842cf0874dfbcbbee455754b530d278112d7432dc9c7aed4e5b25840a985c4e"
+      },
+      "assessment": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/ASSESSMENT.md",
+        "bytes": 3217,
+        "sha256": "d9c8f302941b88373e0ef1ad599e187fabcf82ee00554388d4b43955d3626ec0"
+      },
+      "sourceCommit": "8911cd6c8fa57f9bb5349da5fd3f7e9ec83a5802",
+      "applicationFixCommit": "47e34b5072db3c4531f4de33fdbf6813444c78ab",
+      "currentAssets": [
+        {
+          "path": "dist/index.html",
+          "bytes": 903,
+          "sha256": "4598f8df3f389039d0699ff741953af07bd2d68dc30eb38648a3b6042a360a4b"
+        },
+        {
+          "path": "dist/assets/block-store.worker-DVHZPZQe.js",
+          "bytes": 2402,
+          "sha256": "14d7659826ff3225eb6445dca6483601c6cee553876e33a3e9657c43644e0014"
+        },
+        {
+          "path": "dist/assets/index-BBeDJSZZ.js",
+          "bytes": 557138,
+          "sha256": "2064311973bab625ab4776535f75d81460d46844d4e6cd783df7da9b533ba82c"
+        },
+        {
+          "path": "dist/assets/index-C5foWVjs.css",
+          "bytes": 26260,
+          "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+        },
+        {
+          "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+          "bytes": 43951,
+          "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+        }
+      ],
+      "functionalPassed": true,
+      "nativeComplete": true,
+      "sampledReserveMet": true,
+      "fileBytes": 1073741824,
+      "everyByteComparedAgain": 1073741824,
+      "receivedVerifiedMs": 64242,
+      "savedVerifiedMs": 91774,
+      "acknowledgedUniqueIndices": 17477,
+      "ackMessages": 312,
+      "nativeSamples": 94,
+      "missingSamples": 0,
+      "peakMemory": {
+        "sender": {
+          "samples": 47,
+          "peakPrivateBytes": 482496512,
+          "peakWorkingSetBytes": 810815488,
+          "phases": {
+            "startup": 1,
+            "preparing-and-pairing": 13,
+            "receiving": 18,
+            "received-verified": 1,
+            "saving": 13,
+            "saved-with-copy-retained": 1
+          }
+        },
+        "receiver": {
+          "samples": 47,
+          "peakPrivateBytes": 532410368,
+          "peakWorkingSetBytes": 880660480,
+          "phases": {
+            "startup": 1,
+            "preparing-and-pairing": 13,
+            "receiving": 18,
+            "received-verified": 1,
+            "saving": 13,
+            "saved-with-copy-retained": 1
+          }
+        }
+      },
+      "parentMinFreeBytes": 4603949056,
+      "closureFiles": 477,
+      "closureLogicalBytes": 2180981053,
+      "scope": "Single retained real native 1GiB source through exact production UI/assets, real same-host rendezvous and WebRTC, durable OPFS then injected OPFS save. Separate verifier re-read every byte of original/incoming/saved files and parsed actual metadata/footer. Installed headless Chrome, mocked pickers, receive-store deletion intentionally denied to retain copy. Not a synthetic-slice/raw-channel comparison, random-data claim, actual OS picker, physical Wi-Fi, clean OS, multi-size/browser resource matrix, or general memory bound. Periodic working-set sums may double-count shared pages and miss peaks; observer overhead affects elapsed times. Earlier invalid measurements remain invalid.",
+      "releaseReady": false
+    },
+    "currentLargeTrialInputSnapshot": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-ui-native-1gib-path-guards-2026-10-23-YgT3f6/evidence/CURRENT-INPUTS.json",
+      "bytes": 29524,
+      "sha256": "efb53796ac17b9652806dd897ad50b45c0dfd911b26bbee6667dd871bdea6f7d"
+    },
+    "currentFullBrowserPathGuardsEvidence": {
+      "schema": "qrft-external-evidence-v1",
+      "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/REVIEW.json",
+      "bytes": 4914,
+      "sha256": "a078d7034957a6cb5372bf851e304104d8dc0efd3e3cc03cd529d45b73ea542d",
+      "closure": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CLOSURE-HASHES.json",
+        "bytes": 3627989,
+        "sha256": "cb1a596960eeb007b16f3fdf61fc3851fc7bfb058afe2858d2e9c06c86a31f51"
+      },
+      "assessment": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/ASSESSMENT.md",
+        "bytes": 2905,
+        "sha256": "1c9c214a6c4099e1a4a301f2be320059cd31a6c6d5da5c2a4a5c78592a5fe9bc"
+      },
+      "currentInputs": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CURRENT-INPUTS.json",
+        "bytes": 29524,
+        "sha256": "b5893b07e1263f8a41518df32fa4c0436bd67624d1f84ef27145fee10d9ceb29"
+      },
+      "sourceCommit": "ad96179691ee94151764a1fb61eae3da77ef407b",
+      "localChromeCases": 101,
+      "localEdgeCases": 101,
+      "releaseReady": false
+    }
+  },
+  "previousHostedCodeGateBeforeToolchainSecurityPatch": {
+    "schema": "qrft-hosted-gate-observation-v1",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39983536416",
+    "sourceCommit": "75953fc4c36f83db9b78dd226bd90264654ccf09",
+    "status": "completed",
+    "conclusion": "success",
+    "node": "v24.22.1",
+    "unitPassed": 578,
+    "unitFiles": 59,
+    "browserPassed": 101,
+    "browser": "Bundled Chromium on hosted Windows",
+    "externalPackageFiles": 19,
+    "fetchedAssets": 5,
+    "runMetadata": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/HOSTED-RUN.json",
+      "bytes": 3709,
+      "sha256": "74b16486797f3d4453e893d8c495ace23f65ea0711152a9c052cc5b30378b21d"
+    },
+    "runLog": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/resume-page-atomicity-2026-10-23-AlydxS/HOSTED-RUN.log",
+      "bytes": 61668,
+      "sha256": "b0cd4d9f99c84b17873a5a2752e24e97cf3e2373a6106dbde36042fe1c6c760e"
+    },
+    "artifactArchiveDownloaded": false,
+    "scope": "Fresh source type/unit/build/browser checks and external package launcher-MODULE smoke with injected browser handoff; no native GUI or physical acceptance.",
+    "releaseReady": false
+  },
+  "currentFullBrowserEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/REVIEW.json",
+    "bytes": 8892,
+    "sha256": "64ab190d259c9df70af9786afefb37c5ffdd474f9c6859a57d1e3be59a24d605",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CLOSURE-HASHES.json",
+      "bytes": 2652355,
+      "sha256": "c3c8b27869905481c76e526b69f85d86ef509b4198e5625046514f5d45051185"
+    },
+    "assessment": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/TRIAGE.md",
+      "bytes": 5173,
+      "sha256": "47f40fc51facc41f2bc134d1e4fe93e9d7670c522c240d586172ba786e7842e3"
+    },
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CURRENT-INPUTS.json",
+      "bytes": 21653,
+      "sha256": "d2b66e5ff56eb34d3e613f49d948d45ac2f2057b8ff71602804f213c1edd7fc5"
+    },
+    "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
+    "localChromeCases": 101,
+    "localEdgeCases": 101,
+    "releaseReady": false
+  },
+  "toolchainSecurityEvidence": {
+    "schema": "qrft-external-evidence-v1",
+    "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/REVIEW.json",
+    "bytes": 8892,
+    "sha256": "64ab190d259c9df70af9786afefb37c5ffdd474f9c6859a57d1e3be59a24d605",
+    "closure": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CLOSURE-HASHES.json",
+      "bytes": 2652355,
+      "sha256": "c3c8b27869905481c76e526b69f85d86ef509b4198e5625046514f5d45051185"
+    },
+    "assessment": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/TRIAGE.md",
+      "bytes": 5173,
+      "sha256": "47f40fc51facc41f2bc134d1e4fe93e9d7670c522c240d586172ba786e7842e3"
+    },
+    "currentInputs": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/dependency-review-2026-10-23-wNEl3u/CURRENT-INPUTS.json",
+      "bytes": 21653,
+      "sha256": "d2b66e5ff56eb34d3e613f49d948d45ac2f2057b8ff71602804f213c1edd7fc5"
+    },
+    "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
+    "localChromeCases": 101,
+    "localEdgeCases": 101,
+    "releaseReady": false,
+    "receipt": "release-evidence/toolchain-security-2026-10-23.json"
+  },
+  "currentNativeLargeQualification": {
+    "clientBundle": "index-DON1UPCZ.js",
+    "status": "not proven",
+    "priorEvidence": "previousQualificationBeforeToolchainSecurityPatch",
+    "scope": "Prior native1GiB/memory/save evidence is preserved for the older BBeDJSZZ bundle. No new current-bundle multiGB/RAM/disk/throughput or physical acceptance."
   }
 }

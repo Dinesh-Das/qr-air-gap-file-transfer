@@ -4,6 +4,13 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
+Toolchain security patch `82391c2` rebuilds the app as `index-DON1UPCZ.js`
+and `block-store.worker-9i0g9xys.js`. Vite8.2.4/Vitest4.1.12 audits and full
+browser/package checks pass; no speed or memory improvement is claimed. Earlier
+BBeDJSZZ native1GiB and benchmark records below retain their original source and
+toolchain scope. They do not qualify this new compiled bundle for a multiGB
+resource/throughput matrix. See release-evidence/toolchain-security-2026-10-23.json.
+
 ## Windows observer diagnosis, 2026-10-23
 
 The earlier hosted process-observer timeout remains unexplained. Seven isolated
