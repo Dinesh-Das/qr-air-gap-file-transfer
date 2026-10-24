@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-24T09:56:55.257Z",
+  "recordedAt": "2026-10-24T10:26:37.397Z",
   "clientDate": "2026-10-24",
-  "status": "Cvz optical resume rejection fix and redacted pairing-test diagnostics: exacte6e853e passed661units/110browser/audit0 locally and hosted, with matching20/23file package module proof. Earlier candidate-availability failure remains preserved and unexplained. Prior5GiB proof is historicalKef; Cvz multiGB/physical/GUI/resource/throughput acceptance incomplete; READY false.",
+  "status": "Current Cvz passed one hosted Windows5GiB native transfer/save with every byte checked,530complete native rows and2page CPU profiles; exactc471 source gate661units/110browser/audit0. Earlier pairing failure remains unexplained. Physical two-laptop, GUI, broad resource and throughput acceptance incomplete; READY false.",
   "releaseReady": false,
   "evidence": {
     "status": "Sealed exact-source local/hosted gates and bounded ICE diagnostics; original failure retained",
@@ -814,7 +814,7 @@
     "oneGiBTwoCopyBudgetBytes": 4714397696,
     "fiveGiBTwoCopyBudgetBytes": 13304332288,
     "attempted": false,
-    "reason": "No new local large test; preserve unchanged reserve/copy budgets and prior user response. Current Cvz multiGB proof remains pending.",
+    "reason": "No new local large test: user reports space unavailable; unchanged local reserve/copy budgets preserved. A separate hosted current-Cvz5GiB case passed; see currentNativeLargeQualification.",
     "userResponse": "Space is unavailable now",
     "releaseReady": false
   },
@@ -1001,8 +1001,8 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-24T09:56:55.257Z",
-  "currentInputsScope": "178 selected qualified-source inputs ate6e853e, before reporting-only bookkeeping overlays. Local snapshot, not a hosted native-trial snapshot. Current Cvz has no new native multiGB proof.",
+  "updatedAt": "2026-10-24T10:26:37.397Z",
+  "currentInputsScope": "178 selected qualified-source inputs ate6e853e, before reporting-only bookkeeping overlays. Local snapshot, not a hosted native-trial snapshot. Separate currentNativeLargeQualification binds177hosted inputs at c471 and proves one hosted Cvz5GiB case; this178input snapshot remains at e6e853e.",
   "hostedCodeGate": {
     "status": "Completed success",
     "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
@@ -2465,14 +2465,28 @@
   },
   "currentNativeLargeQualification": {
     "clientBundle": "index-CvzITcBr.js",
-    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
-    "status": "Not run for current compiled bundle; prior Kef5GiB proof remains historical",
-    "nativeRows": null,
-    "everyByteCompared": null,
+    "sourceCommit": "c471ee083152a9492cf22f4f9b260b5c3c528c31",
+    "status": "One hosted Windows5GiB native compiled-UI transfer/save passed and independently audited",
+    "receipt": "release-evidence/native-cvz-5gib-2026-10-24.json",
+    "workflowRun": 40084163845,
+    "evidence": {
+      "root": "C:/Users/dines/QRFT-qualification-evidence/native-cvz-5gib-2026-10-24-6f148c",
+      "sealed": true,
+      "files": 61,
+      "bytes": 12909093,
+      "manifestBytes": 10553,
+      "sha256": "69897b9017441cea3ed117561719b02fd1be9106ea4dd10e9aede7114a868a29"
+    },
+    "nativeRows": 530,
+    "everyByteCompared": 5368709120,
+    "streamSha256": "0d6782328fe45a2f8bd721a07ebde87b53a6b3eb41fa871c53bad72e856d1d48",
+    "cpuProfilesComplete": true,
+    "sourceGatePassed": true,
     "physicalTwoLaptop": false,
     "performanceAccepted": false,
     "resourceMatrixAccepted": false,
     "releaseReady": false,
+    "scope": "Independent retained metadata/assets/source/CPU audit plus public dataset identity recomputation. Native completeness means every requested before-inventory PID measured; after-inventory changes are retained separately. Periodic samples can miss peaks/new processes. No continuous RAM bound, physical LAN, GUI or general throughput/resource/readiness acceptance.",
     "priorReceipt": "release-evidence/prefix-hash-pair-2026-10-24.json"
   },
   "previousQualificationBeforeNativeUiHarness": {
@@ -2539,18 +2553,31 @@
     "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39998977543"
   },
   "currentHostedSourceGate": {
-    "status": "Completed success",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
-    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
-    "unitTests": 661,
-    "unitFiles": 65,
-    "browserTests": 110,
-    "auditFindings": 0,
+    "at": "2026-10-24T10:22:38.707Z",
+    "artifactId": 12556657017,
+    "zipBytes": 3597030,
+    "sha256": "8600b39b43e64acea0339d71230562fccbfdfef019ec8905c13ff70f0a74c0cc",
+    "sourceCommit": "c471ee083152a9492cf22f4f9b260b5c3c528c31",
+    "runId": "40084163845",
     "node": "v24.22.1",
-    "artifactId": 12556361310,
-    "artifactSha256": "85b431dac80b659893fcd4a00b80facf458c5cefeca470ed13edcb1dc220dc36",
-    "scope": "Verified downloaded artifact for full source/browser/external-package gate; native5GiB jobs skipped.",
-    "releaseReady": false
+    "gateExit": 0,
+    "unitTests": 661,
+    "browserTests": 110,
+    "packageFiles": 20,
+    "selectedFiles": [
+      "ci-evidence/run.json",
+      "ci-evidence/gate-exit-code.txt",
+      "ci-evidence/package-smoke.json",
+      "ci-evidence/gate.txt"
+    ],
+    "scope": "Downloaded artifact ZIP SHA matches GitHub API digest; selected frozen run/gate/package records independently checked. Whole original ZIP retained, selected records extracted. No native5GiB/physical qualification.",
+    "releaseReady": false,
+    "receipt": "release-evidence/native-cvz-5gib-2026-10-24.json",
+    "status": "Completed success",
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40084163845",
+    "unitFiles": 65,
+    "auditFindings": 0,
+    "artifactSha256": "8600b39b43e64acea0339d71230562fccbfdfef019ec8905c13ff70f0a74c0cc"
   },
   "previousQualificationBeforeCpuProfileHarness": {
     "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",

@@ -11,7 +11,24 @@ Bounded, credential-redacted test diagnostics now distinguish native candidate
 events from the descriptions accepted by the local policy. A controlled suppressed
 description tests this capture; it does not explain the earlier native Chrome
 pairing failure. That failure remains preserved and its cause is still open.
-There is no new Cvz multiGB, physical Wi-Fi, resource or throughput qualification.
+Run40084163845 tested exact sourcec471ee0 and the current Cvz bundle after its
+661unit/110browser/audit0 gate. One hosted Windows5GiB transfer/save passed:
+all5,368,709,120 source/saved bytes were compared on the original VM,87,382
+binary frames and the complete expected ACK index set matched. All530native
+rows were complete and both page CPU profiles were retained. Independent audit
+verified the raw metadata inventory,
+all5compiled assets,177pinned source paths, native rows and profile summaries.
+Bounded-memory public recipe recomputation corroborated source/stream hashes;
+hosted payload files were not uploaded or physically re-read locally.
+
+Received/save-verified milestones were601.065s/813.348s from the common
+instrumented start, including preparation, pairing and verification. These are
+not network throughput measurements. Periodic samples may miss peaks/new
+processes; page CPU profiles exclude workers/native stacks. Injected pickers,
+OPFS save and intentionally denied cleanup do not qualify real OS permissions,
+native destination cleanup or GUI launch. Physical two-laptop Wi-Fi,10/50/100GB
+resource scaling and general throughput/performance acceptance remain open.
+See [current Cvz5GiB qualification](release-evidence/native-cvz-5gib-2026-10-24.json).
 See [current source and diagnostic qualification](release-evidence/pairing-ice-diagnostics-2026-10-24.json).
 
 The earlier prefix-hash candidate built as index-KefphoDT.js. Source49607c5 passed
