@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-23",
-  "status": "Kef prefix-state optimization and patched-runtime policy: b94e746 passed656units/101hostedbrowser/audit0 plus101localChrome and fresh20/23file package module checks. Same-client paired5GiB proof retained at49607c5. Physical/GUI, resource-matrix and throughput acceptance incomplete; READY false.",
+  "status": "Kef prefix-state optimization and patched-runtime policy: b94e746 passed656units/101hostedbrowser/audit0 plus101localChrome and fresh20/23file package module checks. Same-client paired5GiB proof retained at49607c5. Physical/GUI, resource-matrix and throughput acceptance incomplete; READY false. Candidate088e2dc fixes3 optical IndexedDB unhandled rejection paths:8native module cases pass and hosted656unit/109browser/audit0 passes. Local Chrome full gate108pass/1pairing-setupICEfailure remains unresolved; candidate Cvz assets separate, main not promoted.",
   "releaseReady": false,
   "evidence": {
     "status": "Sealed runtime-policy/package/source qualification; prior paired client integrity/performance receipt retained",
@@ -2906,5 +2906,63 @@
     "sourceCommit": "daca23a53813f6341f7a3603966b10431ececcee",
     "scope": "Partial static evidence only. Physical wrong-device/operator verification, all other threat paths and final release adversarial pass remain open.",
     "markedComplete": 0
+  },
+  "resumeIdbFailureFollowUp": {
+    "receipt": "release-evidence/resume-idb-failure-2026-10-24.json",
+    "sourceCommit": "088e2dc6ce649703ad2e29e9c8040ee198fce44c",
+    "branch": "codex/resume-idb-failure-handling",
+    "sourceCI": {
+      "packageFiles": 20,
+      "files": 64,
+      "units": 656,
+      "audit": 0,
+      "run": 40081331725,
+      "conclusion": "success",
+      "browser": 109,
+      "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40081331725",
+      "sourceCommit": "088e2dc6ce649703ad2e29e9c8040ee198fce44c",
+      "nativeOrLargeDiagnosticRan": false
+    },
+    "localGatePassed": false,
+    "localBrowserPassed": 108,
+    "localBrowserFailed": 1,
+    "mainPromoted": false,
+    "candidateAssets": [
+      {
+        "path": "dist/assets/block-store.worker-9i0g9xys.js",
+        "bytes": 2415,
+        "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+      },
+      {
+        "path": "dist/assets/index-C5foWVjs.css",
+        "bytes": 26260,
+        "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+      },
+      {
+        "path": "dist/assets/index-CvzITcBr.js",
+        "bytes": 557044,
+        "sha256": "bc51074587b802e260abb57b66167d54b4ca70df5cd84f6a36441c05ca27ecf0"
+      },
+      {
+        "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+        "bytes": 43951,
+        "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+      },
+      {
+        "path": "dist/index.html",
+        "bytes": 903,
+        "sha256": "153497d2d5dab2b263240b0e7da33c930ea3349d98aac2ca888245c0dd5ac1f8"
+      }
+    ],
+    "evidence": {
+      "root": "C:/Users/dines/QRFT-qualification-evidence/idb-resume-failure-2026-10-24-937efa",
+      "sealed": true,
+      "files": 60,
+      "bytes": 2112194,
+      "manifestBytes": 10341,
+      "sha256": "d221658baa1bafbd29af5738f0c88d891a9d657f634c96fd6edd93185e74b71a",
+      "scope": "Resume IndexedDB failure handling:3 native before-fix unhandled rejections,8 after-fix native module cases pass; exact source CI656/109/audit0 passes, local Chrome gate108pass1pairing-setupICEfailure retained. Packages20/23 independently checked outside closure. No physical/GUI/multiGB/resource/readiness acceptance, main not promoted."
+    },
+    "releaseReady": false
   }
 }

@@ -8786,8 +8786,11 @@
       "section": "RELEASE QUALITY",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-native-IDB-failure-browser",
+      "evidence": [
+        "release-evidence/resume-idb-failure-2026-10-24.json"
+      ],
+      "scope": "Three optical resume stores: native Chrome request-first abort no longer leaks a transaction rejection, completion abort still rejects and next read retries. Hosted109browser gate passes; local Chrome full gate has an unresolved pairing setup failure. No global no-unhandled-rejection claim."
     },
     {
       "id": "L1039",
@@ -10378,7 +10381,7 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-24T04:39:58.194Z",
+  "updatedAt": "2026-10-24T09:28:31.164Z",
   "peerAuthorizationStaticReview": {
     "path": "release-evidence/peer-authorization-static-review-2026-10-24.json",
     "reviewed": [
@@ -10388,5 +10391,10 @@
     "markedComplete": 0,
     "remainingReviewPending": 261,
     "scope": "Partial static evidence only. Physical wrong-device/operator verification, all other threat paths and final release adversarial pass remain open."
+  },
+  "resumeIdbFailureReview": {
+    "receipt": "release-evidence/resume-idb-failure-2026-10-24.json",
+    "sourceCommit": "088e2dc6ce649703ad2e29e9c8040ee198fce44c",
+    "releaseReady": false
   }
 }
