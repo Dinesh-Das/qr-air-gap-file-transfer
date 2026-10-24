@@ -7,7 +7,6 @@ import {
   type RandomAccessReader,
 } from "./large-transfer";
 import {
-  OFFLINE_BLOCK_BYTES,
   OFFLINE_MAX_RESUME_RANGES,
   applyReceiptRanges,
   bytesToHex,

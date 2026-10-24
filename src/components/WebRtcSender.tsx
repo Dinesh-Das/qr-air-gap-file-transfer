@@ -597,7 +597,3 @@ export function WebRtcSender({ onBusyChange }: { onBusyChange?: (busy: boolean) 
     </section>
   );
 }
-
-function toMessage(value: unknown): string {
-  return value instanceof Error ? value.message : String(value);
-}

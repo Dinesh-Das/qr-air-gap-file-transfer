@@ -1285,7 +1285,7 @@ for (const retainPrefix of [true, false]) test(`oversized OPFS journal recovers 
   await receiver.reload();
   await receiver.evaluate(async (retainPrefix) => {
     const parent = await (await navigator.storage.getDirectory()).getDirectoryHandle("qr-air-gap-block-store-v1");
-    for await (const [name, handle] of parent.entries()) {
+    for await (const [, handle] of parent.entries()) {
       if (handle.kind !== "directory") continue;
       const journal = await (handle as FileSystemDirectoryHandle).getFileHandle("receipt.journal");
       const bytes = new Uint8Array(await (await journal.getFile()).arrayBuffer());

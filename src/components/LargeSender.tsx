@@ -18,7 +18,6 @@ import {
   prepareLargeSource,
   type LargeSourceSelection,
   type LargeTransferProgress,
-  type PreparedLargeSource,
 } from "../lib/large-transfer";
 import {
   Qrf3TransferPurpose,
@@ -68,7 +67,6 @@ const TAB_SESSION_KEY = "qr-air-gap-large-sender-session-key";
 export function LargeSender({ active = true }: { active?: boolean }) {
   const [phase, setPhase] = useState<SenderPhase>("idle");
   const [selection, setSelection] = useState<LargeSourceSelection | null>(null);
-  const [preparedSource, setPreparedSource] = useState<PreparedLargeSource | null>(null);
   const [filesPlan, setFilesPlan] = useState<Qrf3TransferPlan | null>(null);
   const [probe, setProbe] = useState<PreparedQrf3ConnectionTest | null>(null);
   const [activePlan, setActivePlan] = useState<Qrf3TransferPlan | null>(null);
@@ -149,7 +147,6 @@ export function LargeSender({ active = true }: { active?: boolean }) {
       );
       if (generation !== generationRef.current) return;
       setSelection(next);
-      setPreparedSource(null);
       setFilesPlan(null);
       setProbe(null);
       setActivePlan(null);
@@ -226,7 +223,6 @@ export function LargeSender({ active = true }: { active?: boolean }) {
       senderSessionRef.current = storedSession;
       setResumeCandidate(null);
       if (storedSession) rememberSessionKey(storedSession.key);
-      setPreparedSource(source);
       setFilesPlan(plan);
       setProbe(nextProbe);
       setActivePlan(nextProbe.transfer);
@@ -273,7 +269,6 @@ export function LargeSender({ active = true }: { active?: boolean }) {
       rememberSessionKey(session.key);
       setResumeCandidate(null);
       setSelection(restored.selection);
-      setPreparedSource(restored.preparedSource);
       setFilesPlan(restored.filesPlan);
       setProbe(restored.probe);
       setActivePlan(
@@ -370,7 +365,6 @@ export function LargeSender({ active = true }: { active?: boolean }) {
     forgetSessionKey();
     setResumeCandidate(null);
     setSelection(null);
-    setPreparedSource(null);
     setFilesPlan(null);
     setProbe(null);
     setActivePlan(null);
