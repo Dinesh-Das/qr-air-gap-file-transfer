@@ -2906,5 +2906,12 @@
     "sourceCommit": "daca23a53813f6341f7a3603966b10431ececcee",
     "scope": "Partial static evidence only. Physical wrong-device/operator verification, all other threat paths and final release adversarial pass remain open.",
     "markedComplete": 0
+  },
+  "nativeMixedTreePreparation": {
+    "receipt": "release-evidence/native-mixed-tree-preparation-2026-10-24.json",
+    "sourceCommit": "da151a9f81c426152e2ad56eb349f19c414f31cd",
+    "status": "Fixture preparation complete; UI runner and mixed-tree transfer/save qualification pending",
+    "nativeMixedTransferRun": false,
+    "releaseReady": false
   }
 }

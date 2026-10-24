@@ -1,0 +1,98 @@
+{
+  "recordedAt": "2026-10-24T05:04:50.887Z",
+  "sourceCommit": "da151a9f81c426152e2ad56eb349f19c414f31cd",
+  "baseMainCommit": "478c1061a3db552934090c8de38f89e3c57cc352",
+  "runtime": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292/runtime/node.exe",
+  "sourceFiles": [
+    {
+      "path": "SPEC-native-mixed-tree-qualification.md",
+      "bytes": 3795,
+      "sha256": "77ec32797c86d367f038c28c343a14356a7bd376115e8107b9587b5baacd6132"
+    },
+    {
+      "path": "scripts/native-mixed-tree.mjs",
+      "bytes": 5783,
+      "sha256": "63acdbbdcff6b17b1baca6a68a61f0b9b5bce4668e41cd9d2dd425a808fc6524"
+    },
+    {
+      "path": "tests/native-mixed-tree.test.mjs",
+      "bytes": 6686,
+      "sha256": "facd35f745edbc77a77c98e91d8581b3c2ce9910953767ba69b6db30e75b281e"
+    }
+  ],
+  "sourceFixture": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-tree-preparation-2026-10-24-426c0b/qualification-fixture/FIXTURE.json",
+  "fixtureGeneratedBy": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-tree-preparation-2026-10-24-426c0b/GENERATOR-BEFORE-PUBLICATION-FIX.mjs",
+  "fixtureAlgorithmUnchanged": true,
+  "fixtureGenerationBeforeDiagnosticSafetyFixes": true,
+  "independentSourceAudit": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-tree-preparation-2026-10-24-426c0b/INDEPENDENT-FIXTURE.json",
+  "testsPassed": 662,
+  "testFiles": 65,
+  "typecheck": 0,
+  "build": 0,
+  "uiRunnerImplemented": false,
+  "nativeMixedTransferRun": false,
+  "generalPerformanceAccepted": false,
+  "resourceMatrixAccepted": false,
+  "physicalTwoLaptop": false,
+  "releaseReady": false,
+  "stage": "Fixture preparation complete; UI runner and mixed-tree transfer/save qualification pending",
+  "evidenceRoot": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-tree-preparation-2026-10-24-426c0b",
+  "sealed": true,
+  "closure": {
+    "files": 4156,
+    "bytes": 107105568,
+    "manifestBytes": 830254,
+    "sha256": "13a2f3a31911b88e8815201d80145d15dd9d5d846128fd1e9da70ec19de5bc08",
+    "scope": "Native mixed-tree fixture preparation, all source bytes and audit/diagnostic-safety evidence. No mixed-tree UI transfer/save, performance, resource scaling, physical WiFi or readiness proof. Future UI runs must write into a separate new root; source fixture here is preserved read-only."
+  },
+  "fixture": {
+    "files": 4129,
+    "directories": 68,
+    "fileBytes": 104857600,
+    "smokeOnly": false,
+    "metadataSha256": "f7d317eebd2e8c8b0a9ed065ed31e1d643e38ffc890ccbe24f0215235a51905b",
+    "everySourceByteIndependentlyAudited": true,
+    "sourceUntouched": true,
+    "cryptoRecipe": "Public deterministic AESCTR, not random data",
+    "generatedBeforeSafetyFixes": true
+  },
+  "diagnosticSafetyFixes": [
+    "Windows rooted paths require explicit drive/share",
+    "Synced temporary completed manifest replaces incomplete marker only after successful write",
+    "Initial incomplete manifest precedes owner/payload; failed bootstrap leaves no payload and no usable manifest"
+  ],
+  "tests": {
+    "newFocusedCases": 6,
+    "safetyRedFailed": 2,
+    "bootstrapRedFailed": 2,
+    "finalFocusedPassed": 6,
+    "fullUnitPassed": 662,
+    "fullUnitFiles": 65,
+    "typecheck": 0,
+    "build": 0,
+    "initialMissingModuleWasSetupFailure": true,
+    "browserSuiteRerun": false
+  },
+  "independentAudit": {
+    "files": 4129,
+    "directories": 68,
+    "allExactPathsAndTypes": true,
+    "everyByteCompared": 104857600,
+    "independentPublicRecipeDecryptsToZeros": true,
+    "allRecordedHashesAndMtimesMatch": true,
+    "sourceUntouched": true,
+    "scope": "Native fixture preparation only. No browser transfer, destination save, physical Wi-Fi, performance or resource acceptance.",
+    "releaseReady": false
+  },
+  "auditNegativeControl": {
+    "alteration": "Only the recorded SHA256 of the first real source file changed in a separate metadata copy. Real source untouched.",
+    "exitCode": 1,
+    "acceptanceOutput": false,
+    "scope": "Audit-tool negative control, not a product defect or transfer trial."
+  },
+  "reviewCycles": 3,
+  "lastReviewConcreteFindings": 0,
+  "productSourceChanged": false,
+  "existing5GiBGateChanged": false,
+  "manualTwoLaptopStillRequired": true
+}

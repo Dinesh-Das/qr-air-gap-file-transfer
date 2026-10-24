@@ -4,6 +4,13 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
+A separate native mixed-tree case is being prepared for the original thousands-of-files
+requirement. Its4,129-file/68-directory100MiB disk fixture passed an independent
+every-byte/path/hash audit, and fixture-tool safety checks passed. The production
+UI runner and transfer/save trial are still pending; no timing, memory or throughput
+result is claimed. See [preparation receipt](release-evidence/native-mixed-tree-preparation-2026-10-24.json)
+and SPEC-native-mixed-tree-qualification.md.
+
 The prefix-hash candidate builds as index-KefphoDT.js. Source49607c5 passed
 628 unit and101 browser cases with audit0. One serial baseline-first comparison
 on the same hosted Windows machine then completed both5GiB transfer/save cases,
