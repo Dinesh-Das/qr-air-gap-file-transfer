@@ -1,13 +1,13 @@
 {
   "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-23",
-  "status": "Kef client paired5GiB proof retained at49607c5. Runtime-policy b94e746 passed656localunits/type/build/audit0 and fresh20/23file module package checks; localChrome and exact-source hosted gate pending. Physical validation and READY remain incomplete.",
+  "status": "Kef prefix-state optimization and patched-runtime policy: b94e746 passed656units/101hostedbrowser/audit0 plus101localChrome and fresh20/23file package module checks. Same-client paired5GiB proof retained at49607c5. Physical/GUI, resource-matrix and throughput acceptance incomplete; READY false.",
   "releaseReady": false,
   "evidence": {
-    "status": "Paired candidate integrity/native-observer and sampled preparation comparison audited; sealed receipt retained",
-    "local": "C:/Users/dines/QRFT-qualification-evidence/first-prefix-hash-2026-10-24-33ea23",
-    "baseline": "previousQualificationBeforePrefixHashCandidate",
-    "receipt": "release-evidence/prefix-hash-pair-2026-10-24.json"
+    "status": "Sealed runtime-policy/package/source qualification; prior paired client integrity/performance receipt retained",
+    "local": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292",
+    "receipt": "release-evidence/runtime-security-2026-10-24.json",
+    "pairedReceipt": "release-evidence/prefix-hash-pair-2026-10-24.json"
   },
   "previousCheckpoint": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CANONICAL-BEFORE.json",
   "sourceFixEvidence": {
@@ -39,19 +39,20 @@
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
   },
   "qualification": {
-    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
-    "status": "Final paired-tool source gate and both 5GiB cases passed; general performance, resource matrix and physical qualification incomplete",
-    "unitPassed": 628,
-    "unitFiles": 63,
+    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
+    "status": "Exact-source hosted release gate and local Chrome/package module checks passed; physical/GUI/performance/resource requirements incomplete",
+    "unitPassed": 656,
+    "unitFiles": 64,
     "typecheck": 0,
     "build": 0,
     "browserPassed": 101,
     "auditFindings": 0,
-    "fullHostedCurrentSource": "Source49607c5/run40012980307 passed full gate and serial paired5GiB cases. Later documentation commits do not alter tested implementation.",
+    "fullHostedCurrentSource": "Sourceb94e746/run40061959432 passed656units64files/101bundledChromium/audit0/type/build/20fileexternalpackage module smoke. Prior5GiB proof is source496 client assets, unchanged here.",
     "nativeWindowsGUI": false,
     "performanceAccepted": false,
     "resourceMatrixAccepted": false,
-    "releaseReady": false
+    "releaseReady": false,
+    "installedChromePassed": 101
   },
   "currentInputs": [
     {
@@ -64,7 +65,7 @@
     },
     {
       "path": ".github/workflows/prefix-hash-comparison.yml",
-      "sha256": "af6faa0d47e369a79dac4f1beecf9e5eb48456c5efb06e96bf6241de6c4e9ffb"
+      "sha256": "55741245844a06b456075b0079a2a78eff4ca21dda069e57606797aa6d629090"
     },
     {
       "path": ".github/workflows/release-check.yml",
@@ -80,7 +81,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "cab78b57eb548982b081c7a0ce4287d830ce53363da5a8477d21222b3cfcd5b3"
+      "sha256": "b984a07ff2e70dd1d549fb166ee5915652620e254f68c4c7f3a6308656b5501d"
     },
     {
       "path": "SPEC-native-ui-qualification.md",
@@ -88,7 +89,11 @@
     },
     {
       "path": "SPEC-prefix-hash-comparison.md",
-      "sha256": "c17c0797982820d4b0e67eff11bb2eded5287496964d8769f5e6bcdec69efbaf"
+      "sha256": "8fc691cad8b19810c2dc64ff8c0a58d5386007b6d80af792134c7bd2c0cdd2cc"
+    },
+    {
+      "path": "TRANSFER_PROCESS.md",
+      "sha256": "35daadc5f14e91966d487f46c1a1e4ca9f38b5528b504f4894c7e08ed661136b"
     },
     {
       "path": "e2e/browser-channel.ts",
@@ -96,23 +101,23 @@
     },
     {
       "path": "e2e/navigation.spec.ts",
-      "sha256": "ced64a0e98297a93303162dc8521fac76847b175e7617e5d3cb19f4c706b79fc"
+      "sha256": "2f96693e554160b55f1d75863c50dc2432a2433edcd716cf6dc8066621e8ad95"
     },
     {
       "path": "e2e/pairing-preparation.spec.ts",
-      "sha256": "4b687e63a511981eeb36629ba1ee3530f650a222c34cb70b52a551da6f8ab348"
+      "sha256": "8bf63a00f2de1cde18adc61a648ab1dea6c963253038ada68d5a2dfea96c9bc6"
     },
     {
       "path": "e2e/pairing.spec.ts",
-      "sha256": "ee850843bb8bc58fa073245fc44e42c18c6713e544f0076372fe55e6b5006af3"
+      "sha256": "bfd3cb0cbe4c88345a6fb93e2a82ed0a11da639443dc58ab1c7a7271c16175b8"
     },
     {
       "path": "e2e/peer-candidate-policy.spec.ts",
-      "sha256": "b41bbc47c082bf0143d3d5141a96ac871021a17fda1872219a61fc1b5f9bc19f"
+      "sha256": "1f3889e46f1d1f55048aedd10116c098d6ff5e4ab71917283371c28b0b8875d3"
     },
     {
       "path": "e2e/preparation-privacy.spec.ts",
-      "sha256": "a46d9d1329a9b19e4256390dccbf8fc836f5fa5410daaefcb2e7292b67e6d35a"
+      "sha256": "442f6b9d0fadda014bf49193ae7ca59c0a0e50df7750b705cbe2751dc94c61c6"
     },
     {
       "path": "index.html",
@@ -120,11 +125,11 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "4de03270d493bbdd9aa41543581ce286bc06ee473a38ec87f53685cb14ad21f5"
+      "sha256": "56983ddf6b44fc30d900ca59ad1c931a97f8a5f3d8a95782b7ca9ed79705a77e"
     },
     {
       "path": "package.json",
-      "sha256": "77d68948702d13e346b122a1fec3c732f04d53194c0e47e057db560e6207e8fb"
+      "sha256": "60d065392b6babb902c915f25b67d3c1378143e7545afc579f03ad1f507f6c95"
     },
     {
       "path": "playwright.config.ts",
@@ -132,7 +137,7 @@
     },
     {
       "path": "release-evidence/acceptance-obligations-2026-10-14.json",
-      "sha256": "60832b73beebc619078875bdc013ff8f61595d8bc3ac605a6b98961395f4f386"
+      "sha256": "a244bc2a3a9a05659a82fd02e84607af7e3a2a71aa89e1082c1539ce056685c2"
     },
     {
       "path": "release-evidence/original-release-requirements.txt",
@@ -140,7 +145,7 @@
     },
     {
       "path": "scripts/benchmark-pattern.mjs",
-      "sha256": "368a661e0507022fba429ff7fc8b0771310152020543dad0e8a123210cfaf969"
+      "sha256": "c123dbc053a01b317d8619e96500e774549f4d14a41afbd98725d2551017087a"
     },
     {
       "path": "scripts/benchmark-receiver.mjs",
@@ -152,7 +157,7 @@
     },
     {
       "path": "scripts/benchmark-transport.mjs",
-      "sha256": "61c180ca42c4b941004fc8700ca7accfff234ba2814656264e32aba44c6b7495"
+      "sha256": "9a6e397ad32b7336ea54532ecfc79ca54c54d04088645d27e9d378c0404cbd04"
     },
     {
       "path": "scripts/benchmark-webrtc-page.mjs",
@@ -168,35 +173,35 @@
     },
     {
       "path": "scripts/browser-process-memory.mjs",
-      "sha256": "db1c0858ad55386e9aa2cf2164461c22248a20bcf101852c4bda3ea6e1f8b958"
+      "sha256": "f5f02428ea7cb47d98bfa16b6cf34f31a138f5cdde3b517c1e7a5a13b40a6d8e"
     },
     {
       "path": "scripts/browser-process-memory.ps1",
-      "sha256": "4a20c3b49cb19bcbbe0e1c96577cabeb19168c9780322dda59aef31e9d5fe3b9"
+      "sha256": "a98a55bd254ae90a442bc3acf4f7b72b542f6d119fcc2ae20f865c46e95fa35a"
     },
     {
       "path": "scripts/compare-trees.mjs",
-      "sha256": "e7f5240075415350acaec41f80220860b6af64c57815433efe7147c658428b19"
+      "sha256": "b5a5976982ffb8e75ddbcf7d79ea16159675786ca6472aef8b5458c481d5885d"
     },
     {
       "path": "scripts/create-fixture.mjs",
-      "sha256": "5664c77b4f980fc0cd91ac29c3adac38572b091ee1efa1dfc4322c2935e505bd"
+      "sha256": "5e4cb2c33b71714465d8c3e0ecd836151dae8f562a7fc9e952c9c6175dfaf8c0"
     },
     {
       "path": "scripts/diagnose-storage-context.mjs",
-      "sha256": "e6332842079c1edf5d01d985d8f4543be5f737b1b9c664053b893ff5d990eadc"
+      "sha256": "a5d74a5f2930258112115c6f3e5e285ea4a513ce740246e009ff47b34a381b19"
     },
     {
       "path": "scripts/lan-signaling.mjs",
-      "sha256": "14c118b39bf3669c00c71d3e019bbade5f6d1d59734f8196ceb787765e436a22"
+      "sha256": "6719b8687a83397cd374ab6d796fe110aae54d3c5b92c8bc31b21e262a0e3e60"
     },
     {
       "path": "scripts/launch.mjs",
-      "sha256": "941432d7114be7831e736b37484741ad2504e5a0b712318e09f765c0cd48be01"
+      "sha256": "be05feb3e966c0a2528cf7c49f1fbe02c897b4b013b8ffbd4da4885e6f778ea5"
     },
     {
       "path": "scripts/local-http-security.mjs",
-      "sha256": "8229a5f02a23531a48a7375cc0a4914ccd2c15b57b837dcf0e68f9b2a92010e6"
+      "sha256": "1dfac8862368bbbbe5ab8ff9eff11132e1af79972d5474a2dcefcf5fa001e2f0"
     },
     {
       "path": "scripts/native-cpu-profile.mjs",
@@ -208,11 +213,11 @@
     },
     {
       "path": "scripts/package-offline.mjs",
-      "sha256": "3a73722d522459c70ad817be7706026c9ecde1083358911377134b8e8527e17e"
+      "sha256": "a07dc143fc6052637c86c076d6d276a1c0a92603557002ff880c358e31778a75"
     },
     {
       "path": "scripts/prefix-comparison-contract.mjs",
-      "sha256": "4a358a83691b7e909f2d4c58788014f1211b1e3bf908af53995a193d277fef95"
+      "sha256": "cd676febdb9e0b5089df5330d82985c3bb87ba52a8ecae82db1c478b03d1324d"
     },
     {
       "path": "scripts/qualify-native-ui.mjs",
@@ -220,7 +225,7 @@
     },
     {
       "path": "scripts/rendezvous.mjs",
-      "sha256": "9ed76baf342d0b61948d9e82457afb0368c12a57343927f7105b1e6b9858114c"
+      "sha256": "118f5e46d11c6de8c4f98c9f02e6fa2386a78d4f69a9b25b2023b477942554bc"
     },
     {
       "path": "scripts/run-benchmark-window-study.mjs",
@@ -232,27 +237,31 @@
     },
     {
       "path": "scripts/run-prefix-comparison.mjs",
-      "sha256": "732becc84661cd65c167176c2d064228b563d3b5380c6e8fbeacc410a48758e0"
+      "sha256": "a628e08d752978ad026f4006765ab00b5d9664dbbe2e3a899645cd81a78baf46"
+    },
+    {
+      "path": "scripts/runtime-policy.mjs",
+      "sha256": "3a7cf81169401b7121bc69f3dd24c6963be40fe39e15abc517e34b3f8439d065"
     },
     {
       "path": "scripts/serve.mjs",
-      "sha256": "f15777d301621c469fd7de4660578f053bd7b4193030d8f3190a4befa36f45ef"
+      "sha256": "c8553d7a05a17609ed1853e51243ae474f06d3279a56c4d933c31efd2c99317e"
     },
     {
       "path": "scripts/smoke-offline.mjs",
-      "sha256": "4f4b50e6338ab5db34943da21f01f3cefaf2df40379bb7a4e72d01bc55dadc43"
+      "sha256": "7c5ae229ff2f333dc5499ff14b5a49926165093c537f0678bd8f5314a28154cd"
     },
     {
       "path": "scripts/verify-release.mjs",
-      "sha256": "26cc21be223b4a0d3f86a5c391258468d60fa1912568ab2ca7406a7bfac82e15"
+      "sha256": "6f1925cedea6ef03133505c0b2f973249a0b4af10757eeb92908d4112af0062f"
     },
     {
       "path": "scripts/windows-runtime.mjs",
-      "sha256": "51506df62070fff8ed7d6702ce5d3f2e57f8feee83fa2692b1c0b888be3e04a2"
+      "sha256": "06e4ba8f929c43266e100eaa97db2f516346b9bc78a0f35bd1aaad57bba18edd"
     },
     {
       "path": "src/App.tsx",
-      "sha256": "408beadc19f6a0296a161d062967e49adffcc28bc304bc0eb41bbc8ee96ef063"
+      "sha256": "ba8be9d3686ef374ad8a996de96c7f73305653df3e4c3c7a39606f3daf355000"
     },
     {
       "path": "src/components/ConnectionDiagnostics.tsx",
@@ -260,71 +269,71 @@
     },
     {
       "path": "src/components/LargeReceiver.tsx",
-      "sha256": "989bb67140979b690e21d049ebcc205794527916983d5d16930e1e52ab49b9f7"
+      "sha256": "a5d95a2e4842b77336d8ef7df161e5b46267b5ef052940bacb35e48ea62b1935"
     },
     {
       "path": "src/components/LargeSender.tsx",
-      "sha256": "eaf3550dfb50e0a95c6d79815b93f409a75357c89e77746f6503af2ad11cf1d9"
+      "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
     },
     {
       "path": "src/components/PairingReadiness.tsx",
-      "sha256": "50bb2a6ed3d01fc3cc8acf3fdfb2555f40fcd0a204d69771a5dd15413eb96b3c"
+      "sha256": "e39d6e6efcf5ab14a85e5ab6e4c5f1f39bdbf091638241141961ddab515fe36a"
     },
     {
       "path": "src/components/Receiver.tsx",
-      "sha256": "61df2cf03b689be48c4532c19d104d2ebf7a9fdec9ead014c3667b7153504257"
+      "sha256": "4315fc34f572482f1bd615554a5ce09db7a8e2b42fbd5c447f68f7c2c1f93d4e"
     },
     {
       "path": "src/components/Sender.tsx",
-      "sha256": "3acf45b9bba0eea24713a8573b3076db833f31641b1cc2f0ee1983431edb8b75"
+      "sha256": "4011a7aeab67ff774618e991aab2ff5a35442368d6cf2e5bd3fa8031323085e8"
     },
     {
       "path": "src/components/StorageReadiness.tsx",
-      "sha256": "9a1c0fb13632e868f722f38b14fa7b45d2a9a85d5585259cf6f9dedf2400cbf7"
+      "sha256": "7ee05406526abaa88a5d087445b49d0793710198d978d6eb6a2ae9fb3a4dd540"
     },
     {
       "path": "src/components/TransferMetrics.tsx",
-      "sha256": "2f43afd984e50d192c71307646d776ba2371dce13f94561b4845bd949833ba80"
+      "sha256": "4677d22a36c655156236fa1357e72a3cccdd9208a4ce2544e3e3dba1339d25b1"
     },
     {
       "path": "src/components/TransferProblem.tsx",
-      "sha256": "3eee59edf3b7c8b4dcd35fa46931698d1460c9ef6ca2387d94f5db901d1f3cb1"
+      "sha256": "656eb3a36342bb4f1d5f5c6783aa177bfbc45355e19253885f9bf0cbced6dcd8"
     },
     {
       "path": "src/components/TransferWakeLock.tsx",
-      "sha256": "e2a8dda709d3a93c1263ffd62ea865ed069bd719517ab44266b8503216f412d3"
+      "sha256": "a92e6363197392bcbb8dbd7170e4dac037e2b2f260b4962bcf66f5e0415a9c62"
     },
     {
       "path": "src/components/VerifyDevice.tsx",
-      "sha256": "e629e97060fb084d5ea3281565ff49412d133975a156cd3d29488594b255205f"
+      "sha256": "f7317828621fead4450c155589c11b2c7f94ccb87bb8fa70d55c1ab0d0cb9843"
     },
     {
       "path": "src/components/WebRtcReceiver.tsx",
-      "sha256": "367958bb2ef4b39e60ba108f123ac476a0b571dc9e3e98dfa0dcaa5976174cff"
+      "sha256": "93cf8e726780e232ba93a859f0cad1e8034454de7dd150396aa2098ad6d2817b"
     },
     {
       "path": "src/components/WebRtcSender.tsx",
-      "sha256": "2c1e0e3c0d4dcdb11ccab1787de77e5c9d89bb9353454c25e2f65fe207b8f057"
+      "sha256": "dc3583c0641706b9b98b18d865611f3b75fbebc2eedfe3e654174243904d813b"
     },
     {
       "path": "src/components/WebRtcSignalQr.tsx",
-      "sha256": "ff1dbb940925e3efe2bbab9ccba5077ee311a74a2f193d5221d649f573b22ba3"
+      "sha256": "b7b512ae9c6ff56112b629c11438d32c56f8fb29d1ae7d7063b6d15eea168834"
     },
     {
       "path": "src/lib/archive.ts",
-      "sha256": "41837336ea31c7bf355ad45201af712177d73f5ed98cf07903d95ca088b6e69b"
+      "sha256": "10c6739f0675bad81fe611873ac5a8319d93b254a767978c31697aa64402d319"
     },
     {
       "path": "src/lib/block-store-worker-protocol.ts",
-      "sha256": "c407afa4e8522a7d183b77477f034ab1bb1f7bf4c6d5aa5a699c43dd9266bf4b"
+      "sha256": "5b5e6bc207d90b9829cfc1fddbd799deb7268fad65f4c31e4e8561c65803186d"
     },
     {
       "path": "src/lib/block-store.ts",
-      "sha256": "996044bedbd2704524941bab41bf6ce998efef4d1b8be70aa777f7792bbdbbec"
+      "sha256": "cb316af4cd79e4a2505eb9dd1a4755e097fe9935b99d3e160d3e2fc20b3109cc"
     },
     {
       "path": "src/lib/block-store.worker.ts",
-      "sha256": "1f7b32051c25f30ab97f437198778fc1ff5bc17212c7dbbbb9cd3ec627282850"
+      "sha256": "8568ef7ab515f7699d02ef6eb30501baa372c8a51b34817fdb1e9812cc130bee"
     },
     {
       "path": "src/lib/connection-path.ts",
@@ -332,15 +341,15 @@
     },
     {
       "path": "src/lib/connection.ts",
-      "sha256": "6332141b88416b20a113e39bae9b054eee02e246bcfa777f204cd3db10ff9eb0"
+      "sha256": "f773c34f3d1c5509f3ccae5021b197d072870f9a90fb1e3b583c26a53e3d8a4f"
     },
     {
       "path": "src/lib/format.ts",
-      "sha256": "9dd8dbae121c9dfb7267ca9903ed136bb561f9ded442ea549e612c3f0ba49bb0"
+      "sha256": "5f2ee8f6b369c78bf58683de0afa5751b55c33a99fdac822439801584ae65179"
     },
     {
       "path": "src/lib/large-connection.ts",
-      "sha256": "0c37fb78030b61f8ca6102cf7233a5f55ecb139e363fdafc1474685cce22fa59"
+      "sha256": "365b0f34f31a3410bf90ec330926aad03bffd14ac594174ac717ebcfff843494"
     },
     {
       "path": "src/lib/large-destination.ts",
@@ -348,127 +357,127 @@
     },
     {
       "path": "src/lib/large-receiver-resume.ts",
-      "sha256": "71c5bfe9068a08924e28c8f64492f3b268a175fc35b68dd99c18101af57fc278"
+      "sha256": "7547b1a1622e732f342e50bfe047b18782e059bbc7194e6444f7b2d783638349"
     },
     {
       "path": "src/lib/large-receiver.ts",
-      "sha256": "2b78bee2c8ea235f8bb255a500cd0ea656a016f5737fb7595928195ba7dc672f"
+      "sha256": "5adb957770430bf5a6c73e07c3b5dfff1ff7fbe910833a84e2b2d389af506485"
     },
     {
       "path": "src/lib/large-sender-playback.ts",
-      "sha256": "fb1d6917ddf9f49880e0bb97509d6d0baf188c1fa72a7cb742aa88f54ea776bb"
+      "sha256": "f1694174cece160abd47023b6a00e371aeab8b89bd701a1081b0d2f4e395dc08"
     },
     {
       "path": "src/lib/large-sender-resume.ts",
-      "sha256": "fc76fb1bcb2e3cb5aec95f742d86570bb106f28eed5f99fefb5a900efffec812"
+      "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
     },
     {
       "path": "src/lib/large-transfer.ts",
-      "sha256": "261d04535a239a5caeacfa62e4e729d06fc846569aa7485f0eeeb3197b9f84fc"
+      "sha256": "4f4da7799bdbad5ecf7ddff704c818fb710dc1c256b1c1fde59bafb5e0a8e939"
     },
     {
       "path": "src/lib/optical-schedule.ts",
-      "sha256": "1aa9cdf8c4ec63e210b8723b8c55aa67daef46805b0e30a202fdb125c36aa5d9"
+      "sha256": "7600d62b4ac2ce11d44269c9ec1bdf473b15d645c96e03fa71cb71556414d674"
     },
     {
       "path": "src/lib/protocol.ts",
-      "sha256": "fcb71443394239a690354e200177e2e906f71af22436768d8e82e368d3679f7b"
+      "sha256": "76394d4c4d122973686876a827a900e48d499453f8a4935c3e902d8c720758e8"
     },
     {
       "path": "src/lib/resume.ts",
-      "sha256": "77cbc10248f9ae79260060baa721db45ddfbb860276e8edcab5e6aad70f1ff62"
+      "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
     },
     {
       "path": "src/lib/screen-wake-lock.ts",
-      "sha256": "ea38da2a8500710f9ae18b447ffd057d998169e563b06309fb8e096acbbf4618"
+      "sha256": "163aa5329a1c6663659dcd0799fde289c568db873357e3dbeee95dc05f1945ba"
     },
     {
       "path": "src/lib/selected-files.ts",
-      "sha256": "2c5d8ea9a24d80c1fbf95095070e901f896aaf32b6e174db7198c16ddabb1207"
+      "sha256": "1ba2ed8f3fb4b10c0171dc946c2419604038bfc8ea4e352aa887885e40be2c42"
     },
     {
       "path": "src/lib/sender-resume.ts",
-      "sha256": "901188335c8f132560e464b01f7cdf69d1ae9d6fedfb01a5520c3703d76ecd6a"
+      "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
     },
     {
       "path": "src/lib/stream-protocol.ts",
-      "sha256": "80e57bc0a0942b7d9dad11acd1f2830d3bd9900e8e7d1a12fb7c74174cd738aa"
+      "sha256": "7bfbded1803832d2dbe790eb22513bc62e08415cc9acf6cd90ae8bb3891d7e78"
     },
     {
       "path": "src/lib/transfer-problem.ts",
-      "sha256": "e76e615015d24b2ba8b670702264984b0822ebd42b14a511d737eac4e9475b8f"
+      "sha256": "05ef76020a202aa4aa05e36339ab425217c493c04753601791ea185616496ceb"
     },
     {
       "path": "src/lib/transfer-rate.ts",
-      "sha256": "ee66d51fde82e4d40c05508a4acc206b6a1814f26a0c19a4d49d46ed059a1197"
+      "sha256": "f315af9e7683d533dd7f281b58e4098dd69483527e1db85df9478a17633bd3d4"
     },
     {
       "path": "src/lib/transfer.ts",
-      "sha256": "359232ac730065a66d54c155544e43382b60b844e9d31439a56cb2df2556a1d0"
+      "sha256": "5f68618f4a240b47092adcd6f8c72c2a821ddb6cadf300c50be4a30df7b8dc6c"
     },
     {
       "path": "src/lib/use-pairing-readiness.ts",
-      "sha256": "13a2811d5df6ddf4318252a6ddde58200ad3917d6f6d51b0476ff4b01d996d01"
+      "sha256": "44d9b767b499057346419df7ac2e6e815be496da69d160a2491755865ed346f8"
     },
     {
       "path": "src/lib/use-transfer-rate.ts",
-      "sha256": "0ff097eb224703bc061fdf2cd570241eb76582fff251e3428e6bbbe2fb1543ac"
+      "sha256": "8ddb5042d0ab91350190f428f2a91d104e3dd85a75f736cd1a59c82ea89ec2c0"
     },
     {
       "path": "src/lib/webrtc-authorization.ts",
-      "sha256": "0424ece4d019a45b1ec44ca8321a0a5e785fc93a0fe68c62e365a4f075da1c70"
+      "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
     },
     {
       "path": "src/lib/webrtc-control-flow.ts",
-      "sha256": "619a19c4519f4a44a93e18cfb175aa331220e8e239c5894c56f5922d972611d8"
+      "sha256": "160fecf3ad0107340f726df8b6c4e1b14162060836d2780d8ecde521f5e574fe"
     },
     {
       "path": "src/lib/webrtc-peer-health.ts",
-      "sha256": "3d6eec1991afa5e91ae01d798fc943cb8f82d63a333c793fa021f1aa60d19447"
+      "sha256": "efb23d87aec7b55d4f81de08a506c95a19cb589e271180fbc0d3c4a93a616bf8"
     },
     {
       "path": "src/lib/webrtc-protocol.ts",
-      "sha256": "4e37ecfd43b3e9dd848b108143a35e587067be9b573be90c5b29e44f3540196c"
+      "sha256": "06c7ae26d9dd7f396e9585d17257516ee85b50eab290b9e8993bca3f7ff65cc1"
     },
     {
       "path": "src/lib/webrtc-receive-queue.ts",
-      "sha256": "9ac20d5441b41a79a1a7e034ecff47225f176e1b1682b3568dab0d0c8eb951f6"
+      "sha256": "4190d409eedcb1d4361b48d30e46328393aec1b79584dd7583265b62897978c0"
     },
     {
       "path": "src/lib/webrtc-rendezvous.ts",
-      "sha256": "c703b680013dceab2df2dbbbe43e0fd1faea6ab809e04275f0bb72c026a53a9e"
+      "sha256": "ecec62e9cf730bfb8cb210be6ebcc08a93a39ca10c69f7aee1602e2e18a46c39"
     },
     {
       "path": "src/lib/webrtc-sender-resume.ts",
-      "sha256": "2ac53c7b60e8b4c1d1698bdbfc0e6b5815e8d231a2853255685c5c781bb1e1f2"
+      "sha256": "1a6920253bfe88279ae301c5cf631400afeb03d885eb73303f07c2b7dd594167"
     },
     {
       "path": "src/lib/webrtc-signaling.ts",
-      "sha256": "db9c8a724edbcffed5fbdffee27c2982bf80a0c219cfbf1ee0442d332e5d8581"
+      "sha256": "590afca92e6cbf4232bd35920d6c5213beefb521284f8e9281d62954462e0888"
     },
     {
       "path": "src/lib/webrtc-transfer.ts",
-      "sha256": "fdc2928789caedea94dd41c7daa173d943c5bb5504b46ea234fee9bb81418c48"
+      "sha256": "2ffb0e756e82c879cd4dd4dc0edb1ea1199f0f904118d8d8973a6aa3128ff2f1"
     },
     {
       "path": "src/main.tsx",
-      "sha256": "9f14840785035a7ad44d93177890861739412b4e21fe2778b5efa66a6eb24f67"
+      "sha256": "ccbefe7be6c69706a1bb01c4c3f20492eb002435af6ba7e5a6d45f7c6aa3a140"
     },
     {
       "path": "src/styles.css",
-      "sha256": "47dd1a21cd5929024a35fadecbd00bf988acae1cf915582c927769734993316c"
+      "sha256": "c5f1051b0fa98de99ac70978df61f98b67bd3f214b6ae27a428de57e2e4fbb11"
     },
     {
       "path": "src/vite-env.d.ts",
-      "sha256": "891309684b027347ac0bbfa9b1fc04bbd77587e16d74a491a1eeab9140ae6c10"
+      "sha256": "0577b7db3c4aadbb8985226f9f03ae88669e5553bc8dc26b4a06162196f588e8"
     },
     {
       "path": "tests/archive.test.ts",
-      "sha256": "e5c4fc0db8a676602e1ce195f049baf2b3b5aa514b2e4f43e59bae9f4a61413f"
+      "sha256": "3a4b985b93544997d93c6bc60f0fcc480a921ad4339b249e82efd0bde1ef9fd4"
     },
     {
       "path": "tests/benchmark-pattern.test.mjs",
-      "sha256": "0f3d6e96cb208739748725a81583953aab76c0ecbf41545e99889608a5fb64fe"
+      "sha256": "16cfb00e0fa5a3507e1b7b43aad69854e405a651a2845876e1e159ca716690df"
     },
     {
       "path": "tests/benchmark-result.test.mjs",
@@ -476,7 +485,7 @@
     },
     {
       "path": "tests/benchmark-transport.test.mjs",
-      "sha256": "ca3a59a5f2f5c79fd7de5c9696f379f244263d75f5a7542ec1311b67f2227939"
+      "sha256": "19748a3941548b8b324c07357a780040ce72fea55aed41d467e997d4999a3aea"
     },
     {
       "path": "tests/benchmark-window.test.mjs",
@@ -484,27 +493,27 @@
     },
     {
       "path": "tests/block-store-opfs.test.ts",
-      "sha256": "bf8f2c8be52cea27b6392009721a94b065b0ffe138f280701ee044b744dc1fac"
+      "sha256": "968d3e71265f54b6fbbc027904a2236cde25f509d2fdac93172b382dbda4125b"
     },
     {
       "path": "tests/block-store.test.ts",
-      "sha256": "d9da390b7cc9613759c6546a8a573cb9bf95a6365d91acbefb18c8d23000eb97"
+      "sha256": "966697a32212a4ea377e4a1d1d408aebc9b725c128afe918050f704df80d1eca"
     },
     {
       "path": "tests/browser-process-memory-errors.test.mjs",
-      "sha256": "d2d8ee9fff7fa2a003095692e3de36dd2d83075d9d7adcaedacac0db6ad2a85c"
+      "sha256": "7b649bd1b60823a63eb6b138702b26274a8db0d63f27f16e64869933c5b842ad"
     },
     {
       "path": "tests/browser-process-memory.test.mjs",
-      "sha256": "57a28e2e5460c65464b4230776095ce14020c3f80831dfe6b77ee08367ef1f1b"
+      "sha256": "583a93b0b276ad7f9867d1c7fc97bb7da14eca2a4765f4e8a9581b5d1b6d5731"
     },
     {
       "path": "tests/browser-shell.test.mjs",
-      "sha256": "30efe59e014e577e6b003871a6b529be79bad497ac1a20dbd0849260fa2ff739"
+      "sha256": "be6d6533bbb70397bbedcbfd0caf7cad8523d4db57ac29ca7dcaf70223ddd65e"
     },
     {
       "path": "tests/compare-trees.test.mjs",
-      "sha256": "38e54fc9d75a0118f77ec7cde47c97aa6717661bc5c469d614a0bb343d92a0dd"
+      "sha256": "5f588899b3a15176fe6d3220629da60968e5fd2168d96fdc9145c193cc6ffd1a"
     },
     {
       "path": "tests/connection-path.test.ts",
@@ -512,31 +521,31 @@
     },
     {
       "path": "tests/connection.test.ts",
-      "sha256": "14920e259a342ba57a44666608b075d1bd55ef986e411f54481f7eca60adf200"
+      "sha256": "24b3d1f8ef6ada5e2c0835764fc67b58571b40906cd7354612d091c7d7544fa8"
     },
     {
       "path": "tests/discovery-adversarial.test.mjs",
-      "sha256": "bb97ae2e20c458daa7de538cf5a29d44bd1bdde504be5aff53cfbe028f80d83d"
+      "sha256": "f1e25210b3ac1e5d5c6cf3a149c4f4c60ba46c0d7b8bad8c480423b2fa2cbbb1"
     },
     {
       "path": "tests/e2e.test.ts",
-      "sha256": "ebbdb8970d63e3b1da3094a182c653858885195b07116fafd85f1d3d4a85542f"
+      "sha256": "a4fefb116dc82cb0c9e3beffd611aaa856a530e84358ab942431e845321e07c6"
     },
     {
       "path": "tests/fixture-safety.test.mjs",
-      "sha256": "537952c02db45b1d372229a886bc2c7a93677bd8cb3c3e0adca308cdb5a1a07e"
+      "sha256": "5e002887ca15685b4a27e296576f56648e884de7e289e5a17f1becf118794629"
     },
     {
       "path": "tests/format.test.ts",
-      "sha256": "032a8f02f19e512df4dc0babd9ff8774f14c75ae5616f6dbcc17bbfd1648e543"
+      "sha256": "b7421fe9575abc5f1607129aeb224fd9e23c8ab2bc951716930c3bd4ba567e34"
     },
     {
       "path": "tests/free-signal-port.d.mts",
-      "sha256": "0f3a7c780839a41826b4b239642a0049b225bd803dc7c140ae5347fcd86674bd"
+      "sha256": "8b503290ec094e3eff5bfc879c89a54079c32b21911067ecf6f1b15a5458b16f"
     },
     {
       "path": "tests/free-signal-port.mjs",
-      "sha256": "cbc7cd98628dd923c76c36e406c0de62ca8a60cac37150371a047ab34da806f4"
+      "sha256": "99d03ec2fd940bbe935a66f414175be1bca11557322f845e151b67037fa5e5bb"
     },
     {
       "path": "tests/lan-signaling.test.mjs",
@@ -544,7 +553,7 @@
     },
     {
       "path": "tests/large-connection.test.ts",
-      "sha256": "6558479f3d928d45938157ffbb79ecf991d6a9618a61cc4937550bae2bd5c287"
+      "sha256": "5089f24b7741cac1807027bd1e4d0e5d56f400b02d361ba4ee866f098ef6f7f0"
     },
     {
       "path": "tests/large-destination.test.ts",
@@ -552,35 +561,35 @@
     },
     {
       "path": "tests/large-receiver-resume.test.ts",
-      "sha256": "bc48995c5c7a563d5f4238a713f1dffbed1fd976254285112aabfdd0cfb98852"
+      "sha256": "eff92f97a2da8bfe7369222349f619ef5a84b82c16ca0b8d626326ab6f34333b"
     },
     {
       "path": "tests/large-receiver.test.ts",
-      "sha256": "735b07d77b32b8de2f0fed6f9b5d196d85a8d6c02ab4fbbba03930bf31e4d243"
+      "sha256": "6a50503e24c568f162dd556f19ebc68b264fa8b3a1aaf80f09820660727cf499"
     },
     {
       "path": "tests/large-sender-playback.test.ts",
-      "sha256": "dc16a3f8f700edd0fdaf9c4609657004bbf6b48c899dd82b94942e4453461b44"
+      "sha256": "b23b02e57520c60403e634fa731c9b3f759795ee8e10369844156bbf77f72b91"
     },
     {
       "path": "tests/large-sender-resume.test.ts",
-      "sha256": "3b82330fc62adf7c082705b9509890fa60f5a60a2d0b389357c6ddfed133e871"
+      "sha256": "f1a0f63edb8b26dc924f7b4bf6911285c6b43c9964e089a134f2b011c8193d28"
     },
     {
       "path": "tests/large-transfer-hash-work.test.ts",
-      "sha256": "a2a33b191d238a9306b08b572b4d5d59a01048def3cce3552dc105eb1420b9d3"
+      "sha256": "ec3d2da76401f2f6f7992a342d93fde11749d737c1aab79e9893e914b2e972cc"
     },
     {
       "path": "tests/large-transfer.test.ts",
-      "sha256": "6131e65b73053d49f45adc52685a3ee24bd2ed3c696f7f0461d5add8ead7d146"
+      "sha256": "ec155bcb60282d2d6988dab962cb6ec55455915225a81c4ebda6f74d367a6c8e"
     },
     {
       "path": "tests/large-tree-limits.test.ts",
-      "sha256": "d6b4588f8128b30ad2aeafa0022a5fe8ead6772213a8fefa6042e6c376af30e1"
+      "sha256": "a534c88e01339a38d53223a62a7eb1ea93f4922d52d0aa858734cbbac6c3897e"
     },
     {
       "path": "tests/launcher.test.mjs",
-      "sha256": "d88d0138b1834a8976ccc9b950ad0283a06be94a07db9d53cccf337e2240e2b8"
+      "sha256": "cfbefb68a02bdf9e06daf2b79995b779dd5e692a62b0a829517ca6ad8c62ecdb"
     },
     {
       "path": "tests/local-http-security.test.mjs",
@@ -596,147 +605,151 @@
     },
     {
       "path": "tests/offline-release.test.mjs",
-      "sha256": "8d4f7aabca29c2622c865e53a060073c97b248fbdb2c0aca19d4abe926587e35"
+      "sha256": "ff2b63605a3b63d5cf157ba2512c8adf347727780680e2d4d47c0fe049088910"
     },
     {
       "path": "tests/optical-schedule.test.ts",
-      "sha256": "4af1cf6b0d8e151d250e567b8c9f0c6edb1abd0329ced2d39b2d0cf6bfa73d3b"
+      "sha256": "2c047500793ad6d261d9e8091dd98f7541b80361c95c84eaeb615d1da3ea1260"
     },
     {
       "path": "tests/prefix-comparison-contract.test.mjs",
-      "sha256": "8d9bf81adadcfa1b97a2f41e1495251c162c6b3f757833193082ba4308b3a8f6"
+      "sha256": "e1c41c8465255919d6b9544ae9b03142b864066c46d5fdbec37e8b309ffe56e1"
     },
     {
       "path": "tests/protocol.test.ts",
-      "sha256": "60cae28aab65696914e9f3c8953081020aff9da5a4cf03fe7684fba80ddbc57f"
+      "sha256": "d19f0818c1c40758304b3bbe845276bcdff29968f0e582db396cec3e3f012332"
     },
     {
       "path": "tests/remote-sdp-policy.test.ts",
-      "sha256": "126701b5cd8e5f367b4fea91e9789c8aa83b5a6666681062cb042db1b816e7db"
+      "sha256": "f9ba6740bcd14c83a3bc48aee6566a60dc9513cb94439ab50f69c7cda7aead9a"
     },
     {
       "path": "tests/rendezvous-collision.test.mjs",
-      "sha256": "0c44f76375ddcce3afc352dc7e772925f186b8a2fe8bb34f8bf7032c2a979d0f"
+      "sha256": "a0ef45661ad7df380e022c453fcdbc831065b8506224f35819c983aee7224a25"
     },
     {
       "path": "tests/rendezvous-deadline.test.ts",
-      "sha256": "9d38180e2dc97b6d10aa25e20c83de38851ae40b8769bcf74fbe980966987823"
+      "sha256": "f16c9c61931179b2ca4443089254f4cdf317a5902c6a467a05e7718c3c25403e"
     },
     {
       "path": "tests/rendezvous-ports.test.mjs",
-      "sha256": "bcc7d06f7a5e7225705de7cf45cb1c7c2261f5fb076c63a5be2111da6d40a7b0"
+      "sha256": "a4d99c219e6909a42199fce21ed066cee003f08d6ca0877747fda0a909b67c60"
     },
     {
       "path": "tests/rendezvous-runtime.test.mjs",
-      "sha256": "9536ecde94b670437f7228de53787ca6fc09d94e8d775754b4da49831e68c87f"
+      "sha256": "82651b0895374cbba4aebd629914da4f8cb167ae516f0dd6e8f97757a3fbae13"
     },
     {
       "path": "tests/rendezvous-sdp-limit.test.mjs",
-      "sha256": "683b32f97f0bac424594d27061bd0eef31d6697457564b02d6a80d3fd1258822"
+      "sha256": "e6b1f6263d0e040c3f32846e506cc594346e87bb233e0dcae2d5cef272bba9dd"
     },
     {
       "path": "tests/resume.test.ts",
-      "sha256": "ac4d5563a22b16a3c622692f64960917afb6a4ee540f6bb9a09c220967e33044"
+      "sha256": "557f1a72a764bb32a189530f24be5840e2501a71fae8fc84859ed36435527bfc"
+    },
+    {
+      "path": "tests/runtime-policy.test.mjs",
+      "sha256": "6c1273546c9358bc8a2a4a37f8aae43094286440db1d2a7ffed6545a968b1281"
     },
     {
       "path": "tests/screen-wake-lock.test.ts",
-      "sha256": "f9cbe4c590b04c6bf93e31ace89373bc85840fa70dd3e0a9c281b6aff5143333"
+      "sha256": "72b1ae1f805d8a0e0a990f6fb37eda23d33aa9174889b8daf881508bb0c735d3"
     },
     {
       "path": "tests/selected-files.test.ts",
-      "sha256": "756c128ecf646ac290fd2ba70c67b4b1127875ba32a073c5a6abfd046b4caf5e"
+      "sha256": "936c5f5f28a344dfcc5738619ca7e07b1f64428b047894964fbc1b07c1e843f1"
     },
     {
       "path": "tests/stream-protocol.test.ts",
-      "sha256": "4b98879332a4292dad1f1de659e67c802659da2d91a7b241189503794ac2d860"
+      "sha256": "f07f41b0cdf94e1938145c09df71b12a1dfab321a463296a397065943223f18d"
     },
     {
       "path": "tests/transfer-problem.test.ts",
-      "sha256": "f9be1205941f69b283c7171ed3d0e3ee30fe48f6590d9aa1239e0ed103e95fdd"
+      "sha256": "6aed3ad6e820f2839dfb5bfa7d6f3dd036d8111fb42a40db12c826bf8dfb5164"
     },
     {
       "path": "tests/transfer-rate.test.ts",
-      "sha256": "9200c28e7258473ba7af334bb752440b4d46983fc7db42d217c6374c22f1cc3f"
+      "sha256": "c3e1ecf6a2835ab569ce17b49b5d26e6f83b3f373ee5d0509a8b3ad783087d0f"
     },
     {
       "path": "tests/unicode-path-fidelity.test.ts",
-      "sha256": "ac5eb76092f93db41d5743316df9f66e18e20ee11c754993b30eda26bbbce1a4"
+      "sha256": "37ad627ac005c5fb6e3b01c9da28f20aedb4454f43768585baf14893fa28aff6"
     },
     {
       "path": "tests/webrtc-authorization.test.ts",
-      "sha256": "8e0806bb04d84daccc2268cbd171ca2ab44eee0132859e4f3c5fac4e7461933b"
+      "sha256": "7f4520b43dfd2e14bef0f769d765f50a1d12012eb646311443071755a73d98bb"
     },
     {
       "path": "tests/webrtc-chaos.test.ts",
-      "sha256": "8e4e132ccf29760327d3392032435a1b550f64118445fa76774f31dface3a1af"
+      "sha256": "3701de9f0ad222665f5e17310cf6c0395f03d4d6b0c390edf18998e8c4ba506e"
     },
     {
       "path": "tests/webrtc-control-flow.test.ts",
-      "sha256": "39917a57bf7ea85bb3934b823c61473731352ddcf0aee6bfbb204c0f80722a45"
+      "sha256": "f8e23789b38980514d74a5f22195af281a38cfde499fed00b570e5aa31a2f0e2"
     },
     {
       "path": "tests/webrtc-native-codec.test.ts",
-      "sha256": "b38834582cf3a2b86ad2f4179bfaf28d761b3fc16cbd228ed96b9bc73a68be4c"
+      "sha256": "b310aa3903d080d4668d2ed00d5b3d62814be021fb077f75f19646c860c10ea4"
     },
     {
       "path": "tests/webrtc-peer-health.test.ts",
-      "sha256": "cd2cfc249496c98490e830201b976457445eb85051116342296f58f8e0e48b2c"
+      "sha256": "780945cb703f9cff2de548ea46a62f69b7a32d305445ff902472bf15c4f4adf3"
     },
     {
       "path": "tests/webrtc-protocol.test.ts",
-      "sha256": "168265544be563587fd150851a98c3f32b63229772f4de6d4a63c01ae5b92508"
+      "sha256": "57ff07d72bb28efc67356256de2ee02c493f678fc28e4121bc2b836c64c0a04c"
     },
     {
       "path": "tests/webrtc-receive-queue.test.ts",
-      "sha256": "3e5a7b5f9e5ea2ab1ad6cb3dec286f844e684bb6db64043d567baaa405a01081"
+      "sha256": "4f1ac82ad50877d8d75f2b0c3170e1a02ef6211babbaec4a7459e1e2b11fe8e2"
     },
     {
       "path": "tests/webrtc-rendezvous.test.ts",
-      "sha256": "d4b20bbf6c2d91ec92b134afcb6a31a9b1e3231cad9ffb85e6565362af293d76"
+      "sha256": "22d7ec5c8ea5894544572ad715c9c8b6239deec4392375d3e615bea3d7db9cca"
     },
     {
       "path": "tests/webrtc-sender-resume.test.ts",
-      "sha256": "ba1c730af426034ededfa2db5f37e98e0fe4b03782af146d1ad1fe527cccf61b"
+      "sha256": "32264a7e82c9135e7b9b8a1f16b67be352ed8c94c75bfb12d2dadb8cde282c34"
     },
     {
       "path": "tests/webrtc-signal-adversarial.test.ts",
-      "sha256": "58a0d35bc4db0358aa59d479ae4f22a647f6385899bec3de6b63007d548f15c2"
+      "sha256": "f31afe197cf787ffc5dfad46e41e5afd6c035af138766b2a68986a61477a9020"
     },
     {
       "path": "tests/webrtc-signaling.test.ts",
-      "sha256": "6f74b17d40830c5a248bc56d1578a2496ea993288271ed1e0efdd59fb5ceb1c5"
+      "sha256": "1623940be999ac1eac62e69e3c40e05787b35535d5298d240bbb8d137b1c63b4"
     },
     {
       "path": "tests/webrtc-transfer.test.ts",
-      "sha256": "1956953dfbc0a0c367f5215c3eaffafd6097e7418538a156c6b68085ff77e7e6"
+      "sha256": "9f1fe3eb5b11b048746ea322318ca809f6681aec4cccaefc57abf87c40913663"
     },
     {
       "path": "tests/windows-device-names.test.ts",
-      "sha256": "a0aa8d7be8ace933ba0243483b2eca0c2e74206b673af7f0a0c795568fce483d"
+      "sha256": "ff483d6757038a4cdd6d85e63bd097a23b26773f5af8a778d6a15b82dae11faa"
     },
     {
       "path": "tests/windows-launcher.test.mjs",
-      "sha256": "ffc3e4a0339b766a3c98810999ac5adb74aa203a1d8fcf0f6887fe905a6e71d1"
+      "sha256": "2bf5e64cbe64630a25ca94ca75435473b3bf212d6e16dffb4b2cec943f06380b"
     },
     {
       "path": "tests/windows-runtime.test.mjs",
-      "sha256": "19c2293d51b047883e31754a607b20385ee1968b06ad270c1ad6643ffb3af014"
+      "sha256": "ef3ca82ee91f452a5e302edbc994ca4bb381d79ac9910f91dc7f4c33c39a7cfc"
     },
     {
       "path": "tsconfig.app.json",
-      "sha256": "df2b975d64098b6dac869634dab191149ac7cb1c1b919542d417b9c141e7391c"
+      "sha256": "24907a4972f29dd4b587b25d21bcab062cefa186f4cb4d75e813bf316deb7bef"
     },
     {
       "path": "tsconfig.json",
-      "sha256": "ad28d132ee48d6e23917cf5827cace785d0fc01a44ca68b0dda51cc8c3fd3f52"
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
     },
     {
       "path": "tsconfig.node.json",
-      "sha256": "bcb974ae01f596f2a5b396274752f01d1d72983bc1ed05b2945ff588c5cb5efd"
+      "sha256": "f003d918a886cdc7dcf5b2ba843bdfc5e59c6db0d6b4d2667a53b55d0198f94a"
     },
     {
       "path": "vite.config.ts",
-      "sha256": "f8d8606125f7898e179d9655dda20aade172e3e43b8fab787ebd2c2ce4e0bbcf"
+      "sha256": "16d87b897a1106974dfc4d04c50d0008b94acda1fe4af6f1ebeab8f7878ea64b"
     }
   ],
   "currentAssets": [
@@ -973,18 +986,20 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-24T04:23:20.264Z",
-  "currentInputsScope": "171 selected input hashes from exact clean hosted source49607c5. Bound to this CI checkout and client assets; later receipt documentation is not a new runtime trial.",
+  "updatedAt": "2026-10-24T04:32:46.736Z",
+  "currentInputsScope": "174 local selected inputs at sourceb94e746, including TRANSFER_PROCESS.md in addition to native harness selection. This local snapshot is not a hosted native-trial snapshot. Exact b94 hosted656/101 gate is separately recorded; paired5GiB inputs remain bound to496.",
   "hostedCodeGate": {
     "status": "Completed success",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
-    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
-    "unitTests": 628,
-    "unitFiles": 63,
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40061959432",
+    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
+    "unitTests": 656,
+    "unitFiles": 64,
     "browserTests": 101,
     "auditFindings": 0,
     "node": "v24.22.1",
-    "scope": "Hosted Windows source gate, bundled Chromium suite and external package module smoke; injected browser handoff. Physical GUI and new portable package qualification remain open.",
+    "artifactId": 12547539391,
+    "artifactSha256": "a8c38f0683ec2b12633a5bf1685d71e3c368c8681ade6331ddb17c8d387a626a",
+    "scope": "Hosted full source gate and external package module smoke; native5GiB jobs skipped on this push.",
     "releaseReady": false
   },
   "previousSourceQualification": {
@@ -1033,13 +1048,13 @@
     }
   },
   "currentInputIndex": {
-    "count": 171,
-    "source": "CONTEXT.json inputs",
+    "count": 174,
+    "source": "Local SOURCE-SNAPSHOT.json inputs",
     "snapshot": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/first-prefix-hash-2026-10-24-33ea23/prefix-pair-40012980307-1/result/candidate/CONTEXT.json",
-      "bytes": 26159,
-      "sha256": "4e9cb4f07250e552fac52fc7b88c60eada3e0f75fd593acc7fc3998600fb98c9",
-      "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292/SOURCE-SNAPSHOT.json",
+      "bytes": 25907,
+      "sha256": "b31fc4ce72e4df21607ed369e3632c9f3b91f3d772ee07d762eb646b886156e7",
+      "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66"
     }
   },
   "localCandidateRecoveryEvidence": {
@@ -1348,16 +1363,16 @@
     "releaseReady": false
   },
   "currentPackageQualificationEvidence": {
-    "status": "Fresh20-fileexternal/23-fileportable local module checks passed underNode24.22.1; hosted runtime-policy gate and actualGUI/physical qualification pending",
+    "status": "Fresh20fileexternal/23fileportable Node24.22.1 module qualification passed, independently checked exact inventories and source scripts. No actual default-browser/Start.cmd/physical qualification.",
     "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
     "receipt": "release-evidence/runtime-security-2026-10-24.json",
     "nativeWindowsGUI": false
   },
   "currentInputSnapshot": {
-    "path": "C:/Users/dines/QRFT-qualification-evidence/first-prefix-hash-2026-10-24-33ea23/prefix-pair-40012980307-1/result/candidate/CONTEXT.json",
-    "bytes": 26159,
-    "sha256": "4e9cb4f07250e552fac52fc7b88c60eada3e0f75fd593acc7fc3998600fb98c9",
-    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4"
+    "path": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292/SOURCE-SNAPSHOT.json",
+    "bytes": 25907,
+    "sha256": "b31fc4ce72e4df21607ed369e3632c9f3b91f3d772ee07d762eb646b886156e7",
+    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66"
   },
   "previousPrimaryEvidenceBeforeMetadataSizeFix": {
     "schema": "qrft-external-evidence-v1",
@@ -2398,10 +2413,11 @@
     "releaseReady": false
   },
   "currentFullBrowserEvidence": {
-    "status": "Source49607c5 passed101 bundled Chromium cases",
-    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
-    "installedChromeAndEdge": "No fresh candidate suites; previous DON evidence retained separately."
+    "status": "Sourceb94e746 passed101 hosted bundled Chromium and101 local installed Chrome cases",
+    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40061959432",
+    "localChromeReceipt": "release-evidence/runtime-security-2026-10-24.json",
+    "installedEdge": "No fresh runtime-policy Edge suite; prior DON evidence remains historical."
   },
   "toolchainSecurityEvidence": {
     "schema": "qrft-external-evidence-v1",
@@ -2508,12 +2524,13 @@
   },
   "currentHostedSourceGate": {
     "status": "Completed success",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
-    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
-    "unitTests": 628,
-    "unitFiles": 63,
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40061959432",
+    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
+    "unitTests": 656,
+    "unitFiles": 64,
     "browserTests": 101,
-    "auditFindings": 0
+    "auditFindings": 0,
+    "node": "v24.22.1"
   },
   "previousQualificationBeforeCpuProfileHarness": {
     "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
@@ -2781,7 +2798,7 @@
     "qualifiedSourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
     "nativeProofScope": "One same-host5GiB case, injected pickers and OPFS; not physical Wi-Fi or general resource qualification",
     "pairedReceipt": "release-evidence/prefix-hash-pair-2026-10-24.json",
-    "decision": "Keep prefix-state reuse; fresh runtime/package hardening required before promotion"
+    "decision": "Keep prefix-state reuse; sampled preparation and full client-byte proof passed. Runtime-policy and fresh package module hardening now qualified atb94e746. Physical and broader acceptance remain open."
   },
   "previousHostedCodeGateBeforePrefixPair": {
     "schema": "qrft-hosted-gate-observation-v1",
@@ -2816,9 +2833,72 @@
     "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
     "patchedRuntime": "v24.22.1",
     "oldPortableRuntime": "v24.22.0 historical only",
-    "freshPackagesQualified": "Local module checks passed; actual GUI/physical qualification incomplete",
-    "status": "Patched runtime floor enforced; fresh external and portable bundles built and module-smoked. Hosted40061959432 and localChrome pending.",
+    "freshPackageModuleChecks": true,
+    "nativeWindowsGUI": false,
+    "physicalTwoLaptop": false,
+    "status": "Patched runtime policy and fresh package module/source gates passed; runtime evidence sealed.",
     "officialRelease": "https://nodejs.org/en/blog/release/v24.22.1",
     "exploitEstablished": false
+  },
+  "previousQualificationBeforeRuntimePolicy": {
+    "qualification": {
+      "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
+      "status": "Final paired-tool source gate and both 5GiB cases passed; general performance, resource matrix and physical qualification incomplete",
+      "unitPassed": 628,
+      "unitFiles": 63,
+      "typecheck": 0,
+      "build": 0,
+      "browserPassed": 101,
+      "auditFindings": 0,
+      "fullHostedCurrentSource": "Source49607c5/run40012980307 passed full gate and serial paired5GiB cases. Later documentation commits do not alter tested implementation.",
+      "nativeWindowsGUI": false,
+      "performanceAccepted": false,
+      "resourceMatrixAccepted": false,
+      "releaseReady": false
+    },
+    "currentHostedSourceGate": {
+      "status": "Completed success",
+      "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
+      "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
+      "unitTests": 628,
+      "unitFiles": 63,
+      "browserTests": 101,
+      "auditFindings": 0
+    },
+    "currentFullBrowserEvidence": {
+      "status": "Source49607c5 passed101 bundled Chromium cases",
+      "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
+      "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
+      "installedChromeAndEdge": "No fresh candidate suites; previous DON evidence retained separately."
+    },
+    "currentInputSnapshot": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/first-prefix-hash-2026-10-24-33ea23/prefix-pair-40012980307-1/result/candidate/CONTEXT.json",
+      "bytes": 26159,
+      "sha256": "4e9cb4f07250e552fac52fc7b88c60eada3e0f75fd593acc7fc3998600fb98c9",
+      "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4"
+    },
+    "currentInputIndex": {
+      "count": 171,
+      "source": "CONTEXT.json inputs",
+      "snapshot": {
+        "path": "C:/Users/dines/QRFT-qualification-evidence/first-prefix-hash-2026-10-24-33ea23/prefix-pair-40012980307-1/result/candidate/CONTEXT.json",
+        "bytes": 26159,
+        "sha256": "4e9cb4f07250e552fac52fc7b88c60eada3e0f75fd593acc7fc3998600fb98c9",
+        "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4"
+      }
+    },
+    "currentInputsScope": "171 selected input hashes from exact clean hosted source49607c5. Bound to this CI checkout and client assets; later receipt documentation is not a new runtime trial."
+  },
+  "previousHostedCodeGateBeforeRuntimePolicy": {
+    "status": "Completed success",
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
+    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
+    "unitTests": 628,
+    "unitFiles": 63,
+    "browserTests": 101,
+    "auditFindings": 0,
+    "node": "v24.22.1",
+    "scope": "Hosted Windows source gate, bundled Chromium suite and external package module smoke; injected browser handoff. Physical GUI and new portable package qualification remain open.",
+    "releaseReady": false
   }
 }

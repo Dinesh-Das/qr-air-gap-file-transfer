@@ -16,7 +16,9 @@ variance. They are not statistical speedup or physical Wi-Fi throughput acceptan
 The optimization avoids duplicate SHA input for the first nonempty file; eight
 independent hash/work vectors cover empty files and SHA/read boundaries. Both
 hosted cases used Node24.22.1. Existing portable Node24.22.0 packages predate its
-security fixes; fresh patched-runtime packages remain pending. Injected pickers,
+security fixes. Fresh patched-runtime packages and sourceb94e746 now pass656unit,
+101hosted-browser and101installed-Chrome cases plus module package checks; see
+[runtime qualification](release-evidence/runtime-security-2026-10-24.json). Injected pickers,
 OPFS save and deliberately denied cleanup do not qualify real Windows permissions
 or native destination cleanup. See [paired receipt](release-evidence/prefix-hash-pair-2026-10-24.json)
 and SPEC-prefix-hash-comparison.md. Keep the optimization; READY remains false.

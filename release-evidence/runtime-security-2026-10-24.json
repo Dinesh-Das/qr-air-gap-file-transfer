@@ -104,16 +104,38 @@
   "sourceSnapshotScope": "Local source selection includes TRANSFER_PROCESS.md in addition to native harness selection; not relabeled hosted native inputs.",
   "clientAssetsUnchangedFromPairedSource": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
   "localChrome": {
-    "status": "in_progress",
-    "evidence": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292/BROWSER-CHROME.log"
+    "status": "completed",
+    "conclusion": "success",
+    "exitCode": 0,
+    "passed": 101,
+    "evidence": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292/BROWSER-CHROME.log",
+    "browserProvenance": {
+      "recordedAt": "2026-10-24T04:28:00.687Z",
+      "channel": "chrome",
+      "version": "155.0.8059.85",
+      "node": "v24.22.1",
+      "scope": "Installed browser queried immediately after the101case local Chrome suite; separate provenance observation."
+    }
   },
   "hostedGate": {
-    "status": "in_progress",
+    "status": "completed",
     "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40061959432",
-    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66"
+    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
+    "conclusion": "success",
+    "node": "v24.22.1",
+    "unitPassed": 656,
+    "unitFiles": 64,
+    "browserPassed": 101,
+    "auditFindings": 0,
+    "packageFiles": 20,
+    "artifactId": 12547539391,
+    "artifactBytes": 3597187,
+    "artifactSha256": "a8c38f0683ec2b12633a5bf1685d71e3c368c8681ade6331ddb17c8d387a626a",
+    "artifactDownloadedAndDigestMatched": true,
+    "artifactPathSafetyChecked": true
   },
   "evidenceRoot": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292",
-  "sealed": false,
+  "sealed": true,
   "appSpecificExploitEstablished": false,
   "globalNodeChanged": false,
   "physicalTwoLaptop": false,
@@ -126,5 +148,25 @@
     "Package browser handoff injected; no actual Start.cmd/defaultGUI/native permission validation.",
     "Prior full5GiB proof remains bound to496 client assets. No new large trial or physical Wi-Fi proof.",
     "Original42physical cases and10/50/100GB resource/throughput matrices remain open."
-  ]
+  ],
+  "updatedAt": "2026-10-24T04:32:46.734Z",
+  "independentPackageReview": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292/PACKAGES-INDEPENDENT-REVIEW.json",
+  "reviewDecision": "Keep patched runtime policy and new packages. Local and exact-source hosted checks pass; safe to integrate, while physical/GUI/full resource and throughput requirements remain open.",
+  "closure": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292/CLOSURE-HASHES.json",
+    "files": 8469,
+    "bytes": 423083979,
+    "manifestBytes": 2184986,
+    "sha256": "657a6e4ac777b04dbec0cc3c5e04d186602a38f556ac7141cfb6cc8ff087eaba",
+    "scope": "Retained runtime/policy/source/package/Chrome and hosted metadata evidence. Fresh packages outside this root are referenced by independent full-file inventory; not included here. No physical transfer or release readiness proof."
+  },
+  "integrationReview": {
+    "correctness": "First-file state cloned before digest; empty/multi-file/read-boundary vectors and full5GiB byte proof pass. Runtime policy refuses unpatched versions before serving/package output; actual old/new runtime controls and entry-point tests pass.",
+    "architecture": "One small shared version policy, existing launcher export retained, explicit package allowlist updated. No browser protocol or crypto format change.",
+    "readability": "Small source-prefix change and one12line policy; floors and unsupported future lines documented.",
+    "security": "Official binary pin and valid OpenJS Windows signature checked before execution; full tagged license included. No application exploit or future-security guarantee claimed. No new dependency, auth, CORS or privilege change.",
+    "performance": "Same client asset hashes as paired496; sampled preparation benefit has single-pair/order limits. New guard executes only at process/package startup. Broad resource/throughput acceptance remains false.",
+    "testIntegrity": "No added suppression or skipped-test workaround found. Sourceb94 full hosted656/101 and local656/101Chrome pass; dependency audit0. Changes since b94 are evidence/docs only.",
+    "verdict": "Integrate verified implementation and evidence; do not declare READY. Physical/GUI/full resource and throughput requirements remain open."
+  }
 }
