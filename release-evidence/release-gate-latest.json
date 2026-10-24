@@ -853,7 +853,7 @@
       }
     ]
   },
-  "currentReviewPending": 263,
+  "currentReviewPending": 261,
   "activeTransferTransitionEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
@@ -986,7 +986,7 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-24T04:32:46.736Z",
+  "updatedAt": "2026-10-24T04:39:58.200Z",
   "currentInputsScope": "174 local selected inputs at sourceb94e746, including TRANSFER_PROCESS.md in addition to native harness selection. This local snapshot is not a hosted native-trial snapshot. Exact b94 hosted656/101 gate is separately recorded; paired5GiB inputs remain bound to496.",
   "hostedCodeGate": {
     "status": "Completed success",
@@ -2900,5 +2900,11 @@
     "node": "v24.22.1",
     "scope": "Hosted Windows source gate, bundled Chromium suite and external package module smoke; injected browser handoff. Physical GUI and new portable package qualification remain open.",
     "releaseReady": false
+  },
+  "peerAuthorizationStaticReview": {
+    "receipt": "release-evidence/peer-authorization-static-review-2026-10-24.json",
+    "sourceCommit": "daca23a53813f6341f7a3603966b10431ececcee",
+    "scope": "Partial static evidence only. Physical wrong-device/operator verification, all other threat paths and final release adversarial pass remain open.",
+    "markedComplete": 0
   }
 }

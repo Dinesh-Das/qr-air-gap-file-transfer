@@ -257,8 +257,11 @@
       "section": "",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-peer-authorization-static",
+      "evidence": [
+        "release-evidence/peer-authorization-static-review-2026-10-24.json"
+      ],
+      "scope": "Fresh-context static review found no concrete authorization bypass in current confirmation gate/callers. No new dynamic or physical test was run; wrong-device/operator verification and final release adversarial acceptance remain unproven."
     },
     {
       "id": "L14",
@@ -9478,8 +9481,11 @@
       "section": "PRIORITY ORDER FOR THE NEXT 2 DAYS",
       "subsection": "",
       "kind": "numbered-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-peer-authorization-static",
+      "evidence": [
+        "release-evidence/peer-authorization-static-review-2026-10-24.json"
+      ],
+      "scope": "Fresh-context static review found no concrete authorization bypass in current confirmation gate/callers. No new dynamic or physical test was run; wrong-device/operator verification and final release adversarial acceptance remain unproven."
     },
     {
       "id": "L1137",
@@ -10372,5 +10378,15 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-22T19:34:09.425Z"
+  "updatedAt": "2026-10-24T04:39:58.194Z",
+  "peerAuthorizationStaticReview": {
+    "path": "release-evidence/peer-authorization-static-review-2026-10-24.json",
+    "reviewed": [
+      "L13",
+      "L1136"
+    ],
+    "markedComplete": 0,
+    "remainingReviewPending": 261,
+    "scope": "Partial static evidence only. Physical wrong-device/operator verification, all other threat paths and final release adversarial pass remain open."
+  }
 }

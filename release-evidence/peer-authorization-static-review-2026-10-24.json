@@ -1,0 +1,97 @@
+{
+  "recordedAt": "2026-10-24T04:39:17.857Z",
+  "sourceCommit": "daca23a53813f6341f7a3603966b10431ececcee",
+  "contract": "One human verification decision belongs to one peer connection. Both devices must independently confirm the same authenticated session/transcript before file metadata or payload are exposed; stale messages/closed or replaced sessions must never authorize a new connection. Malformed control input must fail closed. Retrying pairing must preserve prepared source data while requiring fresh connection authorization.",
+  "claim": "The confirmation gate appears to scope each human decision to its connection and gate metadata/payload; this is an interim claim to scrutinize, not release acceptance.",
+  "whyItMatters": "An authorization lifecycle error could send filenames or data to an unintended peer.",
+  "reviewer": {
+    "task": "/root/authorization_adversarial",
+    "freshContext": true,
+    "historyInherited": false,
+    "model": "Same model as parent",
+    "scope": "Static authorization module, production callers, transcript/parsing and existing tests",
+    "concreteFindings": 0,
+    "physicalTesting": false,
+    "dynamicTestsRun": false
+  },
+  "crossModel": "Skipped: non-interactive autonomous goal continuation; no external review CLI invoked.",
+  "reconciliation": {
+    "findingsToClassify": [],
+    "parentChecks": [
+      "Transcript session and exact SDP binding in webrtc-signaling.ts",
+      "Strict peer-confirmed parsing and fail-closed callback paths",
+      "Receiver checks before queued metadata/payload work",
+      "Connection generation checks and close/reset on teardown",
+      "Sender manifest emission requires both confirmations and prepared source"
+    ],
+    "decision": "No concrete issue to reproduce or fix in this scoped static pass. Do not treat absence of findings as completion of wrong-device security acceptance."
+  },
+  "stopCondition": "One fresh-context cycle, no substantive finding; no repeated review loop.",
+  "requirementIds": [
+    "L13",
+    "L1136"
+  ],
+  "scope": "Partial static evidence only. Physical wrong-device/operator verification, all other threat paths and final release adversarial pass remain open.",
+  "inputs": [
+    {
+      "path": "src/lib/webrtc-authorization.ts",
+      "bytes": 1870,
+      "sha256": "db7a8ede1575edddb071c343ce7a16939b0fc690eccad24480d40dff678bd786"
+    },
+    {
+      "path": "src/lib/webrtc-signaling.ts",
+      "bytes": 12220,
+      "sha256": "590afca92e6cbf4232bd35920d6c5213beefb521284f8e9281d62954462e0888"
+    },
+    {
+      "path": "src/lib/webrtc-protocol.ts",
+      "bytes": 13559,
+      "sha256": "06c7ae26d9dd7f396e9585d17257516ee85b50eab290b9e8993bca3f7ff65cc1"
+    },
+    {
+      "path": "src/components/WebRtcSender.tsx",
+      "bytes": 32593,
+      "sha256": "dc3583c0641706b9b98b18d865611f3b75fbebc2eedfe3e654174243904d813b"
+    },
+    {
+      "path": "src/components/WebRtcReceiver.tsx",
+      "bytes": 31158,
+      "sha256": "93cf8e726780e232ba93a859f0cad1e8034454de7dd150396aa2098ad6d2817b"
+    },
+    {
+      "path": "tests/webrtc-authorization.test.ts",
+      "bytes": 2972,
+      "sha256": "7f4520b43dfd2e14bef0f769d765f50a1d12012eb646311443071755a73d98bb"
+    },
+    {
+      "path": "tests/webrtc-signaling.test.ts",
+      "bytes": 3262,
+      "sha256": "1623940be999ac1eac62e69e3c40e05787b35535d5298d240bbb8d137b1c63b4"
+    },
+    {
+      "path": "tests/webrtc-protocol.test.ts",
+      "bytes": 6546,
+      "sha256": "57ff07d72bb28efc67356256de2ee02c493f678fc28e4121bc2b836c64c0a04c"
+    },
+    {
+      "path": "e2e/preparation-privacy.spec.ts",
+      "bytes": 6671,
+      "sha256": "442f6b9d0fadda014bf49193ae7ca59c0a0e50df7750b705cbe2751dc94c61c6"
+    },
+    {
+      "path": "e2e/pairing.spec.ts",
+      "bytes": 158817,
+      "sha256": "bfd3cb0cbe4c88345a6fb93e2a82ed0a11da639443dc58ab1c7a7271c16175b8"
+    }
+  ],
+  "releaseReady": false,
+  "evidenceRoot": "C:/Users/dines/QRFT-qualification-evidence/peer-authorization-review-2026-10-24-9f786a",
+  "sealed": true,
+  "closure": {
+    "files": 13,
+    "bytes": 275620,
+    "manifestBytes": 2432,
+    "sha256": "49f1ad05f5abd6ad00cde7bcd250f5e4ae5e3e5a7de44cdd3a7c3438092aec50"
+  },
+  "markedComplete": 0
+}
