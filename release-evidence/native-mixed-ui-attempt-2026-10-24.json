@@ -1,0 +1,265 @@
+{
+  "recordedAt": "2026-10-24T05:42:02.079Z",
+  "sourceCommit": "4e5bfad73fc3a4a7e0a57f9114a92e7301b4b063",
+  "branch": "codex/native-mixed-tree-qualification",
+  "mainUnchanged": "478c1061a3db552934090c8de38f89e3c57cc352",
+  "status": "Functional mixed-tree byte/path checks passed; fixed qualification REJECTED by strict native resource gate. No retry or promotion to main.",
+  "qualificationValid": false,
+  "functionalPassed": true,
+  "nativeComplete": false,
+  "cpuProfileComplete": true,
+  "releaseReady": false,
+  "physicalTwoLaptop": false,
+  "generalPerformanceAccepted": false,
+  "resourceMatrixAccepted": false,
+  "evidence": {
+    "root": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-100mib-2026-10-24-bd9c40",
+    "sealed": true,
+    "path": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-100mib-2026-10-24-bd9c40/CLOSURE-HASHES.json",
+    "files": 4611,
+    "bytes": 253328534,
+    "manifestBytes": 870048,
+    "sha256": "c92b41c64b75cf89c0768382b1f3e1bc9d73f53d863092480f976373c93c3e54",
+    "scope": "Fixed100MiB mixed-tree attempt. Every saved/source/received stream byte verified; qualification REJECTED for2 incomplete native observations. No retry/row omission, physical LAN/native permissions/general RAM/throughput/readiness acceptance."
+  },
+  "development": {
+    "root": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-development-2026-10-24-2c5b6e",
+    "sealed": true,
+    "path": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-development-2026-10-24-2c5b6e/CLOSURE-HASHES.json",
+    "files": 66,
+    "bytes": 8723103,
+    "manifestBytes": 11694,
+    "sha256": "9c59f02bd5b7a6913d5a17a1a8ab41c42f5f4afc4ed4228098539ec356457fc6",
+    "scope": "Mixed-tree harness development, diagnostic negatives/greens, final source snapshot, first smoke source fixture, complete679/101/audit0/package20 CI logs and review limitations. Fixed100MiB attempt rejected native resource gate; no physical/general performance/readiness acceptance."
+  },
+  "priorSmoke": {
+    "root": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-smoke-2026-10-24-1598ba",
+    "sealed": true,
+    "path": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-smoke-2026-10-24-1598ba/CLOSURE-HASHES.json",
+    "files": 21,
+    "bytes": 42072321,
+    "manifestBytes": 92244,
+    "sha256": "1dfa70bf35f56e1f1688b38df3695ce7ce0ba5a7afd35f7c3de330d9eb6306c2",
+    "scope": "First8MiB+65byte mixed-tree smoke only, native FileList/injected handles/samehostRTC/OPFS saved-tree and physical stream audits. Original dirty source snapshot predates guard fixes. No fixed100MiB/general resource/physical LAN/readiness acceptance.",
+    "valid": true,
+    "smokeOnly": true,
+    "fileBytes": 8388673,
+    "directories": 8,
+    "sourceDirty": true,
+    "predatesGuardFixes": true
+  },
+  "fixture": {
+    "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\native-mixed-tree-preparation-2026-10-24-426c0b\\qualification-fixture\\FIXTURE.json",
+    "sha256": "f7d317eebd2e8c8b0a9ed065ed31e1d643e38ffc890ccbe24f0215235a51905b",
+    "fileBytes": 104857600,
+    "files": 4129,
+    "directories": 68,
+    "tinyFiles": 4000,
+    "emptyFiles": 128,
+    "sourcePreserved": true,
+    "regenerated": false,
+    "scope": "Public deterministic AESCTR native disk fixture; same original sealed source reused read-only."
+  },
+  "integrity": {
+    "everySourceByteAuditedBeforeAndAfter": 104857600,
+    "everySavedFileByteCompared": 104857600,
+    "everyReceivedFileByteCompared": 104857600,
+    "exactSavedPathTypeSizeMatch": true,
+    "savedFiles": 4129,
+    "savedDirectories": 68,
+    "freshReceiverProfileReopened": true,
+    "streamBytes": 105494103,
+    "streamSha256": "e5448471345ee895054549d9b9ca59e4d614f273d81b937d653a4e5d0aa30927",
+    "sourceMetadataSha256": "4799901b7723905d7f36183eaf024cb40b1bfab8757008dccbb812272aa54ebe",
+    "canonicalMetadataFooterMatched": true,
+    "sourceUnchanged": true
+  },
+  "observed": {
+    "sourceReadBytes": 209715200,
+    "maxTrackedNativeRead": 4194304,
+    "snapshots": 8258,
+    "binaryFrames": 1718,
+    "binaryBytes": 105569695,
+    "uniqueAckIndices": 1718,
+    "ackMessages": 169,
+    "workerRequests": {
+      "open": 1,
+      "write-payload": 1718,
+      "flush-payload": 169,
+      "append-journal": 169,
+      "read-payload": 4053,
+      "close": 1
+    },
+    "workerCounterScope": "Observed request messages, not independent completed fsync counts.",
+    "timings": [
+      {
+        "event": "native-input-bound",
+        "nativeInputLoadMs": 511
+      },
+      {
+        "event": "source-selected",
+        "elapsedMs": 688
+      },
+      {
+        "event": "both-devices-confirmed",
+        "elapsedMs": 4209
+      },
+      {
+        "event": "received-and-verified",
+        "elapsedMs": 39723
+      },
+      {
+        "event": "saved-and-verified",
+        "elapsedMs": 152594
+      }
+    ],
+    "timingScope": "Cumulative from pairing action except separately timed FileList loading/UI folder action. Instrumented same-host run, cache/order effects; no physical WiFi speed claim.",
+    "nativeRows": 177,
+    "roles": {
+      "sender": 80,
+      "receiver": 80,
+      "receiver-audit": 17
+    },
+    "rejectedRows": [
+      {
+        "role": "sender",
+        "phase": "receive-and-verify",
+        "beforeIds": [
+          28420,
+          31204,
+          28456,
+          31996,
+          19476,
+          28144,
+          3872,
+          29436
+        ],
+        "afterIds": [
+          28420,
+          31204,
+          28456,
+          31996,
+          19476,
+          28144,
+          3872,
+          29436,
+          27300
+        ],
+        "missingIds": [],
+        "missingReasons": []
+      },
+      {
+        "role": "sender",
+        "phase": "save-and-verify",
+        "beforeIds": [
+          28420,
+          31204,
+          28456,
+          31996,
+          19476,
+          28144,
+          3872,
+          29436,
+          31472
+        ],
+        "afterIds": [
+          28420,
+          31204,
+          28456,
+          31996,
+          19476,
+          28144,
+          3872,
+          29436
+        ],
+        "missingIds": [
+          31472
+        ],
+        "missingReasons": [
+          {
+            "message": "Cannot find a process with the process identifier 31472.",
+            "exceptionType": "Microsoft.PowerShell.Commands.ProcessCommandException",
+            "category": "ObjectNotFound",
+            "id": 31472,
+            "errorId": "NoProcessFoundForGivenId,Microsoft.PowerShell.Commands.GetProcessCommand"
+          }
+        ]
+      }
+    ],
+    "minFreeBytes": 4757061632,
+    "minSystemFreeBytes": 4757061632,
+    "reserveBytes": 2147483648,
+    "cpuProfiles": [
+      {
+        "role": "sender",
+        "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\native-mixed-ui-100mib-2026-10-24-bd9c40/evidence/cpu-sender.cpuprofile",
+        "valid": true,
+        "sampleCount": 14767,
+        "profileDurationUs": 156802467
+      },
+      {
+        "role": "receiver",
+        "path": "C:\\Users\\dines\\QRFT-qualification-evidence\\native-mixed-ui-100mib-2026-10-24-bd9c40/evidence/cpu-receiver.cpuprofile",
+        "valid": true,
+        "sampleCount": 14771,
+        "profileDurationUs": 156380900
+      }
+    ],
+    "cpuScope": "Sender and receiver page isolates only, excluding worker/browser native CPU and fresh audit context. Approximate periodic samples; no CPU acceptance."
+  },
+  "sourceGate": {
+    "runId": 40066734347,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40066734347",
+    "sourceCommit": "4e5bfad73fc3a4a7e0a57f9114a92e7301b4b063",
+    "status": "completed",
+    "conclusion": "success",
+    "unitTests": 679,
+    "unitFiles": 69,
+    "browserTests": 101,
+    "auditVulnerabilities": 0,
+    "typecheck": 0,
+    "build": 0,
+    "offlineModulePackageFiles": 20,
+    "nativeMixedHostedJobRan": false
+  },
+  "diagnosticChecks": {
+    "focusedTests": 23,
+    "reviewCycles": 3,
+    "crossModel": "Skipped: non-interactive autonomous continuation",
+    "fixes": [
+      "Every audit cleanup attempted; errors invalidate functional result",
+      "Reject output/source overlap, including ..run child names and resolved junctions, plus sealed ancestors before mutation",
+      "Require matching before/after process inventories and all selected PIDs measured",
+      "Reject oversized tracked File/slice arrayBuffer reads and direct alternative read APIs",
+      "Independently pin fixed qualification dimensions"
+    ],
+    "readGuardLimit": "Response/new Blob wrapping loses read tracking. Inspected current source preparation/transmission uses slice().arrayBuffer(); not universal read-API or bounded-RAM acceptance.",
+    "retainedNegatives": "Development retains initial missing-module red probe and audit error-message assertion failure, later greens and review classification; neither represents a failed production transfer.",
+    "retried": false,
+    "filteredRows": false,
+    "weakenedThresholds": false
+  },
+  "appAssets": [
+    {
+      "path": "dist/assets/block-store.worker-9i0g9xys.js",
+      "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-KefphoDT.js",
+      "sha256": "6b2ca9b333ec43723b7d2d254c7ce679e5bb21cfcfa71fda3f97016c2540de9c"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "ef18c83f9375b83dade1b8e89719b3c4cdbbf67bf341d0306ab4c7b513d1d8b8"
+    }
+  ],
+  "scope": "Native browser FileList; directory/empty-directory and OPFS destination picker handles injected. Real compiled production UI, same-host WebRTC and durable OPFS receive/save, deliberate cleanup denial retains receive copy. No physical LAN/native permission/ordinary-user GUI/10-50-100GB/resource/throughput/final whole-release adversarial acceptance."
+}

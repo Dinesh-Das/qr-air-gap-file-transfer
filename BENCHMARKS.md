@@ -4,12 +4,18 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
-A separate native mixed-tree case is being prepared for the original thousands-of-files
-requirement. Its4,129-file/68-directory100MiB disk fixture passed an independent
-every-byte/path/hash audit, and fixture-tool safety checks passed. The production
-UI runner and transfer/save trial are still pending; no timing, memory or throughput
-result is claimed. See [preparation receipt](release-evidence/native-mixed-tree-preparation-2026-10-24.json)
-and SPEC-native-mixed-tree-qualification.md.
+The fixed native mixed-tree attempt transferred and saved exactly100MiB in4,129
+files and68directories through the compiled UI, with independent every-byte source,
+saved-tree and retained-stream/metadata/footer checks. Its qualification was
+**rejected**: two of177native observations were incomplete because the process
+inventory changed and one selected GPU process exited before measurement. Both
+rows remain in the evidence; there was no retry or relaxed gate. An earlier
+8MiB+65-byte smoke passed, and cannot replace this failed qualification.
+See [mixed-tree attempt](release-evidence/native-mixed-ui-attempt-2026-10-24.json),
+[fixture preparation](release-evidence/native-mixed-tree-preparation-2026-10-24.json)
+and SPEC-native-mixed-tree-qualification.md. Injected handles, same-host RTC,
+periodic observations and limited read instrumentation establish no physical
+Wi-Fi, native-permission, general RAM or throughput acceptance. Main is not promoted.
 
 The prefix-hash candidate builds as index-KefphoDT.js. Source49607c5 passed
 628 unit and101 browser cases with audit0. One serial baseline-first comparison

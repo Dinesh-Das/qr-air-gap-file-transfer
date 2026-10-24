@@ -88,5 +88,9 @@ and cache effects. FileList loading is timed separately from the UI folder actio
 
 The first 8 MiB + 65-byte smoke passed with independent saved-tree and retained
 stream byte audits. Its original source snapshot predates subsequent guard fixes;
-it proves only that smoke attempt. The fixed 100 MiB run remains pending.
+it proves only that smoke attempt. The fixed 100 MiB run completed its independent
+byte/path audits, but qualification was rejected: two of 177 native observations
+were incomplete (one added process and one exited selected GPU process). All rows
+are retained; no retry or row filtering was performed. See
+release-evidence/native-mixed-ui-attempt-2026-10-24.json for immutable records.
 READY and general performance/resource acceptance stay false.
