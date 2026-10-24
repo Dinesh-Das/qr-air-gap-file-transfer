@@ -1,0 +1,154 @@
+{
+  "recordedAt": "2026-10-24T10:47:49.194Z",
+  "sourceCommit": "c06e4e5bf42b4e5ad8436f8795dc88c54b1feeb4",
+  "baseMain": "48a0f6ade52d347a6991b63634849f28d6fdb0b7",
+  "status": "Unused-code cleanup retained on branch: local full gate passes; hosted full gate failed at document navigation. Cause unresolved; do not merge or declare qualified.",
+  "releaseReady": false,
+  "mergeApproved": false,
+  "rootCauseResolved": false,
+  "evidence": {
+    "root": "C:/Users/dines/QRFT-qualification-evidence/release-quality-static-2026-10-24-48a0f6a",
+    "sealed": true,
+    "files": 54,
+    "bytes": 5394306,
+    "manifestBytes": 9226,
+    "sha256": "f043c9f49fdf4c255a22924eef8e6ec21f749639431e415a688fb63b2ff96519"
+  },
+  "changes": {
+    "compilerDiagnosticsBefore": 4,
+    "compilerDiagnosticsAfter": 0,
+    "configurationWeakened": false,
+    "newBehaviorTestsAdded": 0,
+    "scope": "Remove unread duplicate optical-source React state, unused error helper/import and unused E2E name binding. Source remains retained by transfer plans. Existing tests/assertions unchanged."
+  },
+  "localFullGate": {
+    "sourceCommit": "c06e4e5bf42b4e5ad8436f8795dc88c54b1feeb4",
+    "gateExit": 0,
+    "unitTests": 661,
+    "unitFiles": 65,
+    "browserTests": 110,
+    "browserChannel": "installed Chrome",
+    "auditFindings": 0,
+    "packageFiles": 20,
+    "unusedDiagnosticExit": 0,
+    "sourceInputsUnchanged": 178,
+    "servedAssetIdentities": 5,
+    "scope": "Local complete release gate plus optional unused-symbol compiler check. Four removed unused items; existing test coverage retained, no new behavior tests required for removals. Source evidence only; no new-bundle native large/physical qualification.",
+    "releaseReady": false
+  },
+  "hostedFailure": {
+    "sourceCommit": "c06e4e5bf42b4e5ad8436f8795dc88c54b1feeb4",
+    "runId": 40086419522,
+    "gateExit": 1,
+    "unitTests": 661,
+    "browserPassed": 109,
+    "browserFailed": 1,
+    "auditFindings": 0,
+    "failedTest": "receiver preflight blocks missing worker even after reconnect",
+    "file": "e2e/pairing.spec.ts",
+    "line": 307,
+    "failure": "page.goto net::ERR_NO_BUFFER_SPACE",
+    "documentRequest": "http://127.0.0.1:4178/",
+    "httpResponseStatus": -1,
+    "browser": "HeadlessChrome/156.0.8078.4",
+    "firstDocumentLoadFailed": true,
+    "rootCauseResolved": false,
+    "noRetryOrAssertionsWeakened": true,
+    "localFullGatePassed": true,
+    "localBrowserTests": 110,
+    "sourceQualificationPassed": false,
+    "mergeApproved": false,
+    "releaseReady": false,
+    "scope": "Failure before the Receive/preflight assertions. Trace proves document navigation failure without HTTP response; it does not prove Windows buffer exhaustion cause, memory/socket leak, or innocence of all prior activity. Hosted VM and missing OS telemetry prevent retrospective root-cause identification. Local passing gate does not clear hosted failure.",
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40086419522",
+    "artifact": {
+      "artifactId": 12557596312,
+      "zipBytes": 3636301,
+      "sha256": "07999bd8bdd4423d34a6a29206bda3758309f6335ab8c3ec64e7cb3bbf7b5c35",
+      "selected": [
+        "ci-evidence/browser-install-exit-code.txt",
+        "ci-evidence/browser-install.txt",
+        "ci-evidence/gate-exit-code.txt",
+        "ci-evidence/gate.txt",
+        "ci-evidence/install-exit-code.txt",
+        "ci-evidence/install.txt",
+        "ci-evidence/run.json",
+        "test-results/pairing-receiver-preflight-92e0a-worker-even-after-reconnect/error-context.md",
+        "test-results/pairing-receiver-preflight-92e0a-worker-even-after-reconnect/trace.zip"
+      ],
+      "selectedExpandedBytes": 78631,
+      "sourceCommit": "c06e4e5bf42b4e5ad8436f8795dc88c54b1feeb4",
+      "runId": "40086419522",
+      "gateExit": 1,
+      "scope": "Whole original ZIP retained and API digest verified; selected CI metadata and exact failing trace/context extracted. Original ZIP has113669483total uncompressed bytes, mostly passing-test browser profiles; these are preserved compressed, not all extracted. No successful qualification inferred.",
+      "releaseReady": false
+    }
+  },
+  "assets": [
+    {
+      "path": "dist/assets/block-store.worker-9i0g9xys.js",
+      "bytes": 2415,
+      "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-DNBPx8fV.js",
+      "bytes": 556943,
+      "sha256": "b234d13c848614574ebbed591281d18d05524c908b39cdb6c71d81fbbaca7378"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "3f721b3c454dd5f75a611e6d1e3bd27342ad76f55f2fc4d1be9944e4ba553656"
+    }
+  ],
+  "packages": [
+    {
+      "directory": "C:/Users/dines/QRFT-release-candidates/unused-cleanup-2026-10-24-c06e4e5/external runtime bundle",
+      "files": 20,
+      "assets": 5,
+      "manifestSha256": "0ad8d9ad53fa840f677bfbee1a54084247149e4e2bb6f48256e6c93a5ad6cee6",
+      "allFilesIndependentlyHashed": true,
+      "sourceAndAssetsMatch": true,
+      "blankPhysicalCases": 42,
+      "releaseReady": false
+    },
+    {
+      "directory": "C:/Users/dines/QRFT-release-candidates/unused-cleanup-2026-10-24-c06e4e5/portable bundle",
+      "files": 23,
+      "assets": 5,
+      "manifestSha256": "b2bc72e01dccc7ba05f644694c270ff76059de0f34be535b037cd17e4eab4324",
+      "allFilesIndependentlyHashed": true,
+      "sourceAndAssetsMatch": true,
+      "blankPhysicalCases": 42,
+      "releaseReady": false
+    }
+  ],
+  "sourceInputs": {
+    "count": 178,
+    "snapshot": "C:/Users/dines/QRFT-qualification-evidence/release-quality-static-2026-10-24-48a0f6a/SOURCE-SNAPSHOT.json",
+    "unchangedAfterLocalGate": true
+  },
+  "reviews": {
+    "source": "Fresh-context reviewer found no actionable defect; actual prepared source retained by plans.",
+    "evidence": "One ZIP expansion wording correction accepted; no further findings.",
+    "crossModel": "Skipped in autonomous continuation; no external CLI."
+  },
+  "decision": "Keep source and packages as an unmerged candidate. Preserve failed hosted gate and passing local gate separately. Main remains48a0f6a/Cvz with its existing exact-bundle5GiB proof; new DNB has no native large qualification.",
+  "limitations": [
+    "Hosted ERR_NO_BUFFER_SPACE occurred on initial localhost navigation without HTTP response; no OS telemetry identifies the underlying cause.",
+    "A passing local Chrome run does not clear the hosted failure. No blind rerun, timeout change, skipped test or assertion relaxation applied.",
+    "The optional unused-symbol check proves compiler-visible symbols only, not global absence of dead or obsolete code.",
+    "Package checks use injected browser handoff; actual Start.cmd/native browser/picker/permissions/physical42cases remain unqualified.",
+    "No current DNB large-file/native resource, physical Wi-Fi, throughput or final release acceptance."
+  ]
+}
