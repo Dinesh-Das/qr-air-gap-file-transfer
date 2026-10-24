@@ -44,12 +44,14 @@
     "independentFileAndStreamHashesMatch": true
   },
   "baselineCommit": "203c64d502478cb9267fb074485c0698a0bcc20b",
-  "candidateNativeQualification": "Pending paired5GiB run; DON native evidence remains baseline only",
+  "candidateNativeQualification": "Paired same-host 5 GiB transfer/save integrity and native observation passed at source49607c5; see prefix-hash-pair-2026-10-24.json. Physical Wi-Fi and broader resource acceptance remain open.",
   "comparisonSpec": "SPEC-prefix-hash-comparison.md",
   "evidenceRoot": "C:/Users/dines/QRFT-qualification-evidence/first-prefix-hash-2026-10-24-33ea23",
-  "sealed": false,
-  "pairedRun": null,
+  "sealed": true,
+  "pairedRun": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
   "performanceAccepted": false,
   "resourceMatrixAccepted": false,
-  "releaseReady": false
+  "releaseReady": false,
+  "pairedEvidence": "release-evidence/prefix-hash-pair-2026-10-24.json",
+  "updatedAt": "2026-10-24T04:12:34.306Z"
 }

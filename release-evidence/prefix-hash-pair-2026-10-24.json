@@ -1,0 +1,327 @@
+{
+  "recordedAt": "2026-10-24T03:55:11.396Z",
+  "run": 40012980307,
+  "host": {
+    "hostname": "runnervmdaln5",
+    "cpuModels": [
+      "AMD EPYC 7763 64-Core Processor                "
+    ],
+    "logicalCpus": 4,
+    "totalMemory": 17174360064,
+    "node": "v24.22.1"
+  },
+  "baseline": {
+    "sourceCommit": "203c64d502478cb9267fb074485c0698a0bcc20b",
+    "inputs": 165,
+    "node": "v24.22.1",
+    "runtimeSha256": "d702daa815eabbff763c7d3808e235cf031cf2ca70211b56847bc72f51e240e5",
+    "assets": [
+      {
+        "path": "dist/assets/block-store.worker-9i0g9xys.js",
+        "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+      },
+      {
+        "path": "dist/assets/index-C5foWVjs.css",
+        "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+      },
+      {
+        "path": "dist/assets/index-DON1UPCZ.js",
+        "sha256": "925421636fd7ee1f03e4c5ad6d82892dc9a9e2e0d45e06204f1a7bad6d6091fe"
+      },
+      {
+        "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+        "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+      },
+      {
+        "path": "dist/index.html",
+        "sha256": "aa25ab1f47d223db9356d507d4bc18ccd3a0c1d28882043cae1481955b2b61a3"
+      }
+    ]
+  },
+  "candidate": {
+    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
+    "inputs": 171,
+    "node": "v24.22.1",
+    "runtimeSha256": "d702daa815eabbff763c7d3808e235cf031cf2ca70211b56847bc72f51e240e5",
+    "assets": [
+      {
+        "path": "dist/assets/block-store.worker-9i0g9xys.js",
+        "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+      },
+      {
+        "path": "dist/assets/index-C5foWVjs.css",
+        "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+      },
+      {
+        "path": "dist/assets/index-KefphoDT.js",
+        "sha256": "6b2ca9b333ec43723b7d2d254c7ce679e5bb21cfcfa71fda3f97016c2540de9c"
+      },
+      {
+        "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+        "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+      },
+      {
+        "path": "dist/index.html",
+        "sha256": "ef18c83f9375b83dade1b8e89719b3c4cdbbf67bf341d0306ab4c7b513d1d8b8"
+      }
+    ]
+  },
+  "integrityAndResources": {
+    "baseline": {
+      "sourceCommit": "203c64d502478cb9267fb074485c0698a0bcc20b",
+      "mib": 5120,
+      "functionalPassed": true,
+      "nativeComplete": true,
+      "invalidNativeRows": [],
+      "diskReserveMet": true,
+      "independentlyValid": true,
+      "parentExit": {
+        "code": 0,
+        "signal": null
+      },
+      "metadataValid": true,
+      "maximumObserved": {
+        "sender": {
+          "privateBytes": 342724608,
+          "workingSetBytes": 523632640
+        },
+        "receiver": {
+          "privateBytes": 345309184,
+          "workingSetBytes": 499421184
+        }
+      },
+      "memorySamples": 622,
+      "parentResourceSamples": 972,
+      "minOutputFree": 140886073344,
+      "minSystemFree": 33416933376,
+      "browserVersions": [
+        {
+          "role": "sender",
+          "version": "156.0.8078.4",
+          "channel": "bundled",
+          "storage": {
+            "estimate": {
+              "quota": 10737418240,
+              "usage": 0,
+              "usageDetails": {}
+            },
+            "persisted": false,
+            "secureContext": true
+          }
+        },
+        {
+          "role": "receiver",
+          "version": "156.0.8078.4",
+          "channel": "bundled",
+          "storage": {
+            "estimate": {
+              "quota": 10737418240,
+              "usage": 0,
+              "usageDetails": {}
+            },
+            "persisted": false,
+            "secureContext": true
+          }
+        }
+      ],
+      "everyByteCompared": 5368709120,
+      "sourceSha256": "059c8416a6df00a6b4bc391b82a8f2962888e083fb4ab4fec261a96954a06b90",
+      "streamSha256": "13fff289a76d2b20498345083c06aa940b37908ff86c48d965993eb198ddad2d",
+      "blocks": 87382,
+      "milestones": [
+        {
+          "event": "both-devices-confirmed",
+          "elapsedMs": 1495
+        },
+        {
+          "event": "received-and-verified",
+          "elapsedMs": 657851
+        },
+        {
+          "event": "saved-and-verified",
+          "elapsedMs": 864372
+        }
+      ],
+      "payloadsRecheckedLocally": false,
+      "scope": "Independent retained-metadata/asset audit; full payload comparisons were performed on original runner. No physical LAN, continuous peak, throughput or general memory-bound acceptance.",
+      "releaseReady": false
+    },
+    "candidate": {
+      "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
+      "mib": 5120,
+      "functionalPassed": true,
+      "nativeComplete": true,
+      "invalidNativeRows": [],
+      "diskReserveMet": true,
+      "independentlyValid": true,
+      "parentExit": {
+        "code": 0,
+        "signal": null
+      },
+      "metadataValid": true,
+      "maximumObserved": {
+        "sender": {
+          "privateBytes": 331309056,
+          "workingSetBytes": 523657216
+        },
+        "receiver": {
+          "privateBytes": 311717888,
+          "workingSetBytes": 516874240
+        }
+      },
+      "memorySamples": 534,
+      "parentResourceSamples": 892,
+      "minOutputFree": 124766261248,
+      "minSystemFree": 33417715712,
+      "browserVersions": [
+        {
+          "role": "sender",
+          "version": "156.0.8078.4",
+          "channel": "bundled",
+          "storage": {
+            "estimate": {
+              "quota": 10737418240,
+              "usage": 0,
+              "usageDetails": {}
+            },
+            "persisted": false,
+            "secureContext": true
+          }
+        },
+        {
+          "role": "receiver",
+          "version": "156.0.8078.4",
+          "channel": "bundled",
+          "storage": {
+            "estimate": {
+              "quota": 10737418240,
+              "usage": 0,
+              "usageDetails": {}
+            },
+            "persisted": false,
+            "secureContext": true
+          }
+        }
+      ],
+      "everyByteCompared": 5368709120,
+      "sourceSha256": "059c8416a6df00a6b4bc391b82a8f2962888e083fb4ab4fec261a96954a06b90",
+      "streamSha256": "e21431627c936e536e5e71a5aadeb7655da87bd7acdc21ab4c050b84b798f338",
+      "blocks": 87382,
+      "milestones": [
+        {
+          "event": "both-devices-confirmed",
+          "elapsedMs": 1303
+        },
+        {
+          "event": "received-and-verified",
+          "elapsedMs": 586602
+        },
+        {
+          "event": "saved-and-verified",
+          "elapsedMs": 792156
+        }
+      ],
+      "payloadsRecheckedLocally": false,
+      "scope": "Independent retained-metadata/asset audit; full payload comparisons were performed on original runner. No physical LAN, continuous peak, throughput or general memory-bound acceptance.",
+      "releaseReady": false
+    }
+  },
+  "cpu": {
+    "baseline": [
+      {
+        "role": "sender",
+        "samples": 79329,
+        "captureSpanMs": 869043,
+        "weightsVerified": true,
+        "coverageVerified": true
+      },
+      {
+        "role": "receiver",
+        "samples": 79333,
+        "captureSpanMs": 868543,
+        "weightsVerified": true,
+        "coverageVerified": true
+      }
+    ],
+    "candidate": [
+      {
+        "role": "sender",
+        "samples": 71980,
+        "captureSpanMs": 794838,
+        "weightsVerified": true,
+        "coverageVerified": true
+      },
+      {
+        "role": "receiver",
+        "samples": 71950,
+        "captureSpanMs": 794245,
+        "weightsVerified": true,
+        "coverageVerified": true
+      }
+    ]
+  },
+  "preparationSampledInclusiveUs": {
+    "baseline": 178795394,
+    "candidate": 89693124,
+    "reductionPercent": 49.834768114887794,
+    "sourceFunction": "prepareLargeSource",
+    "zeroBasedCompiledLocation": "15:77882",
+    "overlapWarning": "Do not add inclusive caller weights; all-sample weighting includes idle/program/GC, not process CPU utilization."
+  },
+  "localSourceAndStreamRecomputation": {
+    "sourceBytesRead": 5368709120,
+    "sourceSha256": "059c8416a6df00a6b4bc391b82a8f2962888e083fb4ab4fec261a96954a06b90",
+    "streamsChecked": {
+      "baseline": "13fff289a76d2b20498345083c06aa940b37908ff86c48d965993eb198ddad2d",
+      "candidate": "e21431627c936e536e5e71a5aadeb7655da87bd7acdc21ab4c050b84b798f338"
+    },
+    "sourceUntouched": true,
+    "hostedReceivedAndSavedPayloadsRecheckedLocally": false
+  },
+  "candidateDecision": "Keep prefix-state reuse: independent digests/bytes and full native validation pass; measured preparation reduction supports work-budget proof. Package/runtime hardening remains before promotion.",
+  "limitations": [
+    "One serial baseline-first pair; order, cache and runtime variance remain.",
+    "CPU profiling perturbs runtime; main page isolates only, no worker/native or I/O attribution.",
+    "Cumulative milestones include preparation/pairing/verification/save; not pure network throughput.",
+    "Injected pickers/OPFS destination and deliberately denied cleanup; not real Windows picker/native destination/cleanup success.",
+    "Periodic process samples can miss peaks and shared working-set pages can be counted twice.",
+    "Physical two-laptop42cases,novice UX,GUI/cleanOS/permissions,10/50/100GB matrices and near-maximum physical throughput remain open."
+  ],
+  "performanceAccepted": false,
+  "resourceMatrixAccepted": false,
+  "releaseReady": false,
+  "runtimeSecurityFollowUp": {
+    "officialRelease": "https://nodejs.org/en/blog/release/v24.22.1",
+    "advisory": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+    "pairedRuntime": "Both cases already used exact patched24.22.1 binary d702daa815eabbff763c7d3808e235cf031cf2ca70211b56847bc72f51e240e5",
+    "oldPortable": "Existing pinned24.22.0 predates this security release; no fresh candidate packages built with it.",
+    "pending": "Enforce a reviewed patched runtime floor and qualify fresh packages via hosted checks; localC below2GiB reserve prevents local download/package qualification.",
+    "exploitEstablished": false
+  },
+  "localSpaceNote": "C later observed~0.56GBfree,below unchanged2GiB test reserve. No localpackage/runtime download performed; data retained. This does not alter hosted case reserve measurements.",
+  "sourceGate": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
+  "sourceChecks": {
+    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
+    "unitPassed": 628,
+    "unitFiles": 63,
+    "browserPassed": 101,
+    "auditFindings": 0,
+    "typecheck": 0,
+    "build": 0
+  },
+  "evidence": {
+    "root": "C:/Users/dines/QRFT-qualification-evidence/first-prefix-hash-2026-10-24-33ea23",
+    "sealed": true,
+    "files": 100,
+    "bytes": 19419734,
+    "closureSha256": "42378173c675582a502ff44b3a72bcd8d74022051802d2d5cc0d5ec5bdbef721",
+    "closureVerified": "All 100 listed files independently rehashed; exactly one extra file, the closure manifest itself.",
+    "artifact": {
+      "id": 12528873711,
+      "bytes": 3040895,
+      "sha256": "0aaf0d4a6c8ed9c4ce34b7cea3e9d87a25ca90c3f83a41154fef7f1b23b90694",
+      "payloadsIncluded": false
+    }
+  },
+  "spaceFollowUp": "Free space fluctuated above 5 GB after an earlier below-reserve observation; no cause established. User says extra space unavailable. No new local 5 GiB trial or runtime package created; earlier space statements are timestamped historical observations."
+}
