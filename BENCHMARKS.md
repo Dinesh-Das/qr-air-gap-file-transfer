@@ -33,6 +33,19 @@ Earlier Cvz proof retains its exact bundle scope. Physical two-laptop Wi-Fi,
 10/50/100 GB scaling and general resource/throughput acceptance remain open.
 READY is false.
 
+The fixed native mixed-tree attempt transferred and saved exactly100MiB in4,129
+files and68directories through the compiled UI, with independent every-byte source,
+saved-tree and retained-stream/metadata/footer checks. Its qualification was
+**rejected**: two of177native observations were incomplete because the process
+inventory changed and one selected GPU process exited before measurement. Both
+rows remain in the evidence; there was no retry or relaxed gate. An earlier
+8MiB+65-byte smoke passed, and cannot replace this failed qualification.
+See [mixed-tree attempt](release-evidence/native-mixed-ui-attempt-2026-10-24.json),
+[fixture preparation](release-evidence/native-mixed-tree-preparation-2026-10-24.json)
+and SPEC-native-mixed-tree-qualification.md. Injected handles, same-host RTC,
+periodic observations and limited read instrumentation establish no physical
+Wi-Fi, native-permission, general RAM or throughput acceptance. This historical attempt retains its original source and bundle scope; merging the diagnostic harness does not qualify the rejected resource result.
+
 The earlier Cvz bundle contains the optical resume transaction-rejection fix.
 Sourcee6e853e passed661unit and110browser cases locally in installed Chrome and
 in hosted Chromium, with audit0 and matching20/23file package module proof.

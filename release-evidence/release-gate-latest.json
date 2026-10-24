@@ -3104,5 +3104,61 @@
     "localChromeReceipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
     "installedEdge": "No new Edge full suite; prior evidence retains its original scope.",
     "priorNativeFailureUnexplained": true
+  },
+  "nativeMixedTreePreparation": {
+    "receipt": "release-evidence/native-mixed-tree-preparation-2026-10-24.json",
+    "sourceCommit": "da151a9f81c426152e2ad56eb349f19c414f31cd",
+    "status": "Fixture preparation complete; UI runner and mixed-tree transfer/save qualification pending",
+    "nativeMixedTransferRun": false,
+    "releaseReady": false
+  },
+  "nativeMixedTreeUiAttempt": {
+    "receipt": "release-evidence/native-mixed-ui-attempt-2026-10-24.json",
+    "sourceCommit": "4e5bfad73fc3a4a7e0a57f9114a92e7301b4b063",
+    "sourceGate": {
+      "runId": 40066734347,
+      "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40066734347",
+      "sourceCommit": "4e5bfad73fc3a4a7e0a57f9114a92e7301b4b063",
+      "status": "completed",
+      "conclusion": "success",
+      "unitTests": 679,
+      "unitFiles": 69,
+      "browserTests": 101,
+      "auditVulnerabilities": 0,
+      "typecheck": 0,
+      "build": 0,
+      "offlineModulePackageFiles": 20,
+      "nativeMixedHostedJobRan": false
+    },
+    "qualificationValid": false,
+    "functionalPassed": true,
+    "nativeComplete": false,
+    "resourceRows": 177,
+    "incompleteRows": 2,
+    "smokeOnly": false,
+    "fileBytes": 104857600,
+    "files": 4129,
+    "directories": 68,
+    "evidence": {
+      "root": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-100mib-2026-10-24-bd9c40",
+      "sealed": true,
+      "path": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-100mib-2026-10-24-bd9c40/CLOSURE-HASHES.json",
+      "files": 4611,
+      "bytes": 253328534,
+      "manifestBytes": 870048,
+      "sha256": "c92b41c64b75cf89c0768382b1f3e1bc9d73f53d863092480f976373c93c3e54",
+      "scope": "Fixed100MiB mixed-tree attempt. Every saved/source/received stream byte verified; qualification REJECTED for2 incomplete native observations. No retry/row omission, physical LAN/native permissions/general RAM/throughput/readiness acceptance."
+    },
+    "development": {
+      "root": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-development-2026-10-24-2c5b6e",
+      "sealed": true,
+      "path": "C:/Users/dines/QRFT-qualification-evidence/native-mixed-ui-development-2026-10-24-2c5b6e/CLOSURE-HASHES.json",
+      "files": 66,
+      "bytes": 8723103,
+      "manifestBytes": 11694,
+      "sha256": "9c59f02bd5b7a6913d5a17a1a8ab41c42f5f4afc4ed4228098539ec356457fc6",
+      "scope": "Mixed-tree harness development, diagnostic negatives/greens, final source snapshot, first smoke source fixture, complete679/101/audit0/package20 CI logs and review limitations. Fixed100MiB attempt rejected native resource gate; no physical/general performance/readiness acceptance."
+    },
+    "releaseReady": false
   }
 }
