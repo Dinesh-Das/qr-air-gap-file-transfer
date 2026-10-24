@@ -53,7 +53,40 @@ scaling, statistical performance improvement or release readiness.
 
 ## Commands and status
 
-Fixture/helper checks: `npm test -- tests/native-mixed-tree.test.mjs`.
+Fixture/audit/guard checks: `npm test -- tests/native-mixed-tree.test.mjs tests/native-mixed-contract.test.mjs tests/native-mixed-audit.test.mjs tests/native-mixed-safety.test.mjs tests/native-mixed-read-guard.test.mjs`.
 Source gate: `npm run check`. Existing full gate: `npm run check:release`.
-Runner commands will be documented when slice 2 exists; no runnable UI benchmark
-is claimed by slice 1. READY and general performance/resource acceptance stay false.
+
+On Windows, with the reviewed patched Node runtime in PATH and compiled assets
+matching the canonical release record, run the new parent once:
+
+```powershell
+$env:QRFT_NATIVE_MIXED_OUTPUT = 'C:/path/to/new-independent-run'
+$env:QRFT_NATIVE_MIXED_FIXTURE = 'C:/path/to/preserved-fixture/FIXTURE.json'
+$env:QRFT_NATIVE_MIXED_MODE = 'qualification'
+$env:QRFT_TEST_BROWSER_CHANNEL = 'chrome'
+$env:QRFT_NATIVE_MIXED_CPU_PROFILE = '1'
+node scripts/run-native-mixed-ui-qualification.mjs
+```
+
+Qualification requires a clean committed tree. Output must have an existing
+parent, lie outside the fixture container and have no sealed evidence ancestor.
+`smoke` requires a separately labeled smoke fixture and cannot qualify 100 MiB.
+No retry, size fallback or removal of incomplete PID samples is allowed. Both
+process inventories surrounding each native observation must match. Audit
+cleanup attempts every owned resource even if a preceding close fails.
+
+Tracked native Files and derived slices allow arrayBuffer reads of at most
+4 MiB; direct text/stream/bytes and FileReader calls on tracked objects are rejected.
+Wrapping a File in a new Response/Blob creates an untracked read route; this
+instrumentation does not cover every possible API. The inspected production
+source preparation and transmission paths use tracked `slice().arrayBuffer()`.
+These observations cannot establish general bounded-RAM acceptance. Worker counters
+count requests, not completed filesystem syncs. CPU profiles cover sender and
+receiver page isolates only, excluding workers, browser native work and the
+separate audit context. Samples can miss peaks; timings include instrumentation
+and cache effects. FileList loading is timed separately from the UI folder action.
+
+The first 8 MiB + 65-byte smoke passed with independent saved-tree and retained
+stream byte audits. Its original source snapshot predates subsequent guard fixes;
+it proves only that smoke attempt. The fixed 100 MiB run remains pending.
+READY and general performance/resource acceptance stay false.
