@@ -1,0 +1,220 @@
+{
+  "recordedAt": "2026-10-24T16:39:56.972Z",
+  "sourceCommit": "43bc93944cfa7e5837490753a5d16491b84310da",
+  "qualifiedCodeCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+  "clientBundle": "index-DNBPx8fV.js",
+  "status": "One hosted Windows 5 GiB native compiled-UI transfer/save passed and independently audited.",
+  "releaseReady": false,
+  "evidence": {
+    "root": "C:/Users/dines/QRFT-qualification-evidence/native-dnb-5gib-2026-10-24-43bc939",
+    "sealed": true,
+    "files": 63,
+    "bytes": 12844326,
+    "manifestBytes": 10870,
+    "sha256": "ef1ce53fe0f946ce0703d6eda19562f53861f949b3484559b0da995b3c5baf0e"
+  },
+  "workflow": {
+    "runId": 40110200670,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40110200670",
+    "conclusion": "success",
+    "attempts": 1,
+    "retries": 0,
+    "sizeFallback": false
+  },
+  "sourceGate": {
+    "at": "2026-10-24T16:20:41.325Z",
+    "artifactId": 12566850167,
+    "zipBytes": 3598155,
+    "sha256": "68a082b2b56b5bd9b98678535ffc917d13f7f08af6c8c2d845f203312b0b7e8c",
+    "sourceCommit": "43bc93944cfa7e5837490753a5d16491b84310da",
+    "runId": "40110200670",
+    "node": "v24.22.1",
+    "gateExit": 0,
+    "unitTests": 667,
+    "browserTests": 110,
+    "packageFiles": 20,
+    "selectedFiles": [
+      "ci-evidence/run.json",
+      "ci-evidence/gate-exit-code.txt",
+      "ci-evidence/package-smoke.json",
+      "ci-evidence/gate.txt"
+    ],
+    "scope": "Downloaded artifact ZIP SHA matches GitHub API digest; selected frozen run/gate/package records independently checked. Whole original ZIP retained, selected records extracted. No native5GiB/physical qualification.",
+    "releaseReady": false,
+    "unitFiles": 66,
+    "auditFindings": 0
+  },
+  "nativeArtifact": {
+    "runId": 40110200670,
+    "sourceCommit": "43bc93944cfa7e5837490753a5d16491b84310da",
+    "conclusion": "success",
+    "artifactId": 12567166239,
+    "zipBytes": 1504158,
+    "sha256": "e5c378382be101c9f764666fcb1370f92b182df3544172462e07aba06caf794c",
+    "files": 26,
+    "expandedBytes": 7447459,
+    "scope": "Transport checksum and safe extraction only. Qualification awaits independent retained-result audit.",
+    "releaseReady": false
+  },
+  "assets": [
+    {
+      "path": "dist/assets/block-store.worker-9i0g9xys.js",
+      "bytes": 2415,
+      "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-DNBPx8fV.js",
+      "bytes": 556943,
+      "sha256": "b234d13c848614574ebbed591281d18d05524c908b39cdb6c71d81fbbaca7378"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "3f721b3c454dd5f75a611e6d1e3bd27342ad76f55f2fc4d1be9944e4ba553656"
+    }
+  ],
+  "qualification": {
+    "sourceCommit": "43bc93944cfa7e5837490753a5d16491b84310da",
+    "mib": 5120,
+    "functionalPassed": true,
+    "nativeComplete": true,
+    "invalidNativeRows": [],
+    "diskReserveMet": true,
+    "independentlyValid": true,
+    "parentExit": {
+      "code": 0,
+      "signal": null
+    },
+    "metadataValid": true,
+    "maximumObserved": {
+      "sender": {
+        "privateBytes": 328478720,
+        "workingSetBytes": 519020544
+      },
+      "receiver": {
+        "privateBytes": 280031232,
+        "workingSetBytes": 483459072
+      }
+    },
+    "memorySamples": 520,
+    "parentResourceSamples": 937,
+    "minOutputFree": 141157236736,
+    "minSystemFree": 33187549184,
+    "browserVersions": [
+      {
+        "role": "sender",
+        "version": "156.0.8078.4",
+        "channel": "bundled",
+        "storage": {
+          "estimate": {
+            "quota": 10737418240,
+            "usage": 0,
+            "usageDetails": {}
+          },
+          "persisted": false,
+          "secureContext": true
+        }
+      },
+      {
+        "role": "receiver",
+        "version": "156.0.8078.4",
+        "channel": "bundled",
+        "storage": {
+          "estimate": {
+            "quota": 10737418240,
+            "usage": 0,
+            "usageDetails": {}
+          },
+          "persisted": false,
+          "secureContext": true
+        }
+      }
+    ],
+    "everyByteCompared": 5368709120,
+    "sourceSha256": "059c8416a6df00a6b4bc391b82a8f2962888e083fb4ab4fec261a96954a06b90",
+    "streamSha256": "49ccaf28b2735f4680360fd68e8fa37c16e6de5ccc7450840e4c649a8c3d4f48",
+    "blocks": 87382,
+    "milestones": [
+      {
+        "event": "both-devices-confirmed",
+        "elapsedMs": 1205
+      },
+      {
+        "event": "received-and-verified",
+        "elapsedMs": 610577
+      },
+      {
+        "event": "saved-and-verified",
+        "elapsedMs": 818638
+      }
+    ],
+    "payloadsRecheckedLocally": false,
+    "scope": "Independent retained metadata/assets/source/CPU audit plus public dataset identity recomputation. Native completeness means every requested before-inventory PID measured; after-inventory changes are retained separately. Periodic samples can miss peaks/new processes. No continuous RAM bound, physical LAN, GUI or general throughput/resource/readiness acceptance.",
+    "releaseReady": false,
+    "cpuProfilesComplete": true,
+    "profiles": [
+      {
+        "role": "sender",
+        "sha256": "3c16e44ac391f48fe32c709caa50c8f757806ba5b384703dc7a842ab7268f4d8",
+        "samples": 73585,
+        "profileDurationUs": 823869096,
+        "sampledDurationUs": 823867128
+      },
+      {
+        "role": "receiver",
+        "sha256": "4e056985e16043036ed1c222b62a9fa2d3d1a79522adaf6753bbdbe2a6487c9f",
+        "samples": 73555,
+        "profileDurationUs": 823302650,
+        "sampledDurationUs": 823300918
+      }
+    ],
+    "sourceBinding": {
+      "asCommitted": 2,
+      "windowsCRLF": 177
+    },
+    "recipeRecomputed": {
+      "fileBytes": 5368709120,
+      "sourceSha256": "059c8416a6df00a6b4bc391b82a8f2962888e083fb4ab4fec261a96954a06b90",
+      "streamSha256": "49ccaf28b2735f4680360fd68e8fa37c16e6de5ccc7450840e4c649a8c3d4f48",
+      "metadataBytes": 248,
+      "bufferBytes": 4194304,
+      "scope": "Deterministic public recipe hash corroboration only; original payload byte comparisons occurred on the runner."
+    },
+    "processInventoryChanges": [],
+    "metadataCoverage": "Exact unique raw regular-file inventory with mandatory CPU/native/runner/assets records, all checksums verified before parsing.",
+    "sourceInputs": 179,
+    "sourceInputsExactlyBoundToPinnedCommit": true,
+    "cpuSummarySourceFrozenFromPinnedGit": true
+  },
+  "auditControls": {
+    "tests": 6,
+    "passed": 6,
+    "freshReview": "No actionable defects in pinned DNB adaptation.",
+    "crossModel": "Skipped in autonomous continuation; no external CLI."
+  },
+  "limitations": [
+    "One hosted Windows machine; no two-laptop or physical Wi-Fi acceptance.",
+    "Injected pickers, OPFS saved copy and deliberately denied cleanup; no actual native OS permissions/GUI/destination cleanup acceptance.",
+    "Hosted source/payload/saved files were byte-compared on the original VM and were not uploaded; no local physical re-read of those hosted files.",
+    "Local public AESCTR recipe recomputation with 4 MiB buffers corroborates identities only.",
+    "520 periodic native rows cover requested before-selected PIDs; samples may miss peaks/new processes, and working-set sums may double-count shared pages. No continuous or 10/50/100 GB memory bound.",
+    "CPU records cover two main page isolates, excluding workers/native stacks. Cumulative milestones are not network throughput or a statistically controlled comparison.",
+    "Earlier candidate-availability and HTTP buffer navigation failures remain unexplained; this passing case does not resolve either cause."
+  ],
+  "nativeCandidateAvailabilityRootCauseUnresolved": true,
+  "hostNavigationBufferFailureRootCauseUnresolved": true,
+  "physicalTwoLaptop": false,
+  "performanceAccepted": false,
+  "resourceMatrixAccepted": false,
+  "nativeWindowsGUI": false
+}
