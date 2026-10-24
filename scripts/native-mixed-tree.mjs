@@ -51,13 +51,17 @@ async function publishFixtureManifest(root, manifest, phase) {
   await rename(temporary, join(root, "FIXTURE.json"));
 }
 
-/** Public deterministic diagnostic data only. Never accepts an existing output. */
-export async function writeNativeMixedTree(output, mode = "qualification") {
+export function requireExplicitNativeMixedPath(output) {
   if (typeof output !== "string" || !isAbsolute(output) ||
       process.platform === "win32" && !/^(?:[A-Za-z]:[\\/]|[\\/]{2}[^\\/]+[\\/][^\\/]+)/.test(output)) {
     throw new Error("Provide a new absolute fixture output path with an explicit drive or share on Windows.");
   }
-  const plan = nativeMixedTreePlan(mode), root = resolve(output);
+  return resolve(output);
+}
+
+/** Public deterministic diagnostic data only. Never accepts an existing output. */
+export async function writeNativeMixedTree(output, mode = "qualification") {
+  const root = requireExplicitNativeMixedPath(output), plan = nativeMixedTreePlan(mode);
   const free = await statfs(dirname(root));
   if (!Number.isSafeInteger(free.bavail * free.bsize) || free.bavail * free.bsize < plan.requiredFreeBytes) {
     throw new Error("Mixed-tree fixture requires three-copy headroom plus the unchanged reserve and margin.");
