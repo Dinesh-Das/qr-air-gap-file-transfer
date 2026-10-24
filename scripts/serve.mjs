@@ -12,6 +12,10 @@ import {
 import { fileURLToPath } from "node:url";
 import { createRendezvousRuntime } from "./rendezvous.mjs";
 import { assertLocalRequest, configureLocalHttpServer } from "./local-http-security.mjs";
+import { assertSupportedNode } from "./runtime-policy.mjs";
+
+// Refuse unpatched runtimes before creating rendezvous or HTTP listeners.
+assertSupportedNode();
 
 const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
 const projectDirectory = resolve(scriptDirectory, "..");

@@ -3,15 +3,10 @@ import { isAbsolute, resolve } from "node:path";
 import { createInterface } from "node:readline";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { verifyRelease } from "./verify-release.mjs";
+import { assertSupportedNode } from "./runtime-policy.mjs";
+export { assertSupportedNode } from "./runtime-policy.mjs";
 
 const defaultDirectory = fileURLToPath(new URL("../", import.meta.url));
-
-export function assertSupportedNode(version = process.versions.node) {
-  const [major, minor] = version.split(".").map(Number);
-  if (!(major >= 24 || major === 22 && minor >= 12 || major === 20 && minor >= 19)) {
-    throw new Error("This copy needs a newer runtime. Ask the person who supplied it for a compatible Windows bundle. (Requires Node.js 20.19, 22.12, or 24 and later supported versions.)");
-  }
-}
 
 function assertLocalUrl(url) {
   const match = typeof url === "string" && /^http:\/\/127\.0\.0\.1:([1-9][0-9]{0,4})$/.exec(url);

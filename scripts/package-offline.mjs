@@ -3,10 +3,12 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { inventory, verifyRelease } from "./verify-release.mjs";
 import { readPackagingOptions, prepareWindowsRuntime } from "./windows-runtime.mjs";
+import { assertSupportedNode } from "./runtime-policy.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
-const runtime = ["launch.mjs", "serve.mjs", "rendezvous.mjs", "lan-signaling.mjs", "local-http-security.mjs", "verify-release.mjs", "create-fixture.mjs", "compare-trees.mjs"];
+const runtime = ["launch.mjs", "serve.mjs", "runtime-policy.mjs", "rendezvous.mjs", "lan-signaling.mjs", "local-http-security.mjs", "verify-release.mjs", "create-fixture.mjs", "compare-trees.mjs"];
 try {
+  assertSupportedNode();
   const options = readPackagingOptions(process.argv.slice(2));
   const output = resolve(options.output ?? resolve(root, "artifacts", `qrft-${new Date().toISOString().replace(/[:.]/g, "-")}`));
   const windowsRuntime = options.runtimeDirectory ? await prepareWindowsRuntime(options.runtimeDirectory, options.runtimeSha256) : undefined;

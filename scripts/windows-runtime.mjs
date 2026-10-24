@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { resolve } from "node:path";
+import { assertSupportedNode } from "./runtime-policy.mjs";
 
 export function readPackagingOptions(args) {
   const result = {};
@@ -41,5 +42,6 @@ export async function prepareWindowsRuntime(directory, expectedSha256) {
   if (identity.platform !== "win32" || identity.arch !== "x64" || !/^24\.\d+\.\d+$/.test(identity.version)) {
     throw new Error("Portable bundles currently require Windows x64 Node.js 24.");
   }
+  assertSupportedNode(identity.version);
   return { binary, license, identity: { ...identity, sha256, licenseSha256: createHash("sha256").update(license).digest("hex") } };
 }

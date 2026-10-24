@@ -22,7 +22,7 @@ async function fixture(serverCode) {
   roots.push(root);
   await mkdir(join(root, "scripts"));
   await mkdir(join(root, "dist"));
-  for (const name of ["serve.mjs", "rendezvous.mjs", "lan-signaling.mjs", "local-http-security.mjs"]) {
+  for (const name of ["serve.mjs", "runtime-policy.mjs", "rendezvous.mjs", "lan-signaling.mjs", "local-http-security.mjs"]) {
     await copyFile(resolve("scripts", name), join(root, "scripts", name));
   }
   if (serverCode) await writeFile(join(root, "scripts/serve.mjs"), serverCode);
@@ -162,5 +162,5 @@ it("never opens non-loopback or shell-bearing addresses", async () => {
 
 it("rejects unsupported runtime versions before launch", () => {
   for (const version of ["18.20.0", "20.18.3", "21.7.0", "22.11.0", "23.9.0"]) expect(() => assertSupportedNode(version)).toThrow("newer runtime");
-  for (const version of ["20.19.0", "22.12.0", "24.0.0", "25.0.0"]) expect(() => assertSupportedNode(version)).not.toThrow();
+  for (const version of ["22.23.4", "24.22.1", "26.12.1"]) expect(() => assertSupportedNode(version)).not.toThrow();
 });

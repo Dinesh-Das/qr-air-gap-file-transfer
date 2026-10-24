@@ -21,7 +21,9 @@ transfer channel and may be restricted by an employer’s data-handling policy.
 
 ## Run locally
 
-Node.js `^20.19`, `^22.12`, or `>=24` is required.
+Patched Node.js `^22.23.4`, `^24.22.1`, or `^26.12.1` is required.
+These floors include the 21 October 2026 security fixes. Other release lines
+require review before use. The app never downloads a runtime automatically.
 
 ```sh
 npm install
@@ -51,7 +53,7 @@ The verifier rejects missing, extra, or changed files. Checksums detect copy
 errors; they do not authenticate the publisher. Node and a supported browser
 must already be installed. Packaging does not declare the release READY.
 
-An optional Windows x64 bundle can include Node.js 24. On the Windows build
+An optional Windows x64 bundle can include Node.js 24.22.1 or a newer 24.x patch. On the Windows build
 machine, obtain the official versioned `node.exe` and complete matching `LICENSE`
 in a trusted directory. Independently verify the binary SHA-256 against Node's
 official release checksums, then run after building:

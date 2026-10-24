@@ -98,7 +98,7 @@ are rejected.
 
 ## Install and run
 
-Node.js `^20.19`, `^22.12`, or `>=24` is required on the connected development
+Patched Node.js `^22.23.4`, `^24.22.1`, or `^26.12.1` is required on the connected development
 machine that builds the app.
 
 ```powershell
