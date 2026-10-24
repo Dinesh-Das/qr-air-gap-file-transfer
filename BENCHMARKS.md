@@ -4,13 +4,22 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
-The prefix-hash candidate builds as index-KefphoDT.js. Its app source gate passed
-615 unit and101 browser cases with audit0. It removes duplicate incremental SHA
-work for the first nonempty source file while independent file/stream digests
-remain identical. Eight vectors cover SHA/read boundaries and empty files. Native
-candidate5GiB and paired performance evidence are pending. All DON1UPCZ records
-below are preserved baseline evidence. See prefix-hash-candidate-2026-10-24.json
-and SPEC-prefix-hash-comparison.md; READY remains false.
+The prefix-hash candidate builds as index-KefphoDT.js. Source49607c5 passed
+628 unit and101 browser cases with audit0. One serial baseline-first comparison
+on the same hosted Windows machine then completed both5GiB transfer/save cases,
+including full byte checks and complete native observations (622 baseline rows,
+534 candidate rows). Source preparation sampled inclusive time fell from178.795s
+to89.693s (49.8%); cumulative saved-and-verified time fell from864.372s to792.156s.
+These are observations from one instrumented pair, subject to order/cache/runtime
+variance. They are not statistical speedup or physical Wi-Fi throughput acceptance.
+
+The optimization avoids duplicate SHA input for the first nonempty file; eight
+independent hash/work vectors cover empty files and SHA/read boundaries. Both
+hosted cases used Node24.22.1. Existing portable Node24.22.0 packages predate its
+security fixes; fresh patched-runtime packages remain pending. Injected pickers,
+OPFS save and deliberately denied cleanup do not qualify real Windows permissions
+or native destination cleanup. See [paired receipt](release-evidence/prefix-hash-pair-2026-10-24.json)
+and SPEC-prefix-hash-comparison.md. Keep the optimization; READY remains false.
 
 Toolchain security patch `82391c2` rebuilds the app as `index-DON1UPCZ.js`
 and `block-store.worker-9i0g9xys.js`. Vite8.2.4/Vitest4.1.12 audits and full
