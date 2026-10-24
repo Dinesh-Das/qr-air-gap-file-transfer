@@ -5,8 +5,11 @@ import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { freeSignalPort } from "../tests/free-signal-port.mjs";
 import { formatBytes } from "../src/lib/format";
+import { installIceDiagnostics } from "./ice-diagnostics";
+import { limitSdpToLocalCandidates } from "../src/lib/webrtc-signaling";
 
 async function setupPair(context: BrowserContext, alteredOffer = false, fileBytes = 120_000, realRuntime = false, manual = false, durableSource = false, selectFiles = false, dropSource = false, manyFiles = false, reuseSource = false, rapidPairingActions = false) {
+  await context.addInitScript(installIceDiagnostics);
   let offer: { sessionId: string; sdp: string };
   let answer: { sessionId: string; sdp: string } | undefined;
   if (!realRuntime) await context.route("**/api/rendezvous/**", async (route) => {
@@ -42,6 +45,7 @@ async function setupPair(context: BrowserContext, alteredOffer = false, fileByte
     window.RTCPeerConnection = class extends OriginalPeer {
       constructor(config?: RTCConfiguration) {
         super(config);
+        window.__qrftObservePeer!(this);
         (window as unknown as { testPeer: RTCPeerConnection }).testPeer = this;
         this.addEventListener("datachannel", (event) => { state.testChannel = event.channel; });
       }
@@ -121,7 +125,25 @@ async function setupPair(context: BrowserContext, alteredOffer = false, fileByte
   else await sender.getByRole("button", { name: selectFiles ? "Choose files" : "Choose folder", exact: true }).click();
   if (rapidPairingActions) await clickPairingRepeatedly(sender, "Get pairing code");
   else await sender.getByRole("button", { name: "Get pairing code" }).click();
-  await expect(sender.locator(".pairing-code-large")).toHaveText(/\d{3} \d{3}/);
+  try {
+    await expect(sender.locator(".pairing-code-large")).toHaveText(/\d{3} \d{3}/);
+  } catch (error) {
+    try {
+      const rows = await Promise.allSettled([sender, receiver].map(page => page.evaluate(() => window.__qrftIceDiagnostics)));
+      const diagnostics = rows.map((result, role) => {
+        if (result.status === "rejected") return { role, readError: String(result.reason) };
+        const report = result.value;
+        const policies = report?.peers.map(peer => peer.descriptions.map(description => {
+          if (description.clipped) return { status: "not-evaluated-clipped" };
+          try { return { status: "accepted", keptLines: limitSdpToLocalCandidates(description.candidateLines.join("\r\n") + "\r\n").split(/\r?\n/).filter(Boolean).length }; }
+          catch (cause) { return { status: "rejected", error: String(cause) }; }
+        }));
+        return { role: role === 0 ? "sender" : "receiver", report, policies };
+      });
+      await test.info().attach("pairing-native-ice-failure", { body: JSON.stringify(diagnostics, null, 2), contentType: "application/json" });
+    } catch { /* Diagnostics must never replace the original failed assertion. */ }
+    throw error;
+  }
   const pairingCode = (await sender.locator(".pairing-code-large").textContent())!.replace(/\s/g, "");
   await receiver.getByRole("textbox", { name: "Six-digit pairing code" }).fill(pairingCode);
   if (manual) {
@@ -134,6 +156,44 @@ async function setupPair(context: BrowserContext, alteredOffer = false, fileByte
   for (const page of [sender, receiver]) await expect(page.getByRole("button", { name: "Codes match", exact: true })).toBeEnabled();
   return { sender, receiver, errors };
 }
+
+test("pairing setup retains ICE diagnostics when candidates are suppressed", async ({ context }) => {
+  await context.addInitScript(() => {
+    const Parent = RTCPeerConnection;
+    window.RTCPeerConnection = class extends Parent {};
+    let prototype = RTCPeerConnection.prototype;
+    let descriptor = Object.getOwnPropertyDescriptor(prototype, "localDescription");
+    while (!descriptor && Object.getPrototypeOf(prototype)) {
+      prototype = Object.getPrototypeOf(prototype);
+      descriptor = Object.getOwnPropertyDescriptor(prototype, "localDescription");
+    }
+    if (!descriptor?.get) throw Error("Native local description getter is missing");
+    const read = descriptor.get;
+    // Explicit fault injection, only in this isolated test context. It does not
+    // reproduce the cause of the earlier unexplained native Chrome failure.
+    Object.defineProperty(prototype, "localDescription", {
+      ...descriptor,
+      get() {
+        const description = read.call(this) as RTCSessionDescription | null;
+        return description ? new RTCSessionDescription({ type: description.type,
+          sdp: description.sdp.replace(/^a=candidate:[^\r\n]*\r?\n?/gm, "") }) : null;
+      },
+    });
+  });
+  await expect(setupPair(context)).rejects.toThrow(/toHaveText/);
+  const attachment = test.info().attachments.find(item => item.name === "pairing-native-ice-failure");
+  expect(attachment?.body).toBeTruthy();
+  const rows = JSON.parse(attachment!.body!.toString());
+  const sender = rows.find((row: { role: string }) => row.role === "sender");
+  expect(sender.report.peers.length).toBeGreaterThan(0);
+  expect(sender.report.peers.some((peer: { descriptions: Array<{ state: string; candidateLineCount: number }> }) =>
+    peer.descriptions.some(description => description.state === "complete" && description.candidateLineCount === 0))).toBe(true);
+  expect(sender.policies.flat().some((policy: { status: string; error?: string }) =>
+    policy.status === "rejected" && policy.error?.includes("LocalCandidateUnavailableError"))).toBe(true);
+  const page = context.pages()[0];
+  await expect(page.getByRole("button", { name: "Retry connection", exact: true })).toBeVisible();
+  expect(await page.evaluate(() => (window as unknown as { sentBytes: number }).sentBytes)).toBe(0);
+});
 
 async function clickPairingRepeatedly(page: Page, name: "Get pairing code" | "Connect to sender") {
   await page.evaluate(() => {
