@@ -13,9 +13,25 @@ memory and system-wide TCP counters are collected after the test, so they do
 not establish the cause of the earlier hosted `ERR_NO_BUFFER_SPACE` failure.
 That failure and the earlier candidate-availability failure remain preserved
 and unexplained. See [source qualification](release-evidence/host-network-diagnostics-2026-10-24.json).
-There is no native-large qualification for DNB yet; earlier Cvz proof retains
-its exact bundle scope. Physical Wi-Fi and general resource/throughput
-acceptance remain open. READY is false.
+Run `40110200670` tested exact main source `43bc939` after its own complete
+667-unit/110-browser/audit0 gate. One hosted Windows 5 GiB transfer/save passed:
+all 5,368,709,120 source/saved bytes were compared on the original VM, 87,382
+binary frames and the complete expected ACK index set matched, and all 520
+native rows were complete. Both main-page CPU profiles were retained. The
+independent audit verified metadata, five compiled assets, 179 pinned source
+paths and profiles; bounded public-recipe recomputation corroborated identities.
+Hosted payloads were not uploaded or physically re-read locally.
+
+Received/save-verified milestones were 610.577s/818.638s from the common
+instrumented start, including preparation, pairing and checks. These are not
+network throughput measurements or a controlled speed comparison. Periodic
+process samples may miss peaks/new processes; page CPU profiles exclude
+workers/native stacks. Injected pickers, OPFS save and deliberately denied
+cleanup do not qualify actual native permissions or destination cleanup.
+See [current DNB 5 GiB qualification](release-evidence/native-dnb-5gib-2026-10-24.json).
+Earlier Cvz proof retains its exact bundle scope. Physical two-laptop Wi-Fi,
+10/50/100 GB scaling and general resource/throughput acceptance remain open.
+READY is false.
 
 The earlier Cvz bundle contains the optical resume transaction-rejection fix.
 Sourcee6e853e passed661unit and110browser cases locally in installed Chrome and

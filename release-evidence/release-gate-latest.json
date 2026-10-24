@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-24T16:03:43.808Z",
+  "recordedAt": "2026-10-24T16:39:56.972Z",
   "clientDate": "2026-10-24",
-  "status": "Current DNB source6083c5e passes667 unit/110 browser tests locally and hosted with audit0 and matching20/23-file packages. Earlier native candidate availability and hosted document buffer failure remain unresolved. Current DNB native large, physical Wi-Fi, GUI and broader resource/throughput acceptance incomplete; READY false.",
+  "status": "Current DNB passed one hosted Windows 5 GiB native transfer/save with every byte checked, 520 complete native rows and two page CPU profiles; exact43bc939 source gate667 units/110 browser/audit0. Earlier availability causes remain unresolved. Physical two-laptop, GUI, broad resource and throughput acceptance incomplete; READY false.",
   "releaseReady": false,
   "evidence": {
     "status": "Sealed exact-source gates, compiler cleanup and bounded post-test diagnostics; previous failures retained",
@@ -826,7 +826,7 @@
     "oneGiBTwoCopyBudgetBytes": 4714397696,
     "fiveGiBTwoCopyBudgetBytes": 13304332288,
     "attempted": false,
-    "reason": "No new local large test; user reports space unavailable and unchanged reserve/copy budgets are preserved. Historical Cvz5GiB proof does not qualify current DNB.",
+    "reason": "No new local large test; user reports space unavailable and unchanged reserve/copy budgets are preserved. A separate hosted current-DNB 5 GiB case passed; see currentNativeLargeQualification.",
     "userResponse": "Space is unavailable now",
     "releaseReady": false
   },
@@ -1013,8 +1013,8 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-24T16:03:43.808Z",
-  "currentInputsScope": "181 selected local source/document inputs at qualified6083c5e, before reporting-only bookkeeping overlays. Includes new diagnostic helper/test/spec; not a hosted native-trial snapshot.",
+  "updatedAt": "2026-10-24T16:39:56.972Z",
+  "currentInputsScope": "181 selected local source/document inputs at qualified6083c5e, before reporting-only bookkeeping overlays. A separate currentNativeLargeQualification binds179 hosted native-selector inputs at43bc939. This local snapshot remains at6083c5e.",
   "hostedCodeGate": {
     "status": "Completed success",
     "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40087876844",
@@ -2479,16 +2479,29 @@
   },
   "currentNativeLargeQualification": {
     "clientBundle": "index-DNBPx8fV.js",
-    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
-    "status": "Not run for this compiled bundle; previous Cvz 5 GiB proof remains historical.",
-    "nativeRows": null,
-    "everyByteCompared": null,
+    "sourceCommit": "43bc93944cfa7e5837490753a5d16491b84310da",
+    "status": "One hosted Windows 5 GiB native compiled-UI transfer/save passed and independently audited.",
+    "receipt": "release-evidence/native-dnb-5gib-2026-10-24.json",
+    "workflowRun": 40110200670,
+    "evidence": {
+      "root": "C:/Users/dines/QRFT-qualification-evidence/native-dnb-5gib-2026-10-24-43bc939",
+      "sealed": true,
+      "files": 63,
+      "bytes": 12844326,
+      "manifestBytes": 10870,
+      "sha256": "ef1ce53fe0f946ce0703d6eda19562f53861f949b3484559b0da995b3c5baf0e"
+    },
+    "nativeRows": 520,
+    "everyByteCompared": 5368709120,
+    "streamSha256": "49ccaf28b2735f4680360fd68e8fa37c16e6de5ccc7450840e4c649a8c3d4f48",
+    "cpuProfilesComplete": true,
+    "sourceGatePassed": true,
     "physicalTwoLaptop": false,
     "performanceAccepted": false,
     "resourceMatrixAccepted": false,
     "releaseReady": false,
-    "priorReceipt": "release-evidence/native-cvz-5gib-2026-10-24.json",
-    "receipt": "release-evidence/host-network-diagnostics-2026-10-24.json"
+    "scope": "Independent retained metadata/assets/source/CPU audit plus public dataset identity recomputation. Native completeness means every requested before-inventory PID measured; after-inventory changes are retained separately. Periodic samples can miss peaks/new processes. No continuous RAM bound, physical LAN, GUI or general throughput/resource/readiness acceptance.",
+    "priorReceipt": "release-evidence/native-cvz-5gib-2026-10-24.json"
   },
   "previousQualificationBeforeNativeUiHarness": {
     "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
@@ -2555,18 +2568,18 @@
   },
   "currentHostedSourceGate": {
     "status": "Completed success",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40087876844",
-    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40110200670",
+    "sourceCommit": "43bc93944cfa7e5837490753a5d16491b84310da",
     "unitTests": 667,
     "unitFiles": 66,
     "browserTests": 110,
     "auditFindings": 0,
     "node": "v24.22.1",
-    "artifactId": 12557558847,
-    "artifactSha256": "3fea32de32b4183b562fa43c8a5c9a94250d2416c2eaf5705b3cd7e89feefbae",
-    "scope": "Verified downloaded full source/browser/package gate; native large jobs skipped.",
+    "artifactId": 12566850167,
+    "artifactSha256": "68a082b2b56b5bd9b98678535ffc917d13f7f08af6c8c2d845f203312b0b7e8c",
+    "scope": "Verified downloaded complete source/browser/package prerequisite for the separately audited current-DNB native case.",
     "releaseReady": false,
-    "receipt": "release-evidence/host-network-diagnostics-2026-10-24.json"
+    "receipt": "release-evidence/native-dnb-5gib-2026-10-24.json"
   },
   "previousQualificationBeforeCpuProfileHarness": {
     "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
