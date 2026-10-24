@@ -192,7 +192,7 @@ function requestResult<T>(request: IDBRequest<T>): Promise<T> {
 }
 
 function transactionComplete(transaction: IDBTransaction): Promise<void> {
-  return new Promise((resolve, reject) => {
+  const completed = new Promise<void>((resolve, reject) => {
     transaction.oncomplete = () => resolve();
     transaction.onerror = () =>
       reject(
@@ -203,4 +203,8 @@ function transactionComplete(transaction: IDBTransaction): Promise<void> {
         transaction.error ?? new Error("Sender resume transaction aborted."),
       );
   });
+  // A failed request can exit its caller before it awaits the transaction.
+  // Observe that rejection now, while returning the original rejecting promise.
+  void completed.catch(() => undefined);
+  return completed;
 }
