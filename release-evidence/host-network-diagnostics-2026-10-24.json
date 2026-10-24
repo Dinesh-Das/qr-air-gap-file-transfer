@@ -1,0 +1,179 @@
+{
+  "recordedAt": "2026-10-24T16:03:43.808Z",
+  "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+  "sourceCleanupCommit": "c06e4e5bf42b4e5ad8436f8795dc88c54b1feeb4",
+  "baseMain": "48a0f6ade52d347a6991b63634849f28d6fdb0b7",
+  "status": "Reviewed unused-code cleanup and test-only host diagnostics pass complete local and hosted gates. Routine integration qualified; earlier availability causes unresolved.",
+  "decision": "Integrate reviewed source; no release readiness declaration.",
+  "releaseReady": false,
+  "evidence": {
+    "root": "C:/Users/dines/QRFT-qualification-evidence/host-network-diagnostics-2026-10-24-5a7825c",
+    "sealed": true,
+    "files": 44,
+    "bytes": 8084902,
+    "manifestBytes": 7562,
+    "sha256": "05338bcf08e16d8b32dab225a1ef8cdeca50205da7c68c4ffbac978ede5672ea"
+  },
+  "localFullGate": {
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "gateExit": 0,
+    "unitTests": 667,
+    "unitFiles": 66,
+    "browserTests": 110,
+    "browserChannel": "installed Chrome",
+    "auditFindings": 0,
+    "packageFiles": 20,
+    "sourceInputsUnchanged": 181,
+    "rootCauseResolved": false,
+    "scope": "Complete local gate with test-only post-failure hook; old hosted navigation/candidate availability causes remain unresolved. No new DNB native large, physical, GUI or general resource/throughput acceptance.",
+    "releaseReady": false
+  },
+  "sourceGate": {
+    "at": "2026-10-24T16:00:56.631Z",
+    "artifactId": 12557558847,
+    "zipBytes": 3597340,
+    "sha256": "3fea32de32b4183b562fa43c8a5c9a94250d2416c2eaf5705b3cd7e89feefbae",
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "runId": "40087876844",
+    "node": "v24.22.1",
+    "gateExit": 0,
+    "unitTests": 667,
+    "browserTests": 110,
+    "packageFiles": 20,
+    "selectedFiles": [
+      "ci-evidence/run.json",
+      "ci-evidence/gate-exit-code.txt",
+      "ci-evidence/package-smoke.json",
+      "ci-evidence/gate.txt"
+    ],
+    "scope": "Downloaded artifact ZIP SHA matches GitHub API digest; selected frozen run/gate/package records independently checked. Whole original ZIP retained, selected records extracted. No native5GiB/physical qualification.",
+    "releaseReady": false,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40087876844",
+    "unitFiles": 66,
+    "auditFindings": 0
+  },
+  "preDiagnosticHostedGate": {
+    "at": "2026-10-24T10:56:07.524Z",
+    "artifactId": 12557687771,
+    "zipBytes": 3597516,
+    "sha256": "1961e50dc7634819a2f82914298be44e783039b84df1804de537933725ca827f",
+    "sourceCommit": "5a7825ca39262385ff90e75153587ca207a3435f",
+    "runId": "40087342279",
+    "node": "v24.22.1",
+    "gateExit": 0,
+    "unitTests": 661,
+    "browserTests": 110,
+    "packageFiles": 20,
+    "selectedFiles": [
+      "ci-evidence/run.json",
+      "ci-evidence/gate-exit-code.txt",
+      "ci-evidence/package-smoke.json",
+      "ci-evidence/gate.txt"
+    ],
+    "scope": "Downloaded artifact ZIP SHA matches GitHub API digest; selected frozen run/gate/package records independently checked. Whole original ZIP retained, selected records extracted. No native5GiB/physical qualification.",
+    "releaseReady": false
+  },
+  "sourceInputs": {
+    "count": 181,
+    "path": "C:/Users/dines/QRFT-qualification-evidence/host-network-diagnostics-2026-10-24-5a7825c/SOURCE-SNAPSHOT.json",
+    "bytes": 29919,
+    "sha256": "1f88dee6afed74f978e3f7cbf20a0124a97338fdc9dfa3838778016668440242",
+    "scope": "181 selected source/document inputs at source6083c5e, captured while gates were running and rechecked unchanged after the passing local gate; both full gates are now complete. Not a hosted native-trial snapshot."
+  },
+  "assets": [
+    {
+      "path": "dist/assets/block-store.worker-9i0g9xys.js",
+      "bytes": 2415,
+      "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-DNBPx8fV.js",
+      "bytes": 556943,
+      "sha256": "b234d13c848614574ebbed591281d18d05524c908b39cdb6c71d81fbbaca7378"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "3f721b3c454dd5f75a611e6d1e3bd27342ad76f55f2fc4d1be9944e4ba553656"
+    }
+  ],
+  "packages": {
+    "builtAtSource": "c06e4e5bf42b4e5ad8436f8795dc88c54b1feeb4",
+    "packages": [
+      {
+        "directory": "C:/Users/dines/QRFT-release-candidates/unused-cleanup-2026-10-24-c06e4e5/external runtime bundle",
+        "files": 20,
+        "assets": 5,
+        "manifestSha256": "0ad8d9ad53fa840f677bfbee1a54084247149e4e2bb6f48256e6c93a5ad6cee6",
+        "allFilesIndependentlyHashed": true,
+        "sourceAndAssetsMatch": true,
+        "blankPhysicalCases": 42,
+        "releaseReady": false
+      },
+      {
+        "directory": "C:/Users/dines/QRFT-release-candidates/unused-cleanup-2026-10-24-c06e4e5/portable bundle",
+        "files": 23,
+        "assets": 5,
+        "manifestSha256": "b2bc72e01dccc7ba05f644694c270ff76059de0f34be535b037cd17e4eab4324",
+        "allFilesIndependentlyHashed": true,
+        "sourceAndAssetsMatch": true,
+        "blankPhysicalCases": 42,
+        "releaseReady": false
+      }
+    ],
+    "scope": "Exact inventories/source/assets/runtime pin plus module HTTP proofs only; no actual GUI/native picker/physical acceptance.",
+    "releaseReady": false,
+    "moduleProofSource": "Original c06 exact-file module HTTP/start/stop records retained in this root with provenance. Current packaged-source files and all assets independently rehashed; actual GUI not tested."
+  },
+  "diagnosticControls": {
+    "unitTests": 6,
+    "passed": 6,
+    "optionalUnusedTypecheckExit": 0,
+    "windowsCollectorTcpStatus": "sampled",
+    "syntheticErrorAttachments": 1,
+    "rootCauseReproduced": false,
+    "initialRed": "New helper absent; not an application failure reproduction.",
+    "review": "Fresh-context reviewer found no actionable defects.",
+    "crossModel": "Skipped for autonomous continuation; no external CLI."
+  },
+  "previousFailedGate": {
+    "receipt": "release-evidence/unused-code-candidate-2026-10-24.json",
+    "runId": 40086419522,
+    "sourceCommit": "c06e4e5bf42b4e5ad8436f8795dc88c54b1feeb4",
+    "browserPassed": 109,
+    "browserFailed": 1,
+    "failure": "Initial localhost document navigation net::ERR_NO_BUFFER_SPACE",
+    "rootCauseResolved": false
+  },
+  "nativeCandidateAvailabilityRootCauseUnresolved": true,
+  "hostNavigationBufferFailureRootCauseUnresolved": true,
+  "currentNativeLargeQualification": {
+    "clientBundle": "index-DNBPx8fV.js",
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "status": "Not run for this compiled bundle; previous Cvz 5 GiB proof remains historical.",
+    "nativeRows": null,
+    "everyByteCompared": null,
+    "physicalTwoLaptop": false,
+    "performanceAccepted": false,
+    "resourceMatrixAccepted": false,
+    "releaseReady": false,
+    "priorReceipt": "release-evidence/native-cvz-5gib-2026-10-24.json"
+  },
+  "limitations": [
+    "Post-test host/Node/system-wide TCP context is not a measurement at the failed navigation or a cause/capacity proof.",
+    "Passing later source gates do not erase or explain earlier failed gates.",
+    "Compiler unused-symbol checks do not prove global absence of dead or obsolete code.",
+    "Module package checks use injected browser handoff; real Windows GUI/native picker/permissions/destination cleanup remain unqualified.",
+    "No current DNB native large, physical Wi-Fi, general resource/throughput or final release acceptance."
+  ]
+}

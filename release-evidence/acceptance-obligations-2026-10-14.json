@@ -8809,8 +8809,11 @@
       "section": "RELEASE QUALITY",
       "subsection": "",
       "kind": "list-item",
-      "status": "review-pending",
-      "evidence": []
+      "status": "partial-reviewed-compiler-unused-symbols",
+      "evidence": [
+        "release-evidence/host-network-diagnostics-2026-10-24.json"
+      ],
+      "scope": "Optional TypeScript noUnusedLocals/noUnusedParameters found four unused items; removed and checks pass without suppression, plus full local/hosted gates. Not proof of global absence of dead, dynamically unreachable or obsolete code."
     },
     {
       "id": "L1041",
@@ -10381,7 +10384,7 @@
     }
   ],
   "scope": "Lossless index of every nonempty original source line, including narrative and explicit obligations. Entries link to subsequent scoped reviews without shrinking the original requirements. Partial evidence and reviewed entries do not imply full acceptance; review-pending entries are not claimed achieved. All original line IDs and text remain authoritative.",
-  "updatedAt": "2026-10-24T09:28:31.164Z",
+  "updatedAt": "2026-10-24T16:03:43.808Z",
   "peerAuthorizationStaticReview": {
     "path": "release-evidence/peer-authorization-static-review-2026-10-24.json",
     "reviewed": [
@@ -10396,5 +10399,12 @@
     "receipt": "release-evidence/resume-idb-failure-2026-10-24.json",
     "sourceCommit": "088e2dc6ce649703ad2e29e9c8040ee198fce44c",
     "releaseReady": false
+  },
+  "unusedCodeCompilerReview": {
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "reviewed": 1,
+    "markedComplete": 0,
+    "remainingReviewPending": 259,
+    "receipt": "release-evidence/host-network-diagnostics-2026-10-24.json"
   }
 }
