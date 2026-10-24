@@ -4,7 +4,17 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
-The prefix-hash candidate builds as index-KefphoDT.js. Source49607c5 passed
+The current Cvz bundle contains the optical resume transaction-rejection fix.
+Sourcee6e853e passed661unit and110browser cases locally in installed Chrome and
+in hosted Chromium, with audit0 and matching20/23file package module proof.
+Bounded, credential-redacted test diagnostics now distinguish native candidate
+events from the descriptions accepted by the local policy. A controlled suppressed
+description tests this capture; it does not explain the earlier native Chrome
+pairing failure. That failure remains preserved and its cause is still open.
+There is no new Cvz multiGB, physical Wi-Fi, resource or throughput qualification.
+See [current source and diagnostic qualification](release-evidence/pairing-ice-diagnostics-2026-10-24.json).
+
+The earlier prefix-hash candidate built as index-KefphoDT.js. Source49607c5 passed
 628 unit and101 browser cases with audit0. One serial baseline-first comparison
 on the same hosted Windows machine then completed both5GiB transfer/save cases,
 including full byte checks and complete native observations (622 baseline rows,

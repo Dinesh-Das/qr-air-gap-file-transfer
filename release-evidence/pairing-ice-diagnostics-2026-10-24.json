@@ -1,0 +1,242 @@
+{
+  "recordedAt": "2026-10-24T09:56:55.257Z",
+  "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+  "sourceFixCommit": "088e2dc6ce649703ad2e29e9c8040ee198fce44c",
+  "baseMain": "478c1061a3db552934090c8de38f89e3c57cc352",
+  "status": "Current instrumented source passes local and hosted full gates. Integrate reviewed optical IndexedDB rejection fix and test-only ICE diagnostics. Earlier native candidate availability failure remains unresolved.",
+  "decision": "Routine main integration; no production readiness declaration.",
+  "releaseReady": false,
+  "nativeCandidateCauseResolved": false,
+  "evidence": {
+    "root": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9",
+    "sealed": true,
+    "files": 47,
+    "bytes": 4722808,
+    "manifestBytes": 7855,
+    "sha256": "c918992db69588526a0bfbdf70dfb56b4291c67f1b6bd9eb3ac5c9a0a551f96f",
+    "scope": "Redacted bounded test ICE diagnostics/control; exacte6e853e local and hosted661unit/110browser/audit0/package20 gates pass. Earlier088Chrome108+1failure remains immutable/unresolved, historical symptom predatesfix. No candidate cause fix or currentCvz multiGB/physical/GUI/resource/throughput/readiness acceptance."
+  },
+  "sourceGate": {
+    "run": 40083095355,
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "units": 661,
+    "browser": 110,
+    "conclusion": "success",
+    "unitFiles": 65,
+    "auditFindings": 0,
+    "packageFiles": 20,
+    "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
+    "artifactId": 12556361310,
+    "artifactSha256": "85b431dac80b659893fcd4a00b80facf458c5cefeca470ed13edcb1dc220dc36",
+    "artifactDigestIndependentlyVerified": true,
+    "node": "v24.22.1",
+    "nativeUiJobRan": false
+  },
+  "localFullGate": {
+    "exit": 0,
+    "browser": 110,
+    "packageFiles": 20,
+    "unitFiles": 65,
+    "typecheck": 0,
+    "auditFindings": 0,
+    "units": 661,
+    "build": 0,
+    "browserChannel": "installed Chrome",
+    "scope": "One full validation after shared test observer changed; not replacement or explanation of the prior failed uninstrumented gate."
+  },
+  "sourceInputs": {
+    "count": 178,
+    "path": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9/SOURCE-SNAPSHOT.json",
+    "bytes": 26730,
+    "sha256": "84e1871e972b66bfe1aa3e22299c910ed9113aa91d8cdcbf0d313c67bddf0d9b",
+    "scope": "Local selected source/input snapshot at qualified e6e853e; code unchanged during gate. App Cvz bytes match both previously independently hashed20/23file packages. This is not a hosted native-trial snapshot."
+  },
+  "assets": [
+    {
+      "path": "dist/assets/block-store.worker-9i0g9xys.js",
+      "bytes": 2415,
+      "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+    },
+    {
+      "path": "dist/assets/index-C5foWVjs.css",
+      "bytes": 26260,
+      "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+    },
+    {
+      "path": "dist/assets/index-CvzITcBr.js",
+      "bytes": 557044,
+      "sha256": "bc51074587b802e260abb57b66167d54b4ca70df5cd84f6a36441c05ca27ecf0"
+    },
+    {
+      "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+      "bytes": 43951,
+      "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "153497d2d5dab2b263240b0e7da33c930ea3349d98aac2ca888245c0dd5ac1f8"
+    }
+  ],
+  "diagnosticBounds": {
+    "nativeMethodsChanged": false,
+    "maxCandidateChars": 512,
+    "testOnly": true,
+    "maxDescriptions": 4,
+    "credentialExtensionsRedacted": true,
+    "maxPeers": 16,
+    "timeoutChanged": false,
+    "maxCandidateLines": 64,
+    "productionPolicyChanged": false,
+    "maxEvents": 32
+  },
+  "controlledFault": {
+    "independentArtifactAuditPassed": true,
+    "provesOriginalCause": false,
+    "nativeCandidateEventObserved": true,
+    "explicitSuppressedDescription": true,
+    "independentProof": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9/INDEPENDENT-CONTROL.json",
+    "nativeCandidateEvents": 1,
+    "completeZeroCandidateSnapshots": 2
+  },
+  "tests": {
+    "observerUnits": 5,
+    "redactionRed": {
+      "failed": 1,
+      "passed": 4
+    },
+    "redactionGreen": 5,
+    "controlBrowser": 1,
+    "earlierTargetedBrowser": 2,
+    "scope": "Explicit candidate-suppression fault control plus native observer checks; no reproduction of original spontaneous candidate absence."
+  },
+  "review": {
+    "firstFinding": "Credential extensions redacted before commit",
+    "secondReview": "No concrete remaining scoped issues",
+    "redactionRedPassed": 4,
+    "redactionGreen": 5,
+    "crossModel": "Skipped: non-interactive autonomous continuation",
+    "redactionRedFailed": 1,
+    "cycles": 2
+  },
+  "priorFailedGate": {
+    "receipt": "release-evidence/resume-idb-failure-2026-10-24.json",
+    "sourceCommit": "088e2dc6ce649703ad2e29e9c8040ee198fce44c",
+    "localFullGate": {
+      "browserFailed": 1,
+      "failure": "Existing duplicate-completion callback test failed before callback assertion, in setup: LocalCandidateUnavailableError, no pairing code.",
+      "units": 656,
+      "browserPassed": 108,
+      "build": 0,
+      "typecheck": 0,
+      "packageStepRan": false,
+      "files": 64,
+      "audit": 0,
+      "exit": 1
+    },
+    "evidence": {
+      "root": "C:/Users/dines/QRFT-qualification-evidence/idb-resume-failure-2026-10-24-937efa",
+      "sealed": true,
+      "files": 60,
+      "bytes": 2112194,
+      "manifestBytes": 10341,
+      "sha256": "d221658baa1bafbd29af5738f0c88d891a9d657f634c96fd6edd93185e74b71a",
+      "scope": "Resume IndexedDB failure handling:3 native before-fix unhandled rejections,8 after-fix native module cases pass; exact source CI656/109/audit0 passes, local Chrome gate108pass1pairing-setupICEfailure retained. Packages20/23 independently checked outside closure. No physical/GUI/multiGB/resource/readiness acceptance, main not promoted."
+    },
+    "replaced": false,
+    "causeResolved": false
+  },
+  "historicalSymptom": {
+    "proof": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9/HISTORICAL-CANDIDATE-REVIEW.json",
+    "sha256": "81606bf7f313689fc3b1ad8c17caf00e96e072d739a62d5028f517c1db49639d",
+    "scope": "Verified pre-existing symptom before IDB fix, not proof that native causes match."
+  },
+  "packageContinuity": {
+    "receipt": "release-evidence/resume-idb-failure-2026-10-24.json",
+    "packages": [
+      {
+        "directory": "C:/Users/dines/QRFT-release-candidates/idb-resume-2026-10-24-937efa/external runtime bundle",
+        "files": 20,
+        "manifestBytes": 3325,
+        "manifestSha256": "4fab2005e60dd65b57fe5ab80fd7861d5c8a3168a9adb8c25f152e84102cc6b4",
+        "assets": [
+          {
+            "path": "dist/assets/block-store.worker-9i0g9xys.js",
+            "bytes": 2415,
+            "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+          },
+          {
+            "path": "dist/assets/index-C5foWVjs.css",
+            "bytes": 26260,
+            "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+          },
+          {
+            "path": "dist/assets/index-CvzITcBr.js",
+            "bytes": 557044,
+            "sha256": "bc51074587b802e260abb57b66167d54b4ca70df5cd84f6a36441c05ca27ecf0"
+          },
+          {
+            "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+            "bytes": 43951,
+            "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+          },
+          {
+            "path": "dist/index.html",
+            "bytes": 903,
+            "sha256": "153497d2d5dab2b263240b0e7da33c930ea3349d98aac2ca888245c0dd5ac1f8"
+          }
+        ],
+        "independentlyHashed": true,
+        "physicalTemplateNotRun": true
+      },
+      {
+        "directory": "C:/Users/dines/QRFT-release-candidates/idb-resume-2026-10-24-937efa/portable bundle",
+        "files": 23,
+        "manifestBytes": 3785,
+        "manifestSha256": "4c7888d023bb287f2757e5114947a3f814aab69255e20235ed61112ebb4bba98",
+        "assets": [
+          {
+            "path": "dist/assets/block-store.worker-9i0g9xys.js",
+            "bytes": 2415,
+            "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
+          },
+          {
+            "path": "dist/assets/index-C5foWVjs.css",
+            "bytes": 26260,
+            "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
+          },
+          {
+            "path": "dist/assets/index-CvzITcBr.js",
+            "bytes": 557044,
+            "sha256": "bc51074587b802e260abb57b66167d54b4ca70df5cd84f6a36441c05ca27ecf0"
+          },
+          {
+            "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
+            "bytes": 43951,
+            "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+          },
+          {
+            "path": "dist/index.html",
+            "bytes": 903,
+            "sha256": "153497d2d5dab2b263240b0e7da33c930ea3349d98aac2ca888245c0dd5ac1f8"
+          }
+        ],
+        "independentlyHashed": true,
+        "physicalTemplateNotRun": true
+      }
+    ],
+    "currentDistExactlyMatchesAllFivePriorPackageAssets": true,
+    "scope": "Existing independently hashed20/23file Cvz packages built at088; test-onlye6 changes no packaged bytes. Module startup/served assets/shutdown/ports verified; no actual Start.cmd/default-browser GUI or physical laptop test."
+  },
+  "retainedLimitations": {
+    "initialPreRedactionArtifactLocalOnly": true,
+    "originalNativeFailureUnexplained": true,
+    "physicalTwoLaptop": false,
+    "nativeWindowsGUI": false,
+    "currentCvzMultiGBTrial": false,
+    "resourceMatrixAccepted": false,
+    "throughputAccepted": false,
+    "finalWholeReleaseAdversarial": false
+  },
+  "priorLargeFileProofScope": "Historical index-KefphoDT.js5GiB pair remains exact earlier-bundle evidence; current Cvz bundle has no new multiGB/resource qualification."
+}

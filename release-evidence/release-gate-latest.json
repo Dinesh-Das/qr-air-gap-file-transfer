@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-10-22T15:36:01.294Z",
-  "clientDate": "2026-10-23",
-  "status": "Kef prefix-state optimization and patched-runtime policy: b94e746 passed656units/101hostedbrowser/audit0 plus101localChrome and fresh20/23file package module checks. Same-client paired5GiB proof retained at49607c5. Physical/GUI, resource-matrix and throughput acceptance incomplete; READY false. Candidate088e2dc fixes3 optical IndexedDB unhandled rejection paths:8native module cases pass and hosted656unit/109browser/audit0 passes. Local Chrome full gate108pass/1pairing-setupICEfailure remains unresolved; candidate Cvz assets separate, main not promoted.",
+  "recordedAt": "2026-10-24T09:56:55.257Z",
+  "clientDate": "2026-10-24",
+  "status": "Cvz optical resume rejection fix and redacted pairing-test diagnostics: exacte6e853e passed661units/110browser/audit0 locally and hosted, with matching20/23file package module proof. Earlier candidate-availability failure remains preserved and unexplained. Prior5GiB proof is historicalKef; Cvz multiGB/physical/GUI/resource/throughput acceptance incomplete; READY false.",
   "releaseReady": false,
   "evidence": {
-    "status": "Sealed runtime-policy/package/source qualification; prior paired client integrity/performance receipt retained",
-    "local": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292",
-    "receipt": "release-evidence/runtime-security-2026-10-24.json",
-    "pairedReceipt": "release-evidence/prefix-hash-pair-2026-10-24.json"
+    "status": "Sealed exact-source local/hosted gates and bounded ICE diagnostics; original failure retained",
+    "local": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9",
+    "receipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
+    "priorFailureReceipt": "release-evidence/resume-idb-failure-2026-10-24.json"
   },
   "previousCheckpoint": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CANONICAL-BEFORE.json",
   "sourceFixEvidence": {
@@ -39,20 +39,19 @@
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
   },
   "qualification": {
-    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
-    "status": "Exact-source hosted release gate and local Chrome/package module checks passed; physical/GUI/performance/resource requirements incomplete",
-    "unitPassed": 656,
-    "unitFiles": 64,
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "status": "Exact-source hosted and installed-Chrome gates passed; pre-existing native candidate availability risk open",
+    "unitPassed": 661,
+    "unitFiles": 65,
     "typecheck": 0,
     "build": 0,
-    "browserPassed": 101,
+    "browserPassed": 110,
+    "installedChromePassed": 110,
     "auditFindings": 0,
-    "fullHostedCurrentSource": "Sourceb94e746/run40061959432 passed656units64files/101bundledChromium/audit0/type/build/20fileexternalpackage module smoke. Prior5GiB proof is source496 client assets, unchanged here.",
     "nativeWindowsGUI": false,
     "performanceAccepted": false,
     "resourceMatrixAccepted": false,
-    "releaseReady": false,
-    "installedChromePassed": 101
+    "releaseReady": false
   },
   "currentInputs": [
     {
@@ -65,7 +64,7 @@
     },
     {
       "path": ".github/workflows/prefix-hash-comparison.yml",
-      "sha256": "55741245844a06b456075b0079a2a78eff4ca21dda069e57606797aa6d629090"
+      "sha256": "af6faa0d47e369a79dac4f1beecf9e5eb48456c5efb06e96bf6241de6c4e9ffb"
     },
     {
       "path": ".github/workflows/release-check.yml",
@@ -81,7 +80,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "b984a07ff2e70dd1d549fb166ee5915652620e254f68c4c7f3a6308656b5501d"
+      "sha256": "e6492011f9fd22ae3b341e84fc526bfb1ca14784f13c579e6f865e82ef91570d"
     },
     {
       "path": "SPEC-native-ui-qualification.md",
@@ -89,15 +88,23 @@
     },
     {
       "path": "SPEC-prefix-hash-comparison.md",
-      "sha256": "8fc691cad8b19810c2dc64ff8c0a58d5386007b6d80af792134c7bd2c0cdd2cc"
+      "sha256": "c17c0797982820d4b0e67eff11bb2eded5287496964d8769f5e6bcdec69efbaf"
     },
     {
       "path": "TRANSFER_PROCESS.md",
-      "sha256": "35daadc5f14e91966d487f46c1a1e4ca9f38b5528b504f4894c7e08ed661136b"
+      "sha256": "f6816bea1d022226daec4ce096646cac9635f268da82717d5b005f69e392e25d"
     },
     {
       "path": "e2e/browser-channel.ts",
       "sha256": "3fb3e73de33be4999f105f7540f503358483e039c7b115fef842e56ba0fe1ef6"
+    },
+    {
+      "path": "e2e/fixtures/resume-idb-probe.ts",
+      "sha256": "604a70eafa4c3618c6d282d6c726092e22f6b94a453876216e130d0e41cd5769"
+    },
+    {
+      "path": "e2e/ice-diagnostics.ts",
+      "sha256": "f6a9be0ec570cc1014e73a42b4f2c40ba524135fa017171c30caddd0465f0007"
     },
     {
       "path": "e2e/navigation.spec.ts",
@@ -109,7 +116,7 @@
     },
     {
       "path": "e2e/pairing.spec.ts",
-      "sha256": "bfd3cb0cbe4c88345a6fb93e2a82ed0a11da639443dc58ab1c7a7271c16175b8"
+      "sha256": "abcc2725250c8e60288cb43e9b71730440883001ff3ba599ca18b9e9ecde6ca8"
     },
     {
       "path": "e2e/peer-candidate-policy.spec.ts",
@@ -120,16 +127,20 @@
       "sha256": "442f6b9d0fadda014bf49193ae7ca59c0a0e50df7750b705cbe2751dc94c61c6"
     },
     {
+      "path": "e2e/resume-idb-failures.spec.ts",
+      "sha256": "0fb53f2d8fb0f35e6715a36936a8ac6c505c63a52c97be71345755612b268cf7"
+    },
+    {
       "path": "index.html",
       "sha256": "3b7b5e875082dc67de12a3985f466aa88e20c02d9ef7427de7cc54b6dd5e2e6b"
     },
     {
       "path": "package-lock.json",
-      "sha256": "56983ddf6b44fc30d900ca59ad1c931a97f8a5f3d8a95782b7ca9ed79705a77e"
+      "sha256": "0c8753f6ad280f0fc89be10b59a31e76ba719c104788b4223da4f38d87299cf3"
     },
     {
       "path": "package.json",
-      "sha256": "60d065392b6babb902c915f25b67d3c1378143e7545afc579f03ad1f507f6c95"
+      "sha256": "0bf153ed1a5f252c55c34237ea808019a5c43a66ed7dc23310175e4486e17bc0"
     },
     {
       "path": "playwright.config.ts",
@@ -137,7 +148,7 @@
     },
     {
       "path": "release-evidence/acceptance-obligations-2026-10-14.json",
-      "sha256": "a244bc2a3a9a05659a82fd02e84607af7e3a2a71aa89e1082c1539ce056685c2"
+      "sha256": "3e1e35290529ffe5b15bf560520f9e296c6dc7d797dd50a2663c17cce2c80cd3"
     },
     {
       "path": "release-evidence/original-release-requirements.txt",
@@ -197,7 +208,7 @@
     },
     {
       "path": "scripts/launch.mjs",
-      "sha256": "be05feb3e966c0a2528cf7c49f1fbe02c897b4b013b8ffbd4da4885e6f778ea5"
+      "sha256": "f0dcbf5478b844ef5f4841127e1d0ade797c8c56e7ae8420a8240a8e99df98f3"
     },
     {
       "path": "scripts/local-http-security.mjs",
@@ -217,7 +228,7 @@
     },
     {
       "path": "scripts/prefix-comparison-contract.mjs",
-      "sha256": "cd676febdb9e0b5089df5330d82985c3bb87ba52a8ecae82db1c478b03d1324d"
+      "sha256": "4a358a83691b7e909f2d4c58788014f1211b1e3bf908af53995a193d277fef95"
     },
     {
       "path": "scripts/qualify-native-ui.mjs",
@@ -237,11 +248,11 @@
     },
     {
       "path": "scripts/run-prefix-comparison.mjs",
-      "sha256": "a628e08d752978ad026f4006765ab00b5d9664dbbe2e3a899645cd81a78baf46"
+      "sha256": "732becc84661cd65c167176c2d064228b563d3b5380c6e8fbeacc410a48758e0"
     },
     {
       "path": "scripts/runtime-policy.mjs",
-      "sha256": "3a7cf81169401b7121bc69f3dd24c6963be40fe39e15abc517e34b3f8439d065"
+      "sha256": "1a1e5084cf1caa3e0c2d877a252e38ec1e022b250508cc480f224a54c67caf6e"
     },
     {
       "path": "scripts/serve.mjs",
@@ -257,7 +268,7 @@
     },
     {
       "path": "scripts/windows-runtime.mjs",
-      "sha256": "06e4ba8f929c43266e100eaa97db2f516346b9bc78a0f35bd1aaad57bba18edd"
+      "sha256": "2c9ad4e28bf239cfbe20fff78366627ff5105ea002e41980fc24112ae0c81f5c"
     },
     {
       "path": "src/App.tsx",
@@ -369,11 +380,11 @@
     },
     {
       "path": "src/lib/large-sender-resume.ts",
-      "sha256": "8409243c96ab23e049563dc3692395eac97671c2d1cea830fc88e8cac49b79ce"
+      "sha256": "acd5fef8ad04f7f27013c877c7b6153ad489cb7501245026d9cfcafc4bead40d"
     },
     {
       "path": "src/lib/large-transfer.ts",
-      "sha256": "4f4da7799bdbad5ecf7ddff704c818fb710dc1c256b1c1fde59bafb5e0a8e939"
+      "sha256": "261d04535a239a5caeacfa62e4e729d06fc846569aa7485f0eeeb3197b9f84fc"
     },
     {
       "path": "src/lib/optical-schedule.ts",
@@ -385,7 +396,7 @@
     },
     {
       "path": "src/lib/resume.ts",
-      "sha256": "768e35f7143f9ab5ed08135d726acb1a4a3f38b28d31c1ae4e18740f9ba8fd05"
+      "sha256": "5990be39b3334b6b985c16440cb84cebab634968379f082314dcc024e0363fbd"
     },
     {
       "path": "src/lib/screen-wake-lock.ts",
@@ -397,7 +408,7 @@
     },
     {
       "path": "src/lib/sender-resume.ts",
-      "sha256": "808b0b8e3458e06abd95fe9348313faed1cc9f1ff798c6cf91e26ef1403891ea"
+      "sha256": "b965e78e622e4961285b12138e0231ab5f4bfc77c39221c0e529c4bbb6b5cac3"
     },
     {
       "path": "src/lib/stream-protocol.ts",
@@ -548,6 +559,10 @@
       "sha256": "99d03ec2fd940bbe935a66f414175be1bca11557322f845e151b67037fa5e5bb"
     },
     {
+      "path": "tests/ice-diagnostics.test.ts",
+      "sha256": "1ed7970758ec82bff8292b92fad0d3f81ec80b31b474f863721832872907bdbc"
+    },
+    {
       "path": "tests/lan-signaling.test.mjs",
       "sha256": "ce715c1df7868c2470878543c6f2334ec7e51d83f73c72ec62bb0bd48a743c62"
     },
@@ -577,7 +592,7 @@
     },
     {
       "path": "tests/large-transfer-hash-work.test.ts",
-      "sha256": "ec3d2da76401f2f6f7992a342d93fde11749d737c1aab79e9893e914b2e972cc"
+      "sha256": "a2a33b191d238a9306b08b572b4d5d59a01048def3cce3552dc105eb1420b9d3"
     },
     {
       "path": "tests/large-transfer.test.ts",
@@ -589,7 +604,7 @@
     },
     {
       "path": "tests/launcher.test.mjs",
-      "sha256": "cfbefb68a02bdf9e06daf2b79995b779dd5e692a62b0a829517ca6ad8c62ecdb"
+      "sha256": "7c40d4a57e74b0d6b9e8f12221941ab533725b0056f51306de8b840cb9f7a847"
     },
     {
       "path": "tests/local-http-security.test.mjs",
@@ -613,7 +628,7 @@
     },
     {
       "path": "tests/prefix-comparison-contract.test.mjs",
-      "sha256": "e1c41c8465255919d6b9544ae9b03142b864066c46d5fdbec37e8b309ffe56e1"
+      "sha256": "8d9bf81adadcfa1b97a2f41e1495251c162c6b3f757833193082ba4308b3a8f6"
     },
     {
       "path": "tests/protocol.test.ts",
@@ -649,7 +664,7 @@
     },
     {
       "path": "tests/runtime-policy.test.mjs",
-      "sha256": "6c1273546c9358bc8a2a4a37f8aae43094286440db1d2a7ffed6545a968b1281"
+      "sha256": "13b2c62aa18df100e41706bdf28bc8d68d41cadca739ac6ee116d45d47252ebb"
     },
     {
       "path": "tests/screen-wake-lock.test.ts",
@@ -754,11 +769,6 @@
   ],
   "currentAssets": [
     {
-      "path": "dist/index.html",
-      "bytes": 903,
-      "sha256": "ef18c83f9375b83dade1b8e89719b3c4cdbbf67bf341d0306ab4c7b513d1d8b8"
-    },
-    {
       "path": "dist/assets/block-store.worker-9i0g9xys.js",
       "bytes": 2415,
       "sha256": "bd841d29dce4b337d798aefe52cf20464034d060b4cf3400787294e6e3086e9f"
@@ -769,14 +779,19 @@
       "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
     },
     {
-      "path": "dist/assets/index-KefphoDT.js",
-      "bytes": 556960,
-      "sha256": "6b2ca9b333ec43723b7d2d254c7ce679e5bb21cfcfa71fda3f97016c2540de9c"
+      "path": "dist/assets/index-CvzITcBr.js",
+      "bytes": 557044,
+      "sha256": "bc51074587b802e260abb57b66167d54b4ca70df5cd84f6a36441c05ca27ecf0"
     },
     {
       "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
       "bytes": 43951,
       "sha256": "b157457419e0a544694c3b10a6affcb0846da74d89c328178726722ef8f85f67"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 903,
+      "sha256": "153497d2d5dab2b263240b0e7da33c930ea3349d98aac2ca888245c0dd5ac1f8"
     }
   ],
   "rootDistIsPriorVersion": false,
@@ -793,13 +808,13 @@
     "Local transfer trials held below unchanged2GiB C reserve after owned-cache retirement; stable headroom requested, not assumed."
   ],
   "currentLargeTransferPreflight": {
-    "observedUtc": "2026-10-23T16:43:29.357Z",
-    "observedCFreeBytes": 3391176704,
+    "observedUtc": "2026-10-24T09:56:55.257Z",
+    "observedCFreeBytes": 4616572928,
     "minimumReserveBytes": 2147483648,
     "oneGiBTwoCopyBudgetBytes": 4714397696,
     "fiveGiBTwoCopyBudgetBytes": 13304332288,
     "attempted": false,
-    "reason": "Local free space does not meet two additional retained copies plus unchanged reserve/margin. No current-bundle large native test attempted.",
+    "reason": "No new local large test; preserve unchanged reserve/copy budgets and prior user response. Current Cvz multiGB proof remains pending.",
     "userResponse": "Space is unavailable now",
     "releaseReady": false
   },
@@ -853,7 +868,7 @@
       }
     ]
   },
-  "currentReviewPending": 261,
+  "currentReviewPending": 260,
   "activeTransferTransitionEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
@@ -986,20 +1001,20 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-24T04:39:58.200Z",
-  "currentInputsScope": "174 local selected inputs at sourceb94e746, including TRANSFER_PROCESS.md in addition to native harness selection. This local snapshot is not a hosted native-trial snapshot. Exact b94 hosted656/101 gate is separately recorded; paired5GiB inputs remain bound to496.",
+  "updatedAt": "2026-10-24T09:56:55.257Z",
+  "currentInputsScope": "178 selected qualified-source inputs ate6e853e, before reporting-only bookkeeping overlays. Local snapshot, not a hosted native-trial snapshot. Current Cvz has no new native multiGB proof.",
   "hostedCodeGate": {
     "status": "Completed success",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40061959432",
-    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
-    "unitTests": 656,
-    "unitFiles": 64,
-    "browserTests": 101,
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "unitTests": 661,
+    "unitFiles": 65,
+    "browserTests": 110,
     "auditFindings": 0,
     "node": "v24.22.1",
-    "artifactId": 12547539391,
-    "artifactSha256": "a8c38f0683ec2b12633a5bf1685d71e3c368c8681ade6331ddb17c8d387a626a",
-    "scope": "Hosted full source gate and external package module smoke; native5GiB jobs skipped on this push.",
+    "artifactId": 12556361310,
+    "artifactSha256": "85b431dac80b659893fcd4a00b80facf458c5cefeca470ed13edcb1dc220dc36",
+    "scope": "Verified downloaded artifact for full source/browser/external-package gate; native5GiB jobs skipped.",
     "releaseReady": false
   },
   "previousSourceQualification": {
@@ -1048,13 +1063,13 @@
     }
   },
   "currentInputIndex": {
-    "count": 174,
-    "source": "Local SOURCE-SNAPSHOT.json inputs",
+    "count": 178,
+    "source": "Local SOURCE-SNAPSHOT.json selected qualified-source inputs",
     "snapshot": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292/SOURCE-SNAPSHOT.json",
-      "bytes": 25907,
-      "sha256": "b31fc4ce72e4df21607ed369e3632c9f3b91f3d772ee07d762eb646b886156e7",
-      "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9/SOURCE-SNAPSHOT.json",
+      "bytes": 26730,
+      "sha256": "84e1871e972b66bfe1aa3e22299c910ed9113aa91d8cdcbf0d313c67bddf0d9b",
+      "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f"
     }
   },
   "localCandidateRecoveryEvidence": {
@@ -1363,16 +1378,18 @@
     "releaseReady": false
   },
   "currentPackageQualificationEvidence": {
-    "status": "Fresh20fileexternal/23fileportable Node24.22.1 module qualification passed, independently checked exact inventories and source scripts. No actual default-browser/Start.cmd/physical qualification.",
-    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
-    "receipt": "release-evidence/runtime-security-2026-10-24.json",
+    "status": "Current Cvz bytes exactly match independently checked20fileexternal/23fileportable Node24.22.1 packages from088; test-only follow-up changes no package inputs. Module proof only.",
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "packageBuiltAtSource": "088e2dc6ce649703ad2e29e9c8040ee198fce44c",
+    "receipt": "release-evidence/resume-idb-failure-2026-10-24.json",
+    "continuityReceipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
     "nativeWindowsGUI": false
   },
   "currentInputSnapshot": {
-    "path": "C:/Users/dines/QRFT-qualification-evidence/node-runtime-security-2026-10-24-636292/SOURCE-SNAPSHOT.json",
-    "bytes": 25907,
-    "sha256": "b31fc4ce72e4df21607ed369e3632c9f3b91f3d772ee07d762eb646b886156e7",
-    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66"
+    "path": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9/SOURCE-SNAPSHOT.json",
+    "bytes": 26730,
+    "sha256": "84e1871e972b66bfe1aa3e22299c910ed9113aa91d8cdcbf0d313c67bddf0d9b",
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f"
   },
   "previousPrimaryEvidenceBeforeMetadataSizeFix": {
     "schema": "qrft-external-evidence-v1",
@@ -2413,11 +2430,12 @@
     "releaseReady": false
   },
   "currentFullBrowserEvidence": {
-    "status": "Sourceb94e746 passed101 hosted bundled Chromium and101 local installed Chrome cases",
-    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40061959432",
-    "localChromeReceipt": "release-evidence/runtime-security-2026-10-24.json",
-    "installedEdge": "No fresh runtime-policy Edge suite; prior DON evidence remains historical."
+    "status": "Sourcee6e853e passed110 hosted bundled Chromium and110 installed Chrome cases, including explicit suppressed-candidate diagnostic control",
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
+    "localChromeReceipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
+    "installedEdge": "No new Edge full suite; prior evidence retains its original scope.",
+    "priorNativeFailureUnexplained": true
   },
   "toolchainSecurityEvidence": {
     "schema": "qrft-external-evidence-v1",
@@ -2446,18 +2464,16 @@
     "receipt": "release-evidence/toolchain-security-2026-10-23.json"
   },
   "currentNativeLargeQualification": {
-    "clientBundle": "index-KefphoDT.js",
-    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
-    "status": "One profiled same-host5GiB candidate transfer/save passed full bytes and complete native observations; paired baseline also passed",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
-    "receipt": "release-evidence/prefix-hash-pair-2026-10-24.json",
-    "nativeRows": 534,
-    "missingNativeRows": 0,
-    "everyByteCompared": 5368709120,
+    "clientBundle": "index-CvzITcBr.js",
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "status": "Not run for current compiled bundle; prior Kef5GiB proof remains historical",
+    "nativeRows": null,
+    "everyByteCompared": null,
     "physicalTwoLaptop": false,
     "performanceAccepted": false,
     "resourceMatrixAccepted": false,
-    "releaseReady": false
+    "releaseReady": false,
+    "priorReceipt": "release-evidence/prefix-hash-pair-2026-10-24.json"
   },
   "previousQualificationBeforeNativeUiHarness": {
     "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
@@ -2524,13 +2540,17 @@
   },
   "currentHostedSourceGate": {
     "status": "Completed success",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40061959432",
-    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
-    "unitTests": 656,
-    "unitFiles": 64,
-    "browserTests": 101,
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "unitTests": 661,
+    "unitFiles": 65,
+    "browserTests": 110,
     "auditFindings": 0,
-    "node": "v24.22.1"
+    "node": "v24.22.1",
+    "artifactId": 12556361310,
+    "artifactSha256": "85b431dac80b659893fcd4a00b80facf458c5cefeca470ed13edcb1dc220dc36",
+    "scope": "Verified downloaded artifact for full source/browser/external-package gate; native5GiB jobs skipped.",
+    "releaseReady": false
   },
   "previousQualificationBeforeCpuProfileHarness": {
     "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
@@ -2908,6 +2928,51 @@
     "markedComplete": 0
   },
   "resumeIdbFailureFollowUp": {
+    "receipt": "release-evidence/resume-idb-failure-2026-10-24.json",
+    "diagnosticAndQualificationReceipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "status": "Reviewed fix and diagnostics qualified for routine main integration; original native availability cause remains open",
+    "localGatePassed": true,
+    "sourceCI": {
+      "run": 40083095355,
+      "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+      "units": 661,
+      "browser": 110,
+      "conclusion": "success",
+      "unitFiles": 65,
+      "auditFindings": 0,
+      "packageFiles": 20,
+      "url": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
+      "artifactId": 12556361310,
+      "artifactSha256": "85b431dac80b659893fcd4a00b80facf458c5cefeca470ed13edcb1dc220dc36",
+      "artifactDigestIndependentlyVerified": true,
+      "node": "v24.22.1",
+      "nativeUiJobRan": false
+    },
+    "releaseReady": false
+  },
+  "previousQualificationBeforeResumeIdb": {
+    "path": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9/CANONICAL-BEFORE.json",
+    "bytes": 142937,
+    "sha256": "43fc816cabedabab1bb25c74790ee2a168aaa758058f6a5ff968d24233bbe6a1",
+    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
+    "scope": "Complete previous canonical record, including Kef qualification/assets/native proof and pending088 follow-up."
+  },
+  "previousNativeLargeQualificationBeforeResumeIdb": {
+    "clientBundle": "index-KefphoDT.js",
+    "sourceCommit": "49607c5a0152cb3f23ed060d52da6d3ef68bc1f4",
+    "status": "One profiled same-host5GiB candidate transfer/save passed full bytes and complete native observations; paired baseline also passed",
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
+    "receipt": "release-evidence/prefix-hash-pair-2026-10-24.json",
+    "nativeRows": 534,
+    "missingNativeRows": 0,
+    "everyByteCompared": 5368709120,
+    "physicalTwoLaptop": false,
+    "performanceAccepted": false,
+    "resourceMatrixAccepted": false,
+    "releaseReady": false
+  },
+  "priorResumeIdbFailureFollowUp": {
     "receipt": "release-evidence/resume-idb-failure-2026-10-24.json",
     "sourceCommit": "088e2dc6ce649703ad2e29e9c8040ee198fce44c",
     "branch": "codex/resume-idb-failure-handling",
