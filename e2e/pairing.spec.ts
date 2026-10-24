@@ -6,7 +6,10 @@ import { fileURLToPath } from "node:url";
 import { freeSignalPort } from "../tests/free-signal-port.mjs";
 import { formatBytes } from "../src/lib/format";
 import { installIceDiagnostics } from "./ice-diagnostics";
+import { attachHostNetworkFailure } from "./host-network-diagnostics";
 import { limitSdpToLocalCandidates } from "../src/lib/webrtc-signaling";
+
+test.afterEach(async ({}, info) => { await attachHostNetworkFailure(info); });
 
 async function setupPair(context: BrowserContext, alteredOffer = false, fileBytes = 120_000, realRuntime = false, manual = false, durableSource = false, selectFiles = false, dropSource = false, manyFiles = false, reuseSource = false, rapidPairingActions = false) {
   await context.addInitScript(installIceDiagnostics);
