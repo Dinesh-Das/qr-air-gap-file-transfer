@@ -4,14 +4,27 @@ Status: performance acceptance is incomplete. Evidence below includes both
 synthetic diagnostics and real disk-backed files on one host. These are not
 Wi-Fi/LAN throughput claims.
 
-The current Cvz bundle contains the optical resume transaction-rejection fix.
+The current bundle is `index-DNBPx8fV.js`. Source `6083c5e` passed 667 unit
+tests and 110 browser tests locally and hosted, with zero dependency audit
+findings and matching 20/23-file packages. It removes compiler-confirmed unused
+code and adds a test-only host snapshot after a navigation buffer failure.
+The snapshot does not retry navigation or change test assertions. Its host
+memory and system-wide TCP counters are collected after the test, so they do
+not establish the cause of the earlier hosted `ERR_NO_BUFFER_SPACE` failure.
+That failure and the earlier candidate-availability failure remain preserved
+and unexplained. See [source qualification](release-evidence/host-network-diagnostics-2026-10-24.json).
+There is no native-large qualification for DNB yet; earlier Cvz proof retains
+its exact bundle scope. Physical Wi-Fi and general resource/throughput
+acceptance remain open. READY is false.
+
+The earlier Cvz bundle contains the optical resume transaction-rejection fix.
 Sourcee6e853e passed661unit and110browser cases locally in installed Chrome and
 in hosted Chromium, with audit0 and matching20/23file package module proof.
 Bounded, credential-redacted test diagnostics now distinguish native candidate
 events from the descriptions accepted by the local policy. A controlled suppressed
 description tests this capture; it does not explain the earlier native Chrome
 pairing failure. That failure remains preserved and its cause is still open.
-Run40084163845 tested exact sourcec471ee0 and the current Cvz bundle after its
+Run40084163845 tested exact sourcec471ee0 and that Cvz bundle after its
 661unit/110browser/audit0 gate. One hosted Windows5GiB transfer/save passed:
 all5,368,709,120 source/saved bytes were compared on the original VM,87,382
 binary frames and the complete expected ACK index set matched. All530native
@@ -28,8 +41,8 @@ processes; page CPU profiles exclude workers/native stacks. Injected pickers,
 OPFS save and intentionally denied cleanup do not qualify real OS permissions,
 native destination cleanup or GUI launch. Physical two-laptop Wi-Fi,10/50/100GB
 resource scaling and general throughput/performance acceptance remain open.
-See [current Cvz5GiB qualification](release-evidence/native-cvz-5gib-2026-10-24.json).
-See [current source and diagnostic qualification](release-evidence/pairing-ice-diagnostics-2026-10-24.json).
+See [Cvz5GiB qualification](release-evidence/native-cvz-5gib-2026-10-24.json).
+See [earlier source and diagnostic qualification](release-evidence/pairing-ice-diagnostics-2026-10-24.json).
 
 The earlier prefix-hash candidate built as index-KefphoDT.js. Source49607c5 passed
 628 unit and101 browser cases with audit0. One serial baseline-first comparison

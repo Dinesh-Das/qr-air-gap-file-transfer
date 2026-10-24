@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-10-24T10:26:37.397Z",
+  "recordedAt": "2026-10-24T16:03:43.808Z",
   "clientDate": "2026-10-24",
-  "status": "Current Cvz passed one hosted Windows5GiB native transfer/save with every byte checked,530complete native rows and2page CPU profiles; exactc471 source gate661units/110browser/audit0. Earlier pairing failure remains unexplained. Physical two-laptop, GUI, broad resource and throughput acceptance incomplete; READY false.",
+  "status": "Current DNB source6083c5e passes667 unit/110 browser tests locally and hosted with audit0 and matching20/23-file packages. Earlier native candidate availability and hosted document buffer failure remain unresolved. Current DNB native large, physical Wi-Fi, GUI and broader resource/throughput acceptance incomplete; READY false.",
   "releaseReady": false,
   "evidence": {
-    "status": "Sealed exact-source local/hosted gates and bounded ICE diagnostics; original failure retained",
-    "local": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9",
-    "receipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
-    "priorFailureReceipt": "release-evidence/resume-idb-failure-2026-10-24.json"
+    "status": "Sealed exact-source gates, compiler cleanup and bounded post-test diagnostics; previous failures retained",
+    "local": "C:/Users/dines/QRFT-qualification-evidence/host-network-diagnostics-2026-10-24-5a7825c",
+    "receipt": "release-evidence/host-network-diagnostics-2026-10-24.json",
+    "priorFailureReceipt": "release-evidence/unused-code-candidate-2026-10-24.json"
   },
   "previousCheckpoint": "C:/Users/dines/QRFT-qualification-evidence/current-full-browser-path-guards-2026-10-23-W1syLP/CANONICAL-BEFORE.json",
   "sourceFixEvidence": {
@@ -39,10 +39,10 @@
     "scope": "Full Chrome suite incomplete: disk reserve guard terminated owned test tree"
   },
   "qualification": {
-    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
-    "status": "Exact-source hosted and installed-Chrome gates passed; pre-existing native candidate availability risk open",
-    "unitPassed": 661,
-    "unitFiles": 65,
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "status": "Exact-source local and hosted gates passed; prior availability risks remain open",
+    "unitPassed": 667,
+    "unitFiles": 66,
     "typecheck": 0,
     "build": 0,
     "browserPassed": 110,
@@ -100,11 +100,11 @@
     },
     {
       "path": "e2e/fixtures/resume-idb-probe.ts",
-      "sha256": "604a70eafa4c3618c6d282d6c726092e22f6b94a453876216e130d0e41cd5769"
+      "sha256": "2ca81cc742607f1cafe4d6422c4715d2df796124eef3966e70d0dc3a6802fb90"
     },
     {
       "path": "e2e/ice-diagnostics.ts",
-      "sha256": "f6a9be0ec570cc1014e73a42b4f2c40ba524135fa017171c30caddd0465f0007"
+      "sha256": "f4c73b74d6c201a6c6d378ff0c01357fae47dfac2eef30f66fb888f28966f83a"
     },
     {
       "path": "e2e/navigation.spec.ts",
@@ -116,7 +116,7 @@
     },
     {
       "path": "e2e/pairing.spec.ts",
-      "sha256": "abcc2725250c8e60288cb43e9b71730440883001ff3ba599ca18b9e9ecde6ca8"
+      "sha256": "51ab475a0bd8bbf66cccaf9d369a4e2504f7e718a29b1b9f76d59bfd091d9c1c"
     },
     {
       "path": "e2e/peer-candidate-policy.spec.ts",
@@ -128,7 +128,7 @@
     },
     {
       "path": "e2e/resume-idb-failures.spec.ts",
-      "sha256": "0fb53f2d8fb0f35e6715a36936a8ac6c505c63a52c97be71345755612b268cf7"
+      "sha256": "c51c4613aa7aa955041c95cedae81d3c4da300b60c40dd5b0c4e7437ce3fa3cb"
     },
     {
       "path": "index.html",
@@ -148,7 +148,7 @@
     },
     {
       "path": "release-evidence/acceptance-obligations-2026-10-14.json",
-      "sha256": "3e1e35290529ffe5b15bf560520f9e296c6dc7d797dd50a2663c17cce2c80cd3"
+      "sha256": "55f0d25abd6889f81dc2cdd56c768acd1d06dffd16f4e8d24c34529ea464bf65"
     },
     {
       "path": "release-evidence/original-release-requirements.txt",
@@ -284,7 +284,7 @@
     },
     {
       "path": "src/components/LargeSender.tsx",
-      "sha256": "bd8feba12c5cdee324d3767e4fcab8fd4cea607155140e2aad2f328846496cf2"
+      "sha256": "2f4fef865e746e80b542483f0e0b847f459f58c7112d5b2ee65df24a21571d8c"
     },
     {
       "path": "src/components/PairingReadiness.tsx",
@@ -324,7 +324,7 @@
     },
     {
       "path": "src/components/WebRtcSender.tsx",
-      "sha256": "dc3583c0641706b9b98b18d865611f3b75fbebc2eedfe3e654174243904d813b"
+      "sha256": "10b007eff87028399e89a847e82d29a0f38b0e5a13e30926bf03f73332cf42ce"
     },
     {
       "path": "src/components/WebRtcSignalQr.tsx",
@@ -380,7 +380,7 @@
     },
     {
       "path": "src/lib/large-sender-resume.ts",
-      "sha256": "acd5fef8ad04f7f27013c877c7b6153ad489cb7501245026d9cfcafc4bead40d"
+      "sha256": "9572f5cc45c93cb61c77bd26bb34b6c3421532395a4be740e02585da889834b2"
     },
     {
       "path": "src/lib/large-transfer.ts",
@@ -396,7 +396,7 @@
     },
     {
       "path": "src/lib/resume.ts",
-      "sha256": "5990be39b3334b6b985c16440cb84cebab634968379f082314dcc024e0363fbd"
+      "sha256": "18b5f4bd16388b4e398abceadf46fbbd18235d103c4a193607b002e71d663427"
     },
     {
       "path": "src/lib/screen-wake-lock.ts",
@@ -408,7 +408,7 @@
     },
     {
       "path": "src/lib/sender-resume.ts",
-      "sha256": "b965e78e622e4961285b12138e0231ab5f4bfc77c39221c0e529c4bbb6b5cac3"
+      "sha256": "5bc7f39291a0a0faf8d4dbd2cca7f3afd53e0027e1dbfb19cfb24b4caa73e9c5"
     },
     {
       "path": "src/lib/stream-protocol.ts",
@@ -468,7 +468,7 @@
     },
     {
       "path": "src/lib/webrtc-transfer.ts",
-      "sha256": "2ffb0e756e82c879cd4dd4dc0edb1ea1199f0f904118d8d8973a6aa3128ff2f1"
+      "sha256": "e280177c3475fbd4d500afe640ea71e3442cba8c9cb9a435f7a8abd9f8374fcc"
     },
     {
       "path": "src/main.tsx",
@@ -560,7 +560,7 @@
     },
     {
       "path": "tests/ice-diagnostics.test.ts",
-      "sha256": "1ed7970758ec82bff8292b92fad0d3f81ec80b31b474f863721832872907bdbc"
+      "sha256": "ba22f84f7dbc2e97965439f8e1435fa37bcf159fc4f8fd423355babea764503e"
     },
     {
       "path": "tests/lan-signaling.test.mjs",
@@ -765,6 +765,18 @@
     {
       "path": "vite.config.ts",
       "sha256": "16d87b897a1106974dfc4d04c50d0008b94acda1fe4af6f1ebeab8f7878ea64b"
+    },
+    {
+      "path": "SPEC-host-network-diagnostics.md",
+      "sha256": "ebcb326c4f6406cbc3f265259fe3b76cf85b62eda2c90a3f8d7138f53db27880"
+    },
+    {
+      "path": "e2e/host-network-diagnostics.ts",
+      "sha256": "bb91c0eb6d6181122583a9eee819fb3b71e35ecc98f5ea230e5ddf43ec55cacd"
+    },
+    {
+      "path": "tests/host-network-diagnostics.test.ts",
+      "sha256": "81d259ec3413e43359ee39f8e20d709333ff78e9f25534b2b2b639f8ba919633"
     }
   ],
   "currentAssets": [
@@ -779,9 +791,9 @@
       "sha256": "7a2adfbc18116a7c00bbaffdf843fa152a18353a21a6e7d694f772026658bfdc"
     },
     {
-      "path": "dist/assets/index-CvzITcBr.js",
-      "bytes": 557044,
-      "sha256": "bc51074587b802e260abb57b66167d54b4ca70df5cd84f6a36441c05ca27ecf0"
+      "path": "dist/assets/index-DNBPx8fV.js",
+      "bytes": 556943,
+      "sha256": "b234d13c848614574ebbed591281d18d05524c908b39cdb6c71d81fbbaca7378"
     },
     {
       "path": "dist/assets/qr-scanner-worker.min-CJaXo3yu.js",
@@ -791,7 +803,7 @@
     {
       "path": "dist/index.html",
       "bytes": 903,
-      "sha256": "153497d2d5dab2b263240b0e7da33c930ea3349d98aac2ca888245c0dd5ac1f8"
+      "sha256": "3f721b3c454dd5f75a611e6d1e3bd27342ad76f55f2fc4d1be9944e4ba553656"
     }
   ],
   "rootDistIsPriorVersion": false,
@@ -814,7 +826,7 @@
     "oneGiBTwoCopyBudgetBytes": 4714397696,
     "fiveGiBTwoCopyBudgetBytes": 13304332288,
     "attempted": false,
-    "reason": "No new local large test: user reports space unavailable; unchanged local reserve/copy budgets preserved. A separate hosted current-Cvz5GiB case passed; see currentNativeLargeQualification.",
+    "reason": "No new local large test; user reports space unavailable and unchanged reserve/copy budgets are preserved. Historical Cvz5GiB proof does not qualify current DNB.",
     "userResponse": "Space is unavailable now",
     "releaseReady": false
   },
@@ -868,7 +880,7 @@
       }
     ]
   },
-  "currentReviewPending": 260,
+  "currentReviewPending": 259,
   "activeTransferTransitionEvidence": {
     "schema": "qrft-external-evidence-v1",
     "path": "C:/Users/dines/QRFT-qualification-evidence/active-transfer-browser-2026-10-22-Bm1EQx/REVIEW.json",
@@ -1001,21 +1013,22 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-24T10:26:37.397Z",
-  "currentInputsScope": "178 selected qualified-source inputs ate6e853e, before reporting-only bookkeeping overlays. Local snapshot, not a hosted native-trial snapshot. Separate currentNativeLargeQualification binds177hosted inputs at c471 and proves one hosted Cvz5GiB case; this178input snapshot remains at e6e853e.",
+  "updatedAt": "2026-10-24T16:03:43.808Z",
+  "currentInputsScope": "181 selected local source/document inputs at qualified6083c5e, before reporting-only bookkeeping overlays. Includes new diagnostic helper/test/spec; not a hosted native-trial snapshot.",
   "hostedCodeGate": {
     "status": "Completed success",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
-    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
-    "unitTests": 661,
-    "unitFiles": 65,
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40087876844",
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "unitTests": 667,
+    "unitFiles": 66,
     "browserTests": 110,
     "auditFindings": 0,
     "node": "v24.22.1",
-    "artifactId": 12556361310,
-    "artifactSha256": "85b431dac80b659893fcd4a00b80facf458c5cefeca470ed13edcb1dc220dc36",
-    "scope": "Verified downloaded artifact for full source/browser/external-package gate; native5GiB jobs skipped.",
-    "releaseReady": false
+    "artifactId": 12557558847,
+    "artifactSha256": "3fea32de32b4183b562fa43c8a5c9a94250d2416c2eaf5705b3cd7e89feefbae",
+    "scope": "Verified downloaded full source/browser/package gate; native large jobs skipped.",
+    "releaseReady": false,
+    "receipt": "release-evidence/host-network-diagnostics-2026-10-24.json"
   },
   "previousSourceQualification": {
     "typecheck": 0,
@@ -1063,13 +1076,13 @@
     }
   },
   "currentInputIndex": {
-    "count": 178,
-    "source": "Local SOURCE-SNAPSHOT.json selected qualified-source inputs",
+    "count": 181,
+    "source": "181 selected local source/document inputs at qualified6083c5e, before reporting-only bookkeeping overlays. Includes new diagnostic helper/test/spec; not a hosted native-trial snapshot.",
     "snapshot": {
-      "path": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9/SOURCE-SNAPSHOT.json",
-      "bytes": 26730,
-      "sha256": "84e1871e972b66bfe1aa3e22299c910ed9113aa91d8cdcbf0d313c67bddf0d9b",
-      "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f"
+      "path": "C:/Users/dines/QRFT-qualification-evidence/host-network-diagnostics-2026-10-24-5a7825c/SOURCE-SNAPSHOT.json",
+      "bytes": 29919,
+      "sha256": "1f88dee6afed74f978e3f7cbf20a0124a97338fdc9dfa3838778016668440242",
+      "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5"
     }
   },
   "localCandidateRecoveryEvidence": {
@@ -1378,18 +1391,18 @@
     "releaseReady": false
   },
   "currentPackageQualificationEvidence": {
-    "status": "Current Cvz bytes exactly match independently checked20fileexternal/23fileportable Node24.22.1 packages from088; test-only follow-up changes no package inputs. Module proof only.",
-    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
-    "packageBuiltAtSource": "088e2dc6ce649703ad2e29e9c8040ee198fce44c",
-    "receipt": "release-evidence/resume-idb-failure-2026-10-24.json",
-    "continuityReceipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
+    "status": "DNB bytes and packaged source files exactly match independently checked20-file external/23-file portable Node24.22.1 packages from c06. Module proof only.",
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "packageBuiltAtSource": "c06e4e5bf42b4e5ad8436f8795dc88c54b1feeb4",
+    "receipt": "release-evidence/host-network-diagnostics-2026-10-24.json",
+    "continuityReceipt": "release-evidence/unused-code-candidate-2026-10-24.json",
     "nativeWindowsGUI": false
   },
   "currentInputSnapshot": {
-    "path": "C:/Users/dines/QRFT-qualification-evidence/pairing-ice-diagnostic-2026-10-24-b731a9/SOURCE-SNAPSHOT.json",
-    "bytes": 26730,
-    "sha256": "84e1871e972b66bfe1aa3e22299c910ed9113aa91d8cdcbf0d313c67bddf0d9b",
-    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f"
+    "path": "C:/Users/dines/QRFT-qualification-evidence/host-network-diagnostics-2026-10-24-5a7825c/SOURCE-SNAPSHOT.json",
+    "bytes": 29919,
+    "sha256": "1f88dee6afed74f978e3f7cbf20a0124a97338fdc9dfa3838778016668440242",
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5"
   },
   "previousPrimaryEvidenceBeforeMetadataSizeFix": {
     "schema": "qrft-external-evidence-v1",
@@ -2430,12 +2443,13 @@
     "releaseReady": false
   },
   "currentFullBrowserEvidence": {
-    "status": "Sourcee6e853e passed110 hosted bundled Chromium and110 installed Chrome cases, including explicit suppressed-candidate diagnostic control",
-    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
-    "localChromeReceipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
+    "status": "Source6083c5e passed110 hosted bundled Chromium and110 installed Chrome cases with the test-only post-failure hook; six separate unit controls cover the diagnostic helper.",
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40087876844",
+    "localChromeReceipt": "release-evidence/host-network-diagnostics-2026-10-24.json",
     "installedEdge": "No new Edge full suite; prior evidence retains its original scope.",
-    "priorNativeFailureUnexplained": true
+    "priorNativeFailureUnexplained": true,
+    "hostNavigationBufferFailureUnexplained": true
   },
   "toolchainSecurityEvidence": {
     "schema": "qrft-external-evidence-v1",
@@ -2464,30 +2478,17 @@
     "receipt": "release-evidence/toolchain-security-2026-10-23.json"
   },
   "currentNativeLargeQualification": {
-    "clientBundle": "index-CvzITcBr.js",
-    "sourceCommit": "c471ee083152a9492cf22f4f9b260b5c3c528c31",
-    "status": "One hosted Windows5GiB native compiled-UI transfer/save passed and independently audited",
-    "receipt": "release-evidence/native-cvz-5gib-2026-10-24.json",
-    "workflowRun": 40084163845,
-    "evidence": {
-      "root": "C:/Users/dines/QRFT-qualification-evidence/native-cvz-5gib-2026-10-24-6f148c",
-      "sealed": true,
-      "files": 61,
-      "bytes": 12909093,
-      "manifestBytes": 10553,
-      "sha256": "69897b9017441cea3ed117561719b02fd1be9106ea4dd10e9aede7114a868a29"
-    },
-    "nativeRows": 530,
-    "everyByteCompared": 5368709120,
-    "streamSha256": "0d6782328fe45a2f8bd721a07ebde87b53a6b3eb41fa871c53bad72e856d1d48",
-    "cpuProfilesComplete": true,
-    "sourceGatePassed": true,
+    "clientBundle": "index-DNBPx8fV.js",
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "status": "Not run for this compiled bundle; previous Cvz 5 GiB proof remains historical.",
+    "nativeRows": null,
+    "everyByteCompared": null,
     "physicalTwoLaptop": false,
     "performanceAccepted": false,
     "resourceMatrixAccepted": false,
     "releaseReady": false,
-    "scope": "Independent retained metadata/assets/source/CPU audit plus public dataset identity recomputation. Native completeness means every requested before-inventory PID measured; after-inventory changes are retained separately. Periodic samples can miss peaks/new processes. No continuous RAM bound, physical LAN, GUI or general throughput/resource/readiness acceptance.",
-    "priorReceipt": "release-evidence/prefix-hash-pair-2026-10-24.json"
+    "priorReceipt": "release-evidence/native-cvz-5gib-2026-10-24.json",
+    "receipt": "release-evidence/host-network-diagnostics-2026-10-24.json"
   },
   "previousQualificationBeforeNativeUiHarness": {
     "sourceCommit": "82391c2c598a5e13faac28bab9db9fb4ed5d7b9a",
@@ -2553,31 +2554,19 @@
     "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/39998977543"
   },
   "currentHostedSourceGate": {
-    "at": "2026-10-24T10:22:38.707Z",
-    "artifactId": 12556657017,
-    "zipBytes": 3597030,
-    "sha256": "8600b39b43e64acea0339d71230562fccbfdfef019ec8905c13ff70f0a74c0cc",
-    "sourceCommit": "c471ee083152a9492cf22f4f9b260b5c3c528c31",
-    "runId": "40084163845",
-    "node": "v24.22.1",
-    "gateExit": 0,
-    "unitTests": 661,
-    "browserTests": 110,
-    "packageFiles": 20,
-    "selectedFiles": [
-      "ci-evidence/run.json",
-      "ci-evidence/gate-exit-code.txt",
-      "ci-evidence/package-smoke.json",
-      "ci-evidence/gate.txt"
-    ],
-    "scope": "Downloaded artifact ZIP SHA matches GitHub API digest; selected frozen run/gate/package records independently checked. Whole original ZIP retained, selected records extracted. No native5GiB/physical qualification.",
-    "releaseReady": false,
-    "receipt": "release-evidence/native-cvz-5gib-2026-10-24.json",
     "status": "Completed success",
-    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40084163845",
-    "unitFiles": 65,
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40087876844",
+    "sourceCommit": "6083c5ed754dc57ac48c5f0e1516ca7c5f6e18c5",
+    "unitTests": 667,
+    "unitFiles": 66,
+    "browserTests": 110,
     "auditFindings": 0,
-    "artifactSha256": "8600b39b43e64acea0339d71230562fccbfdfef019ec8905c13ff70f0a74c0cc"
+    "node": "v24.22.1",
+    "artifactId": 12557558847,
+    "artifactSha256": "3fea32de32b4183b562fa43c8a5c9a94250d2416c2eaf5705b3cd7e89feefbae",
+    "scope": "Verified downloaded full source/browser/package gate; native large jobs skipped.",
+    "releaseReady": false,
+    "receipt": "release-evidence/host-network-diagnostics-2026-10-24.json"
   },
   "previousQualificationBeforeCpuProfileHarness": {
     "sourceCommit": "fcdb233aaac9da1b4b306f9f108b8bfadc289bcb",
@@ -3056,5 +3045,51 @@
       "scope": "Resume IndexedDB failure handling:3 native before-fix unhandled rejections,8 after-fix native module cases pass; exact source CI656/109/audit0 passes, local Chrome gate108pass1pairing-setupICEfailure retained. Packages20/23 independently checked outside closure. No physical/GUI/multiGB/resource/readiness acceptance, main not promoted."
     },
     "releaseReady": false
+  },
+  "previousQualificationBeforeUnusedCleanup": {
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "receipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
+    "backup": {
+      "path": "C:/Users/dines/QRFT-qualification-evidence/host-network-diagnostics-2026-10-24-5a7825c/CANONICAL-BEFORE.json",
+      "bytes": 150237,
+      "sha256": "ad29ccc16a1c5a78d9a97ba7c1b1b1ac97c511ef37028130fac561d02efcfb05"
+    },
+    "scope": "Complete previous canonical record, including Cvz source/package/native evidence and all earlier failed attempts, retained in the sealed backup."
+  },
+  "previousNativeLargeQualificationBeforeUnusedCleanup": {
+    "clientBundle": "index-CvzITcBr.js",
+    "sourceCommit": "c471ee083152a9492cf22f4f9b260b5c3c528c31",
+    "status": "One hosted Windows5GiB native compiled-UI transfer/save passed and independently audited",
+    "receipt": "release-evidence/native-cvz-5gib-2026-10-24.json",
+    "workflowRun": 40084163845,
+    "evidence": {
+      "root": "C:/Users/dines/QRFT-qualification-evidence/native-cvz-5gib-2026-10-24-6f148c",
+      "sealed": true,
+      "files": 61,
+      "bytes": 12909093,
+      "manifestBytes": 10553,
+      "sha256": "69897b9017441cea3ed117561719b02fd1be9106ea4dd10e9aede7114a868a29"
+    },
+    "nativeRows": 530,
+    "everyByteCompared": 5368709120,
+    "streamSha256": "0d6782328fe45a2f8bd721a07ebde87b53a6b3eb41fa871c53bad72e856d1d48",
+    "cpuProfilesComplete": true,
+    "sourceGatePassed": true,
+    "physicalTwoLaptop": false,
+    "performanceAccepted": false,
+    "resourceMatrixAccepted": false,
+    "releaseReady": false,
+    "scope": "Independent retained metadata/assets/source/CPU audit plus public dataset identity recomputation. Native completeness means every requested before-inventory PID measured; after-inventory changes are retained separately. Periodic samples can miss peaks/new processes. No continuous RAM bound, physical LAN, GUI or general throughput/resource/readiness acceptance.",
+    "priorReceipt": "release-evidence/prefix-hash-pair-2026-10-24.json"
+  },
+  "nativeCandidateAvailabilityRootCauseUnresolved": true,
+  "hostNavigationBufferFailureRootCauseUnresolved": true,
+  "previousFullBrowserEvidenceBeforeUnusedCleanup": {
+    "status": "Sourcee6e853e passed110 hosted bundled Chromium and110 installed Chrome cases, including explicit suppressed-candidate diagnostic control",
+    "sourceCommit": "e6e853e819cbba9bf33c454a3dccb3ff9ad95c1f",
+    "run": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40083095355",
+    "localChromeReceipt": "release-evidence/pairing-ice-diagnostics-2026-10-24.json",
+    "installedEdge": "No new Edge full suite; prior evidence retains its original scope.",
+    "priorNativeFailureUnexplained": true
   }
 }
