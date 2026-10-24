@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-22T15:36:01.294Z",
   "clientDate": "2026-10-23",
-  "status": "Kef prefix-hash candidate: source49607c5 passed628units/101browser/audit0 and one paired same-host 5GiB transfer/save comparison. Keep optimization; fresh patched-runtime packages and physical two-laptop qualification remain open. READY false.",
+  "status": "Kef client paired5GiB proof retained at49607c5. Runtime-policy b94e746 passed656localunits/type/build/audit0 and fresh20/23file module package checks; localChrome and exact-source hosted gate pending. Physical validation and READY remain incomplete.",
   "releaseReady": false,
   "evidence": {
     "status": "Paired candidate integrity/native-observer and sampled preparation comparison audited; sealed receipt retained",
@@ -973,7 +973,7 @@
     },
     "scope": "Recorded browser/unit checkpoint evidence with exact source/matrix comparisons and explicit finite fault limits; not a new full98-case run."
   },
-  "updatedAt": "2026-10-24T04:13:15.072Z",
+  "updatedAt": "2026-10-24T04:23:20.264Z",
   "currentInputsScope": "171 selected input hashes from exact clean hosted source49607c5. Bound to this CI checkout and client assets; later receipt documentation is not a new runtime trial.",
   "hostedCodeGate": {
     "status": "Completed success",
@@ -1348,8 +1348,9 @@
     "releaseReady": false
   },
   "currentPackageQualificationEvidence": {
-    "status": "Source49607c5 external package MODULE smoke passed; new patched-runtime portable package still pending. Retained DON packages are historical baseline.",
-    "sourceGate": "https://github.com/Dinesh-Das/qr-air-gap-file-transfer/actions/runs/40012980307",
+    "status": "Fresh20-fileexternal/23-fileportable local module checks passed underNode24.22.1; hosted runtime-policy gate and actualGUI/physical qualification pending",
+    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
+    "receipt": "release-evidence/runtime-security-2026-10-24.json",
     "nativeWindowsGUI": false
   },
   "currentInputSnapshot": {
@@ -2811,11 +2812,12 @@
     "releaseReady": false
   },
   "runtimeSecurityFollowUp": {
-    "receipt": "release-evidence/prefix-hash-pair-2026-10-24.json",
-    "pairedRuntime": "v24.22.1",
-    "oldPortableRuntime": "v24.22.0",
-    "freshPackagesQualified": false,
-    "status": "Old pinned portable runtime predates21October2026 security patch. No fresh package created with it; patched runtime policy/package work pending.",
+    "receipt": "release-evidence/runtime-security-2026-10-24.json",
+    "sourceCommit": "b94e7465c3864596356a3bfb6f67312232bb3d66",
+    "patchedRuntime": "v24.22.1",
+    "oldPortableRuntime": "v24.22.0 historical only",
+    "freshPackagesQualified": "Local module checks passed; actual GUI/physical qualification incomplete",
+    "status": "Patched runtime floor enforced; fresh external and portable bundles built and module-smoked. Hosted40061959432 and localChrome pending.",
     "officialRelease": "https://nodejs.org/en/blog/release/v24.22.1",
     "exploitEstablished": false
   }
